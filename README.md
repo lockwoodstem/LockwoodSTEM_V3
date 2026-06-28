@@ -39,3 +39,8 @@ Certification auth scripts include cache-busting query strings and auth.js conta
 
 Certification backend URL updated to:
 https://script.google.com/macros/s/AKfycbw0j9MBMdMG-QNi2IIbp1SE6htXwYgKVV65dV1gLMMTkyK6ujNBWYXtIl-1Jnjlyns/exec
+
+
+## IED Unit 0 Update
+
+This package updates IED Unit 0 to end with the Rocket Launch Pad Design Challenge. Lessons 0.7–0.12 now cover challenge launch, build planning, prototype build, testing/improvement, final documentation/design review, and the Unit 0 portfolio check/reflection. Student construction uses approved classroom materials only; student CAD/3D printing begins later in the course.
