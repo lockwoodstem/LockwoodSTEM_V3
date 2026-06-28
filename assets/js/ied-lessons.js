@@ -23,7 +23,7 @@ const IED_UNITS = {
     "title": "Technical Sketching & Engineering Documentation",
     "project": "3D Rocket Assembly Reverse Engineering Documentation Package",
     "cert": "Technical Sketching + Engineering Documentation Portfolio",
-    "description": "Students learn to communicate engineering designs through sketching, measurement, tolerances, assembly documentation, BOMs, change records, and final proposal presentations.",
+    "description": "Students communicate engineering designs through sketching, measurement, tolerances, assembly documentation, BOMs, change records, and final proposal presentations.",
     "lessons": [
       "Why Engineers Sketch",
       "Line Conventions",
@@ -76,60 +76,35 @@ const IED_UNITS = {
     ]
   },
   "3": {
-    "title": "Technical Drawings & Manufacturing Documentation",
-    "project": "Aerospace Manufacturing Package",
-    "cert": "Engineering Drawings Certification",
-    "description": "Students create manufacturing-ready drawings with projected views, dimensions, notes, section/detail views, and inspection information.",
+    "title": "CAD Assemblies, Mechanisms & Technical Drawings",
+    "project": "Final Rocket Assembly Prototype & Design Package",
+    "cert": "Fusion CAD Level 2 + Engineering Drawings Portfolio",
+    "description": "Students build a full rocket CAD assembly, check fits and motion, 3D print and build a prototype, test the assembly, and create technical drawings for final presentation.",
     "lessons": [
-      "Drawing Workspace",
-      "Base and Projected Views",
-      "Section Views",
-      "Detail Views",
-      "Dimension Placement",
-      "Hole Callouts",
-      "Notes & Title Blocks",
-      "Inspection Dimensions",
-      "Manufacturing Constraints",
-      "Drawing Standards",
-      "Peer Drawing Check",
-      "Revision Control",
-      "Manufacturing Package Planning",
-      "Final Drawing Package",
-      "Presentation of Drawings",
-      "Engineering Drawings Certification"
+      "From Printed Testers to Rocket Assembly",
+      "CAD Components and Assembly Files",
+      "Inserting and Positioning Rocket Parts",
+      "Assembly Alignment and Fit Checks",
+      "Joints and Assembly Relationships",
+      "Fin Placement and Symmetry",
+      "Rocket Assembly Revision Workday",
+      "Exploded CAD Views",
+      "Assembly Motion and Functional Checks",
+      "Export, Slice, and Submit Rocket Parts for 3D Printing",
+      "Prototype Assembly Build Day",
+      "Prototype Fit Testing and Revision Notes",
+      "Introduction to Technical Drawing Sheets",
+      "Part and Assembly Drawing Views",
+      "Parts List, Balloons, Notes, and Revisions",
+      "Final Rocket Assembly Design Package Workday",
+      "Final Rocket Assembly Presentation"
     ]
   },
   "4": {
-    "title": "Assemblies & Mechanisms",
-    "project": "Aerospace Deployment Mechanism",
-    "cert": "Fusion CAD Level 2",
-    "description": "Students build assemblies and mechanisms using components, joints, motion limits, interference checks, exploded views, and animations.",
-    "lessons": [
-      "Components & Bodies",
-      "Joints",
-      "Rigid Groups",
-      "Motion Limits",
-      "Linkages",
-      "Gears & Pivots",
-      "Deployment Mechanisms",
-      "Assembly Constraints",
-      "Interference Checks",
-      "Exploded Assemblies",
-      "Animation",
-      "Mechanism Testing",
-      "Design Revision",
-      "Assembly Documentation",
-      "Team Design Review",
-      "CAD Portfolio Export",
-      "Mechanism Presentation",
-      "Fusion CAD Level 2 Certification"
-    ]
-  },
-  "5": {
-    "title": "Prototyping & Testing",
+    "title": "Prototyping, Testing & Iteration",
     "project": "Aerospace Prototype Validation Challenge",
-    "cert": "3D Printing + Laser Cutter Certifications",
-    "description": "Students prepare, fabricate, test, analyze, and revise prototypes using manufacturing constraints and engineering data.",
+    "cert": "Fabrication Tool Certifications + Prototype Testing Portfolio",
+    "description": "Students prepare, fabricate, test, analyze, and revise prototypes using manufacturing constraints, safety expectations, engineering data, and evidence-based iteration.",
     "lessons": [
       "Prototype Planning",
       "DFM for 3D Printing",
@@ -153,11 +128,11 @@ const IED_UNITS = {
       "Fabrication Certifications"
     ]
   },
-  "6": {
+  "5": {
     "title": "Aerospace Systems Design Capstone",
-    "project": "Aerospace Launch System Capstone",
-    "cert": "Portfolio Completion",
-    "description": "Students complete a full engineering project using research, requirements, concept development, CAD, manufacturing documentation, prototyping, testing, revision, and presentation.",
+    "project": "Final Aerospace Design Challenge",
+    "cert": "Portfolio Completion + Final Showcase",
+    "description": "Students complete a full aerospace engineering project using research, requirements, concept development, CAD, fabrication planning, prototyping, testing, revision, documentation, and presentation.",
     "lessons": [
       "Capstone Launch",
       "Problem Definition",
@@ -183,7 +158,7 @@ const IED_UNITS = {
       "Final Documentation",
       "Presentation Prep",
       "Showcase",
-      "Portfolio Reflection"
+      "Course Evidence Reflection"
     ]
   }
 };
