@@ -55,3 +55,6 @@ This package updates IED Unit 0 to end with the Rocket Launch Pad Design Challen
 
 
 Update note: Units 1 and 2 were merged into Unit 1 — Technical Sketching & Engineering Documentation. The IED course now uses Units 0–6. Unit 1 lessons 1.11–1.22 use a teacher-provided 3D printed rocket assembly for reverse engineering, measurement, tolerances, adhesives/fasteners, assembly documentation, BOM, assembly notes, engineering change requests, and final proposal presentation.
+
+
+Unit 2 update: Rebuilt as CAD Modeling, Parametric Design & 3D Printing with 18 lessons, embedded YouTube tutorial references in relevant lessons, and a choice-based 3D printed rocket assembly tolerance tester final project.
