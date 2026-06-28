@@ -21,24 +21,20 @@ const IED_UNITS = {
   },
   "1": {
     "title": "Visual Communication & Sketching",
-    "project": "Reverse Engineering Challenge",
-    "cert": "Technical Sketching Certification",
+    "project": "Reverse Engineering Study",
+    "cert": "Unit 1 Technical Sketching Portfolio",
     "lessons": [
       "Why Engineers Sketch",
       "Line Conventions",
       "Object Lines & Hidden Lines",
       "Centerlines & Symmetry",
       "Isometric Sketching",
-      "Isometric Circles & Arcs",
+      "Isometric Circles, Arcs, and Shading",
       "Orthographic Projection",
       "Top, Front & Right Side Views",
       "Dimensioning Basics",
       "Aerospace Bracket Sketch",
-      "Reverse Engineering",
-      "Sketch Critique",
-      "Portfolio Drawing",
-      "Technical Sketching Practice",
-      "Sketching Certification"
+      "Reverse Engineering Study and Unit 1 Portfolio Check"
     ]
   },
   "2": {

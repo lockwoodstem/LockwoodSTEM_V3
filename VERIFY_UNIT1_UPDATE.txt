@@ -1,0 +1,7 @@
+Unit 1 update verification
+
+Updated Unit 1 lessons 1.1 through 1.11.
+Lesson 1.11 is the final lesson of Unit 1.
+Lessons 1.12 through 1.15 were removed from the Unit 1 page and detailed lesson data.
+Added original Unit 1 graphics to assets/img/unit1 and embedded them into the appropriate lesson pages.
+Updated Unit 1 project/final evidence language to Reverse Engineering Study + Unit 1 Technical Sketching Portfolio.

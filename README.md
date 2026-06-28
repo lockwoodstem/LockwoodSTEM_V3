@@ -44,3 +44,11 @@ https://script.google.com/macros/s/AKfycbw0j9MBMdMG-QNi2IIbp1SE6htXwYgKVV65dV1gL
 ## IED Unit 0 Update
 
 This package updates IED Unit 0 to end with the Rocket Launch Pad Design Challenge. Lessons 0.7–0.12 now cover challenge launch, build planning, prototype build, testing/improvement, final documentation/design review, and the Unit 0 portfolio check/reflection. Student construction uses approved classroom materials only; student CAD/3D printing begins later in the course.
+
+
+## Unit 1 update: Visual Communication & Sketching
+
+- Unit 1 now runs from Lesson 1.1 through Lesson 1.11 only.
+- Lesson 1.11 is the culminating Reverse Engineering Study and Unit 1 Portfolio Check.
+- Original Unit 1 instructional graphics are included in `assets/img/unit1/` and embedded in the appropriate lessons.
+- Former Lessons 1.12–1.15 were removed from the Unit 1 lesson list.
