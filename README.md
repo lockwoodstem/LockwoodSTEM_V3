@@ -5,9 +5,9 @@ This is a fresh GitHub-ready static site assembled from the current LockwoodSTEM
 ## Included
 - Homepage using the established dark navy/gold LockwoodSTEM style
 - Courses page with IED, POE, and Advanced Manufacturing hubs
-- Complete IED Units 0–7 course hub
-- Unit pages for Units 0–7
-- Lesson pages for every IED lesson in Units 0–7
+- Complete IED Units 0–6 course hub
+- Unit pages for Units 0–6
+- Lesson pages for every IED lesson in Units 0–6
 - Resource Library with templates, references, asset boards, and package downloads
 - Certification Hub
 - FabLab page
@@ -52,3 +52,6 @@ This package updates IED Unit 0 to end with the Rocket Launch Pad Design Challen
 - Lesson 1.11 is the culminating Reverse Engineering Study and Unit 1 Portfolio Check.
 - Original Unit 1 instructional graphics are included in `assets/img/unit1/` and embedded in the appropriate lessons.
 - Former Lessons 1.12–1.15 were removed from the Unit 1 lesson list.
+
+
+Update note: Units 1 and 2 were merged into Unit 1 — Technical Sketching & Engineering Documentation. The IED course now uses Units 0–6. Unit 1 lessons 1.11–1.22 use a teacher-provided 3D printed rocket assembly for reverse engineering, measurement, tolerances, adhesives/fasteners, assembly documentation, BOM, assembly notes, engineering change requests, and final proposal presentation.

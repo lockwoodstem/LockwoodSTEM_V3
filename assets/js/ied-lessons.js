@@ -1,9 +1,9 @@
-
 const IED_UNITS = {
   "0": {
     "title": "Engineering Design Foundations",
     "project": "Rocket Launch Pad Design Challenge",
     "cert": "Engineering Safety Readiness + Unit 0 Portfolio",
+    "description": "Students build the habits, safety practices, documentation routines, and problem-solving mindset used throughout the engineering course.",
     "lessons": [
       "Course Launch & Engineering Mindset",
       "Engineering Notebook Setup & Course Resources",
@@ -20,9 +20,10 @@ const IED_UNITS = {
     ]
   },
   "1": {
-    "title": "Visual Communication & Sketching",
-    "project": "Reverse Engineering Study",
-    "cert": "Unit 1 Technical Sketching Portfolio",
+    "title": "Technical Sketching & Engineering Documentation",
+    "project": "3D Rocket Assembly Reverse Engineering Documentation Package",
+    "cert": "Technical Sketching + Engineering Documentation Portfolio",
+    "description": "Students learn to communicate engineering designs through sketching, measurement, tolerances, assembly documentation, BOMs, change records, and final proposal presentations.",
     "lessons": [
       "Why Engineers Sketch",
       "Line Conventions",
@@ -34,36 +35,25 @@ const IED_UNITS = {
       "Top, Front & Right Side Views",
       "Dimensioning Basics",
       "Aerospace Bracket Sketch",
-      "Reverse Engineering Study and Unit 1 Portfolio Check"
+      "Rocket Assembly Reverse Engineering",
+      "Why Documentation Matters",
+      "Measurement Tools",
+      "Tolerances",
+      "Adhesives & Fasteners",
+      "Rocket Assembly Systems",
+      "Documenting the Rocket Assembly",
+      "Rocket Exploded View",
+      "Rocket Bill of Materials",
+      "Rocket Assembly Notes",
+      "Engineering Change Requests",
+      "Final Rocket Assembly Proposal Presentation"
     ]
   },
   "2": {
-    "title": "Engineering Documentation & Assemblies",
-    "project": "Payload Mount Documentation Project",
-    "cert": "Engineering Documentation Certification",
-    "lessons": [
-      "Why Documentation Matters",
-      "Tolerances",
-      "Adhesives & Fasteners",
-      "Assemblies",
-      "Documenting an Assembly",
-      "Exploded Views",
-      "Bill of Materials",
-      "Assembly Notes",
-      "Inspection Criteria",
-      "Engineering Change Requests",
-      "Payload Mount Requirements",
-      "Team Documentation Sprint",
-      "Peer Review",
-      "Documentation Revision",
-      "Final Documentation Package",
-      "Documentation Certification"
-    ]
-  },
-  "3": {
     "title": "Aerospace CAD Modeling",
     "project": "Aerospace Sensor Mount Challenge",
     "cert": "Fusion CAD Level 1",
+    "description": "Students use Fusion-style CAD workflows to build accurate part models using sketches, constraints, dimensions, features, patterns, and parameters.",
     "lessons": [
       "Fusion Workspace",
       "Sketch Constraints",
@@ -82,10 +72,11 @@ const IED_UNITS = {
       "Fusion CAD Level 1 Certification"
     ]
   },
-  "4": {
+  "3": {
     "title": "Technical Drawings & Manufacturing Documentation",
     "project": "Aerospace Manufacturing Package",
     "cert": "Engineering Drawings Certification",
+    "description": "Students create manufacturing-ready drawings with projected views, dimensions, notes, section/detail views, and inspection information.",
     "lessons": [
       "Drawing Workspace",
       "Base and Projected Views",
@@ -105,10 +96,11 @@ const IED_UNITS = {
       "Engineering Drawings Certification"
     ]
   },
-  "5": {
+  "4": {
     "title": "Assemblies & Mechanisms",
     "project": "Aerospace Deployment Mechanism",
     "cert": "Fusion CAD Level 2",
+    "description": "Students build assemblies and mechanisms using components, joints, motion limits, interference checks, exploded views, and animations.",
     "lessons": [
       "Components & Bodies",
       "Joints",
@@ -130,10 +122,11 @@ const IED_UNITS = {
       "Fusion CAD Level 2 Certification"
     ]
   },
-  "6": {
+  "5": {
     "title": "Prototyping & Testing",
     "project": "Aerospace Prototype Validation Challenge",
     "cert": "3D Printing + Laser Cutter Certifications",
+    "description": "Students prepare, fabricate, test, analyze, and revise prototypes using manufacturing constraints and engineering data.",
     "lessons": [
       "Prototype Planning",
       "DFM for 3D Printing",
@@ -157,10 +150,11 @@ const IED_UNITS = {
       "Fabrication Certifications"
     ]
   },
-  "7": {
+  "6": {
     "title": "Aerospace Systems Design Capstone",
     "project": "Aerospace Launch System Capstone",
     "cert": "Portfolio Completion",
+    "description": "Students complete a full engineering project using research, requirements, concept development, CAD, manufacturing documentation, prototyping, testing, revision, and presentation.",
     "lessons": [
       "Capstone Launch",
       "Problem Definition",
@@ -218,23 +212,23 @@ function renderLesson() {
   setText("lesson-cert", `Certification connection: ${data.cert}`);
   setText("lesson-target", `I can apply ${lessonTitle.toLowerCase()} to communicate, model, build, document, or test an aerospace engineering solution.`);
   setText("lesson-notebook", `Create a dated engineering notebook entry for Lesson ${unit}.${lesson}. Include the problem, constraints, key vocabulary, sketches or evidence, and a reflection on how the skill supports aerospace engineering work.`);
-  setText("lesson-exit", "Submit or show the required notebook evidence and explain one engineering decision you made today.");
+  setText("lesson-exit", "Show the required notebook evidence and explain one engineering decision you made today.");
 
   const agenda = [
     "Launch question and aerospace connection",
     "Mini lesson or demonstration",
     "Guided practice using LockwoodSTEM resources",
     "Independent or team deliverable work",
-    "Notebook reflection and exit check"
+    "Notebook evidence check"
   ];
   const agendaEl = document.getElementById("lesson-agenda");
-  if (agendaEl) {
-    agendaEl.innerHTML = agenda.map(item => `<li>${item}</li>`).join("");
-  }
+  if (agendaEl) agendaEl.innerHTML = agenda.map(item => `<li>${item}</li>`).join("");
 
   const unitHref = `units/unit-${unit}.html`;
-  document.getElementById("unit-link").href = unitHref;
-  document.getElementById("unit-link-2").href = unitHref;
+  const unitLink = document.getElementById("unit-link");
+  const unitLink2 = document.getElementById("unit-link-2");
+  if (unitLink) unitLink.href = unitHref;
+  if (unitLink2) unitLink2.href = unitHref;
 }
 
 document.addEventListener("DOMContentLoaded", renderLesson);

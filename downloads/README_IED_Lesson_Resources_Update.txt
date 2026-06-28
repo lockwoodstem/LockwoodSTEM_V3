@@ -8,5 +8,5 @@ Presentation files are intentionally not included in this update.
 
 Updated areas:
 - assets/js/ied-detailed-lessons.js: lesson resource cards now point to real downloadable/openable resources.
-- courses/ied/units/unit-0.html through unit-7.html: added Linked Lesson Resources sections.
+- courses/ied/units/unit-0.html through unit-6.html: added Linked Lesson Resources sections.
 
