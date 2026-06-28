@@ -2,8 +2,8 @@
 const IED_UNITS = {
   "0": {
     "title": "Engineering Design Foundations",
-    "project": "Aerospace Rescue Challenge",
-    "cert": "Engineering Safety Certification",
+    "project": "Rocket Launch Pad Design Challenge",
+    "cert": "Engineering Safety Readiness + Unit 0 Portfolio",
     "lessons": [
       "Course Launch & Engineering Mindset",
       "Engineering Notebook Setup & Course Resources",
@@ -11,10 +11,12 @@ const IED_UNITS = {
       "Engineering Design Process",
       "Engineering Notebook & Documentation Basics",
       "Problem Definition, Criteria & Constraints",
-      "Team Roles & Collaboration",
-      "Research & Requirements",
-      "Aerospace Rescue Challenge",
-      "Safety Certification & Reflection"
+      "Rocket Launch Pad Design Challenge Launch",
+      "Launch Pad Build Plan",
+      "Launch Pad Prototype Build Day",
+      "Launch Pad Testing and Improvement",
+      "Launch Pad Final Documentation and Design Review",
+      "Unit 0 Portfolio Check and Design Reflection"
     ]
   },
   "1": {
