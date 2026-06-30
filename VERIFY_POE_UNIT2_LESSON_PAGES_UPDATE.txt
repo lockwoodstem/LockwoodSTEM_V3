@@ -1,0 +1,18 @@
+POE Unit 2 lesson page update
+
+Added:
+- courses/poe/units/unit-2.html
+- courses/poe/lessons/unit-2-lesson-01.html through unit-2-lesson-18.html
+
+Updated:
+- courses/poe/index.html now links Unit 2 and marks it ready.
+
+Unit 2 title:
+- Built to Survive: Aerospace Structures, Materials & Testing
+
+Project:
+- Aerospace Payload Support Structure Challenge
+
+Notes:
+- CAD Resources section appears above Linked Lesson Resources on the Unit 2 page.
+- Lesson pages are student-facing and use the same navigation/checklist structure as POE Units 0 and 1.
