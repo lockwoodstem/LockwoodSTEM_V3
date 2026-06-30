@@ -1,0 +1,5 @@
+VISIBLE UPDATE COMPLETE
+Homepage now includes direct POE Unit 0 button.
+Courses page now says Unit 0 is active and includes direct POE/Unit 0 buttons.
+POE hub includes a Now Active callout above the course pathway.
+Direct Unit 0 page: courses/poe/units/unit-0.html
