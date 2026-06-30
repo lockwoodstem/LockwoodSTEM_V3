@@ -1,0 +1,3 @@
+POE common template resources update
+
+Added generic LockwoodSTEM project support templates to courses/poe/index.html and linked existing generic templates where already available. New templates: notebook entry, design brief, test plan, project reflection, rubric template, test data table, final design review slides. Existing generic templates reused: decision matrix, design review form, BOM/graph/sketch resources.

@@ -11,7 +11,7 @@ Unit 2 title:
 - Built to Survive: Aerospace Structures, Materials & Testing
 
 Project:
-- Aerospace Payload Support Structure Challenge
+- Rover Payload Support Structure Challenge
 
 Notes:
 - CAD Resources section appears above Linked Lesson Resources on the Unit 2 page.

@@ -7,6 +7,6 @@ Created:
 Updated:
 - courses/poe/index.html now links Unit 1 and marks Unit 1 ready.
 
-Unit title: Mechanisms of Flight: Energy, Power & Aerospace Machines
-Project: VEX Aerospace Mechanisms Challenge
+Unit title: Mechanisms for Space Missions: Energy, Power & Aerospace Machines
+Project: VEX Rover Mechanisms Challenge
 Lesson count: 18

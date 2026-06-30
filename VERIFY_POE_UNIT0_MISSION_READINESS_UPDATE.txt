@@ -5,10 +5,10 @@ Added:
 - Unit 0 lesson map with 12 lessons
 - Required shared FabLab certification section linking to existing certification pages
 - Fusion 360 refresher lessons
-- VEX and Robolink drone readiness orientation
+- VEX and robotic rover platform readiness orientation
 - Aerospace readiness mini-challenge section
 - CAD Resources section above Linked Lesson Resources
 
 Updated:
 - courses/poe/index.html with stronger Unit 0-5 aerospace unit names
-- Home and course page POE descriptions updated to reflect VEX, drones, structures, flight data, and no CNC in POE for now
+- Home and course page POE descriptions updated to reflect VEX, rovers, structures, mission data, and no CNC in POE for now
