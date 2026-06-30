@@ -2,6 +2,7 @@
 :root{
   --navy:#0B1F3A;
   --navy-2:#102A4C;
+  --navy2:#102A4C;
   --navy-3:#07172B;
   --gold:#C8A24A;
   --gold-soft:#E6D39A;
@@ -1285,3 +1286,8 @@ main .btn.secondary,
   border: 1px solid rgba(17, 24, 39, 0.1);
   margin-bottom: 0.8rem;
 }
+
+
+/* QA polish: reusable card grids used by unit/resource pages */
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.35rem}
+@media(max-width:1000px){.card-grid{grid-template-columns:1fr}}
