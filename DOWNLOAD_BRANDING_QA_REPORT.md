@@ -1,57 +1,37 @@
-# Downloadable Resource Branding QA Report
+# Download Branding QA Report
 
-## Branding standard applied
+Branding cleanup completed for the downloadable resource documents.
 
-The downloadable resource library now aligns to the LockwoodSTEM website visual system:
+## Requested cleanup
 
-- Primary brand: `LockwoodSTEM`
-- Supporting label: `Student Engineering Hub`
-- Primary color: navy `#0B1F3A`
-- Accent color: gold `#C8A24A`
-- Soft accent: `#E6D39A`
-- Student-facing tone with no resource-status tags such as `NEW` or `EXISTING GENERIC`
+- Removed visible `LS-TMP-###` and `LS-REF-###` document-title strings from resource document headers, footers, and title/header areas.
+- Kept filenames unchanged so existing website links continue to work.
+- Cleaned the footer-center area of the resource PDFs so the LockwoodSTEM logo is no longer covered by footer text or clipped at the bottom.
+- Updated editable DOCX templates so the top-right document code is removed.
+- Updated editable XLSX templates so the visible sheet title no longer starts with an LS document code.
+- Rebuilt the POE common template package using the cleaned PDFs, DOCX files, XLSX files, and slide resources.
 
-## Scope reviewed
+## Verification performed
 
-Reviewed downloadable classroom resources in the site package, including:
+- Rendered and visually checked representative cleaned PDFs:
+  - Engineering Graph Paper Landscape
+  - Decision Matrix Template
+  - Line Conventions Guide
+- Rendered and visually checked a representative DOCX template:
+  - Engineering Notebook Entry Template
+- Rendered and checked a representative XLSX template:
+  - Decision Matrix Template
+- Scanned cleaned resource PDFs, DOCX XML, PPTX XML, and XLSX XML for remaining visible `LS-TMP-###` or `LS-REF-###` document-code strings.
+- Scanned editable XLSX templates for formula errors.
 
-- Printable PDF templates
-- PDF reference guides
-- IED course documents
-- POE project briefs and packets
-- Editable DOCX templates
-- Editable XLSX templates
-- Presentation templates and student deck exports
-- The POE Common Template Pack ZIP
+## Results
 
-## Updates made
+- Resource PDFs scanned: no remaining visible `LS-TMP-###` or `LS-REF-###` text.
+- Editable DOCX templates scanned: no remaining `LS-TMP-###` or `LS-REF-###` text.
+- Editable XLSX templates scanned: no remaining `LS-TMP-###` or `LS-REF-###` text; no formula errors found.
+- PPTX template scanned: no `LS-TMP-###` or `LS-REF-###` text in slide XML.
+- Footer logo placement reviewed: logo is centered above the footer rule and not covered by footer text.
 
-- Added a consistent LockwoodSTEM footer treatment to printable PDFs and project/resource PDFs where appropriate.
-- Rebuilt the Design Review Form DOCX so it matches the newer LockwoodSTEM template style.
-- Re-exported matching branded PDFs for editable DOCX template resources.
-- Updated XLSX templates with navy/gold LockwoodSTEM header treatment.
-- Removed leftover `generic template` wording from downloadable templates and visible POE resource copy.
-- Rebuilt the POE Common Template Pack so its files match the updated branded resources.
-- Removed unlinked legacy package ZIPs that contained older/inconsistent resource files.
+## Note
 
-## Presentation handling
-
-The large IED student unit decks were reviewed but not stamped with an added footer overlay because they already use the LockwoodSTEM navy/gold slide theme. Adding a PDF footer to every slide would interfere with slide design. The Final Design Review slide template remains included in the branded POE/common template pack.
-
-## Final QA checks
-
-- Local HTML links/resources checked: 6,476
-- Broken local links/resources: 0
-- Downloadable PDF/DOCX/XLSX/PPTX files missing LockwoodSTEM text after update: 0
-- Spreadsheet formula error scan: 0 detected `#REF!`, `#DIV/0!`, `#VALUE!`, `#NAME?`, or `#N/A` entries in the editable XLSX templates
-- DOCX templates rendered for layout verification after branding updates
-
-## Notes for future updates
-
-When adding a new downloadable resource, use the same branding pattern:
-
-1. Navy document title/header
-2. Gold accent rule or bar
-3. LockwoodSTEM label
-4. `Student Engineering Hub` footer or subtitle
-5. No temporary status tags on student-facing resource cards
+The file names still include the `LS-TMP` / `LS-REF` prefixes to preserve existing resource links and file organization. The visible document headers/footers/titles have been cleaned.
