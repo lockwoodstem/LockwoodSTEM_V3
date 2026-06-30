@@ -1,0 +1,30 @@
+POE Full Website QA Pass
+
+Source ZIP reviewed:
+LockwoodSTEM_Site_POE_Unit5_All_Lesson_Pages_Added.zip
+
+QA checks completed:
+- Verified all internal links, image sources, script sources, and stylesheet links resolve successfully.
+- Verified all internal anchor links resolve successfully.
+- Verified all POE Unit 0-5 overview pages link to their expected lesson pages.
+- Verified all POE lesson pages include previous/next navigation.
+- Added next-unit navigation on final lessons for Units 0-4.
+- Verified CAD Resources appears before Linked Lesson Resources on each POE unit page.
+- Removed outdated direct Open Unit 0 buttons from the main homepage and Courses page.
+- Updated homepage/Courses page copy to describe the full POE Unit 0-5 build instead of only Unit 0.
+- Removed outdated placeholder/development phrases from POE pages.
+- Replaced teacher-facing wording such as "teacher-approved" with student-facing "approved custom" language.
+- Verified all images include alt text.
+- Verified no duplicate HTML IDs were detected.
+
+Files updated during QA:
+- index.html
+- courses.html
+- courses/poe/units/unit-0.html through unit-5.html copy cleanup where needed
+- courses/poe/lessons/unit-0-lesson-12.html
+- courses/poe/lessons/unit-1-lesson-18.html
+- courses/poe/lessons/unit-2-lesson-18.html
+- courses/poe/lessons/unit-3-lesson-18.html
+- courses/poe/lessons/unit-4-lesson-18.html
+- courses/poe/lessons/unit-0-lesson-11.html
+- courses/poe/lessons/unit-4-lesson-15.html
