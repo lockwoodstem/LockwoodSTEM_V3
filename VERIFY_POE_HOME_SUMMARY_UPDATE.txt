@@ -1,5 +1,0 @@
-POE home page cleanup completed.
-- Removed Open Unit 0 buttons from courses/poe/index.html.
-- Removed the extra POE Unit 0 callout card from the POE home page.
-- Replaced Core topics / Aerospace lens paragraphs in the course pathway unit cards with 2-3 sentence summaries.
-- Kept the Unit 0 title linked in the course pathway.

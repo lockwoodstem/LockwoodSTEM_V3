@@ -1,8 +1,0 @@
-POE common template build update
-- Added POE common template links to the POE hub.
-- Reused existing generic LockwoodSTEM templates where already present and not course-specific.
-- Added new generic LockwoodSTEM templates for Engineering Notebook Entry, Design Brief, Test Plan, Project Reflection, Rubric, Test Data Table, and Final Design Review Slides.
-- Updated Decision Matrix spreadsheet formulas to remove visible rank formula errors in a blank template.
-- Rebuilt the POE common template pack.
-- Verified DOCX templates by rendering each to PNG.
-- Verified final design review slide template by rendering to PDF/PNG.

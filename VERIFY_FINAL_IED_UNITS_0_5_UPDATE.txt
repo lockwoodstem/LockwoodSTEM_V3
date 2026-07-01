@@ -1,1 +1,0 @@
-Updated IED site and syllabus to final Units 0-5 structure. Unit 4 is Aerospace Mechanisms, Materials & Electromechanical Systems with lessons 4.1-4.22. Unit 5 is Human-Centered Aerospace Design Capstone with lessons 5.1-5.18. Updated course hub, unit pages, lesson JS data, syllabus PDF, and signature page.

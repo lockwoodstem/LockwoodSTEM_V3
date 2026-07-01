@@ -1,1 +1,0 @@
-Removed the Open POE button from the Courses hub card while keeping the Principles of Engineering title link active.

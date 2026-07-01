@@ -1,1 +1,0 @@
-Updated IED website course structure to Units 0-5, rebuilt Unit 3 as CAD Assemblies, Mechanisms & Technical Drawings with lessons 3.1-3.17, added 3D printed rocket assembly prototype workflow, removed stale Unit 6 page, and updated syllabus PDF to match the new unit structure.

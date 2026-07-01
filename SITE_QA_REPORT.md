@@ -24,3 +24,11 @@ Completed QA pass on the student site package.
 ## Notes
 - The current source ZIP uses an AED Units 0–5 structure. This QA pass did not restructure AED into Units 0–7.
 - Teacher approval wording remains on certification pages because it is part of the student-facing certification process.
+
+
+## Post-Rename URL/File QA
+
+- Course URL folders renamed to full descriptive paths.
+- Downloadable course files use AED/ASE naming.
+- 6,476 local links/resources checked after rename.
+- 0 broken local links/resources found.

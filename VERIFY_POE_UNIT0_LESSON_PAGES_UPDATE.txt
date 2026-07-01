@@ -1,3 +1,0 @@
-POE Unit 0 lesson pages added.
-Created 12 static lesson pages in courses/poe/lessons/.
-Updated courses/poe/units/unit-0.html lesson map with lesson links and Open Lesson buttons.

@@ -1,8 +1,0 @@
-Verified update notes:
-- IED hub now displays Units 0–6.
-- Previous Units 1 and 2 are merged into Unit 1: Technical Sketching & Engineering Documentation.
-- Unit 1 includes Lessons 1.1–1.22.
-- Starting with Lesson 1.11, lessons use a teacher-provided 3D printed rocket assembly.
-- Lesson 1.22 is Final Rocket Assembly Proposal Presentation.
-- Previous CAD, drawings, assemblies, prototyping, and capstone units shifted down to Units 2–6.
-- Old unit-7.html was removed.

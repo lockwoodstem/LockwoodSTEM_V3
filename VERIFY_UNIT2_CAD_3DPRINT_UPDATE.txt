@@ -1,3 +1,0 @@
-Unit 2 has been rebuilt as CAD Modeling, Parametric Design & 3D Printing.
-
-Includes lessons 2.1–2.18, final project choices for tolerance testers, 3D printing slicer/certification/post-processing lessons, and embedded YouTube tutorial iframes in relevant lessons.

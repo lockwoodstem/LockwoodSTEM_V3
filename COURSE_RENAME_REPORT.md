@@ -1,21 +1,38 @@
-# Course Rename Report
+# Course URL and Download Filename Rename Report
 
-## New public-facing course names
+## Final public-facing course list
 
-| Course | Short label | Public path |
-|---|---|---|
-| Aerospace Engineering Design | AED | `courses/aed/` |
-| Aerospace Systems Engineering | ASE | `courses/ase/` |
+| Previous public label | New public label | Short label | Public URL folder |
+|---|---|---|---|
+| Introduction to Engineering Design | Aerospace Engineering Design | AED | `courses/aerospace-engineering-design/` |
+| Principles of Engineering | Aerospace Systems Engineering | ASE | `courses/aerospace-systems-engineering/` |
 
-## Renaming completed
+## Structural updates completed
 
-- Replaced visible legacy course names and acronyms across HTML, CSS, JavaScript, Markdown, and text files.
-- Renamed public course folders to `courses/aed/` and `courses/ase/`.
-- Renamed downloadable course files using `AED` and `ASE` naming.
-- Replaced legacy course names/acronyms inside editable DOCX files, PPTX files, and searchable PDF text where present.
-- Rebuilt the `LockwoodSTEM_ASE_Common_Template_Pack.zip` package.
+- Renamed `courses/aed/` to `courses/aerospace-engineering-design/`
+- Renamed `courses/ase/` to `courses/aerospace-systems-engineering/`
+- Renamed `downloads/project-briefs/ase/` to `downloads/project-briefs/aerospace-systems-engineering/`
+- Updated all local HTML/JS/CSS/MD/TXT references to the new course and resource paths
+- Confirmed old `ied`, `poe`, `courses/aed`, `courses/ase`, and `project-briefs/ase` paths no longer appear in site text or file paths
 
-## Current public course list
+## Downloadable file naming
 
-1. **Aerospace Engineering Design** - foundational engineering design, CAD, prototyping, technical drawings, and aerospace-focused design challenges.
-2. **Aerospace Systems Engineering** - mechanisms, structures, energy, electrical/control systems, data analysis, and integrated aerospace rover systems.
+Downloadable course files now use the LockwoodSTEM course abbreviations:
+
+- `AED_...` for Aerospace Engineering Design resources
+- `ASE_...` for Aerospace Systems Engineering resources
+
+Examples:
+
+- `AED_Unit0_Student_Deck.pdf`
+- `AED_Syllabus_2026_2027.pdf`
+- `ASE_Project_Brief_Packet.pdf`
+- `ASE_Aerospace_Rover_Systems_Engineering_Build_Guide.pdf`
+- `LockwoodSTEM_ASE_Common_Template_Pack.zip`
+
+## QA results
+
+- Local links/resources checked: 6,476
+- Broken local links/resources: 0
+- Old PLTW/IED/POE text references found in text-based site files: 0
+- Old course URL folder references found: 0
