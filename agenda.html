@@ -32,7 +32,7 @@
     </div>
     <aside class="card dark">
       <span class="tag">Courses</span>
-      <h3>IED • POE • Advanced Manufacturing</h3>
+      <h3>AED • ASE • Advanced Manufacturing</h3>
       <p>The agenda uses the existing course selector, day/week view, and Google Sheets connection.</p>
     </aside>
   </div>
@@ -45,8 +45,8 @@
         <div class="agenda-control">
           <label for="courseSelect">Course</label>
           <select id="courseSelect">
-            <option value="IED">IED</option>
-            <option value="POE">POE</option>
+            <option value="AED">AED</option>
+            <option value="ASE">ASE</option>
             <option value="AM">Advanced Manufacturing</option>
           </select>
         </div>
@@ -73,8 +73,8 @@
 </section>
 <script>
 const csvUrls = {
-  IED: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4L3J5287xZ94Awc47kSrjAKOUIenbvYYlt15zdUAM4oL7Z_nVNegZ8M84JiKfrCr2x4FATCDS81Ng/pub?gid=1181780759&single=true&output=csv",
-  POE: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4L3J5287xZ94Awc47kSrjAKOUIenbvYYlt15zdUAM4oL7Z_nVNegZ8M84JiKfrCr2x4FATCDS81Ng/pub?gid=94192821&single=true&output=csv",
+  AED: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4L3J5287xZ94Awc47kSrjAKOUIenbvYYlt15zdUAM4oL7Z_nVNegZ8M84JiKfrCr2x4FATCDS81Ng/pub?gid=1181780759&single=true&output=csv",
+  ASE: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4L3J5287xZ94Awc47kSrjAKOUIenbvYYlt15zdUAM4oL7Z_nVNegZ8M84JiKfrCr2x4FATCDS81Ng/pub?gid=94192821&single=true&output=csv",
   AM: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4L3J5287xZ94Awc47kSrjAKOUIenbvYYlt15zdUAM4oL7Z_nVNegZ8M84JiKfrCr2x4FATCDS81Ng/pub?gid=646728293&single=true&output=csv"
 };
 
@@ -82,7 +82,7 @@ const quotesCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4L3J5287
 
 let rows = [];
 let quoteRows = [];
-let currentCourse = "IED";
+let currentCourse = "AED";
 let currentDate = "";
 let viewMode = "day";
 
@@ -101,11 +101,11 @@ const els = {
 };
 
 function setTheme(course) {
-  document.body.classList.remove("theme-ied", "theme-poe", "theme-am");
+  document.body.classList.remove("theme-aed", "theme-ase", "theme-am");
 
-  if (course === "POE") document.body.classList.add("theme-poe");
+  if (course === "ASE") document.body.classList.add("theme-ase");
   else if (course === "AM") document.body.classList.add("theme-am");
-  else document.body.classList.add("theme-ied");
+  else document.body.classList.add("theme-aed");
 }
 
 function courseName(course) {
@@ -519,7 +519,7 @@ els.todayBtn.addEventListener("click", () => {
 
 (async function init() {
   await loadQuotes();
-  await loadAgendaForCourse("IED");
+  await loadAgendaForCourse("AED");
 })();
 
 </script>

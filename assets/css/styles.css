@@ -40,7 +40,7 @@ main{padding-bottom:5rem}section{padding:4.25rem 0 0}.section-header{display:fle
 @media(max-width:980px){.nav{align-items:flex-start;flex-direction:column;padding:1rem 0}.nav-toggle{display:inline-flex}.nav-links{display:none;width:100%;flex-direction:column;align-items:stretch}.nav-links.open{display:flex}.nav-links a{display:block}.hero-grid,.grid,.grid.two,.grid.four,.lesson-layout,.lesson-grid{grid-template-columns:1fr}.unit-row{grid-template-columns:1fr}.side-panel{position:static}.course-card{min-height:auto}.hero h1,.page-hero h1{font-size:clamp(2.4rem,12vw,4rem)}}
 
 
-/* RC3 lesson-page polish: align dynamic IED lesson pages with the homepage theme */
+/* RC3 lesson-page polish: align dynamic AED lesson pages with the homepage theme */
 .lesson-page .site-header .brand-logo{
   background:#FFFFFF;
   border:1px solid rgba(255,255,255,.22);
@@ -200,7 +200,7 @@ main{padding-bottom:5rem}section{padding:4.25rem 0 0}.section-header{display:fle
   margin-top:.75rem;
 }
 
-/* RC4c: simplified IED unit cards */
+/* RC4c: simplified AED unit cards */
 .unit-card p:last-of-type{
   margin-bottom:1rem;
 }

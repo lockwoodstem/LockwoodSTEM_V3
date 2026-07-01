@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ASE Lesson 3.10 | LockwoodSTEM</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../../assets/css/styles.css">
+<script defer src="../../../assets/js/main.js"></script>
+</head>
+<body class="lesson-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../../../index.html" aria-label="LockwoodSTEM home">
+      <img class="brand-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
+      <span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">Menu</button>
+    <ul class="nav-links"><li><a href="../../../courses.html" aria-current="page">Courses</a></li><li><a href="../../../agenda.html">Daily Agenda</a></li><li><a href="../../../resources/index.html">Resources</a></li><li><a href="../../../certifications/index.html">Certifications</a></li><li><a href="../../../fablab/index.html">FabLab</a></li><li><a href="../../../about/index.html">About</a></li></ul>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero lesson-hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">ASE Unit 3 • Lesson 3.10</div>
+      <h1>Motors, Servos, and Actuators</h1>
+      <p>Compare motors, servos, and other actuators for positioning, lifting, opening, or signaling tasks.</p>
+      <div class="lesson-nav"><a class="btn secondary" href="unit-3-lesson-09.html">Previous: 3.9</a>
+<a class="btn" href="unit-3-lesson-11.html">Next: 3.11</a></div>
+    </div>
+    <aside class="card dark">
+      <span class="tag">Unit Connection</span>
+      <h3>Autonomous Rover Systems: Controls, Sensors &amp; Fluid Power</h3>
+      <p><strong>Focus Question:</strong> How can automated aerospace systems use logic, sensors, actuators, and feedback to complete a mission safely and reliably?</p>
+    </aside>
+  </div>
+</section>
+
+<section class="light-section lesson-content-section">
+  <div class="container lesson-layout lesson-accordion-layout">
+    <article class="lesson-main">
+      <section class="lesson-section">
+        <h2><span class="section-number">✓</span>Lesson Snapshot</h2>
+        <div class="lesson-mini-grid">
+          <div class="card"><h3>Student Objective</h3><p>I can explain how actuators convert control signals into motion.</p></div>
+          <div class="card"><h3>Main Activity</h3><p>Compare motors, servos, and other actuators for positioning, lifting, opening, or signaling tasks.</p></div>
+          <div class="card"><h3>Deliverable</h3><p>Actuator selection notes</p></div>
+          <div class="card"><h3>Tools / Materials</h3><p>VEX motors/servos if available, rover examples, notebook</p></div>
+        </div>
+      </section>
+
+      <details class="lesson-accordion" open>
+  <summary>
+    <span class="accordion-stripe"></span>
+    <span class="accordion-title-wrap"><span class="accordion-number">1</span><span><strong>Problem</strong><em>Understand the challenge and why it matters.</em></span></span>
+    <span class="accordion-icon" aria-hidden="true"></span>
+  </summary>
+  <div class="accordion-body"><p>A control system needs actuators to turn decisions into action. Choosing the wrong actuator can make a system too weak, too fast, too imprecise, or unsafe.</p></div>
+</details>
+      <details class="lesson-accordion" open>
+  <summary>
+    <span class="accordion-stripe"></span>
+    <span class="accordion-title-wrap"><span class="accordion-number">2</span><span><strong>Concept</strong><em>Learn the engineering idea or skill.</em></span></span>
+    <span class="accordion-icon" aria-hidden="true"></span>
+  </summary>
+  <div class="accordion-body"><p>Actuators create motion or force. Motors rotate continuously, servos position to angles, and linear or fluid-power actuators create straight-line motion.</p></div>
+</details>
+      <details class="lesson-accordion" open>
+  <summary>
+    <span class="accordion-stripe"></span>
+    <span class="accordion-title-wrap"><span class="accordion-number">3</span><span><strong>Apply</strong><em>Use the skill in a guided task.</em></span></span>
+    <span class="accordion-icon" aria-hidden="true"></span>
+  </summary>
+  <div class="accordion-body"><p>Match several actuator types to aerospace ground-support tasks such as opening a gate, raising a signal, rotating a beacon, or positioning a platform.</p></div>
+</details>
+      <details class="lesson-accordion" open>
+  <summary>
+    <span class="accordion-stripe"></span>
+    <span class="accordion-title-wrap"><span class="accordion-number">4</span><span><strong>Document</strong><em>Record your evidence and decisions.</em></span></span>
+    <span class="accordion-icon" aria-hidden="true"></span>
+  </summary>
+  <div class="accordion-body"><p>Record each task, possible actuator, required motion, advantage, limitation, and safety concern.</p></div>
+</details>
+      <details class="lesson-accordion" open>
+  <summary>
+    <span class="accordion-stripe"></span>
+    <span class="accordion-title-wrap"><span class="accordion-number">5</span><span><strong>Review</strong><em>Check quality and identify your next step.</em></span></span>
+    <span class="accordion-icon" aria-hidden="true"></span>
+  </summary>
+  <div class="accordion-body"><p>Your notes should justify why a specific actuator matches a specific task.</p></div>
+</details>
+
+      <section class="lesson-resources-panel">
+        <div class="section-header compact"><div><h2>Lesson Resources</h2><p class="section-subtitle">Use these files and shared website resources when they support today’s work.</p></div></div>
+        <div class="lesson-resource-grid">
+          <article class="lesson-resource-card">
+  <h3>Engineering Graph Paper</h3>
+  <p>Use for flowcharts, system diagrams, calculations, mission layouts, and design sketches.</p>
+  <a class="btn small" href="../../../downloads/templates/LS-TMP-001_Engineering_Graph_Paper.pdf">Open Resource</a>
+</article>
+<article class="lesson-resource-card">
+  <h3>Measurement Data Sheet</h3>
+  <p>Use for rover trials, actuator tests, timing data, accuracy measurements, and observations.</p>
+  <a class="btn small" href="../../../downloads/templates/LS-TMP-008_Measurement_Data_Sheet.pdf">Open Resource</a>
+</article>
+<article class="lesson-resource-card">
+  <h3>Engineering Resource Library</h3>
+  <p>Templates, reference sheets, sketch paper, and course support files.</p>
+  <a class="btn small" href="../../../resources/index.html">Open Resource</a>
+</article>
+        </div>
+      </section>
+      <div class="lesson-nav lesson-bottom-nav"><a class="btn secondary" href="unit-3-lesson-09.html">Previous: 3.9</a>
+<a class="btn" href="unit-3-lesson-11.html">Next: 3.11</a></div>
+    </article>
+
+    <aside class="card sidebar lesson-sidebar desktop-checklist">
+      <span class="tag">Lesson Checklist</span>
+      <h3>Check your work</h3>
+      <ul class="true-checklist"><li><label><input type="checkbox"> <span>I recorded today’s objective, activity, and deliverable in my notebook.</span></label></li>
+<li><label><input type="checkbox"> <span>My evidence includes labels, units, sketches, calculations, code evidence, or data where needed.</span></label></li>
+<li><label><input type="checkbox"> <span>I can explain how today’s lesson connects to aerospace control systems, rovers, VEX, or fluid power.</span></label></li></ul>
+      <div class="sidebar-lesson-buttons"><a class="btn secondary" href="../units/unit-3.html">Back to Unit 3</a></div>
+      <div class="progress-dots" aria-label="Unit 3 lesson navigation"><a class="" href="unit-3-lesson-01.html" aria-label="Lesson 3.1">3.1</a><a class="" href="unit-3-lesson-02.html" aria-label="Lesson 3.2">3.2</a><a class="" href="unit-3-lesson-03.html" aria-label="Lesson 3.3">3.3</a><a class="" href="unit-3-lesson-04.html" aria-label="Lesson 3.4">3.4</a><a class="" href="unit-3-lesson-05.html" aria-label="Lesson 3.5">3.5</a><a class="" href="unit-3-lesson-06.html" aria-label="Lesson 3.6">3.6</a><a class="" href="unit-3-lesson-07.html" aria-label="Lesson 3.7">3.7</a><a class="" href="unit-3-lesson-08.html" aria-label="Lesson 3.8">3.8</a><a class="" href="unit-3-lesson-09.html" aria-label="Lesson 3.9">3.9</a><a class="current" href="unit-3-lesson-10.html" aria-label="Lesson 3.10">3.10</a><a class="" href="unit-3-lesson-11.html" aria-label="Lesson 3.11">3.11</a><a class="" href="unit-3-lesson-12.html" aria-label="Lesson 3.12">3.12</a><a class="" href="unit-3-lesson-13.html" aria-label="Lesson 3.13">3.13</a><a class="" href="unit-3-lesson-14.html" aria-label="Lesson 3.14">3.14</a><a class="" href="unit-3-lesson-15.html" aria-label="Lesson 3.15">3.15</a><a class="" href="unit-3-lesson-16.html" aria-label="Lesson 3.16">3.16</a><a class="" href="unit-3-lesson-17.html" aria-label="Lesson 3.17">3.17</a><a class="" href="unit-3-lesson-18.html" aria-label="Lesson 3.18">3.18</a></div>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img class="footer-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo"><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../courses.html">Courses</a> <a href="../../../agenda.html">Daily Agenda</a> <a href="../../../resources/index.html">Resources</a> <a href="../../../certifications/index.html">Certifications</a> <a href="../../../fablab/index.html">FabLab</a> <a href="../../../about/index.html">About</a></div></div></footer>
+</body>
+</html>
