@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>POE 3.2 Line-Following Recovery Logic | LockwoodSTEM</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../../../assets/css/styles.css">
+<script defer src="../../../../assets/js/main.js"></script>
+</head>
+<body class="safe-unit-page mission-brief-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../../../../index.html" aria-label="LockwoodSTEM home">
+      <img class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
+      <span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">Menu</button>
+    <ul class="nav-links"><li><a href="../../../../courses.html" aria-current="page">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../certifications/index.html">Certifications</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li><li><a href="../../../../about/index.html">About</a></li></ul>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero design-brief-hero"><div class="container hero-grid"><div><div class="eyebrow">POE Unit 3 | Mission Brief 3.2</div><h1>Line-Following Recovery Logic</h1><p>Program a rover to follow a path and recover when the line is temporarily lost.</p><div class="design-brief-meta"><span>Advanced</span><span>2 class periods</span><span>Engineering Challenge</span></div><div class="hero-actions"><a class="btn" href="challenges.html">Back to Challenge Hub</a><a class="btn secondary" href="../../../../downloads/challenges/poe/unit-3/POE-3-2-line-following-recovery-logic.pdf">Download Challenge Brief (PDF)</a></div></div><aside class="card dark"><span class="tag">Engineering Design Brief</span><h3>Work independently or with an approved partner.</h3><p>Read the complete brief before gathering materials or beginning construction.</p></aside></div></section>
+<section class="container design-brief-layout"><div>
+<article class="card design-brief-section"><div class="eyebrow">Background</div><h2>Engineering Context</h2><p>A warehouse-style rover transports equipment through a marked route. Dust or damaged floor markings may interrupt the path, so the rover needs recovery behavior.</p></article>
+<article class="card design-brief-section"><div class="eyebrow">Objectives</div><h2>What You Will Practice</h2><ul><li>Use feedback control</li><li>Create state-based logic</li><li>Test fault recovery</li><li>Measure path performance</li></ul></article>
+<article class="card design-brief-section"><div class="eyebrow">Materials</div><h2>What You Need</h2><ul><li>Rover with optical or line sensors</li><li>Marked course with one intentional gap</li><li>Programming environment</li><li>Stopwatch</li><li>Engineering notebook</li></ul></article>
+<article class="card design-brief-section"><div class="eyebrow">Procedure</div><h2>Student Instructions</h2><ol><li>Create baseline line-following logic and test it on a continuous path.</li><li>Define the conditions that indicate the line has been lost.</li><li>Design a recovery sequence such as stop, search left, search right, and timeout.</li><li>Add a safe stop if the line cannot be found.</li><li>Run five trials through a path containing a gap.</li><li>Record recovery success, completion time, and any departures from the lane.</li><li>Tune the logic and repeat five official trials.</li></ol></article>
+<article class="card design-brief-section"><div class="eyebrow">Requirements</div><h2>Engineering Requirements</h2><ul><li>Follow the normal path without manual control</li><li>Recover from the designated gap</li><li>Stop safely after the search timeout</li><li>Complete at least four of five official trials</li><li>Code must include meaningful comments</li></ul></article>
+<article class="card design-brief-section"><div class="eyebrow">Constraints</div><h2>Constraints &amp; Safety</h2><ul><li>Use low operating speed during development</li><li>Maintain a clear test area</li><li>Provide immediate stop control</li><li>Do not allow uncontrolled searching outside the boundary</li></ul></article>
+<article class="card design-brief-section"><div class="eyebrow">Deliverables</div><h2>What You Submit</h2><ul><li>State diagram</li><li>Commented code</li><li>Baseline and final results</li><li>Recovery success rate</li><li>Tuning explanation</li></ul></article>
+<article class="card design-brief-section"><div class="eyebrow">Reflection</div><h2>Reflection Questions</h2><ol><li>What event caused the rover to enter recovery mode?</li><li>Which search pattern worked best?</li><li>How did timeout length affect safety?</li><li>What additional sensor could improve recovery?</li></ol></article>
+</div><aside class="brief-sidebar">
+<a class="btn" href="../../../../downloads/challenges/poe/unit-3/POE-3-2-line-following-recovery-logic.pdf">Download PDF</a><button class="btn secondary" type="button" onclick="window.print()">Print This Page</button>
+<div class="brief-callout brief-tip"><strong>Engineering Tip</strong><p>Draw the control states before writing code: Follow, Lost, Search Left, Search Right, Stop.</p></div>
+<div class="brief-callout brief-warning"><strong>Common Mistake</strong><p>Adding more nested conditionals without a state plan can make recovery behavior unpredictable.</p></div>
+<div class="brief-callout"><strong>Stretch Goal</strong><p>Add a second fault such as an obstacle that interrupts the path.</p></div>
+<div class="brief-callout brief-career"><strong>Career Connection</strong><p>Autonomy engineers design fault-handling states so robotic vehicles remain safe when sensors or navigation references are lost.</p></div>
+<article class="card"><div class="eyebrow">Before You Submit</div><ul class="brief-checklist"><li>Notebook evidence included</li><li>Requirements checked</li><li>Testing documented</li><li>Reflection completed</li></ul></article>
+</aside></section></main>
+
+<footer class="footer"><div class="container footer-grid"><div><img class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo"><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a> <a href="../../../../agenda.html">Daily Agenda</a> <a href="../../../../resources/index.html">Resources</a> <a href="../../../../certifications/index.html">Certifications</a> <a href="../../../../fablab/index.html">FabLab</a> <a href="../../../../about/index.html">About</a></div></div></footer>
+</body>
+</html>

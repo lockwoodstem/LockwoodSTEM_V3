@@ -1,3017 +1,5 @@
 [
   {
-    "id": "CH-097",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Fablab Safety",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "Electronics"
-    ],
-    "mission": "Rebuild the core FabLab safety task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to FabLab safety.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the FabLab safety challenge more realistic."
-  },
-  {
-    "id": "CH-098",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Measurement",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX"
-    ],
-    "mission": "Combine measurement with another course skill and compare the results.",
-    "requirements": [
-      "Use measurement as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the measurement challenge more realistic."
-  },
-  {
-    "id": "CH-099",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Engineering Notebook",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics"
-    ],
-    "mission": "Create, test, and revise a solution centered on engineering notebook.",
-    "requirements": [
-      "Use engineering notebook as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the engineering notebook challenge more realistic."
-  },
-  {
-    "id": "CH-100",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Tool Certification",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools",
-      "Engineering Notebook"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving tool certification. Develop and justify your recommendation.",
-    "requirements": [
-      "Use tool certification as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the tool certification challenge more realistic."
-  },
-  {
-    "id": "CH-101",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Team Roles",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using team roles.",
-    "requirements": [
-      "Use team roles as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the team roles challenge more realistic."
-  },
-  {
-    "id": "CH-102",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: System Diagrams",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of system diagrams.",
-    "requirements": [
-      "Use system diagrams as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the system diagrams challenge more realistic."
-  },
-  {
-    "id": "CH-103",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Technical Communication",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX",
-      "Hand Tools"
-    ],
-    "mission": "Rebuild the core technical communication task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to technical communication.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the technical communication challenge more realistic."
-  },
-  {
-    "id": "CH-104",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Design Process",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics"
-    ],
-    "mission": "Combine design process with another course skill and compare the results.",
-    "requirements": [
-      "Use design process as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the design process challenge more realistic."
-  },
-  {
-    "id": "CH-105",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Fablab Safety",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on FabLab safety.",
-    "requirements": [
-      "Use FabLab safety as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the FabLab safety challenge more realistic."
-  },
-  {
-    "id": "CH-106",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Measurement",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools",
-      "VEX"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving measurement. Develop and justify your recommendation.",
-    "requirements": [
-      "Use measurement as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the measurement challenge more realistic."
-  },
-  {
-    "id": "CH-107",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Engineering Notebook",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using engineering notebook.",
-    "requirements": [
-      "Use engineering notebook as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the engineering notebook challenge more realistic."
-  },
-  {
-    "id": "CH-108",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Tool Certification",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of tool certification.",
-    "requirements": [
-      "Use tool certification as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the tool certification challenge more realistic."
-  },
-  {
-    "id": "CH-109",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Team Roles",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics",
-      "Data Tools"
-    ],
-    "mission": "Rebuild the core team roles task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to team roles.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the team roles challenge more realistic."
-  },
-  {
-    "id": "CH-110",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: System Diagrams",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Combine system diagrams with another course skill and compare the results.",
-    "requirements": [
-      "Use system diagrams as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the system diagrams challenge more realistic."
-  },
-  {
-    "id": "CH-111",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Technical Communication",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on technical communication.",
-    "requirements": [
-      "Use technical communication as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the technical communication challenge more realistic."
-  },
-  {
-    "id": "CH-112",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Engineering Readiness",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Design Process",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "Electronics"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving design process. Develop and justify your recommendation.",
-    "requirements": [
-      "Use design process as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the design process challenge more realistic."
-  },
-  {
-    "id": "CH-113",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Gear Trains",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "Electronics"
-    ],
-    "mission": "Rebuild the core gear trains task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to gear trains.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the gear trains challenge more realistic."
-  },
-  {
-    "id": "CH-114",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Mechanical Advantage",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX"
-    ],
-    "mission": "Combine mechanical advantage with another course skill and compare the results.",
-    "requirements": [
-      "Use mechanical advantage as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the mechanical advantage challenge more realistic."
-  },
-  {
-    "id": "CH-115",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Energy Transfer",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics"
-    ],
-    "mission": "Create, test, and revise a solution centered on energy transfer.",
-    "requirements": [
-      "Use energy transfer as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the energy transfer challenge more realistic."
-  },
-  {
-    "id": "CH-116",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Power",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools",
-      "Engineering Notebook"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving power. Develop and justify your recommendation.",
-    "requirements": [
-      "Use power as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the power challenge more realistic."
-  },
-  {
-    "id": "CH-117",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Efficiency",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using efficiency.",
-    "requirements": [
-      "Use efficiency as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the efficiency challenge more realistic."
-  },
-  {
-    "id": "CH-118",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Simple Machines",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of simple machines.",
-    "requirements": [
-      "Use simple machines as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the simple machines challenge more realistic."
-  },
-  {
-    "id": "CH-119",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Torque",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX",
-      "Hand Tools"
-    ],
-    "mission": "Rebuild the core torque task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to torque.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the torque challenge more realistic."
-  },
-  {
-    "id": "CH-120",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Motion",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics"
-    ],
-    "mission": "Combine motion with another course skill and compare the results.",
-    "requirements": [
-      "Use motion as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the motion challenge more realistic."
-  },
-  {
-    "id": "CH-121",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Gear Trains",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on gear trains.",
-    "requirements": [
-      "Use gear trains as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the gear trains challenge more realistic."
-  },
-  {
-    "id": "CH-122",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Mechanical Advantage",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools",
-      "VEX"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving mechanical advantage. Develop and justify your recommendation.",
-    "requirements": [
-      "Use mechanical advantage as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the mechanical advantage challenge more realistic."
-  },
-  {
-    "id": "CH-123",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Energy Transfer",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using energy transfer.",
-    "requirements": [
-      "Use energy transfer as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the energy transfer challenge more realistic."
-  },
-  {
-    "id": "CH-124",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Power",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of power.",
-    "requirements": [
-      "Use power as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the power challenge more realistic."
-  },
-  {
-    "id": "CH-125",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Efficiency",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics",
-      "Data Tools"
-    ],
-    "mission": "Rebuild the core efficiency task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to efficiency.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the efficiency challenge more realistic."
-  },
-  {
-    "id": "CH-126",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Simple Machines",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Combine simple machines with another course skill and compare the results.",
-    "requirements": [
-      "Use simple machines as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the simple machines challenge more realistic."
-  },
-  {
-    "id": "CH-127",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Torque",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on torque.",
-    "requirements": [
-      "Use torque as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the torque challenge more realistic."
-  },
-  {
-    "id": "CH-128",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 1,
-    "unitTitle": "Mechanisms, Energy & Power",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Motion",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "Electronics"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving motion. Develop and justify your recommendation.",
-    "requirements": [
-      "Use motion as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the motion challenge more realistic."
-  },
-  {
-    "id": "CH-129",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Trusses",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "Electronics"
-    ],
-    "mission": "Rebuild the core trusses task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to trusses.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the trusses challenge more realistic."
-  },
-  {
-    "id": "CH-130",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Beam Loading",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX"
-    ],
-    "mission": "Combine beam loading with another course skill and compare the results.",
-    "requirements": [
-      "Use beam loading as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the beam loading challenge more realistic."
-  },
-  {
-    "id": "CH-131",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Stress And Strain",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics"
-    ],
-    "mission": "Create, test, and revise a solution centered on stress and strain.",
-    "requirements": [
-      "Use stress and strain as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the stress and strain challenge more realistic."
-  },
-  {
-    "id": "CH-132",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Material Properties",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools",
-      "Engineering Notebook"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving material properties. Develop and justify your recommendation.",
-    "requirements": [
-      "Use material properties as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the material properties challenge more realistic."
-  },
-  {
-    "id": "CH-133",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Factor Of Safety",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using factor of safety.",
-    "requirements": [
-      "Use factor of safety as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the factor of safety challenge more realistic."
-  },
-  {
-    "id": "CH-134",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Statics",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of statics.",
-    "requirements": [
-      "Use statics as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the statics challenge more realistic."
-  },
-  {
-    "id": "CH-135",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Structural Optimization",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX",
-      "Hand Tools"
-    ],
-    "mission": "Rebuild the core structural optimization task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to structural optimization.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the structural optimization challenge more realistic."
-  },
-  {
-    "id": "CH-136",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Failure Analysis",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics"
-    ],
-    "mission": "Combine failure analysis with another course skill and compare the results.",
-    "requirements": [
-      "Use failure analysis as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the failure analysis challenge more realistic."
-  },
-  {
-    "id": "CH-137",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Trusses",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on trusses.",
-    "requirements": [
-      "Use trusses as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the trusses challenge more realistic."
-  },
-  {
-    "id": "CH-138",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Beam Loading",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools",
-      "VEX"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving beam loading. Develop and justify your recommendation.",
-    "requirements": [
-      "Use beam loading as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the beam loading challenge more realistic."
-  },
-  {
-    "id": "CH-139",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Stress And Strain",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using stress and strain.",
-    "requirements": [
-      "Use stress and strain as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the stress and strain challenge more realistic."
-  },
-  {
-    "id": "CH-140",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Material Properties",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of material properties.",
-    "requirements": [
-      "Use material properties as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the material properties challenge more realistic."
-  },
-  {
-    "id": "CH-141",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Factor Of Safety",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics",
-      "Data Tools"
-    ],
-    "mission": "Rebuild the core factor of safety task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to factor of safety.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the factor of safety challenge more realistic."
-  },
-  {
-    "id": "CH-142",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Statics",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Combine statics with another course skill and compare the results.",
-    "requirements": [
-      "Use statics as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the statics challenge more realistic."
-  },
-  {
-    "id": "CH-143",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Structural Optimization",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on structural optimization.",
-    "requirements": [
-      "Use structural optimization as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the structural optimization challenge more realistic."
-  },
-  {
-    "id": "CH-144",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 2,
-    "unitTitle": "Materials, Structures & Statics",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Failure Analysis",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "Electronics"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving failure analysis. Develop and justify your recommendation.",
-    "requirements": [
-      "Use failure analysis as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the failure analysis challenge more realistic."
-  },
-  {
-    "id": "CH-145",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Vex Robotics",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "Electronics"
-    ],
-    "mission": "Rebuild the core VEX robotics task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to VEX robotics.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the VEX robotics challenge more realistic."
-  },
-  {
-    "id": "CH-146",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Sensors",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX"
-    ],
-    "mission": "Combine sensors with another course skill and compare the results.",
-    "requirements": [
-      "Use sensors as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the sensors challenge more realistic."
-  },
-  {
-    "id": "CH-147",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Feedback",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics"
-    ],
-    "mission": "Create, test, and revise a solution centered on feedback.",
-    "requirements": [
-      "Use feedback as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the feedback challenge more realistic."
-  },
-  {
-    "id": "CH-148",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Autonomous Rover",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools",
-      "Engineering Notebook"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving autonomous rover. Develop and justify your recommendation.",
-    "requirements": [
-      "Use autonomous rover as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the autonomous rover challenge more realistic."
-  },
-  {
-    "id": "CH-149",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Control Logic",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using control logic.",
-    "requirements": [
-      "Use control logic as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the control logic challenge more realistic."
-  },
-  {
-    "id": "CH-150",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Programming",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of programming.",
-    "requirements": [
-      "Use programming as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the programming challenge more realistic."
-  },
-  {
-    "id": "CH-151",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Navigation",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX",
-      "Hand Tools"
-    ],
-    "mission": "Rebuild the core navigation task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to navigation.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the navigation challenge more realistic."
-  },
-  {
-    "id": "CH-152",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: System Integration",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics"
-    ],
-    "mission": "Combine system integration with another course skill and compare the results.",
-    "requirements": [
-      "Use system integration as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the system integration challenge more realistic."
-  },
-  {
-    "id": "CH-153",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Vex Robotics",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on VEX robotics.",
-    "requirements": [
-      "Use VEX robotics as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the VEX robotics challenge more realistic."
-  },
-  {
-    "id": "CH-154",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Sensors",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools",
-      "VEX"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving sensors. Develop and justify your recommendation.",
-    "requirements": [
-      "Use sensors as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the sensors challenge more realistic."
-  },
-  {
-    "id": "CH-155",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Feedback",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using feedback.",
-    "requirements": [
-      "Use feedback as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the feedback challenge more realistic."
-  },
-  {
-    "id": "CH-156",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Autonomous Rover",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of autonomous rover.",
-    "requirements": [
-      "Use autonomous rover as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the autonomous rover challenge more realistic."
-  },
-  {
-    "id": "CH-157",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Control Logic",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics",
-      "Data Tools"
-    ],
-    "mission": "Rebuild the core control logic task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to control logic.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the control logic challenge more realistic."
-  },
-  {
-    "id": "CH-158",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Programming",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Combine programming with another course skill and compare the results.",
-    "requirements": [
-      "Use programming as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the programming challenge more realistic."
-  },
-  {
-    "id": "CH-159",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Navigation",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on navigation.",
-    "requirements": [
-      "Use navigation as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the navigation challenge more realistic."
-  },
-  {
-    "id": "CH-160",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 3,
-    "unitTitle": "Control Systems, Robotics & Autonomous Systems",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: System Integration",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "Electronics"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving system integration. Develop and justify your recommendation.",
-    "requirements": [
-      "Use system integration as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the system integration challenge more realistic."
-  },
-  {
-    "id": "CH-161",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Ohm'S Law",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "Electronics"
-    ],
-    "mission": "Rebuild the core Ohm's law task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to Ohm's law.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the Ohm's law challenge more realistic."
-  },
-  {
-    "id": "CH-162",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Series Circuits",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX"
-    ],
-    "mission": "Combine series circuits with another course skill and compare the results.",
-    "requirements": [
-      "Use series circuits as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the series circuits challenge more realistic."
-  },
-  {
-    "id": "CH-163",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Parallel Circuits",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics"
-    ],
-    "mission": "Create, test, and revise a solution centered on parallel circuits.",
-    "requirements": [
-      "Use parallel circuits as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the parallel circuits challenge more realistic."
-  },
-  {
-    "id": "CH-164",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Voltage Dividers",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools",
-      "Engineering Notebook"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving voltage dividers. Develop and justify your recommendation.",
-    "requirements": [
-      "Use voltage dividers as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the voltage dividers challenge more realistic."
-  },
-  {
-    "id": "CH-165",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Sensors",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using sensors.",
-    "requirements": [
-      "Use sensors as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the sensors challenge more realistic."
-  },
-  {
-    "id": "CH-166",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Motors",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of motors.",
-    "requirements": [
-      "Use motors as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the motors challenge more realistic."
-  },
-  {
-    "id": "CH-167",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Power Budgeting",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX",
-      "Hand Tools"
-    ],
-    "mission": "Rebuild the core power budgeting task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to power budgeting.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the power budgeting challenge more realistic."
-  },
-  {
-    "id": "CH-168",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Troubleshooting",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics"
-    ],
-    "mission": "Combine troubleshooting with another course skill and compare the results.",
-    "requirements": [
-      "Use troubleshooting as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the troubleshooting challenge more realistic."
-  },
-  {
-    "id": "CH-169",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Ohm'S Law",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on Ohm's law.",
-    "requirements": [
-      "Use Ohm's law as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the Ohm's law challenge more realistic."
-  },
-  {
-    "id": "CH-170",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Series Circuits",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools",
-      "VEX"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving series circuits. Develop and justify your recommendation.",
-    "requirements": [
-      "Use series circuits as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the series circuits challenge more realistic."
-  },
-  {
-    "id": "CH-171",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Parallel Circuits",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using parallel circuits.",
-    "requirements": [
-      "Use parallel circuits as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the parallel circuits challenge more realistic."
-  },
-  {
-    "id": "CH-172",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Voltage Dividers",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of voltage dividers.",
-    "requirements": [
-      "Use voltage dividers as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the voltage dividers challenge more realistic."
-  },
-  {
-    "id": "CH-173",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Sensors",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics",
-      "Data Tools"
-    ],
-    "mission": "Rebuild the core sensors task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to sensors.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the sensors challenge more realistic."
-  },
-  {
-    "id": "CH-174",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Motors",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Combine motors with another course skill and compare the results.",
-    "requirements": [
-      "Use motors as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the motors challenge more realistic."
-  },
-  {
-    "id": "CH-175",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Power Budgeting",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on power budgeting.",
-    "requirements": [
-      "Use power budgeting as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the power budgeting challenge more realistic."
-  },
-  {
-    "id": "CH-176",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 4,
-    "unitTitle": "Electrical Systems, Circuits & Sensors",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Troubleshooting",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "Electronics"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving troubleshooting. Develop and justify your recommendation.",
-    "requirements": [
-      "Use troubleshooting as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the troubleshooting challenge more realistic."
-  },
-  {
-    "id": "CH-177",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Systems Engineering",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "Electronics"
-    ],
-    "mission": "Rebuild the core systems engineering task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to systems engineering.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the systems engineering challenge more realistic."
-  },
-  {
-    "id": "CH-178",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Mission Requirements",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX"
-    ],
-    "mission": "Combine mission requirements with another course skill and compare the results.",
-    "requirements": [
-      "Use mission requirements as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the mission requirements challenge more realistic."
-  },
-  {
-    "id": "CH-179",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Trade Studies",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics"
-    ],
-    "mission": "Create, test, and revise a solution centered on trade studies.",
-    "requirements": [
-      "Use trade studies as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the trade studies challenge more realistic."
-  },
-  {
-    "id": "CH-180",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Integration Testing",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools",
-      "Engineering Notebook"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving integration testing. Develop and justify your recommendation.",
-    "requirements": [
-      "Use integration testing as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the integration testing challenge more realistic."
-  },
-  {
-    "id": "CH-181",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Risk Analysis",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using risk analysis.",
-    "requirements": [
-      "Use risk analysis as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the risk analysis challenge more realistic."
-  },
-  {
-    "id": "CH-182",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Verification",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of verification.",
-    "requirements": [
-      "Use verification as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the verification challenge more realistic."
-  },
-  {
-    "id": "CH-183",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Capstone Design",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX",
-      "Hand Tools"
-    ],
-    "mission": "Rebuild the core capstone design task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to capstone design.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the capstone design challenge more realistic."
-  },
-  {
-    "id": "CH-184",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Technical Presentation",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics"
-    ],
-    "mission": "Combine technical presentation with another course skill and compare the results.",
-    "requirements": [
-      "Use technical presentation as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the technical presentation challenge more realistic."
-  },
-  {
-    "id": "CH-185",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Systems Engineering",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on systems engineering.",
-    "requirements": [
-      "Use systems engineering as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the systems engineering challenge more realistic."
-  },
-  {
-    "id": "CH-186",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Mission Requirements",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools",
-      "VEX"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving mission requirements. Develop and justify your recommendation.",
-    "requirements": [
-      "Use mission requirements as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the mission requirements challenge more realistic."
-  },
-  {
-    "id": "CH-187",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Trade Studies",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using trade studies.",
-    "requirements": [
-      "Use trade studies as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the trade studies challenge more realistic."
-  },
-  {
-    "id": "CH-188",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Integration Testing",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "Building",
-      "Data"
-    ],
-    "tools": [
-      "VEX"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of integration testing.",
-    "requirements": [
-      "Use integration testing as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the integration testing challenge more realistic."
-  },
-  {
-    "id": "CH-189",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Risk Analysis",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Programming",
-      "Systems Thinking"
-    ],
-    "tools": [
-      "Electronics",
-      "Data Tools"
-    ],
-    "mission": "Rebuild the core risk analysis task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to risk analysis.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the risk analysis challenge more realistic."
-  },
-  {
-    "id": "CH-190",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Verification",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Data",
-      "Analysis"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Combine verification with another course skill and compare the results.",
-    "requirements": [
-      "Use verification as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the verification challenge more realistic."
-  },
-  {
-    "id": "CH-191",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Capstone Design",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Systems Thinking",
-      "Building"
-    ],
-    "tools": [
-      "Data Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on capstone design.",
-    "requirements": [
-      "Use capstone design as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the capstone design challenge more realistic."
-  },
-  {
-    "id": "CH-192",
-    "course": "POE",
-    "courseKey": "poe",
-    "unit": 5,
-    "unitTitle": "Integrated Aerospace Systems & Capstone",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Technical Presentation",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Analysis",
-      "Programming"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "Electronics"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving technical presentation. Develop and justify your recommendation.",
-    "requirements": [
-      "Use technical presentation as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the technical presentation challenge more realistic."
-  },
-  {
     "id": "CH-193",
     "course": "ADM",
     "courseKey": "adm",
@@ -5908,5 +2896,425 @@
     "time": "2-3 class periods",
     "mission": "Transform your strongest project into a concise portfolio case study that demonstrates process, evidence, revision, and communication.",
     "page": "courses/ied/units/unit-5/challenge-5-5-engineering-portfolio-showcase.html"
+  },
+  {
+    "id": "POE-0.1",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 0,
+    "unitTitle": "Mission Readiness: Safety, Tools & Engineering Systems",
+    "category": "Practice & Review",
+    "title": "Emergency Tool-Use Safety Audit",
+    "difficulty": "Beginner",
+    "time": "45-60 minutes",
+    "mission": "Inspect a simulated engineering workspace, identify hazards, and produce a corrected setup plan.",
+    "page": "courses/poe/units/unit-0/challenge-0-1-emergency-tool-use-safety-audit.html",
+    "pdf": "downloads/challenges/poe/unit-0/POE-0-1-emergency-tool-use-safety-audit.pdf"
+  },
+  {
+    "id": "POE-0.2",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 0,
+    "unitTitle": "Mission Readiness: Safety, Tools & Engineering Systems",
+    "category": "Skill Builder",
+    "title": "Precision Measurement Verification",
+    "difficulty": "Intermediate",
+    "time": "1 class period",
+    "mission": "Measure a set of parts, compare repeated readings, and decide whether the measurements are trustworthy.",
+    "page": "courses/poe/units/unit-0/challenge-0-2-precision-measurement-verification.html",
+    "pdf": "downloads/challenges/poe/unit-0/POE-0-2-precision-measurement-verification.pdf"
+  },
+  {
+    "id": "POE-0.3",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 0,
+    "unitTitle": "Mission Readiness: Safety, Tools & Engineering Systems",
+    "category": "Engineering Challenge",
+    "title": "Black-Box System Investigation",
+    "difficulty": "Intermediate",
+    "time": "1-2 class periods",
+    "mission": "Analyze an unknown input-output system and develop a functional model without opening it.",
+    "page": "courses/poe/units/unit-0/challenge-0-3-black-box-system-investigation.html",
+    "pdf": "downloads/challenges/poe/unit-0/POE-0-3-black-box-system-investigation.pdf"
+  },
+  {
+    "id": "POE-0.4",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 0,
+    "unitTitle": "Mission Readiness: Safety, Tools & Engineering Systems",
+    "category": "Aerospace Mission",
+    "title": "Mission Team Communication Protocol",
+    "difficulty": "Intermediate",
+    "time": "1 class period",
+    "mission": "Design and test a concise communication protocol for a multi-station engineering task.",
+    "page": "courses/poe/units/unit-0/challenge-0-4-mission-team-communication-protocol.html",
+    "pdf": "downloads/challenges/poe/unit-0/POE-0-4-mission-team-communication-protocol.pdf"
+  },
+  {
+    "id": "POE-0.5",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 0,
+    "unitTitle": "Mission Readiness: Safety, Tools & Engineering Systems",
+    "category": "Competition",
+    "title": "Preflight Readiness Review",
+    "difficulty": "Advanced",
+    "time": "1-2 class periods",
+    "mission": "Create and conduct the most reliable preflight inspection for a classroom rover or mechanism.",
+    "page": "courses/poe/units/unit-0/challenge-0-5-preflight-readiness-review.html",
+    "pdf": "downloads/challenges/poe/unit-0/POE-0-5-preflight-readiness-review.pdf"
+  },
+  {
+    "id": "POE-1.1",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 1,
+    "unitTitle": "Mechanisms for Space Missions: Energy, Power & Aerospace Machines",
+    "category": "Engineering Challenge",
+    "title": "Design a 4:1 Rover Gearbox",
+    "difficulty": "Intermediate",
+    "time": "2 class periods",
+    "mission": "Design and justify a gear train that provides an approximately 4:1 speed reduction for a rover drive system.",
+    "page": "courses/poe/units/unit-1/challenge-1-1-design-a-4-1-rover-gearbox.html",
+    "pdf": "downloads/challenges/poe/unit-1/POE-1-1-design-a-4-1-rover-gearbox.pdf"
+  },
+  {
+    "id": "POE-1.2",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 1,
+    "unitTitle": "Mechanisms for Space Missions: Energy, Power & Aerospace Machines",
+    "category": "Aerospace Mission",
+    "title": "Mechanical Advantage Rescue Lift",
+    "difficulty": "Intermediate",
+    "time": "1-2 class periods",
+    "mission": "Build a compact lifting mechanism that raises a simulated payload with limited input force.",
+    "page": "courses/poe/units/unit-1/challenge-1-2-mechanical-advantage-rescue-lift.html",
+    "pdf": "downloads/challenges/poe/unit-1/POE-1-2-mechanical-advantage-rescue-lift.pdf"
+  },
+  {
+    "id": "POE-1.3",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 1,
+    "unitTitle": "Mechanisms for Space Missions: Energy, Power & Aerospace Machines",
+    "category": "Skill Builder",
+    "title": "Rubber-Band Rover Energy Budget",
+    "difficulty": "Intermediate",
+    "time": "1 class period",
+    "mission": "Build and test a rubber-band-powered vehicle, then account for where stored energy goes.",
+    "page": "courses/poe/units/unit-1/challenge-1-3-rubber-band-rover-energy-budget.html",
+    "pdf": "downloads/challenges/poe/unit-1/POE-1-3-rubber-band-rover-energy-budget.pdf"
+  },
+  {
+    "id": "POE-1.4",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 1,
+    "unitTitle": "Mechanisms for Space Missions: Energy, Power & Aerospace Machines",
+    "category": "Engineering Challenge",
+    "title": "Power-Limited Winch Design",
+    "difficulty": "Advanced",
+    "time": "2-3 class periods",
+    "mission": "Design a winch that lifts the greatest useful load without exceeding a motor or power limit.",
+    "page": "courses/poe/units/unit-1/challenge-1-4-power-limited-winch-design.html",
+    "pdf": "downloads/challenges/poe/unit-1/POE-1-4-power-limited-winch-design.pdf"
+  },
+  {
+    "id": "POE-1.5",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 1,
+    "unitTitle": "Mechanisms for Space Missions: Energy, Power & Aerospace Machines",
+    "category": "Competition",
+    "title": "Mechanism Efficiency Showdown",
+    "difficulty": "Advanced",
+    "time": "2 class periods",
+    "mission": "Compete to transfer a fixed payload through a required path using the least input energy or force.",
+    "page": "courses/poe/units/unit-1/challenge-1-5-mechanism-efficiency-showdown.html",
+    "pdf": "downloads/challenges/poe/unit-1/POE-1-5-mechanism-efficiency-showdown.pdf"
+  },
+  {
+    "id": "POE-2.1",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 2,
+    "unitTitle": "Built to Survive: Aerospace Structures, Materials & Testing",
+    "category": "Engineering Challenge",
+    "title": "Lightweight Rover Chassis Truss",
+    "difficulty": "Intermediate",
+    "time": "2-3 class periods",
+    "mission": "Design and test a lightweight truss chassis that supports a specified payload.",
+    "page": "courses/poe/units/unit-2/challenge-2-1-lightweight-rover-chassis-truss.html",
+    "pdf": "downloads/challenges/poe/unit-2/POE-2-1-lightweight-rover-chassis-truss.pdf"
+  },
+  {
+    "id": "POE-2.2",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 2,
+    "unitTitle": "Built to Survive: Aerospace Structures, Materials & Testing",
+    "category": "Aerospace Mission",
+    "title": "Wing-Spar Material Trade Study",
+    "difficulty": "Intermediate",
+    "time": "1-2 class periods",
+    "mission": "Compare candidate materials for a model wing spar and recommend the best option for the mission.",
+    "page": "courses/poe/units/unit-2/challenge-2-2-wing-spar-material-trade-study.html",
+    "pdf": "downloads/challenges/poe/unit-2/POE-2-2-wing-spar-material-trade-study.pdf"
+  },
+  {
+    "id": "POE-2.3",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 2,
+    "unitTitle": "Built to Survive: Aerospace Structures, Materials & Testing",
+    "category": "Practice & Review",
+    "title": "Beam Failure Prediction",
+    "difficulty": "Intermediate",
+    "time": "1 class period",
+    "mission": "Predict where a beam will fail, test it, and explain the difference between prediction and evidence.",
+    "page": "courses/poe/units/unit-2/challenge-2-3-beam-failure-prediction.html",
+    "pdf": "downloads/challenges/poe/unit-2/POE-2-3-beam-failure-prediction.pdf"
+  },
+  {
+    "id": "POE-2.4",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 2,
+    "unitTitle": "Built to Survive: Aerospace Structures, Materials & Testing",
+    "category": "Engineering Challenge",
+    "title": "Impact-Protection Lander Structure",
+    "difficulty": "Advanced",
+    "time": "2-3 class periods",
+    "mission": "Design a lightweight protective structure that limits damage to a payload during a controlled drop.",
+    "page": "courses/poe/units/unit-2/challenge-2-4-impact-protection-lander-structure.html",
+    "pdf": "downloads/challenges/poe/unit-2/POE-2-4-impact-protection-lander-structure.pdf"
+  },
+  {
+    "id": "POE-2.5",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 2,
+    "unitTitle": "Built to Survive: Aerospace Structures, Materials & Testing",
+    "category": "Competition",
+    "title": "Structural Efficiency Cup",
+    "difficulty": "Advanced",
+    "time": "2 class periods",
+    "mission": "Build the highest-scoring structure based on load capacity, mass, and dimensional compliance.",
+    "page": "courses/poe/units/unit-2/challenge-2-5-structural-efficiency-cup.html",
+    "pdf": "downloads/challenges/poe/unit-2/POE-2-5-structural-efficiency-cup.pdf"
+  },
+  {
+    "id": "POE-3.1",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 3,
+    "unitTitle": "Autonomous Rover Systems: Controls, Sensors & Fluid Power",
+    "category": "Practice & Review",
+    "title": "Sensor-Calibrated Rover Stop",
+    "difficulty": "Intermediate",
+    "time": "1 class period",
+    "mission": "Calibrate a distance sensor and program a rover to stop within a defined target zone.",
+    "page": "courses/poe/units/unit-3/challenge-3-1-sensor-calibrated-rover-stop.html",
+    "pdf": "downloads/challenges/poe/unit-3/POE-3-1-sensor-calibrated-rover-stop.pdf"
+  },
+  {
+    "id": "POE-3.2",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 3,
+    "unitTitle": "Autonomous Rover Systems: Controls, Sensors & Fluid Power",
+    "category": "Engineering Challenge",
+    "title": "Line-Following Recovery Logic",
+    "difficulty": "Advanced",
+    "time": "2 class periods",
+    "mission": "Program a rover to follow a path and recover when the line is temporarily lost.",
+    "page": "courses/poe/units/unit-3/challenge-3-2-line-following-recovery-logic.html",
+    "pdf": "downloads/challenges/poe/unit-3/POE-3-2-line-following-recovery-logic.pdf"
+  },
+  {
+    "id": "POE-3.3",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 3,
+    "unitTitle": "Autonomous Rover Systems: Controls, Sensors & Fluid Power",
+    "category": "Skill Builder",
+    "title": "Pneumatic Sample-Lift Mechanism",
+    "difficulty": "Intermediate",
+    "time": "1-2 class periods",
+    "mission": "Use a pneumatic actuator to lift or position a sample while controlling motion and air use.",
+    "page": "courses/poe/units/unit-3/challenge-3-3-pneumatic-sample-lift-mechanism.html",
+    "pdf": "downloads/challenges/poe/unit-3/POE-3-3-pneumatic-sample-lift-mechanism.pdf"
+  },
+  {
+    "id": "POE-3.4",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 3,
+    "unitTitle": "Autonomous Rover Systems: Controls, Sensors & Fluid Power",
+    "category": "Aerospace Mission",
+    "title": "Autonomous Sample Retrieval Mission",
+    "difficulty": "Advanced",
+    "time": "3 class periods",
+    "mission": "Program a rover to navigate to a sample, collect it, and return to a defined home zone.",
+    "page": "courses/poe/units/unit-3/challenge-3-4-autonomous-sample-retrieval-mission.html",
+    "pdf": "downloads/challenges/poe/unit-3/POE-3-4-autonomous-sample-retrieval-mission.pdf"
+  },
+  {
+    "id": "POE-3.5",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 3,
+    "unitTitle": "Autonomous Rover Systems: Controls, Sensors & Fluid Power",
+    "category": "Competition",
+    "title": "Rover Reliability Trial",
+    "difficulty": "Advanced",
+    "time": "2-3 class periods",
+    "mission": "Compete for the best combination of mission success, time, accuracy, and fault recovery.",
+    "page": "courses/poe/units/unit-3/challenge-3-5-rover-reliability-trial.html",
+    "pdf": "downloads/challenges/poe/unit-3/POE-3-5-rover-reliability-trial.pdf"
+  },
+  {
+    "id": "POE-4.1",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 4,
+    "unitTitle": "Mission Performance: Statistics, Kinematics & Test Data",
+    "category": "Practice & Review",
+    "title": "Projectile Test-Range Analysis",
+    "difficulty": "Intermediate",
+    "time": "1-2 class periods",
+    "mission": "Collect launch data, model projectile motion, and evaluate how well predictions match the test.",
+    "page": "courses/poe/units/unit-4/challenge-4-1-projectile-test-range-analysis.html",
+    "pdf": "downloads/challenges/poe/unit-4/POE-4-1-projectile-test-range-analysis.pdf"
+  },
+  {
+    "id": "POE-4.2",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 4,
+    "unitTitle": "Mission Performance: Statistics, Kinematics & Test Data",
+    "category": "Skill Builder",
+    "title": "Rover Acceleration Characterization",
+    "difficulty": "Intermediate",
+    "time": "1 class period",
+    "mission": "Measure rover motion and determine whether acceleration is approximately constant during startup.",
+    "page": "courses/poe/units/unit-4/challenge-4-2-rover-acceleration-characterization.html",
+    "pdf": "downloads/challenges/poe/unit-4/POE-4-2-rover-acceleration-characterization.pdf"
+  },
+  {
+    "id": "POE-4.3",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 4,
+    "unitTitle": "Mission Performance: Statistics, Kinematics & Test Data",
+    "category": "Engineering Challenge",
+    "title": "Sensor Data Quality Investigation",
+    "difficulty": "Advanced",
+    "time": "2 class periods",
+    "mission": "Determine whether a sensor data set is accurate, precise, biased, or affected by noise.",
+    "page": "courses/poe/units/unit-4/challenge-4-3-sensor-data-quality-investigation.html",
+    "pdf": "downloads/challenges/poe/unit-4/POE-4-3-sensor-data-quality-investigation.pdf"
+  },
+  {
+    "id": "POE-4.4",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 4,
+    "unitTitle": "Mission Performance: Statistics, Kinematics & Test Data",
+    "category": "Aerospace Mission",
+    "title": "Landing-Zone Probability Model",
+    "difficulty": "Advanced",
+    "time": "2 class periods",
+    "mission": "Use repeated test data to estimate the probability that a payload lands inside a target zone.",
+    "page": "courses/poe/units/unit-4/challenge-4-4-landing-zone-probability-model.html",
+    "pdf": "downloads/challenges/poe/unit-4/POE-4-4-landing-zone-probability-model.pdf"
+  },
+  {
+    "id": "POE-4.5",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 4,
+    "unitTitle": "Mission Performance: Statistics, Kinematics & Test Data",
+    "category": "Competition",
+    "title": "Mission Data Dashboard",
+    "difficulty": "Advanced",
+    "time": "2 class periods",
+    "mission": "Create the clearest and most useful dashboard for a rover test data set.",
+    "page": "courses/poe/units/unit-4/challenge-4-5-mission-data-dashboard.html",
+    "pdf": "downloads/challenges/poe/unit-4/POE-4-5-mission-data-dashboard.pdf"
+  },
+  {
+    "id": "POE-5.1",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 5,
+    "unitTitle": "Aerospace Rover Systems Capstone: Design, Test & Defend",
+    "category": "Practice & Review",
+    "title": "Rover Mission Requirements Audit",
+    "difficulty": "Intermediate",
+    "time": "1 class period",
+    "mission": "Turn a broad rover mission statement into clear, testable engineering requirements.",
+    "page": "courses/poe/units/unit-5/challenge-5-1-rover-mission-requirements-audit.html",
+    "pdf": "downloads/challenges/poe/unit-5/POE-5-1-rover-mission-requirements-audit.pdf"
+  },
+  {
+    "id": "POE-5.2",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 5,
+    "unitTitle": "Aerospace Rover Systems Capstone: Design, Test & Defend",
+    "category": "Engineering Challenge",
+    "title": "Rover Design Trade Study",
+    "difficulty": "Advanced",
+    "time": "2 class periods",
+    "mission": "Compare three rover concepts using mission-weighted criteria and recommend one for detailed design.",
+    "page": "courses/poe/units/unit-5/challenge-5-2-rover-design-trade-study.html",
+    "pdf": "downloads/challenges/poe/unit-5/POE-5-2-rover-design-trade-study.pdf"
+  },
+  {
+    "id": "POE-5.3",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 5,
+    "unitTitle": "Aerospace Rover Systems Capstone: Design, Test & Defend",
+    "category": "Skill Builder",
+    "title": "Integrated Rover Verification Plan",
+    "difficulty": "Advanced",
+    "time": "2 class periods",
+    "mission": "Create a verification plan that proves the rover meets its mission requirements without unnecessary testing.",
+    "page": "courses/poe/units/unit-5/challenge-5-3-integrated-rover-verification-plan.html",
+    "pdf": "downloads/challenges/poe/unit-5/POE-5-3-integrated-rover-verification-plan.pdf"
+  },
+  {
+    "id": "POE-5.4",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 5,
+    "unitTitle": "Aerospace Rover Systems Capstone: Design, Test & Defend",
+    "category": "Aerospace Mission",
+    "title": "Rover Anomaly Review Board",
+    "difficulty": "Advanced",
+    "time": "1-2 class periods",
+    "mission": "Investigate a failed mission trial, identify the most likely cause, and approve a corrective action.",
+    "page": "courses/poe/units/unit-5/challenge-5-4-rover-anomaly-review-board.html",
+    "pdf": "downloads/challenges/poe/unit-5/POE-5-4-rover-anomaly-review-board.pdf"
+  },
+  {
+    "id": "POE-5.5",
+    "course": "POE",
+    "courseKey": "poe",
+    "unit": 5,
+    "unitTitle": "Aerospace Rover Systems Capstone: Design, Test & Defend",
+    "category": "Competition",
+    "title": "Capstone Mission Defense",
+    "difficulty": "Advanced",
+    "time": "2-3 class periods",
+    "mission": "Prepare and defend the rover design using traceable requirements, test evidence, and risk-based recommendations.",
+    "page": "courses/poe/units/unit-5/challenge-5-5-capstone-mission-defense.html",
+    "pdf": "downloads/challenges/poe/unit-5/POE-5-5-capstone-mission-defense.pdf"
   }
 ]
