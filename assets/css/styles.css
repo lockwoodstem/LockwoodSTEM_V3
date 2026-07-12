@@ -2850,3 +2850,55 @@ body.mission-brief-page .brief-sidebar .brief-tip{background:#eef5fc!important;}
 body.mission-brief-page .brief-sidebar .brief-warning{background:#fff7e6!important;}
 body.mission-brief-page .brief-sidebar .brief-career{background:#edf8f3!important;}
 body.mission-brief-page .brief-sidebar .brief-callout:not(.brief-tip):not(.brief-warning):not(.brief-career), body.mission-brief-page .brief-sidebar .card{background:#fff!important;}
+
+
+/* Challenge hub title visibility fix */
+.challenge-card-title{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  position:static !important;
+  width:auto !important;
+  height:auto !important;
+  margin:.85rem 0 .7rem !important;
+  color:#0b1f3a !important;
+  font-size:1.15rem !important;
+  line-height:1.25 !important;
+  font-weight:950 !important;
+  overflow:visible !important;
+  white-space:normal !important;
+  text-overflow:clip !important;
+}
+.challenge-card .challenge-card-title,
+.mission-card .challenge-card-title,
+.brief-card .challenge-card-title{
+  color:#0b1f3a !important;
+}
+
+
+/* POE and ADM existing challenge-card heading fix */
+.challenge-card > h3,
+.challenge-card .challenge-title,
+.mission-card > h3,
+.brief-card > h3{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  position:static !important;
+  width:auto !important;
+  height:auto !important;
+  max-height:none !important;
+  margin:.85rem 0 .7rem !important;
+  padding:0 !important;
+  color:#0b1f3a !important;
+  background:transparent !important;
+  font-size:1.15rem !important;
+  line-height:1.25 !important;
+  font-weight:950 !important;
+  overflow:visible !important;
+  white-space:normal !important;
+  text-indent:0 !important;
+  clip:auto !important;
+  clip-path:none !important;
+  transform:none !important;
+}
