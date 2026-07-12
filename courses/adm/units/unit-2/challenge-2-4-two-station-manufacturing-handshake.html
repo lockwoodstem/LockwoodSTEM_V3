@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ADM 2.4 Two-Station Manufacturing Handshake | LockwoodSTEM</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../../../assets/css/styles.css">
+<script defer src="../../../../assets/js/main.js"></script>
+</head>
+<body class="safe-unit-page mission-brief-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../../../../index.html" aria-label="LockwoodSTEM home">
+      <img class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
+      <span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">Menu</button>
+    <ul class="nav-links"><li><a href="../../../../courses.html" aria-current="page">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../certifications/index.html">Certifications</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li><li><a href="../../../../about/index.html">About</a></li></ul>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero design-brief-hero"><div class="container hero-grid"><div><div class="eyebrow">ADM Unit 2 | Mission Brief 2.4</div><h1>Two-Station Manufacturing Handshake</h1><p>Create a safe request-ready-transfer-confirm handshake between two connected workstations.</p><div class="design-brief-meta"><span>Advanced</span><span>2-3 class periods</span><span>Engineering Challenge</span></div><div class="hero-actions"><a class="btn" href="challenges.html">Back to Challenge Hub</a><a class="btn secondary" href="../../../../downloads/challenges/adm/unit-2/ADM-2-4-two-station-manufacturing-handshake.pdf">Download Challenge Brief (PDF)</a></div></div><aside class="card dark"><span class="tag">Production Specifications</span><h3>Orion Robotics</h3><p><strong>Department:</strong> Systems Integration<br><strong>Goal:</strong> Exchange parts safely between two automated stations.</p></aside></div></section>
+<section class="container design-brief-layout"><div>
+<article class="card design-brief-section"><div class="eyebrow">Background</div><h2>Engineering Context</h2><p>Orion Robotics is connecting two manufacturing cells. Station A must never release a part until Station B is ready, and Station B must confirm receipt before Station A begins the next cycle. A failed signal could damage equipment or lose a product.</p></article>
+<article class="card design-brief-section"><div class="eyebrow">Objectives</div><h2>What You Will Practice</h2><ul><li>Design machine-to-machine communication logic</li><li>Represent a process with states and flowcharts</li><li>Program confirmation and timeout behavior</li><li>Validate communication under normal and fault conditions</li></ul></article>
+<article class="card design-brief-section"><div class="eyebrow">Equipment</div><h2>What You Need</h2><ul><li>Two connected VEX CTE workcells or a simulated two-station setup</li><li>Object sensors</li><li>Conveyors</li><li>Signal tower</li><li>Python projects</li><li>Engineering notebook</li></ul></article>
+<article class="card design-brief-section"><div class="eyebrow">Procedure</div><h2>Student Instructions</h2><ol><li>Define four signals: request, ready, transfer complete, and receipt confirmed.</li><li>Create a sequence diagram showing which station sends each signal.</li><li>Program Station B to announce ready only when its receiving zone is clear.</li><li>Program Station A to wait for ready before releasing a part.</li><li>Program Station B to confirm receipt after its sensor detects the part.</li><li>Add a timeout that stops both stations if confirmation does not arrive.</li><li>Run five normal transfers.</li><li>Simulate a blocked receiving zone and a missing confirmation; verify safe response.</li></ol></article>
+<article class="card design-brief-section"><div class="eyebrow">Requirements</div><h2>Engineering Requirements</h2><ul><li>Complete five consecutive normal transfers</li><li>Never release into an occupied receiving zone</li><li>Stop safely after a communication timeout</li><li>Provide visible fault indication on the signal tower</li></ul></article>
+<article class="card design-brief-section"><div class="eyebrow">Constraints</div><h2>Constraints &amp; Safety</h2><ul><li>No assumptions based only on elapsed time</li><li>Each transfer requires positive confirmation</li><li>Stations must start from a documented reset state</li><li>Fault testing must use approved simulations only</li></ul></article>
+<article class="card design-brief-section"><div class="eyebrow">Deliverables</div><h2>What You Submit</h2><ul><li>Handshake state/sequence diagram</li><li>Station A and B code</li><li>Normal and fault test log</li><li>Reset procedure</li><li>Reflection</li></ul></article>
+<article class="card design-brief-section"><div class="eyebrow">Reflection</div><h2>Reflection Questions</h2><ol><li>Why are both ready and receipt signals needed?</li><li>What could happen if one station resets unexpectedly?</li><li>How did the timeout improve safety?</li><li>How would a PLC implement this handshake?</li></ol></article>
+</div><aside class="brief-sidebar">
+<a class="btn" href="../../../../downloads/challenges/adm/unit-2/ADM-2-4-two-station-manufacturing-handshake.pdf">Download PDF</a><button class="btn secondary" type="button" onclick="window.print()">Print This Page</button>
+<div class="brief-callout brief-tip"><strong>Engineering Tip</strong><p>Name signals by meaning and state, such as receive_zone_clear, rather than vague names like flag1.</p></div>
+<div class="brief-callout brief-warning"><strong>Common Mistake</strong><p>A single ready signal is not enough if the sending station never verifies that the product arrived.</p></div>
+<div class="brief-callout"><strong>Stretch Goal</strong><p>Coordinate three stations and include a line-wide stop and reset procedure.</p></div>
+<div class="brief-callout brief-career"><strong>Career Connection</strong><p>Controls engineers design handshaking logic between robots, PLCs, conveyors, and inspection machines.</p></div>
+<article class="card"><div class="eyebrow">Before You Submit</div><ul class="brief-checklist"><li>Notebook evidence included</li><li>Requirements checked</li><li>Testing documented</li><li>Reflection completed</li></ul></article>
+</aside></section></main></main>
+
+<footer class="footer"><div class="container footer-grid"><div><img class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo"><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a> <a href="../../../../agenda.html">Daily Agenda</a> <a href="../../../../resources/index.html">Resources</a> <a href="../../../../certifications/index.html">Certifications</a> <a href="../../../../fablab/index.html">FabLab</a> <a href="../../../../about/index.html">About</a></div></div></footer>
+</body>
+</html>

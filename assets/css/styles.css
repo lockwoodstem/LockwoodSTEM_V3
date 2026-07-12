@@ -2841,3 +2841,12 @@ body.mission-brief-page .brief-sidebar .brief-career{
 body.mission-brief-page .brief-sidebar .brief-callout:not(.brief-tip):not(.brief-warning):not(.brief-career){
   background:#ffffff !important;
 }
+
+
+/* ADM detailed brief readability */
+body.mission-brief-page .brief-sidebar .brief-callout, body.mission-brief-page .brief-sidebar .brief-callout *, body.mission-brief-page .brief-sidebar .card, body.mission-brief-page .brief-sidebar .card *{color:#0b1f3a!important;}
+body.mission-brief-page .brief-sidebar .brief-callout p, body.mission-brief-page .brief-sidebar .card p, body.mission-brief-page .brief-sidebar .brief-checklist li{color:#334155!important;}
+body.mission-brief-page .brief-sidebar .brief-tip{background:#eef5fc!important;}
+body.mission-brief-page .brief-sidebar .brief-warning{background:#fff7e6!important;}
+body.mission-brief-page .brief-sidebar .brief-career{background:#edf8f3!important;}
+body.mission-brief-page .brief-sidebar .brief-callout:not(.brief-tip):not(.brief-warning):not(.brief-career), body.mission-brief-page .brief-sidebar .card{background:#fff!important;}
