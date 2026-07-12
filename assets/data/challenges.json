@@ -1,3017 +1,5 @@
 [
   {
-    "id": "CH-001",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Fablab Safety",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "3D Printer"
-    ],
-    "mission": "Rebuild the core FabLab safety task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to FabLab safety.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the FabLab safety challenge more realistic."
-  },
-  {
-    "id": "CH-002",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Ppe",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360"
-    ],
-    "mission": "Combine PPE with another course skill and compare the results.",
-    "requirements": [
-      "Use PPE as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the PPE challenge more realistic."
-  },
-  {
-    "id": "CH-003",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Engineering Notebook",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer"
-    ],
-    "mission": "Create, test, and revise a solution centered on engineering notebook.",
-    "requirements": [
-      "Use engineering notebook as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the engineering notebook challenge more realistic."
-  },
-  {
-    "id": "CH-004",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Criteria And Constraints",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools",
-      "Engineering Notebook"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving criteria and constraints. Develop and justify your recommendation.",
-    "requirements": [
-      "Use criteria and constraints as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the criteria and constraints challenge more realistic."
-  },
-  {
-    "id": "CH-005",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Launch Pad Stability",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using launch pad stability.",
-    "requirements": [
-      "Use launch pad stability as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the launch pad stability challenge more realistic."
-  },
-  {
-    "id": "CH-006",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Team Brainstorming",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of team brainstorming.",
-    "requirements": [
-      "Use team brainstorming as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the team brainstorming challenge more realistic."
-  },
-  {
-    "id": "CH-007",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Research Features",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360",
-      "Hand Tools"
-    ],
-    "mission": "Rebuild the core research features task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to research features.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the research features challenge more realistic."
-  },
-  {
-    "id": "CH-008",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Concept Sketching",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer"
-    ],
-    "mission": "Combine concept sketching with another course skill and compare the results.",
-    "requirements": [
-      "Use concept sketching as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the concept sketching challenge more realistic."
-  },
-  {
-    "id": "CH-009",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Fablab Safety",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on FabLab safety.",
-    "requirements": [
-      "Use FabLab safety as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the FabLab safety challenge more realistic."
-  },
-  {
-    "id": "CH-010",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Ppe",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter",
-      "Fusion 360"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving PPE. Develop and justify your recommendation.",
-    "requirements": [
-      "Use PPE as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the PPE challenge more realistic."
-  },
-  {
-    "id": "CH-011",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Engineering Notebook",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using engineering notebook.",
-    "requirements": [
-      "Use engineering notebook as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the engineering notebook challenge more realistic."
-  },
-  {
-    "id": "CH-012",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Criteria And Constraints",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of criteria and constraints.",
-    "requirements": [
-      "Use criteria and constraints as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the criteria and constraints challenge more realistic."
-  },
-  {
-    "id": "CH-013",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Launch Pad Stability",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer",
-      "Laser Cutter"
-    ],
-    "mission": "Rebuild the core launch pad stability task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to launch pad stability.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the launch pad stability challenge more realistic."
-  },
-  {
-    "id": "CH-014",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Team Brainstorming",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Combine team brainstorming with another course skill and compare the results.",
-    "requirements": [
-      "Use team brainstorming as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the team brainstorming challenge more realistic."
-  },
-  {
-    "id": "CH-015",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Research Features",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter"
-    ],
-    "mission": "Create, test, and revise a solution centered on research features.",
-    "requirements": [
-      "Use research features as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the research features challenge more realistic."
-  },
-  {
-    "id": "CH-016",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 0,
-    "unitTitle": "Foundations, Safety & Launch Pad Design",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Concept Sketching",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "3D Printer"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving concept sketching. Develop and justify your recommendation.",
-    "requirements": [
-      "Use concept sketching as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the concept sketching challenge more realistic."
-  },
-  {
-    "id": "CH-017",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Multiview Sketching",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "3D Printer"
-    ],
-    "mission": "Rebuild the core multiview sketching task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to multiview sketching.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the multiview sketching challenge more realistic."
-  },
-  {
-    "id": "CH-018",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Isometric Sketching",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360"
-    ],
-    "mission": "Combine isometric sketching with another course skill and compare the results.",
-    "requirements": [
-      "Use isometric sketching as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the isometric sketching challenge more realistic."
-  },
-  {
-    "id": "CH-019",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Measurement",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer"
-    ],
-    "mission": "Create, test, and revise a solution centered on measurement.",
-    "requirements": [
-      "Use measurement as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the measurement challenge more realistic."
-  },
-  {
-    "id": "CH-020",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Tolerances",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools",
-      "Engineering Notebook"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving tolerances. Develop and justify your recommendation.",
-    "requirements": [
-      "Use tolerances as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the tolerances challenge more realistic."
-  },
-  {
-    "id": "CH-021",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Fasteners",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using fasteners.",
-    "requirements": [
-      "Use fasteners as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the fasteners challenge more realistic."
-  },
-  {
-    "id": "CH-022",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Exploded Views",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of exploded views.",
-    "requirements": [
-      "Use exploded views as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the exploded views challenge more realistic."
-  },
-  {
-    "id": "CH-023",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Bill Of Materials",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360",
-      "Hand Tools"
-    ],
-    "mission": "Rebuild the core bill of materials task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to bill of materials.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the bill of materials challenge more realistic."
-  },
-  {
-    "id": "CH-024",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Design Review",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer"
-    ],
-    "mission": "Combine design review with another course skill and compare the results.",
-    "requirements": [
-      "Use design review as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the design review challenge more realistic."
-  },
-  {
-    "id": "CH-025",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Multiview Sketching",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on multiview sketching.",
-    "requirements": [
-      "Use multiview sketching as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the multiview sketching challenge more realistic."
-  },
-  {
-    "id": "CH-026",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Isometric Sketching",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter",
-      "Fusion 360"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving isometric sketching. Develop and justify your recommendation.",
-    "requirements": [
-      "Use isometric sketching as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the isometric sketching challenge more realistic."
-  },
-  {
-    "id": "CH-027",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Measurement",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using measurement.",
-    "requirements": [
-      "Use measurement as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the measurement challenge more realistic."
-  },
-  {
-    "id": "CH-028",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Tolerances",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of tolerances.",
-    "requirements": [
-      "Use tolerances as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the tolerances challenge more realistic."
-  },
-  {
-    "id": "CH-029",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Fasteners",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer",
-      "Laser Cutter"
-    ],
-    "mission": "Rebuild the core fasteners task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to fasteners.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the fasteners challenge more realistic."
-  },
-  {
-    "id": "CH-030",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Exploded Views",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Combine exploded views with another course skill and compare the results.",
-    "requirements": [
-      "Use exploded views as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the exploded views challenge more realistic."
-  },
-  {
-    "id": "CH-031",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Bill Of Materials",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter"
-    ],
-    "mission": "Create, test, and revise a solution centered on bill of materials.",
-    "requirements": [
-      "Use bill of materials as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the bill of materials challenge more realistic."
-  },
-  {
-    "id": "CH-032",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 1,
-    "unitTitle": "Sketching, Measurement & Engineering Documentation",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Design Review",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "3D Printer"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving design review. Develop and justify your recommendation.",
-    "requirements": [
-      "Use design review as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the design review challenge more realistic."
-  },
-  {
-    "id": "CH-033",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Cad Constraints",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "3D Printer"
-    ],
-    "mission": "Rebuild the core CAD constraints task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to CAD constraints.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the CAD constraints challenge more realistic."
-  },
-  {
-    "id": "CH-034",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Parametric Modeling",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360"
-    ],
-    "mission": "Combine parametric modeling with another course skill and compare the results.",
-    "requirements": [
-      "Use parametric modeling as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the parametric modeling challenge more realistic."
-  },
-  {
-    "id": "CH-035",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Extrusions",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer"
-    ],
-    "mission": "Create, test, and revise a solution centered on extrusions.",
-    "requirements": [
-      "Use extrusions as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the extrusions challenge more realistic."
-  },
-  {
-    "id": "CH-036",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Revolves",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools",
-      "Engineering Notebook"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving revolves. Develop and justify your recommendation.",
-    "requirements": [
-      "Use revolves as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the revolves challenge more realistic."
-  },
-  {
-    "id": "CH-037",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Patterns",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using patterns.",
-    "requirements": [
-      "Use patterns as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the patterns challenge more realistic."
-  },
-  {
-    "id": "CH-038",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Holes",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of holes.",
-    "requirements": [
-      "Use holes as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the holes challenge more realistic."
-  },
-  {
-    "id": "CH-039",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Fillets And Chamfers",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360",
-      "Hand Tools"
-    ],
-    "mission": "Rebuild the core fillets and chamfers task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to fillets and chamfers.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the fillets and chamfers challenge more realistic."
-  },
-  {
-    "id": "CH-040",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Tolerance Testing",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer"
-    ],
-    "mission": "Combine tolerance testing with another course skill and compare the results.",
-    "requirements": [
-      "Use tolerance testing as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the tolerance testing challenge more realistic."
-  },
-  {
-    "id": "CH-041",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: 3D Printing",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on 3D printing.",
-    "requirements": [
-      "Use 3D printing as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the 3D printing challenge more realistic."
-  },
-  {
-    "id": "CH-042",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Cad Constraints",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter",
-      "Fusion 360"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving CAD constraints. Develop and justify your recommendation.",
-    "requirements": [
-      "Use CAD constraints as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the CAD constraints challenge more realistic."
-  },
-  {
-    "id": "CH-043",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Parametric Modeling",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using parametric modeling.",
-    "requirements": [
-      "Use parametric modeling as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the parametric modeling challenge more realistic."
-  },
-  {
-    "id": "CH-044",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Extrusions",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of extrusions.",
-    "requirements": [
-      "Use extrusions as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the extrusions challenge more realistic."
-  },
-  {
-    "id": "CH-045",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Revolves",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer",
-      "Laser Cutter"
-    ],
-    "mission": "Rebuild the core revolves task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to revolves.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the revolves challenge more realistic."
-  },
-  {
-    "id": "CH-046",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Patterns",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Combine patterns with another course skill and compare the results.",
-    "requirements": [
-      "Use patterns as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the patterns challenge more realistic."
-  },
-  {
-    "id": "CH-047",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Holes",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter"
-    ],
-    "mission": "Create, test, and revise a solution centered on holes.",
-    "requirements": [
-      "Use holes as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the holes challenge more realistic."
-  },
-  {
-    "id": "CH-048",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 2,
-    "unitTitle": "CAD Parts, Constraints & Prototyping",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Fillets And Chamfers",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "3D Printer"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving fillets and chamfers. Develop and justify your recommendation.",
-    "requirements": [
-      "Use fillets and chamfers as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the fillets and chamfers challenge more realistic."
-  },
-  {
-    "id": "CH-049",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Assemblies",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "3D Printer"
-    ],
-    "mission": "Rebuild the core assemblies task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to assemblies.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the assemblies challenge more realistic."
-  },
-  {
-    "id": "CH-050",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Mates And Joints",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360"
-    ],
-    "mission": "Combine mates and joints with another course skill and compare the results.",
-    "requirements": [
-      "Use mates and joints as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the mates and joints challenge more realistic."
-  },
-  {
-    "id": "CH-051",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Exploded Views",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer"
-    ],
-    "mission": "Create, test, and revise a solution centered on exploded views.",
-    "requirements": [
-      "Use exploded views as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the exploded views challenge more realistic."
-  },
-  {
-    "id": "CH-052",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Technical Drawings",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools",
-      "Engineering Notebook"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving technical drawings. Develop and justify your recommendation.",
-    "requirements": [
-      "Use technical drawings as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the technical drawings challenge more realistic."
-  },
-  {
-    "id": "CH-053",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Fit Testing",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using fit testing.",
-    "requirements": [
-      "Use fit testing as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the fit testing challenge more realistic."
-  },
-  {
-    "id": "CH-054",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Prototype Revisions",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of prototype revisions.",
-    "requirements": [
-      "Use prototype revisions as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the prototype revisions challenge more realistic."
-  },
-  {
-    "id": "CH-055",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Stl Export",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360",
-      "Hand Tools"
-    ],
-    "mission": "Rebuild the core STL export task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to STL export.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the STL export challenge more realistic."
-  },
-  {
-    "id": "CH-056",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Print Readiness",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer"
-    ],
-    "mission": "Combine print readiness with another course skill and compare the results.",
-    "requirements": [
-      "Use print readiness as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the print readiness challenge more realistic."
-  },
-  {
-    "id": "CH-057",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Assemblies",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on assemblies.",
-    "requirements": [
-      "Use assemblies as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the assemblies challenge more realistic."
-  },
-  {
-    "id": "CH-058",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Mates And Joints",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter",
-      "Fusion 360"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving mates and joints. Develop and justify your recommendation.",
-    "requirements": [
-      "Use mates and joints as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the mates and joints challenge more realistic."
-  },
-  {
-    "id": "CH-059",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Exploded Views",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using exploded views.",
-    "requirements": [
-      "Use exploded views as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the exploded views challenge more realistic."
-  },
-  {
-    "id": "CH-060",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Technical Drawings",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of technical drawings.",
-    "requirements": [
-      "Use technical drawings as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the technical drawings challenge more realistic."
-  },
-  {
-    "id": "CH-061",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Fit Testing",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer",
-      "Laser Cutter"
-    ],
-    "mission": "Rebuild the core fit testing task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to fit testing.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the fit testing challenge more realistic."
-  },
-  {
-    "id": "CH-062",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Prototype Revisions",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Combine prototype revisions with another course skill and compare the results.",
-    "requirements": [
-      "Use prototype revisions as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the prototype revisions challenge more realistic."
-  },
-  {
-    "id": "CH-063",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Stl Export",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter"
-    ],
-    "mission": "Create, test, and revise a solution centered on STL export.",
-    "requirements": [
-      "Use STL export as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the STL export challenge more realistic."
-  },
-  {
-    "id": "CH-064",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 3,
-    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Print Readiness",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "3D Printer"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving print readiness. Develop and justify your recommendation.",
-    "requirements": [
-      "Use print readiness as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the print readiness challenge more realistic."
-  },
-  {
-    "id": "CH-065",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Materials Selection",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "3D Printer"
-    ],
-    "mission": "Rebuild the core materials selection task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to materials selection.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the materials selection challenge more realistic."
-  },
-  {
-    "id": "CH-066",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Mechanisms",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360"
-    ],
-    "mission": "Combine mechanisms with another course skill and compare the results.",
-    "requirements": [
-      "Use mechanisms as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the mechanisms challenge more realistic."
-  },
-  {
-    "id": "CH-067",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Friction",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer"
-    ],
-    "mission": "Create, test, and revise a solution centered on friction.",
-    "requirements": [
-      "Use friction as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the friction challenge more realistic."
-  },
-  {
-    "id": "CH-068",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Motion",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools",
-      "Engineering Notebook"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving motion. Develop and justify your recommendation.",
-    "requirements": [
-      "Use motion as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the motion challenge more realistic."
-  },
-  {
-    "id": "CH-069",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Data Analysis",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using data analysis.",
-    "requirements": [
-      "Use data analysis as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the data analysis challenge more realistic."
-  },
-  {
-    "id": "CH-070",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Statistics",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of statistics.",
-    "requirements": [
-      "Use statistics as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the statistics challenge more realistic."
-  },
-  {
-    "id": "CH-071",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Circuits",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360",
-      "Hand Tools"
-    ],
-    "mission": "Rebuild the core circuits task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to circuits.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the circuits challenge more realistic."
-  },
-  {
-    "id": "CH-072",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Electromechanical Systems",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer"
-    ],
-    "mission": "Combine electromechanical systems with another course skill and compare the results.",
-    "requirements": [
-      "Use electromechanical systems as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the electromechanical systems challenge more realistic."
-  },
-  {
-    "id": "CH-073",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Materials Selection",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on materials selection.",
-    "requirements": [
-      "Use materials selection as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the materials selection challenge more realistic."
-  },
-  {
-    "id": "CH-074",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Mechanisms",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter",
-      "Fusion 360"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving mechanisms. Develop and justify your recommendation.",
-    "requirements": [
-      "Use mechanisms as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the mechanisms challenge more realistic."
-  },
-  {
-    "id": "CH-075",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Friction",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using friction.",
-    "requirements": [
-      "Use friction as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the friction challenge more realistic."
-  },
-  {
-    "id": "CH-076",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Motion",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of motion.",
-    "requirements": [
-      "Use motion as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the motion challenge more realistic."
-  },
-  {
-    "id": "CH-077",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Data Analysis",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer",
-      "Laser Cutter"
-    ],
-    "mission": "Rebuild the core data analysis task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to data analysis.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the data analysis challenge more realistic."
-  },
-  {
-    "id": "CH-078",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Statistics",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Combine statistics with another course skill and compare the results.",
-    "requirements": [
-      "Use statistics as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the statistics challenge more realistic."
-  },
-  {
-    "id": "CH-079",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Circuits",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter"
-    ],
-    "mission": "Create, test, and revise a solution centered on circuits.",
-    "requirements": [
-      "Use circuits as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the circuits challenge more realistic."
-  },
-  {
-    "id": "CH-080",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 4,
-    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Electromechanical Systems",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "3D Printer"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving electromechanical systems. Develop and justify your recommendation.",
-    "requirements": [
-      "Use electromechanical systems as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the electromechanical systems challenge more realistic."
-  },
-  {
-    "id": "CH-081",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: User Needs",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "3D Printer"
-    ],
-    "mission": "Rebuild the core user needs task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to user needs.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the user needs challenge more realistic."
-  },
-  {
-    "id": "CH-082",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Stakeholders",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360"
-    ],
-    "mission": "Combine stakeholders with another course skill and compare the results.",
-    "requirements": [
-      "Use stakeholders as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the stakeholders challenge more realistic."
-  },
-  {
-    "id": "CH-083",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Ethics",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer"
-    ],
-    "mission": "Create, test, and revise a solution centered on ethics.",
-    "requirements": [
-      "Use ethics as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the ethics challenge more realistic."
-  },
-  {
-    "id": "CH-084",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Sustainability",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools",
-      "Engineering Notebook"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving sustainability. Develop and justify your recommendation.",
-    "requirements": [
-      "Use sustainability as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the sustainability challenge more realistic."
-  },
-  {
-    "id": "CH-085",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Life Cycle",
-    "difficulty": "Advanced",
-    "time": "30 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using life cycle.",
-    "requirements": [
-      "Use life cycle as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the life cycle challenge more realistic."
-  },
-  {
-    "id": "CH-086",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Project Planning",
-    "difficulty": "Intermediate",
-    "time": "45 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of project planning.",
-    "requirements": [
-      "Use project planning as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the project planning challenge more realistic."
-  },
-  {
-    "id": "CH-087",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Accessibility",
-    "difficulty": "Beginner",
-    "time": "Multi-day",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360",
-      "Hand Tools"
-    ],
-    "mission": "Rebuild the core accessibility task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to accessibility.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the accessibility challenge more realistic."
-  },
-  {
-    "id": "CH-088",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Portfolio Presentation",
-    "difficulty": "Advanced",
-    "time": "15 min",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer"
-    ],
-    "mission": "Combine portfolio presentation with another course skill and compare the results.",
-    "requirements": [
-      "Use portfolio presentation as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the portfolio presentation challenge more realistic."
-  },
-  {
-    "id": "CH-089",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: User Needs",
-    "difficulty": "Intermediate",
-    "time": "30 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Create, test, and revise a solution centered on user needs.",
-    "requirements": [
-      "Use user needs as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the user needs challenge more realistic."
-  },
-  {
-    "id": "CH-090",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Stakeholders",
-    "difficulty": "Beginner",
-    "time": "45 min",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter",
-      "Fusion 360"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving stakeholders. Develop and justify your recommendation.",
-    "requirements": [
-      "Use stakeholders as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the stakeholders challenge more realistic."
-  },
-  {
-    "id": "CH-091",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Competition",
-    "icon": "\ud83c\udfc6",
-    "title": "Design Showdown: Ethics",
-    "difficulty": "Advanced",
-    "time": "Multi-day",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook"
-    ],
-    "mission": "Create the lightest, fastest, strongest, most efficient, or most accurate solution using ethics.",
-    "requirements": [
-      "Use ethics as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the ethics challenge more realistic."
-  },
-  {
-    "id": "CH-092",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Creative Builder",
-    "icon": "\ud83d\udca1",
-    "title": "Invent It: Sustainability",
-    "difficulty": "Intermediate",
-    "time": "15 min",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "tools": [
-      "Fusion 360"
-    ],
-    "mission": "Create a portfolio-ready build that demonstrates mastery of sustainability.",
-    "requirements": [
-      "Use sustainability as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the sustainability challenge more realistic."
-  },
-  {
-    "id": "CH-093",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Practice & Review",
-    "icon": "\u2b50",
-    "title": "Quick Check: Life Cycle",
-    "difficulty": "Beginner",
-    "time": "30 min",
-    "skills": [
-      "Documentation",
-      "Iteration"
-    ],
-    "tools": [
-      "3D Printer",
-      "Laser Cutter"
-    ],
-    "mission": "Rebuild the core life cycle task without using the original directions.",
-    "requirements": [
-      "Demonstrate the core skill related to life cycle.",
-      "Identify one common mistake and correct it.",
-      "Summarize what you understand now."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the life cycle challenge more realistic."
-  },
-  {
-    "id": "CH-094",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Skill Builder",
-    "icon": "\u2b50\u2b50",
-    "title": "Two Ways: Project Planning",
-    "difficulty": "Advanced",
-    "time": "45 min",
-    "skills": [
-      "Testing",
-      "Sketching"
-    ],
-    "tools": [
-      "Hand Tools"
-    ],
-    "mission": "Combine project planning with another course skill and compare the results.",
-    "requirements": [
-      "Use project planning as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the project planning challenge more realistic."
-  },
-  {
-    "id": "CH-095",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Engineering Challenge",
-    "icon": "\u2b50\u2b50\u2b50",
-    "title": "Performance Upgrade: Accessibility",
-    "difficulty": "Intermediate",
-    "time": "Multi-day",
-    "skills": [
-      "Iteration",
-      "CAD"
-    ],
-    "tools": [
-      "Laser Cutter"
-    ],
-    "mission": "Create, test, and revise a solution centered on accessibility.",
-    "requirements": [
-      "Use accessibility as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the accessibility challenge more realistic."
-  },
-  {
-    "id": "CH-096",
-    "course": "IED",
-    "courseKey": "ied",
-    "unit": 5,
-    "unitTitle": "Human-Centered Aerospace Design",
-    "category": "Aerospace Mission",
-    "icon": "\ud83d\ude80",
-    "title": "Mission Ready: Portfolio Presentation",
-    "difficulty": "Beginner",
-    "time": "15 min",
-    "skills": [
-      "Sketching",
-      "Documentation"
-    ],
-    "tools": [
-      "Engineering Notebook",
-      "3D Printer"
-    ],
-    "mission": "An aerospace team needs a reliable solution involving portfolio presentation. Develop and justify your recommendation.",
-    "requirements": [
-      "Use portfolio presentation as a central part of the solution.",
-      "Define at least two measurable success criteria.",
-      "Document one test, comparison, or revision."
-    ],
-    "deliverables": [
-      "Engineering notebook entry",
-      "Evidence of work: sketch, CAD, code, model, photo, data, or calculation",
-      "Short reflection describing results and next steps"
-    ],
-    "stretch": "Add a second constraint that makes the portfolio presentation challenge more realistic."
-  },
-  {
     "id": "CH-097",
     "course": "POE",
     "courseKey": "poe",
@@ -8530,5 +5518,395 @@
       "Short reflection describing results and next steps"
     ],
     "stretch": "Add a second constraint that makes the malware challenge more realistic."
+  },
+  {
+    "id": "IED-0.1",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 0,
+    "unitTitle": "Foundations, Safety & Launch Pad Design",
+    "category": "Engineering Challenge",
+    "title": "Redesign the Rocket Launch Pad",
+    "difficulty": "Intermediate",
+    "time": "2 class periods",
+    "mission": "Redesign the launch pad to use less material while maintaining stability, rocket fit, and safe classroom handling.",
+    "page": "courses/ied/units/unit-0/challenge-0-1-redesign-the-rocket-launch-pad.html"
+  },
+  {
+    "id": "IED-0.2",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 0,
+    "unitTitle": "Foundations, Safety & Launch Pad Design",
+    "category": "Practice & Review",
+    "title": "Reverse Engineer a Classroom Object",
+    "difficulty": "Beginner",
+    "time": "45-60 minutes",
+    "mission": "Analyze a classroom object and create an engineering record that explains its parts, materials, assembly, and likely manufacturing methods.",
+    "page": "courses/ied/units/unit-0/challenge-0-2-reverse-engineer-a-classroom-object.html"
+  },
+  {
+    "id": "IED-0.3",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 0,
+    "unitTitle": "Foundations, Safety & Launch Pad Design",
+    "category": "Competition",
+    "title": "Emergency Communications Tower",
+    "difficulty": "Intermediate",
+    "time": "45 minutes",
+    "mission": "Build the tallest free-standing paper tower that supports a 200 g payload for 30 seconds.",
+    "page": "courses/ied/units/unit-0/challenge-0-3-emergency-communications-tower.html"
+  },
+  {
+    "id": "IED-0.4",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 0,
+    "unitTitle": "Foundations, Safety & Launch Pad Design",
+    "category": "Practice & Review",
+    "title": "Engineering Notebook Excellence Audit",
+    "difficulty": "Beginner",
+    "time": "30-45 minutes",
+    "mission": "Upgrade one incomplete or weak notebook entry into a professional engineering record.",
+    "page": "courses/ied/units/unit-0/challenge-0-4-engineering-notebook-excellence-audit.html"
+  },
+  {
+    "id": "IED-0.5",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 0,
+    "unitTitle": "Foundations, Safety & Launch Pad Design",
+    "category": "Aerospace Mission",
+    "title": "Engineering Failure Investigation",
+    "difficulty": "Intermediate",
+    "time": "1-2 class periods",
+    "mission": "Investigate a major engineering failure and identify how design-process improvements could have reduced the risk.",
+    "page": "courses/ied/units/unit-0/challenge-0-5-engineering-failure-investigation.html"
+  },
+  {
+    "id": "IED-1.1",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 1,
+    "unitTitle": "Sketching, Measurement & Engineering Documentation",
+    "category": "Engineering Challenge",
+    "title": "Reverse Engineer a Hand Tool",
+    "difficulty": "Intermediate",
+    "time": "1-2 class periods",
+    "mission": "Produce accurate multiview and isometric documentation for an approved hand tool.",
+    "page": "courses/ied/units/unit-1/challenge-1-1-reverse-engineer-a-hand-tool.html"
+  },
+  {
+    "id": "IED-1.2",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 1,
+    "unitTitle": "Sketching, Measurement & Engineering Documentation",
+    "category": "Competition",
+    "title": "Measurement Accuracy Competition",
+    "difficulty": "Beginner",
+    "time": "45 minutes",
+    "mission": "Measure a set of mystery parts as accurately and consistently as possible.",
+    "page": "courses/ied/units/unit-1/challenge-1-2-measurement-accuracy-competition.html"
+  },
+  {
+    "id": "IED-1.3",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 1,
+    "unitTitle": "Sketching, Measurement & Engineering Documentation",
+    "category": "Engineering Challenge",
+    "title": "Create Picture-Only Assembly Instructions",
+    "difficulty": "Advanced",
+    "time": "2 class periods",
+    "mission": "Disassemble an approved object and create picture-only instructions that another student can use to reassemble it.",
+    "page": "courses/ied/units/unit-1/challenge-1-3-create-picture-only-assembly-instructions.html"
+  },
+  {
+    "id": "IED-1.4",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 1,
+    "unitTitle": "Sketching, Measurement & Engineering Documentation",
+    "category": "Practice & Review",
+    "title": "Peer Design Review of the Rocket",
+    "difficulty": "Intermediate",
+    "time": "45-60 minutes",
+    "mission": "Conduct a professional, evidence-based review of another team\u2019s rocket design and recommend prioritized improvements.",
+    "page": "courses/ied/units/unit-1/challenge-1-4-peer-design-review-of-the-rocket.html"
+  },
+  {
+    "id": "IED-1.5",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 1,
+    "unitTitle": "Sketching, Measurement & Engineering Documentation",
+    "category": "Skill Builder",
+    "title": "Engineering Drawing Makeover",
+    "difficulty": "Intermediate",
+    "time": "60 minutes",
+    "mission": "Revise a weak engineering drawing so it communicates the part clearly and can be used for fabrication or inspection.",
+    "page": "courses/ied/units/unit-1/challenge-1-5-engineering-drawing-makeover.html"
+  },
+  {
+    "id": "IED-2.1",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 2,
+    "unitTitle": "CAD Parts, Constraints & Prototyping",
+    "category": "Engineering Challenge",
+    "title": "Reverse Engineer a Tape Measure Hook",
+    "difficulty": "Intermediate",
+    "time": "2 class periods",
+    "mission": "Measure and model a tape measure hook as a fully constrained, parametric CAD part.",
+    "page": "courses/ied/units/unit-2/challenge-2-1-reverse-engineer-a-tape-measure-hook.html"
+  },
+  {
+    "id": "IED-2.2",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 2,
+    "unitTitle": "CAD Parts, Constraints & Prototyping",
+    "category": "Competition",
+    "title": "Thirty-Minute CAD Sprint",
+    "difficulty": "Intermediate",
+    "time": "30 minutes plus review",
+    "mission": "Model a randomly assigned object accurately within 30 minutes, then evaluate which modeling choices improved speed and quality.",
+    "page": "courses/ied/units/unit-2/challenge-2-2-thirty-minute-cad-sprint.html"
+  },
+  {
+    "id": "IED-2.3",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 2,
+    "unitTitle": "CAD Parts, Constraints & Prototyping",
+    "category": "Aerospace Mission",
+    "title": "Lightweight Bracket Redesign",
+    "difficulty": "Advanced",
+    "time": "2-3 class periods",
+    "mission": "Redesign an instructor-provided bracket to reduce modeled mass by at least 20% while preserving interfaces and basic load capability.",
+    "page": "courses/ied/units/unit-2/challenge-2-3-lightweight-bracket-redesign.html"
+  },
+  {
+    "id": "IED-2.4",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 2,
+    "unitTitle": "CAD Parts, Constraints & Prototyping",
+    "category": "Skill Builder",
+    "title": "Design for 3D Printing",
+    "difficulty": "Intermediate",
+    "time": "1-2 class periods",
+    "mission": "Redesign the part to improve printability while preserving its function.",
+    "page": "courses/ied/units/unit-2/challenge-2-4-design-for-3d-printing.html"
+  },
+  {
+    "id": "IED-2.5",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 2,
+    "unitTitle": "CAD Parts, Constraints & Prototyping",
+    "category": "Practice & Review",
+    "title": "3D Print Failure Detective",
+    "difficulty": "Beginner",
+    "time": "45-60 minutes",
+    "mission": "Inspect failed prints, identify likely causes, and recommend a controlled correction for each failure.",
+    "page": "courses/ied/units/unit-2/challenge-2-5-3d-print-failure-detective.html"
+  },
+  {
+    "id": "IED-3.1",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 3,
+    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
+    "category": "Engineering Challenge",
+    "title": "Simplify the Rocket Assembly",
+    "difficulty": "Advanced",
+    "time": "2 class periods",
+    "mission": "Redesign the assembly to reduce part count or assembly time while preserving required function and overall envelope.",
+    "page": "courses/ied/units/unit-3/challenge-3-1-simplify-the-rocket-assembly.html"
+  },
+  {
+    "id": "IED-3.2",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 3,
+    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
+    "category": "Skill Builder",
+    "title": "Portfolio-Quality Exploded View",
+    "difficulty": "Intermediate",
+    "time": "1-2 class periods",
+    "mission": "Create a professional exploded view, BOM, and assembly-order visual suitable for a portfolio or design review.",
+    "page": "courses/ied/units/unit-3/challenge-3-2-portfolio-quality-exploded-view.html"
+  },
+  {
+    "id": "IED-3.3",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 3,
+    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
+    "category": "Engineering Challenge",
+    "title": "Fit and Tolerance Investigation",
+    "difficulty": "Advanced",
+    "time": "2-3 class periods",
+    "mission": "Design and test a tolerance coupon that identifies useful clearance, transition, and press-fit dimensions for the classroom printer.",
+    "page": "courses/ied/units/unit-3/challenge-3-3-fit-and-tolerance-investigation.html"
+  },
+  {
+    "id": "IED-3.4",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 3,
+    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
+    "category": "Practice & Review",
+    "title": "Manufacturing Readiness Review",
+    "difficulty": "Intermediate",
+    "time": "60 minutes",
+    "mission": "Perform a manufacturing readiness review of another student\u2019s rocket assembly and identify issues before production.",
+    "page": "courses/ied/units/unit-3/challenge-3-4-manufacturing-readiness-review.html"
+  },
+  {
+    "id": "IED-3.5",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 3,
+    "unitTitle": "CAD Assemblies, Prototyping & Technical Drawings",
+    "category": "Aerospace Mission",
+    "title": "Prototype Component Upgrade",
+    "difficulty": "Intermediate",
+    "time": "2-3 class periods",
+    "mission": "Redesign, print, and compare one component so the revised prototype performs better in a defined test.",
+    "page": "courses/ied/units/unit-3/challenge-3-5-prototype-component-upgrade.html"
+  },
+  {
+    "id": "IED-4.1",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 4,
+    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
+    "category": "Aerospace Mission",
+    "title": "Select a Material for a Drone Arm",
+    "difficulty": "Advanced",
+    "time": "1-2 class periods",
+    "mission": "Compare candidate materials and recommend the best choice for a defined drone-arm scenario.",
+    "page": "courses/ied/units/unit-4/challenge-4-1-select-a-material-for-a-drone-arm.html"
+  },
+  {
+    "id": "IED-4.2",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 4,
+    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
+    "category": "Practice & Review",
+    "title": "Friction Surface Investigation",
+    "difficulty": "Beginner",
+    "time": "60-90 minutes",
+    "mission": "Compare friction for three surface materials and recommend the best tray liner.",
+    "page": "courses/ied/units/unit-4/challenge-4-2-friction-surface-investigation.html"
+  },
+  {
+    "id": "IED-4.3",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 4,
+    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
+    "category": "Engineering Challenge",
+    "title": "Design a 5:1 Gear Reduction",
+    "difficulty": "Intermediate",
+    "time": "1-2 class periods",
+    "mission": "Design a gear system with an overall reduction close to 5:1 and demonstrate the expected speed and torque tradeoff.",
+    "page": "courses/ied/units/unit-4/challenge-4-3-design-a-5-1-gear-reduction.html"
+  },
+  {
+    "id": "IED-4.4",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 4,
+    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
+    "category": "Skill Builder",
+    "title": "Turn Class Data into an Engineering Decision",
+    "difficulty": "Intermediate",
+    "time": "60 minutes",
+    "mission": "Analyze a class data set, create appropriate visualizations, and make an evidence-based engineering recommendation.",
+    "page": "courses/ied/units/unit-4/challenge-4-4-turn-class-data-into-an-engineering-decision.html"
+  },
+  {
+    "id": "IED-4.5",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 4,
+    "unitTitle": "Materials, Mechanisms, Data & Electromechanical Systems",
+    "category": "Creative Builder",
+    "title": "Build a Simple Electromechanical Device",
+    "difficulty": "Advanced",
+    "time": "2-3 class periods",
+    "mission": "Design and build a simple electromechanical device such as an alarm, fan, indicator, mini conveyor, or launcher with a safe, defined function.",
+    "page": "courses/ied/units/unit-4/challenge-4-5-build-a-simple-electromechanical-device.html"
+  },
+  {
+    "id": "IED-5.1",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 5,
+    "unitTitle": "Human-Centered Aerospace Design",
+    "category": "Engineering Challenge",
+    "title": "Redesign for Limited Hand Strength",
+    "difficulty": "Intermediate",
+    "time": "2 class periods",
+    "mission": "Redesign an approved classroom product to reduce required grip force or improve control without removing its core function.",
+    "page": "courses/ied/units/unit-5/challenge-5-1-redesign-for-limited-hand-strength.html"
+  },
+  {
+    "id": "IED-5.2",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 5,
+    "unitTitle": "Human-Centered Aerospace Design",
+    "category": "Aerospace Mission",
+    "title": "Sustainable Packaging for a Rocket Component",
+    "difficulty": "Intermediate",
+    "time": "2-3 class periods",
+    "mission": "Design, build, and test sustainable packaging for a provided component.",
+    "page": "courses/ied/units/unit-5/challenge-5-2-sustainable-packaging-for-a-rocket-component.html"
+  },
+  {
+    "id": "IED-5.3",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 5,
+    "unitTitle": "Human-Centered Aerospace Design",
+    "category": "Skill Builder",
+    "title": "Client Design Brief Sprint",
+    "difficulty": "Intermediate",
+    "time": "2 class periods",
+    "mission": "Interview a client, convert their needs into a design brief, and recommend a concept.",
+    "page": "courses/ied/units/unit-5/challenge-5-3-client-design-brief-sprint.html"
+  },
+  {
+    "id": "IED-5.4",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 5,
+    "unitTitle": "Human-Centered Aerospace Design",
+    "category": "Aerospace Mission",
+    "title": "Aerospace Product Life-Cycle Analysis",
+    "difficulty": "Advanced",
+    "time": "1-2 class periods",
+    "mission": "Map the life cycle of an aerospace-related product and recommend two realistic improvements.",
+    "page": "courses/ied/units/unit-5/challenge-5-4-aerospace-product-life-cycle-analysis.html"
+  },
+  {
+    "id": "IED-5.5",
+    "course": "IED",
+    "courseKey": "ied",
+    "unit": 5,
+    "unitTitle": "Human-Centered Aerospace Design",
+    "category": "Creative Builder",
+    "title": "Engineering Portfolio Showcase",
+    "difficulty": "Advanced",
+    "time": "2-3 class periods",
+    "mission": "Transform your strongest project into a concise portfolio case study that demonstrates process, evidence, revision, and communication.",
+    "page": "courses/ied/units/unit-5/challenge-5-5-engineering-portfolio-showcase.html"
   }
 ]
