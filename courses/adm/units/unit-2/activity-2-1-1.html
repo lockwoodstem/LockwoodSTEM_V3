@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ADM Unit 2 | Advanced Automation in Manufacturing</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../../../assets/css/styles.css">
+<script defer src="../../../../assets/js/main.js"></script>
+</head>
+<body class="adm-unit-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../../../../index.html" aria-label="LockwoodSTEM home">
+      <img class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
+      <span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">Menu</button>
+    <ul class="nav-links">
+      <li><a href="../../../../courses.html" aria-current="page">Courses</a></li>
+      <li><a href="../../../../agenda.html">Daily Agenda</a></li>
+      <li><a href="../../../../resources/index.html">Resources</a></li>
+      <li><a href="../../../../certifications/index.html">Certifications</a></li>
+      <li><a href="../../../../fablab/index.html">FabLab</a></li>
+      <li><a href="../../../../about/index.html">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-hero adm-hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">ADM Activity 2.1.1</div>
+      <h1>Industrial Workcell</h1>
+      <p>Explore how machines, robots, sensors, conveyors, and people work together in an automated manufacturing system.</p>
+      <div class="hero-actions">
+        <a class="btn" href="../unit-2.html">Back to Unit 2</a>
+        <a class="btn secondary" href="#code-example">View Code</a>
+        <a class="btn secondary" href="#submit">What You Submit</a>
+      </div>
+    </div>
+    <aside class="card dark">
+      <span class="tag">Lesson Focus</span>
+      <h3>Pick, place, repeat</h3>
+      <p>Use a loop and coordinate offset to repeat a basic workcell movement pattern.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="container">
+  <div class="grid two">
+    <article class="card">
+      <h2>Lesson Overview</h2>
+      <p>Students are introduced to industrial workcells and how a robot can complete a repeatable pick-and-place operation. This example uses a magnetic end effector, a loop, and a coordinate shift to place multiple objects in a simple workcell layout.</p>
+    </article>
+    <article class="card">
+      <h2>Notes</h2>
+      <ul class="unit-meta-list">
+        <li>This lesson introduces a basic industrial workcell movement sequence.</li>
+<li>The robotic arm uses a magnetic end effector to pick up and place objects.</li>
+<li>The loop repeats the process so the same task can be performed more than once.</li>
+<li>The xShift variable changes the placement location for each repeated cycle.</li>
+<li>Final submitted code must include comments explaining setup, pickup, placement, looping, and coordinate changes.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="submit" class="container">
+  <article class="card submit-card">
+    <div class="eyebrow">Student deliverables</div>
+    <h2>What You Submit</h2>
+    <ul class="unit-meta-list submit-list">
+      <li>Engineering notebook entry for Activity 2.1.1</li>
+<li>Code or pseudocode with meaningful comments</li>
+<li>Workcell sketch or diagram showing pickup and placement locations</li>
+<li>Explanation of how the loop repeats the workcell task</li>
+<li>Explanation of how xShift changes the placement location</li>
+<li>Testing notes showing what worked, what failed, and what changed</li>
+<li>Photo, screenshot, or video evidence of the workcell movement</li>
+    </ul>
+  </article>
+</section>
+
+<section id="code-example" class="container lesson-code-section">
+  <div class="section-header">
+    <div>
+      <div class="eyebrow">Code example</div>
+      <h2>2.1.1: Industrial Workcell</h2>
+      <p class="section-subtitle">Review the code, copy it when needed, and add comments before submitting your final version.</p>
+    </div>
+  </div>
+  
+          <section class="code-card">
+            <div class="code-card-header">
+              <span>VEXcode Python Example</span>
+              <button class="copy-code-btn" type="button">Copy Code</button>
+            </div>
+            <div class="code-disclaimer">
+              Code examples may be incomplete or missing comments. Comments are required for code submissions.
+            </div>
+            <pre><code class="language-python">arm10.move_to(180, 100, 100)
+
+arm10.set_end_effector_type(Arm.MAGNET)
+xShift = 0
+for i in range(2):
+    arm10.move_to(100, 200, 20)
+    arm10.set_end_effector_magnet(True)
+    arm10.move_to(100, 200, 75)
+    arm10.move_to(150+xShift, 0, 100)
+    arm10.move_to(150+xShift, 0, 30)
+    arm10.set_end_effector_magnet(False)
+    xShift = xShift+40</code></pre>
+          </section>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
+      <div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div>
+    </div>
+    <div class="footer-links">
+      <a href="../../../../courses.html">Courses</a>
+      <a href="../../../../agenda.html">Daily Agenda</a>
+      <a href="../../../../resources/index.html">Resources</a>
+      <a href="../../../../certifications/index.html">Certifications</a>
+      <a href="../../../../fablab/index.html">FabLab</a>
+      <a href="../../../../about/index.html">About</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

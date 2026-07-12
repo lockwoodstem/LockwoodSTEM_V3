@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ADM Unit 2 | Advanced Automation in Manufacturing</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../../../assets/css/styles.css">
+<script defer src="../../../../assets/js/main.js"></script>
+</head>
+<body class="adm-unit-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../../../../index.html" aria-label="LockwoodSTEM home">
+      <img class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
+      <span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">Menu</button>
+    <ul class="nav-links">
+      <li><a href="../../../../courses.html" aria-current="page">Courses</a></li>
+      <li><a href="../../../../agenda.html">Daily Agenda</a></li>
+      <li><a href="../../../../resources/index.html">Resources</a></li>
+      <li><a href="../../../../certifications/index.html">Certifications</a></li>
+      <li><a href="../../../../fablab/index.html">FabLab</a></li>
+      <li><a href="../../../../about/index.html">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-hero adm-hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">ADM Activity 2.1.3</div>
+      <h1>Sorting by Color</h1>
+      <p>Use sensor input or programmed logic to identify and sort objects based on color or another visible property.</p>
+      <div class="hero-actions">
+        <a class="btn" href="../unit-2.html">Back to Unit 2</a>
+        <a class="btn secondary" href="#code-example">View Code</a>
+        <a class="btn secondary" href="#submit">What You Submit</a>
+      </div>
+    </div>
+    <aside class="card dark">
+      <span class="tag">Lesson Focus</span>
+      <h3>Sense, decide, sort</h3>
+      <p>Use an optical sensor reading to classify an object and move it to the correct output location.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="container">
+  <div class="grid two">
+    <article class="card">
+      <h2>Lesson Overview</h2>
+      <p>Students explore how an automated system can identify and sort objects using sensor input. This example uses the optical sensor hue value to decide where the robotic arm should place the object.</p>
+    </article>
+    <article class="card">
+      <h2>Notes</h2>
+      <ul class="unit-meta-list">
+        <li>This lesson introduces color-based sorting using an optical sensor.</li>
+<li>The robot picks up one object, moves it to the sensing location, and turns on the optical sensor light.</li>
+<li>The hue value is used to decide whether the object should go to one bin or another.</li>
+<li>The else branch provides a fail-safe response if the object does not match the expected color range.</li>
+<li>Final submitted code must include comments explaining pickup, sensing, decision logic, placement, and fail-safe behavior.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="submit" class="container">
+  <article class="card submit-card">
+    <div class="eyebrow">Student deliverables</div>
+    <h2>What You Submit</h2>
+    <ul class="unit-meta-list submit-list">
+      <li>Engineering notebook entry for Activity 2.1.3</li>
+<li>Code or pseudocode with meaningful comments</li>
+<li>Explanation of how the optical sensor is used to sort by color</li>
+<li>Description of each sorting location or bin</li>
+<li>Testing notes showing sensor readings, sorting accuracy, and revisions</li>
+<li>Photo, screenshot, or video evidence of the sorting behavior</li>
+<li>Short reflection explaining how sensor input improves automation</li>
+    </ul>
+  </article>
+</section>
+
+<section id="code-example" class="container lesson-code-section">
+  <div class="section-header">
+    <div>
+      <div class="eyebrow">Code example</div>
+      <h2>2.1.3: Sorting by Color</h2>
+      <p class="section-subtitle">Review the code, copy it when needed, and add comments before submitting your final version.</p>
+    </div>
+  </div>
+  
+          <section class="code-card">
+            <div class="code-card-header">
+              <span>VEXcode Python Example</span>
+              <button class="copy-code-btn" type="button">Copy Code</button>
+            </div>
+            <div class="code-disclaimer">
+              Code examples may be incomplete or missing comments. Comments are required for code submissions.
+            </div>
+            <pre><code class="language-python">arm10.move_to(180, 100, 100)
+
+arm10.set_end_effector_type(Arm.MAGNET)
+arm10.move_to(100, 200, 20)
+arm10.set_end_effector_magnet(True)
+arm10.move_to(100, 200, 75)
+arm10.move_to(45, 175, 50)
+
+optical_5.set_light(LedStateType.ON)
+optical_5.set_light_power(50, PERCENT)
+wait(1, SECONDS)
+
+if optical_5.hue() &gt; 50:
+    arm10.move_to(175, 0, 100)
+    arm10.move_to(175, 0, 30)
+    arm10.set_end_effector_magnet(False)
+elif optical_5.hue() &lt; 50:
+    arm10.move_to(175, 150, 100)
+    arm10.move_to(175, 150, 30)
+    arm10.set_end_effector_magnet(False)
+else:
+  arm10.set_control_stop(True)
+  signal_tower_6.set_color(SignalTower.BLUE, SignalTower.BLINK)</code></pre>
+          </section>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
+      <div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div>
+    </div>
+    <div class="footer-links">
+      <a href="../../../../courses.html">Courses</a>
+      <a href="../../../../agenda.html">Daily Agenda</a>
+      <a href="../../../../resources/index.html">Resources</a>
+      <a href="../../../../certifications/index.html">Certifications</a>
+      <a href="../../../../fablab/index.html">FabLab</a>
+      <a href="../../../../about/index.html">About</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ADM Unit 1 | Introduction to Industry 4.0</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../../../assets/css/styles.css">
+<script defer src="../../../../assets/js/main.js"></script>
+</head>
+<body class="adm-unit-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../../../../index.html" aria-label="LockwoodSTEM home">
+      <img class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
+      <span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">Menu</button>
+    <ul class="nav-links">
+      <li><a href="../../../../courses.html" aria-current="page">Courses</a></li>
+      <li><a href="../../../../agenda.html">Daily Agenda</a></li>
+      <li><a href="../../../../resources/index.html">Resources</a></li>
+      <li><a href="../../../../certifications/index.html">Certifications</a></li>
+      <li><a href="../../../../fablab/index.html">FabLab</a></li>
+      <li><a href="../../../../about/index.html">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-hero adm-hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">ADM Project 1.1.8</div>
+      <h1>Decreasing Spirals</h1>
+      <p>Use loops and incremental movement to create a decreasing spiral path.</p>
+      <div class="hero-actions">
+        <a class="btn" href="../unit-1.html">Back to Unit 1</a>
+        <a class="btn secondary" href="#code-example">View Code</a>
+      </div>
+    </div>
+    <aside class="card dark">
+      <span class="tag">Lesson Focus</span>
+      <h3>Code, test, document</h3>
+      <p>Use the example as a starting point, then document what the code does, how it was tested, and what revisions were needed.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="container">
+  <div class="grid two">
+    <article class="card">
+      <h2>Lesson Overview</h2>
+      <p>In this project, students apply movement coding, path control, and geometric reasoning to create a programmed robotic motion project using decreasing spiral paths. The example uses a loop and a side length variable to control repeated movement.</p>
+    </article>
+    <article class="card">
+      <h2>Notes</h2>
+      <ul class="unit-meta-list">
+        <li>This example intentionally shows why variable names and debugging matter.</li>
+<li>Check the spelling and capitalization of variables before running code.</li>
+<li>A loop can reduce repeated commands, but each step still needs to be planned.</li>
+<li>Incremental movement changes position relative to the robot&#x27;s current location.</li>
+<li>Final submissions must include comments explaining the purpose of the loop and major movement sections.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="code-example" class="container lesson-code-section">
+  <div class="section-header">
+    <div>
+      <div class="eyebrow">Code example</div>
+      <h2>1.1.8: Decreasing Spirals</h2>
+      <p class="section-subtitle">Review the code, copy it when needed, and add comments before submitting your final version.</p>
+    </div>
+  </div>
+  
+          <section class="code-card">
+            <div class="code-card-header">
+              <span>VEXcode Python Example</span>
+              <button class="copy-code-btn" type="button">Copy Code</button>
+            </div>
+            <div class="code-disclaimer">
+              Code examples may be incomplete or missing comments. Comments are required for code submissions.
+            </div>
+            <pre><code class="language-python">def main():
+    arm.move_to(100, 65, 0)
+    sideLength = 90
+     #iterate through loop, reduce loops by 15mm each iteration   
+    for i in range (2):
+        arm.move_inc(sideLength, 0, 0)
+        arm.move_inc(0, sideLength, 0)
+        sideLength = sideLenth - 15
+
+        arm.move_inc(-sideLength, 0, 0)
+        arm.move_inc(0, -sideLength, 0)
+        sideLength = sideLenth - 15
+
+        arm.move_inc(-sideLength, 0, 0)
+        arm.move_to(120, 0, 100)</code></pre>
+          </section>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
+      <div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div>
+    </div>
+    <div class="footer-links">
+      <a href="../../../../courses.html">Courses</a>
+      <a href="../../../../agenda.html">Daily Agenda</a>
+      <a href="../../../../resources/index.html">Resources</a>
+      <a href="../../../../certifications/index.html">Certifications</a>
+      <a href="../../../../fablab/index.html">FabLab</a>
+      <a href="../../../../about/index.html">About</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

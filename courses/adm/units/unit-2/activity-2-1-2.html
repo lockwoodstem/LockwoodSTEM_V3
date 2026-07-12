@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ADM Unit 2 | Advanced Automation in Manufacturing</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../../../assets/css/styles.css">
+<script defer src="../../../../assets/js/main.js"></script>
+</head>
+<body class="adm-unit-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../../../../index.html" aria-label="LockwoodSTEM home">
+      <img class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
+      <span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">Menu</button>
+    <ul class="nav-links">
+      <li><a href="../../../../courses.html" aria-current="page">Courses</a></li>
+      <li><a href="../../../../agenda.html">Daily Agenda</a></li>
+      <li><a href="../../../../resources/index.html">Resources</a></li>
+      <li><a href="../../../../certifications/index.html">Certifications</a></li>
+      <li><a href="../../../../fablab/index.html">FabLab</a></li>
+      <li><a href="../../../../about/index.html">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-hero adm-hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">ADM Activity 2.1.2</div>
+      <h1>Workcell Safety</h1>
+      <p>Learn how safety procedures, restricted zones, emergency stops, and safe operating habits protect people and equipment in automated systems.</p>
+      <div class="hero-actions">
+        <a class="btn" href="../unit-2.html">Back to Unit 2</a>
+        <a class="btn secondary" href="#code-example">View Code</a>
+        <a class="btn secondary" href="#submit">What You Submit</a>
+      </div>
+    </div>
+    <aside class="card dark">
+      <span class="tag">Lesson Focus</span>
+      <h3>Stop, signal, respond</h3>
+      <p>Use event-based programming to stop motion and show a clear visual safety response.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="container">
+  <div class="grid two">
+    <article class="card">
+      <h2>Lesson Overview</h2>
+      <p>Students learn how safety controls can be built into an automated workcell. This example uses a signal tower button to stop robot motion, display a message, and change tower lights when control has stopped.</p>
+    </article>
+    <article class="card">
+      <h2>Notes</h2>
+      <ul class="unit-meta-list">
+        <li>This lesson focuses on safe workcell behavior and emergency stop logic.</li>
+<li>The signal tower button is used as an input that triggers a stop response.</li>
+<li>The control-stopped event changes the signal tower colors to show that the arm has stopped.</li>
+<li>The repeated movement loop creates motion that can be interrupted by the safety control.</li>
+<li>Final submitted code must include comments explaining the stop function, event handlers, signal tower behavior, and repeated motion.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="submit" class="container">
+  <article class="card submit-card">
+    <div class="eyebrow">Student deliverables</div>
+    <h2>What You Submit</h2>
+    <ul class="unit-meta-list submit-list">
+      <li>Engineering notebook entry for Activity 2.1.2</li>
+<li>Code or pseudocode with meaningful comments</li>
+<li>Explanation of how the signal tower button changes system behavior</li>
+<li>Description of what happens when arm control is stopped</li>
+<li>Testing notes showing how the stop response was verified</li>
+<li>Photo, screenshot, or video evidence of the workcell safety behavior</li>
+<li>Short reflection explaining why emergency stop logic matters in automated manufacturing</li>
+    </ul>
+  </article>
+</section>
+
+<section id="code-example" class="container lesson-code-section">
+  <div class="section-header">
+    <div>
+      <div class="eyebrow">Code example</div>
+      <h2>2.1.2: Workcell Safety</h2>
+      <p class="section-subtitle">Review the code, copy it when needed, and add comments before submitting your final version.</p>
+    </div>
+  </div>
+  
+          <section class="code-card">
+            <div class="code-card-header">
+              <span>VEXcode Python Example</span>
+              <button class="copy-code-btn" type="button">Copy Code</button>
+            </div>
+            <div class="code-disclaimer">
+              Code examples may be incomplete or missing comments. Comments are required for code submissions.
+            </div>
+            <pre><code class="language-python">def on_signal_tower_pressed():
+   arm10.set_control_stop(True)
+   brain.screen.clear_screen() 
+   brain.screen.set_cursor(1, 1)
+   brain.screen.print(&quot;Stop you goofball!&quot;)
+
+def arm_control_stopped():
+
+   # Change colors of tower to show a stop has happened.
+
+   signal_tower_6.set_color(SignalTower.GREEN, SignalTower.OFF)
+
+   signal_tower_6.set_color(SignalTower.RED, SignalTower.BLINK)
+
+
+
+
+signal_tower_6.pressed(on_signal_tower_pressed)
+arm10.control_stopped(arm_control_stopped)
+wait(15, MSEC)
+
+
+while True:
+
+   arm10.move_to(0, 150, 50)
+
+   wait(500, MSEC)
+
+   arm10.move_to(220, 0, 220)
+
+   wait(500, MSEC)</code></pre>
+          </section>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
+      <div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div>
+    </div>
+    <div class="footer-links">
+      <a href="../../../../courses.html">Courses</a>
+      <a href="../../../../agenda.html">Daily Agenda</a>
+      <a href="../../../../resources/index.html">Resources</a>
+      <a href="../../../../certifications/index.html">Certifications</a>
+      <a href="../../../../fablab/index.html">FabLab</a>
+      <a href="../../../../about/index.html">About</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
