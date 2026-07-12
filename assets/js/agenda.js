@@ -2,7 +2,7 @@ const config = window.LOCKWOOD_AGENDA_CONFIG || {};
 const csvUrls = config.csvUrls || {};
 const quotesCsvUrl = config.quotesCsvUrl || "";
 const courseLabels = config.courseLabels || { IED: "IED", POE: "POE", ADM: "ADM" };
-const legacyCourseAliases = config.legacyCourseAliases || { IED: ["AED"], POE: [], ADM: ["AM"] };
+const legacyCourseAliases = config.legacyCourseAliases || { IED: ["IED"], POE: [], ADM: ["AM"] };
 
 let rows = [];
 let quoteRows = [];

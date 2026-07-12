@@ -1,7 +1,7 @@
-AED Lesson Resources Linked Update
+IED Lesson Resources Linked Update
 =================================
 
-This site update links AED lesson resource cards and unit resource sections to existing templates,
+This site update links IED lesson resource cards and unit resource sections to existing templates,
 reference guides, assets, and certification pages.
 
 Presentation files are intentionally not included in this update.

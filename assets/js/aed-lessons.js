@@ -173,12 +173,12 @@ function renderLesson() {
   const data = AED_UNITS[unit];
   if (!data || !data.lessons[lesson - 1]) {
     setText("lesson-title", "Lesson not found");
-    setText("lesson-summary", "Return to the AED course hub and select a unit lesson.");
+    setText("lesson-summary", "Return to the IED course hub and select a unit lesson.");
     return;
   }
 
   const lessonTitle = data.lessons[lesson - 1];
-  setText("lesson-eyebrow", `AED Unit ${unit} • Lesson ${unit}.${lesson}`);
+  setText("lesson-eyebrow", `IED Unit ${unit} • Lesson ${unit}.${lesson}`);
   setText("lesson-title", lessonTitle);
   setText("lesson-summary", `This lesson connects ${lessonTitle.toLowerCase()} to aerospace engineering practice through student-facing activities, documentation, and portfolio evidence.`);
   setText("lesson-deliverable", "Engineering notebook entry + student deliverable");
