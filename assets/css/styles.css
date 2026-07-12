@@ -2686,3 +2686,102 @@ body.safe-unit-page .safe-unit-lesson-button{
 .ied-challenge-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}.ied-brief-card{display:flex;flex-direction:column}.ied-brief-card .card-actions{margin-top:auto;padding-top:1rem}.ied-brief-card .brief-number{font-weight:950;color:var(--blue);font-size:.82rem}.ied-brief-card .brief-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin:.65rem 0}.ied-brief-card .brief-tags span{padding:.3rem .52rem;border-radius:999px;background:rgba(19,92,168,.1);color:var(--blue);font-size:.78rem;font-weight:900}
 @media(max-width:850px){.design-brief-layout{grid-template-columns:1fr}.brief-sidebar{position:static}}
 @media print{header,footer,.site-header,.hero-actions,.brief-sidebar{display:none!important}.design-brief-layout{display:block}.design-brief-hero{background:#fff!important;color:#000!important}.design-brief-hero h1,.design-brief-hero p{color:#000!important}}
+
+
+/* Challenge brief readability fix */
+.mission-brief-page .engineering-tip,
+.mission-brief-page .common-mistake,
+.mission-brief-page .career-connection,
+.mission-brief-page .before-submit,
+.challenge-brief-page .engineering-tip,
+.challenge-brief-page .common-mistake,
+.challenge-brief-page .career-connection,
+.challenge-brief-page .before-submit,
+.engineering-tip,
+.common-mistake,
+.career-connection,
+.before-submit{
+  color:#0b1f3a !important;
+}
+
+.mission-brief-page .engineering-tip *,
+.mission-brief-page .common-mistake *,
+.mission-brief-page .career-connection *,
+.mission-brief-page .before-submit *,
+.challenge-brief-page .engineering-tip *,
+.challenge-brief-page .common-mistake *,
+.challenge-brief-page .career-connection *,
+.challenge-brief-page .before-submit *,
+.engineering-tip *,
+.common-mistake *,
+.career-connection *,
+.before-submit *{
+  color:#0b1f3a !important;
+}
+
+.mission-brief-page .engineering-tip h3,
+.mission-brief-page .common-mistake h3,
+.mission-brief-page .career-connection h3,
+.mission-brief-page .before-submit h3,
+.challenge-brief-page .engineering-tip h3,
+.challenge-brief-page .common-mistake h3,
+.challenge-brief-page .career-connection h3,
+.challenge-brief-page .before-submit h3,
+.engineering-tip h3,
+.common-mistake h3,
+.career-connection h3,
+.before-submit h3{
+  color:#071a33 !important;
+  font-weight:950;
+}
+
+.mission-brief-page .engineering-tip p,
+.mission-brief-page .common-mistake p,
+.mission-brief-page .career-connection p,
+.mission-brief-page .before-submit p,
+.challenge-brief-page .engineering-tip p,
+.challenge-brief-page .common-mistake p,
+.challenge-brief-page .career-connection p,
+.challenge-brief-page .before-submit p,
+.engineering-tip p,
+.common-mistake p,
+.career-connection p,
+.before-submit p{
+  color:#24364f !important;
+}
+
+.mission-brief-page .stretch-goal,
+.challenge-brief-page .stretch-goal,
+.stretch-goal{
+  color:#ffffff !important;
+}
+
+.mission-brief-page .stretch-goal *,
+.challenge-brief-page .stretch-goal *,
+.stretch-goal *{
+  color:#ffffff !important;
+}
+
+.mission-brief-page .before-submit,
+.challenge-brief-page .before-submit,
+.before-submit{
+  background:#ffffff !important;
+}
+
+.mission-brief-page .engineering-tip,
+.challenge-brief-page .engineering-tip,
+.engineering-tip{
+  background:#eef3ff !important;
+}
+
+.mission-brief-page .common-mistake,
+.challenge-brief-page .common-mistake,
+.common-mistake{
+  background:#fff7df !important;
+}
+
+.mission-brief-page .career-connection,
+.challenge-brief-page .career-connection,
+.career-connection{
+  background:#edf8f3 !important;
+}
