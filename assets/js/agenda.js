@@ -410,3 +410,26 @@ els.todayBtn.addEventListener("click", () => { currentDate = todayISO(); els.dat
   await loadQuotes();
   await loadAgendaForCourse(currentCourse);
 })();
+
+
+// Agenda semantic field class helper
+document.addEventListener("DOMContentLoaded", () => {
+  const assignClass = (selectors, className) => {
+    selectors.forEach((selector) => {
+      document.querySelectorAll(selector).forEach((el) => el.classList.add(className));
+    });
+  };
+
+  assignClass(
+    ["#agenda-date", "[data-agenda-field='date']", ".agenda-date-value", ".current-date"],
+    "agenda-date"
+  );
+  assignClass(
+    ["#agenda-course", "[data-agenda-field='course']", ".agenda-course-value", ".current-course"],
+    "agenda-course"
+  );
+  assignClass(
+    ["#agenda-lesson-title", "[data-agenda-field='lesson']", "[data-agenda-field='lesson-title']", ".agenda-lesson-value", ".current-lesson"],
+    "agenda-lesson-title"
+  );
+});
