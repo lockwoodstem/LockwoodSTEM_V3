@@ -3573,3 +3573,46 @@ body.agenda-box-fit-v2 #lessonBadge{
     grid-template-columns:1fr !important;
   }
 }
+
+
+/* Active navigation text visibility fix */
+.site-nav a.active,
+.site-nav a[aria-current="page"],
+.main-nav a.active,
+.main-nav a[aria-current="page"],
+nav a.active,
+nav a[aria-current="page"],
+.nav-link.active,
+.nav-link[aria-current="page"]{
+  color:#0b1f3a !important;
+  background:#c8a24a !important;
+  text-shadow:none !important;
+}
+
+.site-nav a.active *,
+.site-nav a[aria-current="page"] *,
+.main-nav a.active *,
+.main-nav a[aria-current="page"] *,
+nav a.active *,
+nav a[aria-current="page"] *,
+.nav-link.active *,
+.nav-link[aria-current="page"] *{
+  color:#0b1f3a !important;
+  text-shadow:none !important;
+}
+
+.site-nav a.active:hover,
+.site-nav a.active:focus,
+.site-nav a[aria-current="page"]:hover,
+.site-nav a[aria-current="page"]:focus,
+.main-nav a.active:hover,
+.main-nav a.active:focus,
+.main-nav a[aria-current="page"]:hover,
+.main-nav a[aria-current="page"]:focus,
+nav a.active:hover,
+nav a.active:focus,
+nav a[aria-current="page"]:hover,
+nav a[aria-current="page"]:focus{
+  color:#071a33 !important;
+  background:#d6b75d !important;
+}
