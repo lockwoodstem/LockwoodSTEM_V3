@@ -230,7 +230,7 @@
 
   function findCurrentBlock(date){
     const schedule = getScheduleForDate(date);
-    if (!schedule.length) return { status: 'No School', detail: 'Weekend', minutesRemaining: null };
+    if (!schedule.length) return { status: 'No School', detail: 'Weekend', minutesRemaining: null, isActiveClass: false };
 
     const nowMinutes = date.getHours() * 60 + date.getMinutes();
     const sorted = [...schedule].sort((a, b) => minutesFromTime(a.start) - minutesFromTime(b.start));
@@ -241,7 +241,8 @@
       return {
         status: current.name,
         detail: `Ends ${timeLabel(current.end)} · ${remaining} min left`,
-        minutesRemaining: remaining
+        minutesRemaining: remaining,
+        isActiveClass: true
       };
     }
 
@@ -251,11 +252,12 @@
       return {
         status: 'Passing / Before Class',
         detail: `Next: ${next.name} at ${timeLabel(next.start)} · ${startsIn} min`,
-        minutesRemaining: startsIn
+        minutesRemaining: startsIn,
+        isActiveClass: false
       };
     }
 
-    return { status: 'After School', detail: `Schedule ended · ${displayScheduleName(date)}`, minutesRemaining: null };
+    return { status: 'After School', detail: `Schedule ended · ${displayScheduleName(date)}`, minutesRemaining: null, isActiveClass: false };
   }
 
   function updateClockAndPeriod(){
@@ -278,8 +280,18 @@
 
     if (currentPeriodBadge) {
       const period = findCurrentBlock(now);
+      const endingSoon = period.isActiveClass && period.minutesRemaining !== null && period.minutesRemaining < 10;
+
+      currentPeriodBadge.classList.toggle('period-ending-soon', endingSoon);
+      currentPeriodBadge.setAttribute(
+        'aria-label',
+        endingSoon
+          ? `${period.status}. ${period.minutesRemaining} minutes remain.`
+          : `${period.status}. ${period.detail}`
+      );
+
       currentPeriodBadge.innerHTML = `
-        <span class="period-label">Current</span>
+        <span class="period-label">Current Period</span>
         <span class="period-main">${period.status}</span>
         <span class="period-detail">${period.detail}</span>
       `;
