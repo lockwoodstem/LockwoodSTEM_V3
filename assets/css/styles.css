@@ -3616,3 +3616,28 @@ nav a[aria-current="page"]:focus{
   color:#071a33 !important;
   background:#d6b75d !important;
 }
+
+
+/* Exact active navigation selector fix */
+.nav-links a.is-active,
+.nav-links a[aria-current="page"]{
+  color:#0b1f3a !important;
+  background:#c8a24a !important;
+  text-decoration:none !important;
+  text-shadow:none !important;
+}
+
+.nav-links a.is-active *,
+.nav-links a[aria-current="page"] *{
+  color:#0b1f3a !important;
+  text-shadow:none !important;
+}
+
+.nav-links a.is-active:hover,
+.nav-links a.is-active:focus,
+.nav-links a[aria-current="page"]:hover,
+.nav-links a[aria-current="page"]:focus{
+  color:#071a33 !important;
+  background:#d6b75d !important;
+  text-decoration:none !important;
+}
