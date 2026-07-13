@@ -10,7 +10,7 @@
 <script defer="" src="assets/js/agenda-config.js"></script>
 <script defer="" src="assets/js/agenda.js"></script>
 <meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/></head>
-<body class="agenda-display-cleanup-enabled agenda-fit-fix agenda-exact-badge-fix site-consistency-v4 agenda-page">
+<body class="agenda-display-cleanup-enabled agenda-fit-fix agenda-exact-badge-fix site-consistency-v4 agenda-page agenda-box-fit-v2">
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header">
 <div class="container nav">
@@ -268,7 +268,17 @@
         weekday: 'short'
       }).format(now);
 
-      clock.innerHTML = `<span class="clock-label">${day}</span><span class="clock-time">${time}</span>`;
+      const timeParts = time.match(/^(.*)\s(AM|PM)$/);
+      const numericTime = timeParts ? timeParts[1] : time;
+      const meridiem = timeParts ? timeParts[2] : '';
+
+      clock.innerHTML = `
+        <span class="clock-label">${day}</span>
+        <span class="clock-time-row">
+          <span class="clock-time">${numericTime}</span>
+          <span class="clock-meridiem">${meridiem}</span>
+        </span>
+      `;
     }
 
     if (currentPeriodBadge) {

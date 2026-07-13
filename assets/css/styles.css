@@ -3393,3 +3393,183 @@ body.site-consistency-v4 main{
     overflow-x:auto;
   }
 }
+
+
+/* Final agenda badge containment fix v2 */
+body.agenda-box-fit-v2 .agenda-status.agenda-status-updated{
+  display:grid !important;
+  grid-template-columns:
+    minmax(190px,.95fr)
+    minmax(260px,1.2fr)
+    minmax(310px,1.45fr)
+    minmax(135px,.62fr)
+    minmax(225px,1.05fr) !important;
+  gap:.85rem !important;
+  align-items:stretch !important;
+  overflow:visible !important;
+}
+
+body.agenda-box-fit-v2 .agenda-status.agenda-status-updated > .agenda-badge{
+  width:100% !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+  text-overflow:clip !important;
+  white-space:normal !important;
+  overflow-wrap:break-word !important;
+  word-break:normal !important;
+}
+
+/* Date */
+body.agenda-box-fit-v2 #dateBadge{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  padding:.8rem .9rem !important;
+  font-size:clamp(.82rem,1.05vw,.98rem) !important;
+  line-height:1.16 !important;
+  white-space:normal !important;
+}
+
+/* Clock: stack weekday above the time, then keep the entire row contained. */
+body.agenda-box-fit-v2 #liveClock{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  grid-template-rows:auto auto !important;
+  align-content:center !important;
+  justify-items:center !important;
+  row-gap:.25rem !important;
+  padding:.75rem 1rem !important;
+  overflow:hidden !important;
+}
+
+body.agenda-box-fit-v2 #liveClock .clock-label{
+  display:block !important;
+  width:100% !important;
+  text-align:center !important;
+  font-size:.78rem !important;
+  line-height:1 !important;
+  letter-spacing:.14em !important;
+}
+
+body.agenda-box-fit-v2 #liveClock .clock-time-row{
+  display:flex !important;
+  align-items:baseline !important;
+  justify-content:center !important;
+  gap:.35rem !important;
+  width:100% !important;
+  min-width:0 !important;
+  overflow:hidden !important;
+}
+
+body.agenda-box-fit-v2 #liveClock .clock-time{
+  display:block !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  font-size:clamp(2rem,3.15vw,3.15rem) !important;
+  line-height:.95 !important;
+  letter-spacing:-.04em !important;
+  white-space:nowrap !important;
+}
+
+body.agenda-box-fit-v2 #liveClock .clock-meridiem{
+  flex:0 0 auto !important;
+  font-size:clamp(.75rem,1vw,1rem) !important;
+  line-height:1 !important;
+  font-weight:950 !important;
+  color:#fff !important;
+}
+
+/* Current period */
+body.agenda-box-fit-v2 #currentPeriodBadge{
+  min-width:0 !important;
+  padding:.7rem 1rem !important;
+  overflow:hidden !important;
+}
+
+body.agenda-box-fit-v2 #currentPeriodBadge .period-label{
+  font-size:.72rem !important;
+  line-height:1 !important;
+}
+
+body.agenda-box-fit-v2 #currentPeriodBadge .period-main{
+  max-width:100% !important;
+  font-size:clamp(1.75rem,3vw,2.9rem) !important;
+  line-height:.98 !important;
+  white-space:normal !important;
+  overflow-wrap:break-word !important;
+}
+
+body.agenda-box-fit-v2 #currentPeriodBadge .period-detail{
+  max-width:100% !important;
+  font-size:clamp(.82rem,1.1vw,1.03rem) !important;
+  line-height:1.12 !important;
+  white-space:normal !important;
+}
+
+body.agenda-box-fit-v2 #currentPeriodBadge.period-ending-soon::after{
+  max-width:100% !important;
+  box-sizing:border-box !important;
+  white-space:normal !important;
+  text-align:center !important;
+}
+
+/* Course */
+body.agenda-box-fit-v2 #courseBadge{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  padding:.55rem !important;
+  font-size:clamp(1.8rem,3vw,2.75rem) !important;
+  line-height:1 !important;
+  white-space:normal !important;
+}
+
+/* Lesson title */
+body.agenda-box-fit-v2 #lessonBadge{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  padding:.8rem .9rem !important;
+  font-size:clamp(.82rem,1.05vw,.98rem) !important;
+  line-height:1.16 !important;
+  white-space:normal !important;
+  overflow-wrap:break-word !important;
+}
+
+/* Keep the five-card display together longer on classroom/projector widths. */
+@media(max-width:1240px){
+  body.agenda-box-fit-v2 .agenda-status.agenda-status-updated{
+    grid-template-columns:
+      minmax(175px,.9fr)
+      minmax(235px,1.15fr)
+      minmax(285px,1.35fr)
+      minmax(125px,.6fr)
+      minmax(205px,1fr) !important;
+    gap:.65rem !important;
+  }
+
+  body.agenda-box-fit-v2 #liveClock .clock-time{
+    font-size:clamp(1.85rem,3vw,2.75rem) !important;
+  }
+
+  body.agenda-box-fit-v2 #currentPeriodBadge .period-main{
+    font-size:clamp(1.6rem,2.7vw,2.5rem) !important;
+  }
+}
+
+@media(max-width:1000px){
+  body.agenda-box-fit-v2 .agenda-status.agenda-status-updated{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+
+@media(max-width:650px){
+  body.agenda-box-fit-v2 .agenda-status.agenda-status-updated{
+    grid-template-columns:1fr !important;
+  }
+}
