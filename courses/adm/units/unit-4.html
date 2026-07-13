@@ -1,225 +1,218 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <title>ADM Unit 4 | Securing the Supply Chain</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../../../assets/css/styles.css">
-<script defer src="../../../assets/js/main.js"></script>
-</head>
-<body class="adm-unit-page safe-unit-page">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../../assets/css/styles.css" rel="stylesheet"/>
+<script defer="" src="../../../assets/js/main.js"></script>
+<meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/></head>
+<body class="adm-unit-page safe-unit-page site-consistency-v4 unit-overview-page">
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="../../../index.html" aria-label="LockwoodSTEM home">
-      <img class="brand-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
-      <span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
-    </a>
-    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">Menu</button>
-    <ul class="nav-links">
-      <li><a href="../../../courses.html" aria-current="page">Courses</a></li>
-      <li><a href="../../../agenda.html">Daily Agenda</a></li>
-      <li><a href="../../../resources/index.html">Resources</a></li>
-      <li><a href="../../../certifications/index.html">Certifications</a></li>
-      <li><a href="../../../fablab/index.html">FabLab</a></li>
-      <li><a href="../../../about/index.html">About</a></li>
-    </ul>
-  </div>
+<div class="container nav">
+<a aria-label="LockwoodSTEM home" class="brand" href="../../../index.html">
+<img alt="LockwoodSTEM logo" class="brand-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
+<span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+</a>
+<button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
+<ul class="nav-links" id="site-navigation">
+<li><a aria-current="page" data-nav-section="courses" href="../../../courses.html">Courses</a></li>
+<li><a data-nav-section="agenda" href="../../../agenda.html">Daily Agenda</a></li>
+<li><a data-nav-section="resources" href="../../../resources/index.html">Resources</a></li>
+<li><a data-nav-section="certifications" href="../../../certifications/index.html">Certifications</a></li>
+<li><a data-nav-section="fablab" href="../../../fablab/index.html">FabLab</a></li>
+<li><a data-nav-section="about" href="../../../about/index.html">About</a></li>
+<li><a data-nav-section="challenges" href="../../../challenge-library/index.html">Challenges</a></li></ul>
+</div>
 </header>
-<main id="main">
-
+<main id="main"><nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../../index.html">Home</a></li><li><a href="../../../courses.html">Courses</a></li><li><a href="../index.html">ADM</a></li><li aria-current="page">Securing the Supply Chain</li></ol></nav>
 <section class="page-hero adm-hero">
-  <div class="container hero-grid">
-    <div>
-      <img class="safe-unit-course-icon" src="../../../assets/img/course-icons/adm-course-icon.png" alt="ADM course icon">
-
-      <div class="eyebrow">ADM Unit 4</div>
-      <h1>Securing the Supply Chain</h1>
-      <p>Students explore cybersecurity, data integrity, secure software, demand planning, procurement, production scheduling, packaging, accessibility, and resilient manufacturing.</p>
-      <div class="hero-actions">
-        <a class="btn challenge-hub-button" href="unit-4/challenges.html">🚀 Engineering Challenge Hub</a>
-        <a class="btn" href="#lesson-sequence">View Lessons</a>
-        <a class="btn secondary" href="#unit-challenge">Unit Challenge</a>
-        <a class="btn secondary" href="../index.html">Back to ADM</a>
-      </div>
-    </div>
-    <aside class="card dark">
-      <span class="tag">Unit Goal</span>
-      <h3>Protect the system</h3>
-      <p>This unit focuses on how manufacturers protect products, data, people, timelines, quality, and delivery systems from disruption.</p>
-    </aside>
-  </div>
+<div class="container hero-grid">
+<div>
+<img alt="ADM course icon" class="safe-unit-course-icon" src="../../../assets/img/course-icons/adm-course-icon.png"/>
+<div class="eyebrow">ADM Unit 4</div>
+<h1>Securing the Supply Chain</h1>
+<p>Students explore cybersecurity, data integrity, secure software, demand planning, procurement, production scheduling, packaging, accessibility, and resilient manufacturing.</p>
+<div class="hero-actions consistent-actions">
+<a class="btn challenge-hub-button consistent-action-link" href="unit-4/challenges.html">🚀 Engineering Challenge Hub</a>
+<a class="btn consistent-action-link" href="#lesson-sequence">View Lessons</a>
+<a class="btn secondary consistent-action-link" href="#unit-challenge">Unit Challenge</a>
+<a class="btn secondary consistent-action-link" href="../index.html">Back to ADM</a>
+</div>
+</div>
+<aside class="card dark">
+<span class="tag">Unit Goal</span>
+<h3>Protect the system</h3>
+<p>This unit focuses on how manufacturers protect products, data, people, timelines, quality, and delivery systems from disruption.</p>
+</aside>
+</div>
 </section>
-
 <section class="container adm-sequence-table-section">
-  <div class="section-header">
-    <div>
-      <div class="eyebrow">Unit pathway</div>
-      <h2>Lesson Sequence</h2>
-      <p>Open each lesson in order and document your work as you move through the unit.</p>
-    </div>
-  </div>
-  <div class="lesson-sequence-table-wrap">
-    <table class="lesson-sequence-table adm-lesson-sequence-table">
-      <thead>
-        <tr>
-          <th>Lesson</th>
-          <th>Type</th>
-          <th>Title</th>
-          <th>Focus</th>
-          <th>Open</th>
-        </tr>
-      </thead>
-      <tbody>
-
-              <tr class="lesson-sequence-cluster-row">
-                <th colspan="5">
-                  <span>Cybersecurity, Data Integrity &amp; Secure Software</span>
-                  <small>Students explore how cybersecurity affects connected machines, sensors, software, data, people, and production environments.</small>
-                </th>
-              </tr>
-              <tr>
-                <td class="lesson-table-number">Activity 4.1.1</td>
-                <td><span class="lesson-table-type">Activity</span></td>
-                <td class="lesson-table-title">CIA Triad</td>
-                <td class="lesson-table-description">Learn how confidentiality, integrity, and availability apply to connected manufacturing systems and production data.</td>
-                <td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-1-1.html">Open Lesson</a></td>
-              </tr>
-              <tr>
-                <td class="lesson-table-number">Activity 4.1.2</td>
-                <td><span class="lesson-table-type">Activity</span></td>
-                <td class="lesson-table-title">Human in the Lab</td>
-                <td class="lesson-table-description">Explore how human decisions, access, mistakes, and procedures affect the safety and security of a manufacturing system.</td>
-                <td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-1-2.html">Open Lesson</a></td>
-              </tr>
-              <tr>
-                <td class="lesson-table-number">Activity 4.1.3</td>
-                <td><span class="lesson-table-type">Activity</span></td>
-                <td class="lesson-table-title">Malware</td>
-                <td class="lesson-table-description">Investigate how malicious software can disrupt machines, corrupt data, delay production, or create unsafe conditions.</td>
-                <td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-1-3.html">Open Lesson</a></td>
-              </tr>
-              <tr>
-                <td class="lesson-table-number">Activity 4.1.4</td>
-                <td><span class="lesson-table-type">Activity</span></td>
-                <td class="lesson-table-title">Problems With Data</td>
-                <td class="lesson-table-description">Analyze how missing, incorrect, corrupted, or poorly formatted data can affect manufacturing decisions and product quality.</td>
-                <td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-1-4.html">Open Lesson</a></td>
-              </tr>
-              <tr>
-                <td class="lesson-table-number">Activity 4.1.5</td>
-                <td><span class="lesson-table-type">Activity</span></td>
-                <td class="lesson-table-title">Secure Software</td>
-                <td class="lesson-table-description">Explore how software design, updates, access control, and secure coding habits help protect automated systems.</td>
-                <td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-1-5.html">Open Lesson</a></td>
-              </tr>
-              <tr>
-                <td class="lesson-table-number">Project 4.1.6</td>
-                <td><span class="lesson-table-type">Project</span></td>
-                <td class="lesson-table-title">Malfunctioning Lab</td>
-                <td class="lesson-table-description">Analyze a lab scenario where a system is malfunctioning due to data, software, cybersecurity, or human-factor issues.</td>
-                <td class="lesson-table-action"><a class="btn small" href="unit-4/project-4-1-6.html">Open Lesson</a></td>
-              </tr>
-              <tr class="lesson-sequence-cluster-row">
-                <th colspan="5">
-                  <span>Demand, Procurement, Scheduling &amp; Packaging</span>
-                  <small>Students explore how manufacturing teams plan for demand, choose suppliers, schedule production, and package products for shipping and use.</small>
-                </th>
-              </tr>
-              <tr>
-                <td class="lesson-table-number">Activity 4.2.1</td>
-                <td><span class="lesson-table-type">Activity</span></td>
-                <td class="lesson-table-title">Determining Demand</td>
-                <td class="lesson-table-description">Investigate how manufacturers estimate demand and use that information to plan materials, production, staffing, and delivery.</td>
-                <td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-2-1.html">Open Lesson</a></td>
-              </tr>
-              <tr>
-                <td class="lesson-table-number">Activity 4.2.2</td>
-                <td><span class="lesson-table-type">Activity</span></td>
-                <td class="lesson-table-title">Procurement</td>
-                <td class="lesson-table-description">Explore how companies select, purchase, and manage materials, parts, tools, and suppliers needed for production.</td>
-                <td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-2-2.html">Open Lesson</a></td>
-              </tr>
-              <tr>
-                <td class="lesson-table-number">Activity 4.2.3</td>
-                <td><span class="lesson-table-type">Activity</span></td>
-                <td class="lesson-table-title">Production Scheduling</td>
-                <td class="lesson-table-description">Analyze how manufacturing teams organize time, machines, people, and materials to meet production goals.</td>
-                <td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-2-3.html">Open Lesson</a></td>
-              </tr>
-              <tr>
-                <td class="lesson-table-number">Activity 4.2.4</td>
-                <td><span class="lesson-table-type">Activity</span></td>
-                <td class="lesson-table-title">Packaging</td>
-                <td class="lesson-table-description">Study how packaging protects products, supports shipping, communicates information, and affects cost and sustainability.</td>
-                <td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-2-4.html">Open Lesson</a></td>
-              </tr>
-              <tr>
-                <td class="lesson-table-number">Activity 4.2.5</td>
-                <td><span class="lesson-table-type">Activity</span></td>
-                <td class="lesson-table-title">Accessibility in Packaging</td>
-                <td class="lesson-table-description">Evaluate how packaging design affects usability, accessibility, safety, and customer experience.</td>
-                <td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-2-5.html">Open Lesson</a></td>
-              </tr>
-              <tr>
-                <td class="lesson-table-number">Project 4.2.6</td>
-                <td><span class="lesson-table-type">Project</span></td>
-                <td class="lesson-table-title">Packing Optimization</td>
-                <td class="lesson-table-description">Improve a packing or packaging solution by balancing space, protection, cost, usability, accessibility, and shipping efficiency.</td>
-                <td class="lesson-table-action"><a class="btn small" href="unit-4/project-4-2-6.html">Open Lesson</a></td>
-              </tr>
-              <tr class="lesson-sequence-cluster-row">
-                <th colspan="5">
-                  <span>Resilient Manufacturing Challenge Problem</span>
-                  <small>Students combine cybersecurity, supply chain planning, packaging, accessibility, scheduling, and risk analysis in a final unit challenge.</small>
-                </th>
-              </tr>
-              <tr>
-                <td class="lesson-table-number">Problem 4.3.1</td>
-                <td><span class="lesson-table-type">Problem</span></td>
-                <td class="lesson-table-title">Resilient Manufacturing</td>
-                <td class="lesson-table-description">Analyze or design a manufacturing process that can prevent, detect, respond to, and recover from disruptions while protecting production, data, products, and people.</td>
-                <td class="lesson-table-action"><a class="btn small" href="unit-4/problem-4-3-1.html">Open Lesson</a></td>
-              </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="section-header">
+<div>
+<div class="eyebrow">Unit pathway</div>
+<h2>Lesson Sequence</h2>
+<p>Open each lesson in order and document your work as you move through the unit.</p>
+</div>
+</div>
+<div class="lesson-sequence-table-wrap">
+<table class="lesson-sequence-table adm-lesson-sequence-table">
+<thead>
+<tr>
+<th>Lesson</th>
+<th>Type</th>
+<th>Title</th>
+<th>Focus</th>
+<th>Open</th>
+</tr>
+</thead>
+<tbody>
+<tr class="lesson-sequence-cluster-row">
+<th colspan="5">
+<span>Cybersecurity, Data Integrity &amp; Secure Software</span>
+<small>Students explore how cybersecurity affects connected machines, sensors, software, data, people, and production environments.</small>
+</th>
+</tr>
+<tr>
+<td class="lesson-table-number">Activity 4.1.1</td>
+<td><span class="lesson-table-type">Activity</span></td>
+<td class="lesson-table-title">CIA Triad</td>
+<td class="lesson-table-description">Learn how confidentiality, integrity, and availability apply to connected manufacturing systems and production data.</td>
+<td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-1-1.html">Open Lesson</a></td>
+</tr>
+<tr>
+<td class="lesson-table-number">Activity 4.1.2</td>
+<td><span class="lesson-table-type">Activity</span></td>
+<td class="lesson-table-title">Human in the Lab</td>
+<td class="lesson-table-description">Explore how human decisions, access, mistakes, and procedures affect the safety and security of a manufacturing system.</td>
+<td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-1-2.html">Open Lesson</a></td>
+</tr>
+<tr>
+<td class="lesson-table-number">Activity 4.1.3</td>
+<td><span class="lesson-table-type">Activity</span></td>
+<td class="lesson-table-title">Malware</td>
+<td class="lesson-table-description">Investigate how malicious software can disrupt machines, corrupt data, delay production, or create unsafe conditions.</td>
+<td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-1-3.html">Open Lesson</a></td>
+</tr>
+<tr>
+<td class="lesson-table-number">Activity 4.1.4</td>
+<td><span class="lesson-table-type">Activity</span></td>
+<td class="lesson-table-title">Problems With Data</td>
+<td class="lesson-table-description">Analyze how missing, incorrect, corrupted, or poorly formatted data can affect manufacturing decisions and product quality.</td>
+<td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-1-4.html">Open Lesson</a></td>
+</tr>
+<tr>
+<td class="lesson-table-number">Activity 4.1.5</td>
+<td><span class="lesson-table-type">Activity</span></td>
+<td class="lesson-table-title">Secure Software</td>
+<td class="lesson-table-description">Explore how software design, updates, access control, and secure coding habits help protect automated systems.</td>
+<td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-1-5.html">Open Lesson</a></td>
+</tr>
+<tr>
+<td class="lesson-table-number">Project 4.1.6</td>
+<td><span class="lesson-table-type">Project</span></td>
+<td class="lesson-table-title">Malfunctioning Lab</td>
+<td class="lesson-table-description">Analyze a lab scenario where a system is malfunctioning due to data, software, cybersecurity, or human-factor issues.</td>
+<td class="lesson-table-action"><a class="btn small" href="unit-4/project-4-1-6.html">Open Lesson</a></td>
+</tr>
+<tr class="lesson-sequence-cluster-row">
+<th colspan="5">
+<span>Demand, Procurement, Scheduling &amp; Packaging</span>
+<small>Students explore how manufacturing teams plan for demand, choose suppliers, schedule production, and package products for shipping and use.</small>
+</th>
+</tr>
+<tr>
+<td class="lesson-table-number">Activity 4.2.1</td>
+<td><span class="lesson-table-type">Activity</span></td>
+<td class="lesson-table-title">Determining Demand</td>
+<td class="lesson-table-description">Investigate how manufacturers estimate demand and use that information to plan materials, production, staffing, and delivery.</td>
+<td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-2-1.html">Open Lesson</a></td>
+</tr>
+<tr>
+<td class="lesson-table-number">Activity 4.2.2</td>
+<td><span class="lesson-table-type">Activity</span></td>
+<td class="lesson-table-title">Procurement</td>
+<td class="lesson-table-description">Explore how companies select, purchase, and manage materials, parts, tools, and suppliers needed for production.</td>
+<td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-2-2.html">Open Lesson</a></td>
+</tr>
+<tr>
+<td class="lesson-table-number">Activity 4.2.3</td>
+<td><span class="lesson-table-type">Activity</span></td>
+<td class="lesson-table-title">Production Scheduling</td>
+<td class="lesson-table-description">Analyze how manufacturing teams organize time, machines, people, and materials to meet production goals.</td>
+<td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-2-3.html">Open Lesson</a></td>
+</tr>
+<tr>
+<td class="lesson-table-number">Activity 4.2.4</td>
+<td><span class="lesson-table-type">Activity</span></td>
+<td class="lesson-table-title">Packaging</td>
+<td class="lesson-table-description">Study how packaging protects products, supports shipping, communicates information, and affects cost and sustainability.</td>
+<td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-2-4.html">Open Lesson</a></td>
+</tr>
+<tr>
+<td class="lesson-table-number">Activity 4.2.5</td>
+<td><span class="lesson-table-type">Activity</span></td>
+<td class="lesson-table-title">Accessibility in Packaging</td>
+<td class="lesson-table-description">Evaluate how packaging design affects usability, accessibility, safety, and customer experience.</td>
+<td class="lesson-table-action"><a class="btn small" href="unit-4/activity-4-2-5.html">Open Lesson</a></td>
+</tr>
+<tr>
+<td class="lesson-table-number">Project 4.2.6</td>
+<td><span class="lesson-table-type">Project</span></td>
+<td class="lesson-table-title">Packing Optimization</td>
+<td class="lesson-table-description">Improve a packing or packaging solution by balancing space, protection, cost, usability, accessibility, and shipping efficiency.</td>
+<td class="lesson-table-action"><a class="btn small" href="unit-4/project-4-2-6.html">Open Lesson</a></td>
+</tr>
+<tr class="lesson-sequence-cluster-row">
+<th colspan="5">
+<span>Resilient Manufacturing Challenge Problem</span>
+<small>Students combine cybersecurity, supply chain planning, packaging, accessibility, scheduling, and risk analysis in a final unit challenge.</small>
+</th>
+</tr>
+<tr>
+<td class="lesson-table-number">Problem 4.3.1</td>
+<td><span class="lesson-table-type">Problem</span></td>
+<td class="lesson-table-title">Resilient Manufacturing</td>
+<td class="lesson-table-description">Analyze or design a manufacturing process that can prevent, detect, respond to, and recover from disruptions while protecting production, data, products, and people.</td>
+<td class="lesson-table-action"><a class="btn small" href="unit-4/problem-4-3-1.html">Open Lesson</a></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-
-
 <section class="container">
-  <div class="grid three">
-    <article class="card"><h3>Essential Questions</h3><ul class="unit-meta-list"><li>Why is cybersecurity important in connected manufacturing?</li><li>How can data, software, and human decisions disrupt production?</li><li>How do demand, procurement, scheduling, and packaging affect supply chain performance?</li><li>How can manufacturers design systems that prevent, respond to, and recover from disruptions?</li></ul></article>
-    <article class="card"><h3>Learning Targets</h3><ul class="unit-meta-list"><li>I can explain the CIA triad in a manufacturing context.</li><li>I can identify data, software, cybersecurity, and human-factor risks.</li><li>I can analyze how demand, procurement, scheduling, and packaging decisions affect production.</li><li>I can recommend improvements that increase manufacturing resilience.</li></ul></article>
-    <article class="card"><h3>Major Deliverables</h3><ul class="unit-meta-list"><li>Engineering notebook entries</li><li>CIA triad or cybersecurity analysis</li><li>Demand/procurement/schedule evidence</li><li>Packaging or accessibility review</li><li>Risk analysis and recommendations</li><li>Resilient Manufacturing reflection</li></ul></article>
-  </div>
+<div class="grid three">
+<article class="card"><h3>Essential Questions</h3><ul class="unit-meta-list"><li>Why is cybersecurity important in connected manufacturing?</li><li>How can data, software, and human decisions disrupt production?</li><li>How do demand, procurement, scheduling, and packaging affect supply chain performance?</li><li>How can manufacturers design systems that prevent, respond to, and recover from disruptions?</li></ul></article>
+<article class="card"><h3>Learning Targets</h3><ul class="unit-meta-list"><li>I can explain the CIA triad in a manufacturing context.</li><li>I can identify data, software, cybersecurity, and human-factor risks.</li><li>I can analyze how demand, procurement, scheduling, and packaging decisions affect production.</li><li>I can recommend improvements that increase manufacturing resilience.</li></ul></article>
+<article class="card"><h3>Major Deliverables</h3><ul class="unit-meta-list"><li>Engineering notebook entries</li><li>CIA triad or cybersecurity analysis</li><li>Demand/procurement/schedule evidence</li><li>Packaging or accessibility review</li><li>Risk analysis and recommendations</li><li>Resilient Manufacturing reflection</li></ul></article>
+</div>
 </section>
-
 <section class="container">
-  <div class="section-header"><div><div class="eyebrow">Student resources</div><h2>Unit 4 support materials</h2></div></div>
-  <div class="grid three">
-    <article class="card"><h3>Recommended Certifications</h3><ul class="unit-meta-list"><li>Engineering Safety</li><li>Engineering Documentation</li><li>Data and software responsibility expectations</li><li>Design Review, if presenting a resilience plan</li></ul><div class="card-actions"><a class="btn small safe-unit-lesson-button" href="../../../certifications/index.html">Open Certifications</a></div></article>
-    <article class="card"><h3>Resources</h3><ul class="unit-meta-list"><li>Digital Engineering Notebook</li><li>Decision Matrix</li><li>Bill of Materials Template</li><li>Design Review Form</li><li>Testing and revision evidence</li></ul><div class="card-actions"><a class="btn small safe-unit-lesson-button" href="../../../resources/index.html">Open Resources</a></div></article>
-    <article class="card"><h3>Key Vocabulary</h3><div class="vocab-tags"><span class="vocab-term" tabindex="0" title="Protecting connected systems, data, software, and equipment from unauthorized access or disruption." data-definition="Protecting connected systems, data, software, and equipment from unauthorized access or disruption." aria-label="Cybersecurity: Protecting connected systems, data, software, and equipment from unauthorized access or disruption.">Cybersecurity</span><span class="vocab-term" tabindex="0" title="A cybersecurity model focused on confidentiality, integrity, and availability of data and systems." data-definition="A cybersecurity model focused on confidentiality, integrity, and availability of data and systems." aria-label="CIA triad: A cybersecurity model focused on confidentiality, integrity, and availability of data and systems.">CIA triad</span><span class="vocab-term" tabindex="0" title="The accuracy, completeness, and reliability of data used to make decisions." data-definition="The accuracy, completeness, and reliability of data used to make decisions." aria-label="Data integrity: The accuracy, completeness, and reliability of data used to make decisions.">Data integrity</span><span class="vocab-term" tabindex="0" title="Malicious software that can damage, disrupt, or gain unauthorized access to a system." data-definition="Malicious software that can damage, disrupt, or gain unauthorized access to a system." aria-label="Malware: Malicious software that can damage, disrupt, or gain unauthorized access to a system.">Malware</span><span class="vocab-term" tabindex="0" title="Software designed, updated, and managed to reduce security risks and protect system behavior." data-definition="Software designed, updated, and managed to reduce security risks and protect system behavior." aria-label="Secure software: Software designed, updated, and managed to reduce security risks and protect system behavior.">Secure software</span><span class="vocab-term" tabindex="0" title="The amount of a product customers or users are expected to need." data-definition="The amount of a product customers or users are expected to need." aria-label="Demand: The amount of a product customers or users are expected to need.">Demand</span><span class="vocab-term" tabindex="0" title="Selecting and purchasing the materials, parts, tools, or services needed for production." data-definition="Selecting and purchasing the materials, parts, tools, or services needed for production." aria-label="Procurement: Selecting and purchasing the materials, parts, tools, or services needed for production.">Procurement</span><span class="vocab-term" tabindex="0" title="Planning when people, machines, materials, and tasks are used to meet production goals." data-definition="Planning when people, machines, materials, and tasks are used to meet production goals." aria-label="Production scheduling: Planning when people, machines, materials, and tasks are used to meet production goals.">Production scheduling</span><span class="vocab-term" tabindex="0" title="The design and use of containers, labels, and materials to protect, organize, and deliver products." data-definition="The design and use of containers, labels, and materials to protect, organize, and deliver products." aria-label="Packaging: The design and use of containers, labels, and materials to protect, organize, and deliver products.">Packaging</span><span class="vocab-term" tabindex="0" title="Designing products, packaging, and systems so they can be used by people with different needs and abilities." data-definition="Designing products, packaging, and systems so they can be used by people with different needs and abilities." aria-label="Accessibility: Designing products, packaging, and systems so they can be used by people with different needs and abilities.">Accessibility</span><span class="vocab-term" tabindex="0" title="The network of people, materials, suppliers, processes, and transportation used to make and deliver products." data-definition="The network of people, materials, suppliers, processes, and transportation used to make and deliver products." aria-label="Supply chain: The network of people, materials, suppliers, processes, and transportation used to make and deliver products.">Supply chain</span><span class="vocab-term" tabindex="0" title="A possible problem or failure that could affect safety, quality, cost, schedule, or performance." data-definition="A possible problem or failure that could affect safety, quality, cost, schedule, or performance." aria-label="Risk: A possible problem or failure that could affect safety, quality, cost, schedule, or performance.">Risk</span><span class="vocab-term" tabindex="0" title="The ability of a system to prevent, respond to, and recover from disruptions." data-definition="The ability of a system to prevent, respond to, and recover from disruptions." aria-label="Resilience: The ability of a system to prevent, respond to, and recover from disruptions.">Resilience</span></div></article>
-  </div>
+<div class="section-header"><div><div class="eyebrow">Student resources</div><h2>Unit 4 support materials</h2></div></div>
+<div class="grid three">
+<article class="card"><h3>Recommended Certifications</h3><ul class="unit-meta-list"><li>Engineering Safety</li><li>Engineering Documentation</li><li>Data and software responsibility expectations</li><li>Design Review, if presenting a resilience plan</li></ul><div class="card-actions"><a class="btn small safe-unit-lesson-button" href="../../../certifications/index.html">Open Certifications</a></div></article>
+<article class="card"><h3>Resources</h3><ul class="unit-meta-list"><li>Digital Engineering Notebook</li><li>Decision Matrix</li><li>Bill of Materials Template</li><li>Design Review Form</li><li>Testing and revision evidence</li></ul><div class="card-actions"><a class="btn small safe-unit-lesson-button" href="../../../resources/index.html">Open Resources</a></div></article>
+<article class="card"><h3>Key Vocabulary</h3><div class="vocab-tags"><span aria-label="Cybersecurity: Protecting connected systems, data, software, and equipment from unauthorized access or disruption." class="vocab-term" data-definition="Protecting connected systems, data, software, and equipment from unauthorized access or disruption." tabindex="0" title="Protecting connected systems, data, software, and equipment from unauthorized access or disruption.">Cybersecurity</span><span aria-label="CIA triad: A cybersecurity model focused on confidentiality, integrity, and availability of data and systems." class="vocab-term" data-definition="A cybersecurity model focused on confidentiality, integrity, and availability of data and systems." tabindex="0" title="A cybersecurity model focused on confidentiality, integrity, and availability of data and systems.">CIA triad</span><span aria-label="Data integrity: The accuracy, completeness, and reliability of data used to make decisions." class="vocab-term" data-definition="The accuracy, completeness, and reliability of data used to make decisions." tabindex="0" title="The accuracy, completeness, and reliability of data used to make decisions.">Data integrity</span><span aria-label="Malware: Malicious software that can damage, disrupt, or gain unauthorized access to a system." class="vocab-term" data-definition="Malicious software that can damage, disrupt, or gain unauthorized access to a system." tabindex="0" title="Malicious software that can damage, disrupt, or gain unauthorized access to a system.">Malware</span><span aria-label="Secure software: Software designed, updated, and managed to reduce security risks and protect system behavior." class="vocab-term" data-definition="Software designed, updated, and managed to reduce security risks and protect system behavior." tabindex="0" title="Software designed, updated, and managed to reduce security risks and protect system behavior.">Secure software</span><span aria-label="Demand: The amount of a product customers or users are expected to need." class="vocab-term" data-definition="The amount of a product customers or users are expected to need." tabindex="0" title="The amount of a product customers or users are expected to need.">Demand</span><span aria-label="Procurement: Selecting and purchasing the materials, parts, tools, or services needed for production." class="vocab-term" data-definition="Selecting and purchasing the materials, parts, tools, or services needed for production." tabindex="0" title="Selecting and purchasing the materials, parts, tools, or services needed for production.">Procurement</span><span aria-label="Production scheduling: Planning when people, machines, materials, and tasks are used to meet production goals." class="vocab-term" data-definition="Planning when people, machines, materials, and tasks are used to meet production goals." tabindex="0" title="Planning when people, machines, materials, and tasks are used to meet production goals.">Production scheduling</span><span aria-label="Packaging: The design and use of containers, labels, and materials to protect, organize, and deliver products." class="vocab-term" data-definition="The design and use of containers, labels, and materials to protect, organize, and deliver products." tabindex="0" title="The design and use of containers, labels, and materials to protect, organize, and deliver products.">Packaging</span><span aria-label="Accessibility: Designing products, packaging, and systems so they can be used by people with different needs and abilities." class="vocab-term" data-definition="Designing products, packaging, and systems so they can be used by people with different needs and abilities." tabindex="0" title="Designing products, packaging, and systems so they can be used by people with different needs and abilities.">Accessibility</span><span aria-label="Supply chain: The network of people, materials, suppliers, processes, and transportation used to make and deliver products." class="vocab-term" data-definition="The network of people, materials, suppliers, processes, and transportation used to make and deliver products." tabindex="0" title="The network of people, materials, suppliers, processes, and transportation used to make and deliver products.">Supply chain</span><span aria-label="Risk: A possible problem or failure that could affect safety, quality, cost, schedule, or performance." class="vocab-term" data-definition="A possible problem or failure that could affect safety, quality, cost, schedule, or performance." tabindex="0" title="A possible problem or failure that could affect safety, quality, cost, schedule, or performance.">Risk</span><span aria-label="Resilience: The ability of a system to prevent, respond to, and recover from disruptions." class="vocab-term" data-definition="The ability of a system to prevent, respond to, and recover from disruptions." tabindex="0" title="The ability of a system to prevent, respond to, and recover from disruptions.">Resilience</span></div></article>
+</div>
 </section>
-
 </main>
 <footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <img class="footer-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
-      <div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div>
-    </div>
-    <div class="footer-links">
-      <a href="../../../courses.html">Courses</a>
-      <a href="../../../agenda.html">Daily Agenda</a>
-      <a href="../../../resources/index.html">Resources</a>
-      <a href="../../../certifications/index.html">Certifications</a>
-      <a href="../../../fablab/index.html">FabLab</a>
-      <a href="../../../about/index.html">About</a>
-    </div>
-  </div>
+<div class="container footer-grid">
+<div>
+<img alt="LockwoodSTEM logo" class="footer-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
+<div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div>
+</div>
+<div class="footer-links">
+<a href="../../../courses.html">Courses</a>
+<a href="../../../agenda.html">Daily Agenda</a>
+<a href="../../../resources/index.html">Resources</a>
+<a href="../../../certifications/index.html">Certifications</a>
+<a href="../../../fablab/index.html">FabLab</a>
+<a href="../../../about/index.html">About</a>
+<a href="../../../courses/ied/index.html">IED</a><a href="../../../courses/poe/index.html">POE</a><a href="../../../courses/adm/index.html">ADM</a><a href="../../../challenge-library/index.html">Challenges</a></div>
+</div>
 </footer>
-</body>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body>
 </html>

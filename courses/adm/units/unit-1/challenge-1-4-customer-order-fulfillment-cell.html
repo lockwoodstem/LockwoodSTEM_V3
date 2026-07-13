@@ -1,27 +1,27 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <title>ADM 1.4 Customer Order Fulfillment Cell | LockwoodSTEM</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../../../../assets/css/styles.css">
-<script defer src="../../../../assets/js/main.js"></script>
-</head>
-<body class="safe-unit-page mission-brief-page">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../../../assets/css/styles.css" rel="stylesheet"/>
+<script defer="" src="../../../../assets/js/main.js"></script>
+<meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/></head>
+<body class="safe-unit-page mission-brief-page site-consistency-v4 lesson-detail-page">
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="../../../../index.html" aria-label="LockwoodSTEM home">
-      <img class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
-      <span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
-    </a>
-    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">Menu</button>
-    <ul class="nav-links"><li><a href="../../../../courses.html" aria-current="page">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../certifications/index.html">Certifications</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li><li><a href="../../../../about/index.html">About</a></li></ul>
-  </div>
+<div class="container nav">
+<a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html">
+<img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
+<span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+</a>
+<button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
+<ul class="nav-links" id="site-navigation"><li><a aria-current="page" data-nav-section="courses" href="../../../../courses.html">Courses</a></li><li><a data-nav-section="agenda" href="../../../../agenda.html">Daily Agenda</a></li><li><a data-nav-section="resources" href="../../../../resources/index.html">Resources</a></li><li><a data-nav-section="certifications" href="../../../../certifications/index.html">Certifications</a></li><li><a data-nav-section="fablab" href="../../../../fablab/index.html">FabLab</a></li><li><a data-nav-section="about" href="../../../../about/index.html">About</a></li><li><a data-nav-section="challenges" href="../../../../challenge-library/index.html">Challenges</a></li></ul>
+</div>
 </header>
-
-<main id="main">
-<section class="page-hero design-brief-hero"><div class="container hero-grid"><div><div class="eyebrow">ADM Unit 1 | Mission Brief 1.4</div><h1>Customer Order Fulfillment Cell</h1><p>Create a configurable robot program that builds three different customer pallet orders.</p><div class="design-brief-meta"><span>Advanced</span><span>2 class periods</span><span>Engineering Challenge</span></div><div class="hero-actions"><a class="btn" href="challenges.html">Back to Challenge Hub</a><a class="btn secondary" href="../../../../downloads/challenges/adm/unit-1/ADM-1-4-customer-order-fulfillment-cell.pdf">Download Challenge Brief (PDF)</a></div></div><aside class="card dark"><span class="tag">Production Specifications</span><h3>AeroParts Distribution</h3><p><strong>Department:</strong> Order Fulfillment<br><strong>Goal:</strong> Automate three customer-specific pallet configurations.</p></aside></div></section>
+<main id="main"><nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../index.html">ADM</a></li><li><a href="../unit-1.html">Unit 1</a></li><li aria-current="page">Customer Order Fulfillment Cell</li></ol></nav>
+<section class="page-hero design-brief-hero"><div class="container hero-grid"><div><div class="eyebrow">ADM Unit 1 | Mission Brief 1.4</div><h1>Customer Order Fulfillment Cell</h1><p>Create a configurable robot program that builds three different customer pallet orders.</p><div class="design-brief-meta"><span>Advanced</span><span>2 class periods</span><span>Engineering Challenge</span></div><div class="hero-actions consistent-actions"><a class="btn consistent-action-link" href="challenges.html">Back to Challenge Hub</a><a class="btn secondary consistent-action-link" href="../../../../downloads/challenges/adm/unit-1/ADM-1-4-customer-order-fulfillment-cell.pdf">Download Challenge Brief (PDF)</a></div></div><aside class="card dark"><span class="tag">Production Specifications</span><h3>AeroParts Distribution</h3><p><strong>Department:</strong> Order Fulfillment<br/><strong>Goal:</strong> Automate three customer-specific pallet configurations.</p></aside></div></section>
 <section class="container design-brief-layout"><div>
 <article class="card design-brief-section"><div class="eyebrow">Background</div><h2>Engineering Context</h2><p>AeroParts Distribution receives small orders with different quantities and arrangements. The current program must be rewritten for every order. Your team must create a flexible program that operators can configure using variables at the beginning of the file.</p></article>
 <article class="card design-brief-section"><div class="eyebrow">Objectives</div><h2>What You Will Practice</h2><ul><li>Translate order requirements into pallet coordinates</li><li>Use functions, loops, lists, or variables to create flexible code</li><li>Verify several production configurations</li><li>Document an operator-friendly workflow</li></ul></article>
@@ -32,14 +32,13 @@
 <article class="card design-brief-section"><div class="eyebrow">Deliverables</div><h2>What You Submit</h2><ul><li>Three order-layout diagrams</li><li>Configurable Python program</li><li>Six-run order verification log</li><li>Operator quick-start instructions</li><li>Reflection</li></ul></article>
 <article class="card design-brief-section"><div class="eyebrow">Reflection</div><h2>Reflection Questions</h2><ol><li>Which functions made the program easier to adapt?</li><li>What input error could an operator make?</li><li>How could input validation improve the system?</li><li>How would a barcode scanner change the workflow?</li></ol></article>
 </div><aside class="brief-sidebar">
-<a class="btn" href="../../../../downloads/challenges/adm/unit-1/ADM-1-4-customer-order-fulfillment-cell.pdf">Download PDF</a><button class="btn secondary" type="button" onclick="window.print()">Print This Page</button>
+<a class="btn" href="../../../../downloads/challenges/adm/unit-1/ADM-1-4-customer-order-fulfillment-cell.pdf">Download PDF</a><button class="btn secondary" onclick="window.print()" type="button">Print This Page</button>
 <div class="brief-callout brief-tip"><strong>Engineering Tip</strong><p>Separate values that operators change from the motion logic that should remain protected.</p></div>
 <div class="brief-callout brief-warning"><strong>Common Mistake</strong><p>Hard-coding every order creates duplicate code and makes later maintenance difficult.</p></div>
 <div class="brief-callout"><strong>Stretch Goal</strong><p>Use a list of coordinates so a new order can be added without changing the pickup/place functions.</p></div>
 <div class="brief-callout brief-career"><strong>Career Connection</strong><p>Flexible manufacturing engineers design systems that switch products with minimal downtime or reprogramming.</p></div>
 <article class="card"><div class="eyebrow">Before You Submit</div><ul class="brief-checklist"><li>Notebook evidence included</li><li>Requirements checked</li><li>Testing documented</li><li>Reflection completed</li></ul></article>
-</aside></section></main></main>
-
-<footer class="footer"><div class="container footer-grid"><div><img class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo"><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a> <a href="../../../../agenda.html">Daily Agenda</a> <a href="../../../../resources/index.html">Resources</a> <a href="../../../../certifications/index.html">Certifications</a> <a href="../../../../fablab/index.html">FabLab</a> <a href="../../../../about/index.html">About</a></div></div></footer>
-</body>
+</aside></section><section class="container lesson-bottom-nav"><div class="lesson-bottom-nav-card"><div class="lesson-bottom-nav-links"><a class="btn secondary" href="challenge-1-3-compare-absolute-and-relative-motion.html">← Previous Lesson</a><a class="btn" href="../unit-1.html">Back to Unit 1</a><a class="btn secondary" href="challenge-1-5-manufacturing-throughput-investigation.html">Next Lesson →</a></div></div></section></main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a> <a href="../../../../agenda.html">Daily Agenda</a> <a href="../../../../resources/index.html">Resources</a> <a href="../../../../certifications/index.html">Certifications</a> <a href="../../../../fablab/index.html">FabLab</a> <a href="../../../../about/index.html">About</a><a href="../../../../courses/ied/index.html">IED</a><a href="../../../../courses/poe/index.html">POE</a><a href="../../../../courses/adm/index.html">ADM</a><a href="../../../../challenge-library/index.html">Challenges</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body>
 </html>

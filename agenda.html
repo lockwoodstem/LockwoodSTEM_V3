@@ -1,90 +1,87 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <title>Daily Agenda | LockwoodSTEM</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="assets/css/styles.css">
-<script defer src="assets/js/main.js"></script>
-<script defer src="assets/js/agenda-config.js"></script>
-<script defer src="assets/js/agenda.js"></script>
-</head>
-<body class="agenda-display-cleanup-enabled agenda-fit-fix agenda-exact-badge-fix">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="assets/css/styles.css" rel="stylesheet"/>
+<script defer="" src="assets/js/main.js"></script>
+<script defer="" src="assets/js/agenda-config.js"></script>
+<script defer="" src="assets/js/agenda.js"></script>
+<meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/></head>
+<body class="agenda-display-cleanup-enabled agenda-fit-fix agenda-exact-badge-fix site-consistency-v4 agenda-page">
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="index.html" aria-label="LockwoodSTEM home">
-      <img class="brand-logo" src="assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
-      <span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
-    </a>
-    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">Menu</button>
-    <ul class="nav-links">
-      <li><a href="courses.html">Courses</a></li><li><a href="agenda.html" aria-current="page">Daily Agenda</a></li><li><a href="resources/index.html">Resources</a></li><li><a href="certifications/index.html">Certifications</a></li><li><a href="fablab/index.html">FabLab</a></li><li><a href="about/index.html">About</a></li>
-    </ul>
-  </div>
+<div class="container nav">
+<a aria-label="LockwoodSTEM home" class="brand" href="index.html">
+<img alt="LockwoodSTEM logo" class="brand-logo" src="assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
+<span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+</a>
+<button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
+<ul class="nav-links" id="site-navigation">
+<li><a data-nav-section="courses" href="courses.html">Courses</a></li><li><a aria-current="page" data-nav-section="agenda" href="agenda.html">Daily Agenda</a></li><li><a data-nav-section="resources" href="resources/index.html">Resources</a></li><li><a data-nav-section="certifications" href="certifications/index.html">Certifications</a></li><li><a data-nav-section="fablab" href="fablab/index.html">FabLab</a></li><li><a data-nav-section="about" href="about/index.html">About</a></li>
+<li><a data-nav-section="challenges" href="challenge-library/index.html">Challenges</a></li></ul>
+</div>
 </header>
 <main id="main">
-
 <section class="page-hero agenda-hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">Daily Agenda</div>
-      <h1>Class Agenda</h1>
-      <div class="hero-actions">
-        <a class="btn" href="#agendaPanel">View Today</a>
-      </div>
-    </div>
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">Daily Agenda</div>
+<h1>Class Agenda</h1>
+<div class="hero-actions consistent-actions">
+<a class="btn consistent-action-link" href="#agendaPanel">View Today</a>
+</div>
+</div>
 </div>
 </section>
-
-<section id="agendaPanel" class="agenda-app">
-  <div class="agenda-shell">
-    <div class="agenda-panel agenda-panel-updated">
-      <div class="agenda-controls">
-        <div class="agenda-control">
-          <label for="courseSelect">Course</label>
-          <select id="courseSelect">
-            <option value="IED">IED</option>
-            <option value="POE">POE</option>
-            <option value="ADM">ADM</option>
-          </select>
-        </div>
-        <div class="agenda-control">
-          <label for="datePicker">Date</label>
-          <input id="datePicker" type="date">
-        </div>
-        <div class="view-toggle" aria-label="Agenda view selector">
-          <button aria-pressed="true" class="view-btn active" id="dayViewBtn" type="button">Day</button>
-          <button aria-pressed="false" class="view-btn" id="weekViewBtn" type="button">Week</button>
-        </div>
-        <button id="prevBtn" type="button">Previous</button>
-        <button class="primary" id="todayBtn" type="button">Today</button>
-        <button id="nextBtn" type="button">Next</button>
-        <button id="agendaFullscreenBtn" class="fullscreen-control" type="button" aria-label="Open agenda in full screen">Full Screen</button>
-      </div>
-      <div class="agenda-status agenda-status-updated">
-        <div class="agenda-badge" id="dateBadge">Loading date...</div>
-        <div class="agenda-badge agenda-clock-badge" id="liveClock" aria-live="polite">Loading time...</div>
-        <div class="agenda-badge agenda-period-badge" id="currentPeriodBadge" aria-live="polite">Loading period...</div>
-        <div class="agenda-badge" id="courseBadge">Loading course...</div>
-        <div class="agenda-badge" id="lessonBadge">Loading lesson...</div>
-      </div>
-    </div>
-    <div class="agenda-loading" id="agendaApp">Loading agenda...</div>
-  </div>
+<section class="agenda-app" id="agendaPanel">
+<div class="agenda-shell">
+<div class="agenda-panel agenda-panel-updated">
+<div class="agenda-controls">
+<div class="agenda-control">
+<label for="courseSelect">Course</label>
+<select id="courseSelect">
+<option value="IED">IED</option>
+<option value="POE">POE</option>
+<option value="ADM">ADM</option>
+</select>
+</div>
+<div class="agenda-control">
+<label for="datePicker">Date</label>
+<input id="datePicker" type="date"/>
+</div>
+<div aria-label="Agenda view selector" class="view-toggle">
+<button aria-pressed="true" class="view-btn active" id="dayViewBtn" type="button">Day</button>
+<button aria-pressed="false" class="view-btn" id="weekViewBtn" type="button">Week</button>
+</div>
+<button id="prevBtn" type="button">Previous</button>
+<button class="primary" id="todayBtn" type="button">Today</button>
+<button id="nextBtn" type="button">Next</button>
+<button aria-label="Open agenda in full screen" class="fullscreen-control" id="agendaFullscreenBtn" type="button">Full Screen</button>
+</div>
+<div class="agenda-status agenda-status-updated">
+<div class="agenda-badge" id="dateBadge">Loading date...</div>
+<div aria-live="polite" class="agenda-badge agenda-clock-badge" id="liveClock">Loading time...</div>
+<div aria-live="polite" class="agenda-badge agenda-period-badge" id="currentPeriodBadge">Loading period...</div>
+<div class="agenda-badge" id="courseBadge">Loading course...</div>
+<div class="agenda-badge" id="lessonBadge">Loading lesson...</div>
+</div>
+</div>
+<div class="agenda-loading" id="agendaApp">Loading agenda...</div>
+</div>
 </section>
-
 </main>
 <footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <img class="footer-logo" src="assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo">
-      <div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div>
-    </div>
-    <div class="footer-links"><a href="courses.html">Courses</a> <a href="agenda.html">Daily Agenda</a> <a href="resources/index.html">Resources</a> <a href="certifications/index.html">Certifications</a> <a href="fablab/index.html">FabLab</a> <a href="about/index.html">About</a></div>
-  </div>
+<div class="container footer-grid">
+<div>
+<img alt="LockwoodSTEM logo" class="footer-logo" src="assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
+<div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div>
+</div>
+<div class="footer-links"><a href="courses.html">Courses</a> <a href="agenda.html">Daily Agenda</a> <a href="resources/index.html">Resources</a> <a href="certifications/index.html">Certifications</a> <a href="fablab/index.html">FabLab</a> <a href="about/index.html">About</a><a href="courses/ied/index.html">IED</a><a href="courses/poe/index.html">POE</a><a href="courses/adm/index.html">ADM</a><a href="challenge-library/index.html">Challenges</a></div>
+</div>
 </footer>
-
 <script>
 (function(){
   const button = document.getElementById('agendaFullscreenBtn');
@@ -163,10 +160,6 @@
   updateButton();
 })();
 </script>
-
-
-
-
 <script>
 (function(){
   const clock = document.getElementById('liveClock');
@@ -302,6 +295,5 @@
   setInterval(updateClockAndPeriod, 1000);
 })();
 </script>
-
-</body>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body>
 </html>
