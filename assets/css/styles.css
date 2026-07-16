@@ -3641,3 +3641,53 @@ nav a[aria-current="page"]:focus{
   background:#d6b75d !important;
   text-decoration:none !important;
 }
+
+/* IED Lesson 0.1 immersive lesson page */
+.lesson-immersive-page .lesson-mission-hero{position:relative;overflow:hidden}
+.lesson-immersive-page .lesson-mission-hero::after{content:"";position:absolute;right:-90px;bottom:-120px;width:360px;height:360px;border:1px solid rgba(200,162,74,.26);border-radius:50%;box-shadow:0 0 0 42px rgba(200,162,74,.07),0 0 0 84px rgba(19,92,168,.08);pointer-events:none}
+.lesson-immersive-page .lesson-mission-hero .container{position:relative;z-index:1}
+.lesson-immersive-page .lesson-mission-card{border:1px solid rgba(255,255,255,.22)}
+.lesson-immersive-page .mission-cycle{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
+.lesson-immersive-page .mission-cycle span{padding:.38rem .65rem;border-radius:999px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);font-size:.78rem;font-weight:950;letter-spacing:.05em;text-transform:uppercase}
+.lesson-immersive-page .lesson-target-card{height:100%}
+.lesson-immersive-page .lesson-big-statement{font-size:clamp(1.15rem,2vw,1.55rem);line-height:1.4;color:var(--navy)}
+.lesson-immersive-page .lesson-timeline{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.65rem;margin-top:1rem}
+.lesson-immersive-page .lesson-timeline div{display:grid;gap:.2rem;align-content:center;min-height:92px;padding:.75rem;border-radius:16px;background:linear-gradient(180deg,#fff,#f5f8fc);border:1px solid var(--line);box-shadow:0 8px 20px rgba(2,10,28,.05)}
+.lesson-immersive-page .lesson-timeline strong{font-size:1.05rem;color:var(--blue)}
+.lesson-immersive-page .lesson-timeline span{font-size:.82rem;font-weight:850;color:var(--muted)}
+.lesson-immersive-page .lesson-web-section{padding-top:1.7rem;padding-bottom:.5rem}
+.lesson-immersive-page .prompt-card{border-left:6px solid var(--gold);background:linear-gradient(135deg,rgba(200,162,74,.07),rgba(19,92,168,.035)),#fff}
+.lesson-immersive-page .lesson-prompt,.lesson-immersive-page .scenario-text{font-size:1.08rem;line-height:1.65}
+.lesson-immersive-page .lesson-answer-reveal{margin-top:.75rem;border:1px solid rgba(19,92,168,.22);border-radius:18px;background:#fff;box-shadow:0 10px 24px rgba(2,10,28,.06);overflow:hidden}
+.lesson-immersive-page .lesson-answer-reveal summary{cursor:pointer;list-style:none;padding:1rem 1.1rem;background:linear-gradient(135deg,rgba(19,92,168,.09),rgba(200,162,74,.10));color:var(--navy);font-weight:950;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.lesson-immersive-page .lesson-answer-reveal summary::-webkit-details-marker{display:none}
+.lesson-immersive-page .lesson-answer-reveal summary::after{content:"+";display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;flex:0 0 auto}
+.lesson-immersive-page .lesson-answer-reveal[open] summary::after{content:"−"}
+.lesson-immersive-page .answer-panel{padding:1rem 1.1rem 1.15rem;border-top:1px solid var(--line)}
+.lesson-immersive-page .lesson-process-grid .card{height:100%;box-shadow:none;background:#f8fafc}
+.lesson-immersive-page .process-number{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:950;margin-bottom:.65rem}
+.lesson-immersive-page .lesson-choice-list{display:grid;gap:.7rem;margin:1rem 0 0;padding:0;list-style:none}
+.lesson-immersive-page .lesson-choice-list li{display:grid;grid-template-columns:38px minmax(0,1fr);gap:.75rem;align-items:center;padding:.75rem .85rem;border-radius:14px;background:#f8fafc;border:1px solid var(--line);font-weight:800;color:var(--text)}
+.lesson-immersive-page .lesson-choice-list li>span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:950}
+.lesson-immersive-page .aerospace-map-card{margin-top:1rem;border-top:5px solid var(--blue)}
+.lesson-immersive-page .aerospace-habit-grid{margin:.9rem 0}
+.lesson-immersive-page .aerospace-habit-grid>div{padding:.75rem;border-radius:14px;background:#f8fafc;border:1px solid var(--line)}
+.lesson-immersive-page .aerospace-habit-grid strong,.lesson-immersive-page .aerospace-habit-grid span{display:block}
+.lesson-immersive-page .aerospace-habit-grid strong{color:var(--blue);margin-bottom:.25rem}
+.lesson-immersive-page .aerospace-habit-grid span{font-size:.86rem;color:var(--muted);font-weight:750}
+.lesson-immersive-page .assignment-card{border-top:5px solid #94a3b8}
+.lesson-immersive-page .engineering-card{border-top:5px solid #16a34a}
+.lesson-immersive-page .evidence-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.75rem;align-items:center}
+.lesson-immersive-page .evidence-flow>span{font-size:1.8rem;font-weight:950;color:var(--gold)}
+.lesson-immersive-page .evidence-flow .card{text-align:center;height:100%}
+.lesson-immersive-page .evidence-flow .process-number{margin:0 auto .65rem}
+.lesson-immersive-page .evidence-examples{font-weight:750}
+.lesson-immersive-page .claim-banner{padding:1rem;border-radius:14px;background:var(--navy);color:#fff;font-size:1.05rem;line-height:1.55}
+.lesson-immersive-page .quick-check-statements{display:grid;gap:.7rem}
+.lesson-immersive-page .quick-check-statements p{margin:0;padding:.85rem;border-radius:14px;background:#f8fafc;border:1px solid var(--line)}
+.lesson-immersive-page .exit-ticket-list{display:grid;gap:.65rem;padding-left:1.4rem}
+.lesson-immersive-page .exit-ticket-list li{padding:.35rem 0 .35rem .25rem;font-weight:800}
+.lesson-immersive-page .lesson-resource-highlight{border-top:5px solid #16a34a}
+.lesson-immersive-page .lesson-resource-flag{display:inline-flex;margin-left:.4rem;vertical-align:middle;font-size:.68rem;padding:.2rem .45rem}
+@media(max-width:1000px){.lesson-immersive-page .lesson-timeline{grid-template-columns:repeat(4,minmax(0,1fr))}.lesson-immersive-page .evidence-flow{grid-template-columns:1fr}.lesson-immersive-page .evidence-flow>span{transform:rotate(90deg);text-align:center}.lesson-immersive-page .lesson-mission-hero::after{opacity:.35}}
+@media(max-width:700px){.lesson-immersive-page .lesson-timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.lesson-immersive-page .lesson-choice-list li{grid-template-columns:34px minmax(0,1fr)}.lesson-immersive-page .lesson-answer-reveal summary{padding:.85rem}.lesson-immersive-page .answer-panel{padding:.9rem}}
