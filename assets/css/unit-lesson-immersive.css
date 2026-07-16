@@ -1,2 +1,198 @@
 /* Unit lesson immersive presentation-page styling */
 .immersive-lesson-page .lesson-mission-hero,.immersive-unit-page .lesson-mission-hero{background:linear-gradient(135deg,#061b31 0%,#0d3457 58%,#0a203a 100%);color:#fff;padding:3rem 0;border-bottom:4px solid #4fd7f7}.lesson-hero-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.7fr);gap:1.5rem;align-items:stretch}.lesson-course-icon{width:70px;height:70px;object-fit:contain;margin-bottom:1rem}.mission-eyebrow{font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#4fd7f7;margin-bottom:.5rem}.lesson-hero-copy h1{font-size:clamp(2.2rem,5vw,4.2rem);line-height:.95;margin:.2rem 0 1rem}.focus-question{font-size:1.15rem;max-width:850px;color:#e8f1fa}.mission-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.25rem}.mission-actions .ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}.mission-panel{background:rgba(255,255,255,.08);border:1px solid rgba(79,215,247,.45);border-radius:24px;padding:1.25rem;box-shadow:0 22px 44px rgba(0,0,0,.2)}.mission-panel h2{font-size:1.55rem;line-height:1.1;color:#fff}.verb-strip{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}.verb-strip span,.presentation-chip{display:inline-block;background:#f2c14e;color:#061b31;border-radius:999px;padding:.36rem .7rem;font-weight:800;font-size:.82rem}.lesson-section{padding-top:2rem;padding-bottom:.5rem}.lesson-grid.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}.lesson-card,.prompt-card,.interactive-card,.submit-card,.resource-card{border-top:5px solid #4fd7f7}.prompt-card{background:linear-gradient(180deg,#fff,#eef8ff)}.reveal-card details,.answer-reveal{background:#061b31;color:#fff;border-radius:18px;padding:1rem}.reveal-card summary,.answer-reveal summary{cursor:pointer;font-weight:800;color:#f2c14e}.lesson-card-grid .card{min-height:150px}.timeline{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}.timeline span{background:#d9ecff;color:#0a203a;border-radius:999px;padding:.35rem .65rem;font-weight:700}.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;margin:1rem 0}.choice{display:flex;gap:.75rem;background:#f6fbff;border:1px solid #d7e7f7;border-radius:16px;padding:.9rem}.choice strong{background:#f2c14e;color:#061b31;border-radius:50%;width:2rem;height:2rem;display:inline-flex;align-items:center;justify-content:center;flex:0 0 2rem}.mission-steps{counter-reset:step;list-style:none;padding:0;margin:0}.mission-steps li{margin:.55rem 0;padding:.75rem .9rem;border-left:5px solid #4fd7f7;background:#f4f9fd;border-radius:12px}.callout{border-left:5px solid #f2c14e;background:#fff8dd;padding:.8rem 1rem;border-radius:12px}.lesson-bottom-nav{display:flex;justify-content:space-between;gap:1rem;padding:2rem 0}.lesson-resource-table .btn.small{margin:.15rem}.unit-hero .mission-panel{background:rgba(255,255,255,.1)}@media (max-width:800px){.lesson-hero-grid,.lesson-grid.two,.choice-grid{grid-template-columns:1fr}.lesson-hero-copy h1{font-size:2.3rem}}
+
+/* ======================================================================
+   Accessibility contrast pass for immersive IED lesson and unit pages
+   ----------------------------------------------------------------------
+   Keeps light text on dark mission surfaces and forces dark text on every
+   light card, prompt, choice, workflow, callout, and resource surface.
+   ====================================================================== */
+
+/* Dark page sections outside cards */
+.immersive-lesson-page .lesson-section > .section-header h2,
+.immersive-unit-page .lesson-section > .section-header h2 {
+  color: #ffffff;
+}
+
+.immersive-lesson-page .lesson-section > .section-header .eyebrow,
+.immersive-unit-page .lesson-section > .section-header .eyebrow {
+  color: #f2c14e;
+}
+
+.immersive-lesson-page .lesson-section > .section-header .section-subtitle,
+.immersive-unit-page .lesson-section > .section-header .section-subtitle {
+  color: #dbeafe;
+}
+
+/* All light content surfaces */
+.immersive-lesson-page .card,
+.immersive-unit-page .card,
+.immersive-lesson-page .choice,
+.immersive-unit-page .choice,
+.immersive-lesson-page .mission-steps li,
+.immersive-unit-page .mission-steps li,
+.immersive-lesson-page .callout,
+.immersive-unit-page .callout {
+  color: #102033;
+}
+
+.immersive-lesson-page .card h2,
+.immersive-lesson-page .card h3,
+.immersive-unit-page .card h2,
+.immersive-unit-page .card h3,
+.immersive-lesson-page .choice strong + span,
+.immersive-unit-page .choice strong + span {
+  color: #0b1f3a;
+}
+
+.immersive-lesson-page .card p,
+.immersive-lesson-page .card li,
+.immersive-lesson-page .card dd,
+.immersive-lesson-page .card td,
+.immersive-unit-page .card p,
+.immersive-unit-page .card li,
+.immersive-unit-page .card dd,
+.immersive-unit-page .card td {
+  color: #334155;
+}
+
+/* Eyebrows were intentionally pale for dark heroes, but need a darker
+   treatment when placed on white or pale-blue cards. */
+.immersive-lesson-page .card .eyebrow,
+.immersive-unit-page .card .eyebrow {
+  color: #1e3a8a;
+}
+
+/* Prompt and workflow surfaces */
+.immersive-lesson-page .prompt-card,
+.immersive-unit-page .prompt-card,
+.immersive-lesson-page .interactive-card,
+.immersive-unit-page .interactive-card,
+.immersive-lesson-page .submit-card,
+.immersive-unit-page .submit-card,
+.immersive-lesson-page .resource-card,
+.immersive-unit-page .resource-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f8fc 100%);
+}
+
+.immersive-lesson-page .prompt-card {
+  background: linear-gradient(180deg, #ffffff 0%, #eaf6ff 100%);
+}
+
+.immersive-lesson-page .choice,
+.immersive-unit-page .choice {
+  background: #f6fbff;
+  border-color: #bfd3e6;
+}
+
+.immersive-lesson-page .mission-steps li,
+.immersive-unit-page .mission-steps li {
+  background: #f4f9fd;
+  border-left-color: #147a9e;
+}
+
+.immersive-lesson-page .timeline span,
+.immersive-unit-page .timeline span {
+  background: #d9ecff;
+  color: #0a203a;
+}
+
+.immersive-lesson-page .callout,
+.immersive-unit-page .callout {
+  background: #fff4c7;
+  border-left-color: #9a6a00;
+  color: #3f2d00;
+}
+
+.immersive-lesson-page .callout p,
+.immersive-unit-page .callout p {
+  color: #3f2d00;
+}
+
+/* Dark answer-reveal surfaces: override the global .card p color rule. */
+.immersive-lesson-page .reveal-card details,
+.immersive-unit-page .reveal-card details,
+.immersive-lesson-page .answer-reveal,
+.immersive-unit-page .answer-reveal {
+  background: #061b31;
+  color: #f8fafc;
+  border: 1px solid #355573;
+}
+
+.immersive-lesson-page .reveal-card details p,
+.immersive-lesson-page .reveal-card details li,
+.immersive-lesson-page .reveal-card details strong,
+.immersive-lesson-page .answer-reveal p,
+.immersive-lesson-page .answer-reveal li,
+.immersive-lesson-page .answer-reveal strong,
+.immersive-unit-page .reveal-card details p,
+.immersive-unit-page .reveal-card details li,
+.immersive-unit-page .reveal-card details strong,
+.immersive-unit-page .answer-reveal p,
+.immersive-unit-page .answer-reveal li,
+.immersive-unit-page .answer-reveal strong {
+  color: #f8fafc;
+}
+
+.immersive-lesson-page .reveal-card summary,
+.immersive-lesson-page .answer-reveal summary,
+.immersive-unit-page .reveal-card summary,
+.immersive-unit-page .answer-reveal summary {
+  color: #ffd86a;
+}
+
+/* Hero and mission-panel text stays light on dark backgrounds. */
+.immersive-lesson-page .lesson-mission-hero h1,
+.immersive-lesson-page .lesson-mission-hero h2,
+.immersive-unit-page .lesson-mission-hero h1,
+.immersive-unit-page .lesson-mission-hero h2,
+.immersive-lesson-page .mission-panel h2,
+.immersive-unit-page .mission-panel h2 {
+  color: #ffffff;
+}
+
+.immersive-lesson-page .focus-question,
+.immersive-unit-page .focus-question,
+.immersive-lesson-page .mission-panel p,
+.immersive-unit-page .mission-panel p {
+  color: #e8f1fa;
+}
+
+/* The shared stylesheet treats all secondary buttons in <main> as light-page
+   buttons. Restore an intentional dark-hero treatment here. */
+.immersive-lesson-page .lesson-mission-hero .btn.secondary,
+.immersive-unit-page .lesson-mission-hero .btn.secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.immersive-lesson-page .lesson-mission-hero .btn.secondary:hover,
+.immersive-lesson-page .lesson-mission-hero .btn.secondary:focus,
+.immersive-unit-page .lesson-mission-hero .btn.secondary:hover,
+.immersive-unit-page .lesson-mission-hero .btn.secondary:focus {
+  background: #ffffff;
+  color: #0b1f3a;
+}
+
+/* Resource buttons and bottom navigation remain high contrast. */
+.immersive-lesson-page .resource-card .btn,
+.immersive-unit-page .resource-card .btn,
+.immersive-lesson-page .lesson-bottom-nav .btn,
+.immersive-unit-page .lesson-bottom-nav .btn {
+  color: #0b1f3a;
+}
+
+.immersive-lesson-page .resource-card .btn.dark,
+.immersive-unit-page .resource-card .btn.dark {
+  color: #ffffff;
+}
+
+/* Keyboard focus is visible against both dark and light surfaces. */
+.immersive-lesson-page summary:focus-visible,
+.immersive-unit-page summary:focus-visible,
+.immersive-lesson-page .btn:focus-visible,
+.immersive-unit-page .btn:focus-visible {
+  outline: 3px solid #ffd86a;
+  outline-offset: 3px;
+}
