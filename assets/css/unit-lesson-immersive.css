@@ -196,3 +196,150 @@
   outline: 3px solid #ffd86a;
   outline-offset: 3px;
 }
+/* ======================================================================
+   Immersive lesson light-surface contrast correction — v2
+   ----------------------------------------------------------------------
+   The shared site stylesheet renders .lesson-section as a white panel.
+   These rules therefore keep headings, labels, subtitles, choices, and
+   supporting text dark whenever they appear on those light lesson panels.
+   Dark hero and answer-reveal surfaces are explicitly restored below.
+   ====================================================================== */
+
+body.immersive-lesson-page .lesson-section,
+body.immersive-unit-page .lesson-section {
+  background: #ffffff;
+  color: #102033;
+  border-color: #cbd5e1;
+}
+
+/* Section headings and labels displayed directly on white lesson panels. */
+body.immersive-lesson-page .lesson-section > .section-header h2,
+body.immersive-unit-page .lesson-section > .section-header h2,
+body.immersive-lesson-page .lesson-section > h2,
+body.immersive-unit-page .lesson-section > h2 {
+  color: #0b1f3a !important;
+}
+
+body.immersive-lesson-page .lesson-section > .section-header .eyebrow,
+body.immersive-unit-page .lesson-section > .section-header .eyebrow,
+body.immersive-lesson-page .lesson-section > .eyebrow,
+body.immersive-unit-page .lesson-section > .eyebrow {
+  color: #174f8a !important;
+}
+
+body.immersive-lesson-page .lesson-section > .section-header .section-subtitle,
+body.immersive-unit-page .lesson-section > .section-header .section-subtitle,
+body.immersive-lesson-page .lesson-section > .section-subtitle,
+body.immersive-unit-page .lesson-section > .section-subtitle {
+  color: #475569 !important;
+}
+
+/* Light cards, prompts, choices, workflows, deliverables, and resources. */
+body.immersive-lesson-page .lesson-section .card:not(.dark),
+body.immersive-unit-page .lesson-section .card:not(.dark),
+body.immersive-lesson-page .lesson-section .choice,
+body.immersive-unit-page .lesson-section .choice,
+body.immersive-lesson-page .lesson-section .mission-steps li,
+body.immersive-unit-page .lesson-section .mission-steps li,
+body.immersive-lesson-page .lesson-section .callout,
+body.immersive-unit-page .lesson-section .callout {
+  color: #102033 !important;
+}
+
+body.immersive-lesson-page .lesson-section .card:not(.dark) h2,
+body.immersive-lesson-page .lesson-section .card:not(.dark) h3,
+body.immersive-lesson-page .lesson-section .card:not(.dark) h4,
+body.immersive-unit-page .lesson-section .card:not(.dark) h2,
+body.immersive-unit-page .lesson-section .card:not(.dark) h3,
+body.immersive-unit-page .lesson-section .card:not(.dark) h4 {
+  color: #0b1f3a !important;
+}
+
+body.immersive-lesson-page .lesson-section .card:not(.dark) p,
+body.immersive-lesson-page .lesson-section .card:not(.dark) li,
+body.immersive-lesson-page .lesson-section .card:not(.dark) dd,
+body.immersive-lesson-page .lesson-section .card:not(.dark) td,
+body.immersive-lesson-page .lesson-section .card:not(.dark) span:not(.tag),
+body.immersive-unit-page .lesson-section .card:not(.dark) p,
+body.immersive-unit-page .lesson-section .card:not(.dark) li,
+body.immersive-unit-page .lesson-section .card:not(.dark) dd,
+body.immersive-unit-page .lesson-section .card:not(.dark) td,
+body.immersive-unit-page .lesson-section .card:not(.dark) span:not(.tag) {
+  color: #334155 !important;
+}
+
+body.immersive-lesson-page .lesson-section .card:not(.dark) strong,
+body.immersive-unit-page .lesson-section .card:not(.dark) strong,
+body.immersive-lesson-page .lesson-section .choice span,
+body.immersive-unit-page .lesson-section .choice span,
+body.immersive-lesson-page .lesson-section .mission-steps li,
+body.immersive-unit-page .lesson-section .mission-steps li {
+  color: #172033 !important;
+}
+
+body.immersive-lesson-page .lesson-section .card:not(.dark) .eyebrow,
+body.immersive-unit-page .lesson-section .card:not(.dark) .eyebrow {
+  color: #174f8a !important;
+}
+
+/* Preserve intentional badge colors. */
+body.immersive-lesson-page .lesson-section .tag,
+body.immersive-unit-page .lesson-section .tag,
+body.immersive-lesson-page .lesson-section .choice > strong,
+body.immersive-unit-page .lesson-section .choice > strong,
+body.immersive-lesson-page .lesson-section .timeline span,
+body.immersive-unit-page .lesson-section .timeline span {
+  color: #061b31 !important;
+}
+
+/* Restore light text inside dark answer panels after the broad light-card pass. */
+body.immersive-lesson-page .lesson-section .reveal-card details,
+body.immersive-lesson-page .lesson-section details.answer-reveal,
+body.immersive-unit-page .lesson-section .reveal-card details,
+body.immersive-unit-page .lesson-section details.answer-reveal {
+  background: #061b31 !important;
+  color: #f8fafc !important;
+}
+
+body.immersive-lesson-page .lesson-section .reveal-card details p,
+body.immersive-lesson-page .lesson-section .reveal-card details li,
+body.immersive-lesson-page .lesson-section .reveal-card details strong,
+body.immersive-lesson-page .lesson-section details.answer-reveal p,
+body.immersive-lesson-page .lesson-section details.answer-reveal li,
+body.immersive-lesson-page .lesson-section details.answer-reveal strong,
+body.immersive-lesson-page .lesson-section details.answer-reveal span,
+body.immersive-unit-page .lesson-section .reveal-card details p,
+body.immersive-unit-page .lesson-section .reveal-card details li,
+body.immersive-unit-page .lesson-section .reveal-card details strong,
+body.immersive-unit-page .lesson-section details.answer-reveal p,
+body.immersive-unit-page .lesson-section details.answer-reveal li,
+body.immersive-unit-page .lesson-section details.answer-reveal strong,
+body.immersive-unit-page .lesson-section details.answer-reveal span {
+  color: #f8fafc !important;
+}
+
+body.immersive-lesson-page .lesson-section .reveal-card details summary,
+body.immersive-lesson-page .lesson-section details.answer-reveal summary,
+body.immersive-unit-page .lesson-section .reveal-card details summary,
+body.immersive-unit-page .lesson-section details.answer-reveal summary {
+  color: #ffd86a !important;
+}
+
+/* Maintain white text in the dark mission hero. */
+body.immersive-lesson-page .lesson-mission-hero,
+body.immersive-unit-page .lesson-mission-hero,
+body.immersive-lesson-page .lesson-mission-hero h1,
+body.immersive-lesson-page .lesson-mission-hero h2,
+body.immersive-lesson-page .lesson-mission-hero p,
+body.immersive-unit-page .lesson-mission-hero h1,
+body.immersive-unit-page .lesson-mission-hero h2,
+body.immersive-unit-page .lesson-mission-hero p {
+  color: #ffffff;
+}
+
+body.immersive-lesson-page .lesson-mission-hero .focus-question,
+body.immersive-unit-page .lesson-mission-hero .focus-question,
+body.immersive-lesson-page .lesson-mission-hero .mission-panel p,
+body.immersive-unit-page .lesson-mission-hero .mission-panel p {
+  color: #e8f1fa !important;
+}
