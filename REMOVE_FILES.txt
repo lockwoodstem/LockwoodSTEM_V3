@@ -1,4 +1,2 @@
-Remove these obsolete full-unit presentation files from the website repository if they are present:
-
-downloads/presentations/AED_Unit1_Student_Deck.pptx
-downloads/presentations/AED_Unit1_Student_Deck.pdf
+downloads/presentations/AED_Unit2_Student_Deck.pdf
+downloads/presentations/AED_Unit2_Student_Deck.pptx
