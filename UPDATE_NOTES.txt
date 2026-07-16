@@ -1,0 +1,15 @@
+LockwoodSTEM IED Unit 0 lesson presentation/page update
+
+Copy these files into the repository root, preserving folders.
+
+Included:
+- Updated IED Unit 0 overview page
+- Updated Lesson 0.1 through Lesson 0.12 pages
+- New lesson-level PowerPoint files for Lessons 0.1 through 0.12
+
+Not included:
+- CNAME was not modified or included. Do not delete it.
+
+Recommended deletion from repository if still present:
+- downloads/presentations/AED_Unit0_Student_Deck.pdf
+- downloads/presentations/AED_Unit0_Student_Deck.pptx
