@@ -446,3 +446,112 @@ html body.immersive-unit-page article.reveal-card > details p {
   line-height: 1.55;
 }
 
+
+/* ---------- Final cross-unit consistency hardening ---------- */
+body.lesson-immersive-page .lesson-web-section,
+body.lesson-immersive-page main > section.container:not(.lesson-bottom-nav),
+body.immersive-lesson-page .lesson-web-section {
+  color: #102033;
+}
+
+body.lesson-immersive-page .lesson-web-section .section-header h2,
+body.lesson-immersive-page main > section.container .section-header h2,
+body.lesson-immersive-page .lesson-web-section h2,
+body.lesson-immersive-page .lesson-web-section h3 {
+  color: #0b1f3a !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+body.lesson-immersive-page .lesson-web-section .section-subtitle,
+body.lesson-immersive-page main > section.container .section-subtitle {
+  color: #475569 !important;
+  opacity: 1 !important;
+}
+
+body.lesson-immersive-page .lesson-web-section .eyebrow,
+body.lesson-immersive-page main > section.container .eyebrow {
+  color: #946500 !important;
+  opacity: 1 !important;
+}
+
+body.lesson-immersive-page .lesson-web-section .card:not(.dark),
+body.lesson-immersive-page main > section.container .card:not(.dark) {
+  color: #102033 !important;
+}
+
+body.lesson-immersive-page .lesson-web-section .card:not(.dark) p,
+body.lesson-immersive-page .lesson-web-section .card:not(.dark) li,
+body.lesson-immersive-page main > section.container .card:not(.dark) p,
+body.lesson-immersive-page main > section.container .card:not(.dark) li {
+  color: #334155 !important;
+}
+
+/* Unit 0's original expandable structure uses .lesson-answer-reveal. */
+html body.lesson-immersive-page details.lesson-answer-reveal,
+html body.immersive-lesson-page details.lesson-answer-reveal {
+  background: #061b31 !important;
+  color: #ffffff !important;
+  border: 1px solid #4d6f8f !important;
+  border-radius: 18px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+html body.lesson-immersive-page details.lesson-answer-reveal summary,
+html body.lesson-immersive-page details.lesson-answer-reveal summary *,
+html body.immersive-lesson-page details.lesson-answer-reveal summary,
+html body.immersive-lesson-page details.lesson-answer-reveal summary * {
+  color: #ffd86a !important;
+  -webkit-text-fill-color: #ffd86a !important;
+  opacity: 1 !important;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+html body.lesson-immersive-page details.lesson-answer-reveal .answer-panel,
+html body.lesson-immersive-page details.lesson-answer-reveal .answer-panel *,
+html body.immersive-lesson-page details.lesson-answer-reveal .answer-panel,
+html body.immersive-lesson-page details.lesson-answer-reveal .answer-panel * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+html body.lesson-immersive-page details.lesson-answer-reveal .answer-panel .card,
+html body.immersive-lesson-page details.lesson-answer-reveal .answer-panel .card {
+  background: rgba(255,255,255,.09) !important;
+  border-color: rgba(255,255,255,.25) !important;
+}
+
+/* Consistent navigation and table behavior. */
+.lesson-bottom-nav {
+  align-items: center;
+}
+
+.lesson-resource-table {
+  width: 100%;
+}
+
+.lesson-table-action {
+  min-width: 150px;
+}
+
+@media (max-width: 760px) {
+  .lesson-bottom-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lesson-bottom-nav .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .lesson-resource-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
