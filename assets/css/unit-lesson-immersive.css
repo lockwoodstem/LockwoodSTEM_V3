@@ -875,3 +875,18 @@ html body.immersive-lesson-page .lesson-bottom-nav .btn.secondary {
   border-color: #ffffff !important;
 }
 
+
+/* Unit 5 page contrast hardening */
+body.immersive-lesson-page main section.container,
+body.immersive-lesson-page main section.container *,
+body.immersive-unit-page main section.container,
+body.immersive-unit-page main section.container * { color:#0b1f3a!important; -webkit-text-fill-color:#0b1f3a!important; opacity:1!important; }
+body.immersive-lesson-page .lesson-mission-hero,
+body.immersive-lesson-page .lesson-mission-hero *,
+body.immersive-unit-page .lesson-mission-hero,
+body.immersive-unit-page .lesson-mission-hero *,
+body.immersive-lesson-page details.answer-reveal,
+body.immersive-lesson-page details.answer-reveal *,
+body.immersive-unit-page details.answer-reveal,
+body.immersive-unit-page details.answer-reveal * { color:#ffffff!important; -webkit-text-fill-color:#ffffff!important; opacity:1!important; }
+main section.container { background:#f4f8fb; }
