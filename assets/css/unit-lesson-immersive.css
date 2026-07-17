@@ -555,3 +555,126 @@ html body.immersive-lesson-page details.lesson-answer-reveal .answer-panel .card
     -webkit-overflow-scrolling: touch;
   }
 }
+
+
+/* POE immersive lesson contrast hardening - high specificity to override global light text */
+body.immersive-lesson-page main section.container,
+body.immersive-lesson-page main section.container p,
+body.immersive-lesson-page main section.container li,
+body.immersive-lesson-page main section.container span,
+body.immersive-lesson-page main section.container h1,
+body.immersive-lesson-page main section.container h2,
+body.immersive-lesson-page main section.container h3,
+body.immersive-lesson-page main section.container h4,
+body.immersive-lesson-page main section.container strong,
+body.immersive-lesson-page main section.container em,
+body.immersive-lesson-page .lesson-section h2,
+body.immersive-lesson-page .lesson-section h3,
+body.immersive-lesson-page .lesson-section .section-subtitle,
+body.immersive-lesson-page .lesson-web-section h2,
+body.immersive-lesson-page .lesson-web-section h3,
+body.immersive-lesson-page .lesson-web-section .section-subtitle,
+body.immersive-lesson-page .section-header,
+body.immersive-lesson-page .section-header *,
+body.immersive-lesson-page .card:not(.dark),
+body.immersive-lesson-page .card:not(.dark) *,
+body.immersive-lesson-page .prompt-card,
+body.immersive-lesson-page .prompt-card *,
+body.immersive-lesson-page .choice-card,
+body.immersive-lesson-page .choice-card *,
+body.immersive-lesson-page .lesson-timeline,
+body.immersive-lesson-page .lesson-timeline *,
+body.immersive-lesson-page .pacing-strip,
+body.immersive-lesson-page .pacing-strip *,
+body.immersive-lesson-page .evidence-flow,
+body.immersive-lesson-page .evidence-flow *,
+body.immersive-lesson-page .claim-banner,
+body.immersive-lesson-page .callout,
+body.immersive-lesson-page .callout *,
+body.immersive-lesson-page .unit-meta-list,
+body.immersive-lesson-page .unit-meta-list *,
+body.immersive-lesson-page .lesson-list-clean,
+body.immersive-lesson-page .lesson-list-clean *,
+body.immersive-lesson-page .resource-card,
+body.immersive-lesson-page .resource-card * {
+  color:#0b1f3a!important;
+  -webkit-text-fill-color:#0b1f3a!important;
+  opacity:1!important;
+  text-shadow:none!important;
+}
+body.immersive-lesson-page .lesson-mission-hero,
+body.immersive-lesson-page .lesson-mission-hero *,
+body.immersive-lesson-page .page-hero,
+body.immersive-lesson-page .page-hero *,
+body.immersive-lesson-page .hero-grid,
+body.immersive-lesson-page .hero-grid *,
+body.immersive-lesson-page .lesson-hero-grid,
+body.immersive-lesson-page .lesson-hero-grid *,
+body.immersive-lesson-page .mission-panel,
+body.immersive-lesson-page .mission-panel *,
+body.immersive-lesson-page .card.dark,
+body.immersive-lesson-page .card.dark * {
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+  opacity:1!important;
+}
+body.immersive-lesson-page .tag,
+body.immersive-lesson-page .tag *,
+body.immersive-lesson-page .process-number,
+body.immersive-lesson-page .process-number * {
+  color:#061b31!important;
+  -webkit-text-fill-color:#061b31!important;
+}
+body.immersive-lesson-page .btn,
+body.immersive-lesson-page .btn * {
+  -webkit-text-fill-color:currentColor!important;
+  opacity:1!important;
+}
+body.immersive-lesson-page details.answer-reveal,
+body.immersive-lesson-page details.lesson-answer-reveal {
+  background:#061b31!important;
+  color:#ffffff!important;
+  border-radius:16px!important;
+  padding:1rem!important;
+  border:1px solid rgba(255,255,255,.18)!important;
+}
+body.immersive-lesson-page details.answer-reveal summary,
+body.immersive-lesson-page details.answer-reveal summary *,
+body.immersive-lesson-page details.lesson-answer-reveal summary,
+body.immersive-lesson-page details.lesson-answer-reveal summary * {
+  color:#ffd86a!important;
+  -webkit-text-fill-color:#ffd86a!important;
+  opacity:1!important;
+  cursor:pointer!important;
+  font-weight:800!important;
+}
+body.immersive-lesson-page details.answer-reveal p,
+body.immersive-lesson-page details.answer-reveal p *,
+body.immersive-lesson-page details.answer-reveal li,
+body.immersive-lesson-page details.answer-reveal li *,
+body.immersive-lesson-page details.answer-reveal h3,
+body.immersive-lesson-page details.answer-reveal h3 *,
+body.immersive-lesson-page details.answer-reveal div,
+body.immersive-lesson-page details.answer-reveal div *,
+body.immersive-lesson-page details.lesson-answer-reveal p,
+body.immersive-lesson-page details.lesson-answer-reveal p *,
+body.immersive-lesson-page details.lesson-answer-reveal li,
+body.immersive-lesson-page details.lesson-answer-reveal li *,
+body.immersive-lesson-page details.lesson-answer-reveal h3,
+body.immersive-lesson-page details.lesson-answer-reveal h3 *,
+body.immersive-lesson-page details.lesson-answer-reveal div,
+body.immersive-lesson-page details.lesson-answer-reveal div * {
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+  opacity:1!important;
+  text-shadow:none!important;
+}
+body.immersive-lesson-page details.answer-reveal .callout,
+body.immersive-lesson-page details.answer-reveal .callout *,
+body.immersive-lesson-page details.lesson-answer-reveal .callout,
+body.immersive-lesson-page details.lesson-answer-reveal .callout * {
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+  background:rgba(255,255,255,.08)!important;
+}
+.choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}.choice-card{border:1px solid #d9e3ec;border-radius:14px;padding:1rem;background:#fff}.choice-card strong{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:999px;background:#d9ab3d;color:#061b31!important;-webkit-text-fill-color:#061b31!important;margin-right:.5rem}.lesson-list-clean{margin:0;padding-left:1.25rem}.lesson-list-clean li{margin:.5rem 0}.poe-system-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.75rem;margin-top:1rem}.poe-system-strip span{display:block;background:#eaf4fb;border:1px solid #c9e6f4;border-radius:12px;padding:.75rem;font-weight:700;color:#0b4d78!important;-webkit-text-fill-color:#0b4d78!important}.unit-lesson-table .btn.small{white-space:nowrap}.deliverable-card{border-left:6px solid #d9ab3d}.lesson-nav-row{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:space-between;margin-top:1.5rem}.lesson-nav-row .btn{margin:.25rem 0}.pacing-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.65rem}.pacing-strip span{display:block;border-radius:12px;background:#fff;border:1px solid #d9e3ec;padding:.7rem;color:#0b1f3a!important;-webkit-text-fill-color:#0b1f3a!important;font-weight:700}.pacing-strip em{display:block;font-style:normal;color:#0b4d78!important;-webkit-text-fill-color:#0b4d78!important;font-size:.85rem;font-weight:800;margin-bottom:.2rem}
