@@ -705,3 +705,173 @@ body.immersive-lesson-page details.answer-reveal,
 body.immersive-lesson-page details.answer-reveal *,
 body.immersive-unit-page details.answer-reveal,
 body.immersive-unit-page details.answer-reveal * { color:#ffffff!important; -webkit-text-fill-color:#ffffff!important; opacity:1!important; }
+
+/* ================================================================
+   POE LESSON CONTRAST HARDENING v6
+   All non-hero lesson sections are explicit light surfaces. This
+   prevents the site's dark body background from showing behind dark
+   lesson headings when a page uses plain section.container markup.
+   ================================================================ */
+html body.lesson-immersive-page main > section.container,
+html body.immersive-lesson-page main > section.container {
+  background: #ffffff !important;
+  color: #102033 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 24px rgba(2, 10, 28, .10) !important;
+  padding: 2rem 1.35rem 1.35rem !important;
+  margin-top: 1.25rem !important;
+}
+
+html body.lesson-immersive-page main > section.container .section-header,
+html body.immersive-lesson-page main > section.container .section-header,
+html body.lesson-immersive-page main > section.container .section-header > div,
+html body.immersive-lesson-page main > section.container .section-header > div {
+  color: #102033 !important;
+  opacity: 1 !important;
+}
+
+html body.lesson-immersive-page main > section.container .section-header h1,
+html body.lesson-immersive-page main > section.container .section-header h2,
+html body.lesson-immersive-page main > section.container .section-header h3,
+html body.immersive-lesson-page main > section.container .section-header h1,
+html body.immersive-lesson-page main > section.container .section-header h2,
+html body.immersive-lesson-page main > section.container .section-header h3 {
+  color: #0b1f3a !important;
+  -webkit-text-fill-color: #0b1f3a !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+html body.lesson-immersive-page main > section.container .section-header .eyebrow,
+html body.immersive-lesson-page main > section.container .section-header .eyebrow {
+  color: #8a5b00 !important;
+  -webkit-text-fill-color: #8a5b00 !important;
+  opacity: 1 !important;
+}
+
+html body.lesson-immersive-page main > section.container .section-header .section-subtitle,
+html body.immersive-lesson-page main > section.container .section-header .section-subtitle {
+  color: #475569 !important;
+  -webkit-text-fill-color: #475569 !important;
+  opacity: 1 !important;
+}
+
+/* Plain lesson text outside cards */
+html body.lesson-immersive-page main > section.container > p,
+html body.lesson-immersive-page main > section.container > ul,
+html body.lesson-immersive-page main > section.container > ol,
+html body.immersive-lesson-page main > section.container > p,
+html body.immersive-lesson-page main > section.container > ul,
+html body.immersive-lesson-page main > section.container > ol,
+html body.lesson-immersive-page .lesson-prompt,
+html body.lesson-immersive-page .scenario-text,
+html body.lesson-immersive-page .claim-banner,
+html body.lesson-immersive-page .lesson-big-statement,
+html body.immersive-lesson-page .lesson-prompt,
+html body.immersive-lesson-page .scenario-text,
+html body.immersive-lesson-page .claim-banner,
+html body.immersive-lesson-page .lesson-big-statement {
+  color: #102033 !important;
+  -webkit-text-fill-color: #102033 !important;
+  opacity: 1 !important;
+}
+
+/* Pacing strip and process arrows */
+html body.lesson-immersive-page .lesson-timeline div,
+html body.immersive-lesson-page .lesson-timeline div {
+  background: #eef5fc !important;
+  border: 1px solid #cbddeb !important;
+  color: #102033 !important;
+}
+html body.lesson-immersive-page .lesson-timeline strong,
+html body.lesson-immersive-page .lesson-timeline span,
+html body.immersive-lesson-page .lesson-timeline strong,
+html body.immersive-lesson-page .lesson-timeline span,
+html body.lesson-immersive-page .evidence-flow > span,
+html body.immersive-lesson-page .evidence-flow > span {
+  color: #0b1f3a !important;
+  -webkit-text-fill-color: #0b1f3a !important;
+  opacity: 1 !important;
+}
+
+/* Light cards must always use dark text. */
+html body.lesson-immersive-page main > section.container .card:not(.dark),
+html body.immersive-lesson-page main > section.container .card:not(.dark),
+html body.lesson-immersive-page main > section.container .choice-card,
+html body.immersive-lesson-page main > section.container .choice-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%) !important;
+  color: #102033 !important;
+}
+html body.lesson-immersive-page main > section.container .card:not(.dark) h2,
+html body.lesson-immersive-page main > section.container .card:not(.dark) h3,
+html body.lesson-immersive-page main > section.container .card:not(.dark) h4,
+html body.immersive-lesson-page main > section.container .card:not(.dark) h2,
+html body.immersive-lesson-page main > section.container .card:not(.dark) h3,
+html body.immersive-lesson-page main > section.container .card:not(.dark) h4 {
+  color: #0b1f3a !important;
+  -webkit-text-fill-color: #0b1f3a !important;
+  opacity: 1 !important;
+}
+html body.lesson-immersive-page main > section.container .card:not(.dark) p,
+html body.lesson-immersive-page main > section.container .card:not(.dark) li,
+html body.immersive-lesson-page main > section.container .card:not(.dark) p,
+html body.immersive-lesson-page main > section.container .card:not(.dark) li,
+html body.lesson-immersive-page main > section.container .choice-card p,
+html body.immersive-lesson-page main > section.container .choice-card p {
+  color: #334155 !important;
+  -webkit-text-fill-color: #334155 !important;
+  opacity: 1 !important;
+}
+
+/* Dark answer panels remain high contrast after the broad light rules. */
+html body.lesson-immersive-page main > section.container details.answer-reveal,
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal,
+html body.immersive-lesson-page main > section.container details.answer-reveal,
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal,
+html body.lesson-immersive-page main > section.container article.reveal-card > details,
+html body.immersive-lesson-page main > section.container article.reveal-card > details {
+  background: #071b31 !important;
+  color: #ffffff !important;
+  border: 1px solid #587794 !important;
+}
+html body.lesson-immersive-page main > section.container details.answer-reveal summary,
+html body.lesson-immersive-page main > section.container details.answer-reveal summary *,
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal summary,
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal summary *,
+html body.immersive-lesson-page main > section.container details.answer-reveal summary,
+html body.immersive-lesson-page main > section.container details.answer-reveal summary *,
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal summary,
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal summary * {
+  color: #ffd86a !important;
+  -webkit-text-fill-color: #ffd86a !important;
+  opacity: 1 !important;
+}
+html body.lesson-immersive-page main > section.container details.answer-reveal :is(p,li,span,strong,h2,h3,h4),
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4),
+html body.immersive-lesson-page main > section.container details.answer-reveal :is(p,li,span,strong,h2,h3,h4),
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4),
+html body.lesson-immersive-page main > section.container article.reveal-card > details :is(p,li,span,strong,h2,h3,h4),
+html body.immersive-lesson-page main > section.container article.reveal-card > details :is(p,li,span,strong,h2,h3,h4) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+/* Secondary buttons on white lesson surfaces */
+html body.lesson-immersive-page main > section.container .btn.secondary,
+html body.immersive-lesson-page main > section.container .btn.secondary {
+  background: #eef5fc !important;
+  color: #0b1f3a !important;
+  border-color: #b9ccdc !important;
+}
+
+/* Bottom lesson navigation lives on the dark page background. */
+html body.lesson-immersive-page .lesson-bottom-nav .btn.secondary,
+html body.immersive-lesson-page .lesson-bottom-nav .btn.secondary {
+  background: #ffffff !important;
+  color: #0b1f3a !important;
+  border-color: #ffffff !important;
+}
+
