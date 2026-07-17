@@ -678,3 +678,30 @@ body.immersive-lesson-page details.lesson-answer-reveal .callout * {
   background:rgba(255,255,255,.08)!important;
 }
 .choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}.choice-card{border:1px solid #d9e3ec;border-radius:14px;padding:1rem;background:#fff}.choice-card strong{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:999px;background:#d9ab3d;color:#061b31!important;-webkit-text-fill-color:#061b31!important;margin-right:.5rem}.lesson-list-clean{margin:0;padding-left:1.25rem}.lesson-list-clean li{margin:.5rem 0}.poe-system-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.75rem;margin-top:1rem}.poe-system-strip span{display:block;background:#eaf4fb;border:1px solid #c9e6f4;border-radius:12px;padding:.75rem;font-weight:700;color:#0b4d78!important;-webkit-text-fill-color:#0b4d78!important}.unit-lesson-table .btn.small{white-space:nowrap}.deliverable-card{border-left:6px solid #d9ab3d}.lesson-nav-row{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:space-between;margin-top:1.5rem}.lesson-nav-row .btn{margin:.25rem 0}.pacing-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.65rem}.pacing-strip span{display:block;border-radius:12px;background:#fff;border:1px solid #d9e3ec;padding:.7rem;color:#0b1f3a!important;-webkit-text-fill-color:#0b1f3a!important;font-weight:700}.pacing-strip em{display:block;font-style:normal;color:#0b4d78!important;-webkit-text-fill-color:#0b4d78!important;font-size:.85rem;font-weight:800;margin-bottom:.2rem}
+
+
+/* POE Unit 3 contrast hardening */
+body.immersive-lesson-page main section.container,
+body.immersive-lesson-page main section.container *,
+body.immersive-unit-page main section.container,
+body.immersive-unit-page main section.container *,
+body.immersive-lesson-page .card:not(.dark),
+body.immersive-lesson-page .card:not(.dark) *,
+body.immersive-unit-page .card:not(.dark),
+body.immersive-unit-page .card:not(.dark) *,
+body.immersive-lesson-page .section-header,
+body.immersive-lesson-page .section-header *,
+body.immersive-unit-page .section-header,
+body.immersive-unit-page .section-header * { color:#0b1f3a!important; -webkit-text-fill-color:#0b1f3a!important; opacity:1!important; }
+body.immersive-lesson-page .lesson-mission-hero,
+body.immersive-lesson-page .lesson-mission-hero *,
+body.immersive-unit-page .lesson-mission-hero,
+body.immersive-unit-page .lesson-mission-hero *,
+body.immersive-lesson-page .card.dark,
+body.immersive-lesson-page .card.dark *,
+body.immersive-unit-page .mission-panel,
+body.immersive-unit-page .mission-panel * { color:#ffffff!important; -webkit-text-fill-color:#ffffff!important; opacity:1!important; }
+body.immersive-lesson-page details.answer-reveal,
+body.immersive-lesson-page details.answer-reveal *,
+body.immersive-unit-page details.answer-reveal,
+body.immersive-unit-page details.answer-reveal * { color:#ffffff!important; -webkit-text-fill-color:#ffffff!important; opacity:1!important; }
