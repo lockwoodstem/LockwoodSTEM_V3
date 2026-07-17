@@ -390,3 +390,59 @@ body.immersive-unit-page .btn:focus-visible {
     font-size: 2.3rem;
   }
 }
+
+/* ---------- Answer reveal contrast hardening v4 ----------
+   Direct element rules prevent global .card p / muted text styles from
+   reducing contrast inside dark expandable answer panels. */
+html body.immersive-lesson-page details.answer-reveal,
+html body.immersive-unit-page details.answer-reveal,
+html body.immersive-lesson-page article.reveal-card > details,
+html body.immersive-unit-page article.reveal-card > details {
+  background: #061b31 !important;
+  color: #ffffff !important;
+  border-color: #4d6f8f !important;
+}
+
+html body.immersive-lesson-page details.answer-reveal summary,
+html body.immersive-unit-page details.answer-reveal summary,
+html body.immersive-lesson-page article.reveal-card > details summary,
+html body.immersive-unit-page article.reveal-card > details summary,
+html body.immersive-lesson-page details.answer-reveal summary *,
+html body.immersive-unit-page details.answer-reveal summary *,
+html body.immersive-lesson-page article.reveal-card > details summary *,
+html body.immersive-unit-page article.reveal-card > details summary * {
+  color: #ffd86a !important;
+  -webkit-text-fill-color: #ffd86a !important;
+  opacity: 1 !important;
+}
+
+html body.immersive-lesson-page details.answer-reveal p,
+html body.immersive-unit-page details.answer-reveal p,
+html body.immersive-lesson-page article.reveal-card > details p,
+html body.immersive-unit-page article.reveal-card > details p,
+html body.immersive-lesson-page details.answer-reveal li,
+html body.immersive-unit-page details.answer-reveal li,
+html body.immersive-lesson-page article.reveal-card > details li,
+html body.immersive-unit-page article.reveal-card > details li,
+html body.immersive-lesson-page details.answer-reveal span,
+html body.immersive-unit-page details.answer-reveal span,
+html body.immersive-lesson-page article.reveal-card > details span,
+html body.immersive-unit-page article.reveal-card > details span,
+html body.immersive-lesson-page details.answer-reveal strong,
+html body.immersive-unit-page details.answer-reveal strong,
+html body.immersive-lesson-page article.reveal-card > details strong,
+html body.immersive-unit-page article.reveal-card > details strong {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+html body.immersive-lesson-page details.answer-reveal p,
+html body.immersive-unit-page details.answer-reveal p,
+html body.immersive-lesson-page article.reveal-card > details p,
+html body.immersive-unit-page article.reveal-card > details p {
+  font-weight: 600;
+  line-height: 1.55;
+}
+
