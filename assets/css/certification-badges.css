@@ -1,4 +1,4 @@
-/* Certification badge card enhancements - generated badge art next to each cert */
+/* Certification badge card enhancements - cleaned badge art next to each cert */
 .certifications-page .certification-card {
   display: grid;
   grid-template-columns: 150px 1fr;
@@ -12,11 +12,12 @@
   place-items: center;
   align-self: stretch;
   min-height: 160px;
-  padding: 0.25rem;
+  padding: 0.35rem;
   background: transparent;
 }
 .certifications-page .cert-badge {
-  width: min(132px, 100%);
+  width: 128px;
+  max-width: 100%;
   height: auto;
   display: block;
   filter: drop-shadow(0 10px 14px rgba(2, 6, 23, .24));
@@ -43,10 +44,10 @@
 @media (max-width: 900px) {
   .certifications-page .certification-card { grid-template-columns: 128px 1fr; }
   .certifications-page .cert-badge-wrap { min-height: 148px; }
-  .certifications-page .cert-badge { width: min(114px, 100%); }
+  .certifications-page .cert-badge { width: 112px; }
 }
 @media (max-width: 640px) {
   .certifications-page .certification-card { grid-template-columns: 1fr; gap: 0.85rem; }
   .certifications-page .cert-badge-wrap { min-height: 156px; }
-  .certifications-page .cert-badge { width: min(146px, 65%); }
+  .certifications-page .cert-badge { width: 144px; }
 }
