@@ -3719,3 +3719,33 @@ nav a[aria-current="page"]:focus{
 .lesson-immersive-page .lesson-timeline{grid-template-columns:repeat(7,minmax(0,1fr))}
 @media(max-width:900px){.lesson-immersive-page .lesson-cycle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lesson-immersive-page .lesson-checklist{grid-template-columns:1fr}}
 @media(max-width:600px){.lesson-immersive-page .lesson-cycle-grid{grid-template-columns:1fr}.lesson-immersive-page .lesson-image-card img,.lesson-immersive-page .lesson-image-card.diagram img{height:auto;max-height:none}}
+
+
+/* Home page icon upgrade */
+.action-icon{
+  width:auto;
+  min-width:84px;
+  min-height:84px;
+  height:auto;
+  padding:0;
+  background:transparent;
+  border-radius:0;
+  margin-bottom:.95rem;
+}
+.action-icon-image{
+  display:block;
+  width:84px;
+  height:84px;
+  object-fit:contain;
+  filter: drop-shadow(0 10px 18px rgba(2,10,28,.18));
+}
+.action-card:hover .action-icon-image,
+.action-card:focus .action-icon-image{
+  transform: translateY(-2px) scale(1.03);
+  transition: transform .18s ease;
+}
+.action-emoji, .action-icon-label{ display:none; }
+@media (max-width: 640px){
+  .action-icon-image{ width:74px; height:74px; }
+  .action-icon{ min-width:74px; min-height:74px; }
+}
