@@ -3776,3 +3776,75 @@ nav a[aria-current="page"]:focus{
     width: min(220px, 76vw);
   }
 }
+
+
+/* Definitive image-only homepage quick links */
+.student-actions .home-image-link-grid,
+.student-actions .grid.three {
+  align-items: center;
+  justify-items: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+.student-actions .action-card.action-image-button {
+  display: grid !important;
+  place-items: center !important;
+  width: 100%;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 24px;
+  box-shadow: none !important;
+  overflow: visible;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+/* Hide any text left behind by an older cached homepage. */
+.student-actions .action-image-button h1,
+.student-actions .action-image-button h2,
+.student-actions .action-image-button h3,
+.student-actions .action-image-button h4,
+.student-actions .action-image-button p,
+.student-actions .action-image-button span,
+.student-actions .action-image-button .action-icon-label,
+.student-actions .action-image-button .action-emoji {
+  display: none !important;
+}
+.student-actions .action-card.action-image-button:hover,
+.student-actions .action-card.action-image-button:focus {
+  transform: translateY(-6px);
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none;
+}
+.student-actions .action-card.action-image-button:focus-visible {
+  outline: 3px solid var(--gold) !important;
+  outline-offset: 8px;
+}
+.student-actions .action-image-button .action-icon-image {
+  display: block !important;
+  width: min(300px, 92%) !important;
+  height: auto !important;
+  object-fit: contain;
+  margin: 0 auto !important;
+  filter: drop-shadow(0 18px 28px rgba(2,10,28,.28));
+  transition: transform .18s ease, filter .18s ease;
+}
+.student-actions .action-image-button:hover .action-icon-image,
+.student-actions .action-image-button:focus .action-icon-image {
+  transform: scale(1.045);
+  filter: drop-shadow(0 24px 36px rgba(2,10,28,.38));
+}
+@media (max-width: 900px) {
+  .student-actions .action-image-button .action-icon-image {
+    width: min(250px, 86%) !important;
+  }
+}
+@media (max-width: 640px) {
+  .student-actions .action-image-button .action-icon-image {
+    width: min(220px, 78vw) !important;
+  }
+}
