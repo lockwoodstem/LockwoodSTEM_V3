@@ -1,36 +1,52 @@
-/* Certification badge card enhancements */
+/* Certification badge card enhancements - generated badge art next to each cert */
 .certifications-page .certification-card {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1.1rem 1.15rem;
+  align-items: center;
   overflow: hidden;
+  padding: 1.25rem;
 }
 .certifications-page .cert-badge-wrap {
   display: grid;
   place-items: center;
-  min-height: 220px;
-  margin: -1.35rem -1.35rem 1.15rem;
-  padding: 1.25rem 1rem 1rem;
-  background:
-    radial-gradient(circle at 50% 10%, rgba(32, 165, 255, .16), transparent 38%),
-    linear-gradient(180deg, #0b1730 0%, #111c31 100%);
-  border-bottom: 1px solid rgba(148, 163, 184, .35);
+  align-self: stretch;
+  min-height: 160px;
+  padding: 0.25rem;
+  background: transparent;
 }
 .certifications-page .cert-badge {
-  width: min(190px, 76%);
+  width: min(132px, 100%);
   height: auto;
   display: block;
-  filter: drop-shadow(0 12px 18px rgba(2, 6, 23, .32));
+  filter: drop-shadow(0 10px 14px rgba(2, 6, 23, .24));
   transition: transform .2s ease, filter .2s ease;
 }
 .certifications-page .certification-card:hover .cert-badge,
 .certifications-page .certification-card:focus-within .cert-badge {
   transform: translateY(-4px) scale(1.025);
-  filter: drop-shadow(0 16px 24px rgba(2, 6, 23, .42));
+  filter: drop-shadow(0 14px 20px rgba(2, 6, 23, .32));
 }
-.certifications-page .certification-card .status-pill { align-self: flex-start; }
-.certifications-page .certification-card .btn { margin-top: auto; align-self: flex-start; }
+.certifications-page .cert-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+.certifications-page .cert-card-body .status-pill {
+  align-self: flex-start;
+  margin-bottom: 0.65rem;
+}
+.certifications-page .cert-card-body h3 { margin: 0 0 0.55rem; }
+.certifications-page .cert-card-body p { margin: 0 0 1rem; }
+.certifications-page .cert-card-body .btn { margin-top: auto; align-self: flex-start; }
+@media (max-width: 900px) {
+  .certifications-page .certification-card { grid-template-columns: 128px 1fr; }
+  .certifications-page .cert-badge-wrap { min-height: 148px; }
+  .certifications-page .cert-badge { width: min(114px, 100%); }
+}
 @media (max-width: 640px) {
-  .certifications-page .cert-badge-wrap { min-height: 190px; }
-  .certifications-page .cert-badge { width: min(165px, 72%); }
+  .certifications-page .certification-card { grid-template-columns: 1fr; gap: 0.85rem; }
+  .certifications-page .cert-badge-wrap { min-height: 156px; }
+  .certifications-page .cert-badge { width: min(146px, 65%); }
 }
