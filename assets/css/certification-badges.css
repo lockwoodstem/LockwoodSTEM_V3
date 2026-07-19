@@ -1,0 +1,36 @@
+/* Certification badge card enhancements */
+.certifications-page .certification-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: hidden;
+}
+.certifications-page .cert-badge-wrap {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  margin: -1.35rem -1.35rem 1.15rem;
+  padding: 1.25rem 1rem 1rem;
+  background:
+    radial-gradient(circle at 50% 10%, rgba(32, 165, 255, .16), transparent 38%),
+    linear-gradient(180deg, #0b1730 0%, #111c31 100%);
+  border-bottom: 1px solid rgba(148, 163, 184, .35);
+}
+.certifications-page .cert-badge {
+  width: min(190px, 76%);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 12px 18px rgba(2, 6, 23, .32));
+  transition: transform .2s ease, filter .2s ease;
+}
+.certifications-page .certification-card:hover .cert-badge,
+.certifications-page .certification-card:focus-within .cert-badge {
+  transform: translateY(-4px) scale(1.025);
+  filter: drop-shadow(0 16px 24px rgba(2, 6, 23, .42));
+}
+.certifications-page .certification-card .status-pill { align-self: flex-start; }
+.certifications-page .certification-card .btn { margin-top: auto; align-self: flex-start; }
+@media (max-width: 640px) {
+  .certifications-page .cert-badge-wrap { min-height: 190px; }
+  .certifications-page .cert-badge { width: min(165px, 72%); }
+}
