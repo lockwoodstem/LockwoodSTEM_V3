@@ -16,7 +16,7 @@
  *   automatically after the account is created.
  */
 
-const SERVER_VERSION = '2026-07-20-teacher-admin-self-repair-v1';
+const SERVER_VERSION = '2026-07-20-certification-qa-v1';
 
 const DEFAULT_TEACHER_ACCOUNT = {
   firstName: 'Jonathan',

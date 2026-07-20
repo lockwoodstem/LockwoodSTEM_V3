@@ -1,0 +1,28 @@
+/* LockwoodSTEM certification-system consolidated QA overrides */
+.cert-account-inner.no-microbadges {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto !important;
+  align-items: center !important;
+  gap: 1rem;
+}
+.cert-account-bar .micro-badge-strip { display: none !important; }
+.cert-account-bar[data-role="student"] .cert-teacher-dashboard-btn { display: none !important; }
+.cert-account-bar[data-role="teacher"] .cert-teacher-dashboard-btn { display: none !important; }
+.cert-account-bar[data-role="teacher_admin"] .cert-teacher-dashboard-btn { display: inline-flex !important; }
+.certifications-page .hero-actions [data-teacher-tools-link] {
+  background: rgba(255,255,255,.10);
+  color: #fff;
+  border-color: rgba(255,255,255,.30);
+}
+.teacher-certification-page .teacher-dashboard-section .section-header h2,
+.teacher-certification-page .teacher-student-directory-card .section-header h2,
+.teacher-certification-page .teacher-dashboard-section h2 { color: #0b1f3a !important; }
+.teacher-certification-page .teacher-dashboard-section .section-header p,
+.teacher-certification-page .teacher-dashboard-section .section-header .muted,
+.teacher-certification-page .teacher-student-directory-card .section-header p { color: #475569 !important; }
+.teacher-certification-page .teacher-dashboard-section .section-header .eyebrow,
+.teacher-certification-page .teacher-student-directory-card .section-header .eyebrow { color: #87671f !important; }
+@media (max-width: 900px) {
+  .cert-account-inner.no-microbadges { grid-template-columns: 1fr !important; }
+  .cert-account-inner.no-microbadges .cert-account-actions { justify-content: flex-start; }
+}
