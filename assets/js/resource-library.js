@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const DATA_URL = '../assets/data/resource-library.json?v=20260720-1';
+  const DATA_URL = '../assets/data/resource-library.json?v=20260720-2';
   const PAGE_SIZE = 30;
   const STORAGE_KEY = 'lockwoodstem-resource-favorites-v1';
   const state = { items: [], filtered: [], visible: PAGE_SIZE, favoritesOnly: false, favorites: new Set(), query: '', category: '', course: '', unit: '', format: '', sort: 'recommended' };
