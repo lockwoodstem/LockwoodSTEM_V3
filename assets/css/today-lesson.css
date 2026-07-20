@@ -132,3 +132,43 @@
   .today-lesson-actions { flex-direction: column; }
   .today-lesson-actions a { width: 100%; }
 }
+
+
+/* Reliable agenda action panel */
+.agenda-today-action-panel {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #071a30, #10294a);
+  border: 1px solid rgba(148, 163, 184, .28);
+  box-shadow: 0 16px 34px rgba(2, 10, 28, .14);
+  color: #eef6ff;
+}
+.agenda-today-action-panel[hidden] { display: none !important; }
+.agenda-today-action-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .45rem .8rem;
+}
+.agenda-today-action-heading span {
+  color: #f5c451;
+  font-size: .78rem;
+  font-weight: 950;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.agenda-today-action-heading strong {
+  color: #fff;
+  font-size: 1rem;
+}
+.agenda-today-action-panel .today-lesson-actions {
+  margin-top: .8rem;
+  padding-top: 0;
+}
+.agenda-today-action-panel .today-lesson-actions a {
+  flex: 0 1 auto;
+}
+@media (max-width: 600px) {
+  .agenda-today-action-panel .today-lesson-actions a { width: 100%; }
+}

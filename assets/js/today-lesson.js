@@ -108,10 +108,16 @@
     aa.forEach(token => { if (bb.has(token)) shared++; });
     return shared / Math.max(aa.size, bb.size);
   }
+  const todayLessonScript = document.querySelector('script[src*="today-lesson.js"]');
+  const siteRoot = todayLessonScript
+    ? new URL("../../", todayLessonScript.src)
+    : new URL("./", document.baseURI);
+
   function rootURL(path) {
-    const current = window.location.pathname;
-    const depth = current.split("/").filter(Boolean).length - (current.endsWith("/") ? 0 : 1);
-    return `${"../".repeat(Math.max(0, depth))}${path}`;
+    const value = clean(path);
+    if (!value) return siteRoot.href;
+    if (/^(?:https?:|mailto:|tel:|#)/i.test(value)) return value;
+    return new URL(value.replace(/^\/+/, ""), siteRoot).href;
   }
   function loadLessonIndex() {
     if (!lessonIndexPromise) {
@@ -223,32 +229,65 @@
   }
   async function enhanceAgenda() {
     const app = document.getElementById("agendaApp");
-    if (!app) return;
-    const addActions = async () => {
-      const main = app.querySelector(".agenda-main-card");
-      if (!main || main.querySelector(".today-lesson-actions")) return;
-      const course = clean(document.getElementById("courseSelect")?.value || "IED").toUpperCase();
-      const unitText = clean(main.querySelector(".agenda-unit-pill")?.textContent);
-      const lessonText = clean(main.querySelector("h2")?.textContent);
-      if (!lessonText) return;
-      const index = await loadLessonIndex();
-      const lesson = resolveLesson(index, course, unitText, lessonText);
-      const classLink = app.querySelector(".agenda-link-box a")?.href || "";
-      const pseudoRow = {
-        unit: unitText,
-        lessontitle: lessonText,
-        links: classLink
-      };
-      const actions = document.createElement("div");
-      actions.className = "today-lesson-actions";
-      actions.innerHTML = actionLinks(course, pseudoRow, lesson, "");
-      main.appendChild(actions);
-    };
-    const observer = new MutationObserver(() => { addActions().catch(console.warn); });
+    const panel = document.getElementById("todayLessonAgendaActions");
+    if (!app || !panel) return;
+
+    let updateTimer = null;
+    async function updatePanel() {
+      window.clearTimeout(updateTimer);
+      updateTimer = window.setTimeout(async () => {
+        const main = app.querySelector(".agenda-main-card");
+        if (!main) {
+          panel.hidden = true;
+          panel.innerHTML = "";
+          return;
+        }
+
+        const course = clean(document.getElementById("courseSelect")?.value || "IED").toUpperCase();
+        const unitText = clean(main.querySelector(".agenda-unit-pill")?.textContent);
+        const lessonText = clean(main.querySelector("h2")?.textContent);
+        if (!lessonText) {
+          panel.hidden = true;
+          return;
+        }
+
+        let lesson = null;
+        try {
+          const index = await loadLessonIndex();
+          lesson = resolveLesson(index, course, unitText, lessonText);
+        } catch (error) {
+          console.warn("Today’s Lesson index unavailable; using the course or unit fallback.", error);
+        }
+
+        const classLink = app.querySelector(".agenda-link-box a")?.href || "";
+        const pseudoRow = { unit: unitText, lessontitle: lessonText, links: classLink };
+        panel.innerHTML = `
+          <div class="agenda-today-action-heading">
+            <span>Today’s Lesson</span>
+            <strong>${escapeHTML(lessonText)}</strong>
+          </div>
+          <div class="today-lesson-actions">${actionLinks(course, pseudoRow, lesson, "")}</div>`;
+        panel.hidden = false;
+      }, 40);
+    }
+
+    const observer = new MutationObserver(() => { updatePanel().catch(console.warn); });
     observer.observe(app, { childList: true, subtree: true });
-    addActions().catch(console.warn);
+
+    ["courseSelect", "datePicker", "dayViewBtn", "weekViewBtn", "prevBtn", "todayBtn", "nextBtn"]
+      .map(id => document.getElementById(id))
+      .filter(Boolean)
+      .forEach(control => control.addEventListener("change", () => updatePanel().catch(console.warn)));
+
     const courseSelect = document.getElementById("courseSelect");
-    if (courseSelect) courseSelect.addEventListener("change", () => localStorage.setItem("lockwood-last-course", courseSelect.value));
+    if (courseSelect) {
+      courseSelect.addEventListener("change", () => {
+        localStorage.setItem("lockwood-last-course", courseSelect.value);
+        updatePanel().catch(console.warn);
+      });
+    }
+
+    updatePanel().catch(console.warn);
   }
   function applyAgendaQuery() {
     const courseSelect = document.getElementById("courseSelect");
