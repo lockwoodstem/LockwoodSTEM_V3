@@ -74,3 +74,27 @@
 @media(max-width:820px){.resource-hero-grid{grid-template-columns:1fr}.resource-hero-stats{grid-template-columns:repeat(4,minmax(0,1fr));}.resource-hero-stats div{min-height:100px;padding:1rem}.resource-hero-stats strong{font-size:1.7rem}.resource-filter-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-help-card{align-items:flex-start;flex-direction:column;}}
 @media(max-width:640px){.resource-hero{padding:3rem 0}.resource-hero-stats{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-featured-grid,.resource-grid{grid-template-columns:1fr}.resource-filter-grid{grid-template-columns:1fr}.resource-filter-footer{align-items:flex-start;flex-direction:column}.resource-toolbar-actions{width:100%}.resource-favorites-toggle{flex:1;justify-content:center}.resource-help-actions{width:100%}.resource-help-actions .btn{width:100%;justify-content:center}.resource-card-modern{min-height:0}.resource-featured-card{min-height:0}.resource-toolbar{border-radius:18px;padding:.9rem}.resource-hero-actions .btn{width:100%;justify-content:center;}}
 @media(prefers-reduced-motion:reduce){.resource-card-modern,.resource-featured-card,.resource-save-button,.resource-toast{transition:none!important;}}
+
+
+/* Resource library light-section contrast fix */
+.resource-library-page .resource-featured-section .section-header h2,
+.resource-library-page .resource-library-shell .section-header h2,
+.resource-library-page .resource-help-section h2{
+  color:#0b1f3a !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+.resource-library-page .resource-featured-section .section-subtitle,
+.resource-library-page .resource-library-shell .section-subtitle,
+.resource-library-page .resource-help-section p{
+  color:#42566f !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+.resource-library-page .resource-featured-section .eyebrow,
+.resource-library-page .resource-library-shell .eyebrow,
+.resource-library-page .resource-help-section .eyebrow{
+  color:#805d12 !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
