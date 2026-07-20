@@ -1,4 +1,0 @@
-Remove these obsolete full-unit files if they still exist in the repository:
-
-downloads/presentations/AED_Unit0_Student_Deck.pdf
-downloads/presentations/AED_Unit0_Student_Deck.pptx
