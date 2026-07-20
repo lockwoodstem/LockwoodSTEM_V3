@@ -9,8 +9,97 @@
 <script defer="" src="assets/js/main.js"></script>
 <script defer="" src="assets/js/agenda-config.js"></script>
 <script defer="" src="assets/js/agenda.js?v=5"></script>
-<script defer="" src="assets/js/today-lesson.js?v=5"></script>
-<meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/><link href="assets/css/today-lesson.css?v=5" rel="stylesheet"/>
+<meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/>
+
+<style id="ls-agenda-resources-v8-style">
+/* Self-contained agenda lesson resources panel — v8 */
+#agendaApp .ls-agenda-resources-v8 {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 1rem 0 1.15rem !important;
+  padding: 1rem 1.1rem !important;
+  border: 2px solid #d5ad4b !important;
+  border-radius: 16px !important;
+  background: linear-gradient(135deg, #07162b 0%, #10274a 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 26px rgba(2, 10, 28, .18) !important;
+  position: relative !important;
+  z-index: 4 !important;
+}
+#agendaApp .ls-agenda-resources-v8__top {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: .8rem !important;
+  margin-bottom: .75rem !important;
+}
+#agendaApp .ls-agenda-resources-v8__label {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .45rem !important;
+  color: #f5c451 !important;
+  font-size: .78rem !important;
+  line-height: 1.2 !important;
+  font-weight: 900 !important;
+  letter-spacing: .09em !important;
+  text-transform: uppercase !important;
+}
+#agendaApp .ls-agenda-resources-v8__label::before {
+  content: "" !important;
+  width: .6rem !important;
+  height: .6rem !important;
+  border-radius: 999px !important;
+  background: #f5c451 !important;
+  box-shadow: 0 0 0 4px rgba(245,196,81,.16) !important;
+}
+#agendaApp .ls-agenda-resources-v8__status {
+  color: #cbd5e1 !important;
+  font-size: .76rem !important;
+  font-weight: 750 !important;
+}
+#agendaApp .ls-agenda-resources-v8__buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: .7rem !important;
+}
+#agendaApp .ls-agenda-resources-v8__buttons a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 44px !important;
+  padding: .72rem 1rem !important;
+  border: 1px solid rgba(255,255,255,.3) !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  background: rgba(255,255,255,.08) !important;
+  font-size: .9rem !important;
+  line-height: 1.2 !important;
+  font-weight: 850 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+#agendaApp .ls-agenda-resources-v8__buttons a:first-child {
+  border-color: #f5c451 !important;
+  background: #f5c451 !important;
+  color: #07162b !important;
+}
+#agendaApp .ls-agenda-resources-v8__buttons a:hover,
+#agendaApp .ls-agenda-resources-v8__buttons a:focus-visible {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.05) !important;
+  outline: 3px solid rgba(245,196,81,.35) !important;
+  outline-offset: 2px !important;
+}
+@media (max-width: 680px) {
+  #agendaApp .ls-agenda-resources-v8__top { align-items: flex-start !important; flex-direction: column !important; }
+  #agendaApp .ls-agenda-resources-v8__buttons { flex-direction: column !important; }
+  #agendaApp .ls-agenda-resources-v8__buttons a { width: 100% !important; }
+}
+</style>
+
 </head>
 <body class="agenda-display-cleanup-enabled agenda-fit-fix agenda-exact-badge-fix site-consistency-v4 agenda-page agenda-box-fit-v2">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -72,7 +161,6 @@
 </div>
 </div>
 <div class="agenda-loading" id="agendaApp">Loading agenda...</div>
-<div class="agenda-today-action-panel" id="todayLessonAgendaActions" hidden></div>
 </div>
 </section>
 </main>
@@ -308,5 +396,175 @@
   setInterval(updateClockAndPeriod, 1000);
 })();
 </script>
+
+<script id="ls-agenda-resources-v8-script">
+(function () {
+  "use strict";
+  const VERSION = "8";
+  const app = document.getElementById("agendaApp");
+  if (!app) return;
+
+  let lessonIndexPromise = null;
+  let scheduled = false;
+
+  function clean(value) { return String(value || "").trim(); }
+  function escapeHTML(value) {
+    return clean(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;");
+  }
+  function normalTitle(value) {
+    return clean(value)
+      .toLowerCase()
+      .replace(/^lesson\s*\d+\s*[.\-]\s*\d+\s*[:\-–—]?\s*/i, "")
+      .replace(/^\d+\s*[.\-]\s*\d+\s*[:\-–—]?\s*/i, "")
+      .replace(/&/g, " and ")
+      .replace(/[^a-z0-9]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+  function numbers(unitText, lessonText) {
+    const combined = `${clean(unitText)} ${clean(lessonText)}`;
+    const explicit = combined.match(/\b(?:lesson\s*)?(\d+)\s*[.\-]\s*(\d+)\b/i);
+    if (explicit) return { unit: Number(explicit[1]), lesson: Number(explicit[2]) };
+    const unitMatch = clean(unitText).match(/\b(\d+)\b/) || clean(lessonText).match(/\bunit\s*(\d+)\b/i);
+    return { unit: unitMatch ? Number(unitMatch[1]) : null, lesson: null };
+  }
+  function tokens(value) {
+    return new Set(normalTitle(value).split(" ").filter(token => token.length > 2));
+  }
+  function score(a, b) {
+    const aa = tokens(a), bb = tokens(b);
+    if (!aa.size || !bb.size) return 0;
+    let shared = 0;
+    aa.forEach(token => { if (bb.has(token)) shared += 1; });
+    return shared / Math.max(aa.size, bb.size);
+  }
+  function currentCourse(card) {
+    return clean(document.getElementById("courseSelect")?.value || card.querySelector(".agenda-card-topline span")?.textContent || "IED").toUpperCase();
+  }
+  function fallbackURL(course, unitText, lessonText) {
+    const slug = course.toLowerCase();
+    const n = numbers(unitText, lessonText);
+    if (course !== "ADM" && n.unit !== null && n.lesson !== null) {
+      return `courses/${slug}/units/unit-${n.unit}/lesson-${n.unit}-${n.lesson}.html`;
+    }
+    if (n.unit !== null) return `courses/${slug}/units/unit-${n.unit}.html`;
+    return `courses/${slug}/index.html`;
+  }
+  function firstClassLink(card) {
+    const links = [...card.parentElement.querySelectorAll('.agenda-side-stack .materials a[href], .agenda-link-box a[href]')];
+    return links.find(link => /^https?:/i.test(link.href))?.href || "";
+  }
+  function loadIndex() {
+    if (!lessonIndexPromise) {
+      lessonIndexPromise = fetch(`assets/data/lesson-index.json?v=${VERSION}`, { cache: "no-store" })
+        .then(response => {
+          if (!response.ok) throw new Error(`Lesson index ${response.status}`);
+          return response.json();
+        })
+        .then(data => Array.isArray(data) ? data : (data.lessons || []));
+    }
+    return lessonIndexPromise;
+  }
+  function matchLesson(index, course, unitText, lessonText) {
+    const n = numbers(unitText, lessonText);
+    let candidates = index.filter(item => clean(item.course).toUpperCase() === course);
+    if (n.unit !== null) candidates = candidates.filter(item => Number(item.unit) === n.unit);
+    if (n.lesson !== null) {
+      const exactNumber = candidates.find(item => Number(item.lesson) === n.lesson);
+      if (exactNumber) return exactNumber;
+    }
+    const target = normalTitle(lessonText);
+    const exact = candidates.find(item => normalTitle(item.title) === target);
+    if (exact) return exact;
+    const containing = candidates.find(item => {
+      const title = normalTitle(item.title);
+      return title && target && (title.includes(target) || target.includes(title));
+    });
+    if (containing) return containing;
+    const ranked = candidates.map(item => ({ item, score: score(item.title, lessonText) })).sort((a, b) => b.score - a.score);
+    return ranked[0] && ranked[0].score >= .4 ? ranked[0].item : null;
+  }
+  function presentationURL(lesson) {
+    if (!lesson?.presentation) return "";
+    try { return new URL(lesson.presentation, new URL(lesson.url || "", document.baseURI)).href; }
+    catch (_) { return lesson.presentation; }
+  }
+  function createPanel(card) {
+    if (card.querySelector('[data-ls-agenda-resources-v8]')) return;
+
+    const lessonTitle = clean(card.querySelector("h2")?.textContent || "Class Agenda");
+    const unitText = clean(card.querySelector(".agenda-unit-pill")?.textContent);
+    const course = currentCourse(card);
+    const fallback = fallbackURL(course, unitText, lessonTitle);
+    const classLink = firstClassLink(card);
+
+    const panel = document.createElement("section");
+    panel.className = "ls-agenda-resources-v8";
+    panel.dataset.lsAgendaResourcesV8 = "true";
+    panel.setAttribute("aria-label", "Lesson resources");
+    panel.innerHTML = `
+      <div class="ls-agenda-resources-v8__top">
+        <span class="ls-agenda-resources-v8__label">Lesson Resources</span>
+        <span class="ls-agenda-resources-v8__status" data-ls-resource-status>Finding the matching lesson…</span>
+      </div>
+      <div class="ls-agenda-resources-v8__buttons">
+        <a href="${escapeHTML(fallback)}" data-ls-primary-link>Open Lesson &amp; Resources</a>
+        ${classLink ? `<a href="${escapeHTML(classLink)}" target="_blank" rel="noopener">Class Link</a>` : ""}
+      </div>`;
+
+    const target = card.querySelector(".agenda-primary-block");
+    if (target) card.insertBefore(panel, target);
+    else card.appendChild(panel);
+
+    loadIndex().then(index => {
+      if (!panel.isConnected) return;
+      const lesson = matchLesson(index, course, unitText, lessonTitle);
+      const status = panel.querySelector("[data-ls-resource-status]");
+      if (!lesson) {
+        if (status) status.textContent = "Course or unit resources";
+        return;
+      }
+      const primary = panel.querySelector("[data-ls-primary-link]");
+      if (primary && lesson.url) primary.href = lesson.url;
+      const pURL = presentationURL(lesson);
+      if (pURL) {
+        const presentation = document.createElement("a");
+        presentation.href = pURL;
+        presentation.textContent = "Presentation";
+        presentation.setAttribute("download", "");
+        panel.querySelector(".ls-agenda-resources-v8__buttons")?.appendChild(presentation);
+      }
+      if (status) status.textContent = "Matched to this lesson";
+    }).catch(error => {
+      console.warn("Lesson resources index unavailable; fallback link remains active.", error);
+      const status = panel.querySelector("[data-ls-resource-status]");
+      if (status) status.textContent = "Course or unit resources";
+    });
+  }
+  function render() {
+    scheduled = false;
+    const card = app.querySelector(".agenda-main-card");
+    if (card) createPanel(card);
+  }
+  function schedule() {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(render);
+  }
+
+  new MutationObserver(schedule).observe(app, { childList: true, subtree: true });
+  document.getElementById("courseSelect")?.addEventListener("change", schedule);
+  document.getElementById("datePicker")?.addEventListener("change", schedule);
+  ["prevBtn", "todayBtn", "nextBtn", "dayViewBtn"].forEach(id => document.getElementById(id)?.addEventListener("click", schedule));
+  schedule();
+  setTimeout(schedule, 250);
+  setTimeout(schedule, 1000);
+})();
+</script>
+
 <button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body>
 </html>
