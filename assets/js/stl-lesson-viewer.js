@@ -106,7 +106,7 @@
 
     const center = scale(add(min, max), 0.5);
     const maxDimension = Math.max(max[0] - min[0], max[1] - min[1], max[2] - min[2]) || 1;
-    const modelScale = 2.15 / maxDimension;
+    const modelScale = 1.5 / maxDimension;
 
     const triangles = rawTriangles.map((triangle) => ({
       vertices: triangle.vertices.map((point) => scale(subtract(orientPoint(point), center), modelScale)),

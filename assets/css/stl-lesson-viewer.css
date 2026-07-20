@@ -444,3 +444,47 @@
     min-height: 190px;
   }
 }
+
+/* Lesson 1.2 model discoverability */
+.model-jump-button {
+  border-color: #f3c95c !important;
+  box-shadow: inset 0 0 0 1px rgba(243, 201, 92, 0.3);
+}
+
+.model-explorer-section {
+  scroll-margin-top: 96px;
+}
+
+.model-explorer-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 0.9rem;
+  margin: 0 0 1.1rem;
+  padding: 0.9rem 1rem;
+  border: 2px solid #d9ab3d;
+  border-radius: 14px;
+  background: #fff8dc;
+  color: #102033;
+}
+
+.model-explorer-banner strong,
+.model-explorer-banner span {
+  color: #102033 !important;
+  -webkit-text-fill-color: #102033 !important;
+}
+
+.model-explorer-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: #061b31;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

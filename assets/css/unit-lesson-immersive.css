@@ -890,3 +890,117 @@ body.immersive-lesson-page details.answer-reveal *,
 body.immersive-unit-page details.answer-reveal,
 body.immersive-unit-page details.answer-reveal * { color:#ffffff!important; -webkit-text-fill-color:#ffffff!important; opacity:1!important; }
 main section.container { background:#f4f8fb; }
+
+/* ==========================================================================
+   FINAL LESSON REVEAL READABILITY OVERRIDE — 2026-07-20
+   Uses a light answer surface and a gold summary bar for reliable contrast.
+   ========================================================================== */
+html body.lesson-immersive-page main > section.container details.answer-reveal,
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal,
+html body.immersive-lesson-page main > section.container details.answer-reveal,
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal,
+html body.lesson-immersive-page main > section.container article.reveal-card > details,
+html body.immersive-lesson-page main > section.container article.reveal-card > details {
+  background: #ffffff !important;
+  color: #102033 !important;
+  -webkit-text-fill-color: #102033 !important;
+  border: 2px solid #9db2c4 !important;
+  border-radius: 14px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 14px rgba(6, 27, 49, 0.08) !important;
+}
+
+html body.lesson-immersive-page main > section.container details.answer-reveal summary,
+html body.lesson-immersive-page main > section.container details.answer-reveal summary *,
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal summary,
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal summary *,
+html body.immersive-lesson-page main > section.container details.answer-reveal summary,
+html body.immersive-lesson-page main > section.container details.answer-reveal summary *,
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal summary,
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal summary *,
+html body.lesson-immersive-page main > section.container article.reveal-card > details summary,
+html body.lesson-immersive-page main > section.container article.reveal-card > details summary *,
+html body.immersive-lesson-page main > section.container article.reveal-card > details summary,
+html body.immersive-lesson-page main > section.container article.reveal-card > details summary * {
+  background: #f3c95c !important;
+  color: #061b31 !important;
+  -webkit-text-fill-color: #061b31 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+  cursor: pointer !important;
+  font-weight: 900 !important;
+}
+
+html body.lesson-immersive-page main > section.container details.answer-reveal summary,
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal summary,
+html body.immersive-lesson-page main > section.container details.answer-reveal summary,
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal summary,
+html body.lesson-immersive-page main > section.container article.reveal-card > details summary,
+html body.immersive-lesson-page main > section.container article.reveal-card > details summary {
+  display: block !important;
+  padding: 1rem 1.15rem !important;
+  min-height: 48px !important;
+  line-height: 1.4 !important;
+}
+
+html body.lesson-immersive-page main > section.container details[open].answer-reveal summary,
+html body.lesson-immersive-page main > section.container details[open].lesson-answer-reveal summary,
+html body.immersive-lesson-page main > section.container details[open].answer-reveal summary,
+html body.immersive-lesson-page main > section.container details[open].lesson-answer-reveal summary,
+html body.lesson-immersive-page main > section.container article.reveal-card > details[open] summary,
+html body.immersive-lesson-page main > section.container article.reveal-card > details[open] summary {
+  border-bottom: 2px solid #9db2c4 !important;
+}
+
+html body.lesson-immersive-page main > section.container details.answer-reveal :is(p,li,span,strong,h2,h3,h4,div),
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4,div),
+html body.immersive-lesson-page main > section.container details.answer-reveal :is(p,li,span,strong,h2,h3,h4,div),
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4,div),
+html body.lesson-immersive-page main > section.container article.reveal-card > details :is(p,li,span,strong,h2,h3,h4,div),
+html body.immersive-lesson-page main > section.container article.reveal-card > details :is(p,li,span,strong,h2,h3,h4,div) {
+  color: #102033 !important;
+  -webkit-text-fill-color: #102033 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+html body.lesson-immersive-page main > section.container details.answer-reveal > :not(summary),
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal > :not(summary),
+html body.immersive-lesson-page main > section.container details.answer-reveal > :not(summary),
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal > :not(summary),
+html body.lesson-immersive-page main > section.container article.reveal-card > details > :not(summary),
+html body.immersive-lesson-page main > section.container article.reveal-card > details > :not(summary) {
+  margin-left: 1.15rem !important;
+  margin-right: 1.15rem !important;
+}
+
+html body.lesson-immersive-page main > section.container details.answer-reveal > :last-child,
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal > :last-child,
+html body.immersive-lesson-page main > section.container details.answer-reveal > :last-child,
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal > :last-child,
+html body.lesson-immersive-page main > section.container article.reveal-card > details > :last-child,
+html body.immersive-lesson-page main > section.container article.reveal-card > details > :last-child {
+  margin-bottom: 1rem !important;
+}
+
+html body.lesson-immersive-page main > section.container details.answer-reveal .answer-panel,
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal .answer-panel,
+html body.immersive-lesson-page main > section.container details.answer-reveal .answer-panel,
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal .answer-panel {
+  background: #ffffff !important;
+  margin: 0 !important;
+  padding: 1rem 1.15rem !important;
+}
+
+html body.lesson-immersive-page main > section.container details.answer-reveal .callout,
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal .callout,
+html body.immersive-lesson-page main > section.container details.answer-reveal .callout,
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal .callout,
+html body.lesson-immersive-page main > section.container article.reveal-card > details .callout,
+html body.immersive-lesson-page main > section.container article.reveal-card > details .callout {
+  background: #eef5fb !important;
+  color: #102033 !important;
+  -webkit-text-fill-color: #102033 !important;
+  border-color: #b7c9d8 !important;
+}
