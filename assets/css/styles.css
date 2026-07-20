@@ -3877,3 +3877,21 @@ nav a[aria-current="page"]:focus{
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Final teacher-session isolation and student top-bar cleanup */
+.cert-account-inner.no-microbadges {
+  grid-template-columns: minmax(220px, 1fr) auto !important;
+  align-items: center !important;
+}
+.cert-account-bar[data-role="student"] .micro-badge-strip {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  .cert-account-inner.no-microbadges {
+    grid-template-columns: 1fr !important;
+  }
+  .cert-account-inner.no-microbadges .cert-account-actions {
+    justify-content: flex-start;
+  }
+}
