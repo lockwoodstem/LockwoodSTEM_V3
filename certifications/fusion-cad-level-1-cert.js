@@ -301,20 +301,45 @@
     }
   ];
 
+  function randomIndex(maxExclusive) {
+    if (maxExclusive <= 1) return 0;
+    if (window.crypto && window.crypto.getRandomValues) {
+      const limit = Math.floor(0x100000000 / maxExclusive) * maxExclusive;
+      const values = new Uint32Array(1);
+      do {
+        window.crypto.getRandomValues(values);
+      } while (values[0] >= limit);
+      return values[0] % maxExclusive;
+    }
+    return Math.floor(Math.random() * maxExclusive);
+  }
+
+  function shuffledChoices(choices) {
+    const shuffled = Array.from(choices || []);
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = randomIndex(i + 1);
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
   function renderQuiz(form, questions, includeFeedback) {
     if (!form) return;
-    form.innerHTML = questions.map((q, index) => `
-      <fieldset class="cert-question" data-question-id="${q.id}">
-        <legend>${index + 1}. ${escapeHtml(q.question)}</legend>
-        ${q.choices.map((choice) => `
-          <label class="cert-choice">
-            <input type="radio" name="${q.id}" value="${escapeHtml(choice)}">
-            <span>${escapeHtml(choice)}</span>
-          </label>
-        `).join("")}
-        ${includeFeedback ? `<p class="cert-feedback" data-feedback-for="${q.id}" hidden></p>` : ""}
-      </fieldset>
-    `).join("");
+    form.innerHTML = questions.map((q, index) => {
+      const choices = shuffledChoices(q.choices);
+      return `
+        <fieldset class="cert-question" data-question-id="${q.id}">
+          <legend>${index + 1}. ${escapeHtml(q.question)}</legend>
+          ${choices.map((choice) => `
+            <label class="cert-choice">
+              <input type="radio" name="${q.id}" value="${escapeHtml(choice)}">
+              <span>${escapeHtml(choice)}</span>
+            </label>
+          `).join("")}
+          ${includeFeedback ? `<p class="cert-feedback" data-feedback-for="${q.id}" hidden></p>` : ""}
+        </fieldset>
+      `;
+    }).join("");
   }
 
   function getAnswers(form, questions) {
