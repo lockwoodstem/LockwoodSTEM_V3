@@ -205,28 +205,48 @@
 
   async function loadDashboard() {
     if (!document.querySelector("[data-teacher-dashboard]")) return;
-    if (!requireTeacher()) return;
 
     const auth = authApi();
     const session = auth && auth.getSession ? auth.getSession() : null;
     const status = document.querySelector("[data-teacher-dashboard-status]");
     const target = document.querySelector("[data-teacher-dashboard]");
-    if (!session || !session.token) {
+    if (!auth || !session || !session.token) {
       window.location.href = "teacher-login.html";
       return;
     }
 
-    setStatus(status, "Loading students and certification results...", false);
+    setStatus(status, "Verifying Teacher Admin access...", false);
     target.innerHTML = "";
 
     try {
+      const validated = await auth.validateSession();
+      if (!validated.ok) {
+        window.location.href = "teacher-login.html?role=required";
+        return;
+      }
+      const liveUser = validated.user || auth.getProfile();
+      if (!isTeacher(liveUser)) {
+        setStatus(status, `The live account role is ${String(liveUser && liveUser.role || "student")}. Teacher or Teacher Admin access is required.`, true);
+        return;
+      }
+      if (liveUser.mustChangePassword) {
+        window.location.href = "change-password.html?next=" + encodeURIComponent("teacher-dashboard.html");
+        return;
+      }
+
+      setStatus(status, "Loading students and certification results...", false);
       dashboardData = await auth.request("getTeacherDashboard", { token: session.token });
       renderDashboard();
       renderPendingApprovals();
       renderSummaryCards();
       if (activeStudentId) openStudentDialog(activeStudentId, false);
     } catch (err) {
-      setStatus(status, err.message, true);
+      const liveUser = auth.getProfile ? auth.getProfile() : null;
+      if (/teacher access is required/i.test(String(err && err.message || "")) && isTeacher(liveUser)) {
+        setStatus(status, "Your browser recognizes this account as Teacher Admin, but the connected Apps Script deployment is still using an older authorization build. Replace Code.gs with the included version and deploy a new version of the same Web App deployment.", true);
+      } else {
+        setStatus(status, err.message, true);
+      }
     }
   }
 

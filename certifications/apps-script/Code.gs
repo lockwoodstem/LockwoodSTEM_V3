@@ -16,6 +16,8 @@
  *   automatically after the account is created.
  */
 
+const SERVER_VERSION = '2026-07-20-teacher-admin-self-repair-v1';
+
 const DEFAULT_TEACHER_ACCOUNT = {
   firstName: 'Jonathan',
   lastName: 'Lockwood',
@@ -35,7 +37,8 @@ const SHEET_HANDS_ON = 'HandsOn';
 function doGet() {
   return json_({
     ok: true,
-    message: 'LockwoodSTEM Certification Account Backend is running.'
+    message: 'LockwoodSTEM Certification Account Backend is running.',
+    serverVersion: SERVER_VERSION
   });
 }
 
@@ -60,6 +63,31 @@ function promoteTeacherAccount() {
   return 'Teacher Admin role assigned to ' + teacherEmail;
 }
 
+function diagnoseTeacherAccount() {
+  setup_();
+  const found = findUser_(DEFAULT_TEACHER_ACCOUNT.email, DEFAULT_TEACHER_ACCOUNT.teacherId);
+  if (!found) {
+    return JSON.stringify({
+      serverVersion: SERVER_VERSION,
+      found: false,
+      email: DEFAULT_TEACHER_ACCOUNT.email,
+      spreadsheetId: SpreadsheetApp.getActiveSpreadsheet().getId()
+    }, null, 2);
+  }
+  ensureDefaultTeacherRoleForFound_(found);
+  return JSON.stringify({
+    serverVersion: SERVER_VERSION,
+    found: true,
+    email: found.user.email,
+    teacherId: found.user.studentId,
+    role: found.user.role,
+    status: found.user.status,
+    mustChangePassword: found.user.mustChangePassword,
+    spreadsheetId: SpreadsheetApp.getActiveSpreadsheet().getId()
+  }, null, 2);
+}
+
+
 function doPost(e) {
   try {
     setup_();
@@ -78,6 +106,7 @@ function doPost(e) {
     if (action === 'getallcertificationstatuses') return getAllCertificationStatuses_(payload);
     if (action === 'sethandsoncompletion') return setHandsOnCompletion_(payload);
     if (action === 'getteacherdashboard') return getTeacherDashboard_(payload);
+    if (action === 'getserverinfo') return json_({ ok: true, serverVersion: SERVER_VERSION });
 
     return json_({ ok: false, error: 'Unknown account action.' });
   } catch (err) {
@@ -283,6 +312,7 @@ function login_(payload) {
     return json_({ ok: false, error: 'Account not found.' });
   }
 
+  ensureDefaultTeacherRoleForFound_(found);
   const row = found.row;
   const user = found.user;
   if (String(user.status).toLowerCase() !== 'active') {
@@ -326,6 +356,7 @@ function validate_(payload) {
 
       const found = findUserById_(userId);
       if (!found) return json_({ ok: false, error: 'Account not found.' });
+      ensureDefaultTeacherRoleForFound_(found);
       if (String(found.user.status).toLowerCase() !== 'active') {
         return json_({ ok: false, error: 'This account is not active.' });
       }
@@ -528,6 +559,7 @@ function getTeacherDashboard_(payload) {
 
   return json_({
     ok: true,
+    serverVersion: SERVER_VERSION,
     teacher: publicUser_(auth.user),
     certifications: getCertificationList_(),
     students: students,
@@ -738,6 +770,7 @@ function validateTokenForServer_(token) {
 
       const found = findUserById_(userId);
       if (!found) return { ok: false, error: 'Account not found.' };
+      ensureDefaultTeacherRoleForFound_(found);
       if (String(found.user.status).toLowerCase() !== 'active') {
         return { ok: false, error: 'This account is not active.' };
       }
@@ -896,13 +929,36 @@ function changePassword_(payload) {
   return json_({ ok: true, user: publicUser_(refreshed.user) });
 }
 
+function isDefaultTeacherAccount_(user) {
+  if (!user) return false;
+  const email = String(user.email || '').trim().toLowerCase();
+  const teacherId = String(user.studentId || '').trim().toUpperCase();
+  return email === String(DEFAULT_TEACHER_ACCOUNT.email).trim().toLowerCase() ||
+    teacherId === String(DEFAULT_TEACHER_ACCOUNT.teacherId).trim().toUpperCase();
+}
+
+function ensureDefaultTeacherRoleForFound_(found) {
+  if (!found || !found.user || !isDefaultTeacherAccount_(found.user)) return found;
+  const needsUpdate = String(found.user.role || '').trim().toLowerCase() !== 'teacher_admin' ||
+    String(found.user.status || '').trim().toLowerCase() !== 'active';
+  if (needsUpdate) {
+    const users = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_USERS);
+    users.getRange(found.row, 3).setValue(new Date().toISOString());
+    users.getRange(found.row, 11).setValue('teacher_admin');
+    users.getRange(found.row, 12).setValue('active');
+  }
+  found.user.role = 'teacher_admin';
+  found.user.status = 'active';
+  return found;
+}
+
 function isTeacherRole_(role) {
-  const normalized = String(role || '').toLowerCase();
+  const normalized = String(role || '').trim().toLowerCase();
   return normalized === 'teacher' || normalized === 'teacher_admin';
 }
 
 function isTeacherAdminRole_(role) {
-  return String(role || '').toLowerCase() === 'teacher_admin';
+  return String(role || '').trim().toLowerCase() === 'teacher_admin';
 }
 
 function countTeacherAccounts_() {
@@ -998,6 +1054,7 @@ function rowToUser_(row) {
 }
 
 function publicUser_(user) {
+  const effectiveRole = isDefaultTeacherAccount_(user) ? 'teacher_admin' : user.role;
   return {
     userId: user.userId,
     firstName: user.firstName,
@@ -1006,7 +1063,7 @@ function publicUser_(user) {
     email: user.email,
     studentId: user.studentId,
     period: user.period,
-    role: user.role,
+    role: effectiveRole,
     status: user.status,
     mustChangePassword: !!user.mustChangePassword
   };
