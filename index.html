@@ -7,7 +7,10 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="assets/css/styles.css" rel="stylesheet"/>
 <script defer="" src="assets/js/main.js"></script>
-<meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/></head>
+<script defer="" src="assets/js/agenda-config.js"></script>
+<script defer="" src="assets/js/today-lesson.js?v=1"></script>
+<meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/><link href="assets/css/today-lesson.css?v=1" rel="stylesheet"/>
+</head>
 <body class="site-consistency-v4 home">
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header">
@@ -41,6 +44,22 @@
 <p>Lessons, projects, portfolios, and downloads are organized through the course hubs so you can find the work that belongs to your class.</p>
 </aside>
 </div>
+</section>
+
+<section class="container today-lessons-section" id="today-lessons">
+  <div class="section-header">
+    <div>
+      <div class="eyebrow">Today’s Lessons</div>
+      <h2>Go directly to class</h2>
+      <p class="section-subtitle">Open today’s lesson, presentation, class link, or full agenda without searching through the course pages.</p>
+    </div>
+    <a class="btn secondary small" href="agenda.html">Open Full Agenda</a>
+  </div>
+  <div aria-live="polite" class="today-lessons-grid" id="todayLessonsApp">
+    <article class="today-lesson-card loading"><span>Loading IED…</span></article>
+    <article class="today-lesson-card loading"><span>Loading POE…</span></article>
+    <article class="today-lesson-card loading"><span>Loading ADM…</span></article>
+  </div>
 </section>
 <section class="container student-actions" id="student-actions">
 <div class="section-header">
