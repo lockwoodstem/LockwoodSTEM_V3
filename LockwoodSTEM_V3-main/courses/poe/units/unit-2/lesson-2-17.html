@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en"><head><title>POE Lesson 2.17: Prototype Build and Load Testing | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="description" content="A 45-minute Principles of Engineering lesson: Prototype Build and Load Testing."/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=poe-contrast-v6-20260717" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script><style id="poe-critical-contrast">
+/* POE immersive lesson contrast hardening - high specificity to override global light text */
+body.immersive-lesson-page main section.container,
+body.immersive-lesson-page main section.container p,
+body.immersive-lesson-page main section.container li,
+body.immersive-lesson-page main section.container span,
+body.immersive-lesson-page main section.container h1,
+body.immersive-lesson-page main section.container h2,
+body.immersive-lesson-page main section.container h3,
+body.immersive-lesson-page main section.container h4,
+body.immersive-lesson-page main section.container strong,
+body.immersive-lesson-page main section.container em,
+body.immersive-lesson-page .lesson-section h2,
+body.immersive-lesson-page .lesson-section h3,
+body.immersive-lesson-page .lesson-section .section-subtitle,
+body.immersive-lesson-page .lesson-web-section h2,
+body.immersive-lesson-page .lesson-web-section h3,
+body.immersive-lesson-page .lesson-web-section .section-subtitle,
+body.immersive-lesson-page .section-header,
+body.immersive-lesson-page .section-header *,
+body.immersive-lesson-page .card:not(.dark),
+body.immersive-lesson-page .card:not(.dark) *,
+body.immersive-lesson-page .prompt-card,
+body.immersive-lesson-page .prompt-card *,
+body.immersive-lesson-page .choice-card,
+body.immersive-lesson-page .choice-card *,
+body.immersive-lesson-page .lesson-timeline,
+body.immersive-lesson-page .lesson-timeline *,
+body.immersive-lesson-page .pacing-strip,
+body.immersive-lesson-page .pacing-strip *,
+body.immersive-lesson-page .evidence-flow,
+body.immersive-lesson-page .evidence-flow *,
+body.immersive-lesson-page .claim-banner,
+body.immersive-lesson-page .callout,
+body.immersive-lesson-page .callout *,
+body.immersive-lesson-page .unit-meta-list,
+body.immersive-lesson-page .unit-meta-list *,
+body.immersive-lesson-page .lesson-list-clean,
+body.immersive-lesson-page .lesson-list-clean *,
+body.immersive-lesson-page .resource-card,
+body.immersive-lesson-page .resource-card * {
+  color:#0b1f3a!important;
+  -webkit-text-fill-color:#0b1f3a!important;
+  opacity:1!important;
+  text-shadow:none!important;
+}
+body.immersive-lesson-page .lesson-mission-hero,
+body.immersive-lesson-page .lesson-mission-hero *,
+body.immersive-lesson-page .page-hero,
+body.immersive-lesson-page .page-hero *,
+body.immersive-lesson-page .hero-grid,
+body.immersive-lesson-page .hero-grid *,
+body.immersive-lesson-page .lesson-hero-grid,
+body.immersive-lesson-page .lesson-hero-grid *,
+body.immersive-lesson-page .mission-panel,
+body.immersive-lesson-page .mission-panel *,
+body.immersive-lesson-page .card.dark,
+body.immersive-lesson-page .card.dark * {
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+  opacity:1!important;
+}
+body.immersive-lesson-page .tag,
+body.immersive-lesson-page .tag *,
+body.immersive-lesson-page .process-number,
+body.immersive-lesson-page .process-number * {
+  color:#061b31!important;
+  -webkit-text-fill-color:#061b31!important;
+}
+body.immersive-lesson-page .btn,
+body.immersive-lesson-page .btn * {
+  -webkit-text-fill-color:currentColor!important;
+  opacity:1!important;
+}
+body.immersive-lesson-page details.answer-reveal,
+body.immersive-lesson-page details.lesson-answer-reveal {
+  background:#061b31!important;
+  color:#ffffff!important;
+  border-radius:16px!important;
+  padding:1rem!important;
+  border:1px solid rgba(255,255,255,.18)!important;
+}
+body.immersive-lesson-page details.answer-reveal summary,
+body.immersive-lesson-page details.answer-reveal summary *,
+body.immersive-lesson-page details.lesson-answer-reveal summary,
+body.immersive-lesson-page details.lesson-answer-reveal summary * {
+  color:#ffd86a!important;
+  -webkit-text-fill-color:#ffd86a!important;
+  opacity:1!important;
+  cursor:pointer!important;
+  font-weight:800!important;
+}
+body.immersive-lesson-page details.answer-reveal p,
+body.immersive-lesson-page details.answer-reveal p *,
+body.immersive-lesson-page details.answer-reveal li,
+body.immersive-lesson-page details.answer-reveal li *,
+body.immersive-lesson-page details.answer-reveal h3,
+body.immersive-lesson-page details.answer-reveal h3 *,
+body.immersive-lesson-page details.answer-reveal div,
+body.immersive-lesson-page details.answer-reveal div *,
+body.immersive-lesson-page details.lesson-answer-reveal p,
+body.immersive-lesson-page details.lesson-answer-reveal p *,
+body.immersive-lesson-page details.lesson-answer-reveal li,
+body.immersive-lesson-page details.lesson-answer-reveal li *,
+body.immersive-lesson-page details.lesson-answer-reveal h3,
+body.immersive-lesson-page details.lesson-answer-reveal h3 *,
+body.immersive-lesson-page details.lesson-answer-reveal div,
+body.immersive-lesson-page details.lesson-answer-reveal div * {
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+  opacity:1!important;
+  text-shadow:none!important;
+}
+body.immersive-lesson-page details.answer-reveal .callout,
+body.immersive-lesson-page details.answer-reveal .callout *,
+body.immersive-lesson-page details.lesson-answer-reveal .callout,
+body.immersive-lesson-page details.lesson-answer-reveal .callout * {
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+  background:rgba(255,255,255,.08)!important;
+}
+.choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}.choice-card{border:1px solid #d9e3ec;border-radius:14px;padding:1rem;background:#fff}.choice-card strong{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:999px;background:#d9ab3d;color:#061b31!important;-webkit-text-fill-color:#061b31!important;margin-right:.5rem}.lesson-list-clean{margin:0;padding-left:1.25rem}.lesson-list-clean li{margin:.5rem 0}.poe-system-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.75rem;margin-top:1rem}.poe-system-strip span{display:block;background:#eaf4fb;border:1px solid #c9e6f4;border-radius:12px;padding:.75rem;font-weight:700;color:#0b4d78!important;-webkit-text-fill-color:#0b4d78!important}.unit-lesson-table .btn.small{white-space:nowrap}.deliverable-card{border-left:6px solid #d9ab3d}.lesson-nav-row{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:space-between;margin-top:1.5rem}.lesson-nav-row .btn{margin:.25rem 0}.pacing-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.65rem}.pacing-strip span{display:block;border-radius:12px;background:#fff;border:1px solid #d9e3ec;padding:.7rem;color:#0b1f3a!important;-webkit-text-fill-color:#0b1f3a!important;font-weight:700}.pacing-strip em{display:block;font-style:normal;color:#0b4d78!important;-webkit-text-fill-color:#0b4d78!important;font-size:.85rem;font-weight:800;margin-bottom:.2rem}
+</style><meta name="poe-contrast-version" content="poe-contrast-v6-20260717"/><style id="poe-contrast-v6-critical">
+html body.lesson-immersive-page main > section.container,
+html body.immersive-lesson-page main > section.container{background:#fff!important;color:#102033!important;border:1px solid #cbd5e1!important;border-radius:18px!important;box-shadow:0 10px 24px rgba(2,10,28,.10)!important;padding:2rem 1.35rem 1.35rem!important;margin-top:1.25rem!important}
+html body.lesson-immersive-page main > section.container .section-header h2,
+html body.lesson-immersive-page main > section.container .section-header h3,
+html body.immersive-lesson-page main > section.container .section-header h2,
+html body.immersive-lesson-page main > section.container .section-header h3{color:#0b1f3a!important;-webkit-text-fill-color:#0b1f3a!important;opacity:1!important;text-shadow:none!important}
+html body.lesson-immersive-page main > section.container .section-header .eyebrow,
+html body.immersive-lesson-page main > section.container .section-header .eyebrow{color:#8a5b00!important;-webkit-text-fill-color:#8a5b00!important;opacity:1!important}
+html body.lesson-immersive-page main > section.container .section-header .section-subtitle,
+html body.immersive-lesson-page main > section.container .section-header .section-subtitle{color:#475569!important;-webkit-text-fill-color:#475569!important;opacity:1!important}
+html body.lesson-immersive-page main > section.container details.answer-reveal,
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal,
+html body.immersive-lesson-page main > section.container details.answer-reveal,
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal{background:#071b31!important;color:#fff!important}
+html body.lesson-immersive-page main > section.container details.answer-reveal summary,
+html body.lesson-immersive-page main > section.container details.answer-reveal summary *,
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal summary,
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal summary *,
+html body.immersive-lesson-page main > section.container details.answer-reveal summary,
+html body.immersive-lesson-page main > section.container details.answer-reveal summary *,
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal summary,
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal summary *{color:#ffd86a!important;-webkit-text-fill-color:#ffd86a!important;opacity:1!important}
+html body.lesson-immersive-page main > section.container details.answer-reveal :is(p,li,span,strong,h2,h3,h4),
+html body.lesson-immersive-page main > section.container details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4),
+html body.immersive-lesson-page main > section.container details.answer-reveal :is(p,li,span,strong,h2,h3,h4),
+html body.immersive-lesson-page main > section.container details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4){color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important}
+</style></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" data-nav-section="courses" href="../../../../courses.html">Courses</a></li><li><a data-nav-section="agenda" href="../../../../agenda.html">Daily Agenda</a></li><li><a data-nav-section="resources" href="../../../../resources/index.html">Resources</a></li><li><a data-nav-section="certifications" href="../../../../certifications/index.html">Certifications</a></li><li><a data-nav-section="fablab" href="../../../../fablab/index.html">FabLab</a></li><li><a data-nav-section="about" href="../../../../about/index.html">About</a></li><li><a data-nav-section="challenges" href="../../../../challenge-library/index.html">Challenges</a></li></ul></div></header>
+<main id="main"><nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.17</li></ol></nav>
+<section class="page-hero lesson-mission-hero"><div class="container hero-grid"><div><img alt="POE course icon" class="lesson-course-icon" src="../../../../assets/img/course-icons/poe-course-icon.png"/><div class="eyebrow">POE Unit 2 • Lesson 2.17</div><h1>Prototype Build and Load Testing</h1><p><strong>Focus Question:</strong> How can prototype load testing show whether a structure meets the design criteria?</p><div class="hero-actions consistent-actions"><a class="btn" download href="../../../../downloads/presentations/POE_Unit2_Lesson_2.17_Prototype_Build_and_Load_Testing.pptx">Download Lesson Presentation</a><a class="btn secondary" href="#flight-plan">View Lesson Plan</a><a class="btn secondary" href="#submit">What You Submit</a><a class="btn secondary" href="../unit-2.html">Back to Unit 2</a></div></div><aside class="card dark lesson-mission-card"><span class="tag">Mission Objective</span><h3>You can build a structural prototype safely and test it using a repeatable procedure.</h3><p>Use structures, materials, loads, data, and evidence-based decisions to prepare for the payload support challenge.</p><div aria-label="Lesson cycle" class="mission-cycle"><span>Analyze</span><span>Test</span><span>Justify</span></div></aside></div></section>
+<section class="container" id="flight-plan"><div class="section-header"><div><div class="eyebrow">Mission Briefing</div><h2>45-Minute Flight Plan</h2><p class="section-subtitle">Use this page with the lesson presentation and your engineering notebook.</p></div></div><div class="grid two"><article class="card lesson-target-card"><h3>Learning Targets</h3><ul class="unit-meta-list"><li>build a structural prototype safely and test it using a repeatable procedure.</li><li>Connect today’s skill to aerospace structures and payload support systems.</li><li>Identify evidence needed to support a structural design claim.</li></ul></article><article class="card lesson-target-card"><h3>Success Looks Like…</h3><p class="lesson-big-statement">You can make a structural decision using vocabulary, calculations, observations, or test data instead of “it seems strong.”</p><div class="callout"><strong>Core habit:</strong> claim + evidence + reasoning.</div></article></div><div aria-label="Lesson pacing" class="lesson-timeline"><div><strong>5 min</strong><span>Opening prompt</span></div><div><strong>6 min</strong><span>Quick vote</span></div><div><strong>7 min</strong><span>Structures link</span></div><div><strong>8 min</strong><span>Core skill</span></div><div><strong>10 min</strong><span>Evidence challenge</span></div><div><strong>6 min</strong><span>Scenario check</span></div><div><strong>3 min</strong><span>Exit ticket</span></div></div></section>
+<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Opening Prompt</div><h2>How can prototype load testing show whether a structure meets the design criteria?</h2><p class="section-subtitle">Think about loads, materials, geometry, safety factors, testing, and evidence—not just whether the structure looks finished.</p></div></div><article class="card prompt-card"><p class="lesson-prompt"><strong>Quick class share:</strong> What evidence would help an engineer answer today’s focus question?</p></article><details class="lesson-answer-reveal answer-reveal"><summary>Reveal the working connection</summary><div class="answer-panel"><p class="lesson-big-statement"><strong>Load testing must be controlled, documented, and repeatable so performance claims can be defended.</strong></p><div class="poe-system-strip"><span>Loads</span><span>Geometry</span><span>Materials</span><span>Test Data</span></div></div></details></section>
+<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">POE Connection</div><h2>Aerospace Structures Must Earn Trust</h2><p class="section-subtitle">Unit 2 connects structural analysis, material selection, and testing to a payload support structure that must be defended with evidence.</p></div></div><div class="grid three"><article class="card"><span class="tag">Loads</span><h3>What acts on it?</h3><p>Tension, compression, shear, bending, torsion, and distributed loads affect how a structure behaves.</p></article><article class="card"><span class="tag blue">Materials + Shape</span><h3>What resists it?</h3><p>Material properties and cross-section geometry affect strength, stiffness, mass, and failure behavior.</p></article><article class="card"><span class="tag green">Evidence</span><h3>What proves it?</h3><p>Calculations, observations, repeated tests, and load data help justify structural decisions.</p></article></div></section>
+<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Interactive Vote</div><h2>Which Action Fits?</h2><p class="section-subtitle">Vote before opening the answer reveal.</p></div></div><article class="card prompt-card"><p><strong>Which action best supports today’s structural engineering work?</strong></p><div class="choice-grid"><div class="choice-card"><p><strong>1</strong>Assume the structure works because it looks strong</p></div><div class="choice-card"><p><strong>2</strong>Compare the design to criteria using evidence, calculations, or test results</p></div><div class="choice-card"><p><strong>3</strong>Choose the lightest material without checking load performance</p></div><div class="choice-card"><p><strong>4</strong>Skip documentation until the final prototype is complete</p></div></div></article><details class="lesson-answer-reveal answer-reveal"><summary>Reveal the strongest engineering choice</summary><div class="answer-panel"><h3>Best answer: 2</h3><p>Structural choices need criteria and evidence. A design may look strong but still fail because of load path, material choice, geometry, or weak connections.</p><div class="callout"><strong>Carry-forward idea:</strong> In POE, strong structural decisions are testable and defensible.</div></div></details></section>
+<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Key Idea</div><h2>Claim → Evidence → Reasoning</h2><p class="section-subtitle">Engineers connect what they believe to proof that others can inspect.</p></div></div><div class="evidence-flow"><article class="card"><span class="process-number">1</span><h3>Claim</h3><p>What you believe about the structure, material, load path, or design decision.</p></article><span aria-hidden="true">→</span><article class="card"><span class="process-number">2</span><h3>Evidence</h3><p>Measurements, calculations, observations, photos, repeated trials, or comparison data.</p></article><span aria-hidden="true">→</span><article class="card"><span class="process-number">3</span><h3>Reasoning</h3><p>Why the evidence supports the claim and what the team should do next.</p></article></div><div class="callout evidence-examples"><strong>Evidence can include:</strong> force diagrams; dimensions; load data; mass; photos; calculations; material observations; revision notes.</div></section>
+<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Mini Challenge</div><h2>What Evidence Would You Need?</h2><p class="section-subtitle">Select the strongest evidence before opening the reveal.</p></div></div><article class="card prompt-card"><div class="claim-banner"><strong>Claim:</strong> “Our payload support structure is strong enough and efficient enough for the challenge.”</div><div class="choice-grid"><div class="choice-card"><p><strong>A</strong>A labeled sketch showing supports, load path, and likely high-stress areas</p></div><div class="choice-card"><p><strong>B</strong>A statement that the team likes the design</p></div><div class="choice-card"><p><strong>C</strong>Load test data, mass data, or calculations connected to the criteria</p></div><div class="choice-card"><p><strong>D</strong>A photo that makes the prototype look complete</p></div><div class="choice-card"><p><strong>E</strong>A short explanation connecting the evidence to the next design decision</p></div></div></article><details class="lesson-answer-reveal answer-reveal"><summary>Reveal the best evidence pair</summary><div class="answer-panel"><h3>Best support: A + C</h3><p>A shows the structural intent and load path. C shows measured or calculated performance. E is also useful because it explains what the evidence means for the next decision.</p></div></details></section>
+<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Scenario Response</div><h2>What Should the Engineer Do Next?</h2><p class="section-subtitle">Choose the strongest next step and explain your reasoning.</p></div></div><article class="card prompt-card"><p class="scenario-text">A prototype holds the load once, but the second test shows bending near one connection.</p><div class="choice-grid"><div class="choice-card"><p><strong>A</strong>Ignore it because the structure held once</p></div><div class="choice-card"><p><strong>B</strong>Record the bending, identify the likely cause, reinforce or revise the connection, and retest</p></div><div class="choice-card"><p><strong>C</strong>Decorate the structure so it looks more finished</p></div><div class="choice-card"><p><strong>D</strong>Start over without documenting what happened</p></div></div></article><details class="lesson-answer-reveal answer-reveal"><summary>Reveal the strongest next step</summary><div class="answer-panel"><h3>Best answer: B</h3><p>Record the bending, identify the likely cause, revise the connection, and retest. The strongest next step turns a structural weakness into useful evidence.</p></div></details></section>
+<section class="container" id="submit"><div class="section-header"><div><div class="eyebrow">Mission Debrief</div><h2>What You Submit</h2><p class="section-subtitle">Use the required class format or Google Classroom instructions when assigned.</p></div></div><div class="grid two"><article class="card submit-card"><h3>Student Deliverables</h3><ul class="lesson-list-clean"><li>Engineering notebook entry for Lesson 2.17.</li><li>Prototype photos and load test data</li><li>Evidence connected to the lesson focus: diagram, calculation, test data, measurement, material observation, or revision note.</li><li>Short explanation connecting your evidence to a structural decision.</li></ul></article><article class="card"><span class="tag blue">Exit Ticket</span><h3>Before You Leave</h3><ul class="lesson-list-clean"><li>One thing you learned about structures, loads, or materials.</li><li>One piece of evidence that would support today’s work.</li><li>One question you still have about the Unit 2 payload support challenge.</li></ul><p><strong>Next mission:</strong> Data Analysis, Iteration, and Final Design Review</p></article></div></section>
+<section class="container"><div class="section-header"><div><div class="eyebrow">Resources</div><h2>Lesson 2.17 Resources</h2><p class="section-subtitle">Use the presentation for the complete student-facing 45-minute sequence.</p></div></div><div class="grid two"><article class="card resource-card lesson-resource-highlight"><span class="tag green">PowerPoint</span><h3>Lesson 2.17 Student Presentation</h3><p>Google Slides-friendly 16:9 deck with question slides followed by separate answer-reveal slides.</p><div class="resource-actions"><a class="btn dark small" download href="../../../../downloads/presentations/POE_Unit2_Lesson_2.17_Prototype_Build_and_Load_Testing.pptx">Download PPTX</a></div></article><article class="card resource-card"><span class="tag blue">Course Hub</span><h3>Principles of Engineering</h3><p>Return to the POE course hub for units, resources, certifications, and current course information.</p><div class="resource-actions"><a class="btn small" href="../../index.html">Open POE Hub</a></div></article></div></section>
+<nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-16.html">← Lesson 2.16</a><a class="btn" href="lesson-2-18.html">Lesson 2.18 →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a> <a href="../../../../agenda.html">Daily Agenda</a> <a href="../../../../resources/index.html">Resources</a> <a href="../../../../certifications/index.html">Certifications</a> <a href="../../../../fablab/index.html">FabLab</a> <a href="../../../../about/index.html">About</a><a href="../../../../courses/ied/index.html">IED</a><a href="../../../../courses/poe/index.html">POE</a><a href="../../../../courses/adm/index.html">ADM</a><a href="../../../../challenge-library/index.html">Challenges</a></div></div></footer><button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body></html>
