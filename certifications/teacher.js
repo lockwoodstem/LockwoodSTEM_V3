@@ -32,7 +32,7 @@
 
   function currentUser() {
     const auth = authApi();
-    return auth && auth.getProfile ? auth.getProfile() : null;
+    return auth && auth.getTeacherProfile ? (auth.getTeacherProfile() || auth.getProfile()) : (auth && auth.getProfile ? auth.getProfile() : null);
   }
 
   function isTeacher(user) {
@@ -108,6 +108,9 @@
     if (params.get("created") === "1") {
       setStatus(status, "Teacher account created. Sign in to continue.", false);
     }
+    if (params.get("role") === "refresh") {
+      setStatus(status, "Sign in again with your Teacher Admin account to refresh teacher access.", true);
+    }
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -129,6 +132,7 @@
         }
 
         auth.saveSession(result);
+        if (auth.saveTeacherSession) auth.saveTeacherSession(result);
         const next = new URLSearchParams(window.location.search).get("next") || "teacher-dashboard.html";
         if (result.user && result.user.mustChangePassword) {
           window.location.href = "change-password.html?next=" + encodeURIComponent(next);
@@ -151,8 +155,8 @@
     const modeText = document.querySelector("[data-teacher-register-mode]");
     let signedInTeacher = false;
 
-    if (auth && auth.getSession && auth.getSession()) {
-      const result = await auth.validateSession();
+    if (auth && auth.getTeacherSession && auth.getTeacherSession()) {
+      const result = await auth.validateTeacherSession();
       signedInTeacher = !!(result.ok && isTeacherAdmin(result.user) && !result.user.mustChangePassword);
     }
 
@@ -177,7 +181,7 @@
       setStatus(status, "Creating teacher account...", false);
 
       try {
-        const session = auth.getSession ? auth.getSession() : null;
+        const session = auth.getTeacherSession ? auth.getTeacherSession() : null;
         const result = await auth.request("registerTeacher", {
           token: signedInTeacher && session ? session.token : "",
           setupCode: data.setupCode || "",
@@ -191,6 +195,7 @@
 
         if (result.token && result.user) {
           auth.saveSession(result);
+          if (auth.saveTeacherSession) auth.saveTeacherSession(result);
           window.location.href = "teacher-dashboard.html";
           return;
         }
@@ -207,11 +212,11 @@
     if (!document.querySelector("[data-teacher-dashboard]")) return;
 
     const auth = authApi();
-    const session = auth && auth.getSession ? auth.getSession() : null;
+    const session = auth && auth.getTeacherSession ? auth.getTeacherSession() : null;
     const status = document.querySelector("[data-teacher-dashboard-status]");
     const target = document.querySelector("[data-teacher-dashboard]");
     if (!auth || !session || !session.token) {
-      window.location.href = "teacher-login.html";
+      window.location.href = "teacher-login.html?role=refresh";
       return;
     }
 
@@ -219,33 +224,43 @@
     target.innerHTML = "";
 
     try {
-      const validated = await auth.validateSession();
+      const validated = await auth.validateTeacherSession();
       if (!validated.ok) {
-        window.location.href = "teacher-login.html?role=required";
+        window.location.href = "teacher-login.html?role=refresh";
         return;
       }
-      const liveUser = validated.user || auth.getProfile();
+      const liveUser = validated.user || auth.getTeacherProfile();
       if (!isTeacher(liveUser)) {
-        setStatus(status, `The live account role is ${String(liveUser && liveUser.role || "student")}. Teacher or Teacher Admin access is required.`, true);
+        if (auth.clearTeacherSession) auth.clearTeacherSession();
+        window.location.href = "teacher-login.html?role=refresh";
         return;
       }
       if (liveUser.mustChangePassword) {
+        auth.saveSession({ token: session.token, expiresAt: session.expiresAt, user: liveUser });
         window.location.href = "change-password.html?next=" + encodeURIComponent("teacher-dashboard.html");
         return;
       }
 
+      document.documentElement.classList.remove("cert-auth-checking");
+      auth.renderAccountBar(liveUser, { sessionType: "teacher", showBadges: false });
       setStatus(status, "Loading students and certification results...", false);
       dashboardData = await auth.request("getTeacherDashboard", { token: session.token });
+      if (dashboardData.teacher && auth.saveTeacherSession) {
+        auth.saveTeacherSession({ token: session.token, expiresAt: session.expiresAt, user: dashboardData.teacher });
+      }
       renderDashboard();
       renderPendingApprovals();
       renderSummaryCards();
       if (activeStudentId) openStudentDialog(activeStudentId, false);
     } catch (err) {
-      const liveUser = auth.getProfile ? auth.getProfile() : null;
-      if (/teacher access is required/i.test(String(err && err.message || "")) && isTeacher(liveUser)) {
-        setStatus(status, "Your browser recognizes this account as Teacher Admin, but the connected Apps Script deployment is still using an older authorization build. Replace Code.gs with the included version and deploy a new version of the same Web App deployment.", true);
+      document.documentElement.classList.remove("cert-auth-checking");
+      const message = String(err && err.message || "Unable to load teacher records.");
+      if (/teacher access is required/i.test(message)) {
+        if (auth.clearTeacherSession) auth.clearTeacherSession();
+        setStatus(status, "This browser was using a student certification session for the teacher dashboard. Sign in again with the Teacher Admin account.", true);
+        target.innerHTML = '<p><a class="btn dark" href="teacher-login.html?role=refresh">Sign In as Teacher Admin</a></p>';
       } else {
-        setStatus(status, err.message, true);
+        setStatus(status, message, true);
       }
     }
   }
@@ -397,7 +412,7 @@
 
   async function saveHandsOn(button, completed) {
     const auth = authApi();
-    const session = auth && auth.getSession ? auth.getSession() : null;
+    const session = auth && auth.getTeacherSession ? auth.getTeacherSession() : null;
     const statusBox = document.querySelector("[data-teacher-dashboard-status]");
     if (!session || !session.token) return;
     const oldText = button.textContent;

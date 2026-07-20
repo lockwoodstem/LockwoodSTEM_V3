@@ -14,19 +14,27 @@
     const status = document.querySelector("[data-change-password-status]");
     if (!auth || !form) return;
 
-    const session = auth.getSession();
+    const params = new URLSearchParams(window.location.search);
+    const teacherMode = params.get("mode") === "teacher";
+    const getSession = teacherMode && auth.getTeacherSession ? auth.getTeacherSession : auth.getSession;
+    const validate = teacherMode && auth.validateTeacherSession ? auth.validateTeacherSession : auth.validateSession;
+    const getProfile = teacherMode && auth.getTeacherProfile ? auth.getTeacherProfile : auth.getProfile;
+    const save = teacherMode && auth.saveTeacherSession ? auth.saveTeacherSession : auth.saveSession;
+    const loginPage = teacherMode ? "teacher-login.html" : "login.html";
+
+    const session = getSession();
     if (!session || !session.token) {
-      window.location.href = "teacher-login.html?next=" + encodeURIComponent("change-password.html");
+      window.location.href = loginPage + "?next=" + encodeURIComponent("change-password.html" + window.location.search);
       return;
     }
 
-    const validation = await auth.validateSession();
+    const validation = await validate();
     if (!validation.ok) {
-      window.location.href = "teacher-login.html?next=" + encodeURIComponent("change-password.html");
+      window.location.href = loginPage + "?next=" + encodeURIComponent("change-password.html" + window.location.search);
       return;
     }
 
-    const user = validation.user || auth.getProfile() || {};
+    const user = validation.user || getProfile() || {};
     const name = user.fullName || [user.firstName, user.lastName].filter(Boolean).join(" ") || "Account";
     const identity = document.querySelector("[data-change-password-user]");
     if (identity) identity.textContent = name;
@@ -47,10 +55,11 @@
           newPassword: data.newPassword
         });
         if (result.user) {
-          auth.saveSession({ token: session.token, expiresAt: session.expiresAt, user: result.user });
+          save({ token: session.token, expiresAt: session.expiresAt, user: result.user });
+          if (teacherMode) auth.saveSession({ token: session.token, expiresAt: session.expiresAt, user: result.user });
         }
         setStatus(status, "Password updated. Redirecting…", false);
-        const next = new URLSearchParams(window.location.search).get("next");
+        const next = params.get("next");
         const role = String(result.user && result.user.role || user.role || "").toLowerCase();
         window.location.href = next || (["teacher", "teacher_admin"].includes(role) ? "teacher-dashboard.html" : "index.html");
       } catch (err) {
