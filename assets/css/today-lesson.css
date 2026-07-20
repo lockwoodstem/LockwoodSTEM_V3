@@ -172,3 +172,66 @@
 @media (max-width: 600px) {
   .agenda-today-action-panel .today-lesson-actions a { width: 100%; }
 }
+
+
+/* Guaranteed in-card lesson resource bar */
+.agenda-inline-lesson-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .65rem 1rem;
+  margin: .85rem 0 1rem;
+  padding: .8rem .9rem;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #071a30, #10294a);
+  border: 1px solid rgba(245, 196, 81, .45);
+  box-shadow: 0 10px 24px rgba(2, 10, 28, .16);
+}
+.agenda-inline-lesson-label {
+  color: #f5c451;
+  font-size: .75rem;
+  font-weight: 950;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.agenda-inline-lesson-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.agenda-inline-lesson-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: .58rem .78rem;
+  border-radius: 10px;
+  font-size: .78rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-decoration: none;
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+.agenda-inline-primary {
+  color: #07162b;
+  background: #f5c451;
+}
+.agenda-inline-secondary {
+  color: #f8fafc;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.24);
+}
+.agenda-inline-lesson-buttons a:hover,
+.agenda-inline-lesson-buttons a:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 16px rgba(0,0,0,.2);
+}
+@media (max-width: 720px) {
+  .agenda-inline-lesson-bar,
+  .agenda-inline-lesson-buttons { align-items: stretch; }
+  .agenda-inline-lesson-bar { flex-direction: column; }
+  .agenda-inline-lesson-buttons { width: 100%; }
+  .agenda-inline-lesson-buttons a { flex: 1 1 100%; }
+}

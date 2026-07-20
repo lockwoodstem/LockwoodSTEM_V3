@@ -310,6 +310,6 @@
   document.addEventListener("DOMContentLoaded", () => {
     initHomepage();
     applyAgendaQuery();
-    enhanceAgenda();
+    // Agenda links are rendered directly by agenda.js for guaranteed visibility.
   });
 })();

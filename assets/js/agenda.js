@@ -181,6 +181,131 @@ function linkify(text) {
   return escaped.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
 }
 
+
+
+/* Built-in Today’s Lesson links: rendered directly by agenda.js so they remain
+   visible in normal and full-screen agenda views. */
+let agendaLessonIndexPromise = null;
+
+function firstAgendaURL(value) {
+  const match = clean(value).match(/https?:\/\/[^\s;,<]+/i);
+  return match ? match[0] : "";
+}
+
+function normalizeLessonMatchTitle(value) {
+  return clean(value)
+    .toLowerCase()
+    .replace(/^lesson\s*\d+\s*[.\-]\s*\d+\s*[:\-–—]?\s*/i, "")
+    .replace(/^\d+\s*[.\-]\s*\d+\s*[:\-–—]?\s*/i, "")
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function agendaLessonNumbers(unitText, lessonText) {
+  const combined = `${clean(unitText)} ${clean(lessonText)}`;
+  const explicit = combined.match(/\b(?:lesson\s*)?(\d+)\s*[.\-]\s*(\d+)\b/i);
+  if (explicit) return { unit: Number(explicit[1]), lesson: Number(explicit[2]) };
+  const unitMatch = clean(unitText).match(/\b(\d+)\b/) || clean(lessonText).match(/\bunit\s*(\d+)\b/i);
+  return { unit: unitMatch ? Number(unitMatch[1]) : null, lesson: null };
+}
+
+function agendaTokenScore(a, b) {
+  const aa = new Set(normalizeLessonMatchTitle(a).split(" ").filter(token => token.length > 2));
+  const bb = new Set(normalizeLessonMatchTitle(b).split(" ").filter(token => token.length > 2));
+  if (!aa.size || !bb.size) return 0;
+  let shared = 0;
+  aa.forEach(token => { if (bb.has(token)) shared++; });
+  return shared / Math.max(aa.size, bb.size);
+}
+
+function loadAgendaLessonIndex() {
+  if (!agendaLessonIndexPromise) {
+    agendaLessonIndexPromise = fetch("assets/data/lesson-index.json", { cache: "no-store" })
+      .then(response => {
+        if (!response.ok) throw new Error("Lesson index could not load");
+        return response.json();
+      })
+      .then(data => data.lessons || []);
+  }
+  return agendaLessonIndexPromise;
+}
+
+function resolveAgendaLesson(index, course, unitText, lessonText) {
+  const numbers = agendaLessonNumbers(unitText, lessonText);
+  let candidates = index.filter(item => item.course === course);
+  if (numbers.unit !== null) candidates = candidates.filter(item => item.unit === numbers.unit);
+  if (numbers.lesson !== null) {
+    const exactNumber = candidates.find(item => item.lesson === numbers.lesson);
+    if (exactNumber) return exactNumber;
+  }
+  const target = normalizeLessonMatchTitle(lessonText);
+  if (!target) return null;
+  const exactTitle = candidates.find(item => normalizeLessonMatchTitle(item.title) === target);
+  if (exactTitle) return exactTitle;
+  const containing = candidates.find(item => {
+    const title = normalizeLessonMatchTitle(item.title);
+    return title && (title.includes(target) || target.includes(title));
+  });
+  if (containing) return containing;
+  const ranked = candidates
+    .map(item => ({ item, score: agendaTokenScore(item.title, lessonText) }))
+    .sort((a, b) => b.score - a.score);
+  return ranked[0] && ranked[0].score >= 0.45 ? ranked[0].item : null;
+}
+
+function agendaFallbackURL(course, unitText, lessonText) {
+  const courseSlug = course.toLowerCase();
+  const numbers = agendaLessonNumbers(unitText, lessonText);
+  if (numbers.unit !== null && numbers.lesson !== null && course !== "ADM") {
+    return `courses/${courseSlug}/units/unit-${numbers.unit}/lesson-${numbers.unit}-${numbers.lesson}.html`;
+  }
+  if (numbers.unit !== null) return `courses/${courseSlug}/units/unit-${numbers.unit}.html`;
+  return `courses/${courseSlug}/index.html`;
+}
+
+function renderAgendaLessonResourceBar(course, unitText, lessonText, linksText) {
+  const fallback = agendaFallbackURL(course, unitText, lessonText);
+  const classLink = firstAgendaURL(linksText);
+  return `
+    <nav class="agenda-inline-lesson-bar" id="agendaLessonResourceBar" aria-label="Lesson resources"
+         data-course="${escapeHTML(course)}"
+         data-unit="${escapeHTML(unitText)}"
+         data-lesson="${escapeHTML(lessonText)}"
+         data-class-link="${escapeHTML(classLink)}">
+      <span class="agenda-inline-lesson-label">Lesson Resources</span>
+      <div class="agenda-inline-lesson-buttons">
+        <a class="agenda-inline-primary" data-agenda-lesson-link href="${escapeHTML(fallback)}">Open Lesson &amp; Resources</a>
+        ${classLink ? `<a class="agenda-inline-secondary" href="${escapeHTML(classLink)}" target="_blank" rel="noopener">Class Link</a>` : ""}
+      </div>
+    </nav>`;
+}
+
+async function enhanceAgendaLessonResourceBar(course, unitText, lessonText) {
+  const bar = document.getElementById("agendaLessonResourceBar");
+  if (!bar) return;
+  try {
+    const index = await loadAgendaLessonIndex();
+    const lesson = resolveAgendaLesson(index, course, unitText, lessonText);
+    if (!lesson) return;
+    const primary = bar.querySelector("[data-agenda-lesson-link]");
+    if (primary) primary.href = lesson.url;
+    if (lesson.presentation && !bar.querySelector("[data-agenda-presentation-link]")) {
+      const presentation = document.createElement("a");
+      presentation.className = "agenda-inline-secondary";
+      presentation.dataset.agendaPresentationLink = "true";
+      presentation.href = new URL(lesson.presentation, new URL(lesson.url, document.baseURI)).href;
+      presentation.textContent = "Presentation";
+      presentation.setAttribute("download", "");
+      bar.querySelector(".agenda-inline-lesson-buttons")?.appendChild(presentation);
+    }
+  } catch (error) {
+    console.warn("Lesson resource matching unavailable; the unit or course link remains active.", error);
+  }
+}
+
+
 function listify(text) {
   const value = clean(text);
   if (!value) return `<span class="empty">Nothing listed.</span>`;
@@ -281,6 +406,7 @@ function renderDayView() {
       </div>
       <h2>${escapeHTML(lesson || "Class Agenda")}</h2>
       ${unit ? `<div class="agenda-unit-pill">${escapeHTML(unit)}</div>` : ""}
+      ${renderAgendaLessonResourceBar(currentCourse, unit, lesson, links)}
       <div class="agenda-primary-block">
         <h3>Today in Class</h3>
         ${listify(agendaText)}
@@ -299,6 +425,7 @@ function renderDayView() {
       ${quote ? renderAgendaCard("Quote of the Day", `<div class="quote-text">${escapeHTML(quote)}</div>`, "quote") : ""}
     </aside>
   `;
+  enhanceAgendaLessonResourceBar(currentCourse, unit, lesson).catch(console.warn);
 }
 
 function renderWeekView() {
