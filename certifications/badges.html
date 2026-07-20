@@ -2,15 +2,16 @@
 
 <html class="cert-auth-checking" lang="en">
 <head>
-<title>Teacher Certification Dashboard | LockwoodSTEM</title>
+<title>My Badges | LockwoodSTEM</title>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../assets/css/styles.css" rel="stylesheet"/>
 <script defer="" src="../assets/js/main.js"></script>
 <script src="auth-config.js?v=rc20b"></script>
-<script defer="" src="auth.js?v=rc20b"></script>
+<script defer="" src="auth.js?v=progress1"></script>
 <script defer="" src="auth-guard.js?v=rc20b"></script>
-<script defer="" src="teacher.js?v=progress1"></script>
+<script defer="" src="badges.js?v=progress1"></script>
+
 <meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/><link href="../assets/css/certification-progress.css?v=1" rel="stylesheet"/></head>
 <body class="site-consistency-v4 certifications-page">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -30,42 +31,28 @@
 <section class="page-hero">
 <div class="container hero-grid">
 <div>
-<div class="eyebrow">Teacher Dashboard</div>
-<h1>Hands-on certification approvals</h1>
-<p>Approve the supervised performance portion for certifications that unlock FabLab equipment.</p>
-<div class="hero-actions consistent-actions">
-<button class="btn" data-refresh-teacher-dashboard="" type="button">Refresh Dashboard</button>
-<a class="btn secondary consistent-action-link" href="index.html">Student Certification Hub</a>
-</div>
-</div>
-<aside class="card dark">
-<span class="tag">Badge Rule</span>
-<h3>Online + Hands-on</h3>
-<p>Passing the online test alone shows readiness, but does not unlock the badge until teacher approval.</p>
-</aside>
+<div class="eyebrow">Achievements</div>
+<h1>My badge collection</h1>
+<p>Celebrate completed certifications and see what you need to unlock next.</p>
+<div class="hero-actions consistent-actions"><a class="btn" href="account.html">My Progress</a><a class="btn secondary" href="index.html">Certification Hub</a></div></div>
 </div>
 </section>
+
+
+<section aria-live="polite" class="container cert-progress-section"><div class="cert-progress-shell" data-cert-progress-summary=""><p class="cert-progress-loading">Loading badge progress...</p></div></section>
 <section class="container">
-<article class="card">
-<div class="section-header compact">
-<div>
-<h2>Student approvals</h2>
-<p class="muted">Mark hands-on completion after you observe the student safely complete the required performance task.</p>
+<div class="badge-toolbar">
+<div aria-label="Filter badges" class="cert-filter-bar">
+<button class="cert-filter active" data-badge-filter="all" type="button">All Badges</button>
+<button class="cert-filter" data-badge-filter="earned" type="button">Earned</button>
+<button class="cert-filter" data-badge-filter="pending" type="button">Pending Approval</button>
+<button class="cert-filter" data-badge-filter="locked" type="button">Locked</button>
+<button class="cert-filter" data-badge-filter="equipment" type="button">Equipment Access</button>
 </div>
+<button class="btn secondary print-badges" onclick="window.print()" type="button">Print Badge Collection</button>
 </div>
-<div class="teacher-dashboard-tools">
-<label>Filter students
-        <input data-teacher-filter="" placeholder="Search by name, email, ID, or period" type="search"/>
-</label>
-<label>Certification
-        <select data-teacher-cert-filter=""><option value="all">All equipment certifications</option><option value="3d-printing">3D Printing</option><option value="laser-cutting">Laser Cutting</option><option value="cnc">CNC</option><option value="drill-press">Drill Press</option><option value="soldering">Soldering</option><option value="hand-cutting-tools">Hand &amp; Cutting Tools</option></select>
-</label>
-</div>
-<div class="teacher-dashboard-status" data-teacher-dashboard-status="">Loading students...</div>
-<div class="teacher-approval-table-wrap" data-teacher-dashboard=""></div>
-</article>
-</section>
-</main>
+<div class="badge-collection-grid" data-badge-collection=""><p class="muted">Loading badges...</p></div>
+</section></main>
 <footer class="site-footer"><div class="container"><p>LockwoodSTEM</p></div></footer>
 <button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body>
 </html>

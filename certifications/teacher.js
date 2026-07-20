@@ -1,18 +1,11 @@
 (function () {
   const CERTS = [
-    { certId: "engineering-safety", label: "Engineering Safety", hasOnline: true },
-    { certId: "3d-printing", label: "3D Printing", hasOnline: true },
-    { certId: "laser-cutting", label: "Laser Cutting", hasOnline: true },
-    { certId: "cnc", label: "CNC Mill", hasOnline: true },
-    { certId: "drill-press", label: "Drill Press", hasOnline: true },
-    { certId: "soldering", label: "Soldering", hasOnline: true },
-    { certId: "hand-cutting-tools", label: "Hand & Cutting Tools", hasOnline: true },
-    { certId: "technical-sketching", label: "Technical Sketching", hasOnline: true },
-    { certId: "engineering-documentation", label: "Engineering Documentation", hasOnline: true },
-    { certId: "fusion-cad-level-1", label: "Fusion CAD Level 1", hasOnline: true },
-    { certId: "engineering-drawings", label: "Engineering Drawings", hasOnline: true },
-    { certId: "fusion-cad-level-2", label: "Fusion CAD Level 2", hasOnline: true },
-    { certId: "design-review", label: "Design Review", hasOnline: true }
+    { certId: "3d-printing", label: "3D Printing", hasOnline: true, requiresHandsOn: true },
+    { certId: "laser-cutting", label: "Laser Cutting", hasOnline: true, requiresHandsOn: true },
+    { certId: "cnc", label: "CNC", hasOnline: true, requiresHandsOn: true },
+    { certId: "drill-press", label: "Drill Press", hasOnline: true, requiresHandsOn: true },
+    { certId: "soldering", label: "Soldering", hasOnline: true, requiresHandsOn: true },
+    { certId: "hand-cutting-tools", label: "Hand & Cutting Tools", hasOnline: true, requiresHandsOn: true }
   ];
 
   let dashboardData = null;

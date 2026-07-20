@@ -117,7 +117,8 @@
         </div>
         <div class="cert-account-actions">
           ${String(role).toLowerCase() === "teacher" ? `<a class="btn small secondary cert-teacher-dashboard-btn" href="teacher-dashboard.html">Teacher Dashboard</a>` : ""}
-          <a class="btn small secondary cert-account-btn" href="account.html">Account</a>
+          <a class="btn small secondary cert-account-btn" href="account.html">Progress</a>
+          <a class="btn small secondary cert-account-btn" href="badges.html">Badges</a>
           <button class="btn small cert-logout-btn" type="button" data-cert-logout aria-label="Log out of certification account">Log out</button>
         </div>
       </div>

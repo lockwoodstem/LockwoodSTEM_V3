@@ -417,6 +417,10 @@ function setHandsOnCompletion_(payload) {
   const student = findUserById_(studentUserId);
   if (!student) return json_({ ok: false, error: 'Student account not found.' });
 
+  if (!requiresHandsOn_(certId)) {
+    return json_({ ok: false, error: 'This certification does not require a hands-on approval.' });
+  }
+
   const status = statusForUserCert_(studentUserId, certId);
   if (requiresOnlineTest_(certId) && !status.onlinePassed && completed) {
     return json_({ ok: false, error: 'Online test must be passed before hands-on completion can be marked.' });
@@ -442,16 +446,17 @@ function setHandsOnCompletion_(payload) {
 
 function statusForUserCert_(userId, certId) {
   const online = onlineStatusForUserCert_(userId, certId);
-  const hands = handsOnStatusForUserCert_(userId, certId);
-  const requiresHandsOn = true;
+  const requiresHandsOn = requiresHandsOn_(certId);
+  const hands = requiresHandsOn ? handsOnStatusForUserCert_(userId, certId) : { completed: false, timestamp: '', teacherName: '', notes: '' };
   const requiresOnline = requiresOnlineTest_(certId);
   const onlinePassed = requiresOnline ? online.onlinePassed : false;
-  const handsOnComplete = hands.completed;
-  const badgeEarned = requiresOnline ? (onlinePassed && handsOnComplete) : handsOnComplete;
-  const certifiedAt = badgeEarned ? (hands.timestamp || online.certifiedAt || '') : '';
+  const handsOnComplete = requiresHandsOn ? hands.completed : false;
+  const badgeEarned = onlinePassed && (!requiresHandsOn || handsOnComplete);
+  const certifiedAt = badgeEarned ? (requiresHandsOn ? (hands.timestamp || online.certifiedAt || '') : (online.certifiedAt || '')) : '';
 
   return {
     certId: certId,
+    category: certificationCategory_(certId),
     hasAttempt: online.hasAttempt,
     attempts: online.attempts,
     bestPercent: online.bestPercent,
@@ -563,6 +568,17 @@ function getCertificationIds_() {
 
 function requiresOnlineTest_(certId) {
   return certId === 'engineering-safety' || certId === '3d-printing' || certId === 'laser-cutting' || certId === 'drill-press' || certId === 'hand-cutting-tools' || certId === 'soldering' || certId === 'cnc' || certId === 'technical-sketching' || certId === 'engineering-documentation' || certId === 'fusion-cad-level-1' || certId === 'engineering-drawings' || certId === 'fusion-cad-level-2' || certId === 'design-review';
+}
+
+function requiresHandsOn_(certId) {
+  return ['3d-printing', 'laser-cutting', 'cnc', 'drill-press', 'soldering', 'hand-cutting-tools'].indexOf(String(certId)) >= 0;
+}
+
+function certificationCategory_(certId) {
+  if (certId === 'engineering-safety') return 'safety';
+  if (certId === 'design-review') return 'professional';
+  if (requiresHandsOn_(certId)) return 'equipment';
+  return 'academic';
 }
 
 function validateTokenForServer_(token) {
