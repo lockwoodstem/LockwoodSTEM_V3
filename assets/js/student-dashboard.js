@@ -51,8 +51,41 @@
 
   function renderRecent(){ const box=$('[data-dashboard-recent]');let items=[];try{items=JSON.parse(localStorage.getItem(RECENT_KEY)||'[]');if(!Array.isArray(items))items=[];}catch{}items=items.filter(i=>i&&i.path&&!i.path.includes('/dashboard/')).slice(0,8);if(!items.length)return;box.innerHTML=items.map(i=>`<a class="dashboard-recent-card" href="${esc(i.path)}"><span class="dashboard-recent-type">${esc(i.section||'Page')}</span><h3>${esc(i.title||'LockwoodSTEM')}</h3><time datetime="${esc(i.visitedAt)}">${esc(relativeTime(i.visitedAt))}</time></a>`).join(''); }
 
-  function renderProfile(user){ const name=user.fullName||[user.firstName,user.lastName].filter(Boolean).join(' ')||'Student';const first=user.firstName||name.split(' ')[0]||'Student';$('[data-dashboard-greeting]').textContent=`Welcome back, ${first}.`;$('[data-dashboard-name]').textContent=name;$('[data-dashboard-profile-meta]').textContent=[user.period?`Period ${user.period}`:'',user.studentId?`ID ${user.studentId}`:'',user.role||'student'].filter(Boolean).join(' • ');$('[data-dashboard-initials]').textContent=name.split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase(); }
+  async function renderTeacherOverview(auth){
+    document.body.classList.add('teacher-mode');
+    const shortcut=$('[data-teacher-dashboard-shortcut]');
+    const quick=$('[data-teacher-quick-link]');
+    const studentPanel=$('[data-student-certification-panel]');
+    if(shortcut) shortcut.hidden=false;
+    if(quick) quick.hidden=false;
+    if(studentPanel) studentPanel.hidden=true;
+    const roleLabel=$('[data-dashboard-role-label]'); if(roleLabel) roleLabel.textContent='Teacher Dashboard';
+    const badgesLabel=$('[data-stat-badges-label]'); if(badgesLabel) badgesLabel.textContent='Student badges earned';
+    const equipmentLabel=$('[data-stat-equipment-label]'); if(equipmentLabel) equipmentLabel.textContent='Approvals pending';
+    try{
+      const session=auth.getSession();
+      const data=await auth.request('getTeacherDashboard',{token:session.token});
+      const students=data.students||[];
+      let earned=0,pending=0,equipment=0;
+      students.forEach(student=>Object.values(student.statuses||{}).forEach(status=>{
+        if(status.badgeEarned) earned++;
+        if(status.requiresHandsOn&&status.onlinePassed&&!status.handsOnComplete) pending++;
+        if(status.requiresHandsOn&&status.badgeEarned) equipment++;
+      }));
+      $('[data-stat-badges]').textContent=earned;
+      $('[data-stat-equipment]').textContent=pending;
+      const overview=$('[data-teacher-dashboard-overview]');
+      if(overview) overview.textContent=`${students.length} student account${students.length===1?'':'s'} • ${earned} earned badges • ${pending} hands-on approval${pending===1?'':'s'} waiting`;
+    }catch(err){
+      const overview=$('[data-teacher-dashboard-overview]');
+      if(overview) overview.textContent='Student certification records could not load. Open the teacher dashboard to try again.';
+      $('[data-stat-badges]').textContent='—';
+      $('[data-stat-equipment]').textContent='—';
+    }
+  }
+
+  function renderProfile(user){ const role=String(user.role||'student').toLowerCase();const teacher=['teacher','teacher_admin'].includes(role);const fallback=teacher?'Teacher':'Student';const name=user.fullName||[user.firstName,user.lastName].filter(Boolean).join(' ')||fallback;const first=user.firstName||name.split(' ')[0]||fallback;const roleName=role==='teacher_admin'?'Teacher Admin':(teacher?'Teacher':'Student');$('[data-dashboard-greeting]').textContent=teacher?`Welcome, ${first}.`:`Welcome back, ${first}.`;$('[data-dashboard-name]').textContent=name;$('[data-dashboard-profile-meta]').textContent=[teacher?`${roleName} account`:(user.period?`Period ${user.period}`:''),user.studentId?`ID ${user.studentId}`:'',roleName].filter(Boolean).join(' • ');$('[data-dashboard-initials]').textContent=name.split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase(); }
   function loginUrl(){ return '../certifications/login.html?next='+encodeURIComponent('../dashboard/index.html'); }
-  async function init(){ const auth=window.LockwoodCertAuth;if(!auth){location.href=loginUrl();return;}const profile=auth.getProfile();if(profile)renderProfile(profile);const result=await auth.validateSession();document.documentElement.classList.remove('dashboard-auth-checking');if(!result.ok){location.href=loginUrl();return;}renderProfile(result.user||auth.getProfile()||{});const courses=selectedCourses();updateCourseSettings(courses);await Promise.allSettled([renderCourses(courses),renderCertifications(),renderResources()]);renderRecent();$('[data-dashboard-logout]').addEventListener('click',()=>{auth.clearSession();location.href='../certifications/login.html';});const form=$('[data-course-settings-form]');form.addEventListener('submit',e=>{e.preventDefault();const chosen=[...form.querySelectorAll('input[name="course"]:checked')].map(i=>i.value);localStorage.setItem(COURSE_KEY,JSON.stringify(chosen));renderCourses(chosen);form.closest('details').removeAttribute('open');}); }
+  async function init(){ const auth=window.LockwoodCertAuth;if(!auth){location.href=loginUrl();return;}const profile=auth.getProfile();if(profile)renderProfile(profile);const result=await auth.validateSession();document.documentElement.classList.remove('dashboard-auth-checking');if(!result.ok){location.href=loginUrl();return;}const user=result.user||auth.getProfile()||{};if(user.mustChangePassword){location.href='../certifications/change-password.html?next='+encodeURIComponent('../dashboard/index.html');return;}renderProfile(user);const isTeacher=['teacher','teacher_admin'].includes(String(user.role||'').toLowerCase());const courses=selectedCourses();updateCourseSettings(courses);const tasks=[renderCourses(courses),renderResources()];if(isTeacher)tasks.push(renderTeacherOverview(auth));else tasks.push(renderCertifications());await Promise.allSettled(tasks);renderRecent();$('[data-dashboard-logout]').addEventListener('click',()=>{auth.clearSession();location.href='../certifications/login.html';});const form=$('[data-course-settings-form]');form.addEventListener('submit',e=>{e.preventDefault();const chosen=[...form.querySelectorAll('input[name="course"]:checked')].map(i=>i.value);localStorage.setItem(COURSE_KEY,JSON.stringify(chosen));renderCourses(chosen);form.closest('details').removeAttribute('open');}); }
   document.addEventListener('DOMContentLoaded',init);
 })();

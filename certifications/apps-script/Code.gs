@@ -7,7 +7,25 @@
  *
  * Then paste the /exec Web App URL into:
  * certifications/auth-config.js
+ *
+ * Required Script Properties:
+ * - AUTH_SECRET: a long random authentication secret
+ * - TEACHER_SETUP_CODE: a private code used to create additional teacher accounts
+ * - DEFAULT_TEACHER_TEMP_PASSWORD: one-time temporary password consumed by setup()
+ *   when provisioning the default Teacher Admin account. The property is deleted
+ *   automatically after the account is created.
  */
+
+const DEFAULT_TEACHER_ACCOUNT = {
+  firstName: 'Jonathan',
+  lastName: 'Lockwood',
+  email: 'jlockwood@cornerstonecharter.com',
+  teacherId: 'JLOCKWOOD',
+  period: 'Teacher',
+  role: 'teacher_admin',
+  status: 'active',
+  mustChangePassword: true
+};
 
 const SHEET_USERS = 'Users';
 const SHEET_SESSIONS = 'Sessions';
@@ -24,21 +42,22 @@ function doGet() {
 
 function setup() {
   setup_();
-  return 'LockwoodSTEM certification account sheets created.';
+  const result = ensureDefaultTeacherAccount_();
+  return 'LockwoodSTEM certification account sheets created. ' + result.message;
 }
 
 function promoteTeacherAccount() {
   setup_();
-  const teacherEmail = PropertiesService.getScriptProperties().getProperty('TEACHER_EMAIL') || 'jdlockwo@gmail.com';
+  const teacherEmail = PropertiesService.getScriptProperties().getProperty('TEACHER_EMAIL') || DEFAULT_TEACHER_ACCOUNT.email;
   const found = findUser_(teacherEmail, teacherEmail);
   if (!found) {
     return 'No user account found for ' + teacherEmail + '. Create the account first or set TEACHER_EMAIL in Script Properties.';
   }
   const users = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_USERS);
   users.getRange(found.row, 3).setValue(new Date().toISOString());
-  users.getRange(found.row, 11).setValue('teacher');
+  users.getRange(found.row, 11).setValue('teacher_admin');
   users.getRange(found.row, 12).setValue('active');
-  return 'Teacher role assigned to ' + teacherEmail;
+  return 'Teacher Admin role assigned to ' + teacherEmail;
 }
 
 function doPost(e) {
@@ -49,9 +68,11 @@ function doPost(e) {
     const action = String(payload.action || '').toLowerCase();
 
     if (action === 'register') return register_(payload);
+    if (action === 'registerteacher') return registerTeacher_(payload);
     if (action === 'login') return login_(payload);
     if (action === 'validate') return validate_(payload);
     if (action === 'logout') return logout_(payload);
+    if (action === 'changepassword') return changePassword_(payload);
     if (action === 'submitcertification') return submitCertification_(payload);
     if (action === 'getcertificationstatus') return getCertificationStatus_(payload);
     if (action === 'getallcertificationstatuses') return getAllCertificationStatuses_(payload);
@@ -73,9 +94,11 @@ function setup_() {
     users.appendRow([
       'userId', 'createdAt', 'updatedAt', 'firstName', 'lastName',
       'email', 'studentId', 'period', 'passwordSalt', 'passwordHash',
-      'role', 'status', 'lastLogin'
+      'role', 'status', 'lastLogin', 'mustChangePassword', 'passwordChangedAt'
     ]);
     users.setFrozenRows(1);
+  } else {
+    ensureUserSheetColumns_(users);
   }
 
   let sessions = ss.getSheetByName(SHEET_SESSIONS);
@@ -137,7 +160,7 @@ function register_(payload) {
 
   users.appendRow([
     userId, now, now, firstName, lastName, email, studentId, period,
-    salt, hash, 'student', 'active', ''
+    salt, hash, 'student', 'active', '', false, ''
   ]);
 
   const user = publicUser_({
@@ -151,6 +174,99 @@ function register_(payload) {
     token: session.token,
     expiresAt: session.expiresAt,
     user
+  });
+}
+
+
+function registerTeacher_(payload) {
+  setup_();
+
+  const firstName = clean_(payload.firstName);
+  const lastName = clean_(payload.lastName);
+  const email = clean_(payload.email).toLowerCase();
+  const teacherId = clean_(payload.teacherId);
+  const password = String(payload.password || '');
+  const token = clean_(payload.token);
+  const suppliedSetupCode = clean_(payload.setupCode);
+  const requestedRole = clean_(payload.role).toLowerCase() === 'teacher_admin' ? 'teacher_admin' : 'teacher';
+
+  if (!firstName || !lastName || !email || !teacherId || !password) {
+    return json_({ ok: false, error: 'All teacher account fields are required.' });
+  }
+  if (password.length < 8) {
+    return json_({ ok: false, error: 'Password must be at least 8 characters.' });
+  }
+
+  let authorizedByTeacher = null;
+  if (token) {
+    const auth = validateTokenForServer_(token);
+    if (auth.ok && isTeacherAdminRole_(auth.user.role) && !auth.user.mustChangePassword) {
+      authorizedByTeacher = auth.user;
+    }
+  }
+
+  const existingTeacherCount = countTeacherAccounts_();
+  if (!authorizedByTeacher) {
+    const expectedSetupCode = PropertiesService.getScriptProperties().getProperty('TEACHER_SETUP_CODE') || '';
+    if (!expectedSetupCode) {
+      return json_({
+        ok: false,
+        error: 'Teacher setup is not configured. Add a TEACHER_SETUP_CODE value in Google Apps Script Project Settings > Script Properties.'
+      });
+    }
+    if (!secureEquals_(suppliedSetupCode, expectedSetupCode)) {
+      return json_({ ok: false, error: 'The private teacher setup code is incorrect.' });
+    }
+    if (existingTeacherCount > 0) {
+      return json_({
+        ok: false,
+        error: 'A teacher account already exists. Sign in as a teacher to create another teacher account.'
+      });
+    }
+  }
+
+  const existing = findUser_(email, teacherId);
+  if (existing) {
+    return json_({ ok: false, error: 'An account already exists for that email or teacher ID.' });
+  }
+
+  const userId = Utilities.getUuid();
+  const salt = Utilities.getUuid();
+  const hash = hashPassword_(password, salt);
+  const now = new Date().toISOString();
+  const users = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_USERS);
+
+  users.appendRow([
+    userId, now, now, firstName, lastName, email, teacherId, 'Teacher',
+    salt, hash, requestedRole, 'active', '', false, ''
+  ]);
+
+  const user = publicUser_({
+    userId: userId,
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    studentId: teacherId,
+    period: 'Teacher',
+    role: requestedRole,
+    status: 'active',
+    mustChangePassword: false
+  });
+
+  if (authorizedByTeacher) {
+    return json_({
+      ok: true,
+      user: user,
+      createdBy: publicUser_(authorizedByTeacher)
+    });
+  }
+
+  const session = createSession_(userId);
+  return json_({
+    ok: true,
+    token: session.token,
+    expiresAt: session.expiresAt,
+    user: user
   });
 }
 
@@ -359,8 +475,11 @@ function getTeacherDashboard_(payload) {
 
   const auth = validateTokenForServer_(token);
   if (!auth.ok) return json_(auth);
-  if (String(auth.user.role).toLowerCase() !== 'teacher') {
+  if (!isTeacherRole_(auth.user.role)) {
     return json_({ ok: false, error: 'Teacher access is required.' });
+  }
+  if (auth.user.mustChangePassword) {
+    return json_({ ok: false, error: 'Change the temporary password before using teacher tools.' });
   }
 
   const users = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_USERS);
@@ -370,7 +489,7 @@ function getTeacherDashboard_(payload) {
 
   for (let i = 1; i < values.length; i++) {
     const user = rowToUser_(values[i]);
-    if (String(user.role).toLowerCase() === 'teacher') continue;
+    if (isTeacherRole_(user.role)) continue;
     if (String(user.status).toLowerCase() !== 'active') continue;
 
     const statuses = {};
@@ -390,11 +509,29 @@ function getTeacherDashboard_(payload) {
     });
   }
 
+  const summary = students.reduce(function (totals, student) {
+    certIds.forEach(function (certId) {
+      const status = student.statuses[certId] || {};
+      if (status.onlinePassed) totals.onlinePassed++;
+      if (status.badgeEarned) totals.badgesEarned++;
+      if (status.requiresHandsOn && status.onlinePassed && !status.handsOnComplete) totals.pendingApprovals++;
+      if (status.requiresHandsOn && status.badgeEarned) totals.equipmentBadges++;
+    });
+    return totals;
+  }, {
+    studentAccounts: students.length,
+    onlinePassed: 0,
+    badgesEarned: 0,
+    pendingApprovals: 0,
+    equipmentBadges: 0
+  });
+
   return json_({
     ok: true,
     teacher: publicUser_(auth.user),
     certifications: getCertificationList_(),
-    students: students
+    students: students,
+    summary: summary
   });
 }
 
@@ -410,8 +547,11 @@ function setHandsOnCompletion_(payload) {
 
   const auth = validateTokenForServer_(token);
   if (!auth.ok) return json_(auth);
-  if (String(auth.user.role).toLowerCase() !== 'teacher') {
+  if (!isTeacherRole_(auth.user.role)) {
     return json_({ ok: false, error: 'Teacher access is required.' });
+  }
+  if (auth.user.mustChangePassword) {
+    return json_({ ok: false, error: 'Change the temporary password before approving certifications.' });
   }
 
   const student = findUserById_(studentUserId);
@@ -646,6 +786,146 @@ function scoreEngineeringSafety_(answers) {
 }
 
 
+
+function ensureUserSheetColumns_(users) {
+  const required = [
+    'userId', 'createdAt', 'updatedAt', 'firstName', 'lastName',
+    'email', 'studentId', 'period', 'passwordSalt', 'passwordHash',
+    'role', 'status', 'lastLogin', 'mustChangePassword', 'passwordChangedAt'
+  ];
+  const currentColumns = Math.max(users.getLastColumn(), required.length);
+  const headers = users.getRange(1, 1, 1, currentColumns).getValues()[0];
+  required.forEach(function (name, index) {
+    if (String(headers[index] || '') !== name) {
+      users.getRange(1, index + 1).setValue(name);
+    }
+  });
+}
+
+function ensureDefaultTeacherAccount_() {
+  const properties = PropertiesService.getScriptProperties();
+  const temporaryPassword = String(properties.getProperty('DEFAULT_TEACHER_TEMP_PASSWORD') || '');
+  const existing = findUser_(DEFAULT_TEACHER_ACCOUNT.email, DEFAULT_TEACHER_ACCOUNT.teacherId);
+  const users = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_USERS);
+
+  if (existing) {
+    users.getRange(existing.row, 3).setValue(new Date().toISOString());
+    users.getRange(existing.row, 4).setValue(DEFAULT_TEACHER_ACCOUNT.firstName);
+    users.getRange(existing.row, 5).setValue(DEFAULT_TEACHER_ACCOUNT.lastName);
+    users.getRange(existing.row, 6).setValue(DEFAULT_TEACHER_ACCOUNT.email);
+    users.getRange(existing.row, 7).setValue(DEFAULT_TEACHER_ACCOUNT.teacherId);
+    users.getRange(existing.row, 8).setValue(DEFAULT_TEACHER_ACCOUNT.period);
+    users.getRange(existing.row, 11).setValue(DEFAULT_TEACHER_ACCOUNT.role);
+    users.getRange(existing.row, 12).setValue(DEFAULT_TEACHER_ACCOUNT.status);
+    if (temporaryPassword) {
+      const salt = Utilities.getUuid();
+      users.getRange(existing.row, 9).setValue(salt);
+      users.getRange(existing.row, 10).setValue(hashPassword_(temporaryPassword, salt));
+      users.getRange(existing.row, 14).setValue(true);
+      users.getRange(existing.row, 15).setValue('');
+      properties.deleteProperty('DEFAULT_TEACHER_TEMP_PASSWORD');
+      return { created: false, updated: true, message: 'The default Teacher Admin account was updated and requires a password change at first sign-in.' };
+    }
+    return { created: false, updated: true, message: 'The default Teacher Admin account already exists.' };
+  }
+
+  if (!temporaryPassword) {
+    return {
+      created: false,
+      updated: false,
+      message: 'The default Teacher Admin account is ready to provision after DEFAULT_TEACHER_TEMP_PASSWORD is added to Script Properties and setup() is run again.'
+    };
+  }
+
+  const userId = Utilities.getUuid();
+  const salt = Utilities.getUuid();
+  const hash = hashPassword_(temporaryPassword, salt);
+  const now = new Date().toISOString();
+  users.appendRow([
+    userId, now, now,
+    DEFAULT_TEACHER_ACCOUNT.firstName,
+    DEFAULT_TEACHER_ACCOUNT.lastName,
+    DEFAULT_TEACHER_ACCOUNT.email,
+    DEFAULT_TEACHER_ACCOUNT.teacherId,
+    DEFAULT_TEACHER_ACCOUNT.period,
+    salt, hash,
+    DEFAULT_TEACHER_ACCOUNT.role,
+    DEFAULT_TEACHER_ACCOUNT.status,
+    '', true, ''
+  ]);
+  properties.deleteProperty('DEFAULT_TEACHER_TEMP_PASSWORD');
+  return { created: true, updated: false, message: 'The default Teacher Admin account was created and requires a password change at first sign-in.' };
+}
+
+function changePassword_(payload) {
+  const token = clean_(payload.token);
+  const currentPassword = String(payload.currentPassword || '');
+  const newPassword = String(payload.newPassword || '');
+
+  if (!token) return json_({ ok: false, error: 'Missing session token.' });
+  if (!currentPassword || !newPassword) {
+    return json_({ ok: false, error: 'Current and new passwords are required.' });
+  }
+  if (newPassword.length < 10) {
+    return json_({ ok: false, error: 'The new password must be at least 10 characters.' });
+  }
+  if (currentPassword === newPassword) {
+    return json_({ ok: false, error: 'Choose a new password that is different from the temporary password.' });
+  }
+
+  const auth = validateTokenForServer_(token);
+  if (!auth.ok) return json_(auth);
+  const found = findUserById_(auth.user.userId);
+  if (!found) return json_({ ok: false, error: 'Account not found.' });
+
+  const currentHash = hashPassword_(currentPassword, found.user.passwordSalt);
+  if (!secureEquals_(currentHash, found.user.passwordHash)) {
+    return json_({ ok: false, error: 'The current password is incorrect.' });
+  }
+
+  const users = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_USERS);
+  const salt = Utilities.getUuid();
+  const now = new Date().toISOString();
+  users.getRange(found.row, 3).setValue(now);
+  users.getRange(found.row, 9).setValue(salt);
+  users.getRange(found.row, 10).setValue(hashPassword_(newPassword, salt));
+  users.getRange(found.row, 14).setValue(false);
+  users.getRange(found.row, 15).setValue(now);
+
+  const refreshed = findUserById_(auth.user.userId);
+  return json_({ ok: true, user: publicUser_(refreshed.user) });
+}
+
+function isTeacherRole_(role) {
+  const normalized = String(role || '').toLowerCase();
+  return normalized === 'teacher' || normalized === 'teacher_admin';
+}
+
+function isTeacherAdminRole_(role) {
+  return String(role || '').toLowerCase() === 'teacher_admin';
+}
+
+function countTeacherAccounts_() {
+  const users = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_USERS);
+  const values = users.getDataRange().getValues();
+  let count = 0;
+  for (let i = 1; i < values.length; i++) {
+    if (isTeacherRole_(values[i][10]) && String(values[i][11] || '').toLowerCase() === 'active') {
+      count++;
+    }
+  }
+  return count;
+}
+
+function secureEquals_(left, right) {
+  const a = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, String(left || ''));
+  const b = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, String(right || ''));
+  if (a.length !== b.length) return false;
+  let different = 0;
+  for (let i = 0; i < a.length; i++) different |= (a[i] ^ b[i]);
+  return different === 0;
+}
+
 function createSession_(userId) {
   const sessions = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_SESSIONS);
   const token = Utilities.getUuid() + '-' + Utilities.getUuid();
@@ -711,7 +991,9 @@ function rowToUser_(row) {
     passwordHash: row[9],
     role: row[10],
     status: row[11],
-    lastLogin: row[12]
+    lastLogin: row[12],
+    mustChangePassword: String(row[13]).toLowerCase() === 'true',
+    passwordChangedAt: row[14]
   };
 }
 
@@ -725,7 +1007,8 @@ function publicUser_(user) {
     studentId: user.studentId,
     period: user.period,
     role: user.role,
-    status: user.status
+    status: user.status,
+    mustChangePassword: !!user.mustChangePassword
   };
 }
 

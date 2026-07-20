@@ -98,25 +98,39 @@
     window.location.href = "login.html?next=" + query;
   }
 
+  function isTeacherRole(role) {
+    const normalized = String(role || "").toLowerCase();
+    return normalized === "teacher" || normalized === "teacher_admin";
+  }
+
+  function roleLabel(role) {
+    const normalized = String(role || "").toLowerCase();
+    if (normalized === "teacher_admin") return "Teacher Admin";
+    if (normalized === "teacher") return "Teacher";
+    return "Student";
+  }
+
   function renderAccountBar(user) {
     const main = document.querySelector("main");
     if (!main || document.querySelector(".cert-account-bar")) return;
 
     const displayName = user && (user.fullName || [user.firstName, user.lastName].filter(Boolean).join(" ")) || "Student";
     const role = user && user.role ? user.role : "student";
+    const readableRole = roleLabel(role);
     const bar = document.createElement("section");
     bar.className = "cert-account-bar";
     bar.innerHTML = `
       <div class="container cert-account-inner">
         <div class="cert-account-identity">
           <strong>Signed in:</strong> <span>${escapeHtml(displayName)}</span>
-          <span class="cert-account-role">${escapeHtml(role)}</span>
+          <span class="cert-account-role">${escapeHtml(readableRole)}</span>
         </div>
         <div class="micro-badge-strip" data-microbadge-strip aria-label="Certification microcredential badges">
           <span class="micro-badge-loading">Loading badges...</span>
         </div>
         <div class="cert-account-actions">
-          ${String(role).toLowerCase() === "teacher" ? `<a class="btn small secondary cert-teacher-dashboard-btn" href="teacher-dashboard.html">Teacher Dashboard</a>` : ""}
+          ${isTeacherRole(role) ? `<a class="btn small secondary cert-teacher-dashboard-btn" href="teacher-dashboard.html">Teacher Dashboard</a>` : ""}
+          <a class="btn small secondary cert-account-btn" href="change-password.html">Change Password</a>
           <a class="btn small secondary cert-account-btn" href="account.html">Progress</a>
           <a class="btn small secondary cert-account-btn" href="badges.html">Badges</a>
           <button class="btn small cert-logout-btn" type="button" data-cert-logout aria-label="Log out of certification account">Log out</button>
@@ -159,6 +173,8 @@
     redirectToLogin,
     renderAccountBar,
     getConfigError,
-    escapeHtml
+    escapeHtml,
+    isTeacherRole,
+    roleLabel
   };
 })();

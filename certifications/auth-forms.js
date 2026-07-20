@@ -14,7 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const result = await auth.request("login", { identifier: data.identifier, password: data.password });
       auth.saveSession(result);
       const params = new URLSearchParams(window.location.search);
-      window.location.href = params.get("next") || "index.html";
+      const next = params.get("next") || "index.html";
+      if (result.user && result.user.mustChangePassword) {
+        window.location.href = "change-password.html?next=" + encodeURIComponent(next);
+        return;
+      }
+      window.location.href = next;
     } catch (err) { setStatus(status, err.message, true); }
   });
 

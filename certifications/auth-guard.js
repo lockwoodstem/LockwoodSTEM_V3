@@ -20,5 +20,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
+  const page = window.location.pathname.split("/").pop() || "index.html";
+  if (result.user && result.user.mustChangePassword && page !== "change-password.html") {
+    const next = encodeURIComponent(page + window.location.search + window.location.hash);
+    window.location.href = "change-password.html?next=" + next;
+    return;
+  }
+
   auth.renderAccountBar(result.user);
 });
