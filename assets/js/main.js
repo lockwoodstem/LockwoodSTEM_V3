@@ -305,3 +305,30 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initGlobalSearch);
   else initGlobalSearch();
 })();
+
+
+// Student dashboard navigation and recent-page history
+(() => {
+  const RECENT_KEY = 'lockwoodstem-recent-pages-v1';
+  function addDashboardLink(){
+    const nav=document.querySelector('#site-navigation.nav-links, .site-header .nav-links');
+    if(!nav || nav.querySelector('[data-nav-section="dashboard"]')) return;
+    const li=document.createElement('li');
+    const a=document.createElement('a');
+    a.href='/dashboard/index.html'; a.dataset.navSection='dashboard'; a.textContent='Dashboard';
+    if(location.pathname.includes('/dashboard/')) a.setAttribute('aria-current','page');
+    li.appendChild(a); nav.insertBefore(li,nav.firstElementChild);
+  }
+  function trackPage(){
+    const path=location.pathname+location.search;
+    if(/\/(dashboard|certifications\/(login|register|teacher-login))\//.test(location.pathname)) return;
+    const title=(document.querySelector('main h1')?.textContent || document.title.split('|')[0] || 'LockwoodSTEM').trim();
+    const section=(document.querySelector('main .eyebrow')?.textContent || document.querySelector('[aria-current="page"]')?.textContent || 'Page').trim();
+    let items=[]; try{items=JSON.parse(localStorage.getItem(RECENT_KEY)||'[]');if(!Array.isArray(items))items=[];}catch{}
+    items=items.filter(item=>item&&item.path!==path);
+    items.unshift({path,title,section,visitedAt:new Date().toISOString()});
+    try{localStorage.setItem(RECENT_KEY,JSON.stringify(items.slice(0,12)));}catch{}
+  }
+  function init(){addDashboardLink();trackPage();}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
