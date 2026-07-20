@@ -3848,3 +3848,32 @@ nav a[aria-current="page"]:focus{
     width: min(220px, 78vw) !important;
   }
 }
+
+
+/* Teacher-admin dashboard visibility and simplified student account bar */
+.cert-account-bar[data-role="student"] .micro-badge-strip {
+  display: none !important;
+}
+.cert-account-bar[data-role="student"] .cert-account-inner {
+  grid-template-columns: minmax(180px, auto) auto;
+  align-items: center;
+}
+.cert-account-bar[data-role="teacher_admin"] .cert-account-inner {
+  grid-template-columns: minmax(180px, auto) minmax(320px, 1fr) auto;
+}
+.hero-actions [data-teacher-tools-link] {
+  background: rgba(255,255,255,0.10);
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.30);
+}
+.hero-actions [data-teacher-tools-link]:hover,
+.hero-actions [data-teacher-tools-link]:focus {
+  outline: 3px solid rgba(200, 162, 74, 0.35);
+  outline-offset: 2px;
+}
+@media (max-width: 920px) {
+  .cert-account-bar[data-role="student"] .cert-account-inner,
+  .cert-account-bar[data-role="teacher_admin"] .cert-account-inner {
+    grid-template-columns: 1fr;
+  }
+}
