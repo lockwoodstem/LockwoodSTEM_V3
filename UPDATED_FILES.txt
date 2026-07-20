@@ -1,6 +1,4 @@
 Updated files:
-courses/ied/units/unit-1/lesson-1-4.html
-assets/models/ied/unit-1/lesson-1-4/lesson-1-4-centerlines-symmetry-part.stl
-assets/img/ied/unit-1/lesson-1-4/front-orthographic-view.jpg
-assets/img/ied/unit-1/lesson-1-4/top-orthographic-view.jpg
-assets/img/ied/unit-1/lesson-1-4/right-orthographic-view.jpg
+courses/ied/units/unit-1/lesson-1-6.html
+assets/models/ied/unit-1/lesson-1-6/lesson-1-6-model-a.stl
+assets/models/ied/unit-1/lesson-1-6/lesson-1-6-model-b.stl
