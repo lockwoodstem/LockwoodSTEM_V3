@@ -1,5 +1,10 @@
-Updated files:
-- courses/ied/units/unit-5/lesson-5-1.html through lesson-5-18.html
-- assets/css/ied-unit5-interactives.css
-- assets/js/ied-unit5-interactives.js
-- IED_UNIT5_LESSON_INTERACTIVES_QA.md
+POE Unit 1 update-only package
+
+Replace these files in the website repository:
+- courses/poe/units/unit-1/lesson-1-1.html through lesson-1-18.html
+- assets/css/poe-unit1-interactives.css
+- assets/js/poe-unit1-interactives.js
+
+Documentation:
+- POE_UNIT1_LESSON_IMPROVEMENTS_QA.md
+- POE_UNIT1_IMPROVEMENTS_BUILD_MANIFEST.json
