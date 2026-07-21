@@ -1,6 +1,6 @@
-POE Unit 3 update contents:
-- courses/poe/units/unit-3.html
-- courses/poe/units/unit-3/lesson-3-1.html through lesson-3-18.html
-- assets/css/poe-unit3-interactives.css
-- assets/js/poe-unit3-interactives.js
-- POE_UNIT3_LESSON_IMPROVEMENTS_QA.md
+Updated files:
+courses/poe/units/unit-4.html
+courses/poe/units/unit-4/lesson-4-1.html through lesson-4-18.html
+assets/css/poe-unit4-interactives.css
+assets/js/poe-unit4-interactives.js
+POE_UNIT4_LESSON_IMPROVEMENTS_QA.md
