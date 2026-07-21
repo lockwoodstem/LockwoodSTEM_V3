@@ -209,10 +209,13 @@
     selectChoiceButtons(root);
     q(root, "[data-u1-check]")?.addEventListener("click", () => {
       const choice = root.dataset.choiceprojection;
-      if (choice === "b") {
-        feedback(root, "<strong>Correct projection.</strong> View B preserves the upper step and the lower rectangular footprint seen from the front.", "success");
+      const correct = root.dataset.correct || "b";
+      const success = root.dataset.successMessage || "<strong>Correct projection.</strong> View B preserves the upper step and the lower rectangular footprint seen from the front.";
+      const error = root.dataset.errorMessage || "Trace the highest step and the full lower width along the front viewing direction.";
+      if (choice === correct) {
+        feedback(root, success, "success");
       } else {
-        feedback(root, "Trace the highest step and the full lower width along the front viewing direction.", "error");
+        feedback(root, error, "error");
       }
     });
   }
@@ -221,10 +224,13 @@
     selectChoiceButtons(root);
     q(root, "[data-u1-check]")?.addEventListener("click", () => {
       const choice = root.dataset.choicemissing;
-      if (choice === "c") {
-        feedback(root, "<strong>Correct missing view.</strong> The right view must show the full height from the front view and the stepped depth from the top view.", "success");
+      const correct = root.dataset.correct || "c";
+      const success = root.dataset.successMessage || "<strong>Correct missing view.</strong> The right view must show the full height from the front view and the stepped depth from the top view.";
+      const error = root.dataset.errorMessage || "Transfer height from the front view and depth from the top view before selecting the right-side profile.";
+      if (choice === correct) {
+        feedback(root, success, "success");
       } else {
-        feedback(root, "Transfer height from the front view and depth from the top view before selecting the right-side profile.", "error");
+        feedback(root, error, "error");
       }
     });
   }

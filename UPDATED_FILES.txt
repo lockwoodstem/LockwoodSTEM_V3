@@ -1,9 +1,12 @@
-Added:
-assets/css/ied-unit1-interactives.css
+Updated files:
+courses/ied/units/unit-1/lesson-1-7.html
+courses/ied/units/unit-1/lesson-1-8.html
+courses/ied/units/unit-1/lesson-1-10.html
 assets/js/ied-unit1-interactives.js
-IED_UNIT1_LESSON_INTERACTIVES_QA.md
-
-Updated:
-courses/ied/units/unit-1/lesson-1-1.html through lesson-1-22.html
-
-No STL model files were changed.
+assets/models/ied/unit-1/lesson-1-7/lesson-1-7-orthographic-part.stl
+assets/img/ied/unit-1/lesson-1-7/front-view.jpg
+assets/img/ied/unit-1/lesson-1-7/top-view.jpg
+assets/img/ied/unit-1/lesson-1-7/right-view.jpg
+assets/img/ied/unit-1/lesson-1-8/front-view.jpg
+assets/img/ied/unit-1/lesson-1-8/top-view.jpg
+assets/img/ied/unit-1/lesson-1-8/right-view-correct.jpg
