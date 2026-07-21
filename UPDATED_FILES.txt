@@ -1,9 +1,6 @@
-POE Unit 2 update-only package
-
-Replace/add these files at the root of the existing LockwoodSTEM repository:
-- courses/poe/units/unit-2/lesson-2-1.html through lesson-2-18.html
-- assets/css/poe-unit2-interactives.css
-- assets/js/poe-unit2-interactives.js
-- POE_UNIT2_LESSON_IMPROVEMENTS_QA.md
-
-POE Unit 0, Unit 1, Unit 2 hub/challenge pages, and other courses are not included because they were not changed.
+POE Unit 3 update contents:
+- courses/poe/units/unit-3.html
+- courses/poe/units/unit-3/lesson-3-1.html through lesson-3-18.html
+- assets/css/poe-unit3-interactives.css
+- assets/js/poe-unit3-interactives.js
+- POE_UNIT3_LESSON_IMPROVEMENTS_QA.md
