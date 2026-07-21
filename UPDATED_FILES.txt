@@ -1,8 +1,5 @@
-Updated lesson pages:
-- courses/ied/units/unit-0/lesson-0-1.html through lesson-0-12.html
-- courses/ied/units/unit-2/lesson-2-1.html through lesson-2-18.html
-- courses/ied/units/unit-3/lesson-3-1.html through lesson-3-17.html
-- courses/ied/units/unit-4/lesson-4-1.html through lesson-4-22.html
-- courses/ied/units/unit-5/lesson-5-1.html through lesson-5-18.html
-
-No Unit 1 files or 3D model assets were changed.
+Updated files:
+courses/ied/units/unit-2.html
+courses/ied/units/unit-3.html
+courses/ied/units/unit-4.html
+courses/ied/units/unit-5.html
