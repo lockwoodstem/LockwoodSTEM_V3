@@ -344,3 +344,110 @@ html body main#main .light-section .eyebrow {
   color: #7a5200 !important;
   -webkit-text-fill-color: #7a5200 !important;
 }
+
+/* IED unit hubs: convert Units 2-5 lesson tables into readable mobile cards. */
+@media (max-width: 760px) {
+  body.immersive-unit-page .lesson-table-wrap {
+    overflow: visible !important;
+    width: 100% !important;
+  }
+
+  body.immersive-unit-page .unit-lesson-table,
+  body.immersive-unit-page .unit-lesson-table tbody,
+  body.immersive-unit-page .unit-lesson-table tr,
+  body.immersive-unit-page .unit-lesson-table td {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  body.immersive-unit-page .unit-lesson-table {
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  body.immersive-unit-page .unit-lesson-table thead {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  body.immersive-unit-page .unit-lesson-table tbody {
+    display: grid !important;
+    gap: 1rem !important;
+  }
+
+  body.immersive-unit-page .unit-lesson-table tr {
+    overflow: hidden !important;
+    border: 1px solid #b9c9d8 !important;
+    border-radius: 16px !important;
+    background: #ffffff !important;
+    box-shadow: 0 8px 20px rgba(6, 27, 49, 0.08) !important;
+  }
+
+  body.immersive-unit-page .unit-lesson-table td {
+    padding: 0.8rem 1rem !important;
+    border: 0 !important;
+    border-bottom: 1px solid #d9e3ec !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    color: #102033 !important;
+    -webkit-text-fill-color: #102033 !important;
+  }
+
+  body.immersive-unit-page .unit-lesson-table td:last-child {
+    border-bottom: 0 !important;
+  }
+
+  body.immersive-unit-page .unit-lesson-table td::before {
+    display: block !important;
+    margin-bottom: 0.25rem !important;
+    color: #5b4300 !important;
+    -webkit-text-fill-color: #5b4300 !important;
+    font-size: 0.75rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.07em !important;
+    text-transform: uppercase !important;
+  }
+
+  body.immersive-unit-page .unit-lesson-table td:nth-child(1)::before { content: "Lesson"; }
+  body.immersive-unit-page .unit-lesson-table td:nth-child(2)::before { content: "Title"; }
+  body.immersive-unit-page .unit-lesson-table td:nth-child(3)::before { content: "Focus Question"; }
+  body.immersive-unit-page .unit-lesson-table td:nth-child(4)::before { content: "Open"; }
+
+  body.immersive-unit-page .unit-lesson-table td:first-child {
+    background: #f7e7a8 !important;
+    color: #061b31 !important;
+    -webkit-text-fill-color: #061b31 !important;
+    font-size: 1rem !important;
+    font-weight: 900 !important;
+  }
+
+  body.immersive-unit-page .unit-lesson-table td a:not(.btn) {
+    color: #0b4d78 !important;
+    -webkit-text-fill-color: #0b4d78 !important;
+    font-weight: 800 !important;
+  }
+
+  body.immersive-unit-page .unit-lesson-table .lesson-table-action {
+    width: 100% !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+  }
+
+  body.immersive-unit-page .unit-lesson-table .lesson-table-action .btn {
+    display: inline-flex !important;
+    width: auto !important;
+    min-height: 44px !important;
+    margin: 0.2rem 0.35rem 0.2rem 0 !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
