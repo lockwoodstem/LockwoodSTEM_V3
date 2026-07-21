@@ -1,4 +1,3 @@
 Updated files:
-courses/ied/units/unit-1/lesson-1-6.html
-assets/models/ied/unit-1/lesson-1-6/lesson-1-6-model-a.stl
-assets/models/ied/unit-1/lesson-1-6/lesson-1-6-model-b.stl
+courses/ied/units/unit-1/lesson-1-1.html through lesson-1-22.html
+IED_UNIT1_SEQUENCE_AND_DELIVERABLES_QA.md
