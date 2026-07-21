@@ -1,6 +1,5 @@
 Updated files:
-- courses/ied/units/unit-3/lesson-3-1.html through lesson-3-17.html
-- assets/css/ied-unit3-interactives.css
-- assets/js/ied-unit3-interactives.js
-- assets/models/ied/unit-3/unit-3-rocket-assembly-reference.stl
-- IED_UNIT3_LESSON_INTERACTIVES_QA.md
+- courses/ied/units/unit-4/lesson-4-1.html through lesson-4-22.html
+- assets/css/ied-unit4-interactives.css
+- assets/js/ied-unit4-interactives.js
+- IED_UNIT4_LESSON_INTERACTIVES_QA.md
