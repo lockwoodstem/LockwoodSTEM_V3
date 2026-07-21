@@ -1,12 +1,5 @@
 Updated files:
-courses/ied/units/unit-1/lesson-1-7.html
-courses/ied/units/unit-1/lesson-1-8.html
-courses/ied/units/unit-1/lesson-1-10.html
-assets/js/ied-unit1-interactives.js
-assets/models/ied/unit-1/lesson-1-7/lesson-1-7-orthographic-part.stl
-assets/img/ied/unit-1/lesson-1-7/front-view.jpg
-assets/img/ied/unit-1/lesson-1-7/top-view.jpg
-assets/img/ied/unit-1/lesson-1-7/right-view.jpg
-assets/img/ied/unit-1/lesson-1-8/front-view.jpg
-assets/img/ied/unit-1/lesson-1-8/top-view.jpg
-assets/img/ied/unit-1/lesson-1-8/right-view-correct.jpg
+- courses/ied/units/unit-2/lesson-2-1.html through lesson-2-18.html
+- assets/css/ied-unit2-interactives.css
+- assets/js/ied-unit2-interactives.js
+- IED_UNIT2_LESSON_INTERACTIVES_QA.md
