@@ -1,0 +1,12 @@
+LOCKWOODSTEM GLOBAL SEARCH UPDATE
+
+Files included:
+- assets/js/main.js
+- assets/css/global-search.css
+- assets/data/search-index.json
+
+The search bar is inserted automatically into the shared site header. No HTML pages are overwritten.
+The search index contains 771 searchable pages and downloads.
+
+Deploy by extracting this ZIP into the repository root and allowing main.js to be replaced.
+CNAME is not included or modified.

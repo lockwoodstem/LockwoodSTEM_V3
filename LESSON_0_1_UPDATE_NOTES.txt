@@ -1,0 +1,6 @@
+Corrected IED presentation update
+- Preserved CNAME unchanged.
+- Removed full-unit IED/AED presentation sections and files for Units 0-5.
+- Added the revised Lesson 0.1 PPTX to downloads/presentations.
+- Rebuilt courses/ied/units/unit-0/lesson-0-1.html to match the 45-minute deck.
+- Added direct Lesson 0.1 PPTX access from the lesson page and Unit 0 lesson table.

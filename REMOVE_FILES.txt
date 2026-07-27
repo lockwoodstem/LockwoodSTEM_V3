@@ -1,0 +1,26 @@
+Delete these obsolete files/folders if they still exist in the repository:
+
+LESSON_0_1_UPDATE_NOTES.txt
+COURSE_RENAME_REPORT.md
+DOWNLOAD_BRANDING_QA_REPORT.md
+HOMEPAGE_POE_UNIT0_BUTTON_REMOVED.md
+RESOURCE_UPDATE_ADV_MAN_NOTEBOOK.md
+SITE_QA_REPORT.md
+downloads/README_AED_Lesson_Resources_Update.txt
+downloads/README_AED_Syllabus_Update.txt
+LockwoodSTEM_IED_Unit0_Lesson0.1_Website_Update/
+courses/ied/units/unit-6.html
+courses/ied/units/unit-6/
+
+downloads/presentations/AED_Unit0_Student_Deck.pdf
+downloads/presentations/AED_Unit0_Student_Deck.pptx
+downloads/presentations/AED_Unit1_Student_Deck.pdf
+downloads/presentations/AED_Unit1_Student_Deck.pptx
+downloads/presentations/AED_Unit2_Student_Deck.pdf
+downloads/presentations/AED_Unit2_Student_Deck.pptx
+downloads/presentations/AED_Unit3_Student_Deck.pdf
+downloads/presentations/AED_Unit3_Student_Deck.pptx
+downloads/presentations/AED_Unit4_Student_Deck.pdf
+downloads/presentations/AED_Unit4_Student_Deck.pptx
+downloads/presentations/AED_Unit5_Student_Deck.pdf
+downloads/presentations/AED_Unit5_Student_Deck.pptx
