@@ -1,0 +1,48 @@
+/* IED Unit 0 lesson resource-button contrast fix */
+body.lesson-detail-page .resource-actions .btn,
+body.lesson-detail-page .resource-actions a.btn,
+body.lesson-detail-page .lesson-resource-card .btn,
+body.lesson-detail-page .lesson-resource-card a.btn {
+  background: #0b1f3a !important;
+  border-color: #0b1f3a !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+body.lesson-detail-page .resource-actions .btn *,
+body.lesson-detail-page .lesson-resource-card .btn * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+body.lesson-detail-page .resource-actions .btn:hover,
+body.lesson-detail-page .resource-actions .btn:focus,
+body.lesson-detail-page .lesson-resource-card .btn:hover,
+body.lesson-detail-page .lesson-resource-card .btn:focus {
+  background: #c8a24a !important;
+  border-color: #c8a24a !important;
+  color: #0b1f3a !important;
+  -webkit-text-fill-color: #0b1f3a !important;
+  outline: 3px solid rgba(11,31,58,.24) !important;
+  outline-offset: 2px !important;
+}
+
+body.lesson-detail-page .resource-actions .btn:hover *,
+body.lesson-detail-page .resource-actions .btn:focus *,
+body.lesson-detail-page .lesson-resource-card .btn:hover *,
+body.lesson-detail-page .lesson-resource-card .btn:focus * {
+  color: #0b1f3a !important;
+  -webkit-text-fill-color: #0b1f3a !important;
+}
+
+body.lesson-detail-page .resource-actions .btn.disabled,
+body.lesson-detail-page .resource-actions span.btn.disabled,
+body.lesson-detail-page .lesson-resource-card .btn.disabled,
+body.lesson-detail-page .lesson-resource-card span.btn.disabled {
+  background: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+  -webkit-text-fill-color: #334155 !important;
+}
