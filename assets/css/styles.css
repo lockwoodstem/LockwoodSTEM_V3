@@ -3895,3 +3895,19 @@ nav a[aria-current="page"]:focus{
     justify-content: flex-start;
   }
 }
+
+
+/* Time-free lesson pacing cards */
+.lesson-immersive-page .lesson-timeline.time-free div {
+  min-height: 72px;
+}
+.lesson-immersive-page .lesson-timeline.time-free span {
+  font-size: .95rem;
+  font-weight: 850;
+  color: #0b1f3a;
+}
+.pacing-strip.time-free span {
+  display: flex;
+  align-items: center;
+  min-height: 62px;
+}
