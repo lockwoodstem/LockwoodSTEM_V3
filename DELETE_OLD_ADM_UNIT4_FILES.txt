@@ -1,0 +1,11 @@
+courses/adm/units/unit-4/activity-4-1-5.html
+courses/adm/units/unit-4/activity-4-2-4.html
+courses/adm/units/unit-4/activity-4-2-5.html
+courses/adm/units/unit-4/challenge-4-1-manufacturing-cybersecurity-risk-assessment.html
+courses/adm/units/unit-4/challenge-4-2-production-scheduling-under-demand-changes.html
+courses/adm/units/unit-4/challenge-4-3-accessible-aerospace-packaging-design.html
+courses/adm/units/unit-4/challenge-4-4-resilient-manufacturing-system.html
+courses/adm/units/unit-4/challenge-4-5-smart-factory-integration-capstone.html
+courses/adm/units/unit-4/problem-4-3-1.html
+courses/adm/units/unit-4/project-4-1-6.html
+courses/adm/units/unit-4/project-4-2-6.html

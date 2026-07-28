@@ -1,0 +1,19 @@
+{
+  "requiredFiles": 16,
+  "missingFiles": [],
+  "parsedPages": 20,
+  "brokenInternalLinks": [],
+  "duplicateIds": [],
+  "termCounts": {
+    "Mach3": 122,
+    "Fusion": 90,
+    "DMC2 Mini": 45,
+    "Mach3Mill": 13,
+    ".tap": 34
+  },
+  "oldPhrasesRemaining": [],
+  "searchIndexMissing": [],
+  "searchIndexCountField": 690,
+  "searchIndexActual": 690,
+  "pass": true
+}
