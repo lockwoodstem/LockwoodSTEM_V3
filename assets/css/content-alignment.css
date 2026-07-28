@@ -260,3 +260,12 @@ main section.code-card code {
   overflow-wrap: normal !important;
   word-break: normal !important;
 }
+
+
+/* ADM Unit 4 detailed learning sequence */
+.learning-step-card h3,.checkpoint-card h3{margin-top:.2rem}
+.learning-step-card p,.checkpoint-card p{margin-bottom:0}
+.external-resource-link h3{margin-bottom:.35rem}
+.external-resource-link p{margin:0}
+.detailed-learning-sequence .section-header,.lesson-checkpoints .section-header{margin-bottom:1rem}
+@media (max-width:720px){.learning-step-grid,.checkpoint-grid{grid-template-columns:1fr}}
