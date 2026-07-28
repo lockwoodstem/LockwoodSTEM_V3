@@ -1,0 +1,59 @@
+/* POE Unit 0 lesson-specific interactives */
+body.immersive-lesson-page .poe-u0-interactive {
+  --u0-navy:#0b1f3a;--u0-blue:#0c5a91;--u0-blue-dark:#073f66;--u0-gold:#f3c95c;
+  --u0-green:#17653a;--u0-red:#9a2f2f;--u0-surface:#f7fafc;--u0-border:#9db2c4;
+  color:var(--u0-navy)!important;-webkit-text-fill-color:var(--u0-navy)!important;
+}
+body.immersive-lesson-page .poe-u0-interactive :is(h2,h3,p,li,label,legend,th,td,span,strong,small){color:var(--u0-navy)!important;-webkit-text-fill-color:var(--u0-navy)!important;opacity:1!important}
+.poe-u0-interactive .poe-u0-intro{max-width:880px;margin-bottom:1.15rem}
+.poe-u0-interactive .poe-u0-workspace{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(290px,.85fr);gap:1.2rem;align-items:start}
+.poe-u0-interactive .poe-u0-workspace.equal{grid-template-columns:repeat(2,minmax(0,1fr))}
+.poe-u0-interactive .poe-u0-panel{background:#fff;border:2px solid var(--u0-border);border-radius:16px;padding:1rem;min-width:0}
+.poe-u0-interactive .poe-u0-panel.soft{background:var(--u0-surface)}
+.poe-u0-interactive .poe-u0-panel h3{margin-top:0}
+.poe-u0-interactive fieldset{border:0;margin:0;padding:0;min-width:0}
+.poe-u0-interactive legend{font-weight:800;margin-bottom:.75rem}
+.poe-u0-interactive .poe-u0-option-list{display:grid;gap:.65rem}
+.poe-u0-interactive .poe-u0-option{display:flex;gap:.65rem;align-items:flex-start;padding:.75rem;border:2px solid #c9d5de;border-radius:12px;background:#fff}
+.poe-u0-interactive .poe-u0-option:hover{border-color:var(--u0-blue)}
+.poe-u0-interactive .poe-u0-option input{margin-top:.2rem;width:1.1rem;height:1.1rem;accent-color:var(--u0-blue);flex:0 0 auto}
+.poe-u0-interactive .poe-u0-button-row{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1rem}
+body.immersive-lesson-page .poe-u0-interactive button{min-height:44px;border:2px solid var(--u0-blue-dark);border-radius:10px;padding:.65rem .95rem;background:var(--u0-blue);color:#fff!important;-webkit-text-fill-color:#fff!important;font:inherit;font-weight:800;cursor:pointer}
+body.immersive-lesson-page .poe-u0-interactive button.choice-button{width:100%;text-align:left;background:#fff;color:var(--u0-navy)!important;-webkit-text-fill-color:var(--u0-navy)!important;border-color:#aebfcc}
+body.immersive-lesson-page .poe-u0-interactive button.choice-button[aria-pressed="true"],body.immersive-lesson-page .poe-u0-interactive button.selected{background:#dcecf8;border-color:var(--u0-blue);color:var(--u0-navy)!important;-webkit-text-fill-color:var(--u0-navy)!important}
+body.immersive-lesson-page .poe-u0-interactive button:hover{filter:brightness(.94)}
+body.immersive-lesson-page .poe-u0-interactive :is(button,input,select,textarea,a):focus-visible{outline:4px solid #ffbf47!important;outline-offset:2px}
+.poe-u0-interactive .poe-u0-feedback{margin-top:1rem;border-left:6px solid var(--u0-blue);background:#eaf4fb;padding:.85rem 1rem;border-radius:10px;min-height:3rem}
+.poe-u0-interactive .poe-u0-feedback[data-state="success"]{border-left-color:var(--u0-green);background:#e6f5ec}
+.poe-u0-interactive .poe-u0-feedback[data-state="error"]{border-left-color:var(--u0-red);background:#faeaea}
+.poe-u0-interactive .poe-u0-note{margin-top:.9rem;background:#fff8da;border:2px solid #e2bf4f;padding:.8rem 1rem;border-radius:12px}
+.poe-u0-interactive .poe-u0-table-wrap{overflow-x:auto}
+.poe-u0-interactive table{border-collapse:collapse;width:100%;background:#fff}
+.poe-u0-interactive th,.poe-u0-interactive td{border:1px solid #aebfcc;padding:.7rem;text-align:left;vertical-align:middle}
+.poe-u0-interactive th{background:#e8f0f5;font-weight:800}
+.poe-u0-interactive select,.poe-u0-interactive input[type="number"],.poe-u0-interactive input[type="text"],.poe-u0-interactive textarea{width:100%;min-height:44px;border:2px solid #879dac;border-radius:10px;padding:.55rem .65rem;background:#fff;color:var(--u0-navy);font:inherit}
+.poe-u0-interactive .poe-u0-chain{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem;align-items:stretch}
+.poe-u0-interactive .poe-u0-stage{position:relative;background:#eef5f9;border:2px solid #9bb2c2;border-radius:12px;padding:.85rem;text-align:center;font-weight:800}
+.poe-u0-interactive .poe-u0-stage:not(:last-child)::after{content:"→";position:absolute;right:-.55rem;top:50%;transform:translate(50%,-50%);background:#fff;border-radius:999px;padding:.05rem .25rem;z-index:2}
+.poe-u0-interactive .poe-u0-metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.poe-u0-interactive .poe-u0-metric{border:2px solid #b8c8d4;border-radius:12px;background:#fff;padding:.8rem;text-align:center}
+.poe-u0-interactive .poe-u0-metric strong{display:block;font-size:1.35rem}
+.poe-u0-interactive .poe-u0-sort-list{list-style:none;padding:0;margin:0;display:grid;gap:.6rem}
+.poe-u0-interactive .poe-u0-sort-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.7rem;align-items:center;border:2px solid #b8c8d4;border-radius:12px;background:#fff;padding:.7rem}
+.poe-u0-interactive .poe-u0-sort-controls{display:flex;gap:.35rem}
+.poe-u0-interactive .poe-u0-sort-controls button{min-height:38px;padding:.35rem .55rem}
+.poe-u0-interactive .poe-u0-video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#071b31;border:2px solid #7890a2}
+.poe-u0-interactive .poe-u0-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe-u0-interactive .poe-u0-video-link{display:inline-block;margin-top:.65rem;font-weight:800}
+.poe-u0-interactive .choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe-u0-interactive .status-chip{display:inline-block;border-radius:999px;padding:.25rem .55rem;font-weight:800;background:#e8f0f5;border:1px solid #aebfcc}
+@media(max-width:900px){.poe-u0-interactive .poe-u0-workspace,.poe-u0-interactive .poe-u0-workspace.equal{grid-template-columns:1fr}.poe-u0-interactive .poe-u0-chain{grid-template-columns:1fr}.poe-u0-interactive .poe-u0-stage:not(:last-child)::after{content:"↓";right:50%;top:auto;bottom:-.65rem;transform:translate(50%,50%)}}
+@media(max-width:620px){.poe-u0-interactive .choice-grid,.poe-u0-interactive .poe-u0-metric-grid{grid-template-columns:1fr}.poe-u0-interactive th,.poe-u0-interactive td{padding:.55rem}.poe-u0-interactive .poe-u0-sort-item{grid-template-columns:1fr}.poe-u0-interactive .poe-u0-sort-controls{justify-content:flex-end}}
+@media(max-width:760px){
+  body.immersive-unit-page .unit-lesson-table thead{display:none}
+  body.immersive-unit-page .unit-lesson-table,body.immersive-unit-page .unit-lesson-table tbody,body.immersive-unit-page .unit-lesson-table tr,body.immersive-unit-page .unit-lesson-table td{display:block;width:100%}
+  body.immersive-unit-page .unit-lesson-table tr{border:2px solid #b7c7d3;border-radius:14px;background:#fff;margin-bottom:1rem;padding:.65rem;box-shadow:0 4px 12px rgba(5,28,50,.08)}
+  body.immersive-unit-page .unit-lesson-table td{border:0!important;padding:.45rem .5rem!important}
+  body.immersive-unit-page .unit-lesson-table td::before{content:attr(data-label);display:block;font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#5a6670;margin-bottom:.2rem}
+  body.immersive-unit-page .unit-lesson-table td:last-child{display:flex;flex-wrap:wrap;gap:.45rem}
+}
