@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const DATA_URL = '../assets/data/resource-library.json?v=20260720-2';
+  const DATA_URL = '../assets/data/resource-library.json?v=20260730-1';
   const PAGE_SIZE = 30;
   const STORAGE_KEY = 'lockwoodstem-resource-favorites-v1';
   const state = { items: [], filtered: [], visible: PAGE_SIZE, favoritesOnly: false, favorites: new Set(), query: '', category: '', course: '', unit: '', format: '', sort: 'recommended' };
@@ -9,7 +9,7 @@
 
   const escapeHtml = (value='') => String(value).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   const normalize = (value='') => String(value).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
-  const openable = (format) => ['PDF','JPG','JPEG','PNG'].includes(format);
+  const openable = (format) => ['PDF','JPG','JPEG','PNG','HTML'].includes(format);
   const courseLabel = (course) => course === 'General' ? 'All courses' : course;
 
   function loadFavorites(){

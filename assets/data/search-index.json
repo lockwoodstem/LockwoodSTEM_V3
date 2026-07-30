@@ -1,6 +1,6 @@
 {
-  "version": "2026-07-28-adm-u4-mach3-fusion-v1",
-  "count": 690,
+  "version": "2026-07-30-python-pretest",
+  "count": 691,
   "items": [
     {
       "title": "Engineering academy courses",
@@ -5521,6 +5521,14 @@
       "section": "LockwoodSTEM",
       "description": "Interpret the teacher-approved Mach3 milling command subset used with the DMC2 Mini.",
       "searchText": "Mach3 G&M Code Reference | LockwoodSTEM Skip to main content LockwoodSTEM Student Engineering Hub Menu Courses Daily Agenda Resources Certifications FabLab About Challenges Home Courses ADM Unit 4 Resource Center Mach3 G&M Code Reference ADM Unit 4 Resource Mach3 G&M Code Reference Interpret the teacher-approved Mach3 milling command subset used with the DMC2 Mini. Back to Unit 4 DMC2 Mini Workflow Fusion → Mach3 → CNC Use only the teacher-approved machine profile, post processor, files, tools, stock, and procedures. Classroom Code Boundary This reference is for the teacher-approved DMC2 Mini Mach3 milling profile. A command may be supported by Mach3 but still be inappropriate for the classroom machine, tooling, spindle configuration, or current setup. Use only commands assigned by the teacher. Motion and coordinates Core G Codes G00 — rapid positioning; use only with verified clearance G01 — linear feed motion using F G02 / G03 — clockwise / counterclockwise circular interpolation when assigned G17 — XY plane G20 / G21 — inch / metric units G54 — teacher-approved work coordinate system G90 / G91 — absolute / incremental positioning G94 — feed per minute Machine states Safety and M Codes G40 — cancel cutter compensation G49 — cancel tool-length compensation when not used G80 — cancel canned cycle F — feed rate S — commanded spindle speed M03 — spindle clockwise only when the DMC2 Mini profile controls the spindle M05 — spindle stop only when configured M30 — program end and reset Instructional example Teacher-Reviewed Program Pattern (ADM U4 PRACTICE - NOT FOR MACHINE USE WITHOUT APPROVAL) G17 G21 G40 G49 G80 G90 G94 G54 G00 Z10.000 G00 X0.000 Y0.000 (M03 S____ only when configured and approved) G01 Z-1.000 F____ G01 X25.000 Y0.000 F____ G01 X25.000 Y15.000 G01 X0.000 Y15.000 G01 X0.000 Y0.000 G00 Z10.000 (M05 only when configured) M30 The numeric values are placeholders. Tool diameter, stock, origin, depth, feeds, speeds, and spindle behavior must come from the approved setup. Modal-state check Ask Before Every Run What units are active? Is positioning absolute or incremental? Which work offset is active? What plane is active? Are compensation and canned cycles canceled? What feed mode is active? Where is the tool now? What is the next Z movement? Mach3 file check Inspect the .tap File Correct program and revision Expected units Expected work offset Safe initial Z Correct minimum Z No unsupported commands Spindle behavior matches machine configuration Feeds and speeds approved Safe retract before rapid travel M30 at program end A student engineering hub for design, fabrication, and aerospace innovation. Courses Daily Agenda Resources Certifications FabLab About IED POE ADM Challenges ↑"
+    },
+    {
+      "title": "ADM Python Programming Pre-Test",
+      "url": "/resources/adm-python-programming-pretest",
+      "type": "Interactive Resource",
+      "section": "Resources",
+      "description": "Interactive Advanced Manufacturing Python diagnostic covering fundamentals, control logic, loops, lists, functions, debugging, and manufacturing applications.",
+      "searchText": "ADM Python Programming Pre-Test Advanced Manufacturing interactive diagnostic variables data types input output operators conditionals loops lists functions debugging sensor conveyor robot automation manufacturing resources"
     }
   ]
 }

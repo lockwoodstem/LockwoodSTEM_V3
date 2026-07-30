@@ -1,28 +1,30 @@
 {
-  "version": "2026-07-27.1",
-  "total": 332,
+  "version": "2026-07-30-python-pretest",
+  "total": 333,
   "categories": [
-    "Templates",
-    "Editable Templates",
-    "Reference Guides",
-    "Course Documents",
-    "Project Briefs",
     "CAD Files",
-    "Presentations",
+    "Course Documents",
+    "Editable Templates",
     "Engineering Challenges",
-    "Resource Packs"
+    "Interactive Assessments",
+    "Presentations",
+    "Project Briefs",
+    "Reference Guides",
+    "Resource Packs",
+    "Templates"
   ],
   "courses": [
     "General",
-    "IED",
-    "POE",
     "ADM",
-    "Academy"
+    "Academy",
+    "IED",
+    "POE"
   ],
   "formats": [
     "DOCX",
     "F3D",
     "F3Z",
+    "HTML",
     "PDF",
     "PPTX",
     "XLSX",
@@ -4997,17 +4999,32 @@
     {
       "id": "fe41d1467a68",
       "title": "ADM Course Syllabus 2026-2027",
-      "description": "Review ADM course goals, VEX CTE Workcell and aerospace CNC expectations, grading, materials, robotics, CNC and fabrication safety, Fusion CAD/CAM, collaboration, artificial intelligence expectations, support, and the family acknowledgment.",
+      "description": "Review ADM course goals, VEX CTE Workcell expectations, grading, materials, robotics and workcell safety, collaboration, artificial intelligence expectations, support, and the family acknowledgment.",
       "category": "Course Documents",
       "course": "ADM",
       "unit": "",
       "format": "PDF",
-      "url": "../downloads/course-documents/ADM_Advanced_Manufacturing_Syllabus_2026-2027.pdf?v=20260729-unit4",
-      "size": "1.3 MB",
-      "sizeBytes": 1386564,
+      "url": "../downloads/course-documents/ADM_Advanced_Manufacturing_Syllabus_2026-2027.pdf",
+      "size": "272.1 KB",
+      "sizeBytes": 278617,
       "featured": true,
       "filename": "ADM_Advanced_Manufacturing_Syllabus_2026-2027.pdf",
-      "searchText": "ADM Course Syllabus 2026-2027 Course Documents ADM PDF ADM_Advanced_Manufacturing_Syllabus_2026-2027.pdf course syllabus 2026-2027 aerospace CNC manufacturing Fusion CAD CAM G&M code machining inspection"
+      "searchText": "ADM Course Syllabus 2026-2027 Course Documents ADM PDF ADM_Advanced_Manufacturing_Syllabus_2026-2027.pdf course syllabus 2026-2027"
+    },
+    {
+      "id": "cd8d9c96a7a9",
+      "title": "ADM Python Programming Pre-Test",
+      "description": "Interactive beginning-of-course diagnostic covering Python variables, data types, operators, conditionals, loops, lists, functions, debugging, and manufacturing automation logic.",
+      "category": "Interactive Assessments",
+      "course": "ADM",
+      "unit": "Course Start",
+      "format": "HTML",
+      "url": "../resources/adm-python-programming-pretest.html",
+      "size": "Interactive page",
+      "sizeBytes": 0,
+      "featured": true,
+      "filename": "adm-python-programming-pretest.html",
+      "searchText": "ADM Python Programming Pre-Test Interactive Assessments ADM Course Start HTML diagnostic variables data types input output operators comparisons conditionals loops lists functions debugging sensors conveyors robot automation manufacturing programming pretest"
     }
   ]
 }
