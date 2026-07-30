@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="cert-auth-checking" lang="en">
+<head>
+<title>Certifications | LockwoodSTEM</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../assets/css/styles.css" rel="stylesheet"/>
+<link href="../assets/css/certification-badges.css?v=4" rel="stylesheet"/>
+<script defer="" src="../assets/js/main.js"></script>
+<script src="auth-config.js?v=qa1"></script>
+<script defer="" src="auth.js?v=qa1"></script>
+<script defer="" src="auth-guard.js?v=qa1"></script>
+<script defer="" src="badges.js?v=qa1"></script>
+<meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/><link href="../assets/css/certification-progress.css?v=teacher2" rel="stylesheet"/><link href="../assets/css/certification-system-qa.css?v=qa1" rel="stylesheet"><link href="../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/></head>
+<body class="site-consistency-v4 certifications-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container nav">
+<a aria-label="LockwoodSTEM home" class="brand" href="../index.html">
+<img alt="LockwoodSTEM logo" class="brand-logo" src="../assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
+<span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+</a>
+<button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
+<ul class="nav-links" id="site-navigation">
+<li><a data-nav-section="courses" href="../courses.html">Courses</a></li><li><a data-nav-section="agenda" href="../agenda.html">Daily Agenda</a></li><li><a data-nav-section="resources" href="../resources/index.html">Resources</a></li><li><a aria-current="page" data-nav-section="certifications" href="index.html">Certifications</a></li><li><a data-nav-section="fablab" href="../fablab/index.html">FabLab</a></li><li><a data-nav-section="about" href="../about/index.html">About</a></li>
+<li><a data-nav-section="challenges" href="../challenge-library/index.html">Challenges</a></li></ul>
+</div>
+</header>
+<main id="main"><nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../index.html">Home</a></li><li aria-current="page">Certifications</li></ol></nav>
+<section class="page-hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">Certifications</div>
+<h1>Engineering certification hub</h1>
+<p>Certifications show readiness for course skills and, in some cases, supervised FabLab equipment access. Sign in is required. Passing score is 80% for all certifications.</p>
+<div class="hero-actions consistent-actions"><a class="btn consistent-action-link" href="account.html">My Account</a><a class="btn secondary consistent-action-link" href="badges.html">My Badges</a><a class="btn secondary consistent-action-link" href="teacher-login.html">Teacher Tools</a><button aria-label="Log out of certification account" class="btn secondary" data-cert-logout="" type="button">Log out</button></div>
+</div>
+</div>
+</section><section aria-live="polite" class="container cert-progress-section">
+<div class="cert-progress-shell" data-cert-progress-summary="">
+<p class="cert-progress-loading">Loading certification progress...</p>
+</div>
+</section>
+<section class="container">
+<div aria-label="Filter certifications" class="cert-filter-bar">
+<button class="cert-filter active" data-cert-filter="all" type="button">All</button>
+<button class="cert-filter" data-cert-filter="academic" type="button">Academic</button>
+<button class="cert-filter" data-cert-filter="professional" type="button">Professional</button>
+<button class="cert-filter" data-cert-filter="equipment" type="button">FabLab Equipment</button>
+<button class="cert-filter" data-cert-filter="earned" type="button">Earned</button>
+<button class="cert-filter" data-cert-filter="next" type="button">Needs Attention</button>
+</div><div class="grid three">
+<article class="card certification-card" data-cert-card="" data-cert-category="safety" data-cert-id="engineering-safety">
+<div class="cert-badge-wrap"><img alt="Engineering Safety certification badge" class="cert-badge" loading="lazy" src="../assets/img/certification-badges/engineering-safety.png?v=6"/></div>
+<div class="cert-card-body">
+<span class="status-pill ready">Unlocks FabLab equipment/tool access</span>
+<h3>Engineering Safety</h3>
+<p>Required tool-readiness certification for safe work habits and lab expectations.</p>
+<div class="cert-card-progress" data-card-progress=""><span class="cert-state-chip loading">Loading progress...</span></div><a class="btn dark small" href="engineering-safety.html">Start Certification</a>
+</div>
+</article>
+<article class="card certification-card" data-cert-card="" data-cert-category="academic" data-cert-id="technical-sketching">
+<div class="cert-badge-wrap"><img alt="Technical Sketching certification badge" class="cert-badge" loading="lazy" src="../assets/img/certification-badges/technical-sketching.png?v=6"/></div>
+<div class="cert-card-body">
+<span class="status-pill">Academic certification only</span>
+<h3>Technical Sketching</h3>
+<p>Academic certification for line conventions, isometric sketching, orthographic views, and basic dimensions.</p>
+<div class="cert-card-progress" data-card-progress=""><span class="cert-state-chip loading">Loading progress...</span></div><a class="btn dark small" href="technical-sketching.html">Open Certification</a>
+</div>
+</article>
+<article class="card certification-card" data-cert-card="" data-cert-category="academic" data-cert-id="engineering-documentation">
+<div class="cert-badge-wrap"><img alt="Engineering Documentation certification badge" class="cert-badge" loading="lazy" src="../assets/img/certification-badges/engineering-documentation.png?v=6"/></div>
+<div class="cert-card-body">
+<span class="status-pill">Academic certification only</span>
+<h3>Engineering Documentation</h3>
+<p>Academic certification for BOMs, assembly notes, fasteners, adhesives, tolerances, and revision control.</p>
+<div class="cert-card-progress" data-card-progress=""><span class="cert-state-chip loading">Loading progress...</span></div><a class="btn dark small" href="engineering-documentation.html">Open Certification</a>
+</div>
+</article>
+<article class="card certification-card" data-cert-card="" data-cert-category="academic" data-cert-id="fusion-cad-level-1">
+<div class="cert-badge-wrap"><img alt="Fusion CAD Level 1 certification badge" class="cert-badge" loading="lazy" src="../assets/img/certification-badges/fusion-cad-level-1.png?v=6"/></div>
+<div class="cert-card-body">
+<span class="status-pill">Academic certification only</span>
+<h3>Fusion CAD Level 1</h3>
+<p>Academic CAD certification for sketches, constraints, dimensions, and basic part features.</p>
+<div class="cert-card-progress" data-card-progress=""><span class="cert-state-chip loading">Loading progress...</span></div><a class="btn dark small" href="fusion-cad-level-1.html">Open Certification</a>
+</div>
+</article>
+<article class="card certification-card" data-cert-card="" data-cert-category="academic" data-cert-id="engineering-drawings">
+<div class="cert-badge-wrap"><img alt="Engineering Drawings certification badge" class="cert-badge" loading="lazy" src="../assets/img/certification-badges/engineering-drawings.png?v=6"/></div>
+<div class="cert-card-body">
+<span class="status-pill">Academic certification only</span>
+<h3>Engineering Drawings</h3>
+<p>Academic certification for views, dimensions, notes, section/detail views, and manufacturing drawings.</p>
+<div class="cert-card-progress" data-card-progress=""><span class="cert-state-chip loading">Loading progress...</span></div><a class="btn dark small" href="engineering-drawings.html">Open Certification</a>
+</div>
+</article>
+<article class="card certification-card" data-cert-card="" data-cert-category="academic" data-cert-id="fusion-cad-level-2">
+<div class="cert-badge-wrap"><img alt="Fusion CAD Level 2 certification badge" class="cert-badge" loading="lazy" src="../assets/img/certification-badges/fusion-cad-level-2.png?v=6"/></div>
+<div class="cert-card-body">
+<span class="status-pill">Academic certification only</span>
+<h3>Fusion CAD Level 2</h3>
+<p>Academic CAD certification for components, joints, assemblies, motion, and exploded views.</p>
+<div class="cert-card-progress" data-card-progress=""><span class="cert-state-chip loading">Loading progress...</span></div><a class="btn dark small" href="fusion-cad-level-2.html">Open Certification</a>
+</div>
+</article>
+<article class="card certification-card" data-cert-card="" data-cert-category="professional" data-cert-id="design-review">
+<div class="cert-badge-wrap"><img alt="Design Review certification badge" class="cert-badge" loading="lazy" src="../assets/img/certification-badges/design-review.png?v=6"/></div>
+<div class="cert-card-body">
+<span class="status-pill">Professional skill certification</span>
+<h3>Design Review</h3>
+<p>Professional engineering certification for evidence-based reviews, feedback, risks, action items, and revision planning.</p>
+<div class="cert-card-progress" data-card-progress=""><span class="cert-state-chip loading">Loading progress...</span></div><a class="btn dark small" href="design-review.html">Start Certification</a>
+</div>
+</article>
+<article class="card certification-card" data-cert-card="" data-cert-category="equipment" data-cert-id="3d-printing">
+<div class="cert-badge-wrap"><img alt="3D Printing certification badge" class="cert-badge" loading="lazy" src="../assets/img/certification-badges/3d-printing.png?v=6"/></div>
+<div class="cert-card-body">
+<span class="status-pill ready">Unlocks FabLab equipment/tool access</span>
+<h3>3D Printing</h3>
+<p>Tool-access certification for print safety, slicing basics, orientation, supports, and print readiness.</p>
+<div class="cert-card-progress" data-card-progress=""><span class="cert-state-chip loading">Loading progress...</span></div><a class="btn dark small" href="3d-printing.html">Open Certification</a>
+</div>
+</article>
+<article class="card certification-card" data-cert-card="" data-cert-category="equipment" data-cert-id="laser-cutting">
+<div class="cert-badge-wrap"><img alt="Laser Cutting certification badge" class="cert-badge" loading="lazy" src="../assets/img/certification-badges/laser-cutting.png?v=6"/></div>
+<div class="cert-card-body">
+<span class="status-pill ready">Unlocks FabLab equipment/tool access</span>
+<h3>Laser Cutting</h3>
+<p>Tool-access certification for laser safety, material approval, file setup, and supervised operation.</p>
+<div class="cert-card-progress" data-card-progress=""><span class="cert-state-chip loading">Loading progress...</span></div><a class="btn dark small" href="laser-cutting.html">Open Certification</a>
+</div>
+</article>
+<article class="card certification-card" data-cert-card="" data-cert-category="equipment" data-cert-id="cnc">
+<div class="cert-badge-wrap"><img alt="CNC certification badge" class="cert-badge" loading="lazy" src="../assets/img/certification-badges/cnc.png?v=6"/></div>
+<div class="cert-card-body">
+<span class="status-pill ready">Unlocks FabLab equipment/tool access</span>
+<h3>CNC</h3>
+<p>Tool-access certification for CNC safety, setup awareness, toolpaths, workholding, and supervised operation.</p>
+<div class="cert-card-progress" data-card-progress=""><span class="cert-state-chip loading">Loading progress...</span></div><a class="btn dark small" href="cnc.html">Open Certification</a>
+</div>
+</article>
+<article class="card certification-card" data-cert-card="" data-cert-category="equipment" data-cert-id="drill-press">
+<div class="cert-badge-wrap"><img alt="Drill Press certification badge" class="cert-badge" loading="lazy" src="../assets/img/certification-badges/drill-press.png?v=6"/></div>
+<div class="cert-card-body">
+<span class="status-pill ready">Unlocks FabLab equipment/tool access</span>
+<h3>Drill Press</h3>
+<p>Tool-access certification for drill press safety, material holding, bit selection, and operation expectations.</p>
+<div class="cert-card-progress" data-card-progress=""><span class="cert-state-chip loading">Loading progress...</span></div><a class="btn dark small" href="drill-press.html">Open Certification</a>
+</div>
+</article>
+<article class="card certification-card" data-cert-card="" data-cert-category="equipment" data-cert-id="soldering">
+<div class="cert-badge-wrap"><img alt="Soldering certification badge" class="cert-badge" loading="lazy" src="../assets/img/certification-badges/soldering.png?v=6"/></div>
+<div class="cert-card-body">
+<span class="status-pill ready">Unlocks FabLab equipment/tool access</span>
+<h3>Soldering</h3>
+<p>Tool-access certification for soldering safety, heat control, ventilation, and clean joints.</p>
+<div class="cert-card-progress" data-card-progress=""><span class="cert-state-chip loading">Loading progress...</span></div><a class="btn dark small" href="soldering.html">Open Certification</a>
+</div>
+</article>
+<article class="card certification-card" data-cert-card="" data-cert-category="equipment" data-cert-id="hand-cutting-tools">
+<div class="cert-badge-wrap"><img alt="Hand &amp; Cutting Tools certification badge" class="cert-badge" loading="lazy" src="../assets/img/certification-badges/hand-cutting-tools.png?v=6"/></div>
+<div class="cert-card-body">
+<span class="status-pill ready">Unlocks FabLab equipment/tool access</span>
+<h3>Hand &amp; Cutting Tools</h3>
+<p>Tool-access certification for safe use of hand tools, cutting tools, clamps, and shop procedures.</p>
+<div class="cert-card-progress" data-card-progress=""><span class="cert-state-chip loading">Loading progress...</span></div><a class="btn dark small" href="hand-cutting-tools.html">Open Certification</a>
+</div>
+</article>
+</div>
+</section>
+
+<section class="container">
+  <article class="teacher-access-card">
+    <div class="eyebrow">Teacher Access</div>
+    <h2>Review student badges and approve hands-on certifications</h2>
+    <p>Teacher accounts can search student records, view all earned and locked certification badges, and approve the supervised portion of equipment certifications.</p>
+    <div class="teacher-access-actions">
+      <a class="btn" href="teacher-login.html">Teacher Login</a>
+      <a class="btn secondary" href="teacher-register.html">Create Teacher Account</a>
+    </div>
+  </article>
+</section>
+</main>
+<footer class="footer">
+<div class="container footer-grid">
+<div>
+<img alt="LockwoodSTEM logo" class="footer-logo" src="../assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
+<div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div>
+</div>
+<div class="footer-links"><a href="../courses.html">Courses</a> <a href="../agenda.html">Daily Agenda</a> <a href="../resources/index.html">Resources</a> <a href="index.html">Certifications</a> <a href="../fablab/index.html">FabLab</a> <a href="../about/index.html">About</a><a href="../courses/ied/index.html">IED</a><a href="../courses/poe/index.html">POE</a><a href="../courses/adm/index.html">ADM</a><a href="../challenge-library/index.html">Challenges</a></div>
+</div>
+</footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body>
+</html>

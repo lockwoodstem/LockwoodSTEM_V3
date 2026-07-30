@@ -1,0 +1,437 @@
+{
+  "generated": "2026-07-28",
+  "lessons": [
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.1",
+      "type": "Activity",
+      "title": "Assembly Line",
+      "url": "/courses/adm/units/unit-1/activity-1-1-1"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.2",
+      "type": "Activity",
+      "title": "6-Axis Arm",
+      "url": "/courses/adm/units/unit-1/activity-1-1-2"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.3",
+      "type": "Activity",
+      "title": "Pick and Place",
+      "url": "/courses/adm/units/unit-1/activity-1-1-3"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.4",
+      "type": "Activity",
+      "title": "Coding Movement",
+      "url": "/courses/adm/units/unit-1/activity-1-1-4"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.5",
+      "type": "Activity",
+      "title": "Controlled Path",
+      "url": "/courses/adm/units/unit-1/activity-1-1-5"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.6",
+      "type": "Activity",
+      "title": "Shapes",
+      "url": "/courses/adm/units/unit-1/activity-1-1-6"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.7",
+      "type": "Activity",
+      "title": "Absolute and Relative Movement",
+      "url": "/courses/adm/units/unit-1/activity-1-1-7"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.8",
+      "type": "Project",
+      "title": "Decreasing Spirals",
+      "url": "/courses/adm/units/unit-1/project-1-1-8"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.2.1",
+      "type": "Activity",
+      "title": "Career Exploration",
+      "url": "/courses/adm/units/unit-1/activity-1-2-1"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.2.2",
+      "type": "Activity",
+      "title": "Transporting and Palletizing Objects",
+      "url": "/courses/adm/units/unit-1/activity-1-2-2"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.2.3",
+      "type": "Project",
+      "title": "Stacking Objects",
+      "url": "/courses/adm/units/unit-1/project-1-2-3"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.3.1",
+      "type": "Problem",
+      "title": "Pack and Ship Challenge",
+      "url": "/courses/adm/units/unit-1/problem-1-3-1"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.1",
+      "type": "Activity",
+      "title": "Industrial Workcell",
+      "url": "/courses/adm/units/unit-2/activity-2-1-1"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.2",
+      "type": "Activity",
+      "title": "Workcell Safety",
+      "url": "/courses/adm/units/unit-2/activity-2-1-2"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.3",
+      "type": "Activity",
+      "title": "Sorting by Color",
+      "url": "/courses/adm/units/unit-2/activity-2-1-3"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.4",
+      "type": "Activity",
+      "title": "Conditionals and Loops",
+      "url": "/courses/adm/units/unit-2/activity-2-1-4"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.5",
+      "type": "Activity",
+      "title": "Material Transportation",
+      "url": "/courses/adm/units/unit-2/activity-2-1-5"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.6",
+      "type": "Activity",
+      "title": "Pneumatics",
+      "url": "/courses/adm/units/unit-2/activity-2-1-6"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.7",
+      "type": "Project",
+      "title": "Sorting Challenge",
+      "url": "/courses/adm/units/unit-2/project-2-1-7"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.2.1",
+      "type": "Activity",
+      "title": "Machine Vision",
+      "url": "/courses/adm/units/unit-2/activity-2-2-1"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.2.2",
+      "type": "Activity",
+      "title": "Bring Your Own Sensors",
+      "url": "/courses/adm/units/unit-2/activity-2-2-2"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.2.3",
+      "type": "Activity",
+      "title": "Sensor Applications",
+      "url": "/courses/adm/units/unit-2/activity-2-2-3"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.2.4",
+      "type": "Project",
+      "title": "Handshaking",
+      "url": "/courses/adm/units/unit-2/project-2-2-4"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.3.1",
+      "type": "Activity",
+      "title": "Predictive Maintenance",
+      "url": "/courses/adm/units/unit-2/activity-2-3-1"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.3.2",
+      "type": "Activity",
+      "title": "Maximizing Productivity",
+      "url": "/courses/adm/units/unit-2/activity-2-3-2"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.3.3",
+      "type": "Project",
+      "title": "Optimization Impact Study",
+      "url": "/courses/adm/units/unit-2/project-2-3-3"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.4.1",
+      "type": "Problem",
+      "title": "Coordinated Movement",
+      "url": "/courses/adm/units/unit-2/problem-2-4-1"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.1.1",
+      "type": "Activity",
+      "title": "Digital Twin Development",
+      "url": "/courses/adm/units/unit-3/activity-3-1-1"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.1.2",
+      "type": "Activity",
+      "title": "Virtual World",
+      "url": "/courses/adm/units/unit-3/activity-3-1-2"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.1.3",
+      "type": "Activity",
+      "title": "Modeling Kinematics",
+      "url": "/courses/adm/units/unit-3/activity-3-1-3"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.1.4",
+      "type": "Activity",
+      "title": "The Right Robot for the Job",
+      "url": "/courses/adm/units/unit-3/activity-3-1-4"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.1.5",
+      "type": "Project",
+      "title": "An Incomplete Facility",
+      "url": "/courses/adm/units/unit-3/project-3-1-5"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.1",
+      "type": "Activity",
+      "title": "Simulation Kinematics",
+      "url": "/courses/adm/units/unit-3/activity-3-2-1"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.2",
+      "type": "Activity",
+      "title": "Don’t Crash!",
+      "url": "/courses/adm/units/unit-3/activity-3-2-2"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.3",
+      "type": "Activity",
+      "title": "Conveyor Flow and Motion Control",
+      "url": "/courses/adm/units/unit-3/activity-3-2-3"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.4",
+      "type": "Activity",
+      "title": "Offline Programming",
+      "url": "/courses/adm/units/unit-3/activity-3-2-4"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.5",
+      "type": "Activity",
+      "title": "Sorting Silicon Boules",
+      "url": "/courses/adm/units/unit-3/activity-3-2-5"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.6",
+      "type": "Activity",
+      "title": "Digital Twin Analysis",
+      "url": "/courses/adm/units/unit-3/activity-3-2-6"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.7",
+      "type": "Project",
+      "title": "Circuit Assembly Challenge",
+      "url": "/courses/adm/units/unit-3/project-3-2-7"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.3.1",
+      "type": "Problem",
+      "title": "Factory in Motion",
+      "url": "/courses/adm/units/unit-3/problem-3-3-1"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.1.1",
+      "type": "Activity",
+      "title": "Aerospace Components as Manufactured Systems",
+      "url": "/courses/adm/units/unit-4/activity-4-1-1"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.1.2",
+      "type": "Activity",
+      "title": "Aerospace Component Analysis",
+      "url": "/courses/adm/units/unit-4/activity-4-1-2"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.1.3",
+      "type": "Activity",
+      "title": "Design for Aerospace Manufacturability",
+      "url": "/courses/adm/units/unit-4/activity-4-1-3"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.1.4",
+      "type": "Activity",
+      "title": "Aerospace Manufacturing Calculations",
+      "url": "/courses/adm/units/unit-4/activity-4-1-4"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.1.5",
+      "type": "Project",
+      "title": "Aerospace Component Requirements Review",
+      "url": "/courses/adm/units/unit-4/project-4-1-5"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.2.1",
+      "type": "Activity",
+      "title": "CNC Mill Anatomy, Safety, and Coordinate Systems",
+      "url": "/courses/adm/units/unit-4/activity-4-2-1"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.2.2",
+      "type": "Activity",
+      "title": "G&M Code for Aerospace Manufacturing",
+      "url": "/courses/adm/units/unit-4/activity-4-2-2"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.2.3",
+      "type": "Activity",
+      "title": "Manual Toolpath Programming",
+      "url": "/courses/adm/units/unit-4/activity-4-2-3"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.2.4",
+      "type": "Project",
+      "title": "Aerospace Toolpath Coding Challenge",
+      "url": "/courses/adm/units/unit-4/project-4-2-4"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.3.1",
+      "type": "Activity",
+      "title": "CAD Design of the Aerospace Component",
+      "url": "/courses/adm/units/unit-4/activity-4-3-1"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.3.2",
+      "type": "Activity",
+      "title": "Aerospace Component Technical Drawing",
+      "url": "/courses/adm/units/unit-4/activity-4-3-2"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.3.3",
+      "type": "Activity",
+      "title": "CAM Setup and Machining Strategy",
+      "url": "/courses/adm/units/unit-4/activity-4-3-3"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.3.4",
+      "type": "Activity",
+      "title": "Simulation, Post-Processing, and Production Approval",
+      "url": "/courses/adm/units/unit-4/activity-4-3-4"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.3.5",
+      "type": "Problem",
+      "title": "Aerospace Component CNC Manufacturing Challenge",
+      "url": "/courses/adm/units/unit-4/problem-4-3-5"
+    }
+  ]
+}
