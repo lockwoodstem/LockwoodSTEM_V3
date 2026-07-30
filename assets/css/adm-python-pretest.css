@@ -120,3 +120,128 @@
 }
 .python-pretest-page [hidden]{display:none!important;}
 .python-pretest-option > span:last-child{color:#1f3449!important;line-height:1.55;}
+
+
+/* Accessibility and visibility hardening — loaded after shared site styles. */
+.python-pretest-page main{color:#1f3449;}
+.python-pretest-page .python-pretest-start,
+.python-pretest-page .python-pretest-quiz,
+.python-pretest-page .python-pretest-results{color:#1f3449;}
+.python-pretest-page .python-pretest-start > p,
+.python-pretest-page #resultsStudentLine,
+.python-pretest-page .python-pretest-readiness p{color:#425b73;}
+.python-pretest-page .python-pretest-directions,
+.python-pretest-page .python-pretest-directions ol,
+.python-pretest-page .python-pretest-directions li{color:#263b50!important;}
+.python-pretest-page .python-pretest-directions li::marker{color:#6c5014;}
+.python-pretest-page .python-pretest-skill-list,
+.python-pretest-page .python-pretest-skill-list li{color:#33485d;}
+.python-pretest-page .python-pretest-navigator,
+.python-pretest-page .python-pretest-question-card,
+.python-pretest-page .python-pretest-domain-card,
+.python-pretest-page .python-pretest-next-step{color:#1f3449;}
+.python-pretest-page .python-pretest-option{color:#1f3449;}
+.python-pretest-page .python-pretest-option > span:last-child{color:#1f3449!important;}
+.python-pretest-page .python-pretest-form-grid input::placeholder{color:#66788a;opacity:1;}
+.python-pretest-page .btn.light{background:#ffffff;color:#0b315f;border-color:#9fb2c6;box-shadow:none;}
+.python-pretest-page .btn.light:hover,
+.python-pretest-page .btn.light:focus{background:#eaf2fa;color:#071f3b;border-color:#527da4;}
+.python-pretest-page .btn:disabled{opacity:.58;cursor:not-allowed;transform:none;box-shadow:none;}
+.python-pretest-page .python-pretest-text-button{color:#124e7d;}
+.python-pretest-page .python-pretest-copy-status{color:#175c31;}
+.python-pretest-page :focus-visible{outline:3px solid #d8b654;outline-offset:3px;}
+
+/* 2026-07-30 visibility pass: keep all light-panel text readable even when
+   shared styles or browser text-fill rules are active. */
+.python-pretest-page{color-scheme:light;}
+.python-pretest-page .python-pretest-intro .card,
+.python-pretest-page .python-pretest-start,
+.python-pretest-page .python-pretest-quiz,
+.python-pretest-page .python-pretest-results,
+.python-pretest-page .python-pretest-teacher-note .card{
+  color:#1f3449!important;
+  -webkit-text-fill-color:#1f3449!important;
+}
+.python-pretest-page .python-pretest-intro .card p,
+.python-pretest-page .python-pretest-intro .card li,
+.python-pretest-page .python-pretest-start > p,
+.python-pretest-page .python-pretest-readiness p,
+.python-pretest-page #resultsStudentLine,
+.python-pretest-page .python-pretest-teacher-note .card p{
+  color:#425b73!important;
+  -webkit-text-fill-color:#425b73!important;
+  opacity:1!important;
+}
+.python-pretest-page .python-pretest-directions,
+.python-pretest-page .python-pretest-directions h3,
+.python-pretest-page .python-pretest-directions ol,
+.python-pretest-page .python-pretest-directions li{
+  color:#263b50!important;
+  -webkit-text-fill-color:#263b50!important;
+  opacity:1!important;
+}
+.python-pretest-page .python-pretest-directions li::marker{
+  color:#6c5014!important;
+  -webkit-text-fill-color:#6c5014!important;
+}
+.python-pretest-page .python-pretest-form-grid label,
+.python-pretest-page .python-pretest-form-grid label span,
+.python-pretest-page .python-pretest-navigator,
+.python-pretest-page .python-pretest-navigator h2,
+.python-pretest-page .python-pretest-nav-key,
+.python-pretest-page .python-pretest-question-card,
+.python-pretest-page .python-pretest-question-card h2,
+.python-pretest-page .python-pretest-question-meta,
+.python-pretest-page .python-pretest-domain-card,
+.python-pretest-page .python-pretest-domain-card h3,
+.python-pretest-page .python-pretest-domain-card p,
+.python-pretest-page .python-pretest-next-step,
+.python-pretest-page .python-pretest-next-step h3,
+.python-pretest-page .python-pretest-next-step p{
+  -webkit-text-fill-color:currentColor!important;
+  opacity:1!important;
+}
+.python-pretest-page .python-pretest-option,
+.python-pretest-page .python-pretest-option > span:last-child{
+  color:#1f3449!important;
+  -webkit-text-fill-color:#1f3449!important;
+  opacity:1!important;
+}
+.python-pretest-page .python-pretest-option-letter{
+  color:#0c4a78!important;
+  -webkit-text-fill-color:#0c4a78!important;
+}
+.python-pretest-page .python-pretest-form-grid input,
+.python-pretest-page .python-pretest-form-grid select{
+  color:#182a3d!important;
+  -webkit-text-fill-color:#182a3d!important;
+  background:#fff!important;
+}
+.python-pretest-page .python-pretest-form-grid input::placeholder{
+  color:#66788a!important;
+  -webkit-text-fill-color:#66788a!important;
+  opacity:1!important;
+}
+.python-pretest-page .python-pretest-status-pill,
+.python-pretest-page .python-pretest-domain{
+  -webkit-text-fill-color:currentColor!important;
+}
+.python-pretest-page .python-pretest-summary-box,
+.python-pretest-page .python-pretest-summary-box pre{
+  color:#f2f7fb!important;
+  -webkit-text-fill-color:#f2f7fb!important;
+}
+.python-pretest-page .python-pretest-summary-box h2{
+  color:#e6c86c!important;
+  -webkit-text-fill-color:#e6c86c!important;
+}
+.python-pretest-page .python-pretest-score-ring,
+.python-pretest-page .python-pretest-score-ring strong{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+.python-pretest-page .python-pretest-score-ring span{
+  color:#ead07f!important;
+  -webkit-text-fill-color:#ead07f!important;
+}
+
