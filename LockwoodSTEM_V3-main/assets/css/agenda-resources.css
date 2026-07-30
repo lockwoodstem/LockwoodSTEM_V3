@@ -1,0 +1,91 @@
+/* LockwoodSTEM agenda lesson-resource panel — build 20260719-1 */
+#agendaApp .agenda-inline-lesson-bar {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: .85rem 1.1rem !important;
+  margin: 1rem 0 1.1rem !important;
+  padding: 1rem 1.1rem !important;
+  border: 2px solid #d5ad4b !important;
+  border-radius: 16px !important;
+  background: linear-gradient(135deg, #07162b 0%, #10274a 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 26px rgba(2, 10, 28, .18) !important;
+  position: relative !important;
+  z-index: 6 !important;
+}
+#agendaApp .agenda-inline-lesson-copy {
+  display: flex !important;
+  min-width: 210px !important;
+  flex: 1 1 260px !important;
+  flex-direction: column !important;
+  gap: .25rem !important;
+}
+#agendaApp .agenda-inline-lesson-label {
+  display: block !important;
+  color: #f5c451 !important;
+  font-size: .8rem !important;
+  line-height: 1.2 !important;
+  font-weight: 950 !important;
+  letter-spacing: .09em !important;
+  text-transform: uppercase !important;
+}
+#agendaApp .agenda-inline-lesson-help {
+  display: block !important;
+  color: #e2e8f0 !important;
+  font-size: .88rem !important;
+  line-height: 1.35 !important;
+  font-weight: 650 !important;
+}
+#agendaApp .agenda-inline-lesson-buttons {
+  display: flex !important;
+  flex: 0 1 auto !important;
+  flex-wrap: wrap !important;
+  gap: .65rem !important;
+}
+#agendaApp .agenda-inline-lesson-buttons a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 44px !important;
+  padding: .72rem 1rem !important;
+  border: 1px solid rgba(255,255,255,.30) !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  background: rgba(255,255,255,.09) !important;
+  font-size: .86rem !important;
+  line-height: 1.2 !important;
+  font-weight: 900 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+#agendaApp .agenda-inline-lesson-buttons .agenda-inline-primary {
+  border-color: #f5c451 !important;
+  background: #f5c451 !important;
+  color: #07162b !important;
+}
+#agendaApp .agenda-inline-lesson-buttons a:hover,
+#agendaApp .agenda-inline-lesson-buttons a:focus-visible {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.05) !important;
+  outline: 3px solid rgba(245,196,81,.35) !important;
+  outline-offset: 2px !important;
+}
+@media (max-width: 720px) {
+  #agendaApp .agenda-inline-lesson-bar {
+    align-items: stretch !important;
+    flex-direction: column !important;
+  }
+  #agendaApp .agenda-inline-lesson-buttons {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+  #agendaApp .agenda-inline-lesson-buttons a {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "lessons_updated": 22,
+  "changed_files": [
+    "courses/ied/units/unit-1/lesson-1-1.html",
+    "courses/ied/units/unit-1/lesson-1-2.html",
+    "courses/ied/units/unit-1/lesson-1-3.html",
+    "courses/ied/units/unit-1/lesson-1-4.html",
+    "courses/ied/units/unit-1/lesson-1-5.html",
+    "courses/ied/units/unit-1/lesson-1-6.html",
+    "courses/ied/units/unit-1/lesson-1-7.html",
+    "courses/ied/units/unit-1/lesson-1-8.html",
+    "courses/ied/units/unit-1/lesson-1-9.html",
+    "courses/ied/units/unit-1/lesson-1-10.html",
+    "courses/ied/units/unit-1/lesson-1-11.html",
+    "courses/ied/units/unit-1/lesson-1-12.html",
+    "courses/ied/units/unit-1/lesson-1-13.html",
+    "courses/ied/units/unit-1/lesson-1-14.html",
+    "courses/ied/units/unit-1/lesson-1-15.html",
+    "courses/ied/units/unit-1/lesson-1-16.html",
+    "courses/ied/units/unit-1/lesson-1-17.html",
+    "courses/ied/units/unit-1/lesson-1-18.html",
+    "courses/ied/units/unit-1/lesson-1-19.html",
+    "courses/ied/units/unit-1/lesson-1-20.html",
+    "courses/ied/units/unit-1/lesson-1-21.html",
+    "courses/ied/units/unit-1/lesson-1-22.html"
+  ],
+  "engineering_workflow_occurrences": 0,
+  "generic_apply_the_skill_occurrences": 0,
+  "generic_deliverable_phrase_occurrences": 0,
+  "model_sections_unchanged": {
+    "2": true,
+    "3": true,
+    "4": true,
+    "6": true
+  },
+  "lesson_summary": [
+    {
+      "lesson": "1.1",
+      "task_title": "Create a Sketch That Explains an Idea",
+      "submit_title": "Sketch Communication Entry",
+      "task_steps": 4,
+      "deliverables": 4
+    },
+    {
+      "lesson": "1.2",
+      "task_title": "Build a Line-Convention Reference Drawing",
+      "submit_title": "Line-Convention Reference Sheet",
+      "task_steps": 4,
+      "deliverables": 4
+    },
+    {
+      "lesson": "1.3",
+      "task_title": "Reveal the Features You Cannot See",
+      "submit_title": "Object-Line and Hidden-Line Analysis",
+      "task_steps": 4,
+      "deliverables": 4
+    },
+    {
+      "lesson": "1.4",
+      "task_title": "Locate Centers and Axes of Symmetry",
+      "submit_title": "Centerline and Symmetry Study",
+      "task_steps": 4,
+      "deliverables": 4
+    },
+    {
+      "lesson": "1.5",
+      "task_title": "Construct a Clean Isometric Sketch",
+      "submit_title": "Isometric Construction Drawing",
+      "task_steps": 4,
+      "deliverables": 4
+    },
+    {
+      "lesson": "1.6",
+      "task_title": "Sketch Curves and Show Surface Depth",
+      "submit_title": "Curved Isometric and Shading Study",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.7",
+      "task_title": "Translate One Object into Three Projections",
+      "submit_title": "Three-View Orthographic Set",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.8",
+      "task_title": "Complete the Missing Standard View",
+      "submit_title": "Missing-View Reconstruction",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.9",
+      "task_title": "Dimension a Part for Manufacturing",
+      "submit_title": "Fully Dimensioned Technical Sketch",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.10",
+      "task_title": "Create an Aerospace Bracket Sketch Package",
+      "submit_title": "Aerospace Bracket Drawing Package",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.11",
+      "task_title": "Reverse Engineer the Rocket Assembly",
+      "submit_title": "Rocket Reverse-Engineering Record",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.12",
+      "task_title": "Test Whether Documentation Can Stand Alone",
+      "submit_title": "Documentation Test and Revision",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.13",
+      "task_title": "Select and Verify Measurement Tools",
+      "submit_title": "Measurement Tool Investigation",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.14",
+      "task_title": "Determine Whether Parts Meet Tolerance",
+      "submit_title": "Tolerance and Inspection Analysis",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.15",
+      "task_title": "Select a Connection Method for the Rocket",
+      "submit_title": "Adhesive and Fastener Decision",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.16",
+      "task_title": "Map the Rocket as an Interacting System",
+      "submit_title": "Rocket Assembly System Map",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.17",
+      "task_title": "Create the Rocket Assembly Record",
+      "submit_title": "Rocket Assembly Documentation Record",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.18",
+      "task_title": "Draw a Functional Rocket Exploded View",
+      "submit_title": "Rocket Exploded-View Drawing",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.19",
+      "task_title": "Build and Verify the Rocket Bill of Materials",
+      "submit_title": "Verified Rocket Bill of Materials",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.20",
+      "task_title": "Write Reassembly Instructions Another Team Can Follow",
+      "submit_title": "Tested Rocket Reassembly Instructions",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.21",
+      "task_title": "Develop an Engineering Change Request",
+      "submit_title": "Rocket Engineering Change Request",
+      "task_steps": 4,
+      "deliverables": 5
+    },
+    {
+      "lesson": "1.22",
+      "task_title": "Present and Defend the Rocket Improvement Proposal",
+      "submit_title": "Final Rocket Assembly Proposal Package",
+      "task_steps": 4,
+      "deliverables": 6
+    }
+  ],
+  "unique_task_titles": 22,
+  "unique_submission_titles": 22,
+  "student_task_sections": 22,
+  "student_deliverable_sections": 22
+}
