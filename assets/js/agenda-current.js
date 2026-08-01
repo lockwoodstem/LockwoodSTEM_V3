@@ -1,4 +1,4 @@
-/* LockwoodSTEM agenda build 20260801-2 — upcoming due dates integration */
+/* LockwoodSTEM agenda build 20260801-3 — next three due dates */
 const config = window.LOCKWOOD_AGENDA_CONFIG || {};
 const csvUrls = config.csvUrls || {};
 const quotesCsvUrl = config.quotesCsvUrl || "";
@@ -374,16 +374,13 @@ function renderDueDateItem(item, referenceDate) {
   const dueClass = item._dueDate === referenceDate ? "due-today" : (item._dueDate === addDaysISO(referenceDate, 1) ? "due-tomorrow" : "due-later");
   const titleHTML = link ? `<a class="due-date-title" href="${escapeHTML(link)}" target="_blank" rel="noopener">${escapeHTML(title)}</a>` : `<span class="due-date-title">${escapeHTML(title)}</span>`;
   const meta = [type, points ? `${points} points` : ""].filter(Boolean).map(escapeHTML).join(" • ");
-  return `<article class="due-date-item ${dueClass}"><div class="due-date-topline"><span class="due-date-badge">${escapeHTML(dueDateLabel(item._dueDate, referenceDate))}</span>${meta ? `<span class="due-date-meta">${meta}</span>` : ""}</div>${titleHTML}${notes ? `<div class="due-date-note">${escapeHTML(notes)}</div>` : ""}</article>`;
+  return `<article class="due-date-item ${dueClass}"><div class="due-date-date-block"><span class="due-date-badge">${escapeHTML(dueDateLabel(item._dueDate, referenceDate))}</span><span class="due-date-calendar">${escapeHTML(shortDisplayDate(item._dueDate))}</span></div><div class="due-date-details">${titleHTML}${meta ? `<div class="due-date-meta">${meta}</div>` : ""}${notes ? `<div class="due-date-note">${escapeHTML(notes)}</div>` : ""}</div></article>`;
 }
 
 function renderUpcomingDueDates(course, referenceDate) {
-  const items = upcomingDueDates(course, referenceDate);
+  const items = upcomingDueDates(course, referenceDate).slice(0, 3);
   if (!items.length) return `<p class="empty due-date-empty">No assignments are due within the next 14 days.</p>`;
-  const first = items.slice(0, 5).map(item => renderDueDateItem(item, referenceDate)).join("");
-  const remaining = items.slice(5);
-  const more = remaining.length ? `<details class="due-date-more"><summary>View ${remaining.length} more upcoming assignment${remaining.length === 1 ? "" : "s"}</summary>${remaining.map(item => renderDueDateItem(item, referenceDate)).join("")}</details>` : "";
-  return `<div class="due-date-list">${first}${more}</div>`;
+  return `<div class="due-date-list">${items.map(item => renderDueDateItem(item, referenceDate)).join("")}</div>`;
 }
 
 function parseRows(text) {

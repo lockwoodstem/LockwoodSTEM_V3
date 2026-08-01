@@ -89,3 +89,28 @@
     width: 100% !important;
   }
 }
+
+/* Upcoming due dates — 14-day rolling window */
+.agenda-display-card.due-dates{border-top:5px solid #f59e0b}
+.due-date-list{display:grid;gap:.78rem}
+.due-date-item{display:grid;grid-template-columns:minmax(96px,auto) 1fr;align-items:stretch;background:#fff;border:1px solid #cbd5e1;border-radius:12px;overflow:hidden;color:#172033;box-shadow:0 2px 7px rgba(15,23,42,.06)}
+.due-date-item.due-today{border-color:#f97316}
+.due-date-item.due-tomorrow{border-color:#3b82f6}
+.due-date-date-block{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;padding:.72rem .7rem;background:#e9eef4;border-right:1px solid #cbd5e1;text-align:center}
+.due-today .due-date-date-block{background:#ffedd5;border-right-color:#fdba74}
+.due-tomorrow .due-date-date-block{background:#dbeafe;border-right-color:#93c5fd}
+.due-date-badge{display:block;color:#25364a;font-size:.72rem;font-weight:900;line-height:1.15;text-transform:uppercase;letter-spacing:.035em}
+.due-today .due-date-badge{color:#9a3412}
+.due-tomorrow .due-date-badge{color:#1e40af}
+.due-date-calendar{display:block;color:#0f2940;font-size:.9rem;font-weight:900;line-height:1.15}
+.due-date-details{min-width:0;padding:.72rem .82rem}
+.due-date-title{display:block;margin:0;color:#063b60;font-size:1.05rem;font-weight:900;line-height:1.28;text-decoration-thickness:2px;text-underline-offset:3px;overflow-wrap:anywhere}
+.due-date-title:focus-visible{outline:3px solid #f59e0b;outline-offset:3px;border-radius:3px}
+span.due-date-title{text-decoration:none}
+.due-date-meta{margin-top:.34rem;color:#526173;font-size:.78rem;font-weight:800;line-height:1.25;text-transform:uppercase;letter-spacing:.025em}
+.due-date-note{margin-top:.36rem;padding-top:.36rem;border-top:1px solid #e2e8f0;color:#3f4f62;font-size:.84rem;line-height:1.38}
+.due-date-empty{display:block;padding:.65rem 0}
+.agenda-week-due-dates{grid-column:1/-1;background:#fff;border:1px solid #d8e2ec;border-top:5px solid #f59e0b;border-radius:14px;padding:1rem}
+.agenda-week-due-dates h2{margin:0 0 .85rem;color:#0b3a5b;font-size:1.15rem}
+@media(min-width:900px){.agenda-week-due-dates .due-date-list{grid-template-columns:repeat(3,minmax(0,1fr))}.agenda-week-due-dates .due-date-item{grid-template-columns:1fr}.agenda-week-due-dates .due-date-date-block{border-right:0;border-bottom:1px solid #cbd5e1}.agenda-week-due-dates .due-today .due-date-date-block{border-bottom-color:#fdba74}.agenda-week-due-dates .due-tomorrow .due-date-date-block{border-bottom-color:#93c5fd}}
+@media(max-width:520px){.due-date-item{grid-template-columns:84px 1fr}.due-date-date-block{padding:.65rem .45rem}.due-date-title{font-size:.98rem}}
