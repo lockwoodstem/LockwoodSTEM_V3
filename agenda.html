@@ -8,8 +8,8 @@
 <link href="assets/css/styles.css" rel="stylesheet"/>
 <script defer="" src="assets/js/main.js"></script>
 <script defer="" src="assets/js/agenda-config.js"></script>
-<link href="assets/css/agenda-resources.css?v=20260801-4" rel="stylesheet"/>
-<script defer="" src="assets/js/agenda-current.js?v=20260801-4"></script>
+<link href="assets/css/agenda-resources.css?v=20260801-5" rel="stylesheet"/>
+<script defer="" src="assets/js/agenda-current.js?v=20260801-5"></script>
 <meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/>
 <meta content="20260801-4" name="lockwood-agenda-build"/>
 
@@ -101,9 +101,49 @@
     return document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
   }
 
+  const agendaApp = document.getElementById('agendaApp');
+  let fitFrame = null;
+
+  function isFullscreenActive(){
+    return Boolean(isFullScreen() || agendaTarget.classList.contains('agenda-fallback-fullscreen'));
+  }
+
+  function resetAgendaFit(){
+    if (!agendaApp) return;
+    agendaApp.style.zoom = '';
+    agendaApp.style.width = '';
+    agendaApp.style.maxWidth = '';
+  }
+
+  function fitAgendaToViewport(){
+    if (!agendaApp || !isFullscreenActive()) {
+      resetAgendaFit();
+      return;
+    }
+    cancelAnimationFrame(fitFrame);
+    fitFrame = requestAnimationFrame(function(){
+      resetAgendaFit();
+      const panel = agendaTarget.querySelector('.agenda-panel');
+      const shellStyle = getComputedStyle(agendaTarget);
+      const padY = (parseFloat(shellStyle.paddingTop) || 0) + (parseFloat(shellStyle.paddingBottom) || 0);
+      const padX = (parseFloat(shellStyle.paddingLeft) || 0) + (parseFloat(shellStyle.paddingRight) || 0);
+      const panelHeight = panel ? panel.getBoundingClientRect().height : 0;
+      const availableHeight = Math.max(220, agendaTarget.clientHeight - panelHeight - padY - 8);
+      const availableWidth = Math.max(320, agendaTarget.clientWidth - padX);
+      const naturalHeight = Math.max(1, agendaApp.scrollHeight);
+      const naturalWidth = Math.max(1, agendaApp.scrollWidth);
+      const heightScale = availableHeight / naturalHeight;
+      const widthScale = availableWidth / naturalWidth;
+      const scale = Math.max(0.35, Math.min(1, heightScale, widthScale));
+      agendaApp.style.zoom = String(scale);
+      agendaApp.style.width = `${100 / scale}%`;
+      agendaApp.style.maxWidth = 'none';
+    });
+  }
+
   function updateButton(){
-    button.textContent = isFullScreen() ? 'Exit Full Screen' : 'Full Screen';
-    button.setAttribute('aria-label', isFullScreen() ? 'Exit full screen agenda' : 'Open agenda in full screen');
+    button.textContent = isFullscreenActive() ? 'Exit Full Screen' : 'Full Screen';
+    button.setAttribute('aria-label', isFullscreenActive() ? 'Exit full screen agenda' : 'Open agenda in full screen');
   }
 
   async function openFullScreen(){
@@ -122,6 +162,7 @@
       agendaTarget.classList.add('agenda-fallback-fullscreen');
     }
     updateButton();
+    setTimeout(fitAgendaToViewport, 80);
   }
 
   async function closeFullScreen(){
@@ -136,6 +177,7 @@
         document.msExitFullscreen();
       }
     } catch (error) {}
+    resetAgendaFit();
     updateButton();
   }
 
@@ -153,7 +195,16 @@
       document.body.classList.remove('agenda-fullscreen-active');
     }
     updateButton();
+    if (isFullscreenActive()) setTimeout(fitAgendaToViewport, 80);
+    else resetAgendaFit();
   });
+
+  window.addEventListener('resize', fitAgendaToViewport);
+  if (agendaApp) {
+    new MutationObserver(function(){
+      if (isFullscreenActive()) setTimeout(fitAgendaToViewport, 40);
+    }).observe(agendaApp, { childList: true, subtree: true, characterData: true });
+  }
 
   document.addEventListener('keydown', function(event){
     if (event.key === 'Escape' && agendaTarget.classList.contains('agenda-fallback-fullscreen')) {

@@ -207,3 +207,250 @@ span.due-date-title{text-decoration:none}
   #agendaApp .agenda-date-kicker { text-align: left !important; justify-content: flex-start !important; }
   #agendaApp .agenda-title-row .agenda-unit-pill { max-width: 100% !important; }
 }
+
+/* Full-screen agenda fit — build 20260801-5 */
+.agenda-shell:fullscreen,
+.agenda-shell:-webkit-full-screen,
+.agenda-shell.agenda-fallback-fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: .45rem !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  background: #f4f7fb !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+body.agenda-fullscreen-active {
+  overflow: hidden !important;
+}
+.agenda-shell:fullscreen .agenda-panel,
+.agenda-shell:-webkit-full-screen .agenda-panel,
+.agenda-shell.agenda-fallback-fullscreen .agenda-panel {
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  padding: .42rem .55rem !important;
+  border-radius: 12px !important;
+  box-shadow: 0 3px 10px rgba(11,31,58,.08) !important;
+}
+.agenda-shell:fullscreen .agenda-controls,
+.agenda-shell:-webkit-full-screen .agenda-controls,
+.agenda-shell.agenda-fallback-fullscreen .agenda-controls {
+  display: flex !important;
+  align-items: end !important;
+  flex-wrap: nowrap !important;
+  gap: .35rem !important;
+}
+.agenda-shell:fullscreen .agenda-control,
+.agenda-shell:-webkit-full-screen .agenda-control,
+.agenda-shell.agenda-fallback-fullscreen .agenda-control {
+  min-width: 0 !important;
+  flex: 0 1 auto !important;
+}
+.agenda-shell:fullscreen .agenda-control label,
+.agenda-shell:-webkit-full-screen .agenda-control label,
+.agenda-shell.agenda-fallback-fullscreen .agenda-control label {
+  font-size: .62rem !important;
+  margin-bottom: .12rem !important;
+}
+.agenda-shell:fullscreen .agenda-controls button,
+.agenda-shell:fullscreen .agenda-controls select,
+.agenda-shell:fullscreen .agenda-controls input,
+.agenda-shell:-webkit-full-screen .agenda-controls button,
+.agenda-shell:-webkit-full-screen .agenda-controls select,
+.agenda-shell:-webkit-full-screen .agenda-controls input,
+.agenda-shell.agenda-fallback-fullscreen .agenda-controls button,
+.agenda-shell.agenda-fallback-fullscreen .agenda-controls select,
+.agenda-shell.agenda-fallback-fullscreen .agenda-controls input {
+  min-height: 32px !important;
+  height: 32px !important;
+  padding: .32rem .55rem !important;
+  font-size: .72rem !important;
+  border-radius: 8px !important;
+}
+.agenda-shell:fullscreen .agenda-status,
+.agenda-shell:-webkit-full-screen .agenda-status,
+.agenda-shell.agenda-fallback-fullscreen .agenda-status {
+  display: none !important;
+}
+.agenda-shell:fullscreen #agendaApp,
+.agenda-shell:-webkit-full-screen #agendaApp,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  margin-top: .4rem !important;
+  transform-origin: top left !important;
+  overflow: visible !important;
+}
+.agenda-shell:fullscreen #agendaApp.agenda-display-grid,
+.agenda-shell:-webkit-full-screen #agendaApp.agenda-display-grid,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp.agenda-display-grid {
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr) !important;
+  gap: .55rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-main-card,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-main-card,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-main-card {
+  gap: .52rem !important;
+  padding: .68rem !important;
+  border-radius: 14px !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-title-block,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-title-block,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-title-block {
+  gap: .38rem !important;
+  padding: .58rem .68rem !important;
+  border-radius: 12px !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-title-row h2,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-title-row h2,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-title-row h2 {
+  font-size: clamp(1.45rem, 2.65vw, 2.2rem) !important;
+  line-height: 1.02 !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-title-row .agenda-unit-pill,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-title-row .agenda-unit-pill,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-title-row .agenda-unit-pill {
+  padding: .32rem .58rem !important;
+  font-size: .69rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-inline-lesson-bar,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-inline-lesson-bar,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-inline-lesson-bar {
+  margin: 0 !important;
+  padding: .52rem .65rem !important;
+  gap: .45rem .7rem !important;
+  border-radius: 12px !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-inline-lesson-help,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-inline-lesson-help,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-inline-lesson-help {
+  font-size: .72rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-inline-lesson-buttons a,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-inline-lesson-buttons a,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-inline-lesson-buttons a {
+  min-height: 32px !important;
+  padding: .42rem .65rem !important;
+  font-size: .7rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-primary-block,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-primary-block,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-primary-block {
+  padding: .62rem .7rem !important;
+  border-radius: 12px !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-primary-block h3,
+.agenda-shell:fullscreen #agendaApp .agenda-display-card h3,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-primary-block h3,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card h3,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-primary-block h3,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card h3 {
+  margin: 0 0 .34rem !important;
+  font-size: .94rem !important;
+}
+.agenda-shell:fullscreen #agendaApp ul,
+.agenda-shell:fullscreen #agendaApp ol,
+.agenda-shell:-webkit-full-screen #agendaApp ul,
+.agenda-shell:-webkit-full-screen #agendaApp ol,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp ul,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp ol {
+  margin-top: .2rem !important;
+  margin-bottom: .2rem !important;
+  line-height: 1.27 !important;
+}
+.agenda-shell:fullscreen #agendaApp li,
+.agenda-shell:-webkit-full-screen #agendaApp li,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp li {
+  margin-bottom: .12rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-main-footer,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-main-footer,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-main-footer {
+  gap: .48rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-main-footer > div,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-main-footer > div,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-main-footer > div {
+  padding: .52rem .62rem !important;
+  border-radius: 10px !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-side-stack,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-side-stack,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-side-stack {
+  gap: .48rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-display-card,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card {
+  padding: .56rem .62rem !important;
+  border-radius: 12px !important;
+}
+.agenda-shell:fullscreen #agendaApp .due-date-list,
+.agenda-shell:-webkit-full-screen #agendaApp .due-date-list,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .due-date-list {
+  gap: .38rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .due-date-item,
+.agenda-shell:-webkit-full-screen #agendaApp .due-date-item,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .due-date-item {
+  grid-template-columns: 76px 1fr !important;
+  border-radius: 9px !important;
+}
+.agenda-shell:fullscreen #agendaApp .due-date-date-block,
+.agenda-shell:-webkit-full-screen #agendaApp .due-date-date-block,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .due-date-date-block {
+  padding: .42rem .36rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .due-date-details,
+.agenda-shell:-webkit-full-screen #agendaApp .due-date-details,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .due-date-details {
+  padding: .42rem .5rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .due-date-title,
+.agenda-shell:-webkit-full-screen #agendaApp .due-date-title,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .due-date-title {
+  font-size: .84rem !important;
+  line-height: 1.15 !important;
+}
+.agenda-shell:fullscreen #agendaApp .due-date-meta,
+.agenda-shell:fullscreen #agendaApp .due-date-note,
+.agenda-shell:-webkit-full-screen #agendaApp .due-date-meta,
+.agenda-shell:-webkit-full-screen #agendaApp .due-date-note,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .due-date-meta,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .due-date-note {
+  font-size: .66rem !important;
+  margin-top: .2rem !important;
+  padding-top: .2rem !important;
+}
+.agenda-shell:fullscreen #agendaApp.agenda-week-display,
+.agenda-shell:-webkit-full-screen #agendaApp.agenda-week-display,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp.agenda-week-display {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: .42rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-week-card,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-week-card,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-week-card {
+  border-radius: 12px !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-week-header,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-week-header,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-week-header {
+  padding: .48rem .55rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-week-body,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-week-body,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-week-body {
+  padding: .48rem .55rem !important;
+  font-size: .72rem !important;
+  line-height: 1.22 !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-week-due-dates,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-week-due-dates,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-week-due-dates {
+  padding: .58rem !important;
+  border-radius: 12px !important;
+}
