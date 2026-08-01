@@ -114,3 +114,96 @@ span.due-date-title{text-decoration:none}
 .agenda-week-due-dates h2{margin:0 0 .85rem;color:#0b3a5b;font-size:1.15rem}
 @media(min-width:900px){.agenda-week-due-dates .due-date-list{grid-template-columns:repeat(3,minmax(0,1fr))}.agenda-week-due-dates .due-date-item{grid-template-columns:1fr}.agenda-week-due-dates .due-date-date-block{border-right:0;border-bottom:1px solid #cbd5e1}.agenda-week-due-dates .due-today .due-date-date-block{border-bottom-color:#fdba74}.agenda-week-due-dates .due-tomorrow .due-date-date-block{border-bottom-color:#93c5fd}}
 @media(max-width:520px){.due-date-item{grid-template-columns:84px 1fr}.due-date-date-block{padding:.65rem .45rem}.due-date-title{font-size:.98rem}}
+
+
+/* Agenda title block cleanup — build 20260801-4 */
+#agendaApp .agenda-main-card {
+  gap: .9rem !important;
+}
+#agendaApp .agenda-title-block {
+  display: grid !important;
+  gap: .72rem !important;
+  padding: 1rem 1.05rem !important;
+  border: 1px solid #d8e2ec !important;
+  border-left: 6px solid #c8a24a !important;
+  border-radius: 16px !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f7f9fc 100%) !important;
+  box-shadow: 0 8px 20px rgba(11,31,58,.06) !important;
+}
+#agendaApp .agenda-title-block .agenda-card-topline {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: .7rem 1rem !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+  color: #1e3a8a !important;
+  font-size: .75rem !important;
+  line-height: 1.2 !important;
+  font-weight: 950 !important;
+  letter-spacing: .065em !important;
+  text-transform: uppercase !important;
+}
+#agendaApp .agenda-course-kicker,
+#agendaApp .agenda-date-kicker {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  white-space: normal !important;
+}
+#agendaApp .agenda-date-kicker {
+  text-align: right !important;
+  justify-content: flex-end !important;
+}
+#agendaApp .agenda-title-row {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  gap: .75rem 1rem !important;
+  min-width: 0 !important;
+}
+#agendaApp .agenda-title-row h2 {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  color: #0b1f3a !important;
+  font-size: clamp(1.85rem, 3.2vw, 2.8rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -.035em !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+#agendaApp .agenda-title-row .agenda-unit-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 240px !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: .42rem .72rem !important;
+  border: 1px solid #bfd1e6 !important;
+  border-radius: 999px !important;
+  background: #eaf3ff !important;
+  color: #1e3a8a !important;
+  font-size: .78rem !important;
+  line-height: 1.15 !important;
+  font-weight: 950 !important;
+  text-align: center !important;
+  white-space: normal !important;
+  overflow: visible !important;
+}
+@media (max-width: 760px) {
+  #agendaApp .agenda-title-block { padding: .9rem !important; }
+  #agendaApp .agenda-title-block .agenda-card-topline,
+  #agendaApp .agenda-title-row {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+  #agendaApp .agenda-date-kicker { text-align: left !important; justify-content: flex-start !important; }
+  #agendaApp .agenda-title-row .agenda-unit-pill { max-width: 100% !important; }
+}

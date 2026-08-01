@@ -458,12 +458,16 @@ function renderDayView() {
   els.app.className = "agenda-display-grid fade";
   els.app.innerHTML = `
     <article class="agenda-main-card">
-      <div class="agenda-card-topline">
-        <span>${escapeHTML(courseName(currentCourse))}</span>
-        <span>${escapeHTML(displayDate(currentDate))}</span>
-      </div>
-      <h2>${escapeHTML(lesson || "Class Agenda")}</h2>
-      ${unit ? `<div class="agenda-unit-pill">${escapeHTML(unit)}</div>` : ""}
+      <header class="agenda-title-block">
+        <div class="agenda-card-topline">
+          <span class="agenda-course-kicker">${escapeHTML(courseName(currentCourse))}</span>
+          <span class="agenda-date-kicker">${escapeHTML(displayDate(currentDate))}</span>
+        </div>
+        <div class="agenda-title-row">
+          <h2>${escapeHTML(lesson || "Class Agenda")}</h2>
+          ${unit ? `<div class="agenda-unit-pill">${escapeHTML(unit)}</div>` : ""}
+        </div>
+      </header>
       ${renderAgendaLessonResourceBar(currentCourse, unit, lesson, links)}
       <div class="agenda-primary-block">
         <h3>Today in Class</h3>
