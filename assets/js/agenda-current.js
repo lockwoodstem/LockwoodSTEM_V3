@@ -1,12 +1,14 @@
-/* LockwoodSTEM agenda build 20260719-1 — current repository integration */
+/* LockwoodSTEM agenda build 20260801-2 — upcoming due dates integration */
 const config = window.LOCKWOOD_AGENDA_CONFIG || {};
 const csvUrls = config.csvUrls || {};
 const quotesCsvUrl = config.quotesCsvUrl || "";
+const dueDatesCsvUrl = config.dueDatesCsvUrl || "https://docs.google.com/spreadsheets/d/13bF4m4GAGQMU1DJKQc_AQcor2i6OLFgPR5bdo0VNT9U/gviz/tq?tqx=out:csv&gid=1747059949";
 const courseLabels = config.courseLabels || { IED: "IED", POE: "POE", ADM: "ADM" };
 const legacyCourseAliases = config.legacyCourseAliases || { IED: ["IED"], POE: [], ADM: ["AM"] };
 
 let rows = [];
 let quoteRows = [];
+let dueDateRows = [];
 let currentCourse = config.defaultCourse || "IED";
 let currentDate = "";
 let viewMode = "day";
@@ -332,6 +334,58 @@ function safeText(value, fallback = "Nothing listed.") {
   return clean(value) ? linkify(value) : `<span class="empty">${fallback}</span>`;
 }
 
+function parseDueDateRows(text) {
+  const parsed = parseCSV(text).filter(r => r.some(cell => clean(cell)));
+  if (!parsed.length) return [];
+  const headers = parsed[0].map(h => normalizeHeader(h));
+  return parsed.slice(1).map(row => {
+    const obj = {};
+    headers.forEach((h, i) => obj[h] = row[i] || "");
+    obj._dueDate = normalizeDate(getField(obj, ["Due Date", "Date", "Day"]));
+    obj._course = clean(getField(obj, ["Course"])).toUpperCase();
+    return obj;
+  }).filter(r => r._dueDate && r._course);
+}
+
+function upcomingDueDates(course, startDate) {
+  const endDate = addDaysISO(startDate, 13);
+  return dueDateRows
+    .filter(row => {
+      const status = clean(getField(row, ["Status"])).toLowerCase();
+      const visible = !["draft", "hidden", "cancelled", "canceled"].includes(status);
+      return visible && row._course === course && row._dueDate >= startDate && row._dueDate <= endDate;
+    })
+    .sort((a, b) => a._dueDate.localeCompare(b._dueDate) || clean(getField(a, ["Assignment", "Title"])).localeCompare(clean(getField(b, ["Assignment", "Title"]))));
+}
+
+function dueDateLabel(iso, referenceDate) {
+  if (iso === referenceDate) return "Due Today";
+  if (iso === addDaysISO(referenceDate, 1)) return "Due Tomorrow";
+  const d = new Date(iso + "T12:00:00");
+  return d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" });
+}
+
+function renderDueDateItem(item, referenceDate) {
+  const title = getField(item, ["Assignment", "Title"]) || "Assignment";
+  const type = getField(item, ["Assignment Type", "Type"]);
+  const points = getField(item, ["Points"]);
+  const link = getField(item, ["Link", "URL"]);
+  const notes = getField(item, ["Notes"]);
+  const dueClass = item._dueDate === referenceDate ? "due-today" : (item._dueDate === addDaysISO(referenceDate, 1) ? "due-tomorrow" : "due-later");
+  const titleHTML = link ? `<a class="due-date-title" href="${escapeHTML(link)}" target="_blank" rel="noopener">${escapeHTML(title)}</a>` : `<span class="due-date-title">${escapeHTML(title)}</span>`;
+  const meta = [type, points ? `${points} points` : ""].filter(Boolean).map(escapeHTML).join(" • ");
+  return `<article class="due-date-item ${dueClass}"><div class="due-date-topline"><span class="due-date-badge">${escapeHTML(dueDateLabel(item._dueDate, referenceDate))}</span>${meta ? `<span class="due-date-meta">${meta}</span>` : ""}</div>${titleHTML}${notes ? `<div class="due-date-note">${escapeHTML(notes)}</div>` : ""}</article>`;
+}
+
+function renderUpcomingDueDates(course, referenceDate) {
+  const items = upcomingDueDates(course, referenceDate);
+  if (!items.length) return `<p class="empty due-date-empty">No assignments are due within the next 14 days.</p>`;
+  const first = items.slice(0, 5).map(item => renderDueDateItem(item, referenceDate)).join("");
+  const remaining = items.slice(5);
+  const more = remaining.length ? `<details class="due-date-more"><summary>View ${remaining.length} more upcoming assignment${remaining.length === 1 ? "" : "s"}</summary>${remaining.map(item => renderDueDateItem(item, referenceDate)).join("")}</details>` : "";
+  return `<div class="due-date-list">${first}${more}</div>`;
+}
+
 function parseRows(text) {
   const parsed = parseCSV(text).filter(r => r.some(cell => clean(cell)));
   if (!parsed.length) return [];
@@ -400,7 +454,6 @@ function renderDayView() {
   const announcements = getField(agenda, ["Important Announcements", "Announcements"]);
   const homework = getField(agenda, ["Homework"]);
   const notes = getField(agenda, ["Notes"]);
-  const materials = getField(agenda, ["Materials", "Supplies"]);
   const links = getField(agenda, ["Links", "Resources"]);
   const unit = getField(agenda, ["Unit"]);
   const lesson = getField(agenda, ["Lesson Title", "Lesson"]);
@@ -427,7 +480,7 @@ function renderDayView() {
 
     <aside class="agenda-side-stack">
       ${renderAgendaCard("Objectives", listify(objectives), "objectives")}
-      ${renderAgendaCard("Materials / Links", `${listify(materials)}${links ? `<div class="agenda-link-box">${linkify(links)}</div>` : ""}`, "materials")}
+      ${renderAgendaCard("Upcoming Due Dates", renderUpcomingDueDates(currentCourse, currentDate), "due-dates")}
       ${renderAgendaCard("Standards", listify(standards), "standards")}
       ${renderAgendaCard("Notes", listify(notes), "notes")}
       ${quote ? renderAgendaCard("Quote of the Day", `<div class="quote-text">${escapeHTML(quote)}</div>`, "quote") : ""}
@@ -442,7 +495,7 @@ function renderWeekView() {
   updateBadges(rowsByDate.get(currentDate));
 
   els.app.className = "agenda-week-display fade";
-  els.app.innerHTML = dates.map(date => {
+  const weekCards = dates.map(date => {
     const agenda = rowsByDate.get(date);
     return `
       <article class="agenda-week-card ${date === todayISO() ? "today" : ""}">
@@ -460,6 +513,7 @@ function renderWeekView() {
       </article>
     `;
   }).join("");
+  els.app.innerHTML = `${weekCards}<section class="agenda-week-due-dates"><h2>Upcoming Due Dates</h2>${renderUpcomingDueDates(currentCourse, currentDate)}</section>`;
 }
 
 function render() {
@@ -481,6 +535,18 @@ function shiftDate(direction) {
   else currentDate = addDaysISO(currentDate, direction);
   els.datePicker.value = currentDate;
   render();
+}
+
+async function loadDueDates() {
+  try {
+    if (!dueDatesCsvUrl) return;
+    const res = await fetch(dueDatesCsvUrl, { cache: "no-store" });
+    if (!res.ok) throw new Error(`Due dates could not load (${res.status})`);
+    dueDateRows = parseDueDateRows(await res.text());
+  } catch (err) {
+    console.warn("Due dates could not load", err);
+    dueDateRows = [];
+  }
 }
 
 async function loadQuotes() {
@@ -542,7 +608,7 @@ els.todayBtn.addEventListener("click", () => { currentDate = todayISO(); els.dat
   initCourseOptions();
   currentDate = todayISO();
   els.datePicker.value = currentDate;
-  await loadQuotes();
+  await Promise.all([loadQuotes(), loadDueDates()]);
   await loadAgendaForCourse(currentCourse);
 })();
 

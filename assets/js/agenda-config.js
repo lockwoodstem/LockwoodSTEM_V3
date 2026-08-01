@@ -8,6 +8,7 @@ window.LOCKWOOD_AGENDA_CONFIG = {
     POE: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4L3J5287xZ94Awc47kSrjAKOUIenbvYYlt15zdUAM4oL7Z_nVNegZ8M84JiKfrCr2x4FATCDS81Ng/pub?gid=94192821&single=true&output=csv",
     ADM: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4L3J5287xZ94Awc47kSrjAKOUIenbvYYlt15zdUAM4oL7Z_nVNegZ8M84JiKfrCr2x4FATCDS81Ng/pub?gid=646728293&single=true&output=csv"
   },
+  dueDatesCsvUrl: "https://docs.google.com/spreadsheets/d/13bF4m4GAGQMU1DJKQc_AQcor2i6OLFgPR5bdo0VNT9U/gviz/tq?tqx=out:csv&gid=1747059949",
   quotesCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4L3J5287xZ94Awc47kSrjAKOUIenbvYYlt15zdUAM4oL7Z_nVNegZ8M84JiKfrCr2x4FATCDS81Ng/pub?gid=1284674718&single=true&output=csv",
   defaultCourse: "IED",
   courseLabels: {
