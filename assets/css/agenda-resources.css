@@ -454,3 +454,58 @@ body.agenda-fullscreen-active {
   padding: .58rem !important;
   border-radius: 12px !important;
 }
+
+
+/* Full-screen right-edge containment — build 20260801-6 */
+.agenda-shell:fullscreen,
+.agenda-shell:-webkit-full-screen,
+.agenda-shell.agenda-fallback-fullscreen {
+  min-width: 0 !important;
+  max-width: 100vw !important;
+}
+.agenda-shell:fullscreen .agenda-panel,
+.agenda-shell:-webkit-full-screen .agenda-panel,
+.agenda-shell.agenda-fallback-fullscreen .agenda-panel,
+.agenda-shell:fullscreen #agendaApp,
+.agenda-shell:-webkit-full-screen #agendaApp,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+.agenda-shell:fullscreen .agenda-controls,
+.agenda-shell:-webkit-full-screen .agenda-controls,
+.agenda-shell.agenda-fallback-fullscreen .agenda-controls {
+  width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+.agenda-shell:fullscreen .agenda-controls > *,
+.agenda-shell:-webkit-full-screen .agenda-controls > *,
+.agenda-shell.agenda-fallback-fullscreen .agenda-controls > * {
+  min-width: 0 !important;
+}
+.agenda-shell:fullscreen #agendaApp.agenda-display-grid,
+.agenda-shell:-webkit-full-screen #agendaApp.agenda-display-grid,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp.agenda-display-grid,
+.agenda-shell:fullscreen #agendaApp.agenda-week-display,
+.agenda-shell:-webkit-full-screen #agendaApp.agenda-week-display,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp.agenda-week-display {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+.agenda-shell:fullscreen #agendaApp > *,
+.agenda-shell:-webkit-full-screen #agendaApp > *,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp > * {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+@media (max-width: 1100px) {
+  .agenda-shell:fullscreen #agendaApp.agenda-display-grid,
+  .agenda-shell:-webkit-full-screen #agendaApp.agenda-display-grid,
+  .agenda-shell.agenda-fallback-fullscreen #agendaApp.agenda-display-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(250px, .85fr) !important;
+  }
+}

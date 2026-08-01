@@ -8,10 +8,10 @@
 <link href="assets/css/styles.css" rel="stylesheet"/>
 <script defer="" src="assets/js/main.js"></script>
 <script defer="" src="assets/js/agenda-config.js"></script>
-<link href="assets/css/agenda-resources.css?v=20260801-5" rel="stylesheet"/>
-<script defer="" src="assets/js/agenda-current.js?v=20260801-5"></script>
+<link href="assets/css/agenda-resources.css?v=20260801-6" rel="stylesheet"/>
+<script defer="" src="assets/js/agenda-current.js?v=20260801-6"></script>
 <meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/>
-<meta content="20260801-4" name="lockwood-agenda-build"/>
+<meta content="20260801-6" name="lockwood-agenda-build"/>
 
 <link href="assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/></head>
 <body class="agenda-display-cleanup-enabled agenda-fit-fix agenda-exact-badge-fix site-consistency-v4 agenda-page agenda-box-fit-v2">
@@ -113,6 +113,9 @@
     agendaApp.style.zoom = '';
     agendaApp.style.width = '';
     agendaApp.style.maxWidth = '';
+    agendaApp.style.minWidth = '';
+    agendaApp.style.marginRight = '';
+    agendaApp.style.transform = '';
   }
 
   function fitAgendaToViewport(){
@@ -130,14 +133,26 @@
       const panelHeight = panel ? panel.getBoundingClientRect().height : 0;
       const availableHeight = Math.max(220, agendaTarget.clientHeight - panelHeight - padY - 8);
       const availableWidth = Math.max(320, agendaTarget.clientWidth - padX);
+      // Keep the agenda's layout width constrained to the visible viewport first.
+      // Expanding the element to 100/scale percent caused the right column to extend
+      // beyond the screen after browser zoom was applied.
+      agendaApp.style.width = '100%';
+      agendaApp.style.maxWidth = `${availableWidth}px`;
+      agendaApp.style.minWidth = '0';
+      agendaApp.style.marginRight = '0';
+
+      // Re-measure after constraining the width so wrapping is included in height.
       const naturalHeight = Math.max(1, agendaApp.scrollHeight);
       const naturalWidth = Math.max(1, agendaApp.scrollWidth);
       const heightScale = availableHeight / naturalHeight;
       const widthScale = availableWidth / naturalWidth;
       const scale = Math.max(0.35, Math.min(1, heightScale, widthScale));
+
+      // CSS zoom shrinks both dimensions visually. Do not counter-expand width;
+      // keeping width at 100% prevents right-edge clipping.
       agendaApp.style.zoom = String(scale);
-      agendaApp.style.width = `${100 / scale}%`;
-      agendaApp.style.maxWidth = 'none';
+      agendaApp.style.width = '100%';
+      agendaApp.style.maxWidth = '100%';
     });
   }
 
