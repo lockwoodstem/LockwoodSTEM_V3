@@ -330,6 +330,39 @@ function listify(text) {
   return `<ul class="agenda-list">${parts.map(x => `<li>${linkify(x)}</li>`).join("")}</ul>`;
 }
 
+
+function renderPhasedAgenda(text, compact = false) {
+  const value = clean(text);
+  if (!value) return `<span class="empty">Nothing listed.</span>`;
+
+  const phasePattern = /(?:^|\s*;\s*)(START|BUILD\s*\/\s*ANALYZE|CLOSE)\s*[—–-]\s*/gi;
+  const matches = [...value.matchAll(phasePattern)];
+  if (!matches.length) return listify(value);
+
+  const phaseLabels = {
+    "START": "Start",
+    "BUILD / ANALYZE": "Build / Analyze",
+    "CLOSE": "Close"
+  };
+
+  const sections = matches.map((match, index) => {
+    const normalized = match[1].toUpperCase().replace(/\s+/g, " ").replace(/\s*\/\s*/g, " / ");
+    const start = match.index + match[0].length;
+    const end = index + 1 < matches.length ? matches[index + 1].index : value.length;
+    const body = value.slice(start, end).replace(/^\s*;\s*|\s*;\s*$/g, "").trim();
+    return { label: phaseLabels[normalized] || match[1], body };
+  }).filter(section => section.body);
+
+  if (!sections.length) return listify(value);
+
+  return `<div class="agenda-phases ${compact ? "agenda-phases-compact" : ""}">${sections.map(section => `
+    <section class="agenda-phase">
+      <h4 class="agenda-phase-heading">${escapeHTML(section.label)}</h4>
+      <div class="agenda-phase-content">${listify(section.body)}</div>
+    </section>`).join("")}
+  </div>`;
+}
+
 function safeText(value, fallback = "Nothing listed.") {
   return clean(value) ? linkify(value) : `<span class="empty">${fallback}</span>`;
 }
@@ -471,7 +504,7 @@ function renderDayView() {
       ${renderAgendaLessonResourceBar(currentCourse, unit, lesson, links)}
       <div class="agenda-primary-block">
         <h3>Today in Class</h3>
-        ${listify(agendaText)}
+        ${renderPhasedAgenda(agendaText)}
       </div>
       <div class="agenda-main-footer">
         <div><strong>Homework</strong>${listify(homework)}</div>
@@ -507,7 +540,7 @@ function renderWeekView() {
         <div class="agenda-week-body">
           <strong>${agenda ? escapeHTML(lessonSummary(agenda)) : "No agenda listed"}</strong>
           <div class="week-label">Agenda</div>
-          ${agenda ? listify(getField(agenda, ["Agenda"])) : `<span class="empty">Nothing listed.</span>`}
+          ${agenda ? renderPhasedAgenda(getField(agenda, ["Agenda"]), true) : `<span class="empty">Nothing listed.</span>`}
           <div class="week-label">Homework</div>
           ${agenda ? listify(getField(agenda, ["Homework"])) : `<span class="empty">Nothing listed.</span>`}
         </div>
