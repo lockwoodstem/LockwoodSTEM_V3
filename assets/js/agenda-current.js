@@ -316,7 +316,7 @@ async function enhanceAgendaLessonResourceBar(course, unitText, lessonText) {
 }
 
 
-function listify(text) {
+function listify(text, forceList = false) {
   const value = clean(text);
   if (!value) return `<span class="empty">Nothing listed.</span>`;
 
@@ -325,7 +325,7 @@ function listify(text) {
     .map(x => x.trim())
     .filter(Boolean);
 
-  if (parts.length <= 1) return `<div class="content-text">${linkify(value)}</div>`;
+  if (!forceList && parts.length <= 1) return `<div class="content-text">${linkify(value)}</div>`;
 
   return `<ul class="agenda-list">${parts.map(x => `<li>${linkify(x)}</li>`).join("")}</ul>`;
 }
@@ -358,7 +358,7 @@ function renderPhasedAgenda(text, compact = false) {
   return `<div class="agenda-phases ${compact ? "agenda-phases-compact" : ""}">${sections.map(section => `
     <section class="agenda-phase">
       <h4 class="agenda-phase-heading">${escapeHTML(section.label)}</h4>
-      <div class="agenda-phase-content">${listify(section.body)}</div>
+      <div class="agenda-phase-content">${listify(section.body, true)}</div>
     </section>`).join("")}
   </div>`;
 }
