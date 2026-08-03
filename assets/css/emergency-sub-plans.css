@@ -16,4 +16,48 @@
 .subplan-actions{display:flex;gap:.65rem;flex-wrap:wrap;margin-top:1rem}.subplan-print{border:0;background:var(--gold);color:#172033;border-radius:999px;padding:.75rem 1rem;font-weight:800;cursor:pointer}.subplan-link{display:inline-block;background:var(--navy);color:#fff!important;text-decoration:none;border-radius:999px;padding:.75rem 1rem;font-weight:800}
 .subplan-index-intro{padding:34px 0}.subplan-course-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.subplan-course-card{padding:22px;border-top:6px solid var(--blue)}.subplan-course-card h2{margin:.15rem 0 .55rem;color:var(--navy)}.subplan-course-card ul{padding-left:1.2rem}.subplan-course-card li{margin:.55rem 0}.subplan-course-card a{font-weight:750}.subplan-index-card{padding:22px;margin-top:22px}.subplan-index-card h2{color:var(--navy);margin-top:0}
 @media(max-width:900px){.subplan-grid{grid-template-columns:1fr}.subplan-side{position:static}.subplan-course-grid{grid-template-columns:1fr}}
-@media print{.site-header,.footer,.site-breadcrumbs,.back-to-top,.subplan-actions,.subplan-side{display:none!important}.subplan-hero{background:#fff!important;color:#000!important;padding:0 0 12px}.subplan-hero p,.subplan-hero .eyebrow{color:#000!important}.subplan-page,.subplan-shell{background:#fff!important;padding:0}.subplan-grid{display:block}.subplan-main{box-shadow:none;border:0;padding:0}.response-box{break-inside:avoid}.data-table{break-inside:avoid}.subplan-main h2{break-after:avoid}.subplan-meta span{color:#000;border-color:#777;background:#fff}.container{max-width:none!important}}
+@media print{
+  @page{size:Letter portrait;margin:.48in .52in .55in}
+  html,body{width:100%;margin:0!important;padding:0!important;background:#fff!important;color:#000!important;font-size:10.5pt;line-height:1.35;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .site-header,.footer,.site-breadcrumbs,.back-to-top,.subplan-actions,.subplan-side{display:none!important}
+  .container{width:auto!important;max-width:none!important;margin:0!important;padding:0!important}
+  .subplan-page,.subplan-shell{background:#fff!important;padding:0!important}
+  .subplan-grid{display:block!important}
+  .subplan-hero{background:#fff!important;color:#000!important;padding:0 0 10pt!important;border-bottom:2pt solid #0b5cab;margin-bottom:12pt}
+  .subplan-hero .eyebrow{color:#0b5cab!important;font-size:8pt!important;letter-spacing:.08em!important;margin:0 0 3pt!important}
+  .subplan-hero h1{color:#000!important;font-size:20pt!important;line-height:1.05!important;margin:0 0 4pt!important}
+  .subplan-hero p{color:#333!important;font-size:10pt!important;line-height:1.3!important;margin:0 0 6pt!important;max-width:none!important}
+  .subplan-meta{gap:4pt!important;margin-top:5pt!important}
+  .subplan-meta span{color:#000!important;background:#fff!important;border:1pt solid #777!important;border-radius:3pt!important;padding:2pt 5pt!important;font-size:7.5pt!important}
+  .subplan-main{box-shadow:none!important;border:0!important;border-radius:0!important;padding:0!important}
+  .print-student-info{display:grid!important;grid-template-columns:1.7fr .75fr .85fr;gap:12pt;border:1pt solid #8ca3ba;border-radius:5pt;padding:7pt 9pt;margin:0 0 12pt;background:#f5f9fd!important}
+  .print-student-info div{font-size:9pt;font-weight:700;white-space:nowrap}
+  .print-student-info span{display:inline-block;min-width:72pt;border-bottom:.8pt solid #333;height:10pt;vertical-align:bottom;margin-left:4pt}
+  .subplan-main h2{color:#0b5cab!important;font-size:13pt!important;line-height:1.15!important;margin:13pt 0 5pt!important;padding:0 0 3pt!important;border-bottom:1.5pt solid #cfe3f7!important;break-after:avoid-page;page-break-after:avoid}
+  .subplan-main h2:first-of-type{margin-top:0!important}
+  .subplan-main h3{font-size:10.5pt!important;margin:9pt 0 3pt!important;break-after:avoid-page;page-break-after:avoid}
+  .subplan-main p{margin:3pt 0 6pt!important;line-height:1.35!important}
+  .subplan-main ul,.subplan-main ol{margin:4pt 0 7pt!important;padding-left:18pt!important}
+  .subplan-main li{line-height:1.3!important;margin:2pt 0!important}
+  .subplan-callout{background:#eef6ff!important;border-left:3pt solid #0b5cab!important;border-radius:3pt!important;padding:7pt 9pt!important;margin:7pt 0 9pt!important;break-inside:avoid-page;page-break-inside:avoid}
+  .subplan-callout.warn{background:#fff8e6!important;border-left-color:#b87800!important}
+  .subplan-callout.good{background:#edf8f1!important;border-left-color:#2e8b57!important}
+  .response-box{border:1.2pt solid #93a5b8!important;border-radius:4pt!important;min-height:64pt!important;margin:4pt 0 8pt!important;background:repeating-linear-gradient(to bottom,#fff 0,#fff 20pt,#d7e0e9 20.5pt,#fff 21pt)!important;break-inside:avoid-page;page-break-inside:avoid}
+  .response-box.small{min-height:40pt!important}
+  .response-box.tall{min-height:105pt!important}
+  .response-box.sketch{min-height:175pt!important;background:#fff!important}
+  .data-table{width:100%!important;border-collapse:collapse!important;margin:6pt 0 9pt!important;font-size:8.6pt!important;break-inside:avoid-page;page-break-inside:avoid}
+  .data-table th{background:#0b2f57!important;color:#fff!important;font-weight:700!important}
+  .data-table th,.data-table td{border:.8pt solid #8194a8!important;padding:4pt!important;vertical-align:top!important}
+  .data-table tr:nth-child(even) td{background:#f5f7fa!important}
+  .step-label{color:#0b5cab!important;background:#fff!important;border:1pt solid #0b5cab!important;border-radius:3pt!important;padding:1pt 4pt!important}
+  .checklist{margin-bottom:7pt!important}
+  .checklist li:before{color:#0b5cab!important}
+  table,tr,td,th,img,svg,.response-box,.subplan-callout{max-width:100%!important}
+  tr{break-inside:avoid-page;page-break-inside:avoid}
+  a{color:#000!important;text-decoration:none!important}
+  a[href]:after{content:none!important}
+  .print-only{display:block!important}
+  .screen-only{display:none!important}
+}
+@media screen{.print-only,.print-student-info{display:none}}
