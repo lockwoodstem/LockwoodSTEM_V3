@@ -565,3 +565,90 @@ body.agenda-fullscreen-active {
   font-size: .76rem !important;
   border-left-width: 3px !important;
 }
+
+/* Classroom display readability — build 20260804-1 */
+/* Emphasize the information students need to read from across the room. */
+.agenda-shell:fullscreen #agendaApp .agenda-title-row h2,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-title-row h2,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-title-row h2 {
+  font-size: clamp(2.15rem, 3.35vw, 3.45rem) !important;
+  line-height: 1.02 !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-card-topline,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-card-topline,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-card-topline {
+  font-size: .88rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-primary-block > h3,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-primary-block > h3,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-primary-block > h3 {
+  font-size: 1.25rem !important;
+  margin-bottom: .48rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-phase-heading,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-phase-heading,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-phase-heading {
+  font-size: 1.08rem !important;
+  padding: .34rem .58rem !important;
+  margin-bottom: .24rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-phase-content li,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-phase-content li,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-phase-content li {
+  font-size: 1.08rem !important;
+  line-height: 1.28 !important;
+  margin-bottom: .16rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-main-footer strong,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-main-footer strong,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-main-footer strong {
+  display: block !important;
+  color: #174ea6 !important;
+  font-size: 1rem !important;
+  margin-bottom: .18rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-main-footer li,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-main-footer li,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-main-footer li {
+  font-size: .98rem !important;
+  line-height: 1.25 !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates h3,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates h3,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates h3 {
+  font-size: 1.22rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .due-date-title,
+.agenda-shell:-webkit-full-screen #agendaApp .due-date-title,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .due-date-title {
+  font-size: 1.04rem !important;
+  line-height: 1.18 !important;
+}
+.agenda-shell:fullscreen #agendaApp .due-date-day,
+.agenda-shell:-webkit-full-screen #agendaApp .due-date-day,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .due-date-day {
+  font-size: 1.16rem !important;
+}
+.agenda-shell:fullscreen #agendaApp .due-date-month,
+.agenda-shell:-webkit-full-screen #agendaApp .due-date-month,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .due-date-month {
+  font-size: .84rem !important;
+}
+/* Keep secondary reference information compact so the instructional content stays large. */
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.objectives,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.objectives,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.objectives {
+  font-size: .86rem !important;
+  line-height: 1.2 !important;
+}
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.standards,
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.notes,
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.quote,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.standards,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.notes,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.quote,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.standards,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.notes,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.quote {
+  display: none !important;
+}
