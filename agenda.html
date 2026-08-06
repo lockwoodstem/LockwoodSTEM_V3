@@ -11,7 +11,7 @@
 <link href="assets/css/agenda-resources.css?v=20260804-2" rel="stylesheet"/>
 <script defer="" src="assets/js/agenda-current.js?v=20260802-2"></script>
 <meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/>
-<meta content="20260802-1" name="lockwood-agenda-build"/>
+<meta content="20260806-1" name="lockwood-agenda-build"/>
 
 <link href="assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/></head>
 <body class="agenda-display-cleanup-enabled agenda-fit-fix agenda-exact-badge-fix site-consistency-v4 agenda-page agenda-box-fit-v2">
@@ -235,32 +235,41 @@
   const clock = document.getElementById('liveClock');
   const currentPeriodBadge = document.getElementById('currentPeriodBadge');
 
+  // Bell schedules updated August 2026 from the official MS/HS schedule.
+  // The main arrays drive the current-period badge. Lunch variants are tracked
+  // separately so overlapping A/B lunch blocks do not hide the overall 5th period.
   const regularSchedule = [
     { name: '1st Period', start: '07:40', end: '08:35' },
     { name: '2nd Period', start: '08:41', end: '09:31' },
     { name: '3rd Period', start: '09:37', end: '10:27' },
     { name: '4th Period', start: '10:33', end: '11:23' },
-    { name: '5th Period', start: '11:29', end: '12:19' },
-    { name: '6th Period', start: '12:25', end: '13:44' },
-    { name: 'A Lunch', start: '12:19', end: '12:48' },
-    { name: 'A Class', start: '12:54', end: '13:44' },
-    { name: 'B Class', start: '12:25', end: '13:15' },
-    { name: 'B Lunch', start: '13:15', end: '13:44' },
+    { name: '5th Period', start: '11:29', end: '12:48' },
+    { name: '6th Period', start: '12:54', end: '13:44' },
     { name: '7th Period', start: '13:50', end: '14:40' }
   ];
 
+  const regularLunchSchedule = [
+    { name: 'A Lunch', start: '11:23', end: '11:52' },
+    { name: 'A Class', start: '11:58', end: '12:48' },
+    { name: 'B Class', start: '11:29', end: '12:19' },
+    { name: 'B Lunch', start: '12:19', end: '12:48' }
+  ];
+
   const wednesdaySchedule = [
-    { name: '1st Period', start: '07:40', end: '08:25' },
-    { name: '2nd Period', start: '08:31', end: '09:11' },
-    { name: '3rd Period', start: '09:17', end: '09:57' },
-    { name: '4th Period', start: '10:03', end: '10:43' },
-    { name: '5th Period', start: '10:49', end: '11:29' },
-    { name: '6th Period', start: '11:35', end: '12:54' },
-    { name: 'A Lunch', start: '11:29', end: '11:58' },
-    { name: 'A Class', start: '12:04', end: '12:54' },
-    { name: 'B Class', start: '11:35', end: '12:25' },
-    { name: 'B Lunch', start: '12:25', end: '12:54' },
-    { name: '7th Period', start: '13:00', end: '13:40' }
+    { name: '1st Period', start: '07:40', end: '08:26' },
+    { name: '2nd Period', start: '08:32', end: '09:13' },
+    { name: '3rd Period', start: '09:19', end: '10:00' },
+    { name: '4th Period', start: '10:06', end: '10:48' },
+    { name: '5th Period', start: '10:54', end: '12:04' },
+    { name: '6th Period', start: '12:10', end: '12:52' },
+    { name: '7th Period', start: '12:58', end: '13:40' }
+  ];
+
+  const wednesdayLunchSchedule = [
+    { name: 'A Lunch', start: '10:48', end: '11:17' },
+    { name: 'A Class', start: '11:23', end: '12:04' },
+    { name: 'B Class', start: '10:54', end: '11:35' },
+    { name: 'B Lunch', start: '11:35', end: '12:04' }
   ];
 
   function minutesFromTime(value){
@@ -284,6 +293,23 @@
     return [];
   }
 
+  function getLunchScheduleForDate(date){
+    const day = date.getDay();
+    if (day === 3) return wednesdayLunchSchedule;
+    if ([1, 2, 4, 5].includes(day)) return regularLunchSchedule;
+    return [];
+  }
+
+  function getActiveLunchSummary(date, nowMinutes){
+    const activeBlocks = getLunchScheduleForDate(date).filter(block =>
+      nowMinutes >= minutesFromTime(block.start) && nowMinutes < minutesFromTime(block.end)
+    );
+
+    return activeBlocks
+      .map(block => `${block.name} until ${timeLabel(block.end)}`)
+      .join(' · ');
+  }
+
   function displayScheduleName(date){
     const day = date.getDay();
     if (day === 3) return 'Wednesday';
@@ -297,15 +323,31 @@
 
     const nowMinutes = date.getHours() * 60 + date.getMinutes();
     const sorted = [...schedule].sort((a, b) => minutesFromTime(a.start) - minutesFromTime(b.start));
+    const lunchSummary = getActiveLunchSummary(date, nowMinutes);
 
     const current = sorted.find(block => nowMinutes >= minutesFromTime(block.start) && nowMinutes < minutesFromTime(block.end));
     if (current) {
       const remaining = minutesFromTime(current.end) - nowMinutes;
+      const status = current.name === '5th Period' && lunchSummary
+        ? '5th Period / Lunch'
+        : current.name;
+      const lunchDetail = lunchSummary ? ` · ${lunchSummary}` : '';
       return {
-        status: current.name,
-        detail: `Ends ${timeLabel(current.end)} · ${remaining} min left`,
+        status,
+        detail: `Ends ${timeLabel(current.end)} · ${remaining} min left${lunchDetail}`,
         minutesRemaining: remaining,
         isActiveClass: true
+      };
+    }
+
+    // A Lunch begins at the end of 4th period, before the overall 5th-period block.
+    // Show the active lunch information instead of incorrectly labeling this time as passing.
+    if (lunchSummary) {
+      return {
+        status: '5th Period / Lunch',
+        detail: lunchSummary,
+        minutesRemaining: null,
+        isActiveClass: false
       };
     }
 
