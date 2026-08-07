@@ -1,6 +1,6 @@
 {
-  "version": "2026-08-03-emergency-sub-plans",
-  "total": 342,
+  "version": "2026-08-07-multiview-sketch-paper",
+  "total": 343,
   "categories": [
     "CAD Files",
     "Course Documents",
@@ -61,6 +61,21 @@
       "featured": true,
       "filename": "LS-TMP-002_Isometric_Sketch_Paper.pdf",
       "searchText": "Isometric Sketch Paper Templates General  pdf LS-TMP-002_Isometric_Sketch_Paper.pdf templates/LS-TMP-002_Isometric_Sketch_Paper.pdf"
+    },
+    {
+      "id": "141d69c12770",
+      "title": "Multiview Sketch Paper \u2014 Landscape",
+      "description": "Printable four-quadrant sketch paper with top, front, right-side, and isometric drawing areas for multiview sketching practice.",
+      "category": "Templates",
+      "course": "General",
+      "unit": "",
+      "format": "PDF",
+      "url": "../downloads/templates/LS-TMP-017_Multiview_Sketch_Paper_Landscape.pdf",
+      "size": "13.0 KB",
+      "sizeBytes": 13308,
+      "featured": true,
+      "filename": "LS-TMP-017_Multiview_Sketch_Paper_Landscape.pdf",
+      "searchText": "Multiview Sketch Paper \u2014 Landscape Templates General PDF top view front view right-side view right side view isometric view orthographic multiview sketching LS-TMP-017_Multiview_Sketch_Paper_Landscape.pdf templates/LS-TMP-017_Multiview_Sketch_Paper_Landscape.pdf"
     },
     {
       "id": "67b76e50aed2",
