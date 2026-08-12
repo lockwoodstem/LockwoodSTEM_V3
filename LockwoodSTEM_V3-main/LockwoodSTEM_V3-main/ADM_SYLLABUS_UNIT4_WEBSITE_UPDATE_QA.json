@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "date": "2026-07-29",
+  "base_repository": "LockwoodSTEM_Full_Repository_ADM_Label_Cleanup.zip",
+  "updated_pdf_source": "ADM_Advanced_Manufacturing_Syllabus_2026-2027_Updated_Unit4.pdf",
+  "site_pdf_path": "downloads/course-documents/ADM_Advanced_Manufacturing_Syllabus_2026-2027.pdf",
+  "site_pdf_sha256": "af52f86728a4b6c33a3e5fb1abe931fd5d67db207d6dccaf3bde24cd123baae3",
+  "site_pdf_size_bytes": 1386564,
+  "site_pdf_pages": 8,
+  "website_links_updated": [
+    "courses/adm/index.html",
+    "assets/data/resource-library.json"
+  ],
+  "cache_busting_query": "?v=20260729-unit4",
+  "verified_content": [
+    "Start Here replaces numbered Unit 0",
+    "Unit 4 is Aerospace CNC Manufacturing",
+    "Fusion CAD/CAM workflow included",
+    "G&M code and CNC machining included",
+    "Dimensional inspection and fit testing included",
+    "Cybersecurity and supply-chain Unit 4 references removed from syllabus"
+  ]
+}

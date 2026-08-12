@@ -1,0 +1,247 @@
+/* LockwoodSTEM ADM Python Programming Pre-Test */
+.python-pretest-page{background:#f4f7fb;}
+.python-pretest-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#071b37 0%,#0b315f 60%,#0d577d 100%);color:#fff;padding:4rem 0 3.5rem;border-bottom:5px solid #c8a24a;}
+.python-pretest-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 84% 22%,rgba(255,255,255,.13),transparent 27%),linear-gradient(120deg,transparent 0 64%,rgba(200,162,74,.12) 64% 65%,transparent 65%);pointer-events:none;}
+.python-pretest-hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:3rem;align-items:center;}
+.python-pretest-hero .eyebrow{color:#ead07f;}
+.python-pretest-hero h1{font-size:clamp(2.45rem,5vw,4.65rem);line-height:1.02;color:#fff;margin:.4rem 0 1rem;max-width:850px;}
+.python-pretest-hero p{font-size:1.15rem;line-height:1.7;color:rgba(255,255,255,.86);max-width:760px;margin:0;}
+.python-pretest-hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem;}
+.python-pretest-hero .btn.ghost-light{background:transparent;border:1px solid rgba(255,255,255,.55);color:#fff;}
+.python-pretest-hero .btn.ghost-light:hover,.python-pretest-hero .btn.ghost-light:focus{background:#fff;color:#0b1f3a;}
+.python-pretest-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;}
+.python-pretest-summary div{min-height:116px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.17);border-radius:20px;padding:1.2rem;display:flex;flex-direction:column;justify-content:center;backdrop-filter:blur(8px);box-shadow:0 18px 40px rgba(0,0,0,.15);}
+.python-pretest-summary strong{font-size:2.05rem;color:#fff;line-height:1;}
+.python-pretest-summary span{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:850;color:#ead07f;margin-top:.55rem;}
+.python-pretest-intro{padding-top:3rem;}
+.python-pretest-skill-list{margin:.9rem 0 0;padding-left:1.25rem;line-height:1.75;}
+.python-pretest-shell{padding-top:2rem;padding-bottom:3rem;}
+.python-pretest-start,.python-pretest-quiz,.python-pretest-results{background:#fff;border:1px solid #d8e1ec;border-radius:24px;box-shadow:0 22px 55px rgba(6,31,61,.09);padding:clamp(1.25rem,3vw,2.25rem);}
+.python-pretest-panel-heading,.python-pretest-results-hero{display:flex;justify-content:space-between;gap:1.5rem;align-items:flex-start;border-bottom:1px solid #dce4ee;padding-bottom:1.35rem;margin-bottom:1.4rem;}
+.python-pretest-panel-heading h2,.python-pretest-results-hero h2{margin:.25rem 0 0;color:#08284c;}
+.python-pretest-status-pill,.python-pretest-domain{display:inline-flex;align-items:center;white-space:nowrap;border-radius:999px;background:#eef4fb;color:#0a3d6b;border:1px solid #cbdced;font-size:.78rem;font-weight:850;letter-spacing:.04em;padding:.45rem .7rem;}
+.python-pretest-form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.4rem 0;}
+.python-pretest-form-grid label{display:flex;flex-direction:column;gap:.45rem;font-weight:800;color:#193b5d;}
+.python-pretest-form-grid input,.python-pretest-form-grid select{width:100%;border:1px solid #bfcddd;border-radius:10px;padding:.82rem .9rem;font:inherit;color:#182a3d;background:#fff;}
+.python-pretest-form-grid input:focus,.python-pretest-form-grid select:focus{outline:3px solid rgba(33,116,181,.2);border-color:#2174b5;}
+.python-pretest-directions{background:#f5f8fc;border-left:5px solid #c8a24a;border-radius:14px;padding:1.15rem 1.3rem;margin:1.4rem 0;}
+.python-pretest-directions h3{margin:0 0 .55rem;color:#0b315f;}
+.python-pretest-directions ol{margin:0;padding-left:1.25rem;line-height:1.7;}
+.python-pretest-start-actions,.python-pretest-result-actions{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;}
+.python-pretest-text-button{border:0;background:transparent;color:#174f80;font-weight:800;text-decoration:underline;cursor:pointer;padding:.65rem .2rem;}
+.python-pretest-text-button:hover,.python-pretest-text-button:focus{color:#092e54;}
+.python-pretest-form-message{color:#8d1e1e;background:#fff1f1;border:1px solid #efc3c3;border-radius:10px;padding:.75rem .9rem;margin:.9rem 0 0;}
+.python-pretest-alert{background:#fff4db;border:1px solid #e6c46a;border-left:5px solid #c8a24a;padding:1rem 1.15rem;border-radius:12px;margin-bottom:1rem;}
+.python-pretest-topbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.5rem;align-items:center;border-bottom:1px solid #dce4ee;padding-bottom:1.15rem;margin-bottom:1.35rem;}
+.python-pretest-question-count{font-weight:900;color:#123b62;margin-bottom:.5rem;}
+.python-pretest-progress-track{height:10px;max-width:650px;background:#e5ebf2;border-radius:999px;overflow:hidden;}
+.python-pretest-progress-track span{display:block;height:100%;width:5%;background:linear-gradient(90deg,#b88821,#e0bd59);border-radius:inherit;transition:width .25s ease;}
+.python-pretest-autosave{font-size:.85rem;color:#50667d;white-space:nowrap;}
+.python-pretest-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:1.5rem;align-items:start;}
+.python-pretest-navigator{position:sticky;top:96px;background:#f6f9fc;border:1px solid #d9e3ed;border-radius:16px;padding:1rem;}
+.python-pretest-navigator h2{font-size:1rem;color:#173b5e;margin:0 0 .85rem;}
+.python-pretest-nav-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.45rem;}
+.python-pretest-nav-button{aspect-ratio:1;border:1px solid #bdcad8;background:#fff;border-radius:8px;color:#1e3d5c;font-weight:850;cursor:pointer;}
+.python-pretest-nav-button.is-answered{background:#dcefe3;border-color:#75ad85;color:#145d2a;}
+.python-pretest-nav-button.is-current{outline:3px solid #d8b654;outline-offset:1px;background:#0a3e6b;color:#fff;border-color:#0a3e6b;}
+.python-pretest-nav-button:hover,.python-pretest-nav-button:focus{transform:translateY(-1px);box-shadow:0 5px 12px rgba(8,46,84,.12);}
+.python-pretest-nav-key{display:grid;gap:.5rem;margin-top:1rem;font-size:.72rem;color:#4c6177;}
+.python-pretest-nav-key span{display:flex;align-items:center;gap:.45rem;}
+.python-pretest-nav-key i{width:14px;height:14px;border:1px solid #bdcad8;border-radius:4px;background:#fff;}
+.python-pretest-nav-key i.is-current{background:#0a3e6b;border-color:#0a3e6b;outline:2px solid #d8b654;}
+.python-pretest-nav-key i.is-answered{background:#dcefe3;border-color:#75ad85;}
+.python-pretest-question-card{min-height:540px;border:1px solid #d8e2ec;border-radius:18px;padding:clamp(1.15rem,2.6vw,2rem);background:#fff;display:flex;flex-direction:column;}
+.python-pretest-question-meta{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem;color:#5a6f84;font-size:.86rem;font-weight:800;}
+.python-pretest-question-card h2{font-size:clamp(1.25rem,2.2vw,1.65rem);line-height:1.45;color:#102f4f;margin:.2rem 0 1.15rem;}
+.python-pretest-code{margin:0 0 1.25rem;background:#0d1d2e;color:#edf6ff;border-radius:13px;padding:1.05rem 1.2rem;overflow:auto;font:600 .98rem/1.65 Consolas,"Courier New",monospace;border:1px solid #203d5b;tab-size:4;}
+.python-pretest-options{display:grid;gap:.75rem;border:0;padding:0;margin:0 0 1.4rem;}
+.python-pretest-option{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:.8rem;align-items:flex-start;border:1px solid #cbd6e2;border-radius:12px;padding:.95rem 1rem;cursor:pointer;background:#fff;transition:border-color .15s ease,background .15s ease,transform .15s ease;}
+.python-pretest-option:hover{border-color:#6e98bd;background:#f8fbfe;transform:translateY(-1px);}
+.python-pretest-option:has(input:checked){border-color:#0d5b92;background:#edf6fd;box-shadow:0 0 0 2px rgba(13,91,146,.1);}
+.python-pretest-option input{margin-top:.18rem;accent-color:#0d5b92;}
+.python-pretest-option-letter{font-weight:900;color:#0c4a78;}
+.python-pretest-question-actions{display:flex;justify-content:space-between;gap:.75rem;flex-wrap:wrap;margin-top:auto;padding-top:1rem;border-top:1px solid #e2e8f0;}
+.python-pretest-results-hero{align-items:center;}
+.python-pretest-score-ring{width:132px;height:132px;border-radius:50%;border:10px solid #d8b654;background:#0a315c;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(9,49,92,.18);flex:0 0 auto;}
+.python-pretest-score-ring strong{font-size:1.55rem;line-height:1;}
+.python-pretest-score-ring span{font-size:.9rem;color:#ead07f;margin-top:.35rem;font-weight:900;}
+.python-pretest-readiness{background:linear-gradient(135deg,#f5f8fc,#eef4fa);border:1px solid #cfdce8;border-left:6px solid #c8a24a;border-radius:15px;padding:1.25rem 1.35rem;margin:1.2rem 0 2rem;}
+.python-pretest-readiness-label{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:#6f5317;}
+.python-pretest-readiness h3{font-size:1.65rem;color:#0a315c;margin:.25rem 0 .35rem;}
+.python-pretest-readiness p{margin:0;line-height:1.65;}
+.python-pretest-section-heading{margin:1.8rem 0 1rem;}
+.python-pretest-section-heading h2{margin:.2rem 0 0;color:#0b315f;}
+.python-pretest-domain-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;}
+.python-pretest-domain-card{border:1px solid #d8e2ec;border-radius:15px;padding:1rem 1.1rem;background:#fff;}
+.python-pretest-domain-card-top{display:flex;justify-content:space-between;gap:1rem;align-items:center;}
+.python-pretest-domain-card h3{font-size:1rem;margin:0;color:#183b5f;}
+.python-pretest-domain-card strong{color:#0a5d8d;}
+.python-pretest-domain-bar{height:9px;background:#e5ebf1;border-radius:999px;overflow:hidden;margin:.75rem 0 .55rem;}
+.python-pretest-domain-bar span{display:block;height:100%;background:linear-gradient(90deg,#0c5c8f,#2f8eb5);border-radius:inherit;}
+.python-pretest-domain-card p{font-size:.86rem;color:#50657a;margin:0;line-height:1.5;}
+.python-pretest-next-steps{display:grid;gap:.75rem;}
+.python-pretest-next-step{display:grid;grid-template-columns:auto 1fr;gap:.85rem;align-items:flex-start;background:#f7f9fc;border:1px solid #dbe3ec;border-radius:12px;padding:.95rem 1rem;}
+.python-pretest-next-step span{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#0b3b68;color:#fff;font-weight:900;}
+.python-pretest-next-step h3{margin:0 0 .25rem;font-size:1rem;color:#173c60;}
+.python-pretest-next-step p{margin:0;color:#50657a;line-height:1.55;}
+.python-pretest-summary-box{background:#101f30;color:#edf5fc;border-radius:15px;padding:1.2rem 1.3rem;margin:1.7rem 0;}
+.python-pretest-summary-box h2{font-size:1rem;color:#e6c86c;margin:0 0 .7rem;}
+.python-pretest-summary-box pre{white-space:pre-wrap;word-break:break-word;margin:0;font:500 .9rem/1.6 Consolas,"Courier New",monospace;color:#f2f7fb;}
+.python-pretest-copy-status{min-height:1.4rem;color:#22683b;font-weight:800;margin:.75rem 0 0;}
+.python-pretest-teacher-note{padding-bottom:3.5rem;}
+@media (max-width:900px){
+  .python-pretest-hero-grid{grid-template-columns:1fr;}
+  .python-pretest-summary{max-width:620px;}
+  .python-pretest-form-grid{grid-template-columns:1fr 1fr;}
+  .python-pretest-layout{grid-template-columns:1fr;}
+  .python-pretest-navigator{position:static;}
+  .python-pretest-nav-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:620px){
+  .python-pretest-hero{padding:3rem 0 2.75rem;}
+  .python-pretest-summary{grid-template-columns:1fr 1fr;}
+  .python-pretest-summary div{min-height:95px;}
+  .python-pretest-form-grid,.python-pretest-domain-results{grid-template-columns:1fr;}
+  .python-pretest-panel-heading,.python-pretest-results-hero,.python-pretest-topbar{grid-template-columns:1fr;display:grid;}
+  .python-pretest-score-ring{width:112px;height:112px;}
+  .python-pretest-nav-grid{grid-template-columns:repeat(5,1fr);}
+  .python-pretest-question-actions .btn{flex:1 1 40%;}
+}
+@media print{
+  .site-header,.site-breadcrumbs,.python-pretest-hero,.python-pretest-intro,.python-pretest-start,.python-pretest-quiz,.python-pretest-teacher-note,.footer,.back-to-top,.python-pretest-result-actions,.python-pretest-copy-status{display:none!important;}
+  body,.python-pretest-page{background:#fff!important;}
+  .python-pretest-shell{padding:0!important;max-width:none!important;}
+  .python-pretest-results{display:block!important;border:0!important;box-shadow:none!important;padding:0!important;}
+  .python-pretest-domain-results{grid-template-columns:1fr 1fr!important;}
+  .python-pretest-score-ring{border-color:#555!important;background:#fff!important;color:#000!important;box-shadow:none!important;}
+  .python-pretest-score-ring span{color:#000!important;}
+  .python-pretest-summary-box{background:#fff!important;color:#000!important;border:1px solid #777!important;}
+  .python-pretest-summary-box h2,.python-pretest-summary-box pre{color:#000!important;}
+}
+.python-pretest-page [hidden]{display:none!important;}
+.python-pretest-option > span:last-child{color:#1f3449!important;line-height:1.55;}
+
+
+/* Accessibility and visibility hardening — loaded after shared site styles. */
+.python-pretest-page main{color:#1f3449;}
+.python-pretest-page .python-pretest-start,
+.python-pretest-page .python-pretest-quiz,
+.python-pretest-page .python-pretest-results{color:#1f3449;}
+.python-pretest-page .python-pretest-start > p,
+.python-pretest-page #resultsStudentLine,
+.python-pretest-page .python-pretest-readiness p{color:#425b73;}
+.python-pretest-page .python-pretest-directions,
+.python-pretest-page .python-pretest-directions ol,
+.python-pretest-page .python-pretest-directions li{color:#263b50!important;}
+.python-pretest-page .python-pretest-directions li::marker{color:#6c5014;}
+.python-pretest-page .python-pretest-skill-list,
+.python-pretest-page .python-pretest-skill-list li{color:#33485d;}
+.python-pretest-page .python-pretest-navigator,
+.python-pretest-page .python-pretest-question-card,
+.python-pretest-page .python-pretest-domain-card,
+.python-pretest-page .python-pretest-next-step{color:#1f3449;}
+.python-pretest-page .python-pretest-option{color:#1f3449;}
+.python-pretest-page .python-pretest-option > span:last-child{color:#1f3449!important;}
+.python-pretest-page .python-pretest-form-grid input::placeholder{color:#66788a;opacity:1;}
+.python-pretest-page .btn.light{background:#ffffff;color:#0b315f;border-color:#9fb2c6;box-shadow:none;}
+.python-pretest-page .btn.light:hover,
+.python-pretest-page .btn.light:focus{background:#eaf2fa;color:#071f3b;border-color:#527da4;}
+.python-pretest-page .btn:disabled{opacity:.58;cursor:not-allowed;transform:none;box-shadow:none;}
+.python-pretest-page .python-pretest-text-button{color:#124e7d;}
+.python-pretest-page .python-pretest-copy-status{color:#175c31;}
+.python-pretest-page :focus-visible{outline:3px solid #d8b654;outline-offset:3px;}
+
+/* 2026-07-30 visibility pass: keep all light-panel text readable even when
+   shared styles or browser text-fill rules are active. */
+.python-pretest-page{color-scheme:light;}
+.python-pretest-page .python-pretest-intro .card,
+.python-pretest-page .python-pretest-start,
+.python-pretest-page .python-pretest-quiz,
+.python-pretest-page .python-pretest-results,
+.python-pretest-page .python-pretest-teacher-note .card{
+  color:#1f3449!important;
+  -webkit-text-fill-color:#1f3449!important;
+}
+.python-pretest-page .python-pretest-intro .card p,
+.python-pretest-page .python-pretest-intro .card li,
+.python-pretest-page .python-pretest-start > p,
+.python-pretest-page .python-pretest-readiness p,
+.python-pretest-page #resultsStudentLine,
+.python-pretest-page .python-pretest-teacher-note .card p{
+  color:#425b73!important;
+  -webkit-text-fill-color:#425b73!important;
+  opacity:1!important;
+}
+.python-pretest-page .python-pretest-directions,
+.python-pretest-page .python-pretest-directions h3,
+.python-pretest-page .python-pretest-directions ol,
+.python-pretest-page .python-pretest-directions li{
+  color:#263b50!important;
+  -webkit-text-fill-color:#263b50!important;
+  opacity:1!important;
+}
+.python-pretest-page .python-pretest-directions li::marker{
+  color:#6c5014!important;
+  -webkit-text-fill-color:#6c5014!important;
+}
+.python-pretest-page .python-pretest-form-grid label,
+.python-pretest-page .python-pretest-form-grid label span,
+.python-pretest-page .python-pretest-navigator,
+.python-pretest-page .python-pretest-navigator h2,
+.python-pretest-page .python-pretest-nav-key,
+.python-pretest-page .python-pretest-question-card,
+.python-pretest-page .python-pretest-question-card h2,
+.python-pretest-page .python-pretest-question-meta,
+.python-pretest-page .python-pretest-domain-card,
+.python-pretest-page .python-pretest-domain-card h3,
+.python-pretest-page .python-pretest-domain-card p,
+.python-pretest-page .python-pretest-next-step,
+.python-pretest-page .python-pretest-next-step h3,
+.python-pretest-page .python-pretest-next-step p{
+  -webkit-text-fill-color:currentColor!important;
+  opacity:1!important;
+}
+.python-pretest-page .python-pretest-option,
+.python-pretest-page .python-pretest-option > span:last-child{
+  color:#1f3449!important;
+  -webkit-text-fill-color:#1f3449!important;
+  opacity:1!important;
+}
+.python-pretest-page .python-pretest-option-letter{
+  color:#0c4a78!important;
+  -webkit-text-fill-color:#0c4a78!important;
+}
+.python-pretest-page .python-pretest-form-grid input,
+.python-pretest-page .python-pretest-form-grid select{
+  color:#182a3d!important;
+  -webkit-text-fill-color:#182a3d!important;
+  background:#fff!important;
+}
+.python-pretest-page .python-pretest-form-grid input::placeholder{
+  color:#66788a!important;
+  -webkit-text-fill-color:#66788a!important;
+  opacity:1!important;
+}
+.python-pretest-page .python-pretest-status-pill,
+.python-pretest-page .python-pretest-domain{
+  -webkit-text-fill-color:currentColor!important;
+}
+.python-pretest-page .python-pretest-summary-box,
+.python-pretest-page .python-pretest-summary-box pre{
+  color:#f2f7fb!important;
+  -webkit-text-fill-color:#f2f7fb!important;
+}
+.python-pretest-page .python-pretest-summary-box h2{
+  color:#e6c86c!important;
+  -webkit-text-fill-color:#e6c86c!important;
+}
+.python-pretest-page .python-pretest-score-ring,
+.python-pretest-page .python-pretest-score-ring strong{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+.python-pretest-page .python-pretest-score-ring span{
+  color:#ead07f!important;
+  -webkit-text-fill-color:#ead07f!important;
+}
+

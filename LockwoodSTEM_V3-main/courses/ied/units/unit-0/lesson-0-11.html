@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>IED Lesson 0.11: Final Documentation &amp; Design Review | LockwoodSTEM</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/>
+<script defer="" src="../../../../assets/js/main.js"></script>
+<meta content="A Introduction to Engineering Design lesson on final documentation &amp; design review." name="description"/>
+<style id="ied-critical-contrast">
+/* Reliable high-contrast lesson text and reveal panels. */
+body.immersive-lesson-page .lesson-section h2,
+body.immersive-lesson-page .lesson-section h3,
+body.immersive-lesson-page .lesson-section .section-subtitle,
+body.lesson-immersive-page .lesson-web-section h2,
+body.lesson-immersive-page .lesson-web-section h3,
+body.lesson-immersive-page .lesson-web-section .section-subtitle { color:#0b1f3a!important; -webkit-text-fill-color:#0b1f3a!important; opacity:1!important; }
+body.immersive-lesson-page details.answer-reveal,
+body.immersive-lesson-page details.lesson-answer-reveal,
+body.immersive-lesson-page article.reveal-card>details,
+body.lesson-immersive-page details.answer-reveal,
+body.lesson-immersive-page details.lesson-answer-reveal,
+body.lesson-immersive-page article.reveal-card>details { background:#fff!important; color:#102033!important; -webkit-text-fill-color:#102033!important; border:2px solid #9db2c4!important; border-radius:14px!important; padding:0!important; overflow:hidden!important; }
+body.immersive-lesson-page details.answer-reveal summary,
+body.immersive-lesson-page details.answer-reveal summary *,
+body.immersive-lesson-page details.lesson-answer-reveal summary,
+body.immersive-lesson-page details.lesson-answer-reveal summary *,
+body.immersive-lesson-page article.reveal-card>details summary,
+body.immersive-lesson-page article.reveal-card>details summary *,
+body.lesson-immersive-page details.answer-reveal summary,
+body.lesson-immersive-page details.answer-reveal summary *,
+body.lesson-immersive-page details.lesson-answer-reveal summary,
+body.lesson-immersive-page details.lesson-answer-reveal summary *,
+body.lesson-immersive-page article.reveal-card>details summary,
+body.lesson-immersive-page article.reveal-card>details summary * { background:#f3c95c!important; color:#061b31!important; -webkit-text-fill-color:#061b31!important; opacity:1!important; padding:1rem 1.15rem!important; font-weight:900!important; }
+body.immersive-lesson-page details.answer-reveal :is(p,li,span,strong,h2,h3,h4,div),
+body.immersive-lesson-page details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4,div),
+body.immersive-lesson-page article.reveal-card>details :is(p,li,span,strong,h2,h3,h4,div),
+body.lesson-immersive-page details.answer-reveal :is(p,li,span,strong,h2,h3,h4,div),
+body.lesson-immersive-page details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4,div),
+body.lesson-immersive-page article.reveal-card>details :is(p,li,span,strong,h2,h3,h4,div) { color:#102033!important; -webkit-text-fill-color:#102033!important; opacity:1!important; text-shadow:none!important; }
+</style><link href="../../../../assets/css/ied-lesson-resource-contrast.css?v=20260720-1" rel="stylesheet"/><link href="../../../../assets/css/ied-accessibility.css?v=20260720-a11y-v1" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/></head>
+<body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container nav">
+<a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html">
+<img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
+<span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+</a>
+<button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
+<ul class="nav-links" id="site-navigation"><li><a aria-current="page" data-nav-section="courses" href="../../../../courses.html">Courses</a></li><li><a data-nav-section="agenda" href="../../../../agenda.html">Daily Agenda</a></li><li><a data-nav-section="resources" href="../../../../resources/index.html">Resources</a></li><li><a data-nav-section="certifications" href="../../../../certifications/index.html">Certifications</a></li><li><a data-nav-section="fablab" href="../../../../fablab/index.html">FabLab</a></li><li><a data-nav-section="about" href="../../../../about/index.html">About</a></li><li><a data-nav-section="challenges" href="../../../../challenge-library/index.html">Challenges</a></li></ul>
+</div>
+</header>
+<main id="main">
+<nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../index.html">IED</a></li><li><a href="../unit-0.html">Unit 0</a></li><li aria-current="page">Lesson 0.11</li></ol></nav>
+<section class="page-hero lesson-mission-hero">
+<div class="container hero-grid">
+<div>
+<img alt="IED course icon" class="lesson-course-icon" src="../../../../assets/img/course-icons/ied-course-icon.png"/>
+<div class="eyebrow">IED Unit 0 • Lesson 0.11</div>
+<h1>Final Documentation &amp; Design Review</h1>
+<p><strong>Focus Question:</strong> How do engineers communicate and defend a final design?</p>
+<div class="hero-actions consistent-actions">
+<a class="btn secondary" href="#flight-plan">View Lesson Plan</a>
+<a class="btn secondary" href="#submit">What You Submit</a>
+<a class="btn secondary" href="../unit-0.html">Back to Unit 0</a>
+</div>
+</div>
+<aside class="card dark lesson-mission-card">
+<span class="tag">Mission Objective</span>
+<h3>Defend the final design</h3>
+<p>Organize process evidence and explain how testing, revisions, criteria, and constraints shaped the finished prototype.</p>
+<div aria-label="Lesson cycle" class="mission-cycle"><span>Show</span><span>Support</span><span>Defend</span></div>
+</aside>
+</div>
+</section>
+<section class="container" id="flight-plan">
+<div class="section-header"><div><div class="eyebrow">Mission Briefing</div><h2>Today’s Plan</h2><p class="section-subtitle">Prepare a concise design review that shows the process—not only the finished object.</p></div></div>
+<div class="grid two">
+<article class="card lesson-target-card"><h3>Learning Targets</h3><ul class="unit-meta-list"><li>Prepare final documentation for the launch-pad prototype.</li><li>Explain how the design changed from concept to final version.</li><li>Justify how the final prototype meets criteria and constraints.</li></ul></article>
+<article class="card lesson-target-card"><h3>Success Looks Like…</h3><p class="lesson-big-statement">Every important design claim is supported by a sketch, photo, test result, observation, or documented decision.</p><div class="callout"><strong>Core habit:</strong> Use evidence language to explain what changed, why it changed, and how the final design performs.</div></article>
+</div>
+<div aria-label="Lesson pacing" class="lesson-timeline time-free"><div><span>Opening prompt</span></div><div><span>Evidence audit</span></div><div><span>Organize process</span></div><div><span>Final documentation</span></div><div><span>Prepare explanation</span></div><div><span>Peer check</span></div><div><span>Exit</span></div></div>
+</section>
+<section class="container lesson-web-section">
+<div class="section-header"><div><div class="eyebrow">Opening Prompt</div><h2>What makes a final design believable?</h2><p class="section-subtitle">A finished prototype is not enough; the team must show how evidence shaped it.</p></div></div>
+<article class="card prompt-card"><p class="lesson-prompt"><strong>Quick class share:</strong> What would you need to see before accepting a team’s claim that its design meets the requirements?</p></article>
+<details class="lesson-answer-reveal answer-reveal"><summary>Reveal the design-review purpose</summary><div class="answer-panel"><p class="lesson-big-statement"><strong>A design review explains and defends the final design with evidence.</strong></p><p>It shows the path from problem definition to testing, revision, and final performance.</p></div></details>
+</section>
+<section class="container lesson-web-section">
+<div class="section-header"><div><div class="eyebrow">Visual Communication</div><h2>Use diagrams to make structure understandable</h2><p class="section-subtitle">Labels and views help an audience inspect the design claim.</p></div></div>
+<figure class="card lesson-image-card diagram"><img alt="Technical diagrams of a NASA mobile launcher platform" loading="lazy" src="../../../../assets/img/ied/unit-0/launcher-diagram.webp"/><figcaption>A design review needs visuals that make structure and relationships understandable—not only a verbal description. Image: NASA/KSC, public domain via <a href="https://commons.wikimedia.org/wiki/File:Shuttle-era_Mobile_Launcher_Platform_diagram.jpg" rel="noopener" target="_blank">Wikimedia Commons</a></figcaption></figure>
+</section>
+<section class="container lesson-web-section">
+<div class="section-header"><div><div class="eyebrow">Evidence Set</div><h2>Show the process and support the claims</h2><p class="section-subtitle">Select evidence that helps the audience understand decisions.</p></div></div>
+<div class="grid two"><article class="card"><span class="tag blue">Show the Process</span><ul class="unit-meta-list"><li>Problem definition</li><li>Initial concepts</li><li>Build plan</li><li>Prototype construction</li><li>Testing and improvement</li><li>Final design</li></ul></article><article class="card"><span class="tag green">Use Evidence</span><ul class="unit-meta-list"><li>Labeled sketches</li><li>Materials and dimensions</li><li>Photos</li><li>Test results</li><li>Observations</li><li>Design explanations</li></ul></article></div>
+</section>
+<section class="container lesson-web-section">
+<div class="section-header"><div><div class="eyebrow">Review Preparation</div><h2>Organize the story before presenting</h2><p class="section-subtitle">The review should be concise, ordered, and evidence-based.</p></div></div>
+<article class="card"><ol class="lesson-numbered-steps"><li>Check that the prototype is finished and stable.</li><li>Organize evidence from Lessons 0.7–0.10.</li><li>Create or update a final labeled sketch.</li><li>Summarize the most important test results.</li><li>Explain one major improvement.</li><li>Show how the final design meets criteria and constraints.</li></ol></article>
+</section>
+<section class="container lesson-web-section">
+<div class="section-header"><div><div class="eyebrow">Evidence Language</div><h2>Use sentence frames to defend decisions</h2><p class="section-subtitle">Specific language helps connect claims to proof.</p></div></div>
+<div class="grid two"><article class="card"><ul class="unit-meta-list"><li>Our launch pad meets the stability criterion because…</li><li>The provided rocket is supported by…</li><li>Our most important test result was…</li></ul></article><article class="card"><ul class="unit-meta-list"><li>After testing, we changed… because…</li><li>The evidence that supports this decision is…</li><li>With more time, the next improvement would be…</li></ul></article></div>
+</section>
+<section class="container lesson-web-section">
+<div class="section-header"><div><div class="eyebrow">Scenario Response</div><h2>The prototype is finished, but the reasoning is missing</h2><p class="section-subtitle">Choose the strongest next step before opening the answer.</p></div></div>
+<article class="card prompt-card"><p class="scenario-text">A team plans to show only the finished prototype because the changes seem obvious.</p><ol class="lesson-choice-list lettered"><li><span>A</span>Present the prototype without process evidence.</li><li><span>B</span>Say the changes are obvious and skip the explanation.</li><li><span>C</span>Add the original problem, test results, revisions, and final justification.</li><li><span>D</span>Focus only on decoration and presentation style.</li></ol></article>
+<details class="lesson-answer-reveal answer-reveal"><summary>Reveal the strongest review plan</summary><div class="answer-panel"><h3>Best answer: C</h3><p>The audience needs evidence showing how the team reached the final design. A review should make the reasoning inspectable.</p></div></details>
+</section>
+<section class="container lesson-web-section">
+<div class="section-header"><div><div class="eyebrow">Mission Debrief</div><h2>What You Submit</h2><p class="section-subtitle">Create the final evidence package for the launch-pad challenge.</p></div></div>
+<div class="grid two" id="submit"><article class="card submit-card"><h3>Final Launch Pad Review</h3><ul class="unit-meta-list submit-list"><li>One final design-review artifact containing the labeled design, test summary, and major improvement justification.</li></ul></article><article class="card"><span class="tag blue">Next Mission</span><h3>Lesson 0.12</h3><p>Unit 0 Portfolio Check &amp; Design Reflection</p><a class="btn small" href="lesson-0-12.html">Open Lesson 0.12</a></article></div>
+</section>
+<section class="container">
+<div class="section-header"><div><div class="eyebrow">Resources</div><h2>Lesson 0.11 Resources</h2><p class="section-subtitle">Use only the files and references that support today’s work.</p></div></div>
+<div class="grid two"><article class="card resource-card"><span class="tag blue">Design Review</span><h3>Design Review Form</h3><p>Use the editable form to organize design evidence and review feedback.</p><div class="resource-actions"><a class="btn small" download="" href="../../../../downloads/editable-docx/LS-TMP-006_Design_Review_Form.docx">Download DOCX</a></div></article><article class="card resource-card"><span class="tag blue">Slides Template</span><h3>Final Design Review Slides</h3><p>Optional editable PowerPoint structure for a formal design presentation.</p><div class="resource-actions"><a class="btn small" download="" href="../../../../downloads/presentations/LS-TMP-018_Final_Design_Review_Slides_Template.pptx">Download PPTX</a></div></article><article class="card resource-card"><span class="tag">Course Hub</span><h3>Introduction to Engineering Design</h3><p>Return to the IED course hub for units, resources, certifications, and current course information.</p><div class="resource-actions"><a class="btn small" href="../../index.html">Open IED Hub</a></div></article></div>
+</section>
+<nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-0-10.html">← Previous Lesson</a><a class="btn" href="lesson-0-12.html">Next Lesson →</a></nav>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a> <a href="../../../../agenda.html">Daily Agenda</a> <a href="../../../../resources/index.html">Resources</a> <a href="../../../../certifications/index.html">Certifications</a> <a href="../../../../fablab/index.html">FabLab</a> <a href="../../../../about/index.html">About</a><a href="../../../../courses/ied/index.html">IED</a><a href="../../../../courses/poe/index.html">POE</a><a href="../../../../courses/adm/index.html">ADM</a><a href="../../../../challenge-library/index.html">Challenges</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+</body>
+</html>
