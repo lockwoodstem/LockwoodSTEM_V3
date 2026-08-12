@@ -1103,3 +1103,33 @@ body.agenda-fullscreen-active {
 .agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.notes {
   display: none !important;
 }
+
+
+/* Smartboard full-screen column rebalance + guaranteed quote — build 20260812-2
+   Give Upcoming Due Dates / Quote of the Day more horizontal room while keeping
+   the regular (non-full-screen) agenda layout unchanged. */
+.agenda-display-card.quote-fallback {
+  display: none;
+}
+
+.agenda-shell:fullscreen #agendaApp.agenda-display-grid,
+.agenda-shell:-webkit-full-screen #agendaApp.agenda-display-grid,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp.agenda-display-grid {
+  grid-template-columns: minmax(0, 1.16fr) minmax(390px, .84fr) !important;
+}
+
+/* The fallback quote is classroom-only. A real quote from the Quotes sheet
+   continues to behave normally outside full screen. */
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.quote-fallback,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.quote-fallback,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.quote-fallback {
+  display: flex !important;
+}
+
+/* The wider right column can support larger due-date text before it wraps. */
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates {
+  padding-left: .68rem !important;
+  padding-right: .68rem !important;
+}

@@ -439,11 +439,21 @@ function findAgenda() {
 
 function findQuote() {
   if (!quoteRows.length) return "";
+
+  // Prefer an exact-date quote, but do not let a dated row with a blank Quote
+  // suppress the most recent usable quote. This also makes the classroom
+  // display resilient to partially filled rows in the published sheet.
   const exact = quoteRows.find(r => r._date === currentDate);
-  if (exact) return getField(exact, ["Quote"]);
-  const before = quoteRows.filter(r => r._date <= currentDate);
-  if (before.length) return getField(before[before.length - 1], ["Quote"]);
-  return getField(quoteRows[quoteRows.length - 1], ["Quote"]);
+  const exactQuote = exact ? getField(exact, ["Quote"]).trim() : "";
+  if (exactQuote) return exactQuote;
+
+  const before = quoteRows.filter(r => {
+    return r._date <= currentDate && getField(r, ["Quote"]).trim();
+  });
+  if (before.length) return getField(before[before.length - 1], ["Quote"]).trim();
+
+  const anyQuote = [...quoteRows].reverse().find(r => getField(r, ["Quote"]).trim());
+  return anyQuote ? getField(anyQuote, ["Quote"]).trim() : "";
 }
 
 function lessonSummary(row) {
@@ -466,6 +476,7 @@ function renderAgendaCard(title, content, extraClass = "") {
 function renderDayView() {
   const agenda = findAgenda();
   const quote = findQuote();
+  const quoteText = quote || "Stay curious. Test your ideas. Improve what you learn.";
   updateBadges(agenda);
 
   if (!agenda) {
@@ -517,7 +528,11 @@ function renderDayView() {
       ${renderAgendaCard("Upcoming Due Dates", renderUpcomingDueDates(currentCourse, currentDate), "due-dates")}
       ${renderAgendaCard("Standards", listify(standards), "standards")}
       ${renderAgendaCard("Notes", listify(notes), "notes")}
-      ${quote ? renderAgendaCard("Quote of the Day", `<div class="quote-text">${escapeHTML(quote)}</div>`, "quote") : ""}
+      ${renderAgendaCard(
+        "Quote of the Day",
+        `<div class="quote-text">${escapeHTML(quoteText)}</div>`,
+        quote ? "quote" : "quote quote-fallback"
+      )}
     </aside>
   `;
   enhanceAgendaLessonResourceBar(currentCourse, unit, lesson).catch(console.warn);
