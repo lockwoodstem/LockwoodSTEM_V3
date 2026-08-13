@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 448" role="img" aria-labelledby="title desc">
-  <title id="title">Front orthographic view</title>
-  <desc id="desc">An L-shaped front projection with a tall left section and a long lower section extending to the right.</desc>
-  <rect width="512" height="448" fill="#ffffff"/>
-  <path d="M143 81 H205 V170 H409 V214 H143 Z" fill="#fdfdfd" stroke="#111827" stroke-width="2.5" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
-</svg>

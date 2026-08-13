@@ -866,3 +866,270 @@ body.agenda-fullscreen-active {
     font-size: .78rem !important;
   }
 }
+
+/* Smartboard full-screen adaptive layout — build 20260812-1
+   Short classroom content expands to use available space; long content shrinks
+   section-by-section instead of shrinking the entire agenda. */
+.agenda-shell:fullscreen #agendaApp.agenda-display-grid,
+.agenda-shell:-webkit-full-screen #agendaApp.agenda-display-grid,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp.agenda-display-grid {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  height: auto;
+  overflow: hidden !important;
+  align-items: stretch !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-main-card,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-main-card,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-main-card {
+  height: 100% !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  grid-template-rows: auto auto minmax(0, 3fr) minmax(104px, 1fr) !important;
+}
+
+/* Give the lesson title less of the classroom screen so instructional text can grow. */
+.agenda-shell:fullscreen #agendaApp .agenda-title-row h2,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-title-row h2,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-title-row h2 {
+  font-size: clamp(1.9rem, 2.7vw, 3.15rem) !important;
+  line-height: 1 !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-title-block,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-title-block,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-title-block {
+  padding-top: .34rem !important;
+  padding-bottom: .34rem !important;
+}
+
+/* Today in Class gets the majority of the remaining vertical space. */
+.agenda-shell:fullscreen #agendaApp .agenda-primary-block,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-primary-block,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-primary-block {
+  min-height: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-primary-block > .agenda-phases,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-primary-block > .agenda-phases,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-primary-block > .agenda-phases {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  align-content: center !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-primary-block .agenda-phase-content li,
+.agenda-shell:fullscreen #agendaApp .agenda-primary-block > .agenda-list li,
+.agenda-shell:fullscreen #agendaApp .agenda-primary-block > .content-text,
+.agenda-shell:fullscreen #agendaApp .agenda-primary-block > .empty,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-primary-block .agenda-phase-content li,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-primary-block > .agenda-list li,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-primary-block > .content-text,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-primary-block > .empty,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-primary-block .agenda-phase-content li,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-primary-block > .agenda-list li,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-primary-block > .content-text,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-primary-block > .empty {
+  font-size: var(--agenda-fit-size, 24px) !important;
+  line-height: 1.2 !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-primary-block .agenda-phase-heading,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-primary-block .agenda-phase-heading,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-primary-block .agenda-phase-heading {
+  font-size: clamp(1rem, calc(var(--agenda-fit-size, 24px) * .72), 1.75rem) !important;
+  line-height: 1.08 !important;
+}
+
+/* Homework/announcements receive a real display area and fit their own content. */
+.agenda-shell:fullscreen #agendaApp .agenda-main-footer,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-main-footer,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-main-footer {
+  min-height: 0 !important;
+  align-items: stretch !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-main-footer > div,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-main-footer > div,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-main-footer > div {
+  min-height: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-main-footer .agenda-list li,
+.agenda-shell:fullscreen #agendaApp .agenda-main-footer .content-text,
+.agenda-shell:fullscreen #agendaApp .agenda-main-footer .empty,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-main-footer .agenda-list li,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-main-footer .content-text,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-main-footer .empty,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-main-footer .agenda-list li,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-main-footer .content-text,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-main-footer .empty {
+  font-size: var(--agenda-fit-size, 20px) !important;
+  line-height: 1.18 !important;
+}
+
+/* Full-screen right column: Objectives, Upcoming Due Dates, then Quote of the Day. */
+.agenda-shell:fullscreen #agendaApp .agenda-side-stack,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-side-stack,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-side-stack {
+  height: 100% !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: .38rem !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.objectives,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.objectives,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.objectives {
+  flex: .62 1 0 !important;
+  min-height: 84px !important;
+  overflow: hidden !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates {
+  flex: 1.38 1 0 !important;
+  min-height: 115px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Quote was intentionally hidden in the previous classroom layout; restore it here. */
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.quote,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.quote,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.quote {
+  display: flex !important;
+  flex: .8 1 0 !important;
+  min-height: 96px !important;
+  overflow: hidden !important;
+  flex-direction: column !important;
+  order: 30 !important;
+  padding: .55rem .65rem !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.objectives > div,
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates > div,
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.quote > div,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.objectives > div,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates > div,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.quote > div,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.objectives > div,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates > div,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.quote > div {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.objectives .agenda-list li,
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.objectives .content-text,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.objectives .agenda-list li,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.objectives .content-text,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.objectives .agenda-list li,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.objectives .content-text {
+  font-size: var(--agenda-fit-size, 17px) !important;
+  line-height: 1.18 !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-list,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-list,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-list {
+  height: 100% !important;
+  align-content: center !important;
+  gap: .4rem !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-title,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-title,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-title {
+  font-size: var(--agenda-fit-size, 19px) !important;
+  line-height: 1.12 !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-calendar,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-calendar,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-calendar {
+  font-size: clamp(.88rem, calc(var(--agenda-fit-size, 19px) * .78), 1.45rem) !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-badge,
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-meta,
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-note,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-badge,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-meta,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-note,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-badge,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-meta,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-note {
+  font-size: clamp(.7rem, calc(var(--agenda-fit-size, 19px) * .6), 1rem) !important;
+  line-height: 1.12 !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.quote > div,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.quote > div,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.quote > div {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.quote .quote-text,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.quote .quote-text,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.quote .quote-text {
+  width: 100% !important;
+  font-size: var(--agenda-fit-size, 22px) !important;
+  line-height: 1.18 !important;
+  font-weight: 850 !important;
+}
+
+/* Standards and notes stay off the classroom display to preserve reading distance. */
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.standards,
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.notes,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.standards,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.notes,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.standards,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.notes {
+  display: none !important;
+}
+
+
+/* Smartboard full-screen column rebalance + guaranteed quote — build 20260812-2
+   Give Upcoming Due Dates / Quote of the Day more horizontal room while keeping
+   the regular (non-full-screen) agenda layout unchanged. */
+.agenda-display-card.quote-fallback {
+  display: none;
+}
+
+.agenda-shell:fullscreen #agendaApp.agenda-display-grid,
+.agenda-shell:-webkit-full-screen #agendaApp.agenda-display-grid,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp.agenda-display-grid {
+  grid-template-columns: minmax(0, 1.16fr) minmax(390px, .84fr) !important;
+}
+
+/* The fallback quote is classroom-only. A real quote from the Quotes sheet
+   continues to behave normally outside full screen. */
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.quote-fallback,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.quote-fallback,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.quote-fallback {
+  display: flex !important;
+}
+
+/* The wider right column can support larger due-date text before it wraps. */
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates {
+  padding-left: .68rem !important;
+  padding-right: .68rem !important;
+}

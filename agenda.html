@@ -8,37 +8,13 @@
 <link href="assets/css/styles.css" rel="stylesheet"/>
 <script defer="" src="assets/js/main.js"></script>
 <script defer="" src="assets/js/agenda-config.js"></script>
-<link href="assets/css/agenda-resources-smartboard-v4.css" rel="stylesheet"/>
-<script defer="" src="assets/js/agenda-current-smartboard-v4.js?v=20260812-linkfix1"></script>
+<link href="assets/css/agenda-resources.css?v=20260812-2" rel="stylesheet"/>
+  <link href="assets/css/agenda-due-date-fullscreen-fix.css?v=20260813-1" rel="stylesheet"/>
+<script defer="" src="assets/js/agenda-current.js?v=20260812-2"></script>
 <meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/>
-<meta content="20260812-linkfix1" name="lockwood-agenda-build"/>
+<meta content="20260812-2" name="lockwood-agenda-build"/>
 
-<link href="assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><style id="agenda-smartboard-v4-critical">
-/* Critical Smartboard rules live in the HTML intentionally so stale CSS caches cannot restore the old 71/29 split. */
-.agenda-shell:fullscreen #agendaApp.agenda-display-grid,
-.agenda-shell:-webkit-full-screen #agendaApp.agenda-display-grid,
-.agenda-shell.agenda-fallback-fullscreen #agendaApp.agenda-display-grid{grid-template-columns:minmax(0,58fr) minmax(0,42fr)!important}
-.agenda-shell:fullscreen #agendaApp .agenda-display-card.quote,
-.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.quote,
-.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.quote{display:flex!important;order:30!important;min-height:125px!important}
-.agenda-shell:fullscreen #agendaApp .agenda-display-card.standards,
-.agenda-shell:fullscreen #agendaApp .agenda-display-card.notes,
-.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.standards,
-.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.notes,
-.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.standards,
-.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.notes{display:none!important}
-
-/* v4 deployment verification: briefly shown after entering classroom full-screen. */
-#agendaSmartboardBuildBadge{display:none}
-.agenda-shell:fullscreen #agendaSmartboardBuildBadge,
-.agenda-shell:-webkit-full-screen #agendaSmartboardBuildBadge,
-.agenda-shell.agenda-fallback-fullscreen #agendaSmartboardBuildBadge{
-  display:block;position:absolute;right:.55rem;bottom:.35rem;z-index:9999;
-  padding:.18rem .42rem;border-radius:999px;background:rgba(15,23,42,.82);
-  color:#fff;font:700 10px/1.2 system-ui,sans-serif;letter-spacing:.04em;opacity:.72;
-}
-</style>
-</head>
+<link href="assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/></head>
 <body class="agenda-display-cleanup-enabled agenda-fit-fix agenda-exact-badge-fix site-consistency-v4 agenda-page agenda-box-fit-v2">
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header">
@@ -99,7 +75,6 @@
 </div>
 </div>
 <div class="agenda-loading" id="agendaApp">Loading agenda...</div>
-<div aria-hidden="true" id="agendaSmartboardBuildBadge">SMARTBOARD v4</div>
 </div>
 </section>
 </main>
@@ -134,45 +109,6 @@
     return Boolean(isFullScreen() || agendaTarget.classList.contains('agenda-fallback-fullscreen'));
   }
 
-  function ensureClassroomQuoteCard(){
-    if (!agendaApp || !agendaApp.classList.contains('agenda-display-grid')) return null;
-    const side = agendaApp.querySelector('.agenda-side-stack');
-    if (!side) return null;
-
-    let quoteCard = side.querySelector('.agenda-display-card.quote');
-    if (!quoteCard) {
-      quoteCard = document.createElement('section');
-      quoteCard.className = 'agenda-display-card quote quote-runtime-fallback';
-      quoteCard.innerHTML = '<h3>Quote of the Day</h3><div><div class="quote-text">Stay curious. Test your ideas. Improve what you learn.</div></div>';
-      const due = side.querySelector('.agenda-display-card.due-dates');
-      if (due) due.insertAdjacentElement('afterend', quoteCard);
-      else side.appendChild(quoteCard);
-    }
-
-    // Move the quote directly below Upcoming Due Dates even if an older cached
-    // agenda renderer placed Standards/Notes before it.
-    const due = side.querySelector('.agenda-display-card.due-dates');
-    if (due && due.nextElementSibling !== quoteCard) {
-      due.insertAdjacentElement('afterend', quoteCard);
-    }
-
-    if (isFullscreenActive()) {
-      quoteCard.style.setProperty('display', 'flex', 'important');
-    } else {
-      quoteCard.style.removeProperty('display');
-    }
-    return quoteCard;
-  }
-
-  function enforceClassroomColumnSplit(){
-    if (!agendaApp || !agendaApp.classList.contains('agenda-display-grid')) return;
-    if (isFullscreenActive()) {
-      agendaApp.style.setProperty('grid-template-columns', 'minmax(0, 58fr) minmax(0, 42fr)', 'important');
-    } else {
-      agendaApp.style.removeProperty('grid-template-columns');
-    }
-  }
-
   function clearSectionFits(){
     if (!agendaApp) return;
     agendaApp.querySelectorAll(
@@ -192,9 +128,6 @@
     agendaApp.style.maxHeight = '';
     agendaApp.style.marginRight = '';
     agendaApp.style.transform = '';
-    agendaApp.style.removeProperty('grid-template-columns');
-    const quoteCard = agendaApp.querySelector('.agenda-display-card.quote-runtime-fallback');
-    if (quoteCard) quoteCard.style.removeProperty('display');
     clearSectionFits();
   }
 
@@ -229,8 +162,6 @@
 
   function fitClassroomSections(){
     if (!agendaApp || !agendaApp.classList.contains('agenda-display-grid')) return;
-    ensureClassroomQuoteCard();
-    enforceClassroomColumnSplit();
     clearSectionFits();
 
     fitTextArea(agendaApp.querySelector('.agenda-primary-block'), 15, 48);
@@ -240,7 +171,7 @@
     });
 
     fitTextArea(agendaApp.querySelector('.agenda-display-card.objectives'), 13, 23);
-    fitTextArea(agendaApp.querySelector('.agenda-display-card.due-dates'), 13, 32);
+    fitTextArea(agendaApp.querySelector('.agenda-display-card.due-dates'), 12, 18);
     fitTextArea(agendaApp.querySelector('.agenda-display-card.quote'), 16, 40);
   }
 
@@ -267,8 +198,6 @@
       agendaApp.style.marginRight = '0';
 
       if (agendaApp.classList.contains('agenda-display-grid')) {
-        ensureClassroomQuoteCard();
-        enforceClassroomColumnSplit();
         // Day view gets a fixed classroom canvas. Each important section then
         // independently grows its text to the largest size that fits that box.
         agendaApp.style.height = `${availableHeight}px`;
@@ -351,11 +280,7 @@
   window.addEventListener('resize', fitAgendaToViewport);
   if (agendaApp) {
     new MutationObserver(function(){
-      if (isFullscreenActive()) {
-        ensureClassroomQuoteCard();
-        enforceClassroomColumnSplit();
-        setTimeout(fitAgendaToViewport, 40);
-      }
+      if (isFullscreenActive()) setTimeout(fitAgendaToViewport, 40);
     }).observe(agendaApp, { childList: true, subtree: true, characterData: true });
   }
 

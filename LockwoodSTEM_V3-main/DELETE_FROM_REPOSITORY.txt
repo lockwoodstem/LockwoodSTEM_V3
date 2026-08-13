@@ -1,2 +1,0 @@
-Delete this obsolete file after extracting the update:
-assets/data/due-dates.csv
