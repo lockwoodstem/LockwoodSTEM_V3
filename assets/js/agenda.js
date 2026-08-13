@@ -195,8 +195,8 @@ function firstAgendaURL(value) {
 function normalizeLessonMatchTitle(value) {
   return clean(value)
     .toLowerCase()
-    .replace(/^lesson\s*\d+\s*[.\-]\s*\d+\s*[:\-–—]?\s*/i, "")
-    .replace(/^\d+\s*[.\-]\s*\d+\s*[:\-–—]?\s*/i, "")
+    .replace(/^(?:lesson|activity|project|problem)\s*\d+\s*[.\-]\s*\d+(?:\s*[.\-]\s*\d+)?\s*[:\-–—]?\s*/i, "")
+    .replace(/^\d+\s*[.\-]\s*\d+(?:\s*[.\-]\s*\d+)?\s*[:\-–—]?\s*/i, "")
     .replace(/&/g, " and ")
     .replace(/[^a-z0-9]+/g, " ")
     .replace(/\s+/g, " ")
@@ -205,10 +205,18 @@ function normalizeLessonMatchTitle(value) {
 
 function agendaLessonNumbers(unitText, lessonText) {
   const combined = `${clean(unitText)} ${clean(lessonText)}`;
-  const explicit = combined.match(/\b(?:lesson\s*)?(\d+)\s*[.\-]\s*(\d+)\b/i);
-  if (explicit) return { unit: Number(explicit[1]), lesson: Number(explicit[2]) };
+  const triple = combined.match(/\b(?:(?:lesson|activity|project|problem)\s*)?(\d+)\s*[.\-]\s*(\d+)\s*[.\-]\s*(\d+)\b/i);
+  if (triple) {
+    const number = `${Number(triple[1])}.${Number(triple[2])}.${Number(triple[3])}`;
+    return { unit: Number(triple[1]), lesson: null, number };
+  }
+  const explicit = combined.match(/\b(?:lesson\s*)?(\d+)\s*[.\-]\s*(\d+)\b(?!\s*[.\-]\s*\d)/i);
+  if (explicit) {
+    const number = `${Number(explicit[1])}.${Number(explicit[2])}`;
+    return { unit: Number(explicit[1]), lesson: Number(explicit[2]), number };
+  }
   const unitMatch = clean(unitText).match(/\b(\d+)\b/) || clean(lessonText).match(/\bunit\s*(\d+)\b/i);
-  return { unit: unitMatch ? Number(unitMatch[1]) : null, lesson: null };
+  return { unit: unitMatch ? Number(unitMatch[1]) : null, lesson: null, number: null };
 }
 
 function agendaTokenScore(a, b) {
@@ -236,6 +244,10 @@ function resolveAgendaLesson(index, course, unitText, lessonText) {
   const numbers = agendaLessonNumbers(unitText, lessonText);
   let candidates = index.filter(item => item.course === course);
   if (numbers.unit !== null) candidates = candidates.filter(item => item.unit === numbers.unit);
+  if (numbers.number) {
+    const exactSequence = candidates.find(item => String(item.number || "") === numbers.number);
+    if (exactSequence) return exactSequence;
+  }
   if (numbers.lesson !== null) {
     const exactNumber = candidates.find(item => item.lesson === numbers.lesson);
     if (exactNumber) return exactNumber;

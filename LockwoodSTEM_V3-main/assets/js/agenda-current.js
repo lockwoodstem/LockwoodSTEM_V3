@@ -198,8 +198,8 @@ function firstAgendaURL(value) {
 function normalizeLessonMatchTitle(value) {
   return clean(value)
     .toLowerCase()
-    .replace(/^lesson\s*\d+\s*[.\-]\s*\d+\s*[:\-–—]?\s*/i, "")
-    .replace(/^\d+\s*[.\-]\s*\d+\s*[:\-–—]?\s*/i, "")
+    .replace(/^(?:lesson|activity|project|problem)\s*\d+\s*[.\-]\s*\d+(?:\s*[.\-]\s*\d+)?\s*[:\-–—]?\s*/i, "")
+    .replace(/^\d+\s*[.\-]\s*\d+(?:\s*[.\-]\s*\d+)?\s*[:\-–—]?\s*/i, "")
     .replace(/&/g, " and ")
     .replace(/[^a-z0-9]+/g, " ")
     .replace(/\s+/g, " ")
@@ -208,10 +208,18 @@ function normalizeLessonMatchTitle(value) {
 
 function agendaLessonNumbers(unitText, lessonText) {
   const combined = `${clean(unitText)} ${clean(lessonText)}`;
-  const explicit = combined.match(/\b(?:lesson\s*)?(\d+)\s*[.\-]\s*(\d+)\b/i);
-  if (explicit) return { unit: Number(explicit[1]), lesson: Number(explicit[2]) };
+  const triple = combined.match(/\b(?:(?:lesson|activity|project|problem)\s*)?(\d+)\s*[.\-]\s*(\d+)\s*[.\-]\s*(\d+)\b/i);
+  if (triple) {
+    const number = `${Number(triple[1])}.${Number(triple[2])}.${Number(triple[3])}`;
+    return { unit: Number(triple[1]), lesson: null, number };
+  }
+  const explicit = combined.match(/\b(?:lesson\s*)?(\d+)\s*[.\-]\s*(\d+)\b(?!\s*[.\-]\s*\d)/i);
+  if (explicit) {
+    const number = `${Number(explicit[1])}.${Number(explicit[2])}`;
+    return { unit: Number(explicit[1]), lesson: Number(explicit[2]), number };
+  }
   const unitMatch = clean(unitText).match(/\b(\d+)\b/) || clean(lessonText).match(/\bunit\s*(\d+)\b/i);
-  return { unit: unitMatch ? Number(unitMatch[1]) : null, lesson: null };
+  return { unit: unitMatch ? Number(unitMatch[1]) : null, lesson: null, number: null };
 }
 
 function agendaTokenScore(a, b) {
@@ -239,6 +247,10 @@ function resolveAgendaLesson(index, course, unitText, lessonText) {
   const numbers = agendaLessonNumbers(unitText, lessonText);
   let candidates = index.filter(item => item.course === course);
   if (numbers.unit !== null) candidates = candidates.filter(item => item.unit === numbers.unit);
+  if (numbers.number) {
+    const exactSequence = candidates.find(item => String(item.number || "") === numbers.number);
+    if (exactSequence) return exactSequence;
+  }
   if (numbers.lesson !== null) {
     const exactNumber = candidates.find(item => item.lesson === numbers.lesson);
     if (exactNumber) return exactNumber;
@@ -273,7 +285,7 @@ function renderAgendaLessonResourceBar(course, unitText, lessonText, linksText) 
   const classLink = firstAgendaURL(linksText);
   return `
     <section class="agenda-inline-lesson-bar" id="agendaLessonResourceBar" aria-label="Lesson resources"
-         data-agenda-build="20260719-1"
+         data-agenda-build="20260812-linkfix1"
          data-course="${escapeHTML(course)}"
          data-unit="${escapeHTML(unitText)}"
          data-lesson="${escapeHTML(lessonText)}"
@@ -305,7 +317,7 @@ async function enhanceAgendaLessonResourceBar(course, unitText, lessonText) {
       presentation.className = "agenda-inline-secondary";
       presentation.dataset.agendaPresentationLink = "true";
       const lessonPageURL = new URL(lesson.url, document.baseURI);
-      presentation.href = new URL(lesson.presentation, lessonPageURL).href;
+      presentation.href = new URL(String(lesson.presentation).replace(/^\/+/, ""), document.baseURI).href;
       presentation.textContent = "Presentation";
       presentation.setAttribute("download", "");
       bar.querySelector(".agenda-inline-lesson-buttons")?.appendChild(presentation);
@@ -439,21 +451,11 @@ function findAgenda() {
 
 function findQuote() {
   if (!quoteRows.length) return "";
-
-  // Prefer an exact-date quote, but do not let a dated row with a blank Quote
-  // suppress the most recent usable quote. This also makes the classroom
-  // display resilient to partially filled rows in the published sheet.
   const exact = quoteRows.find(r => r._date === currentDate);
-  const exactQuote = exact ? getField(exact, ["Quote"]).trim() : "";
-  if (exactQuote) return exactQuote;
-
-  const before = quoteRows.filter(r => {
-    return r._date <= currentDate && getField(r, ["Quote"]).trim();
-  });
-  if (before.length) return getField(before[before.length - 1], ["Quote"]).trim();
-
-  const anyQuote = [...quoteRows].reverse().find(r => getField(r, ["Quote"]).trim());
-  return anyQuote ? getField(anyQuote, ["Quote"]).trim() : "";
+  if (exact) return getField(exact, ["Quote"]);
+  const before = quoteRows.filter(r => r._date <= currentDate);
+  if (before.length) return getField(before[before.length - 1], ["Quote"]);
+  return getField(quoteRows[quoteRows.length - 1], ["Quote"]);
 }
 
 function lessonSummary(row) {
@@ -476,7 +478,6 @@ function renderAgendaCard(title, content, extraClass = "") {
 function renderDayView() {
   const agenda = findAgenda();
   const quote = findQuote();
-  const quoteText = quote || "Stay curious. Test your ideas. Improve what you learn.";
   updateBadges(agenda);
 
   if (!agenda) {
@@ -528,11 +529,7 @@ function renderDayView() {
       ${renderAgendaCard("Upcoming Due Dates", renderUpcomingDueDates(currentCourse, currentDate), "due-dates")}
       ${renderAgendaCard("Standards", listify(standards), "standards")}
       ${renderAgendaCard("Notes", listify(notes), "notes")}
-      ${renderAgendaCard(
-        "Quote of the Day",
-        `<div class="quote-text">${escapeHTML(quoteText)}</div>`,
-        quote ? "quote" : "quote quote-fallback"
-      )}
+      ${quote ? renderAgendaCard("Quote of the Day", `<div class="quote-text">${escapeHTML(quote)}</div>`, "quote") : ""}
     </aside>
   `;
   enhanceAgendaLessonResourceBar(currentCourse, unit, lesson).catch(console.warn);
