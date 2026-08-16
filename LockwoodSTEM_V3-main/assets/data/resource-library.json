@@ -1,6 +1,6 @@
 {
-  "version": "2026-08-16-poe-unit0-cubesat",
-  "total": 332,
+  "version": "2026-08-16-poe-0.4-presentation",
+  "total": 333,
   "categories": [
     "CAD Files",
     "Course Documents",
@@ -2566,6 +2566,21 @@
       "featured": false,
       "filename": "POE_Unit0_Lesson_0.1_Engineering_for_the_Mission.pptx",
       "searchText": "Lesson 0.1 — Engineering for the Mission Presentations POE Unit 0 pptx POE_Unit0_Lesson_0.1_Engineering_for_the_Mission.pptx presentations/POE_Unit0_Lesson_0.1_Engineering_for_the_Mission.pptx"
+    },
+    {
+      "id": "67c7176bcbc0",
+      "title": "Lesson 0.4 — CubeSat Challenge: Define & Design",
+      "description": "Class presentation for POE Unit 0 Lesson 0.4 introducing the CubeSat Lightweight Structure Challenge, requirements, inspiration examples, design brief, and concept sketch deliverable.",
+      "category": "Presentations",
+      "course": "POE",
+      "unit": "Unit 0",
+      "format": "PPTX",
+      "url": "../downloads/presentations/POE_Unit0_Lesson_0.4_CubeSat_Challenge_Define_and_Design.pptx",
+      "size": "6.7 MB",
+      "sizeBytes": 7048260,
+      "featured": false,
+      "filename": "POE_Unit0_Lesson_0.4_CubeSat_Challenge_Define_and_Design.pptx",
+      "searchText": "Lesson 0.4 — CubeSat Challenge: Define & Design Presentations POE Unit 0 pptx CubeSat lightweight structure design brief concept sketches POE_Unit0_Lesson_0.4_CubeSat_Challenge_Define_and_Design.pptx presentations/POE_Unit0_Lesson_0.4_CubeSat_Challenge_Define_and_Design.pptx"
     },
     {
       "id": "4de4d1ed281b",
