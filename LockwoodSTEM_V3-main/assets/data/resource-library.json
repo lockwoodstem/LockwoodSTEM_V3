@@ -1,6 +1,6 @@
 {
   "version": "2026-08-16-ied-unit0-launchpad-rebuild",
-  "total": 324,
+  "total": 325,
   "categories": [
     "CAD Files",
     "Course Documents",
@@ -961,6 +961,21 @@
       "featured": false,
       "filename": "IED_Unit0_Lesson_0.3_Safety_Acknowledgment_PPE_and_FabLab_Orientation.pptx",
       "searchText": "Lesson 0.3 — Safety Acknowledgment PPE and FabLab Orientation Presentations IED Unit 0 pptx IED_Unit0_Lesson_0.3_Safety_Acknowledgment_PPE_and_FabLab_Orientation.pptx presentations/IED_Unit0_Lesson_0.3_Safety_Acknowledgment_PPE_and_FabLab_Orientation.pptx"
+    },
+    {
+      "id": "75263cf7301a",
+      "title": "Lesson 0.4 — Launch Pad Challenge: Define & Imagine",
+      "description": "Class presentation for IED Unit 0 Lesson 0.4 introducing the Rocket Launch Pad Design Challenge, Engineering Design Process, project criteria and constraints, and three-concept-sketch deliverable.",
+      "category": "Presentations",
+      "course": "IED",
+      "unit": "Unit 0",
+      "format": "PPTX",
+      "url": "../downloads/presentations/IED_Unit0_Lesson_0.4_Launch_Pad_Challenge_Intro.pptx",
+      "size": "7.5 MB",
+      "sizeBytes": 7840840,
+      "featured": false,
+      "filename": "IED_Unit0_Lesson_0.4_Launch_Pad_Challenge_Intro.pptx",
+      "searchText": "Lesson 0.4 — Launch Pad Challenge: Define & Imagine Presentations IED Unit 0 pptx rocket launch pad engineering design process criteria constraints concept sketches IED_Unit0_Lesson_0.4_Launch_Pad_Challenge_Intro.pptx presentations/IED_Unit0_Lesson_0.4_Launch_Pad_Challenge_Intro.pptx"
     },
     {
       "id": "a16b69d5be9f",
