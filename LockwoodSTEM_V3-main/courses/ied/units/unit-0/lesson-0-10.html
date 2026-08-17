@@ -12,7 +12,57 @@ body.immersive-lesson-page details.answer-reveal summary, body.immersive-lesson-
 body.lesson-immersive-page details.answer-reveal summary, body.lesson-immersive-page details.lesson-answer-reveal summary { background:#f3c95c!important; color:#061b31!important; -webkit-text-fill-color:#061b31!important; padding:1rem 1.15rem!important; font-weight:900!important; }
 body.immersive-lesson-page details.answer-reveal :is(p,li,span,strong,h2,h3,h4,div), body.immersive-lesson-page details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4,div), body.lesson-immersive-page details.answer-reveal :is(p,li,span,strong,h2,h3,h4,div), body.lesson-immersive-page details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4,div) { color:#102033!important; -webkit-text-fill-color:#102033!important; opacity:1!important; text-shadow:none!important; }
 .launchpad-spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.launchpad-spec{border-left:5px solid #f3c95c}.edp-strip{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}.edp-strip span{background:#0b1f3a;color:#fff;padding:.5rem .72rem;border-radius:999px;font-weight:800}.edp-strip span.active{background:#f3c95c;color:#071b30}.lesson-checklist li{margin-bottom:.45rem}.compact-table td,.compact-table th{vertical-align:top}.fabrication-gate{border:3px solid #bd7b00;background:#fff8e3}.qualification-card{border-top:5px solid #173c62}.competition-banner{background:#0b1f3a;color:#fff;border-radius:16px;padding:1.25rem}.competition-banner *{color:#fff!important}.material-chip{display:inline-block;background:#eef4fa;border:1px solid #b8c8d8;border-radius:999px;padding:.35rem .65rem;margin:.2rem .15rem;font-weight:700}
-</style><link href="../../../../assets/css/ied-lesson-resource-contrast.css?v=20260720-1" rel="stylesheet"/><link href="../../../../assets/css/ied-accessibility.css?v=20260720-a11y-v1" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/></head>
+</style><link href="../../../../assets/css/ied-lesson-resource-contrast.css?v=20260720-1" rel="stylesheet"/><link href="../../../../assets/css/ied-accessibility.css?v=20260720-a11y-v1" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<style id="ied-unit0-contrast-hotfix-v2">
+/* IED Unit 0 readability hotfix — deliberately page-local so global lesson CSS cannot hide text. */
+html body.lesson-immersive-page main#main section.container .edp-strip > span,
+html body.immersive-lesson-page main#main section.container .edp-strip > span {
+  background:#0b1f3a !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+html body.lesson-immersive-page main#main section.container .edp-strip > span.active,
+html body.immersive-lesson-page main#main section.container .edp-strip > span.active {
+  background:#f3c95c !important;
+  color:#071b30 !important;
+  -webkit-text-fill-color:#071b30 !important;
+  border:1px solid #c79b15 !important;
+}
+html body.lesson-immersive-page .lesson-mission-hero .mission-cycle > span,
+html body.immersive-lesson-page .lesson-mission-hero .mission-cycle > span {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+}
+html body.lesson-immersive-page main#main .competition-banner,
+html body.immersive-lesson-page main#main .competition-banner {
+  background:#0b1f3a !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+}
+html body.lesson-immersive-page main#main .competition-banner :is(h1,h2,h3,h4,p,li,span,strong,em,div),
+html body.immersive-lesson-page main#main .competition-banner :is(h1,h2,h3,h4,p,li,span,strong,em,div) {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+html body.lesson-immersive-page main#main .card.dark :is(h1,h2,h3,h4,p,li,span,strong,em,div),
+html body.immersive-lesson-page main#main .card.dark :is(h1,h2,h3,h4,p,li,span,strong,em,div) {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+}
+html body.lesson-immersive-page main#main .card.dark .tag,
+html body.immersive-lesson-page main#main .card.dark .tag {
+  background:#f3c95c !important;
+  color:#071b30 !important;
+  -webkit-text-fill-color:#071b30 !important;
+}
+</style>
+</head>
 <body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header">
 <div class="container nav">
 <a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html">
@@ -27,7 +77,7 @@ body.immersive-lesson-page details.answer-reveal :is(p,li,span,strong,h2,h3,h4,d
 <aside class="card dark lesson-mission-card"><span class="tag">Mission Objective</span><h3>Complete final qualification and stability competition testing, analyze performance, and communicate the engineering decisions behind the final launch pad.</h3><p><strong>Suggested pacing:</strong> 1 × 45-minute class period</p><div aria-label="Current engineering design process focus" class="mission-cycle"><span>Communicate</span></div></aside></div></section>
 <section class="container" id="flight-plan"><div class="section-header"><div><div class="eyebrow">Mission Briefing</div><h2>Today’s Plan</h2><p class="section-subtitle">Every task advances the same Rocket Launch Pad Design Challenge.</p></div></div><div class="grid two"><article class="card lesson-target-card"><h3>Learning Targets</h3><ul class="unit-meta-list"><li>Demonstrate that the final launch pad satisfies the required constraints and qualification tests.</li><li>Collect final stability performance data.</li><li>Defend key design decisions and reflect on a future improvement using evidence.</li></ul></article><article class="card lesson-target-card"><h3>Success Looks Like…</h3><p class="lesson-big-statement">Your team completes final testing and can explain why the design performed as it did using specific evidence from the project.</p><div class="callout"><strong>Project connection:</strong> Your work today becomes evidence used in the next stage of the Engineering Design Process.</div></article></div></section>
 
-<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Final Qualification</div><h2>Pass the required tests before entering the competition</h2></div></div><article class="card"><div class="edp-strip"><span>Define</span><span>Imagine</span><span>Select</span><span>Develop</span><span>Build</span><span>Test</span><span>Improve</span><span class="active">Communicate</span></div></article>
+<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Final Qualification</div><h2>Pass the required tests before entering the competition</h2></div></div><article class="card"><div class="edp-strip"><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Define</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Imagine</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Select</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Develop</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Build</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Test</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Improve</span><span class="active" style="background:#f3c95c!important;color:#071b30!important;-webkit-text-fill-color:#071b30!important;opacity:1!important;text-shadow:none!important">Communicate</span></div></article>
 <div class="launchpad-spec-grid"><article class="card qualification-card"><h3>Dimensions</h3><p>12 in × 12 in maximum footprint and 12 in maximum pad height.</p></article><article class="card qualification-card"><h3>Rocket Interface</h3><p>Provided rocket installs, remains upright, and removes without damage.</p></article><article class="card qualification-card"><h3>Level Stability</h3><p>60 seconds unsupported.</p></article><article class="card qualification-card"><h3>Required Tilt</h3><p>10° in four directions for 5 seconds each.</p></article><article class="card qualification-card"><h3>Disturbance</h3><p>Pass the standardized instructor-controlled disturbance test.</p></article></div></section>
 <section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Competition</div><h2>Maximum Tilt Challenge</h2></div></div><div class="competition-banner"><h3>Most Stable Launch Pad</h3><p>After qualification, increase the test-platform angle in consistent increments until the design can no longer maintain the required stable condition. The design with the highest successful tilt angle wins the stability challenge.</p><p><strong>Mass is not part of the competition.</strong></p></div><article class="card"><h3>Competition record</h3><p>Record the highest successful tilt angle and the direction tested. If multiple teams achieve the same maximum angle, the smaller qualifying footprint is the tie breaker.</p></article></section>
 <section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Design Review</div><h2>Explain the engineering—not just the result</h2></div></div><article class="card"><ol class="lesson-checklist"><li>What final design did your team build?</li><li>What feature contributed most to stability?</li><li>What evidence supports that conclusion?</li><li>What did you change after initial testing?</li><li>Did the change improve performance?</li><li>If you built Version 2, what would you change next and why?</li></ol></article></section>

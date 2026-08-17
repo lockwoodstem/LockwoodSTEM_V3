@@ -12,7 +12,57 @@ body.immersive-lesson-page details.answer-reveal summary, body.immersive-lesson-
 body.lesson-immersive-page details.answer-reveal summary, body.lesson-immersive-page details.lesson-answer-reveal summary { background:#f3c95c!important; color:#061b31!important; -webkit-text-fill-color:#061b31!important; padding:1rem 1.15rem!important; font-weight:900!important; }
 body.immersive-lesson-page details.answer-reveal :is(p,li,span,strong,h2,h3,h4,div), body.immersive-lesson-page details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4,div), body.lesson-immersive-page details.answer-reveal :is(p,li,span,strong,h2,h3,h4,div), body.lesson-immersive-page details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4,div) { color:#102033!important; -webkit-text-fill-color:#102033!important; opacity:1!important; text-shadow:none!important; }
 .launchpad-spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.launchpad-spec{border-left:5px solid #f3c95c}.edp-strip{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}.edp-strip span{background:#0b1f3a;color:#fff;padding:.5rem .72rem;border-radius:999px;font-weight:800}.edp-strip span.active{background:#f3c95c;color:#071b30}.lesson-checklist li{margin-bottom:.45rem}.compact-table td,.compact-table th{vertical-align:top}.fabrication-gate{border:3px solid #bd7b00;background:#fff8e3}.qualification-card{border-top:5px solid #173c62}.competition-banner{background:#0b1f3a;color:#fff;border-radius:16px;padding:1.25rem}.competition-banner *{color:#fff!important}.material-chip{display:inline-block;background:#eef4fa;border:1px solid #b8c8d8;border-radius:999px;padding:.35rem .65rem;margin:.2rem .15rem;font-weight:700}
-</style><link href="../../../../assets/css/ied-lesson-resource-contrast.css?v=20260720-1" rel="stylesheet"/><link href="../../../../assets/css/ied-accessibility.css?v=20260720-a11y-v1" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/></head>
+</style><link href="../../../../assets/css/ied-lesson-resource-contrast.css?v=20260720-1" rel="stylesheet"/><link href="../../../../assets/css/ied-accessibility.css?v=20260720-a11y-v1" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<style id="ied-unit0-contrast-hotfix-v2">
+/* IED Unit 0 readability hotfix — deliberately page-local so global lesson CSS cannot hide text. */
+html body.lesson-immersive-page main#main section.container .edp-strip > span,
+html body.immersive-lesson-page main#main section.container .edp-strip > span {
+  background:#0b1f3a !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+html body.lesson-immersive-page main#main section.container .edp-strip > span.active,
+html body.immersive-lesson-page main#main section.container .edp-strip > span.active {
+  background:#f3c95c !important;
+  color:#071b30 !important;
+  -webkit-text-fill-color:#071b30 !important;
+  border:1px solid #c79b15 !important;
+}
+html body.lesson-immersive-page .lesson-mission-hero .mission-cycle > span,
+html body.immersive-lesson-page .lesson-mission-hero .mission-cycle > span {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+}
+html body.lesson-immersive-page main#main .competition-banner,
+html body.immersive-lesson-page main#main .competition-banner {
+  background:#0b1f3a !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+}
+html body.lesson-immersive-page main#main .competition-banner :is(h1,h2,h3,h4,p,li,span,strong,em,div),
+html body.immersive-lesson-page main#main .competition-banner :is(h1,h2,h3,h4,p,li,span,strong,em,div) {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+html body.lesson-immersive-page main#main .card.dark :is(h1,h2,h3,h4,p,li,span,strong,em,div),
+html body.immersive-lesson-page main#main .card.dark :is(h1,h2,h3,h4,p,li,span,strong,em,div) {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+}
+html body.lesson-immersive-page main#main .card.dark .tag,
+html body.immersive-lesson-page main#main .card.dark .tag {
+  background:#f3c95c !important;
+  color:#071b30 !important;
+  -webkit-text-fill-color:#071b30 !important;
+}
+</style>
+</head>
 <body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header">
 <div class="container nav">
 <a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html">
@@ -27,7 +77,7 @@ body.immersive-lesson-page details.answer-reveal :is(p,li,span,strong,h2,h3,h4,d
 <aside class="card dark lesson-mission-card"><span class="tag">Mission Objective</span><h3>Conduct standardized qualification tests, identify the most important weakness, and make one evidence-based improvement before final competition.</h3><p><strong>Suggested pacing:</strong> 1 × 45-minute class period</p><div aria-label="Current engineering design process focus" class="mission-cycle"><span>Test</span><span>Improve</span></div></aside></div></section>
 <section class="container" id="flight-plan"><div class="section-header"><div><div class="eyebrow">Mission Briefing</div><h2>Today’s Plan</h2><p class="section-subtitle">Every task advances the same Rocket Launch Pad Design Challenge.</p></div></div><div class="grid two"><article class="card lesson-target-card"><h3>Learning Targets</h3><ul class="unit-meta-list"><li>Collect comparable evidence using the standard qualification procedure.</li><li>Identify the strongest and weakest features of the prototype from test evidence.</li><li>Make and document one targeted design improvement.</li></ul></article><article class="card lesson-target-card"><h3>Success Looks Like…</h3><p class="lesson-big-statement">Your team can point to a specific test result, explain what it revealed, and show one change made because of that evidence.</p><div class="callout"><strong>Project connection:</strong> Your work today becomes evidence used in the next stage of the Engineering Design Process.</div></article></div></section>
 
-<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Test</div><h2>Use the same procedure for every team</h2></div></div><article class="card"><div class="edp-strip"><span>Define</span><span>Imagine</span><span>Select</span><span>Develop</span><span>Build</span><span class="active">Test</span><span class="active">Improve</span><span>Communicate</span></div><p class="lesson-big-statement">A test is useful when it produces evidence that can change a decision.</p></article></section>
+<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Test</div><h2>Use the same procedure for every team</h2></div></div><article class="card"><div class="edp-strip"><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Define</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Imagine</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Select</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Develop</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Build</span><span class="active" style="background:#f3c95c!important;color:#071b30!important;-webkit-text-fill-color:#071b30!important;opacity:1!important;text-shadow:none!important">Test</span><span class="active" style="background:#f3c95c!important;color:#071b30!important;-webkit-text-fill-color:#071b30!important;opacity:1!important;text-shadow:none!important">Improve</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Communicate</span></div><p class="lesson-big-statement">A test is useful when it produces evidence that can change a decision.</p></article></section>
 <section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Qualification Sequence</div><h2>Prototype testing</h2></div></div><div class="launchpad-spec-grid">
 <article class="card qualification-card"><h3>1. Dimensional Check</h3><p>Footprint ≤ <strong>12 in × 12 in</strong>; pad height ≤ <strong>12 in</strong> without the rocket.</p></article>
 <article class="card qualification-card"><h3>2. Rocket Fit</h3><p>The provided rocket installs, remains upright, and can be removed without damage.</p></article>

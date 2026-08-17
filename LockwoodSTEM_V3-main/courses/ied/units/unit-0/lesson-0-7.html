@@ -12,7 +12,57 @@ body.immersive-lesson-page details.answer-reveal summary, body.immersive-lesson-
 body.lesson-immersive-page details.answer-reveal summary, body.lesson-immersive-page details.lesson-answer-reveal summary { background:#f3c95c!important; color:#061b31!important; -webkit-text-fill-color:#061b31!important; padding:1rem 1.15rem!important; font-weight:900!important; }
 body.immersive-lesson-page details.answer-reveal :is(p,li,span,strong,h2,h3,h4,div), body.immersive-lesson-page details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4,div), body.lesson-immersive-page details.answer-reveal :is(p,li,span,strong,h2,h3,h4,div), body.lesson-immersive-page details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4,div) { color:#102033!important; -webkit-text-fill-color:#102033!important; opacity:1!important; text-shadow:none!important; }
 .launchpad-spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.launchpad-spec{border-left:5px solid #f3c95c}.edp-strip{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}.edp-strip span{background:#0b1f3a;color:#fff;padding:.5rem .72rem;border-radius:999px;font-weight:800}.edp-strip span.active{background:#f3c95c;color:#071b30}.lesson-checklist li{margin-bottom:.45rem}.compact-table td,.compact-table th{vertical-align:top}.fabrication-gate{border:3px solid #bd7b00;background:#fff8e3}.qualification-card{border-top:5px solid #173c62}.competition-banner{background:#0b1f3a;color:#fff;border-radius:16px;padding:1.25rem}.competition-banner *{color:#fff!important}.material-chip{display:inline-block;background:#eef4fa;border:1px solid #b8c8d8;border-radius:999px;padding:.35rem .65rem;margin:.2rem .15rem;font-weight:700}
-</style><link href="../../../../assets/css/ied-lesson-resource-contrast.css?v=20260720-1" rel="stylesheet"/><link href="../../../../assets/css/ied-accessibility.css?v=20260720-a11y-v1" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/></head>
+</style><link href="../../../../assets/css/ied-lesson-resource-contrast.css?v=20260720-1" rel="stylesheet"/><link href="../../../../assets/css/ied-accessibility.css?v=20260720-a11y-v1" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<style id="ied-unit0-contrast-hotfix-v2">
+/* IED Unit 0 readability hotfix — deliberately page-local so global lesson CSS cannot hide text. */
+html body.lesson-immersive-page main#main section.container .edp-strip > span,
+html body.immersive-lesson-page main#main section.container .edp-strip > span {
+  background:#0b1f3a !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+html body.lesson-immersive-page main#main section.container .edp-strip > span.active,
+html body.immersive-lesson-page main#main section.container .edp-strip > span.active {
+  background:#f3c95c !important;
+  color:#071b30 !important;
+  -webkit-text-fill-color:#071b30 !important;
+  border:1px solid #c79b15 !important;
+}
+html body.lesson-immersive-page .lesson-mission-hero .mission-cycle > span,
+html body.immersive-lesson-page .lesson-mission-hero .mission-cycle > span {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+}
+html body.lesson-immersive-page main#main .competition-banner,
+html body.immersive-lesson-page main#main .competition-banner {
+  background:#0b1f3a !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+}
+html body.lesson-immersive-page main#main .competition-banner :is(h1,h2,h3,h4,p,li,span,strong,em,div),
+html body.immersive-lesson-page main#main .competition-banner :is(h1,h2,h3,h4,p,li,span,strong,em,div) {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+html body.lesson-immersive-page main#main .card.dark :is(h1,h2,h3,h4,p,li,span,strong,em,div),
+html body.immersive-lesson-page main#main .card.dark :is(h1,h2,h3,h4,p,li,span,strong,em,div) {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+}
+html body.lesson-immersive-page main#main .card.dark .tag,
+html body.immersive-lesson-page main#main .card.dark .tag {
+  background:#f3c95c !important;
+  color:#071b30 !important;
+  -webkit-text-fill-color:#071b30 !important;
+}
+</style>
+</head>
 <body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header">
 <div class="container nav">
 <a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html">
