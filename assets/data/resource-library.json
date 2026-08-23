@@ -1,6 +1,6 @@
 {
   "version": "2026-08-16-ied-unit0-launchpad-rebuild",
-  "total": 325,
+  "total": 326,
   "categories": [
     "CAD Files",
     "Course Documents",
@@ -4906,6 +4906,21 @@
       "featured": false,
       "filename": "assembly-line-optimization.html",
       "searchText": "Assembly-Line Optimization emergency substitute lesson Find a production bottleneck and redesign work assignments to improve output. ADM HTML"
+    },
+    {
+      "id": "5b05ef53a852",
+      "title": "IED 0.10 — Rocket Launch Pad Engineering Design Review",
+      "description": "Two-page printable student design review for IED Unit 0 Lesson 0.10, including final qualification data, maximum tilt results, design iteration, Engineering Design Process evidence, and reflection.",
+      "category": "Templates",
+      "course": "IED",
+      "unit": "Unit 0",
+      "format": "PDF",
+      "url": "../downloads/templates/IED_Lesson_0.10_Rocket_Launch_Pad_Engineering_Design_Review.pdf",
+      "size": "101.6 KB",
+      "sizeBytes": 104050,
+      "featured": false,
+      "filename": "IED_Lesson_0.10_Rocket_Launch_Pad_Engineering_Design_Review.pdf",
+      "searchText": "IED 0.10 Rocket Launch Pad Engineering Design Review Templates IED Unit 0 PDF qualification stability maximum tilt engineering design process reflection IED_Lesson_0.10_Rocket_Launch_Pad_Engineering_Design_Review.pdf templates/IED_Lesson_0.10_Rocket_Launch_Pad_Engineering_Design_Review.pdf"
     }
   ]
 }
