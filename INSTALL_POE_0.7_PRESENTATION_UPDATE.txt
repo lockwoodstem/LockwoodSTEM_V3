@@ -1,0 +1,12 @@
+POE Lesson 0.7 Additive Manufacturing Presentation Update
+
+This patch links the revised POE 0.7 presentation to the Lesson 0.7 page and the POE Unit 0 lesson table.
+
+Install:
+1. Open your active LockwoodSTEM_V3-main folder.
+2. Extract the contents of this ZIP directly into that folder.
+3. Choose Replace files in the destination when prompted.
+4. Hard-refresh the site (Ctrl+F5) after uploading/deploying.
+
+Presentation path:
+downloads/presentations/POE_Unit0_Lesson_0.7_Additive_Manufacturing.pptx
