@@ -16,7 +16,7 @@
  *   automatically after the account is created.
  */
 
-const SERVER_VERSION = '2026-08-20-password-reset-v1';
+const SERVER_VERSION = '2026-08-23-teacher-approved-reset-v1';
 
 const DEFAULT_TEACHER_ACCOUNT = {
   firstName: 'Jonathan',
@@ -33,7 +33,8 @@ const SHEET_USERS = 'Users';
 const SHEET_SESSIONS = 'Sessions';
 const SHEET_CERTIFICATIONS = 'Certifications';
 const SHEET_HANDS_ON = 'HandsOn';
-const SHEET_PASSWORD_RESETS = 'PasswordResets';
+const SHEET_PASSWORD_RESETS = 'PasswordResets'; // Legacy email-reset sheet; retained for compatibility only.
+const SHEET_PASSWORD_RESET_REQUESTS = 'PasswordResetRequests';
 
 function doGet() {
   return json_({
@@ -102,8 +103,13 @@ function doPost(e) {
     if (action === 'validate') return validate_(payload);
     if (action === 'logout') return logout_(payload);
     if (action === 'changepassword') return changePassword_(payload);
-    if (action === 'forgotpassword') return forgotPassword_(payload);
-    if (action === 'resetpassword') return resetPassword_(payload);
+    if (action === 'requestpasswordreset') return requestPasswordReset_(payload);
+    if (action === 'forgotpassword') return requestPasswordReset_(payload); // Supports cached older login pages without sending email.
+    if (action === 'approvepasswordreset') return approvePasswordReset_(payload);
+    if (action === 'dismisspasswordreset') return dismissPasswordReset_(payload);
+    if (action === 'teacherinitiatepasswordreset') return teacherInitiatePasswordReset_(payload);
+    if (action === 'resetpasswordwithcode') return resetPasswordWithCode_(payload);
+    if (action === 'resetpassword') return json_({ ok: false, error: 'Email reset links are no longer used. Enter the teacher-approved reset code instead.' });
     if (action === 'submitcertification') return submitCertification_(payload);
     if (action === 'getcertificationstatus') return getCertificationStatus_(payload);
     if (action === 'getallcertificationstatuses') return getAllCertificationStatuses_(payload);
@@ -171,6 +177,18 @@ function setup_() {
       'expiresAt', 'usedAt', 'requestedIdentifier'
     ]);
     passwordResets.setFrozenRows(1);
+  }
+
+  let resetRequests = ss.getSheetByName(SHEET_PASSWORD_RESET_REQUESTS);
+  if (!resetRequests) {
+    resetRequests = ss.insertSheet(SHEET_PASSWORD_RESET_REQUESTS);
+    resetRequests.appendRow([
+      'requestId', 'requestedAt', 'userId', 'firstName', 'lastName',
+      'email', 'studentId', 'period', 'requestedIdentifier', 'status',
+      'approvedAt', 'approvedByUserId', 'approvedByName', 'codeHash',
+      'expiresAt', 'usedAt', 'attempts', 'dismissedAt'
+    ]);
+    resetRequests.setFrozenRows(1);
   }
 }
 
@@ -688,12 +706,15 @@ function getTeacherDashboard_(payload) {
     equipmentBadges: 0
   });
 
+  const passwordResetRequests = pendingPasswordResetRequests_(studentById);
+
   return json_({
     ok: true,
     serverVersion: SERVER_VERSION,
     teacher: publicUser_(auth.user),
     certifications: getCertificationList_(),
     students: students,
+    passwordResetRequests: passwordResetRequests,
     summary: summary
   });
 }
@@ -1026,105 +1047,220 @@ function ensureDefaultTeacherAccount_() {
   return { created: true, updated: false, message: 'The default Teacher Admin account was created and requires a password change at first sign-in.' };
 }
 
-function forgotPassword_(payload) {
-  const identifier = clean_(payload.identifier).toLowerCase();
+function requestPasswordReset_(payload) {
+  const identifierRaw = clean_(payload.identifier);
+  const identifier = identifierRaw.toLowerCase();
   if (!identifier) {
     return json_({ ok: false, error: 'Enter your school email or student ID.' });
   }
 
-  // Always use the same public response so this endpoint does not reveal
-  // whether a particular student account exists.
-  const publicMessage = 'If an active student account matches that information, a password-reset link has been sent to the school email on file.';
+  const publicMessage = 'If an active student account matches that information, the password-reset request has been sent to your teacher. Ask your teacher to approve it and give you the 6-digit reset code.';
   const found = findUser_(identifier, identifier);
   if (!found) return json_({ ok: true, message: publicMessage });
 
   const user = found.user;
-  if (String(user.role || '').toLowerCase() !== 'student' || String(user.status || '').toLowerCase() !== 'active' || !clean_(user.email)) {
+  if (String(user.role || '').toLowerCase() !== 'student' || String(user.status || '').toLowerCase() !== 'active') {
     return json_({ ok: true, message: publicMessage });
   }
 
-  const resets = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_PASSWORD_RESETS);
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_PASSWORD_RESET_REQUESTS);
+  const values = sheet.getDataRange().getValues();
   const now = new Date();
-  const recentCutoff = now.getTime() - (5 * 60 * 1000);
-  const values = resets.getDataRange().getValues();
+  const throttleCutoff = now.getTime() - (5 * 60 * 1000);
 
-  // Five-minute request throttle per user.
   for (let i = values.length - 1; i >= 1; i--) {
-    if (String(values[i][2]) !== String(user.userId)) continue;
-    const created = new Date(values[i][1]);
-    if (!values[i][6] && created.getTime() >= recentCutoff) {
+    const row = values[i];
+    if (String(row[2] || '') !== String(user.userId)) continue;
+    const status = String(row[9] || '').toLowerCase();
+    const requestedAt = new Date(row[1]);
+    if (status === 'pending') return json_({ ok: true, message: publicMessage });
+    if (requestedAt.getTime() >= throttleCutoff && ['approved', 'used', 'dismissed', 'superseded', 'locked'].includes(status)) {
       return json_({ ok: true, message: publicMessage });
     }
     break;
   }
 
-  const token = Utilities.getUuid() + '-' + Utilities.getUuid();
-  const tokenHash = hashResetToken_(token);
-  const expiresAt = new Date(now.getTime() + (30 * 60 * 1000));
-  resets.appendRow([
-    Utilities.getUuid(),
-    now.toISOString(),
-    user.userId,
-    user.email,
-    tokenHash,
-    expiresAt.toISOString(),
-    '',
-    identifier
+  sheet.appendRow([
+    Utilities.getUuid(), now.toISOString(), user.userId,
+    user.firstName, user.lastName, user.email, user.studentId, user.period,
+    identifierRaw, 'pending', '', '', '', '', '', '', 0, ''
   ]);
-
-  const resetUrl = getPasswordResetUrl_() + '?token=' + encodeURIComponent(token);
-  try {
-    MailApp.sendEmail({
-      to: user.email,
-      subject: 'Reset your LockwoodSTEM password',
-      body: 'A password reset was requested for your LockwoodSTEM student account.\n\nUse this link within 30 minutes:\n' + resetUrl + '\n\nIf you did not request a reset, you can ignore this message.',
-      htmlBody: '<p>A password reset was requested for your <strong>LockwoodSTEM</strong> student account.</p>' +
-        '<p><a href="' + resetUrl + '" style="display:inline-block;padding:12px 18px;background:#0b1f3a;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:700;">Reset Password</a></p>' +
-        '<p>This link expires in <strong>30 minutes</strong>.</p>' +
-        '<p>If you did not request a reset, you can ignore this email.</p>',
-      name: 'LockwoodSTEM'
-    });
-  } catch (err) {
-    console.error('Password reset email failed for userId ' + user.userId + ': ' + err);
-  }
 
   return json_({ ok: true, message: publicMessage });
 }
 
-function resetPassword_(payload) {
-  const token = clean_(payload.token);
-  const newPassword = String(payload.newPassword || '');
-  if (!token) return json_({ ok: false, error: 'This password-reset link is invalid.' });
-  if (newPassword.length < 10) {
-    return json_({ ok: false, error: 'The new password must be at least 10 characters.' });
+function pendingPasswordResetRequests_(studentById) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_PASSWORD_RESET_REQUESTS);
+  if (!sheet) return [];
+  const values = sheet.getDataRange().getValues();
+  const result = [];
+  for (let i = 1; i < values.length; i++) {
+    const row = values[i];
+    if (String(row[9] || '').toLowerCase() !== 'pending') continue;
+    const userId = String(row[2] || '');
+    const student = studentById && studentById[userId];
+    if (!student) continue;
+    result.push({
+      requestId: String(row[0] || ''),
+      requestedAt: String(row[1] || ''),
+      userId: userId,
+      firstName: student.firstName || String(row[3] || ''),
+      lastName: student.lastName || String(row[4] || ''),
+      fullName: student.fullName || [row[3], row[4]].filter(Boolean).join(' '),
+      email: student.email || String(row[5] || ''),
+      studentId: student.studentId || String(row[6] || ''),
+      period: student.period || String(row[7] || '')
+    });
+  }
+  result.sort(function (a, b) {
+    const periodCompare = String(a.period || '').localeCompare(String(b.period || ''), undefined, { numeric: true });
+    if (periodCompare) return periodCompare;
+    return String(a.fullName || '').localeCompare(String(b.fullName || ''));
+  });
+  return result;
+}
+
+function approvePasswordReset_(payload) {
+  const auth = requireTeacherAuthForReset_(payload);
+  if (!auth.ok) return json_(auth);
+  const requestId = clean_(payload.requestId);
+  if (!requestId) return json_({ ok: false, error: 'Missing password-reset request.' });
+
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_PASSWORD_RESET_REQUESTS);
+  const values = sheet.getDataRange().getValues();
+  let rowNumber = -1;
+  let userId = '';
+  for (let i = 1; i < values.length; i++) {
+    if (String(values[i][0] || '') === requestId) {
+      if (String(values[i][9] || '').toLowerCase() !== 'pending') {
+        return json_({ ok: false, error: 'This reset request is no longer pending.' });
+      }
+      rowNumber = i + 1;
+      userId = String(values[i][2] || '');
+      break;
+    }
+  }
+  if (rowNumber < 0 || !userId) return json_({ ok: false, error: 'Password-reset request not found.' });
+
+  const found = findUserById_(userId);
+  if (!found || String(found.user.role || '').toLowerCase() !== 'student' || String(found.user.status || '').toLowerCase() !== 'active') {
+    return json_({ ok: false, error: 'The student account is not available for reset.' });
   }
 
-  const resets = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_PASSWORD_RESETS);
-  const values = resets.getDataRange().getValues();
-  const wantedHash = hashResetToken_(token);
+  supersedeResetRequestsForUser_(userId, requestId);
+  const code = generateResetCode_();
   const now = new Date();
-  let resetRow = -1;
-  let resetUserId = '';
+  const expiresAt = new Date(now.getTime() + (30 * 60 * 1000));
+  const teacherName = [auth.user.firstName, auth.user.lastName].filter(Boolean).join(' ') || auth.user.email || 'Teacher';
+
+  sheet.getRange(rowNumber, 10).setValue('approved');
+  sheet.getRange(rowNumber, 11).setValue(now.toISOString());
+  sheet.getRange(rowNumber, 12).setValue(auth.user.userId);
+  sheet.getRange(rowNumber, 13).setValue(teacherName);
+  sheet.getRange(rowNumber, 14).setValue(hashResetCode_(userId, code));
+  sheet.getRange(rowNumber, 15).setValue(expiresAt.toISOString());
+  sheet.getRange(rowNumber, 17).setValue(0);
+
+  return json_({ ok: true, resetCode: code, expiresAt: expiresAt.toISOString(), student: publicUser_(found.user) });
+}
+
+function dismissPasswordReset_(payload) {
+  const auth = requireTeacherAuthForReset_(payload);
+  if (!auth.ok) return json_(auth);
+  const requestId = clean_(payload.requestId);
+  if (!requestId) return json_({ ok: false, error: 'Missing password-reset request.' });
+
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_PASSWORD_RESET_REQUESTS);
+  const values = sheet.getDataRange().getValues();
+  for (let i = 1; i < values.length; i++) {
+    if (String(values[i][0] || '') !== requestId) continue;
+    if (String(values[i][9] || '').toLowerCase() !== 'pending') {
+      return json_({ ok: false, error: 'This reset request is no longer pending.' });
+    }
+    const now = new Date().toISOString();
+    sheet.getRange(i + 1, 10).setValue('dismissed');
+    sheet.getRange(i + 1, 18).setValue(now);
+    return json_({ ok: true });
+  }
+  return json_({ ok: false, error: 'Password-reset request not found.' });
+}
+
+function teacherInitiatePasswordReset_(payload) {
+  const auth = requireTeacherAuthForReset_(payload);
+  if (!auth.ok) return json_(auth);
+  const studentUserId = clean_(payload.studentUserId);
+  if (!studentUserId) return json_({ ok: false, error: 'Missing student account.' });
+
+  const found = findUserById_(studentUserId);
+  if (!found || String(found.user.role || '').toLowerCase() !== 'student' || String(found.user.status || '').toLowerCase() !== 'active') {
+    return json_({ ok: false, error: 'The student account is not available for reset.' });
+  }
+
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_PASSWORD_RESET_REQUESTS);
+  supersedeResetRequestsForUser_(studentUserId, '');
+  const now = new Date();
+  const expiresAt = new Date(now.getTime() + (30 * 60 * 1000));
+  const code = generateResetCode_();
+  const teacherName = [auth.user.firstName, auth.user.lastName].filter(Boolean).join(' ') || auth.user.email || 'Teacher';
+  const requestId = Utilities.getUuid();
+
+  sheet.appendRow([
+    requestId, now.toISOString(), found.user.userId,
+    found.user.firstName, found.user.lastName, found.user.email, found.user.studentId, found.user.period,
+    'teacher-initiated', 'approved', now.toISOString(), auth.user.userId, teacherName,
+    hashResetCode_(studentUserId, code), expiresAt.toISOString(), '', 0, ''
+  ]);
+
+  return json_({ ok: true, resetCode: code, expiresAt: expiresAt.toISOString(), student: publicUser_(found.user) });
+}
+
+function resetPasswordWithCode_(payload) {
+  const identifier = clean_(payload.identifier).toLowerCase();
+  const code = clean_(payload.resetCode).replace(/\s+/g, '');
+  const newPassword = String(payload.newPassword || '');
+  if (!identifier || !code) return json_({ ok: false, error: 'Enter your school email or student ID and the 6-digit reset code.' });
+  if (!/^\d{6}$/.test(code)) return json_({ ok: false, error: 'The reset code must be 6 digits.' });
+  if (newPassword.length < 10) return json_({ ok: false, error: 'The new password must be at least 10 characters.' });
+
+  const found = findUser_(identifier, identifier);
+  if (!found || String(found.user.role || '').toLowerCase() !== 'student' || String(found.user.status || '').toLowerCase() !== 'active') {
+    return json_({ ok: false, error: 'The reset code is invalid or expired.' });
+  }
+
+  const userId = String(found.user.userId);
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_PASSWORD_RESET_REQUESTS);
+  const values = sheet.getDataRange().getValues();
+  const now = new Date();
+  let rowNumber = -1;
 
   for (let i = values.length - 1; i >= 1; i--) {
     const row = values[i];
-    if (!secureEquals_(String(row[4] || ''), wantedHash)) continue;
-    if (row[6]) return json_({ ok: false, error: 'This password-reset link has already been used. Request a new link.' });
-    const expiresAt = new Date(row[5]);
-    if (expiresAt < now) return json_({ ok: false, error: 'This password-reset link has expired. Request a new link.' });
-    resetRow = i + 1;
-    resetUserId = String(row[2] || '');
+    if (String(row[2] || '') !== userId) continue;
+    if (String(row[9] || '').toLowerCase() !== 'approved') continue;
+    if (row[15]) continue;
+    const expiresAt = new Date(row[14]);
+    if (isNaN(expiresAt.getTime()) || expiresAt < now) {
+      sheet.getRange(i + 1, 10).setValue('expired');
+      continue;
+    }
+    const attempts = Number(row[16] || 0);
+    if (attempts >= 5) {
+      sheet.getRange(i + 1, 10).setValue('locked');
+      continue;
+    }
+    rowNumber = i + 1;
+    const expectedHash = String(row[13] || '');
+    const suppliedHash = hashResetCode_(userId, code);
+    if (!secureEquals_(expectedHash, suppliedHash)) {
+      const nextAttempts = attempts + 1;
+      sheet.getRange(rowNumber, 17).setValue(nextAttempts);
+      if (nextAttempts >= 5) sheet.getRange(rowNumber, 10).setValue('locked');
+      return json_({ ok: false, error: 'The reset code is invalid or expired.' });
+    }
     break;
   }
 
-  if (resetRow < 0 || !resetUserId) {
-    return json_({ ok: false, error: 'This password-reset link is invalid or has expired.' });
-  }
-
-  const found = findUserById_(resetUserId);
-  if (!found || String(found.user.role || '').toLowerCase() !== 'student' || String(found.user.status || '').toLowerCase() !== 'active') {
-    return json_({ ok: false, error: 'This student account is not available for password reset.' });
-  }
+  if (rowNumber < 0) return json_({ ok: false, error: 'The reset code is invalid or expired. Ask your teacher for a new code.' });
 
   const users = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_USERS);
   const salt = Utilities.getUuid();
@@ -1135,40 +1271,59 @@ function resetPassword_(payload) {
   users.getRange(found.row, 14).setValue(false);
   users.getRange(found.row, 15).setValue(nowIso);
 
-  // Consume this token and any other outstanding reset links for this student.
-  for (let i = 1; i < values.length; i++) {
-    if (String(values[i][2]) === resetUserId && !values[i][6]) {
-      resets.getRange(i + 1, 7).setValue(nowIso);
-    }
-  }
-
-  revokeSessionsForUser_(resetUserId, nowIso);
+  sheet.getRange(rowNumber, 10).setValue('used');
+  sheet.getRange(rowNumber, 16).setValue(nowIso);
+  supersedeResetRequestsForUser_(userId, String(sheet.getRange(rowNumber, 1).getValue() || ''));
+  revokeSessionsForUser_(userId, nowIso);
   return json_({ ok: true });
 }
 
-function getPasswordResetUrl_() {
-  return PropertiesService.getScriptProperties().getProperty('PASSWORD_RESET_URL') ||
-    'https://lockwoodstem.org/certifications/reset-password.html';
+function requireTeacherAuthForReset_(payload) {
+  const token = clean_(payload.token);
+  if (!token) return { ok: false, error: 'Missing teacher session token.' };
+  const auth = validateTokenForServer_(token);
+  if (!auth.ok) return auth;
+  if (!isTeacherRole_(auth.user.role)) return { ok: false, error: 'Teacher access is required.' };
+  if (auth.user.mustChangePassword) return { ok: false, error: 'Change the temporary password before using teacher tools.' };
+  return auth;
 }
 
-function hashResetToken_(token) {
+function supersedeResetRequestsForUser_(userId, keepRequestId) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_PASSWORD_RESET_REQUESTS);
+  if (!sheet) return;
+  const values = sheet.getDataRange().getValues();
+  for (let i = 1; i < values.length; i++) {
+    if (String(values[i][2] || '') !== String(userId)) continue;
+    if (keepRequestId && String(values[i][0] || '') === String(keepRequestId)) continue;
+    const status = String(values[i][9] || '').toLowerCase();
+    if (status === 'pending' || status === 'approved') sheet.getRange(i + 1, 10).setValue('superseded');
+  }
+}
+
+function generateResetCode_() {
   const secret = PropertiesService.getScriptProperties().getProperty('AUTH_SECRET') || 'CHANGE_THIS_SECRET_IN_SCRIPT_PROPERTIES';
-  const bytes = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, 'password-reset:' + token + ':' + secret);
+  const seed = Utilities.getUuid() + ':' + new Date().getTime() + ':' + secret;
+  const bytes = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, seed);
+  let value = 0;
+  for (let i = 0; i < 4; i++) value = (value * 256) + (bytes[i] < 0 ? bytes[i] + 256 : bytes[i]);
+  return String(100000 + (value % 900000));
+}
+
+function hashResetCode_(userId, code) {
+  const secret = PropertiesService.getScriptProperties().getProperty('AUTH_SECRET') || 'CHANGE_THIS_SECRET_IN_SCRIPT_PROPERTIES';
+  const bytes = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, 'password-reset-code:' + userId + ':' + code + ':' + secret);
   return bytes.map(function (b) {
     const v = (b < 0 ? b + 256 : b).toString(16);
     return v.length === 1 ? '0' + v : v;
   }).join('');
 }
 
-function revokeSessionsForUser_(userId, revokedAt) {
-  const sessions = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_SESSIONS);
-  const values = sessions.getDataRange().getValues();
-  const when = revokedAt || new Date().toISOString();
-  for (let i = 1; i < values.length; i++) {
-    if (String(values[i][1]) === String(userId) && !values[i][4]) {
-      sessions.getRange(i + 1, 5).setValue(when);
-    }
-  }
+function forgotPassword_(payload) {
+  return requestPasswordReset_(payload);
+}
+
+function resetPassword_(payload) {
+  return json_({ ok: false, error: 'Email reset links are no longer used. Ask your teacher for a 6-digit reset code.' });
 }
 
 function changePassword_(payload) {

@@ -256,6 +256,7 @@
     try {
       dashboardData = await auth.request("getTeacherDashboard", { token: session.token });
       renderDashboard();
+      renderPasswordResetRequests();
       renderPendingApprovals();
       renderSummaryCards();
       if (activeStudentId) openStudentDialog(activeStudentId, false);
@@ -336,6 +337,118 @@
     target.querySelectorAll("[data-view-student]").forEach((button) => {
       button.addEventListener("click", () => openStudentDialog(button.dataset.viewStudent));
     });
+  }
+
+  function passwordResetRequests() {
+    return (dashboardData && dashboardData.passwordResetRequests || []).slice().sort((a, b) => {
+      const periodCompare = String(a.period || "").localeCompare(String(b.period || ""), undefined, { numeric: true });
+      if (periodCompare) return periodCompare;
+      return String(a.fullName || "").localeCompare(String(b.fullName || ""));
+    });
+  }
+
+  function renderPasswordResetRequests() {
+    const target = document.querySelector("[data-password-reset-requests]");
+    const count = document.querySelector("[data-password-reset-count]");
+    if (!target) return;
+    const requests = passwordResetRequests();
+    if (count) count.textContent = `${requests.length} pending reset request${requests.length === 1 ? "" : "s"}`;
+
+    if (!requests.length) {
+      target.innerHTML = '<div class="teacher-empty-state"><strong>No password resets are waiting for approval.</strong><p>Student requests will appear here after they use Forgot Password on the login page.</p></div>';
+      return;
+    }
+
+    target.innerHTML = requests.map((request) => `
+      <article class="card teacher-reset-card">
+        <div class="eyebrow">Period ${escapeHtml(request.period || "—")}</div>
+        <h3>${escapeHtml(request.fullName || "Student")}</h3>
+        <span class="teacher-reset-meta">${escapeHtml(request.email || "")}</span>
+        <span class="teacher-reset-meta">ID ${escapeHtml(request.studentId || "—")}</span>
+        <span class="teacher-reset-meta">Requested ${escapeHtml(formatDateTime(request.requestedAt))}</span>
+        <div class="teacher-reset-actions">
+          <button class="btn small dark" type="button" data-approve-password-reset data-request-id="${escapeHtml(request.requestId)}">Approve & Generate Code</button>
+          <button class="btn small secondary" type="button" data-dismiss-password-reset data-request-id="${escapeHtml(request.requestId)}">Dismiss</button>
+        </div>
+      </article>`).join("");
+
+    target.querySelectorAll("[data-approve-password-reset]").forEach((button) => {
+      button.addEventListener("click", () => approvePasswordReset(button));
+    });
+    target.querySelectorAll("[data-dismiss-password-reset]").forEach((button) => {
+      button.addEventListener("click", () => dismissPasswordReset(button));
+    });
+  }
+
+  function formatDateTime(value) {
+    if (!value) return "—";
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return "—";
+    return date.toLocaleString([], { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  }
+
+  async function approvePasswordReset(button) {
+    const auth = authApi();
+    const session = auth && auth.getTeacherSession ? auth.getTeacherSession() : null;
+    const statusBox = document.querySelector("[data-teacher-dashboard-status]");
+    if (!session || !session.token) return;
+    const oldText = button.textContent;
+    button.disabled = true;
+    button.textContent = "Generating...";
+    try {
+      const result = await auth.request("approvePasswordReset", { token: session.token, requestId: button.dataset.requestId });
+      showPasswordResetCode(result);
+      await loadDashboard();
+    } catch (err) {
+      button.disabled = false;
+      button.textContent = oldText;
+      setStatus(statusBox, err.message, true);
+    }
+  }
+
+  async function dismissPasswordReset(button) {
+    const auth = authApi();
+    const session = auth && auth.getTeacherSession ? auth.getTeacherSession() : null;
+    const statusBox = document.querySelector("[data-teacher-dashboard-status]");
+    if (!session || !session.token) return;
+    button.disabled = true;
+    try {
+      await auth.request("dismissPasswordReset", { token: session.token, requestId: button.dataset.requestId });
+      await loadDashboard();
+      setStatus(statusBox, "Password reset request dismissed.", false);
+    } catch (err) {
+      button.disabled = false;
+      setStatus(statusBox, err.message, true);
+    }
+  }
+
+  async function teacherInitiatePasswordReset(studentUserId) {
+    const auth = authApi();
+    const session = auth && auth.getTeacherSession ? auth.getTeacherSession() : null;
+    const statusBox = document.querySelector("[data-teacher-dashboard-status]");
+    if (!session || !session.token || !studentUserId) return;
+    try {
+      const result = await auth.request("teacherInitiatePasswordReset", { token: session.token, studentUserId });
+      const studentDialog = document.querySelector("[data-student-cert-dialog]");
+      if (studentDialog && studentDialog.open) studentDialog.close();
+      showPasswordResetCode(result);
+      await loadDashboard();
+    } catch (err) {
+      setStatus(statusBox, err.message, true);
+    }
+  }
+
+  function showPasswordResetCode(result) {
+    const dialog = document.querySelector("[data-password-reset-code-dialog]");
+    if (!dialog) return;
+    const student = result && result.student || {};
+    const code = String(result && result.resetCode || "");
+    dialog.querySelector("[data-reset-code-student]").textContent = student.fullName || [student.firstName, student.lastName].filter(Boolean).join(" ") || "Student";
+    dialog.querySelector("[data-reset-code-value]").textContent = code;
+    const expires = result && result.expiresAt ? new Date(result.expiresAt) : null;
+    dialog.querySelector("[data-reset-code-expiry]").textContent = expires && !Number.isNaN(expires.getTime()) ? `Expires at ${expires.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}.` : "Expires 30 minutes after approval.";
+    dialog.dataset.resetCode = code;
+    if (typeof dialog.showModal === "function" && !dialog.open) dialog.showModal();
   }
 
   function pendingItems() {
@@ -482,6 +595,7 @@
       const student = getStudentById(button.dataset.userId);
       if (student && result.status) student.statuses[button.dataset.certId] = result.status;
       renderDashboard();
+      renderPasswordResetRequests();
       renderPendingApprovals();
       renderSummaryCards();
       if (activeStudentId === button.dataset.userId) openStudentDialog(activeStudentId, false);
@@ -495,11 +609,36 @@
 
   function setupDialog() {
     const dialog = document.querySelector("[data-student-cert-dialog]");
-    if (!dialog) return;
-    dialog.querySelectorAll("[data-close-student-dialog]").forEach((button) => {
-      button.addEventListener("click", () => dialog.close());
-    });
-    dialog.addEventListener("close", () => { activeStudentId = ""; });
+    if (dialog) {
+      dialog.querySelectorAll("[data-close-student-dialog]").forEach((button) => {
+        button.addEventListener("click", () => dialog.close());
+      });
+      dialog.querySelector("[data-teacher-reset-password]")?.addEventListener("click", () => {
+        const studentId = activeStudentId;
+        if (studentId) teacherInitiatePasswordReset(studentId);
+      });
+      dialog.addEventListener("close", () => { activeStudentId = ""; });
+    }
+
+    const resetDialog = document.querySelector("[data-password-reset-code-dialog]");
+    if (resetDialog) {
+      resetDialog.querySelectorAll("[data-close-reset-code-dialog]").forEach((button) => {
+        button.addEventListener("click", () => resetDialog.close());
+      });
+      resetDialog.querySelector("[data-copy-reset-code]")?.addEventListener("click", async (event) => {
+        const code = String(resetDialog.dataset.resetCode || "");
+        if (!code) return;
+        try {
+          await navigator.clipboard.writeText(code);
+          const button = event.currentTarget;
+          const oldText = button.textContent;
+          button.textContent = "Copied";
+          window.setTimeout(() => { button.textContent = oldText; }, 1200);
+        } catch (_) {
+          // The code remains visible for manual copy if clipboard access is blocked.
+        }
+      });
+    }
   }
 
   function setupDashboardControls() {

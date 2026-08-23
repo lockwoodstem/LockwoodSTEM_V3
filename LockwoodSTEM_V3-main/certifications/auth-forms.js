@@ -28,22 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     const status = document.querySelector("[data-forgot-password-status]");
     const data = Object.fromEntries(new FormData(forgotPasswordForm).entries());
-    setStatus(status, "Requesting a reset link...", false);
+    setStatus(status, "Sending your reset request to the teacher...", false);
     try {
-      const result = await auth.request("forgotPassword", { identifier: data.identifier });
-      setStatus(status, result.message || "If an active student account matches that information, a reset link has been sent to the school email on file.", false);
+      const result = await auth.request("requestPasswordReset", { identifier: data.identifier });
+      setStatus(status, result.message || "Your password-reset request has been sent to the teacher. Ask your teacher to approve it and give you the 6-digit reset code.", false);
       forgotPasswordForm.reset();
     } catch (err) { setStatus(status, err.message, true); }
   });
 
   const resetPasswordForm = document.querySelector("[data-reset-password-form]");
   if (resetPasswordForm) {
-    const token = new URLSearchParams(window.location.search).get("token") || "";
     const status = document.querySelector("[data-reset-password-status]");
-    if (!token) {
-      setStatus(status, "This password-reset link is missing its reset token. Request a new link from the login page.", true);
-      resetPasswordForm.querySelectorAll("input,button").forEach((el) => { el.disabled = true; });
-    }
     resetPasswordForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       const data = Object.fromEntries(new FormData(resetPasswordForm).entries());
@@ -55,9 +50,18 @@ document.addEventListener("DOMContentLoaded", () => {
         setStatus(status, "Your new password must be at least 10 characters.", true);
         return;
       }
+      const code = String(data.resetCode || "").replace(/\s+/g, "");
+      if (!/^\d{6}$/.test(code)) {
+        setStatus(status, "Enter the 6-digit reset code your teacher gave you.", true);
+        return;
+      }
       setStatus(status, "Resetting password...", false);
       try {
-        await auth.request("resetPassword", { token, newPassword: data.newPassword });
+        await auth.request("resetPasswordWithCode", {
+          identifier: data.identifier,
+          resetCode: code,
+          newPassword: data.newPassword
+        });
         resetPasswordForm.hidden = true;
         const success = document.querySelector("[data-reset-password-success]");
         if (success) success.hidden = false;

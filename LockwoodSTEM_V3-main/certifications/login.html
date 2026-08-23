@@ -9,7 +9,7 @@
 <script defer="" src="../assets/js/main.js"></script>
 <script src="auth-config.js?v=qa1"></script>
 <script defer="" src="auth.js?v=qa1"></script>
-<script defer="" src="auth-forms.js?v=forgotpw1"></script>
+<script defer="" src="auth-forms.js?v=teacher-reset-v1"></script>
 <meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/><link href="../assets/css/certification-system-qa.css?v=qa1" rel="stylesheet"><link href="../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/></head>
 <body class="site-consistency-v4 certifications-page">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -57,14 +57,15 @@
 </form>
 <details class="forgot-password-panel" style="margin-top:1rem;">
 <summary style="cursor:pointer;font-weight:800;">Forgot your password?</summary>
-<p class="muted">Enter your school email or student ID. If it matches an active student account, a password-reset link will be sent to the school email on file.</p>
+<p class="muted">Enter your school email or student ID to request a password reset. Your teacher will approve the request and give you a 6-digit reset code.</p>
 <form class="cert-auth-form" data-forgot-password-form="">
 <label>Email or student ID
   <input autocomplete="username" name="identifier" required="" type="text"/>
 </label>
-<button class="btn secondary" type="submit">Send reset link</button>
+<button class="btn secondary" type="submit">Request password reset</button>
 <p class="form-status" data-forgot-password-status="" hidden=""></p>
 </form>
+<p style="margin-top:.75rem;"><a class="btn secondary small" href="reset-password.html">I already have a reset code</a></p>
 </details>
 </article>
 <article class="card">
