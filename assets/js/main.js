@@ -365,3 +365,50 @@ document.addEventListener('DOMContentLoaded', () => {
   function init(){addDashboardLink();trackPage();}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
+
+// Student-facing lesson copy cleanup v20260823
+// Removes internal/developer placeholder wording from student lesson pages without
+// overwriting the lesson HTML itself. This keeps later resource/presentation patches intact.
+(() => {
+  const unfinishedPatterns = [
+    /this page is ready for lesson directions.*when they are added/i,
+    /this (page|section|lesson).*\b(placeholder|under construction)\b/i,
+    /\b(content|resources?|files?|directions?)\b.*\b(coming soon|will be added|to be added|not yet available|not yet added)\b/i,
+    /\b(check back|return later)\b.*\b(content|resources?|files?|lesson)\b/i
+  ];
+
+  const isUnfinishedCopy = (text) => {
+    const value = String(text || '').replace(/\s+/g, ' ').trim();
+    return value && unfinishedPatterns.some((pattern) => pattern.test(value));
+  };
+
+  const cleanLessonCopy = () => {
+    if (!document.body || !document.body.classList.contains('lesson-detail-page')) return;
+
+    const heroSummary = document.querySelector('.page-hero .hero-grid > div > p');
+    const lessonGoal = heroSummary ? heroSummary.textContent.replace(/\s+/g, ' ').trim() : '';
+
+    document.querySelectorAll('main p').forEach((paragraph) => {
+      const current = paragraph.textContent.replace(/\s+/g, ' ').trim();
+      if (!isUnfinishedCopy(current)) return;
+
+      if (paragraph.closest('.card.dark') && lessonGoal) {
+        paragraph.textContent = `Your goal: ${lessonGoal}`;
+        return;
+      }
+
+      if (paragraph.closest('.resources-placeholder, .lesson-resources-card, .resource-list')) {
+        paragraph.textContent = 'Use the lesson materials provided in class and any linked resources on this page. Save the required evidence in your assigned project folder.';
+        return;
+      }
+
+      paragraph.textContent = 'Complete the lesson tasks in order, follow the class demonstration and directions, and document your progress with the evidence requested below.';
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', cleanLessonCopy);
+  } else {
+    cleanLessonCopy();
+  }
+})();
