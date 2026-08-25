@@ -1,0 +1,12 @@
+IED Lesson 1.7 Worksheet Website Update
+
+1. Extract this ZIP directly into your active LockwoodSTEM_V3-main folder.
+2. Choose Replace files in the destination when prompted.
+3. Hard-refresh the website with Ctrl+F5.
+
+This update:
+- links the IED 1.7 Measurement, Precision & Tolerances worksheet from the lesson hero;
+- rewrites the class flow, student task, and submission requirements around the worksheet;
+- adds the worksheet to Lesson Resources;
+- adds the worksheet to the Resource Library;
+- includes both root-relative and nested LockwoodSTEM_V3-main copies for the site's duplicate-folder structure.

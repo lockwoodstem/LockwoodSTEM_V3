@@ -1,6 +1,6 @@
 {
-  "version": "2026-08-24-ied-unit1-lessons-1-1-to-1-4-worksheets-v1",
-  "total": 308,
+  "version": "54",
+  "total": 309,
   "categories": [
     "CAD Files",
     "Course Documents",
@@ -4651,6 +4651,21 @@
       "featured": false,
       "filename": "IED_Unit1_Lesson_1.4_Orthographic_Projection_and_Multiview_Sketching_Worksheet.pdf",
       "searchText": "IED 1.4 — Orthographic Projection & Multiview Sketching Worksheet Templates IED Unit 1 PDF IED_Unit1_Lesson_1.4_Orthographic_Projection_and_Multiview_Sketching_Worksheet.pdf engineering worksheet lesson 4 sketching"
+    },
+    {
+      "id": "5bd501de639a",
+      "title": "IED 1.7 — Measurement, Precision & Tolerances Worksheet",
+      "description": "Four-page worksheet for measurement-tool selection, rocket component measurements, repeatability, tolerance limits, accept/reject inspection, clearance/interference fits, and tolerance analysis.",
+      "category": "Templates",
+      "course": "IED",
+      "unit": "Unit 1",
+      "format": "PDF",
+      "url": "../downloads/templates/ied/unit-1/IED_Unit1_Lesson_1.7_Measurement_Precision_and_Tolerances_Worksheet.pdf",
+      "size": "32.8 KB",
+      "sizeBytes": 33592,
+      "featured": false,
+      "filename": "IED_Unit1_Lesson_1.7_Measurement_Precision_and_Tolerances_Worksheet.pdf",
+      "searchText": "IED 1.7 — Measurement, Precision & Tolerances Worksheet Templates IED Unit 1 PDF IED_Unit1_Lesson_1.7_Measurement_Precision_and_Tolerances_Worksheet.pdf measurement precision tolerances rocket components calipers fit clearance interference"
     }
   ]
 }
