@@ -1,6 +1,6 @@
 {
-  "version": "2026-08-16-ied-unit0-launchpad-rebuild",
-  "total": 305,
+  "version": "2026-08-24-ied-unit1-lessons-1-1-to-1-4-worksheets-v1",
+  "total": 308,
   "categories": [
     "CAD Files",
     "Course Documents",
@@ -4593,19 +4593,64 @@
       "searchText": "IED 0.10 Rocket Launch Pad Engineering Design Review Templates IED Unit 0 PDF qualification stability maximum tilt engineering design process reflection IED_Lesson_0.10_Rocket_Launch_Pad_Engineering_Design_Review.pdf templates/IED_Lesson_0.10_Rocket_Launch_Pad_Engineering_Design_Review.pdf"
     },
     {
-      "id": "84520de8060a",
-      "title": "IED 1.1 — Object & Hidden Line Practice",
-      "description": "Student practice worksheet for adding missing object and hidden lines to incomplete front, top, and right-side orthographic views.",
+      "id": "34c79d0260ea",
+      "title": "IED 1.1 — Engineering Sketching & Line Conventions Worksheet",
+      "description": "Practice using object and hidden lines to complete incomplete front, top, and right-side orthographic views.",
       "category": "Templates",
       "course": "IED",
       "unit": "Unit 1",
       "format": "PDF",
-      "url": "../downloads/templates/ied/unit-1/IED_Unit1_Lesson_1.1_Object_and_Hidden_Line_Practice.pdf",
-      "size": "12.5 KB",
-      "sizeBytes": 12785,
+      "url": "../downloads/templates/ied/unit-1/IED_Unit1_Lesson_1.1_Engineering_Sketching_and_Line_Conventions_Worksheet.pdf",
+      "size": "34.4 KB",
+      "sizeBytes": 35201,
       "featured": false,
-      "filename": "IED_Unit1_Lesson_1.1_Object_and_Hidden_Line_Practice.pdf",
-      "searchText": "IED 1.1 Object Hidden Line Practice Templates IED Unit 1 pdf object lines hidden lines orthographic front top right"
+      "filename": "IED_Unit1_Lesson_1.1_Engineering_Sketching_and_Line_Conventions_Worksheet.pdf",
+      "searchText": "IED 1.1 — Engineering Sketching & Line Conventions Worksheet Templates IED Unit 1 PDF IED_Unit1_Lesson_1.1_Engineering_Sketching_and_Line_Conventions_Worksheet.pdf engineering worksheet lesson 1 sketching"
+    },
+    {
+      "id": "a573726fcc84",
+      "title": "IED 1.2 — Centerlines & Symmetry Worksheet",
+      "description": "Practice locating centers, axes, and lines of symmetry and applying centerlines correctly to technical views.",
+      "category": "Templates",
+      "course": "IED",
+      "unit": "Unit 1",
+      "format": "PDF",
+      "url": "../downloads/templates/ied/unit-1/IED_Unit1_Lesson_1.2_Centerlines_and_Symmetry_Worksheet.pdf",
+      "size": "7.3 KB",
+      "sizeBytes": 7478,
+      "featured": false,
+      "filename": "IED_Unit1_Lesson_1.2_Centerlines_and_Symmetry_Worksheet.pdf",
+      "searchText": "IED 1.2 — Centerlines & Symmetry Worksheet Templates IED Unit 1 PDF IED_Unit1_Lesson_1.2_Centerlines_and_Symmetry_Worksheet.pdf engineering worksheet lesson 2 sketching"
+    },
+    {
+      "id": "eec057a94521",
+      "title": "IED 1.3 — Isometric Sketching & Curved Features Worksheet",
+      "description": "Eight written drawing prompts with large blank isometric grids for constructing straight-edged and curved three-dimensional forms from scratch.",
+      "category": "Templates",
+      "course": "IED",
+      "unit": "Unit 1",
+      "format": "PDF",
+      "url": "../downloads/templates/ied/unit-1/IED_Unit1_Lesson_1.3_Isometric_Sketching_and_Curved_Features_Worksheet.pdf",
+      "size": "43.6 KB",
+      "sizeBytes": 44672,
+      "featured": false,
+      "filename": "IED_Unit1_Lesson_1.3_Isometric_Sketching_and_Curved_Features_Worksheet.pdf",
+      "searchText": "IED 1.3 — Isometric Sketching & Curved Features Worksheet Templates IED Unit 1 PDF IED_Unit1_Lesson_1.3_Isometric_Sketching_and_Curved_Features_Worksheet.pdf engineering worksheet lesson 3 sketching"
+    },
+    {
+      "id": "513262ca4ced",
+      "title": "IED 1.4 — Orthographic Projection & Multiview Sketching Worksheet",
+      "description": "Six multiview drawing problems with clean isometric references and equal-size Top, Front, and Right graph areas.",
+      "category": "Templates",
+      "course": "IED",
+      "unit": "Unit 1",
+      "format": "PDF",
+      "url": "../downloads/templates/ied/unit-1/IED_Unit1_Lesson_1.4_Orthographic_Projection_and_Multiview_Sketching_Worksheet.pdf",
+      "size": "80.9 KB",
+      "sizeBytes": 82809,
+      "featured": false,
+      "filename": "IED_Unit1_Lesson_1.4_Orthographic_Projection_and_Multiview_Sketching_Worksheet.pdf",
+      "searchText": "IED 1.4 — Orthographic Projection & Multiview Sketching Worksheet Templates IED Unit 1 PDF IED_Unit1_Lesson_1.4_Orthographic_Projection_and_Multiview_Sketching_Worksheet.pdf engineering worksheet lesson 4 sketching"
     }
   ]
 }
