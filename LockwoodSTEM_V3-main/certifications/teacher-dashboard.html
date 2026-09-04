@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="cert-auth-checking" lang="en">
+<head>
+  <title>Teacher Certification Dashboard | LockwoodSTEM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teacher tools for reviewing LockwoodSTEM student certification progress, badges, and hands-on approvals.">
+  <link href="../assets/css/styles.css" rel="stylesheet">
+  <link href="../assets/css/certification-progress.css?v=teacher2" rel="stylesheet">
+  <script src="auth-config.js?v=qa1"></script>
+  <script defer src="../assets/js/main.js?v=20260823-nav-dedupe-v1"></script>
+  <script defer src="auth.js?v=qa1"></script>
+  <script defer src="teacher.js?v=teacher-reset-v1"></script>
+<link href="../assets/css/certification-system-qa.css?v=qa1" rel="stylesheet"><link href="../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<style id="teacher-pending-sort-styles">
+.teacher-pending-tools{margin:.85rem 0 1.1rem;align-items:end}
+.teacher-pending-tools label{min-width:220px}
+.teacher-pending-count{align-self:end;padding:.72rem .9rem;border-radius:12px;background:#eef4fa;color:#173c62;font-weight:800}
+.teacher-pending-group-heading{grid-column:1/-1;margin:.35rem 0 -.15rem;padding:.65rem .85rem;border-left:5px solid #f2c14e;background:#f5f8fb;border-radius:10px;color:#0b1f3a;font-weight:900}
+.teacher-pending-group-heading small{display:block;color:#52677c;font-weight:700;margin-top:.15rem}
+
+.teacher-reset-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.teacher-reset-card{border-left:5px solid #f2c14e}
+.teacher-reset-card .teacher-reset-meta{display:block;color:#52677c;margin:.2rem 0}
+.teacher-reset-actions{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:.85rem}
+.teacher-reset-code{font-size:2.2rem;letter-spacing:.18em;font-weight:900;color:#0b1f3a;background:#f7e7a9;border:2px solid #d4ac2b;border-radius:14px;padding:.8rem 1rem;text-align:center}
+.teacher-reset-code-dialog .teacher-dialog-shell{max-width:560px}
+</style>
+</head>
+<body class="site-consistency-v4 certifications-page teacher-certification-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a aria-label="LockwoodSTEM home" class="brand" href="../index.html">
+      <img alt="LockwoodSTEM logo" class="brand-logo" src="../assets/img/lockwoodstem-concept-a1-black-transparent.png">
+      <span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+    </a>
+    <button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
+    <ul class="nav-links" id="site-navigation">
+      <li><a data-nav-section="dashboard" href="../dashboard/index.html">Dashboard</a></li>
+      <li><a href="../courses.html">Courses</a></li>
+      <li><a href="../agenda.html">Daily Agenda</a></li>
+      <li><a href="../resources/index.html">Resources</a></li>
+      <li><a aria-current="page" href="index.html">Certifications</a></li>
+      <li><a href="../fablab/index.html">FabLab</a></li>
+    </ul>
+  </div>
+</header>
+<main id="main">
+  <nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../index.html">Home</a></li><li><a href="index.html">Certifications</a></li><li aria-current="page">Teacher Dashboard</li></ol></nav>
+
+  <section class="page-hero teacher-cert-hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Teacher Certification Dashboard</div>
+        <h1>Student badges and hands-on approvals</h1>
+        <p>Review every student certification, inspect earned badges, and approve supervised equipment performance checks.</p>
+        <div class="hero-actions consistent-actions">
+          <button class="btn" data-refresh-teacher-dashboard type="button">Refresh Dashboard</button>
+          <a class="btn secondary" href="teacher-register.html">Create Teacher Account</a>
+          <a class="btn secondary" href="change-password.html">Change Password</a>
+          <a class="btn secondary" href="index.html">Certification Hub</a>
+        </div>
+      </div>
+      <aside class="card dark">
+        <span class="tag">Approval Rule</span>
+        <h3>Online test + observed performance</h3>
+        <p>Equipment badges unlock only after the student passes the online certification and a teacher approves the hands-on portion.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="container teacher-summary-section" aria-label="Teacher certification summary">
+    <div class="teacher-summary-grid">
+      <article><span aria-hidden="true">S</span><div><strong data-teacher-stat-students>—</strong><small>Student accounts</small></div></article>
+      <article><span aria-hidden="true">★</span><div><strong data-teacher-stat-badges>—</strong><small>Badges earned</small></div></article>
+      <article><span aria-hidden="true">!</span><div><strong data-teacher-stat-pending>—</strong><small>Approvals pending</small></div></article>
+      <article><span aria-hidden="true">✓</span><div><strong data-teacher-stat-equipment>—</strong><small>Equipment badges</small></div></article>
+    </div>
+  </section>
+
+  <section class="container teacher-dashboard-section" aria-label="Pending password reset requests">
+    <div class="section-header compact">
+      <div>
+        <div class="eyebrow">Student Accounts</div>
+        <h2>Pending password resets</h2>
+        <p class="muted">Approve a request to generate a one-time 6-digit reset code. Give the code directly to the student; it expires after 30 minutes.</p>
+      </div>
+    </div>
+    <div class="teacher-pending-count" data-password-reset-count aria-live="polite">Loading…</div>
+    <div class="teacher-reset-grid" data-password-reset-requests>
+      <div class="teacher-empty-state"><strong>Loading password reset requests…</strong></div>
+    </div>
+  </section>
+
+  <section class="container teacher-dashboard-section">
+    <div class="section-header compact">
+      <div>
+        <div class="eyebrow">Waiting for You</div>
+        <h2>Pending hands-on approvals</h2>
+        <p class="muted">Students appear here after earning at least 80% on an equipment certification.</p>
+      </div>
+    </div>
+    <div class="teacher-dashboard-tools teacher-pending-tools" aria-label="Pending approval controls">
+      <label>Certification type
+        <select data-pending-cert-filter>
+          <option value="all">All equipment certifications</option>
+          <option value="3d-printing">3D Printing</option>
+          <option value="laser-cutting">Laser Cutting</option>
+          <option value="cnc">CNC</option>
+          <option value="drill-press">Drill Press</option>
+          <option value="soldering">Soldering</option>
+          <option value="hand-cutting-tools">Hand &amp; Cutting Tools</option>
+        </select>
+      </label>
+      <label>Sort pending approvals
+        <select data-pending-sort>
+          <option value="certification">Certification type</option>
+          <option value="student">Student name</option>
+          <option value="period">Class period</option>
+        </select>
+      </label>
+      <div class="teacher-pending-count" data-pending-count aria-live="polite">Loading…</div>
+    </div>
+    <div class="teacher-pending-grid" data-pending-approvals>
+      <div class="teacher-empty-state"><strong>Loading pending approvals…</strong></div>
+    </div>
+  </section>
+
+  <section class="container teacher-dashboard-section">
+    <article class="card teacher-student-directory-card">
+      <div class="section-header compact">
+        <div>
+          <div class="eyebrow">Student Directory</div>
+          <h2>Certification records and badge collections</h2>
+          <p class="muted">Open a student to see all 13 certification badges, scores, attempts, dates, and approval controls.</p>
+        </div>
+      </div>
+
+      <div class="teacher-dashboard-tools">
+        <label>Search students
+          <input data-teacher-filter placeholder="Name, email, student ID, or period" type="search">
+        </label>
+        <label>Class period
+          <select data-teacher-period-filter>
+            <option value="all">All periods</option>
+            <option value="1">Period 1</option><option value="2">Period 2</option><option value="3">Period 3</option>
+            <option value="4">Period 4</option><option value="5">Period 5</option><option value="6">Period 6</option><option value="7">Period 7</option>
+          </select>
+        </label>
+        <label>Progress
+          <select data-teacher-status-filter>
+            <option value="all">All students</option>
+            <option value="pending">Has pending approval</option>
+            <option value="earned">Has earned badges</option>
+            <option value="none">No badges earned</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="teacher-dashboard-status" data-teacher-dashboard-status aria-live="polite">Loading students…</div>
+      <div class="teacher-student-table-wrap" data-teacher-dashboard></div>
+    </article>
+  </section>
+
+  <dialog class="teacher-student-dialog" data-student-cert-dialog>
+    <div class="teacher-dialog-shell">
+      <div class="teacher-dialog-header">
+        <div>
+          <div class="eyebrow">Student Certification Profile</div>
+          <h2 data-dialog-student-name>Student</h2>
+          <p data-dialog-student-meta></p>
+          <strong data-dialog-student-summary></strong>
+        </div>
+        <button aria-label="Close student certification profile" class="teacher-dialog-close" data-close-student-dialog type="button">×</button>
+      </div>
+      <div class="teacher-student-badge-grid" data-dialog-badge-grid></div>
+      <div class="teacher-dialog-footer"><button class="btn" data-teacher-reset-password type="button">Generate Password Reset Code</button><button class="btn secondary" data-close-student-dialog type="button">Close</button></div>
+    </div>
+  </dialog>
+
+  <dialog class="teacher-student-dialog teacher-reset-code-dialog" data-password-reset-code-dialog>
+    <div class="teacher-dialog-shell">
+      <div class="teacher-dialog-header">
+        <div><div class="eyebrow">One-Time Password Reset</div><h2 data-reset-code-student>Student</h2><p>Give this code directly to the student. The code is shown only now and expires after 30 minutes.</p></div>
+        <button aria-label="Close password reset code" class="teacher-dialog-close" data-close-reset-code-dialog type="button">×</button>
+      </div>
+      <div class="teacher-reset-code" data-reset-code-value>000000</div>
+      <p class="muted" data-reset-code-expiry></p>
+      <div class="teacher-dialog-footer"><button class="btn" data-copy-reset-code type="button">Copy Code</button><button class="btn secondary" data-close-reset-code-dialog type="button">Close</button></div>
+    </div>
+  </dialog>
+</main>
+<footer class="site-footer"><div class="container"><p>LockwoodSTEM</p></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+</body>
+</html>

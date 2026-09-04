@@ -1,0 +1,89 @@
+/* LockwoodSTEM agenda — Upcoming Due Dates fullscreen readability fix
+   Build 2026-08-13-1
+   Keeps assignment titles compact, fully wrapped, and top-aligned on classroom displays. */
+
+/* Normal view: prevent unusually long assignment names from escaping their card. */
+#agendaApp .due-date-title {
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  text-overflow: clip !important;
+  max-width: 100% !important;
+}
+
+/* Full-screen / smartboard view: title size must not inherit the aggressive
+   whole-card auto-fit size. Long assignment names are more useful complete
+   than oversized. */
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-title,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-title,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-title {
+  font-size: min(var(--agenda-fit-size, 17px), 18px) !important;
+  line-height: 1.18 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  text-overflow: clip !important;
+}
+
+/* Do not vertically center an over-height list inside a clipped card. */
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-list,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-list,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-list {
+  align-content: start !important;
+  justify-content: stretch !important;
+  gap: .34rem !important;
+  overflow: hidden !important;
+}
+
+/* Give the title most of the available vertical room. */
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-item,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-item,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-item {
+  grid-template-columns: 78px minmax(0, 1fr) !important;
+  min-height: 0 !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-details,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-details,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-details {
+  min-width: 0 !important;
+  padding: .4rem .52rem !important;
+  overflow: visible !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-date-block,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-date-block,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-date-block {
+  padding: .38rem .3rem !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-calendar,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-calendar,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-calendar {
+  font-size: .84rem !important;
+  line-height: 1.1 !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-badge,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-badge,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-badge {
+  font-size: .64rem !important;
+  line-height: 1.08 !important;
+}
+
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-meta,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-meta,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-meta {
+  font-size: .67rem !important;
+  line-height: 1.1 !important;
+  margin-top: .18rem !important;
+}
+
+/* Notes are secondary on the classroom agenda and can force the assignment
+   name out of view. Keep them available in normal view, hide only fullscreen. */
+.agenda-shell:fullscreen #agendaApp .agenda-display-card.due-dates .due-date-note,
+.agenda-shell:-webkit-full-screen #agendaApp .agenda-display-card.due-dates .due-date-note,
+.agenda-shell.agenda-fallback-fullscreen #agendaApp .agenda-display-card.due-dates .due-date-note {
+  display: none !important;
+}

@@ -1,0 +1,2411 @@
+{
+  "generated": "2026-08-24T23:59:00Z",
+  "lessons": [
+    {
+      "course": "IED",
+      "unit": 0,
+      "lesson": 1,
+      "number": "0.1",
+      "type": "Lesson",
+      "title": "Course Launch & Engineering Mindset",
+      "url": "courses/ied/units/unit-0/lesson-0-1.html",
+      "presentation": "downloads/presentations/IED_Unit0_Lesson_0.1_Course_Launch_Engineering_Mindset.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 0,
+      "lesson": 2,
+      "number": "0.2",
+      "type": "Lesson",
+      "title": "Engineering Notebook Setup & Course Resources",
+      "url": "courses/ied/units/unit-0/lesson-0-2.html",
+      "presentation": "downloads/presentations/IED_Unit0_Lesson_0.2_Engineering_Notebook_Setup_and_Course_Resources.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 0,
+      "lesson": 3,
+      "number": "0.3",
+      "type": "Lesson",
+      "title": "Safety Acknowledgment, PPE & FabLab Orientation",
+      "url": "courses/ied/units/unit-0/lesson-0-3.html",
+      "presentation": "downloads/presentations/IED_Unit0_Lesson_0.3_Safety_Acknowledgment_PPE_and_FabLab_Orientation.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 0,
+      "lesson": 4,
+      "number": "0.4",
+      "type": "Lesson",
+      "title": "Engineering Design Process",
+      "url": "courses/ied/units/unit-0/lesson-0-4.html",
+      "presentation": "downloads/presentations/IED_Unit0_Lesson_0.4_Engineering_Design_Process.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 0,
+      "lesson": 5,
+      "number": "0.5",
+      "type": "Lesson",
+      "title": "Engineering Notebook & Documentation Basics",
+      "url": "courses/ied/units/unit-0/lesson-0-5.html",
+      "presentation": "downloads/presentations/IED_Unit0_Lesson_0.5_Engineering_Notebook_and_Documentation_Basics.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 0,
+      "lesson": 6,
+      "number": "0.6",
+      "type": "Lesson",
+      "title": "Problem Definition, Criteria & Constraints",
+      "url": "courses/ied/units/unit-0/lesson-0-6.html",
+      "presentation": "downloads/presentations/IED_Unit0_Lesson_0.6_Problem_Definition_Criteria_and_Constraints.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 0,
+      "lesson": 7,
+      "number": "0.7",
+      "type": "Lesson",
+      "title": "Rocket Launch Pad Design Challenge Launch",
+      "url": "courses/ied/units/unit-0/lesson-0-7.html"
+    },
+    {
+      "course": "IED",
+      "unit": 0,
+      "lesson": 8,
+      "number": "0.8",
+      "type": "Lesson",
+      "title": "Launch Pad Build Plan",
+      "url": "courses/ied/units/unit-0/lesson-0-8.html"
+    },
+    {
+      "course": "IED",
+      "unit": 0,
+      "lesson": 9,
+      "number": "0.9",
+      "type": "Lesson",
+      "title": "Launch Pad Prototype Build Day",
+      "url": "courses/ied/units/unit-0/lesson-0-9.html"
+    },
+    {
+      "course": "IED",
+      "unit": 0,
+      "lesson": 10,
+      "number": "0.10",
+      "type": "Lesson",
+      "title": "Launch Pad Testing & Improvement",
+      "url": "courses/ied/units/unit-0/lesson-0-10.html"
+    },
+    {
+      "course": "IED",
+      "unit": 0,
+      "lesson": 11,
+      "number": "0.11",
+      "type": "Lesson",
+      "title": "Final Documentation & Design Review",
+      "url": "courses/ied/units/unit-0/lesson-0-11.html",
+      "presentation": "downloads/presentations/LS-TMP-018_Final_Design_Review_Slides_Template.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 0,
+      "lesson": 12,
+      "number": "0.12",
+      "type": "Lesson",
+      "title": "Unit 0 Portfolio Check & Design Reflection",
+      "url": "courses/ied/units/unit-0/lesson-0-12.html"
+    },
+    {
+      "course": "IED",
+      "unit": 1,
+      "lesson": 1,
+      "number": "1.1",
+      "type": "Lesson",
+      "title": "Engineering Sketching & Line Conventions",
+      "url": "courses/ied/units/unit-1/lesson-1-1.html"
+    },
+    {
+      "course": "IED",
+      "unit": 1,
+      "lesson": 2,
+      "number": "1.2",
+      "type": "Lesson",
+      "title": "Centerlines & Symmetry",
+      "url": "courses/ied/units/unit-1/lesson-1-2.html"
+    },
+    {
+      "course": "IED",
+      "unit": 1,
+      "lesson": 3,
+      "number": "1.3",
+      "type": "Lesson",
+      "title": "Isometric Sketching & Curved Features",
+      "url": "courses/ied/units/unit-1/lesson-1-3.html"
+    },
+    {
+      "course": "IED",
+      "unit": 1,
+      "lesson": 4,
+      "number": "1.4",
+      "type": "Lesson",
+      "title": "Orthographic Projection & Multiview Sketching",
+      "url": "courses/ied/units/unit-1/lesson-1-4.html"
+    },
+    {
+      "course": "IED",
+      "unit": 1,
+      "lesson": 5,
+      "number": "1.5",
+      "type": "Lesson",
+      "title": "Dimensioning & Technical Sketching",
+      "url": "courses/ied/units/unit-1/lesson-1-5.html"
+    },
+    {
+      "course": "IED",
+      "unit": 1,
+      "lesson": 6,
+      "number": "1.6",
+      "type": "Lesson",
+      "title": "Rocket Reverse Engineering & Product Investigation",
+      "url": "courses/ied/units/unit-1/lesson-1-6.html"
+    },
+    {
+      "course": "IED",
+      "unit": 1,
+      "lesson": 7,
+      "number": "1.7",
+      "type": "Lesson",
+      "title": "Measurement, Precision & Tolerances",
+      "url": "courses/ied/units/unit-1/lesson-1-7.html"
+    },
+    {
+      "course": "IED",
+      "unit": 1,
+      "lesson": 8,
+      "number": "1.8",
+      "type": "Lesson",
+      "title": "Joining Methods & Assembly Systems",
+      "url": "courses/ied/units/unit-1/lesson-1-8.html"
+    },
+    {
+      "course": "IED",
+      "unit": 1,
+      "lesson": 9,
+      "number": "1.9",
+      "type": "Lesson",
+      "title": "Documenting the Rocket Assembly",
+      "url": "courses/ied/units/unit-1/lesson-1-9.html"
+    },
+    {
+      "course": "IED",
+      "unit": 1,
+      "lesson": 10,
+      "number": "1.10",
+      "type": "Lesson",
+      "title": "Exploded Views & Bills of Materials",
+      "url": "courses/ied/units/unit-1/lesson-1-10.html"
+    },
+    {
+      "course": "IED",
+      "unit": 1,
+      "lesson": 11,
+      "number": "1.11",
+      "type": "Lesson",
+      "title": "Assembly Instructions & Technical Communication",
+      "url": "courses/ied/units/unit-1/lesson-1-11.html"
+    },
+    {
+      "course": "IED",
+      "unit": 1,
+      "lesson": 12,
+      "number": "1.12",
+      "type": "Lesson",
+      "title": "Engineering Change & Product Improvement Proposal",
+      "url": "courses/ied/units/unit-1/lesson-1-12.html"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 1,
+      "number": "2.1",
+      "type": "Lesson",
+      "title": "From Engineering Documentation to CAD",
+      "url": "courses/ied/units/unit-2/lesson-2-1.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.1_From_Engineering_Documentation_to_CAD.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 2,
+      "number": "2.2",
+      "type": "Lesson",
+      "title": "Fusion 360 Interface and File Setup",
+      "url": "courses/ied/units/unit-2/lesson-2-2.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.2_Fusion_360_Interface_and_File_Setup.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 3,
+      "number": "2.3",
+      "type": "Lesson",
+      "title": "Sketch Planes and 2D Sketching",
+      "url": "courses/ied/units/unit-2/lesson-2-3.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.3_Sketch_Planes_and_2D_Sketching.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 4,
+      "number": "2.4",
+      "type": "Lesson",
+      "title": "Sketch Constraints",
+      "url": "courses/ied/units/unit-2/lesson-2-4.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.4_Sketch_Constraints.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 5,
+      "number": "2.5",
+      "type": "Lesson",
+      "title": "Dimensioned CAD Sketches",
+      "url": "courses/ied/units/unit-2/lesson-2-5.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.5_Dimensioned_CAD_Sketches.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 6,
+      "number": "2.6",
+      "type": "Lesson",
+      "title": "Extrude Basics",
+      "url": "courses/ied/units/unit-2/lesson-2-6.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.6_Extrude_Basics.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 7,
+      "number": "2.7",
+      "type": "Lesson",
+      "title": "Cut Features and Holes",
+      "url": "courses/ied/units/unit-2/lesson-2-7.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.7_Cut_Features_and_Holes.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 8,
+      "number": "2.8",
+      "type": "Lesson",
+      "title": "Fillets, Chamfers, and Design Intent",
+      "url": "courses/ied/units/unit-2/lesson-2-8.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.8_Fillets_Chamfers_and_Design_Intent.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 9,
+      "number": "2.9",
+      "type": "Lesson",
+      "title": "Revolve Features: Nose Cone and Nozzle",
+      "url": "courses/ied/units/unit-2/lesson-2-9.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.9_Revolve_Features_Nose_Cone_and_Nozzle.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 10,
+      "number": "2.10",
+      "type": "Lesson",
+      "title": "Patterns and Symmetry: Rocket Fins",
+      "url": "courses/ied/units/unit-2/lesson-2-10.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.10_Patterns_and_Symmetry_Rocket_Fins.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 11,
+      "number": "2.11",
+      "type": "Lesson",
+      "title": "Parametric Rocket Part Modeling",
+      "url": "courses/ied/units/unit-2/lesson-2-11.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.11_Parametric_Rocket_Part_Modeling.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 12,
+      "number": "2.12",
+      "type": "Lesson",
+      "title": "CAD Model Check and Revision",
+      "url": "courses/ied/units/unit-2/lesson-2-12.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.12_CAD_Model_Check_and_Revision.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 13,
+      "number": "2.13",
+      "type": "Lesson",
+      "title": "Preparing CAD Files for 3D Printing",
+      "url": "courses/ied/units/unit-2/lesson-2-13.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.13_Preparing_CAD_Files_for_3D_Printing.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 14,
+      "number": "2.14",
+      "type": "Lesson",
+      "title": "Slicer Basics and Print Settings",
+      "url": "courses/ied/units/unit-2/lesson-2-14.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.14_Slicer_Basics_and_Print_Settings.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 15,
+      "number": "2.15",
+      "type": "Lesson",
+      "title": "FabLab 3D Printer Certification",
+      "url": "courses/ied/units/unit-2/lesson-2-15.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.15_FabLab_3D_Printer_Certification.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 16,
+      "number": "2.16",
+      "type": "Lesson",
+      "title": "Final 3D Printed Tolerance Tester Workday",
+      "url": "courses/ied/units/unit-2/lesson-2-16.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.16_Final_3D_Printed_Tolerance_Tester_Workday.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 17,
+      "number": "2.17",
+      "type": "Lesson",
+      "title": "3D Printing Post-Processing",
+      "url": "courses/ied/units/unit-2/lesson-2-17.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.17_3D_Printing_Post_Processing.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 2,
+      "lesson": 18,
+      "number": "2.18",
+      "type": "Lesson",
+      "title": "Final Tolerance Tester Review and Recommendation",
+      "url": "courses/ied/units/unit-2/lesson-2-18.html",
+      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.18_Final_Tolerance_Tester_Review_and_Recommendation.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 1,
+      "number": "3.1",
+      "type": "Lesson",
+      "title": "From Printed Testers to Rocket Assembly",
+      "url": "courses/ied/units/unit-3/lesson-3-1.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.1_From_Printed_Testers_to_Rocket_Assembly.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 2,
+      "number": "3.2",
+      "type": "Lesson",
+      "title": "CAD Components and Assembly Files",
+      "url": "courses/ied/units/unit-3/lesson-3-2.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.2_CAD_Components_and_Assembly_Files.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 3,
+      "number": "3.3",
+      "type": "Lesson",
+      "title": "Inserting and Positioning Rocket Parts",
+      "url": "courses/ied/units/unit-3/lesson-3-3.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.3_Inserting_and_Positioning_Rocket_Parts.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 4,
+      "number": "3.4",
+      "type": "Lesson",
+      "title": "Assembly Alignment and Fit Checks",
+      "url": "courses/ied/units/unit-3/lesson-3-4.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.4_Assembly_Alignment_and_Fit_Checks.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 5,
+      "number": "3.5",
+      "type": "Lesson",
+      "title": "Joints and Assembly Relationships",
+      "url": "courses/ied/units/unit-3/lesson-3-5.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.5_Joints_and_Assembly_Relationships.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 6,
+      "number": "3.6",
+      "type": "Lesson",
+      "title": "Fin Placement and Symmetry",
+      "url": "courses/ied/units/unit-3/lesson-3-6.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.6_Fin_Placement_and_Symmetry.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 7,
+      "number": "3.7",
+      "type": "Lesson",
+      "title": "Rocket Assembly Revision Workday",
+      "url": "courses/ied/units/unit-3/lesson-3-7.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.7_Rocket_Assembly_Revision_Workday.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 8,
+      "number": "3.8",
+      "type": "Lesson",
+      "title": "Exploded CAD Views",
+      "url": "courses/ied/units/unit-3/lesson-3-8.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.8_Exploded_CAD_Views.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 9,
+      "number": "3.9",
+      "type": "Lesson",
+      "title": "Assembly Motion and Functional Checks",
+      "url": "courses/ied/units/unit-3/lesson-3-9.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.9_Assembly_Motion_and_Functional_Checks.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 10,
+      "number": "3.10",
+      "type": "Lesson",
+      "title": "Export, Slice, and Submit Rocket Parts for 3D Printing",
+      "url": "courses/ied/units/unit-3/lesson-3-10.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.10_Export_Slice_and_Submit_Rocket_Parts_for_3D_Printing.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 11,
+      "number": "3.11",
+      "type": "Lesson",
+      "title": "Prototype Assembly Build Day",
+      "url": "courses/ied/units/unit-3/lesson-3-11.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.11_Prototype_Assembly_Build_Day.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 12,
+      "number": "3.12",
+      "type": "Lesson",
+      "title": "Prototype Fit Testing and Revision Notes",
+      "url": "courses/ied/units/unit-3/lesson-3-12.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.12_Prototype_Fit_Testing_and_Revision_Notes.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 13,
+      "number": "3.13",
+      "type": "Lesson",
+      "title": "Introduction to Technical Drawing Sheets",
+      "url": "courses/ied/units/unit-3/lesson-3-13.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.13_Introduction_to_Technical_Drawing_Sheets.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 14,
+      "number": "3.14",
+      "type": "Lesson",
+      "title": "Part and Assembly Drawing Views",
+      "url": "courses/ied/units/unit-3/lesson-3-14.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.14_Part_and_Assembly_Drawing_Views.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 15,
+      "number": "3.15",
+      "type": "Lesson",
+      "title": "Parts List, Balloons, Notes, and Revisions",
+      "url": "courses/ied/units/unit-3/lesson-3-15.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.15_Parts_List_Balloons_Notes_and_Revisions.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 16,
+      "number": "3.16",
+      "type": "Lesson",
+      "title": "Final Rocket Assembly Design Package Workday",
+      "url": "courses/ied/units/unit-3/lesson-3-16.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.16_Final_Rocket_Assembly_Design_Package_Workday.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 3,
+      "lesson": 17,
+      "number": "3.17",
+      "type": "Lesson",
+      "title": "Final Rocket Assembly Presentation",
+      "url": "courses/ied/units/unit-3/lesson-3-17.html",
+      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.17_Final_Rocket_Assembly_Presentation.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 1,
+      "number": "4.1",
+      "type": "Lesson",
+      "title": "Unit 4 Challenge Launch: Aerospace Mechanisms, Materials & Electromechanical Systems",
+      "url": "courses/ied/units/unit-4/lesson-4-1.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.1_Unit_4_Challenge_Launch_Aerospace_Mechanisms_Materials_Electromechanical_Systems.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 2,
+      "number": "4.2",
+      "type": "Lesson",
+      "title": "Aerospace Materials and Material Properties",
+      "url": "courses/ied/units/unit-4/lesson-4-2.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.2_Aerospace_Materials_and_Material_Properties.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 3,
+      "number": "4.3",
+      "type": "Lesson",
+      "title": "Material Testing Lab",
+      "url": "courses/ied/units/unit-4/lesson-4-3.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.3_Material_Testing_Lab.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 4,
+      "number": "4.4",
+      "type": "Lesson",
+      "title": "Statistics and Measurement Error",
+      "url": "courses/ied/units/unit-4/lesson-4-4.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.4_Statistics_and_Measurement_Error.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 5,
+      "number": "4.5",
+      "type": "Lesson",
+      "title": "Mechanisms and Types of Motion",
+      "url": "courses/ied/units/unit-4/lesson-4-5.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.5_Mechanisms_and_Types_of_Motion.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 6,
+      "number": "4.6",
+      "type": "Lesson",
+      "title": "Mechanism Exploration: Linkages, Hinges, Cams, Gears, and Pulleys",
+      "url": "courses/ied/units/unit-4/lesson-4-6.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.6_Mechanism_Exploration_Linkages_Hinges_Cams_Gears_and_Pulleys.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 7,
+      "number": "4.7",
+      "type": "Lesson",
+      "title": "Friction, Force, and Mechanism Performance",
+      "url": "courses/ied/units/unit-4/lesson-4-7.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.7_Friction_Force_and_Mechanism_Performance.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 8,
+      "number": "4.8",
+      "type": "Lesson",
+      "title": "Motion Graphs and System Behavior",
+      "url": "courses/ied/units/unit-4/lesson-4-8.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.8_Motion_Graphs_and_System_Behavior.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 9,
+      "number": "4.9",
+      "type": "Lesson",
+      "title": "Electrical Safety and Simple Circuits",
+      "url": "courses/ied/units/unit-4/lesson-4-9.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.9_Electrical_Safety_and_Simple_Circuits.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 10,
+      "number": "4.10",
+      "type": "Lesson",
+      "title": "Motors and Electromechanical Motion",
+      "url": "courses/ied/units/unit-4/lesson-4-10.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.10_Motors_and_Electromechanical_Motion.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 11,
+      "number": "4.11",
+      "type": "Lesson",
+      "title": "Concept Generation and Decision Matrix",
+      "url": "courses/ied/units/unit-4/lesson-4-11.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.11_Concept_Generation_and_Decision_Matrix.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 12,
+      "number": "4.12",
+      "type": "Lesson",
+      "title": "System Architecture and Subsystem Planning",
+      "url": "courses/ied/units/unit-4/lesson-4-12.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.12_System_Architecture_and_Subsystem_Planning.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 13,
+      "number": "4.13",
+      "type": "Lesson",
+      "title": "CAD Planning and Assembly Layout",
+      "url": "courses/ied/units/unit-4/lesson-4-13.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.13_CAD_Planning_and_Assembly_Layout.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 14,
+      "number": "4.14",
+      "type": "Lesson",
+      "title": "CAD Modeling Workday: Components, Motion, and Fit",
+      "url": "courses/ied/units/unit-4/lesson-4-14.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.14_CAD_Modeling_Workday_Components_Motion_and_Fit.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 15,
+      "number": "4.15",
+      "type": "Lesson",
+      "title": "Prototype Build Day 1: Structure and Mechanism",
+      "url": "courses/ied/units/unit-4/lesson-4-15.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.15_Prototype_Build_Day_1_Structure_and_Mechanism.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 16,
+      "number": "4.16",
+      "type": "Lesson",
+      "title": "Prototype Build Day 2: Electrical or Electromechanical Integration",
+      "url": "courses/ied/units/unit-4/lesson-4-16.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.16_Prototype_Build_Day_2_Electrical_or_Electromechanical_Integration.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 17,
+      "number": "4.17",
+      "type": "Lesson",
+      "title": "Testing Protocol Development",
+      "url": "courses/ied/units/unit-4/lesson-4-17.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.17_Testing_Protocol_Development.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 18,
+      "number": "4.18",
+      "type": "Lesson",
+      "title": "Prototype Testing and Data Collection",
+      "url": "courses/ied/units/unit-4/lesson-4-18.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.18_Prototype_Testing_and_Data_Collection.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 19,
+      "number": "4.19",
+      "type": "Lesson",
+      "title": "Data Analysis, Graphing, and Design Conclusions",
+      "url": "courses/ied/units/unit-4/lesson-4-19.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.19_Data_Analysis_Graphing_and_Design_Conclusions.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 20,
+      "number": "4.20",
+      "type": "Lesson",
+      "title": "Iteration and Prototype Revision",
+      "url": "courses/ied/units/unit-4/lesson-4-20.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.20_Iteration_and_Prototype_Revision.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 21,
+      "number": "4.21",
+      "type": "Lesson",
+      "title": "Final Technical Documentation: Mechanism, Circuit, Data, and Revision",
+      "url": "courses/ied/units/unit-4/lesson-4-21.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.21_Final_Technical_Documentation_Mechanism_Circuit_Data_and_Revision.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 4,
+      "lesson": 22,
+      "number": "4.22",
+      "type": "Lesson",
+      "title": "Unit 4 Technical Demonstration and Reflection",
+      "url": "courses/ied/units/unit-4/lesson-4-22.html",
+      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.22_Unit_4_Technical_Demonstration_and_Reflection.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 1,
+      "number": "5.1",
+      "type": "Lesson",
+      "title": "Human-Centered Aerospace Design Capstone Launch",
+      "url": "courses/ied/units/unit-5/lesson-5-1.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.1_Human_Centered_Aerospace_Design_Capstone_Launch.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 2,
+      "number": "5.2",
+      "type": "Lesson",
+      "title": "Stakeholder Research and User Needs",
+      "url": "courses/ied/units/unit-5/lesson-5-2.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.2_Stakeholder_Research_and_User_Needs.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 3,
+      "number": "5.3",
+      "type": "Lesson",
+      "title": "Problem Statement, Criteria, Constraints, and Design Brief",
+      "url": "courses/ied/units/unit-5/lesson-5-3.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.3_Problem_Statement_Criteria_Constraints_and_Design_Brief.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 4,
+      "number": "5.4",
+      "type": "Lesson",
+      "title": "Team Norms and Project Management",
+      "url": "courses/ied/units/unit-5/lesson-5-4.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.4_Team_Norms_and_Project_Management.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 5,
+      "number": "5.5",
+      "type": "Lesson",
+      "title": "Concept Generation and Human-Centered Ideation",
+      "url": "courses/ied/units/unit-5/lesson-5-5.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.5_Concept_Generation_and_Human_Centered_Ideation.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 6,
+      "number": "5.6",
+      "type": "Lesson",
+      "title": "Decision Matrix and Final Concept Selection",
+      "url": "courses/ied/units/unit-5/lesson-5-6.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.6_Decision_Matrix_and_Final_Concept_Selection.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 7,
+      "number": "5.7",
+      "type": "Lesson",
+      "title": "CAD, Fabrication, and Prototype Planning",
+      "url": "courses/ied/units/unit-5/lesson-5-7.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.7_CAD_Fabrication_and_Prototype_Planning.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 8,
+      "number": "5.8",
+      "type": "Lesson",
+      "title": "CAD Modeling and Prototype Part Development",
+      "url": "courses/ied/units/unit-5/lesson-5-8.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.8_CAD_Modeling_and_Prototype_Part_Development.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 9,
+      "number": "5.9",
+      "type": "Lesson",
+      "title": "Prototype Build Day 1: Structure and Core Function",
+      "url": "courses/ied/units/unit-5/lesson-5-9.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.9_Prototype_Build_Day_1_Structure_and_Core_Function.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 10,
+      "number": "5.10",
+      "type": "Lesson",
+      "title": "Prototype Build Day 2: Integration and Refinement",
+      "url": "courses/ied/units/unit-5/lesson-5-10.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.10_Prototype_Build_Day_2_Integration_and_Refinement.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 11,
+      "number": "5.11",
+      "type": "Lesson",
+      "title": "Testing Protocol and User Feedback Plan",
+      "url": "courses/ied/units/unit-5/lesson-5-11.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.11_Testing_Protocol_and_User_Feedback_Plan.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 12,
+      "number": "5.12",
+      "type": "Lesson",
+      "title": "Prototype Testing and User Feedback",
+      "url": "courses/ied/units/unit-5/lesson-5-12.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.12_Prototype_Testing_and_User_Feedback.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 13,
+      "number": "5.13",
+      "type": "Lesson",
+      "title": "Data Analysis and Stakeholder Feedback Review",
+      "url": "courses/ied/units/unit-5/lesson-5-13.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.13_Data_Analysis_and_Stakeholder_Feedback_Review.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 14,
+      "number": "5.14",
+      "type": "Lesson",
+      "title": "Ethics, Safety, Sustainability, and Life-Cycle Analysis",
+      "url": "courses/ied/units/unit-5/lesson-5-14.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.14_Ethics_Safety_Sustainability_and_Life_Cycle_Analysis.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 15,
+      "number": "5.15",
+      "type": "Lesson",
+      "title": "Final Prototype Revision and Refinement",
+      "url": "courses/ied/units/unit-5/lesson-5-15.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.15_Final_Prototype_Revision_and_Refinement.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 16,
+      "number": "5.16",
+      "type": "Lesson",
+      "title": "Final Engineering Portfolio Workday",
+      "url": "courses/ied/units/unit-5/lesson-5-16.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.16_Final_Engineering_Portfolio_Workday.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 17,
+      "number": "5.17",
+      "type": "Lesson",
+      "title": "Final Presentation Preparation and Rehearsal",
+      "url": "courses/ied/units/unit-5/lesson-5-17.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.17_Final_Presentation_Preparation_and_Rehearsal.pptx"
+    },
+    {
+      "course": "IED",
+      "unit": 5,
+      "lesson": 18,
+      "number": "5.18",
+      "type": "Lesson",
+      "title": "Final Capstone Presentations",
+      "url": "courses/ied/units/unit-5/lesson-5-18.html",
+      "presentation": "downloads/presentations/IED_Unit5_Lesson_5.18_Final_Capstone_Presentations.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 0,
+      "lesson": 1,
+      "number": "0.1",
+      "type": "Lesson",
+      "title": "Engineering for the Mission",
+      "url": "courses/poe/units/unit-0/lesson-0-1.html",
+      "presentation": "downloads/presentations/POE_Unit0_Lesson_0.1_Engineering_for_the_Mission.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 0,
+      "lesson": 2,
+      "number": "0.2",
+      "type": "Lesson",
+      "title": "Engineering Notebook & Documentation Refresher",
+      "url": "courses/poe/units/unit-0/lesson-0-2.html",
+      "presentation": "downloads/presentations/POE_Unit0_Lesson_0.2_Engineering_Notebook_and_Documentation_Refresher.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 0,
+      "lesson": 3,
+      "number": "0.3",
+      "type": "Lesson",
+      "title": "PPE and FabLab Safety",
+      "url": "courses/poe/units/unit-0/lesson-0-3.html",
+      "presentation": "downloads/presentations/POE_Unit0_Lesson_0.3_PPE_and_FabLab_Safety.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 0,
+      "lesson": 4,
+      "number": "0.4",
+      "type": "Lesson",
+      "title": "Hand Tool Certification",
+      "url": "courses/poe/units/unit-0/lesson-0-4.html",
+      "presentation": "downloads/presentations/POE_Unit0_Lesson_0.4_Hand_Tool_Certification.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 0,
+      "lesson": 5,
+      "number": "0.5",
+      "type": "Lesson",
+      "title": "Laser Cutter Certification",
+      "url": "courses/poe/units/unit-0/lesson-0-5.html",
+      "presentation": "downloads/presentations/POE_Unit0_Lesson_0.5_Laser_Cutter_Certification.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 0,
+      "lesson": 6,
+      "number": "0.6",
+      "type": "Lesson",
+      "title": "3D Printer Certification",
+      "url": "courses/poe/units/unit-0/lesson-0-6.html",
+      "presentation": "downloads/presentations/POE_Unit0_Lesson_0.6_3D_Printer_Certification.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 0,
+      "lesson": 7,
+      "number": "0.7",
+      "type": "Lesson",
+      "title": "Fusion Refresher: Sketches, Constraints & Dimensions",
+      "url": "courses/poe/units/unit-0/lesson-0-7.html",
+      "presentation": "downloads/presentations/POE_Unit0_Lesson_0.7_Fusion_360_Refresher_Sketches_Constraints_and_Dimensions.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 0,
+      "lesson": 8,
+      "number": "0.8",
+      "type": "Lesson",
+      "title": "Fusion Refresher: Parts, Assemblies & Exports",
+      "url": "courses/poe/units/unit-0/lesson-0-8.html",
+      "presentation": "downloads/presentations/POE_Unit0_Lesson_0.8_Fusion_360_Refresher_Parts_Assemblies_and_Exports.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 0,
+      "lesson": 9,
+      "number": "0.9",
+      "type": "Lesson",
+      "title": "Systems Thinking in Aerospace Engineering",
+      "url": "courses/poe/units/unit-0/lesson-0-9.html",
+      "presentation": "downloads/presentations/POE_Unit0_Lesson_0.9_Systems_Thinking_in_Aerospace_Engineering.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 0,
+      "lesson": 10,
+      "number": "0.10",
+      "type": "Lesson",
+      "title": "VEX and Rover Readiness Orientation",
+      "url": "courses/poe/units/unit-0/lesson-0-10.html",
+      "presentation": "downloads/presentations/POE_Unit0_Lesson_0.10_VEX_and_Rover_Readiness_Orientation.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 0,
+      "lesson": 11,
+      "number": "0.11",
+      "type": "Lesson",
+      "title": "Lunar Rock Payload Device: Plan and Design",
+      "url": "courses/poe/units/unit-0/lesson-0-11.html"
+    },
+    {
+      "course": "POE",
+      "unit": 0,
+      "lesson": 12,
+      "number": "0.12",
+      "type": "Lesson",
+      "title": "Lunar Rock Payload Device: Build, Test, Improve, and Defend",
+      "url": "courses/poe/units/unit-0/lesson-0-12.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 1,
+      "number": "1.1",
+      "type": "Lesson",
+      "title": "Unit Launch: Mechanisms for Space Missions",
+      "url": "courses/poe/units/unit-1/lesson-1-1.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 2,
+      "number": "1.2",
+      "type": "Lesson",
+      "title": "Simple Machines in Aerospace Systems",
+      "url": "courses/poe/units/unit-1/lesson-1-2.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 3,
+      "number": "1.3",
+      "type": "Lesson",
+      "title": "Force, Distance, Work, and Mechanical Advantage",
+      "url": "courses/poe/units/unit-1/lesson-1-3.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 4,
+      "number": "1.4",
+      "type": "Lesson",
+      "title": "Gears and Drive Ratios",
+      "url": "courses/poe/units/unit-1/lesson-1-4.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 5,
+      "number": "1.5",
+      "type": "Lesson",
+      "title": "Pulley Systems and Lifting Mechanisms",
+      "url": "courses/poe/units/unit-1/lesson-1-5.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 6,
+      "number": "1.6",
+      "type": "Lesson",
+      "title": "Sprockets, Chain Drives, and Direction of Motion",
+      "url": "courses/poe/units/unit-1/lesson-1-6.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 7,
+      "number": "1.7",
+      "type": "Lesson",
+      "title": "VEX Build Skills and Mechanism Construction",
+      "url": "courses/poe/units/unit-1/lesson-1-7.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 8,
+      "number": "1.8",
+      "type": "Lesson",
+      "title": "Work, Power, and Efficiency in Mechanical Systems",
+      "url": "courses/poe/units/unit-1/lesson-1-8.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 9,
+      "number": "1.9",
+      "type": "Lesson",
+      "title": "Energy Sources for Aerospace Systems",
+      "url": "courses/poe/units/unit-1/lesson-1-9.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 10,
+      "number": "1.10",
+      "type": "Lesson",
+      "title": "Electrical Basics: Voltage, Current, and Resistance",
+      "url": "courses/poe/units/unit-1/lesson-1-10.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 11,
+      "number": "1.11",
+      "type": "Lesson",
+      "title": "Motors and Electrical-to-Mechanical Power",
+      "url": "courses/poe/units/unit-1/lesson-1-11.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 12,
+      "number": "1.12",
+      "type": "Lesson",
+      "title": "Design Brief: VEX Rover Mechanisms Challenge",
+      "url": "courses/poe/units/unit-1/lesson-1-12.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 13,
+      "number": "1.13",
+      "type": "Lesson",
+      "title": "Research, Criteria, Constraints, and Decision Matrix",
+      "url": "courses/poe/units/unit-1/lesson-1-13.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 14,
+      "number": "1.14",
+      "type": "Lesson",
+      "title": "Concept Sketching and Mechanism Planning",
+      "url": "courses/poe/units/unit-1/lesson-1-14.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 15,
+      "number": "1.15",
+      "type": "Lesson",
+      "title": "Prototype Build Day 1: Structure and Motion",
+      "url": "courses/poe/units/unit-1/lesson-1-15.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 16,
+      "number": "1.16",
+      "type": "Lesson",
+      "title": "Prototype Build Day 2: Power, Load, and Troubleshooting",
+      "url": "courses/poe/units/unit-1/lesson-1-16.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 17,
+      "number": "1.17",
+      "type": "Lesson",
+      "title": "Mechanism Testing and Data Analysis",
+      "url": "courses/poe/units/unit-1/lesson-1-17.html"
+    },
+    {
+      "course": "POE",
+      "unit": 1,
+      "lesson": 18,
+      "number": "1.18",
+      "type": "Lesson",
+      "title": "Final Design Review and Reflection",
+      "url": "courses/poe/units/unit-1/lesson-1-18.html"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 1,
+      "number": "2.1",
+      "type": "Lesson",
+      "title": "Unit Launch: Built to Survive",
+      "url": "courses/poe/units/unit-2/lesson-2-1.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.1_Unit_Launch_Built_to_Survive.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 2,
+      "number": "2.2",
+      "type": "Lesson",
+      "title": "Forces, Loads, and Aerospace Structures",
+      "url": "courses/poe/units/unit-2/lesson-2-2.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.2_Forces_Loads_and_Aerospace_Structures.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 3,
+      "number": "2.3",
+      "type": "Lesson",
+      "title": "Free Body Diagrams",
+      "url": "courses/poe/units/unit-2/lesson-2-3.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.3_Free_Body_Diagrams.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 4,
+      "number": "2.4",
+      "type": "Lesson",
+      "title": "Vectors, Components, and Resultant Forces",
+      "url": "courses/poe/units/unit-2/lesson-2-4.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.4_Vectors_Components_and_Resultant_Forces.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 5,
+      "number": "2.5",
+      "type": "Lesson",
+      "title": "Moments, Torque, and Structural Rotation",
+      "url": "courses/poe/units/unit-2/lesson-2-5.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.5_Moments_Torque_and_Structural_Rotation.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 6,
+      "number": "2.6",
+      "type": "Lesson",
+      "title": "Static Equilibrium",
+      "url": "courses/poe/units/unit-2/lesson-2-6.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.6_Static_Equilibrium.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 7,
+      "number": "2.7",
+      "type": "Lesson",
+      "title": "Trusses and Member Forces",
+      "url": "courses/poe/units/unit-2/lesson-2-7.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.7_Trusses_and_Member_Forces.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 8,
+      "number": "2.8",
+      "type": "Lesson",
+      "title": "Centroids and Structural Cross-Sections",
+      "url": "courses/poe/units/unit-2/lesson-2-8.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.8_Centroids_and_Structural_Cross_Sections.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 9,
+      "number": "2.9",
+      "type": "Lesson",
+      "title": "Moment of Inertia and Stiffness",
+      "url": "courses/poe/units/unit-2/lesson-2-9.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.9_Moment_of_Inertia_and_Stiffness.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 10,
+      "number": "2.10",
+      "type": "Lesson",
+      "title": "Aerospace Material Families and Selection",
+      "url": "courses/poe/units/unit-2/lesson-2-10.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.10_Aerospace_Material_Families_and_Selection.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 11,
+      "number": "2.11",
+      "type": "Lesson",
+      "title": "Density, Mass, Volume, and Structural Efficiency",
+      "url": "courses/poe/units/unit-2/lesson-2-11.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.11_Density_Mass_Volume_and_Structural_Efficiency.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 12,
+      "number": "2.12",
+      "type": "Lesson",
+      "title": "Non-Destructive Material Testing",
+      "url": "courses/poe/units/unit-2/lesson-2-12.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.12_Non_Destructive_Material_Testing.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 13,
+      "number": "2.13",
+      "type": "Lesson",
+      "title": "Destructive Testing and Stress-Strain Behavior",
+      "url": "courses/poe/units/unit-2/lesson-2-13.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.13_Destructive_Testing_and_Stress_Strain_Behavior.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 14,
+      "number": "2.14",
+      "type": "Lesson",
+      "title": "Materials Test Lab and Data Collection",
+      "url": "courses/poe/units/unit-2/lesson-2-14.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.14_Materials_Test_Lab_and_Data_Collection.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 15,
+      "number": "2.15",
+      "type": "Lesson",
+      "title": "Design Brief: Aerospace Payload Support Structure",
+      "url": "courses/poe/units/unit-2/lesson-2-15.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.15_Design_Brief_Aerospace_Payload_Support_Structure.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 16,
+      "number": "2.16",
+      "type": "Lesson",
+      "title": "Concept Development, Decision Matrix, and Build Plan",
+      "url": "courses/poe/units/unit-2/lesson-2-16.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.16_Concept_Development_Decision_Matrix_and_Build_Plan.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 17,
+      "number": "2.17",
+      "type": "Lesson",
+      "title": "Prototype Build and Load Testing",
+      "url": "courses/poe/units/unit-2/lesson-2-17.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.17_Prototype_Build_and_Load_Testing.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 2,
+      "lesson": 18,
+      "number": "2.18",
+      "type": "Lesson",
+      "title": "Data Analysis, Iteration, and Final Design Review",
+      "url": "courses/poe/units/unit-2/lesson-2-18.html",
+      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.18_Data_Analysis_Iteration_and_Final_Design_Review.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 1,
+      "number": "3.1",
+      "type": "Lesson",
+      "title": "Unit Launch: Autonomous Aerospace Systems",
+      "url": "courses/poe/units/unit-3/lesson-3-1.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.1_Unit_Launch_Autonomous_Aerospace_Systems.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 2,
+      "number": "3.2",
+      "type": "Lesson",
+      "title": "Control Systems and Mission Logic",
+      "url": "courses/poe/units/unit-3/lesson-3-2.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.2_Control_Systems_and_Mission_Logic.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 3,
+      "number": "3.3",
+      "type": "Lesson",
+      "title": "Flowcharts and Algorithms",
+      "url": "courses/poe/units/unit-3/lesson-3-3.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.3_Flowcharts_and_Algorithms.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 4,
+      "number": "3.4",
+      "type": "Lesson",
+      "title": "Inputs, Outputs, and Sensors",
+      "url": "courses/poe/units/unit-3/lesson-3-4.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.4_Inputs_Outputs_and_Sensors.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 5,
+      "number": "3.5",
+      "type": "Lesson",
+      "title": "Open-Loop Rover Control",
+      "url": "courses/poe/units/unit-3/lesson-3-5.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.5_Open_Loop_Rover_Control.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 6,
+      "number": "3.6",
+      "type": "Lesson",
+      "title": "Rover Testing and Debugging",
+      "url": "courses/poe/units/unit-3/lesson-3-6.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.6_Rover_Testing_and_Debugging.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 7,
+      "number": "3.7",
+      "type": "Lesson",
+      "title": "Closed-Loop Control and Feedback",
+      "url": "courses/poe/units/unit-3/lesson-3-7.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.7_Closed_Loop_Control_and_Feedback.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 8,
+      "number": "3.8",
+      "type": "Lesson",
+      "title": "Sensor Thresholds and Decision Logic",
+      "url": "courses/poe/units/unit-3/lesson-3-8.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.8_Sensor_Thresholds_and_Decision_Logic.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 9,
+      "number": "3.9",
+      "type": "Lesson",
+      "title": "VEX Ground Support Systems",
+      "url": "courses/poe/units/unit-3/lesson-3-9.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.9_VEX_Ground_Support_Systems.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 10,
+      "number": "3.10",
+      "type": "Lesson",
+      "title": "Motors, Servos, and Actuators",
+      "url": "courses/poe/units/unit-3/lesson-3-10.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.10_Motors_Servos_and_Actuators.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 11,
+      "number": "3.11",
+      "type": "Lesson",
+      "title": "Fluid Power in Aerospace Systems",
+      "url": "courses/poe/units/unit-3/lesson-3-11.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.11_Fluid_Power_in_Aerospace_Systems.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 12,
+      "number": "3.12",
+      "type": "Lesson",
+      "title": "Pressure, Force, and Pascal’s Law",
+      "url": "courses/poe/units/unit-3/lesson-3-12.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.12_Pressure_Force_and_Pascal_s_Law.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 13,
+      "number": "3.13",
+      "type": "Lesson",
+      "title": "Fluid Power Design Lab",
+      "url": "courses/poe/units/unit-3/lesson-3-13.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.13_Fluid_Power_Design_Lab.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 14,
+      "number": "3.14",
+      "type": "Lesson",
+      "title": "Design Brief: Rover Mission + VEX Ground Support System",
+      "url": "courses/poe/units/unit-3/lesson-3-14.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.14_Design_Brief_Rover_Mission_VEX_Ground_Support_System.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 15,
+      "number": "3.15",
+      "type": "Lesson",
+      "title": "Mission Planning and System Architecture",
+      "url": "courses/poe/units/unit-3/lesson-3-15.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.15_Mission_Planning_and_System_Architecture.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 16,
+      "number": "3.16",
+      "type": "Lesson",
+      "title": "Build and Program Workday",
+      "url": "courses/poe/units/unit-3/lesson-3-16.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.16_Build_and_Program_Workday.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 17,
+      "number": "3.17",
+      "type": "Lesson",
+      "title": "Mission Testing, Data Collection, and Iteration",
+      "url": "courses/poe/units/unit-3/lesson-3-17.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.17_Mission_Testing_Data_Collection_and_Iteration.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 3,
+      "lesson": 18,
+      "number": "3.18",
+      "type": "Lesson",
+      "title": "Final Mission Demonstration and Design Review",
+      "url": "courses/poe/units/unit-3/lesson-3-18.html",
+      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.18_Final_Mission_Demonstration_and_Design_Review.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 1,
+      "number": "4.1",
+      "type": "Lesson",
+      "title": "Unit Launch: Mission Performance and Test Data",
+      "url": "courses/poe/units/unit-4/lesson-4-1.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.1_Unit_Launch_Mission_Performance_and_Test_Data.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 2,
+      "number": "4.2",
+      "type": "Lesson",
+      "title": "Variables, Measurement, and Trial Design",
+      "url": "courses/poe/units/unit-4/lesson-4-2.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.2_Variables_Measurement_and_Trial_Design.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 3,
+      "number": "4.3",
+      "type": "Lesson",
+      "title": "Probability and Reliability in Aerospace Testing",
+      "url": "courses/poe/units/unit-4/lesson-4-3.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.3_Probability_and_Reliability_in_Aerospace_Testing.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 4,
+      "number": "4.4",
+      "type": "Lesson",
+      "title": "Frequency Distributions and Histograms",
+      "url": "courses/poe/units/unit-4/lesson-4-4.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.4_Frequency_Distributions_and_Histograms.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 5,
+      "number": "4.5",
+      "type": "Lesson",
+      "title": "Mean, Median, Mode, and Range",
+      "url": "courses/poe/units/unit-4/lesson-4-5.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.5_Mean_Median_Mode_and_Range.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 6,
+      "number": "4.6",
+      "type": "Lesson",
+      "title": "Standard Deviation and Design Consistency",
+      "url": "courses/poe/units/unit-4/lesson-4-6.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.6_Standard_Deviation_and_Design_Consistency.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 7,
+      "number": "4.7",
+      "type": "Lesson",
+      "title": "Data Displays and Engineering Claims",
+      "url": "courses/poe/units/unit-4/lesson-4-7.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.7_Data_Displays_and_Engineering_Claims.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 8,
+      "number": "4.8",
+      "type": "Lesson",
+      "title": "Distance, Displacement, Speed, and Velocity",
+      "url": "courses/poe/units/unit-4/lesson-4-8.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.8_Distance_Displacement_Speed_and_Velocity.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 9,
+      "number": "4.9",
+      "type": "Lesson",
+      "title": "Acceleration and Motion Graphs",
+      "url": "courses/poe/units/unit-4/lesson-4-9.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.9_Acceleration_and_Motion_Graphs.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 10,
+      "number": "4.10",
+      "type": "Lesson",
+      "title": "Free Fall and Gravity Drop Testing",
+      "url": "courses/poe/units/unit-4/lesson-4-10.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.10_Free_Fall_and_Gravity_Drop_Testing.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 11,
+      "number": "4.11",
+      "type": "Lesson",
+      "title": "Projectile Motion: Horizontal and Vertical Components",
+      "url": "courses/poe/units/unit-4/lesson-4-11.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.11_Projectile_Motion_Horizontal_and_Vertical_Components.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 12,
+      "number": "4.12",
+      "type": "Lesson",
+      "title": "Launch Angle, Range, and Mission Requirements",
+      "url": "courses/poe/units/unit-4/lesson-4-12.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.12_Launch_Angle_Range_and_Mission_Requirements.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 13,
+      "number": "4.13",
+      "type": "Lesson",
+      "title": "Energy Transfer in Launch and Mission Systems",
+      "url": "courses/poe/units/unit-4/lesson-4-13.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.13_Energy_Transfer_in_Launch_and_Mission_Systems.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 14,
+      "number": "4.14",
+      "type": "Lesson",
+      "title": "Design Brief: Mission Data Investigation",
+      "url": "courses/poe/units/unit-4/lesson-4-14.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.14_Design_Brief_Mission_Data_Investigation.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 15,
+      "number": "4.15",
+      "type": "Lesson",
+      "title": "Test Plan and Prediction Development",
+      "url": "courses/poe/units/unit-4/lesson-4-15.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.15_Test_Plan_and_Prediction_Development.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 16,
+      "number": "4.16",
+      "type": "Lesson",
+      "title": "Build, Setup, and Calibration Workday",
+      "url": "courses/poe/units/unit-4/lesson-4-16.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.16_Build_Setup_and_Calibration_Workday.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 17,
+      "number": "4.17",
+      "type": "Lesson",
+      "title": "Mission Testing, Data Collection, and Iteration",
+      "url": "courses/poe/units/unit-4/lesson-4-17.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.17_Mission_Testing_Data_Collection_and_Iteration.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 4,
+      "lesson": 18,
+      "number": "4.18",
+      "type": "Lesson",
+      "title": "Final Data Analysis and Performance Review",
+      "url": "courses/poe/units/unit-4/lesson-4-18.html",
+      "presentation": "downloads/presentations/POE_Unit4_Lesson_4.18_Final_Data_Analysis_and_Performance_Review.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 1,
+      "number": "5.1",
+      "type": "Lesson",
+      "title": "Capstone Launch: Aerospace Systems Challenge",
+      "url": "courses/poe/units/unit-5/lesson-5-1.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.1_Capstone_Launch_Aerospace_Systems_Challenge.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 2,
+      "number": "5.2",
+      "type": "Lesson",
+      "title": "Mission Problem Selection and Stakeholders",
+      "url": "courses/poe/units/unit-5/lesson-5-2.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.2_Mission_Problem_Selection_and_Stakeholders.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 3,
+      "number": "5.3",
+      "type": "Lesson",
+      "title": "Requirements, Criteria, and Constraints",
+      "url": "courses/poe/units/unit-5/lesson-5-3.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.3_Requirements_Criteria_and_Constraints.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 4,
+      "number": "5.4",
+      "type": "Lesson",
+      "title": "Prior Learning Audit: Mechanisms, Structures, Controls, and Data",
+      "url": "courses/poe/units/unit-5/lesson-5-4.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.4_Prior_Learning_Audit_Mechanisms_Structures_Controls_and_Data.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 5,
+      "number": "5.5",
+      "type": "Lesson",
+      "title": "Research and Benchmarking",
+      "url": "courses/poe/units/unit-5/lesson-5-5.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.5_Research_and_Benchmarking.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 6,
+      "number": "5.6",
+      "type": "Lesson",
+      "title": "Concept Generation and System Architecture",
+      "url": "courses/poe/units/unit-5/lesson-5-6.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.6_Concept_Generation_and_System_Architecture.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 7,
+      "number": "5.7",
+      "type": "Lesson",
+      "title": "Decision Matrix and Concept Selection",
+      "url": "courses/poe/units/unit-5/lesson-5-7.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.7_Decision_Matrix_and_Concept_Selection.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 8,
+      "number": "5.8",
+      "type": "Lesson",
+      "title": "Subsystem Planning and Team Roles",
+      "url": "courses/poe/units/unit-5/lesson-5-8.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.8_Subsystem_Planning_and_Team_Roles.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 9,
+      "number": "5.9",
+      "type": "Lesson",
+      "title": "CAD, Build Plan, and Fabrication Review",
+      "url": "courses/poe/units/unit-5/lesson-5-9.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.9_CAD_Build_Plan_and_Fabrication_Review.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 10,
+      "number": "5.10",
+      "type": "Lesson",
+      "title": "Prototype Build Day 1: Structure and Mechanism",
+      "url": "courses/poe/units/unit-5/lesson-5-10.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.10_Prototype_Build_Day_1_Structure_and_Mechanism.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 11,
+      "number": "5.11",
+      "type": "Lesson",
+      "title": "Prototype Build Day 2: Controls, Rover, or Electromechanical Integration",
+      "url": "courses/poe/units/unit-5/lesson-5-11.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.11_Prototype_Build_Day_2_Controls_Rover_or_Electromechanical_Integration.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 12,
+      "number": "5.12",
+      "type": "Lesson",
+      "title": "Testing Protocol and Risk Review",
+      "url": "courses/poe/units/unit-5/lesson-5-12.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.12_Testing_Protocol_and_Risk_Review.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 13,
+      "number": "5.13",
+      "type": "Lesson",
+      "title": "Prototype Testing and Data Collection",
+      "url": "courses/poe/units/unit-5/lesson-5-13.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.13_Prototype_Testing_and_Data_Collection.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 14,
+      "number": "5.14",
+      "type": "Lesson",
+      "title": "Data Analysis and Failure Modes",
+      "url": "courses/poe/units/unit-5/lesson-5-14.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.14_Data_Analysis_and_Failure_Modes.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 15,
+      "number": "5.15",
+      "type": "Lesson",
+      "title": "Iteration and Design Freeze",
+      "url": "courses/poe/units/unit-5/lesson-5-15.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.15_Iteration_and_Design_Freeze.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 16,
+      "number": "5.16",
+      "type": "Lesson",
+      "title": "Final Documentation Package",
+      "url": "courses/poe/units/unit-5/lesson-5-16.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.16_Final_Documentation_Package.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 17,
+      "number": "5.17",
+      "type": "Lesson",
+      "title": "Final Presentation and Demonstration Prep",
+      "url": "courses/poe/units/unit-5/lesson-5-17.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.17_Final_Presentation_and_Demonstration_Prep.pptx"
+    },
+    {
+      "course": "POE",
+      "unit": 5,
+      "lesson": 18,
+      "number": "5.18",
+      "type": "Lesson",
+      "title": "Capstone Design Review and Portfolio Reflection",
+      "url": "courses/poe/units/unit-5/lesson-5-18.html",
+      "presentation": "downloads/presentations/POE_Unit5_Lesson_5.18_Capstone_Design_Review_and_Portfolio_Reflection.pptx"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.1",
+      "type": "Activity",
+      "title": "Assembly Line",
+      "url": "courses/adm/units/unit-1/activity-1-1-1.html",
+      "presentation": "downloads/presentations/ADM_Unit1_Lesson_1.1.1_Assembly_Line.pptx"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.2",
+      "type": "Activity",
+      "title": "6-Axis Arm",
+      "url": "courses/adm/units/unit-1/activity-1-1-2.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.3",
+      "type": "Activity",
+      "title": "Pick and Place",
+      "url": "courses/adm/units/unit-1/activity-1-1-3.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.4",
+      "type": "Activity",
+      "title": "Coding Movement",
+      "url": "courses/adm/units/unit-1/activity-1-1-4.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.5",
+      "type": "Activity",
+      "title": "Controlled Path",
+      "url": "courses/adm/units/unit-1/activity-1-1-5.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.6",
+      "type": "Activity",
+      "title": "Shapes",
+      "url": "courses/adm/units/unit-1/activity-1-1-6.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.7",
+      "type": "Activity",
+      "title": "Absolute and Relative Movement",
+      "url": "courses/adm/units/unit-1/activity-1-1-7.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.1.8",
+      "type": "Project",
+      "title": "Decreasing Spirals",
+      "url": "courses/adm/units/unit-1/project-1-1-8.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.2.1",
+      "type": "Activity",
+      "title": "Career Exploration",
+      "url": "courses/adm/units/unit-1/activity-1-2-1.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.2.2",
+      "type": "Activity",
+      "title": "Transporting and Palletizing Objects",
+      "url": "courses/adm/units/unit-1/activity-1-2-2.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.2.3",
+      "type": "Project",
+      "title": "Stacking Objects",
+      "url": "courses/adm/units/unit-1/project-1-2-3.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 1,
+      "number": "1.3.1",
+      "type": "Problem",
+      "title": "Pack and Ship Challenge",
+      "url": "courses/adm/units/unit-1/problem-1-3-1.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.1",
+      "type": "Activity",
+      "title": "Industrial Workcell",
+      "url": "courses/adm/units/unit-2/activity-2-1-1.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.2",
+      "type": "Activity",
+      "title": "Workcell Safety",
+      "url": "courses/adm/units/unit-2/activity-2-1-2.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.3",
+      "type": "Activity",
+      "title": "Sorting by Color",
+      "url": "courses/adm/units/unit-2/activity-2-1-3.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.4",
+      "type": "Activity",
+      "title": "Conditionals and Loops",
+      "url": "courses/adm/units/unit-2/activity-2-1-4.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.5",
+      "type": "Activity",
+      "title": "Material Transportation",
+      "url": "courses/adm/units/unit-2/activity-2-1-5.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.6",
+      "type": "Activity",
+      "title": "Pneumatics",
+      "url": "courses/adm/units/unit-2/activity-2-1-6.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.7",
+      "type": "Project",
+      "title": "Sorting Challenge",
+      "url": "courses/adm/units/unit-2/project-2-1-7.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.2.1",
+      "type": "Activity",
+      "title": "Machine Vision",
+      "url": "courses/adm/units/unit-2/activity-2-2-1.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.2.2",
+      "type": "Activity",
+      "title": "Bring Your Own Sensors",
+      "url": "courses/adm/units/unit-2/activity-2-2-2.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.2.3",
+      "type": "Activity",
+      "title": "Sensor Applications",
+      "url": "courses/adm/units/unit-2/activity-2-2-3.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.2.4",
+      "type": "Project",
+      "title": "Handshaking",
+      "url": "courses/adm/units/unit-2/project-2-2-4.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.3.1",
+      "type": "Activity",
+      "title": "Predictive Maintenance",
+      "url": "courses/adm/units/unit-2/activity-2-3-1.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.3.2",
+      "type": "Activity",
+      "title": "Maximizing Productivity",
+      "url": "courses/adm/units/unit-2/activity-2-3-2.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.3.3",
+      "type": "Project",
+      "title": "Optimization Impact Study",
+      "url": "courses/adm/units/unit-2/project-2-3-3.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.4.1",
+      "type": "Problem",
+      "title": "Coordinated Movement",
+      "url": "courses/adm/units/unit-2/problem-2-4-1.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.1.1",
+      "type": "Activity",
+      "title": "Digital Twin Development",
+      "url": "courses/adm/units/unit-3/activity-3-1-1.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.1.2",
+      "type": "Activity",
+      "title": "Virtual World",
+      "url": "courses/adm/units/unit-3/activity-3-1-2.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.1.3",
+      "type": "Activity",
+      "title": "Modeling Kinematics",
+      "url": "courses/adm/units/unit-3/activity-3-1-3.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.1.4",
+      "type": "Activity",
+      "title": "The Right Robot for the Job",
+      "url": "courses/adm/units/unit-3/activity-3-1-4.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.1.5",
+      "type": "Project",
+      "title": "An Incomplete Facility",
+      "url": "courses/adm/units/unit-3/project-3-1-5.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.1",
+      "type": "Activity",
+      "title": "Simulation Kinematics",
+      "url": "courses/adm/units/unit-3/activity-3-2-1.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.2",
+      "type": "Activity",
+      "title": "Don’t Crash!",
+      "url": "courses/adm/units/unit-3/activity-3-2-2.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.3",
+      "type": "Activity",
+      "title": "Conveyor Flow and Motion Control",
+      "url": "courses/adm/units/unit-3/activity-3-2-3.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.4",
+      "type": "Activity",
+      "title": "Offline Programming",
+      "url": "courses/adm/units/unit-3/activity-3-2-4.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.5",
+      "type": "Activity",
+      "title": "Sorting Silicon Boules",
+      "url": "courses/adm/units/unit-3/activity-3-2-5.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.6",
+      "type": "Activity",
+      "title": "Digital Twin Analysis",
+      "url": "courses/adm/units/unit-3/activity-3-2-6.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.2.7",
+      "type": "Project",
+      "title": "Circuit Assembly Challenge",
+      "url": "courses/adm/units/unit-3/project-3-2-7.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 3,
+      "number": "3.3.1",
+      "type": "Problem",
+      "title": "Factory in Motion",
+      "url": "courses/adm/units/unit-3/problem-3-3-1.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.1.1",
+      "type": "Activity",
+      "title": "Aerospace Components as Manufactured Systems",
+      "url": "courses/adm/units/unit-4/activity-4-1-1.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.1.2",
+      "type": "Activity",
+      "title": "Aerospace Component Analysis",
+      "url": "courses/adm/units/unit-4/activity-4-1-2.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.1.3",
+      "type": "Activity",
+      "title": "Design for Aerospace Manufacturability",
+      "url": "courses/adm/units/unit-4/activity-4-1-3.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.1.4",
+      "type": "Activity",
+      "title": "Aerospace Manufacturing Calculations",
+      "url": "courses/adm/units/unit-4/activity-4-1-4.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.1.5",
+      "type": "Project",
+      "title": "Aerospace Component Requirements Review",
+      "url": "courses/adm/units/unit-4/project-4-1-5.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.2.1",
+      "type": "Activity",
+      "title": "CNC Mill Anatomy, Safety, and Coordinate Systems",
+      "url": "courses/adm/units/unit-4/activity-4-2-1.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.2.2",
+      "type": "Activity",
+      "title": "G&M Code for Aerospace Manufacturing",
+      "url": "courses/adm/units/unit-4/activity-4-2-2.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.2.3",
+      "type": "Activity",
+      "title": "Manual Toolpath Programming",
+      "url": "courses/adm/units/unit-4/activity-4-2-3.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.2.4",
+      "type": "Project",
+      "title": "Aerospace Toolpath Coding Challenge",
+      "url": "courses/adm/units/unit-4/project-4-2-4.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.3.1",
+      "type": "Activity",
+      "title": "CAD Design of the Aerospace Component",
+      "url": "courses/adm/units/unit-4/activity-4-3-1.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.3.2",
+      "type": "Activity",
+      "title": "Aerospace Component Technical Drawing",
+      "url": "courses/adm/units/unit-4/activity-4-3-2.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.3.3",
+      "type": "Activity",
+      "title": "CAM Setup and Machining Strategy",
+      "url": "courses/adm/units/unit-4/activity-4-3-3.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.3.4",
+      "type": "Activity",
+      "title": "Simulation, Post-Processing, and Production Approval",
+      "url": "courses/adm/units/unit-4/activity-4-3-4.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 4,
+      "number": "4.3.5",
+      "type": "Problem",
+      "title": "Aerospace Component CNC Manufacturing Challenge",
+      "url": "courses/adm/units/unit-4/problem-4-3-5.html"
+    }
+  ]
+}

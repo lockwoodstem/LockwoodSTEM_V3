@@ -1,0 +1,271 @@
+/*
+  LockwoodSTEM site-wide content alignment
+  Keeps text, list markers, controls, and media inside cards and bordered boxes.
+  Applied after all course/page styles so it can normalize legacy and current pages.
+*/
+
+/* Allow grid and flex children to shrink instead of pushing through their boxes. */
+main :where(
+  .grid,
+  .lesson-grid,
+  .card-grid,
+  .lesson-card-grid,
+  .lesson-hero-grid,
+  .hero-grid,
+  .video-help-grid,
+  .choice-grid,
+  .unit-row,
+  .meta-row,
+  .agenda-row,
+  .agenda-grid,
+  .agenda-status,
+  .week-grid,
+  .resource-actions,
+  .card-actions,
+  .footer-grid,
+  .challenge-details-grid,
+  .design-brief-layout,
+  .u1-workspace,
+  .u2-workspace,
+  .u3-workspace,
+  .u4-workspace,
+  .u5-workspace,
+  .poe-workspace
+) > * {
+  min-width: 0;
+}
+
+/* Normalize content boxes without changing their visual design. */
+main :where(
+  .card,
+  .lesson-card,
+  .prompt-card,
+  .interactive-card,
+  .student-task-card,
+  .submit-card,
+  .resource-card,
+  .mission-panel,
+  .callout,
+  .choice,
+  .week-section,
+  .meta-row,
+  .agenda-row,
+  .agenda-card,
+  .agenda-card-body,
+  .unit-row,
+  .expectation-card,
+  .challenge-card,
+  .achievement-card,
+  .brief-callout,
+  .checklist > div,
+  .u1-panel,
+  .u2-panel,
+  .u3-panel,
+  .u4-panel,
+  .u5-panel,
+  .poe-panel
+) {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Long labels, links, file names, and technical terms should wrap cleanly. */
+main :where(
+  h1, h2, h3, h4, h5, h6,
+  p, li, dt, dd, summary, legend, label,
+  a, button, span, strong, small, code,
+  th, td, .btn, .tag, .status-pill
+) {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  min-width: 0;
+}
+
+/* The global reset removes list indentation. Restore it so markers stay inside cards. */
+main ul:not([class]),
+main ol:not([class]) {
+  margin-block: .65rem 0;
+  margin-inline: 0;
+  padding-inline-start: 1.45rem;
+}
+
+main ul:not([class]) > li,
+main ol:not([class]) > li {
+  padding-inline-start: .12rem;
+  margin-block: .28rem;
+}
+
+/* Named plain-content lists use consistent, contained indentation. */
+main :where(.list, .agenda-list) {
+  margin-inline: 0;
+  padding-inline-start: 1.4rem;
+}
+
+main .list li {
+  margin-left: 0;
+}
+
+/* Lists whose items are already styled as individual boxes do not need markers. */
+main :where(.unit-meta-list, .submit-list) {
+  list-style: none;
+  margin-inline: 0;
+  padding-inline-start: 0;
+}
+
+/* Preserve intentionally marker-free navigation and interactive lists. */
+main :where(
+  .check-list,
+  .mission-steps,
+  .lesson-choice-list,
+  .lesson-numbered-steps,
+  .brief-checklist,
+  [class$="-sort-list"],
+  [class*="-sort-list "]
+) {
+  padding-inline-start: 0;
+}
+
+.site-breadcrumbs ol,
+.nav-links {
+  margin: 0;
+  padding: 0;
+}
+
+/* Keep paragraphs and lists visually separated while staying aligned. */
+main :where(.card, .callout, .choice, .mission-panel, .week-section, .meta-row) > p + p {
+  margin-top: .65rem;
+}
+
+main :where(.card, .callout, .choice, .mission-panel) > :is(h2, h3, h4) + :is(p, ul, ol) {
+  margin-top: .4rem;
+}
+
+/* Media, controls, and code should never exceed the content box. */
+main :where(img, svg, video, iframe, canvas) {
+  max-width: 100%;
+}
+
+main :where(input, select, textarea, button) {
+  max-width: 100%;
+}
+
+main :where(pre, code) {
+  max-width: 100%;
+}
+
+main pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+main table :where(th, td) {
+  overflow-wrap: anywhere;
+}
+
+/* Buttons may wrap to a second line instead of extending beyond a card. */
+.btn,
+button {
+  white-space: normal;
+  text-align: center;
+}
+
+/* Small-screen padding and indentation remain proportional. */
+@media (max-width: 600px) {
+  main ul:not([class]),
+  main ol:not([class]),
+  main :where(.list, .agenda-list) {
+    padding-inline-start: 1.25rem;
+  }
+
+  main :where(.card, .lesson-card, .resource-card, .callout, .choice) {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Code examples remain readable on phones without pushing through the card. */
+main .code-card pre,
+main .code-card code,
+main section.code-card pre,
+main section.code-card code {
+  max-width: 100% !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+/* Vocabulary definitions share one contained tooltip area so hidden tooltips do not create horizontal scrolling. */
+main .vocab-tags {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+}
+
+main .vocab-tags .vocab-term {
+  position: static;
+  min-width: 0;
+  max-width: 100%;
+}
+
+main .vocab-tags .vocab-term::after {
+  left: 0;
+  right: auto;
+  width: min(280px, 100%);
+  max-width: 100%;
+  transform: translateY(4px);
+}
+
+main .vocab-tags .vocab-term:hover::after,
+main .vocab-tags .vocab-term:focus::after {
+  transform: translateY(0);
+}
+
+main .vocab-tags .vocab-term::before {
+  display: none;
+}
+
+/* Legacy lesson tables stay inside the page on small screens. */
+@media (max-width: 760px) {
+  main table.table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  main .lesson-table-action {
+    white-space: normal;
+    min-width: 180px;
+  }
+
+  main .lesson-table-action .btn {
+    margin: .15rem 0;
+  }
+}
+
+/* Preserve code formatting while containing long lines in an internal scroller. */
+main .code-card pre,
+main section.code-card pre {
+  white-space: pre !important;
+  overflow-x: auto !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  max-width: 100% !important;
+}
+
+main .code-card code,
+main section.code-card code {
+  white-space: pre !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+
+/* ADM Unit 4 detailed learning sequence */
+.learning-step-card h3,.checkpoint-card h3{margin-top:.2rem}
+.learning-step-card p,.checkpoint-card p{margin-bottom:0}
+.external-resource-link h3{margin-bottom:.35rem}
+.external-resource-link p{margin:0}
+.detailed-learning-sequence .section-header,.lesson-checkpoints .section-header{margin-bottom:1rem}
+@media (max-width:720px){.learning-step-grid,.checkpoint-grid{grid-template-columns:1fr}}

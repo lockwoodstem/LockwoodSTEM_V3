@@ -1,0 +1,19 @@
+{
+  "repository_root": "LockwoodSTEM_V3-main",
+  "required_unit4_files": 28,
+  "missing_required_files": [],
+  "obsolete_unit4_files_present": [],
+  "obsolete_unit4_content_references": [],
+  "broken_internal_links_in_unit4": [],
+  "duplicate_html_ids_in_unit4": [],
+  "required_workflow_terms": {
+    "Fusion": true,
+    "Mach3": true,
+    "DMC2 Mini": true,
+    "Mach3Mill": true,
+    ".tap": true,
+    "Aerospace": true
+  },
+  "total_repository_files": 1259,
+  "result": "PASS"
+}

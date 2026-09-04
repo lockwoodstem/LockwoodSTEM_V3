@@ -1,0 +1,12 @@
+ADM Lesson 1.1.1 Website Update
+
+1. Open your existing LockwoodSTEM_V3-main folder.
+2. Extract the CONTENTS of this ZIP directly into that folder.
+3. Choose Replace the files in the destination when prompted.
+
+This patch updates:
+- ADM Unit 1 overview: adds Download PPTX for Activity 1.1.1
+- ADM Activity 1.1.1 lesson page: adds presentation download in hero and resources
+- downloads/presentations/ADM_Unit1_Lesson_1.1.1_Assembly_Line.pptx
+
+The patch also contains matching nested paths because the supplied website archive contains a duplicate nested LockwoodSTEM_V3-main structure.

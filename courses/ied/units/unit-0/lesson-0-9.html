@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>IED Lesson 0.9: Test &amp; Improve | LockwoodSTEM</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script>
+<meta content="IED Unit 0 lesson 0.9 — Test &amp; Improve, part of the Rocket Launch Pad Design Challenge and Engineering Design Process." name="description"/><style id="ied-critical-contrast">
+body.immersive-lesson-page .lesson-section h2, body.immersive-lesson-page .lesson-section h3,
+body.immersive-lesson-page .lesson-section .section-subtitle, body.lesson-immersive-page .lesson-web-section h2,
+body.lesson-immersive-page .lesson-web-section h3, body.lesson-immersive-page .lesson-web-section .section-subtitle { color:#0b1f3a!important; -webkit-text-fill-color:#0b1f3a!important; opacity:1!important; }
+body.immersive-lesson-page details.answer-reveal, body.immersive-lesson-page details.lesson-answer-reveal,
+body.immersive-lesson-page article.reveal-card>details, body.lesson-immersive-page details.answer-reveal,
+body.lesson-immersive-page details.lesson-answer-reveal, body.lesson-immersive-page article.reveal-card>details { background:#fff!important; color:#102033!important; -webkit-text-fill-color:#102033!important; border:2px solid #9db2c4!important; border-radius:14px!important; padding:0!important; overflow:hidden!important; }
+body.immersive-lesson-page details.answer-reveal summary, body.immersive-lesson-page details.lesson-answer-reveal summary,
+body.lesson-immersive-page details.answer-reveal summary, body.lesson-immersive-page details.lesson-answer-reveal summary { background:#f3c95c!important; color:#061b31!important; -webkit-text-fill-color:#061b31!important; padding:1rem 1.15rem!important; font-weight:900!important; }
+body.immersive-lesson-page details.answer-reveal :is(p,li,span,strong,h2,h3,h4,div), body.immersive-lesson-page details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4,div), body.lesson-immersive-page details.answer-reveal :is(p,li,span,strong,h2,h3,h4,div), body.lesson-immersive-page details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4,div) { color:#102033!important; -webkit-text-fill-color:#102033!important; opacity:1!important; text-shadow:none!important; }
+.launchpad-spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.launchpad-spec{border-left:5px solid #f3c95c}.edp-strip{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}.edp-strip span{background:#0b1f3a;color:#fff;padding:.5rem .72rem;border-radius:999px;font-weight:800}.edp-strip span.active{background:#f3c95c;color:#071b30}.lesson-checklist li{margin-bottom:.45rem}.compact-table td,.compact-table th{vertical-align:top}.fabrication-gate{border:3px solid #bd7b00;background:#fff8e3}.qualification-card{border-top:5px solid #173c62}.competition-banner{background:#0b1f3a;color:#fff;border-radius:16px;padding:1.25rem}.competition-banner *{color:#fff!important}.material-chip{display:inline-block;background:#eef4fa;border:1px solid #b8c8d8;border-radius:999px;padding:.35rem .65rem;margin:.2rem .15rem;font-weight:700}
+</style><link href="../../../../assets/css/ied-lesson-resource-contrast.css?v=20260720-1" rel="stylesheet"/><link href="../../../../assets/css/ied-accessibility.css?v=20260720-a11y-v1" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<style id="ied-unit0-contrast-hotfix-v2">
+/* IED Unit 0 readability hotfix — deliberately page-local so global lesson CSS cannot hide text. */
+html body.lesson-immersive-page main#main section.container .edp-strip > span,
+html body.immersive-lesson-page main#main section.container .edp-strip > span {
+  background:#0b1f3a !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+html body.lesson-immersive-page main#main section.container .edp-strip > span.active,
+html body.immersive-lesson-page main#main section.container .edp-strip > span.active {
+  background:#f3c95c !important;
+  color:#071b30 !important;
+  -webkit-text-fill-color:#071b30 !important;
+  border:1px solid #c79b15 !important;
+}
+html body.lesson-immersive-page .lesson-mission-hero .mission-cycle > span,
+html body.immersive-lesson-page .lesson-mission-hero .mission-cycle > span {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+}
+html body.lesson-immersive-page main#main .competition-banner,
+html body.immersive-lesson-page main#main .competition-banner {
+  background:#0b1f3a !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+}
+html body.lesson-immersive-page main#main .competition-banner :is(h1,h2,h3,h4,p,li,span,strong,em,div),
+html body.immersive-lesson-page main#main .competition-banner :is(h1,h2,h3,h4,p,li,span,strong,em,div) {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+html body.lesson-immersive-page main#main .card.dark :is(h1,h2,h3,h4,p,li,span,strong,em,div),
+html body.immersive-lesson-page main#main .card.dark :is(h1,h2,h3,h4,p,li,span,strong,em,div) {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+}
+html body.lesson-immersive-page main#main .card.dark .tag,
+html body.immersive-lesson-page main#main .card.dark .tag {
+  background:#f3c95c !important;
+  color:#071b30 !important;
+  -webkit-text-fill-color:#071b30 !important;
+}
+</style>
+</head>
+<body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header">
+<div class="container nav">
+<a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html">
+<img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
+<span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+</a>
+<button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
+<ul class="nav-links" id="site-navigation"><li><a aria-current="page" data-nav-section="courses" href="../../../../courses.html">Courses</a></li><li><a data-nav-section="agenda" href="../../../../agenda.html">Daily Agenda</a></li><li><a data-nav-section="resources" href="../../../../resources/index.html">Resources</a></li><li><a data-nav-section="certifications" href="../../../../certifications/index.html">Certifications</a></li><li><a data-nav-section="fablab" href="../../../../fablab/index.html">FabLab</a></li><li><a data-nav-section="about" href="../../../../about/index.html">About</a></li><li><a data-nav-section="challenges" href="../../../../challenge-library/index.html">Challenges</a></li></ul>
+</div></header>
+<main id="main"><nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../index.html">IED</a></li><li><a href="../unit-0.html">Unit 0</a></li><li aria-current="page">Lesson 0.9</li></ol></nav>
+<section class="page-hero lesson-mission-hero"><div class="container hero-grid"><div><img alt="IED course icon" class="lesson-course-icon" src="../../../../assets/img/course-icons/ied-course-icon.png"/><div class="eyebrow">IED Unit 0 • Lesson 0.9</div><h1>Test &amp; Improve</h1><p><strong>Focus Question:</strong> How can test evidence guide a meaningful design improvement?</p><div class="hero-actions consistent-actions"><a class="btn secondary" href="#flight-plan">View Lesson Plan</a><a class="btn secondary" href="#submit">What You Submit</a><a class="btn secondary" href="../unit-0.html">Back to Unit 0</a></div></div>
+<aside class="card dark lesson-mission-card"><span class="tag">Mission Objective</span><h3>Conduct standardized qualification tests, identify the most important weakness, and make one evidence-based improvement before final competition.</h3><p><strong>Suggested pacing:</strong> 1 × 45-minute class period</p><div aria-label="Current engineering design process focus" class="mission-cycle"><span>Test</span><span>Improve</span></div></aside></div></section>
+<section class="container" id="flight-plan"><div class="section-header"><div><div class="eyebrow">Mission Briefing</div><h2>Today’s Plan</h2><p class="section-subtitle">Every task advances the same Rocket Launch Pad Design Challenge.</p></div></div><div class="grid two"><article class="card lesson-target-card"><h3>Learning Targets</h3><ul class="unit-meta-list"><li>Collect comparable evidence using the standard qualification procedure.</li><li>Identify the strongest and weakest features of the prototype from test evidence.</li><li>Make and document one targeted design improvement.</li></ul></article><article class="card lesson-target-card"><h3>Success Looks Like…</h3><p class="lesson-big-statement">Your team can point to a specific test result, explain what it revealed, and show one change made because of that evidence.</p><div class="callout"><strong>Project connection:</strong> Your work today becomes evidence used in the next stage of the Engineering Design Process.</div></article></div></section>
+
+<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Test</div><h2>Use the same procedure for every team</h2></div></div><article class="card"><div class="edp-strip"><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Define</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Imagine</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Select</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Develop</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Build</span><span class="active" style="background:#f3c95c!important;color:#071b30!important;-webkit-text-fill-color:#071b30!important;opacity:1!important;text-shadow:none!important">Test</span><span class="active" style="background:#f3c95c!important;color:#071b30!important;-webkit-text-fill-color:#071b30!important;opacity:1!important;text-shadow:none!important">Improve</span><span style="background:#0b1f3a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:none!important">Communicate</span></div><p class="lesson-big-statement">A test is useful when it produces evidence that can change a decision.</p></article></section>
+<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Qualification Sequence</div><h2>Prototype testing</h2></div></div><div class="launchpad-spec-grid">
+<article class="card qualification-card"><h3>1. Dimensional Check</h3><p>Footprint ≤ <strong>12 in × 12 in</strong>; pad height ≤ <strong>12 in</strong> without the rocket.</p></article>
+<article class="card qualification-card"><h3>2. Rocket Fit</h3><p>The provided rocket installs, remains upright, and can be removed without damage.</p></article>
+<article class="card qualification-card"><h3>3. Level Stability</h3><p>Rocket + pad remain freestanding and unsupported for <strong>60 seconds</strong>.</p></article>
+<article class="card qualification-card"><h3>4. Required Tilt</h3><p>Hold at <strong>10° for 5 seconds</strong> in forward, backward, left, and right directions.</p></article>
+<article class="card qualification-card"><h3>5. Disturbance</h3><p>Complete the instructor-controlled disturbance test without tipping, losing the rocket, or experiencing structural failure.</p></article>
+</div></section>
+<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Analyze</div><h2>Find the weakness that matters most</h2></div></div><div class="grid two"><article class="card"><h3>Use evidence</h3><ul class="lesson-checklist"><li>Where did movement first appear?</li><li>Did the base slide, rotate, or tip?</li><li>Did the rocket move inside its support?</li><li>Did a brace bend, buckle, or detach?</li><li>Which direction was least stable?</li></ul></article><article class="card"><h3>Choose one improvement</h3><p>Make one targeted change that responds to a specific observation. Do not redesign the entire project.</p><p>Examples: move a support, reinforce a joint, add/reposition a brace, change a rocket-contact point, or modify the base geometry within the size limit.</p></article></div></section>
+<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Engineering Change Record</div><h2>Evidence → Change → Expected Effect</h2></div></div><article class="card"><p>Record the test evidence that triggered the change, describe exactly what you changed, and predict what should improve during the final competition.</p></article></section>
+<section class="container lesson-web-section" id="submit"><div class="section-header"><div><div class="eyebrow">Mission Debrief</div><h2>What You Submit</h2></div></div><article class="card lesson-submit-card"><span class="tag green">Required Deliverable</span><h3>Qualification Test Record + Engineering Change Record</h3><p>Submit the complete team evidence required by this lesson. Use clear labels, dimensions, test data, and reasoning where applicable.</p></article></section>
+<section class="container lesson-web-section"><div class="section-header"><div><div class="eyebrow">Project Resources</div><h2>Launch Pad Challenge Reference</h2></div></div><div class="grid two"><article class="card"><h3>Standard Team Materials</h3><ul class="unit-meta-list"><li>1 × 12 in × 18 in foam-board sheet</li><li>20 craft sticks</li><li>10 straws</li><li>48 in string</li><li>Hot glue as needed</li></ul></article><article class="card"><h3>Core Constraints</h3><ul class="unit-meta-list"><li>Use the provided rocket; do not modify it.</li><li>12 in × 12 in maximum footprint.</li><li>12 in maximum pad height, not including the rocket.</li><li>Rocket must be installable and removable.</li><li>Use only approved team-kit structural materials.</li></ul></article></div></section>
+<section class="container"><div class="lesson-nav"><a class="btn secondary" href="lesson-0-8.html">← Previous Lesson</a><a class="btn dark" href="lesson-0-10.html">Next Lesson: Final Challenge &amp; Design Review</a></div></section></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a> <a href="../../../../agenda.html">Daily Agenda</a> <a href="../../../../resources/index.html">Resources</a> <a href="../../../../certifications/index.html">Certifications</a> <a href="../../../../fablab/index.html">FabLab</a> <a href="../../../../about/index.html">About</a><a href="../../../../courses/ied/index.html">IED</a><a href="../../../../courses/poe/index.html">POE</a><a href="../../../../courses/adm/index.html">ADM</a><a href="../../../../challenge-library/index.html">Challenges</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body></html>

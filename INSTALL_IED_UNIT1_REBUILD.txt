@@ -1,0 +1,34 @@
+LOCKWOODSTEM — IED UNIT 1 REBUILD
+
+Revised structure:
+1.1  Engineering Sketching & Line Conventions  (2 class periods)
+1.2  Centerlines & Symmetry  (1 class period)
+1.3  Isometric Sketching & Curved Features  (2 class periods)
+1.4  Orthographic Projection & Multiview Sketching  (2 class periods)
+1.5  Dimensioning & Technical Sketching  (2 class periods)
+1.6  Rocket Reverse Engineering & Product Investigation  (1–2 class periods)
+1.7  Measurement, Precision & Tolerances  (2 class periods)
+1.8  Joining Methods & Assembly Systems  (1–2 class periods)
+1.9  Documenting the Rocket Assembly  (2 class periods)
+1.10  Exploded Views & Bills of Materials  (2 class periods)
+1.11  Assembly Instructions & Technical Communication  (1 class period)
+1.12  Engineering Change & Product Improvement Proposal  (2–3 class periods)
+
+WHAT THIS PATCH CHANGES
+- Rebuilds the IED Unit 1 landing page around the 12-lesson sequence.
+- Rewrites Lessons 1.1–1.12 as student-facing lesson pages.
+- Redirects retired Lessons 1.13–1.22 to their combined replacement lessons.
+- Removes all Unit 1 PowerPoint links from the lesson pages, unit page, lesson index, and resource library.
+- Adds the Object & Hidden Line Practice worksheet to Lesson 1.1 and the Resource Library.
+- Preserves the optional Unit 1 Engineering Challenge Hub.
+
+INSTALLATION
+1. Extract the contents of this ZIP directly inside your active LockwoodSTEM_V3-main folder.
+2. Choose Replace files in the destination.
+3. Double-click REMOVE_OLD_IED_UNIT1_PRESENTATIONS.bat if you also want the old PPTX files physically deleted from the site folder. (The website no longer links to them even if you skip this step.)
+4. Hard refresh the website (Ctrl+F5).
+
+NOTE
+ZIP extraction can replace files but cannot delete existing files, so the small cleanup BAT is included to physically remove the legacy Unit 1 PPTX files.
+
+Resource library entries removed: 22 Unit 1 presentations.
