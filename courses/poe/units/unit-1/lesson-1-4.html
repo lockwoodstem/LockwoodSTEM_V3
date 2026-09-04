@@ -1,58 +1,171 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>POE Lesson 1.4: Gears and Drive Ratios | LockwoodSTEM</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="An interactive Principles of Engineering lesson on gear ratios, gear trains, speed, torque, direction, and idler gears."/>
+  <link href="../../../../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/>
+  <link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+  <script defer src="../../../../assets/js/main.js"></script>
+  <style>
+    body.immersive-lesson-page .lesson-section h2,
+    body.immersive-lesson-page .lesson-section h3,
+    body.immersive-lesson-page .lesson-section .section-subtitle {color:#0b1f3a!important;-webkit-text-fill-color:#0b1f3a!important;opacity:1!important}
+    html body.immersive-lesson-page main > section.container{background:#fff!important;color:#102033!important;border:1px solid #cbd5e1!important;border-radius:18px!important;box-shadow:0 10px 24px rgba(2,10,28,.10)!important;padding:2rem 1.35rem 1.35rem!important;margin-top:1.25rem!important}
+    .poe14-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .poe14-card{border:1px solid #d8e1eb;border-radius:16px;background:#fff;padding:1rem}
+    .poe14-card h3{margin:.15rem 0 .45rem}
+    .poe14-card p{margin:.35rem 0;color:#526172}
+    .poe14-number{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:999px;background:#c8a24a;color:#0b1f3a;font-weight:950;margin-bottom:.4rem}
+    .poe14-formulas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+    .poe14-formula{border-left:5px solid #135ca8;background:#eef5fb;border-radius:12px;padding:.85rem 1rem}
+    .poe14-formula strong{display:block;color:#0b1f3a;font-size:1.05rem;margin-bottom:.2rem}
+    .poe14-formula code{font-size:1rem;color:#0b1f3a;white-space:normal}
+    .sim-shell{border:1px solid #bfcddd;border-radius:18px;overflow:hidden;background:#f7f9fc;box-shadow:0 12px 30px rgba(11,31,58,.10)}
+    .sim-toolbar{display:flex;justify-content:space-between;align-items:center;gap:.8rem;flex-wrap:wrap;padding:.9rem 1rem;background:#0b1f3a;color:#fff;border-bottom:4px solid #c8a24a}
+    .sim-toolbar strong{font-size:1.05rem}
+    .sim-toolbar span{color:#dbe6f1;font-size:.9rem}
+    .sim-toolbar .btn{margin:0}
+    .sim-frame{display:block;width:100%;height:1180px;border:0;background:#fff}
+    .sim-note{padding:.8rem 1rem;background:#f7f9fc;color:#5b6675;font-size:.88rem;border-top:1px solid #d8e1eb}
+    .worksheet-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.85rem}
+    .worksheet-step{border:1px solid #d8e1eb;border-radius:14px;padding:.95rem;background:linear-gradient(180deg,#fff,#f8fafc)}
+    .worksheet-step .eyebrow{color:#8a5b00!important}
+    .worksheet-step h3{font-size:1rem;margin:.2rem 0 .4rem}
+    .worksheet-step p{font-size:.9rem;color:#5b6675;margin:0}
+    .mission-box{border-left:6px solid #c8a24a;background:linear-gradient(135deg,#fff8e8,#f5f8fc);border-radius:16px;padding:1.1rem 1.2rem}
+    .mission-box h3{margin:0 0 .4rem}
+    .check-list-clean{margin:.4rem 0 0;padding-left:1.15rem}
+    .check-list-clean li{margin:.4rem 0}
+    .resource-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+    .lesson-nav-row{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:space-between;margin-top:1.5rem}
+    @media(max-width:1000px){.poe14-grid,.worksheet-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.poe14-formulas{grid-template-columns:1fr}.sim-frame{height:1320px}}
+    @media(max-width:650px){.poe14-grid,.worksheet-steps{grid-template-columns:1fr}.sim-frame{height:1580px}.sim-toolbar{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a>
+    <button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
+    <ul class="nav-links" id="site-navigation"><li><a aria-current="page" data-nav-section="courses" href="../../../../courses.html">Courses</a></li><li><a data-nav-section="agenda" href="../../../../agenda.html">Daily Agenda</a></li><li><a data-nav-section="resources" href="../../../../resources/index.html">Resources</a></li><li><a data-nav-section="certifications" href="../../../../certifications/index.html">Certifications</a></li><li><a data-nav-section="fablab" href="../../../../fablab/index.html">FabLab</a></li><li><a data-nav-section="about" href="../../../../about/index.html">About</a></li><li><a data-nav-section="challenges" href="../../../../challenge-library/index.html">Challenges</a></li></ul>
+  </div>
+</header>
+<main id="main">
+  <nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-1.html">Unit 1</a></li><li aria-current="page">Lesson 1.4</li></ol></nav>
 
-<html lang="en"><head><title>POE Lesson 1.4: Gears and Drive Ratios | LockwoodSTEM</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="A Principles of Engineering lesson: Gears and Drive Ratios." name="description"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><script defer="" src="../../../../assets/js/main.js"></script><style id="poe-critical-contrast">
-body.immersive-lesson-page .lesson-section h2,
-body.immersive-lesson-page .lesson-section h3,
-body.immersive-lesson-page .lesson-section .section-subtitle,
-body.immersive-lesson-page .lesson-web-section h2,
-body.immersive-lesson-page .lesson-web-section h3,
-body.immersive-lesson-page .lesson-web-section .section-subtitle { color:#0b1f3a!important; -webkit-text-fill-color:#0b1f3a!important; opacity:1!important; }
-body.immersive-lesson-page details.answer-reveal,
-body.immersive-lesson-page details.lesson-answer-reveal { background:#061b31!important; color:#fff!important; border-radius:16px; padding:1rem; }
-body.immersive-lesson-page details.answer-reveal summary,
-body.immersive-lesson-page details.answer-reveal summary * { color:#ffd86a!important; -webkit-text-fill-color:#ffd86a!important; opacity:1!important; cursor:pointer; font-weight:800; }
-body.immersive-lesson-page details.answer-reveal p,
-body.immersive-lesson-page details.answer-reveal p *,
-body.immersive-lesson-page details.answer-reveal li,
-body.immersive-lesson-page details.answer-reveal li *,
-body.immersive-lesson-page details.answer-reveal .answer-panel,
-body.immersive-lesson-page details.answer-reveal .answer-panel * { color:#fff!important; -webkit-text-fill-color:#fff!important; opacity:1!important; text-shadow:none!important; }
-.choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}.choice-card{border:1px solid #d9e3ec;border-radius:14px;padding:1rem;background:#fff}.choice-card strong{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:999px;background:#d9ab3d;color:#061b31;margin-right:.5rem}.lesson-list-clean{margin:0;padding-left:1.25rem}.lesson-list-clean li{margin:.5rem 0}.poe-system-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.75rem;margin-top:1rem}.poe-system-strip span{display:block;background:#eaf4fb;border:1px solid #c9e6f4;border-radius:12px;padding:.75rem;font-weight:700;color:#0b4d78}.unit-lesson-table .btn.small{white-space:nowrap}.deliverable-card{border-left:6px solid #d9ab3d}.lesson-nav-row{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:space-between;margin-top:1.5rem}.lesson-nav-row .btn{margin:.25rem 0}.pacing-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.65rem}.pacing-strip span{display:block;border-radius:12px;background:#fff;border:1px solid #d9e3ec;padding:.7rem;color:#0b1f3a;font-weight:700}.pacing-strip em{display:block;font-style:normal;color:#0b4d78;font-size:.85rem;font-weight:800;margin-bottom:.2rem}
-</style><meta content="poe-contrast-v6-20260717" name="poe-contrast-version"/><style id="poe-contrast-v6-critical">
-html body.lesson-immersive-page main > section.container,
-html body.immersive-lesson-page main > section.container{background:#fff!important;color:#102033!important;border:1px solid #cbd5e1!important;border-radius:18px!important;box-shadow:0 10px 24px rgba(2,10,28,.10)!important;padding:2rem 1.35rem 1.35rem!important;margin-top:1.25rem!important}
-html body.lesson-immersive-page main > section.container .section-header h2,
-html body.lesson-immersive-page main > section.container .section-header h3,
-html body.immersive-lesson-page main > section.container .section-header h2,
-html body.immersive-lesson-page main > section.container .section-header h3{color:#0b1f3a!important;-webkit-text-fill-color:#0b1f3a!important;opacity:1!important;text-shadow:none!important}
-html body.lesson-immersive-page main > section.container .section-header .eyebrow,
-html body.immersive-lesson-page main > section.container .section-header .eyebrow{color:#8a5b00!important;-webkit-text-fill-color:#8a5b00!important;opacity:1!important}
-html body.lesson-immersive-page main > section.container .section-header .section-subtitle,
-html body.immersive-lesson-page main > section.container .section-header .section-subtitle{color:#475569!important;-webkit-text-fill-color:#475569!important;opacity:1!important}
-html body.lesson-immersive-page main > section.container details.answer-reveal,
-html body.lesson-immersive-page main > section.container details.lesson-answer-reveal,
-html body.immersive-lesson-page main > section.container details.answer-reveal,
-html body.immersive-lesson-page main > section.container details.lesson-answer-reveal{background:#071b31!important;color:#fff!important}
-html body.lesson-immersive-page main > section.container details.answer-reveal summary,
-html body.lesson-immersive-page main > section.container details.answer-reveal summary *,
-html body.lesson-immersive-page main > section.container details.lesson-answer-reveal summary,
-html body.lesson-immersive-page main > section.container details.lesson-answer-reveal summary *,
-html body.immersive-lesson-page main > section.container details.answer-reveal summary,
-html body.immersive-lesson-page main > section.container details.answer-reveal summary *,
-html body.immersive-lesson-page main > section.container details.lesson-answer-reveal summary,
-html body.immersive-lesson-page main > section.container details.lesson-answer-reveal summary *{color:#ffd86a!important;-webkit-text-fill-color:#ffd86a!important;opacity:1!important}
-html body.lesson-immersive-page main > section.container details.answer-reveal :is(p,li,span,strong,h2,h3,h4),
-html body.lesson-immersive-page main > section.container details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4),
-html body.immersive-lesson-page main > section.container details.answer-reveal :is(p,li,span,strong,h2,h3,h4),
-html body.immersive-lesson-page main > section.container details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4){color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important}
-</style><link href="../../../../assets/css/poe-unit1-interactives.css?v=20260721-poe-u1-v1" rel="stylesheet"/><script defer="True" src="../../../../assets/js/poe-unit1-interactives.js?v=20260721-poe-u1-v1"></script><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" data-nav-section="courses" href="../../../../courses.html">Courses</a></li><li><a data-nav-section="agenda" href="../../../../agenda.html">Daily Agenda</a></li><li><a data-nav-section="resources" href="../../../../resources/index.html">Resources</a></li><li><a data-nav-section="certifications" href="../../../../certifications/index.html">Certifications</a></li><li><a data-nav-section="fablab" href="../../../../fablab/index.html">FabLab</a></li><li><a data-nav-section="about" href="../../../../about/index.html">About</a></li><li><a data-nav-section="challenges" href="../../../../challenge-library/index.html">Challenges</a></li></ul></div></header>
-<main id="main"><nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-1.html">Unit 1</a></li><li aria-current="page">Lesson 1.4</li></ol></nav>
-<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img alt="POE course icon" class="lesson-course-icon" src="../../../../assets/img/course-icons/poe-course-icon.png"/><div class="mission-eyebrow">POE Unit 1 • Lesson 1.4</div><h1>Gears and Drive Ratios</h1><p class="focus-question"><strong>Focus question:</strong> How do gear ratios change speed, torque, and direction in a mechanical system?</p><div class="mission-actions"><a class="btn secondary" href="#lesson-interactive">Interactive</a><a class="btn secondary" href="../unit-1.html">Unit 1 Overview</a><a class="btn ghost" href="../../index.html">POE Hub</a></div></div><aside class="mission-panel"><span class="tag">Mechanisms Mission</span><h2>A gear train trades speed for torque, changes rotation direction, or transfers motion between shafts.</h2><div class="verb-strip"><span>Define</span><span>Test</span><span>Defend</span></div><p>Use this lesson to connect mechanism behavior to measurable evidence.</p></aside></div></section>
-<section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Mission Briefing</div><h2>Today’s Plan</h2><p class="section-subtitle">A focused lesson sequence that builds toward the VEX Rover Mechanisms Challenge.</p></div></div><div class="pacing-strip time-free"><span>Opening prompt</span><span>Concept vote</span><span>Aerospace link</span><span>Compare options</span><span>Evidence challenge</span><span>Quick check</span><span>Exit ticket</span></div></section>
-<section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Lesson Targets</div><h2>What You Will Be Able to Do</h2></div></div><div class="card-grid lesson-card-grid"><article class="card"><span class="tag">Learning Target</span><p>I can build and analyze a gear train that changes speed, torque, or direction of rotation.</p></article><article class="card deliverable-card"><span class="tag blue">Evidence</span><p>Gear ratio investigation table</p></article><article class="card"><span class="tag green">Success Looks Like</span><p>The gear analysis correctly predicts ratio, output speed, torque trend, and rotation direction.</p></article></div></section>
-<section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Activity Flow</div><h2>How the Lesson Moves</h2><p class="section-subtitle">This page highlights the lesson elements you need for practice, evidence, and submission.</p></div></div><div class="card-grid"><article class="card"><h3>1. Build or inspect a gear pair</h3><p>Identify the driver, driven gear, tooth counts, and contact direction.</p></article><article class="card"><h3>2. Calculate the ratio</h3><p>Use tooth counts to predict output speed and torque change.</p></article><article class="card"><h3>3. Verify motion</h3><p>Compare the prediction with an observed or simulated gear train.</p></article></div></section>
-<section class="container lesson-section" id="lesson-interactive"><article class="card poe-u1-interactive" data-poe-u1-interactive="gears"><div class="eyebrow">Lesson Interactive</div><h2>Explore Gear Ratio, Speed, and Torque</h2><p class="poe-intro">Adjust tooth counts and input speed. The dashboard predicts ideal output behavior for one external gear pair.</p><div class="poe-workspace equal"><div class="poe-panel"><h3>Gear Inputs</h3><div class="poe-grid"><label class="poe-field"><span>Driver teeth</span><input max="60" min="12" name="driver" step="12" type="range" value="12"/><output>12–60</output></label><label class="poe-field"><span>Driven teeth</span><input max="60" min="12" name="driven" step="12" type="range" value="36"/><output>12–60</output></label><label class="poe-field"><span>Input speed (rpm)</span><input min="1" name="inputrpm" type="number" value="120"/></label></div><p class="poe-note">External gears reverse direction at every mesh.</p></div><div class="poe-panel soft"><h3>Predicted Output</h3><div class="poe-metric-grid"><div class="poe-metric"><strong data-ratio=""></strong>Ratio</div><div class="poe-metric"><strong data-outputrpm=""></strong>Output speed</div><div class="poe-metric"><strong data-torque=""></strong>Ideal torque factor</div></div><h4>Select the performance trend</h4><div class="poe-options"><button aria-pressed="false" class="choice-button" data-poe-choice="slow-torque" data-poe-group="gear" type="button">Slower output, greater ideal torque</button><button aria-pressed="false" class="choice-button" data-poe-choice="fast-less" data-poe-group="gear" type="button">Faster output, less ideal torque</button><button aria-pressed="false" class="choice-button" data-poe-choice="same" data-poe-group="gear" type="button">Same speed and ideal torque</button></div><div class="poe-button-row"><button data-poe-check="" type="button">Check Activity</button></div><div aria-live="polite" class="poe-feedback" data-poe-feedback="">Adjust the ratio, select the matching performance trend, and check your prediction.</div></div></div></article></section>
-<section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Today’s Work</div><h2>Main Deliverable</h2></div></div><article class="card"><h3>Gear Ratio Investigation Table</h3><p>Compare at least two gear pairings for a rover mechanism.</p><ul class="lesson-list-clean"><li>Record driver and driven tooth counts, ratio, output speed, torque trend, and direction.</li><li>Recommend one pairing for either speed or lifting torque and defend the choice.</li></ul></article></section>
-<section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Exit Ticket</div><h2>Mission Debrief</h2></div></div><div class="card-grid"><article class="card"><span class="tag">1</span><p>One way today’s lesson connects to an aerospace mechanism or VEX rover system.</p></article><article class="card"><span class="tag blue">2</span><p>One type of evidence you could use to support a design decision.</p></article><article class="card"><span class="tag green">3</span><p>One question you still have about mechanisms, energy, power, or the Unit 1 challenge.</p></article></div></section>
-<section class="container lesson-section" id="resources"><div class="section-header"><div><div class="eyebrow">Resources</div><h2>Lesson Resources</h2></div></div><div class="card-grid"><article class="card resource-card"><span class="tag blue">Course Hub</span><h3>Principles of Engineering</h3><p>Return to the POE course hub for units, resources, certifications, and current course information.</p><div class="resource-actions"><a class="btn secondary small" href="../../index.html">Open POE Hub</a></div></article><article class="card resource-card"><span class="tag green">Unit Challenge</span><h3>VEX Rover Mechanisms Challenge</h3><p>Use this unit project context when connecting the lesson to mechanism planning, testing, and design review evidence.</p><div class="resource-actions"><a class="btn small" href="../unit-1.html">Open Unit 1</a></div></article></div><div class="lesson-nav-row"><a class="btn secondary" href="lesson-1-3.html">← Lesson 1.3</a><a class="btn" href="lesson-1-5.html">Lesson 1.5 →</a></div></section>
-</main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a> <a href="../../../../agenda.html">Daily Agenda</a> <a href="../../../../resources/index.html">Resources</a> <a href="../../../../certifications/index.html">Certifications</a> <a href="../../../../fablab/index.html">FabLab</a> <a href="../../../../about/index.html">About</a><a href="../../../../courses/ied/index.html">IED</a><a href="../../../../courses/poe/index.html">POE</a><a href="../../../../courses/adm/index.html">ADM</a><a href="../../../../challenge-library/index.html">Challenges</a></div></div></footer><button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body></html>
+  <section class="lesson-mission-hero">
+    <div class="container lesson-hero-grid">
+      <div class="lesson-hero-copy">
+        <img alt="POE course icon" class="lesson-course-icon" src="../../../../assets/img/course-icons/poe-course-icon.png"/>
+        <div class="mission-eyebrow">POE Unit 1 • Lesson 1.4</div>
+        <h1>Gears and Drive Ratios</h1>
+        <p class="focus-question"><strong>Focus question:</strong> How do gear ratios and gear trains change rotational speed, torque, and direction to meet a design need?</p>
+        <div class="mission-actions">
+          <a class="btn" href="#gear-lab">Start Gear Lab</a>
+          <a class="btn secondary" href="../../../../downloads/worksheets/poe/unit-1/POE_1.4_Gear_Ratio_Gear_Train_Simulation_Worksheet.pdf" download>Download Worksheet</a>
+          <a class="btn ghost" href="../unit-1.html">Unit 1 Overview</a>
+        </div>
+      </div>
+      <aside class="mission-panel">
+        <span class="tag">Simulation Investigation</span>
+        <h2>Predict first. Change the gear system. Observe the motion. Use the data to explain the tradeoff.</h2>
+        <div class="verb-strip"><span>Predict</span><span>Simulate</span><span>Defend</span></div>
+        <p>Your evidence is the completed Gear Ratio &amp; Gear Train Simulation Worksheet.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="container lesson-section">
+    <div class="section-header"><div><div class="eyebrow">Lesson Targets</div><h2>What You Will Be Able to Do</h2><p class="section-subtitle">The simulation is the main learning tool for this lesson.</p></div></div>
+    <div class="poe14-grid">
+      <article class="poe14-card"><span class="poe14-number">1</span><h3>Analyze a gear pair</h3><p>Identify driver and driven gears, calculate gear ratio, and predict output speed and torque.</p></article>
+      <article class="poe14-card"><span class="poe14-number">2</span><h3>Track direction</h3><p>Use the number of external gear meshes to predict clockwise or counterclockwise output.</p></article>
+      <article class="poe14-card"><span class="poe14-number">3</span><h3>Explain idler gears</h3><p>Show why an idler can change direction or spacing without changing the overall simple-train ratio.</p></article>
+    </div>
+  </section>
+
+  <section class="container lesson-section">
+    <div class="section-header"><div><div class="eyebrow">Launch Prediction</div><h2>Before You Touch the Controls</h2><p class="section-subtitle">Make a prediction first. Then use the simulation to find evidence.</p></div></div>
+    <div class="poe14-grid">
+      <article class="poe14-card"><h3>12T driver → 36T driven</h3><p>Will the output be faster or slower? What happens to ideal torque? Will direction match the driver?</p></article>
+      <article class="poe14-card"><h3>40T driver → 20T driven</h3><p>Will the output be faster or slower? What happens to ideal torque? Will direction match the driver?</p></article>
+      <article class="poe14-card"><h3>24T driver → 24T driven</h3><p>What stays the same in a 1:1 pair? What still changes because the gears are externally meshed?</p></article>
+    </div>
+  </section>
+
+  <section class="container lesson-section" id="gear-lab">
+    <div class="section-header"><div><div class="eyebrow">Interactive Lab</div><h2>Gear Ratio &amp; Gear Train Simulation</h2><p class="section-subtitle">Work through the worksheet while you use the simulation. Record actual values rather than guessing from the animation alone.</p></div></div>
+    <div class="sim-shell">
+      <div class="sim-toolbar">
+        <div><strong>POE 1.4 Gear Lab</strong><br/><span>Gear pairs • gear trains • idlers • mission challenge</span></div>
+        <div><a class="btn secondary small" href="interactive/gear-ratio-gear-train-lab.html" target="_blank" rel="noopener">Open Full Screen</a></div>
+      </div>
+      <iframe class="sim-frame" src="interactive/gear-ratio-gear-train-lab.html?embed=1" title="POE 1.4 Gear Ratio and Gear Train Simulation" loading="eager"></iframe>
+      <div class="sim-note">If the embedded simulation feels cramped on a smaller screen, use <strong>Open Full Screen</strong>. Your worksheet remains the required lesson evidence.</div>
+    </div>
+  </section>
+
+  <section class="container lesson-section">
+    <div class="section-header"><div><div class="eyebrow">Worksheet Roadmap</div><h2>Complete the Investigation in Four Parts</h2><p class="section-subtitle">The page and worksheet use the same sequence so you can move between them without hunting for the next step.</p></div></div>
+    <div class="worksheet-steps">
+      <article class="worksheet-step"><div class="eyebrow">Part A</div><h3>Predict</h3><p>Predict speed, torque, and direction for three gear pairs, then check each prediction in the simulation.</p></article>
+      <article class="worksheet-step"><div class="eyebrow">Part B</div><h3>Explore Gear Pairs</h3><p>Run four trials: a reduction, a speed-up, a 1:1 pair, and one system of your choice.</p></article>
+      <article class="worksheet-step"><div class="eyebrow">Part C</div><h3>Build a Gear Train</h3><p>Change the idler size in a 20T → idler → 40T train and determine what does and does not change.</p></article>
+      <article class="worksheet-step"><div class="eyebrow">Part D</div><h3>Make a Mission Decision</h3><p>Compare three lunar sample-storage door options and defend the strongest choice with numerical evidence.</p></article>
+    </div>
+  </section>
+
+  <section class="container lesson-section">
+    <div class="section-header"><div><div class="eyebrow">Core Math</div><h2>Use the Simulation to Check the Equations</h2></div></div>
+    <div class="poe14-formulas">
+      <div class="poe14-formula"><strong>Gear Ratio</strong><code>GR = driven teeth / driver teeth</code></div>
+      <div class="poe14-formula"><strong>Output Speed</strong><code>rpm_out = rpm_in × (driver / driven)</code></div>
+      <div class="poe14-formula"><strong>Ideal Torque</strong><code>T_out = T_in × (driven / driver)</code></div>
+    </div>
+    <div class="mission-box" style="margin-top:1rem">
+      <h3>Direction Rule</h3>
+      <p>Every external gear mesh reverses rotation direction. One mesh reverses once. Two meshes reverse twice. Track direction separately from the ratio.</p>
+    </div>
+  </section>
+
+  <section class="container lesson-section">
+    <div class="section-header"><div><div class="eyebrow">Mission Challenge</div><h2>Lunar Sample-Storage Door</h2><p class="section-subtitle">Use the third simulation mode and the worksheet table to make an engineering recommendation.</p></div></div>
+    <div class="mission-box">
+      <h3>Design Need</h3>
+      <p>The motor operates efficiently near <strong>1200 rpm</strong>. The storage door should rotate slowly and gain ideal torque so it is less likely to stall in lunar dust.</p>
+      <ul class="check-list-clean">
+        <li><strong>Option A:</strong> 12T driver → 24T driven</li>
+        <li><strong>Option B:</strong> 12T driver → 48T driven</li>
+        <li><strong>Option C:</strong> 24T driver → 36T driven</li>
+      </ul>
+      <p><strong>Your recommendation must use at least two numerical pieces of evidence.</strong></p>
+    </div>
+  </section>
+
+  <section class="container lesson-section">
+    <div class="section-header"><div><div class="eyebrow">Exit Check</div><h2>Close the Loop</h2></div></div>
+    <div class="poe14-grid">
+      <article class="poe14-card"><span class="tag">1</span><p>What happens to output speed and ideal torque when a small driver turns a much larger driven gear?</p></article>
+      <article class="poe14-card"><span class="tag blue">2</span><p>What is the purpose of an idler gear in a simple external gear train?</p></article>
+      <article class="poe14-card"><span class="tag green">3</span><p>How does each external gear mesh affect rotation direction?</p></article>
+    </div>
+  </section>
+
+  <section class="container lesson-section" id="resources">
+    <div class="section-header"><div><div class="eyebrow">Resources</div><h2>Lesson Resources</h2></div></div>
+    <div class="poe14-grid">
+      <article class="poe14-card"><span class="tag blue">Required</span><h3>Simulation Worksheet</h3><p>Record predictions, four gear-pair trials, the idler investigation, and your lunar storage-door recommendation.</p><div class="resource-actions"><a class="btn small" href="../../../../downloads/worksheets/poe/unit-1/POE_1.4_Gear_Ratio_Gear_Train_Simulation_Worksheet.pdf" download>Download Worksheet</a></div></article>
+      <article class="poe14-card"><span class="tag green">Interactive</span><h3>Gear Lab - Full Screen</h3><p>Open the same simulation in its own browser tab for more workspace.</p><div class="resource-actions"><a class="btn secondary small" href="interactive/gear-ratio-gear-train-lab.html" target="_blank" rel="noopener">Open Simulation</a></div></article>
+      <article class="poe14-card"><span class="tag">Unit</span><h3>POE Unit 1</h3><p>Return to the unit overview and continue to the next mechanisms lesson when finished.</p><div class="resource-actions"><a class="btn secondary small" href="../unit-1.html">Open Unit 1</a></div></article>
+    </div>
+    <div class="lesson-nav-row"><a class="btn secondary" href="lesson-1-3.html">← Lesson 1.3</a><a class="btn" href="lesson-1-5.html">Lesson 1.5 →</a></div>
+  </section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a> <a href="../../../../agenda.html">Daily Agenda</a> <a href="../../../../resources/index.html">Resources</a> <a href="../../../../certifications/index.html">Certifications</a> <a href="../../../../fablab/index.html">FabLab</a> <a href="../../../../about/index.html">About</a><a href="../../../../courses/ied/index.html">IED</a><a href="../../../../courses/poe/index.html">POE</a><a href="../../../../courses/adm/index.html">ADM</a><a href="../../../../challenge-library/index.html">Challenges</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+</body>
+</html>
