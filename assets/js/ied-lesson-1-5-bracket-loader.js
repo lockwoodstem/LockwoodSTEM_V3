@@ -2,19 +2,25 @@
   "use strict";
 
   const BASE = '../../../../assets/models/ied/unit-1/lesson-1-5/';
-  const MODEL_PARTS = {
-    1: [BASE + 'Bracket_1.stl.gz.b64'],
-    2: [BASE + 'Bracket_2.stl.gz.b64'],
-    3: [1, 2, 3, 4, 5].map(n => BASE + `Bracket_3.gzip.b64.${String(n).padStart(2, '0')}`)
-  };
-
   const nativeFetch = window.fetch.bind(window);
-  const modelPromises = new Map();
+
+  // Bracket 1 has a known-good standalone export.
+  const BRACKET_1 = [BASE + 'Bracket_1.stl.gz.b64'];
+
+  // Brackets 2 and 3 are loaded from the corrected complete model pack.
+  // This replaces the older intermediate per-bracket exports that were
+  // causing Models 2 and 3 to fail in the browser.
+  const PACK_PARTS = [1, 2, 3, 4, 5, 6, 7].map(
+    n => BASE + `brackets-pack2.gz.b64.${String(n).padStart(2, '0')}`
+  );
+
+  let bracket1Promise = null;
+  let packPromise = null;
 
   async function fetchText(url) {
     const response = await nativeFetch(url, { cache: 'no-store' });
     if (!response.ok) {
-      throw new Error(`Unable to load bracket model data (${response.status}: ${url}).`);
+      throw new Error(`Unable to load model data (${response.status}: ${url}).`);
     }
     return response.text();
   }
@@ -23,7 +29,7 @@
     const cleaned = base64.replace(/\s+/g, '');
     const raw = atob(cleaned);
     const bytes = new Uint8Array(raw.length);
-    for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
+    for (let i = 0; i < raw.length; i += 1) bytes[i] = raw.charCodeAt(i);
     return bytes;
   }
 
@@ -40,33 +46,68 @@
       throw new Error(`Bracket ${modelNumber} model data is incomplete.`);
     }
 
-    const headerText = new TextDecoder().decode(bytes.slice(0, Math.min(bytes.length, 256))).trimStart();
-    if (headerText.startsWith('solid')) return bytes;
-
     const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
-    const triangles = view.getUint32(80, true);
-    const expectedLength = 84 + triangles * 50;
-    if (!triangles || expectedLength > bytes.byteLength) {
-      throw new Error(`Bracket ${modelNumber} STL failed validation.`);
+    const triangleCount = view.getUint32(80, true);
+    const expectedLength = 84 + triangleCount * 50;
+
+    // Binary STL is the normal case for these files.
+    if (triangleCount > 0 && expectedLength <= bytes.byteLength) return bytes;
+
+    // Allow ASCII STL as a fallback.
+    const header = new TextDecoder().decode(bytes.slice(0, Math.min(bytes.byteLength, 256))).trimStart();
+    if (header.startsWith('solid')) return bytes;
+
+    throw new Error(`Bracket ${modelNumber} STL failed validation.`);
+  }
+
+  async function loadBracket1() {
+    if (!bracket1Promise) {
+      bracket1Promise = (async () => {
+        const base64 = (await Promise.all(BRACKET_1.map(fetchText))).join('');
+        return validateSTL(await gunzip(base64ToBytes(base64)), 1);
+      })();
     }
-    return bytes;
+    return bracket1Promise;
+  }
+
+  async function loadCorrectedPack() {
+    if (!packPromise) {
+      packPromise = (async () => {
+        const base64 = (await Promise.all(PACK_PARTS.map(fetchText))).join('');
+        const packed = await gunzip(base64ToBytes(base64));
+
+        if (packed.byteLength < 12) {
+          throw new Error('Corrected bracket model pack is incomplete.');
+        }
+
+        const view = new DataView(packed.buffer, packed.byteOffset, packed.byteLength);
+        const lengths = [
+          view.getUint32(0, true),
+          view.getUint32(4, true),
+          view.getUint32(8, true)
+        ];
+
+        const models = [];
+        let offset = 12;
+        for (let index = 0; index < 3; index += 1) {
+          const length = lengths[index];
+          if (!length || offset + length > packed.byteLength) {
+            throw new Error(`Corrected bracket pack has an invalid length for Model ${index + 1}.`);
+          }
+          models.push(validateSTL(packed.slice(offset, offset + length), index + 1));
+          offset += length;
+        }
+
+        return models;
+      })();
+    }
+    return packPromise;
   }
 
   async function loadModel(modelNumber) {
-    if (modelPromises.has(modelNumber)) return modelPromises.get(modelNumber);
-
-    const promise = (async () => {
-      const parts = MODEL_PARTS[modelNumber];
-      if (!parts) throw new Error(`Unknown bracket model: ${modelNumber}`);
-
-      const base64 = (await Promise.all(parts.map(fetchText))).join('');
-      const compressed = base64ToBytes(base64);
-      const stl = await gunzip(compressed);
-      return validateSTL(stl, modelNumber);
-    })();
-
-    modelPromises.set(modelNumber, promise);
-    return promise;
+    if (modelNumber === 1) return loadBracket1();
+    const models = await loadCorrectedPack();
+    return models[modelNumber - 1];
   }
 
   window.fetch = async (input, init) => {
@@ -74,8 +115,8 @@
     const match = url && /Bracket_([123])\.virtual\.stl(?:[?#].*)?$/.exec(url);
     if (!match) return nativeFetch(input, init);
 
+    const modelNumber = Number(match[1]);
     try {
-      const modelNumber = Number(match[1]);
       const stl = await loadModel(modelNumber);
       return new Response(stl, {
         status: 200,
@@ -86,7 +127,7 @@
         }
       });
     } catch (error) {
-      console.error(`Failed to prepare Bracket ${match[1]} STL:`, error);
+      console.error(`Failed to prepare Bracket ${modelNumber} STL:`, error);
       return new Response(String(error && error.message ? error.message : error), {
         status: 500,
         headers: { 'Content-Type': 'text/plain; charset=utf-8' }
