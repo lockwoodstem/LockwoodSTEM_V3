@@ -4,21 +4,19 @@
   const BASE = '../../../../assets/models/ied/unit-1/lesson-1-5/';
   const nativeFetch = window.fetch.bind(window);
 
-  // Prefer the per-bracket exports. Bracket 1 is a single compressed file;
-  // Brackets 2 and 3 are stored as validated base64 chunks that together
-  // form one gzip stream per model.
+  // Prefer the verified per-bracket exports. Brackets 1 and 2 have complete
+  // standalone compressed files. Bracket 3 is stored as five validated
+  // base64 chunks that together form one gzip stream.
   const DIRECT_PARTS = {
     1: [BASE + 'Bracket_1.stl.gz.b64'],
-    2: [1, 2, 3, 4, 5].map(
-      n => BASE + `Bracket_2.gzip.b64.${String(n).padStart(2, '0')}`
-    ),
+    2: [BASE + 'Bracket_2.stl.gz.b64'],
     3: [1, 2, 3, 4, 5].map(
       n => BASE + `Bracket_3.gzip.b64.${String(n).padStart(2, '0')}`
     )
   };
 
-  // Historical corrected three-model pack. This is retained only as a
-  // fallback for Brackets 2 and 3 if a per-bracket export is incomplete.
+  // Historical corrected three-model pack. Retained only as an independent
+  // fallback for Brackets 2 and 3 if their preferred source cannot be used.
   const FALLBACK_PACK_PARTS = [
     BASE + 'brackets-pack.gz.b64.01',
     BASE + 'brackets-pack.gz.b64.02',
@@ -119,10 +117,10 @@
       try {
         directBytes = await gunzipBase64Parts(DIRECT_PARTS[modelNumber]);
         if (looksLikeSTL(directBytes)) return directBytes;
-        console.warn(`Bracket ${modelNumber}: per-bracket data did not pass STL sanity check; trying corrected fallback pack.`);
+        console.warn(`Bracket ${modelNumber}: preferred model data did not pass STL sanity check; trying corrected fallback pack.`);
       } catch (error) {
         directError = error;
-        console.warn(`Bracket ${modelNumber}: per-bracket data failed to load; trying corrected fallback pack.`, error);
+        console.warn(`Bracket ${modelNumber}: preferred model data failed to load; trying corrected fallback pack.`, error);
       }
 
       if (modelNumber !== 1) {
@@ -136,8 +134,8 @@
         }
       }
 
-      // If decompression succeeded, let the viewer's full parser make the
-      // final decision instead of rejecting potentially unusual STL headers.
+      // If decompression succeeded, let the viewer's full STL parser make
+      // the final decision instead of rejecting an unusual but valid header.
       if (directBytes && directBytes.byteLength) return directBytes;
 
       throw directError || new Error(`Unable to prepare Bracket ${modelNumber} STL.`);
