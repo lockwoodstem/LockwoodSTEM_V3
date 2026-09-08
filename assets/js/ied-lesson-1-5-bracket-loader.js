@@ -6,7 +6,8 @@
     BASE + 'brackets-pack.gz.b64.02',
     BASE + 'brackets-pack.gz.b64.03',
     BASE + 'brackets-pack.gz.b64.04',
-    ...[5,6,7,8,9,10,11,12,13,14].map(n => BASE + `brackets-fix.gz.b64.${String(n).padStart(2,'0')}`)
+    ...[5,6,7,8,9,10,11,12,13].map(n => BASE + `brackets-fix.gz.b64.${String(n).padStart(2,'0')}`),
+    BASE + 'brackets-fix2.gz.b64.14'
   ];
   const nativeFetch = window.fetch.bind(window);
   let modelsPromise;
@@ -14,7 +15,7 @@
   async function unpackModels() {
     if (modelsPromise) return modelsPromise;
     modelsPromise = (async () => {
-      const responses = await Promise.all(PARTS.map(url => nativeFetch(url)));
+      const responses = await Promise.all(PARTS.map(url => nativeFetch(url, {cache:'no-store'})));
       responses.forEach(r => { if (!r.ok) throw new Error('Unable to load bracket model data.'); });
       const b64 = (await Promise.all(responses.map(r => r.text()))).join('').replace(/\s+/g, '');
       const raw = atob(b64);
