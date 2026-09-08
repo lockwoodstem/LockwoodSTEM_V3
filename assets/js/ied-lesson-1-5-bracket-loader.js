@@ -1,7 +1,13 @@
 (() => {
   "use strict";
   const BASE = '../../../../assets/models/ied/unit-1/lesson-1-5/';
-  const PARTS = [1,2,3,4,5,6,7].map(n => BASE + `brackets-pack2.gz.b64.${String(n).padStart(2,'0')}`);
+  const PARTS = [
+    BASE + 'brackets-pack.gz.b64.01',
+    BASE + 'brackets-pack.gz.b64.02',
+    BASE + 'brackets-pack.gz.b64.03',
+    BASE + 'brackets-pack.gz.b64.04',
+    ...[5,6,7,8,9,10,11,12,13,14].map(n => BASE + `brackets-fix.gz.b64.${String(n).padStart(2,'0')}`)
+  ];
   const nativeFetch = window.fetch.bind(window);
   let modelsPromise;
 
