@@ -1,0 +1,44 @@
+name: Publish IED 1.8 resources
+
+on:
+  push:
+    paths:
+      - '.build/ied18/**'
+      - '.github/workflows/publish-ied-1-8-resources.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install generators
+        run: pip install reportlab python-pptx pillow
+      - name: Build IED 1.8 resources
+        run: |
+          if [ -f .build/ied18/build_ied18.py ]; then
+            REPO_ROOT="$GITHUB_WORKSPACE" python .build/ied18/build_ied18.py
+          else
+            echo "No IED 1.8 builder present. Nothing to do."
+          fi
+      - name: Publish generated resources and remove temporary builder
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/templates/IED_1_8_Engineering_Documentation_Challenge_Student_Packet.pdf
+          git add downloads/presentations/IED_1_8_Engineering_Documentation_Challenge_Presentation.pptx
+          git add downloads/teacher-guides/IED_1_8_Engineering_Documentation_Challenge_Teacher_Guide.pdf
+          git rm -r .build/ied18 || true
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+          else
+            git commit -m "Publish IED 1.8 student resources"
+            git push
+          fi
