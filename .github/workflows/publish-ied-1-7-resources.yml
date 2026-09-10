@@ -40,3 +40,4 @@ jobs:
           git rm .github/workflows/publish-ied-1-7-resources.yml
           git commit -m "Publish IED 1.7 student resources"
           git push
+# trigger after page update
