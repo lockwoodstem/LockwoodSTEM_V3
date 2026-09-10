@@ -24,6 +24,13 @@ jobs:
       - name: Build IED 1.8 resources
         run: |
           if [ -f .build/ied18/build_ied18.py ]; then
+            python - <<'PY'
+            from pathlib import Path
+            p = Path('.build/ied18/build_ied18.py')
+            text = p.read_text()
+            text = text.replace("s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(1.0),Inches(4.9),Inches(2.4),Inches(.35)).fill.fore_color.rgb=colors['gold']", "sh=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(1.0),Inches(4.9),Inches(2.4),Inches(.35)); sh.fill.solid(); sh.fill.fore_color.rgb=colors['gold']; sh.line.color.rgb=colors['gold']")
+            p.write_text(text)
+            PY
             REPO_ROOT="$GITHUB_WORKSPACE" python .build/ied18/build_ied18.py
           else
             echo "No IED 1.8 builder present. Nothing to do."
