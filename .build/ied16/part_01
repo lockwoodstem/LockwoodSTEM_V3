@@ -1,0 +1,86 @@
+.setFont('Helvetica-Bold',8); c.drawString(.62*inch,y,f'{i}.'); wrap(c,s,.85*inch,y,6.9*inch,size=8,leading=9); y-=.26*inch
+    c.showPage()
+    # p3 A/B
+    header(c,'IED 1.6 | Manufacturing Inspection Lab','Models A & B',3)
+    student_info(c,H-.95*inch); y=H-1.22*inch
+    y=section(c,y,'MODEL A | THROUGH HOLE BLOCK','Inspect size and hole location')
+    headers=['Feature','Nominal +/- Tol.','Lower','Upper','Actual','P/F']
+    widths=[1.55*inch,1.45*inch,1.05*inch,1.05*inch,1.15*inch,.75*inch]
+    rows=[['Overall length','1.600 +/- .020','','','',''],['Overall height','1.000 +/- .020','','','',''],['Overall depth','1.000 +/- .020','','','',''],['Hole diameter','Ø.500 +/- .005','','','',''],['Hole X location','.800 +/- .010','','','',''],['Hole Y location','.500 +/- .010','','','','']]
+    y=table(c,.55*inch,y,widths,.34*inch,headers,rows,font=6.8)-.14*inch
+    c.setFont('Helvetica-Bold',8); c.drawString(.55*inch,y,'MODEL A DISPOSITION:  ACCEPT / REJECT'); c.drawString(4.15*inch,y,'Failed feature(s): ________________________'); y-=.32*inch
+    y=section(c,y,'MODEL B | TWO LEVEL STAIR BLOCK','Inspect overall and stepped geometry')
+    rows=[['Overall length','1.500 +/- .020','','','',''],['Overall height','.750 +/- .020','','','',''],['Overall depth','1.000 +/- .020','','','',''],['First step run','.500 +/- .010','','','',''],['Second run / location','1.000 +/- .010','','','',''],['First step height','.250 +/- .010','','','',''],['Second step height','.500 +/- .010','','','','']]
+    y=table(c,.55*inch,y,widths,.32*inch,headers,rows,font=6.55)-.13*inch
+    c.setFont('Helvetica-Bold',8); c.drawString(.55*inch,y,'MODEL B DISPOSITION:  ACCEPT / REJECT'); c.drawString(4.15*inch,y,'Failed feature(s): ________________________')
+    c.showPage()
+    # p4 C + analysis
+    header(c,'IED 1.6 | Manufacturing Inspection Lab','Model C & Engineering Analysis',4)
+    student_info(c,H-.95*inch); y=H-1.22*inch
+    y=section(c,y,'MODEL C | SLOTTED BRACKET','Inspect multiple feature types')
+    headers=['Feature','Nominal +/- Tol.','Lower','Upper','Actual','P/F']
+    widths=[1.55*inch,1.45*inch,1.05*inch,1.05*inch,1.15*inch,.75*inch]
+    rows=[['Overall length','1.500 +/- .020','','','',''],['Overall height','1.500 +/- .020','','','',''],['Overall depth','1.500 +/- .020','','','',''],['Hole diameter','Ø.400 +/- .005','','','',''],['Hole X location','.400 +/- .010','','','',''],['Hole Y location','.400 +/- .010','','','',''],['Slot width','.500 +/- .010','','','',''],['Slot location / length','1.000 +/- .010','','','',''],['Thin wall / web','.090 +/- .005','','','','']]
+    y=table(c,.55*inch,y,widths,.29*inch,headers,rows,font=6.3)-.12*inch
+    c.setFont('Helvetica-Bold',8); c.drawString(.55*inch,y,'MODEL C DISPOSITION:  ACCEPT / REJECT'); c.drawString(4.15*inch,y,'Failed feature(s): ________________________'); y-=.34*inch
+    y=section(c,y,'ENGINEERING ANALYSIS')
+    qs=['Which inspected dimension had the tightest tolerance? Why might it require tighter control?','Why can a part look correct but still fail inspection?','Choose one rejected feature. What manufacturing change could move it closer to nominal?']
+    for q in qs:
+        c.setFont('Helvetica-Bold',7.4); c.drawString(.55*inch,y,q); y-=.15*inch
+        c.line(.55*inch,y,7.95*inch,y); y-=.17*inch
+        c.line(.55*inch,y,7.95*inch,y); y-=.20*inch
+    c.save()
+
+# ---------- Engineering drawing set ----------
+DW, DH = landscape((11*inch,17*inch))  # 17 x 11 in B-size landscape
+
+def open_arrow(c,x,y,angle,size=6):
+    for d in (150,210):
+        a=math.radians(angle+d); c.line(x,y,x+size*math.cos(a),y+size*math.sin(a))
+
+def dim_h(c,x1,x2,y,text,ext_y1=None,ext_y2=None):
+    c.setStrokeColor(BLACK); c.setLineWidth(.55)
+    if ext_y1 is not None: c.line(x1,ext_y1,x1,y+5)
+    if ext_y2 is not None: c.line(x2,ext_y2,x2,y+5)
+    c.line(x1,y,x2,y); open_arrow(c,x1,y,0); open_arrow(c,x2,y,180)
+    c.setFont('Helvetica',11); tw=stringWidth(text,'Helvetica',11); c.setFillColor(WHITE); c.rect((x1+x2)/2-tw/2-3,y-6,tw+6,12,fill=1,stroke=0); c.setFillColor(BLACK); c.drawCentredString((x1+x2)/2,y-3.5,text)
+
+def dim_v(c,x,y1,y2,text,ext_x1=None,ext_x2=None):
+    c.setStrokeColor(BLACK); c.setLineWidth(.55)
+    if ext_x1 is not None: c.line(ext_x1,y1,x-5,y1)
+    if ext_x2 is not None: c.line(ext_x2,y2,x-5,y2)
+    c.line(x,y1,x,y2); open_arrow(c,x,y1,90); open_arrow(c,x,y2,270)
+    c.saveState(); c.translate(x-5,(y1+y2)/2); c.rotate(90); c.setFont('Helvetica',11); tw=stringWidth(text,'Helvetica',11); c.setFillColor(WHITE); c.rect(-tw/2-3,-6,tw+6,12,fill=1,stroke=0); c.setFillColor(BLACK); c.drawCentredString(0,-3.5,text); c.restoreState()
+
+def titleblock(c,title,scale='NTS'):
+    x=8.7*inch; y=.45*inch; w=7.85*inch; h=2.55*inch
+    c.setLineWidth(.7); c.rect(x,y,w,h,stroke=1,fill=0)
+    c.line(x,y+1.75*inch,x+w,y+1.75*inch); c.line(x,y+.55*inch,x+w,y+.55*inch)
+    c.setFont('Helvetica',8); c.drawString(x+.08*inch,y+2.30*inch,'PROJECT'); c.setFont('Helvetica-Bold',17); c.drawString(x+.08*inch,y+2.02*inch,'IED 1.6')
+    c.setFont('Helvetica',8); c.drawString(x+.08*inch,y+1.56*inch,'TITLE'); c.setFont('Helvetica-Bold',16); c.drawString(x+.08*inch,y+1.22*inch,title)
+    c.setFont('Helvetica',8); c.drawString(x+.08*inch,y+.32*inch,'UNITS: INCHES'); c.drawString(x+2.0*inch,y+.32*inch,f'SCALE: {scale}'); c.drawString(x+4.0*inch,y+.32*inch,'SHEET: 1/1')
+
+def border(c):
+    c.setLineWidth(.8); c.rect(.35*inch,.35*inch,DW-.7*inch,DH-.7*inch,stroke=1,fill=0)
+
+def iso_box(c,cx,cy,w,h,d):
+    # simple isometric wireframe filled lightly
+    p1=(cx-w/2,cy-h/2); p2=(cx+w/2,cy-h/2); p3=(cx+w/2,cy+h/2); p4=(cx-w/2,cy+h/2)
+    off=(d*.55,d*.32)
+    q=[(x+off[0],y+off[1]) for x,y in [p1,p2,p3,p4]]
+    c.setStrokeColor(BLACK); c.setLineWidth(1.0)
+    c.setFillColor(Color(.78,.77,.72)); c.polyLine if False else None
+    for a,b in [(p1,p2),(p2,p3),(p3,p4),(p4,p1),(q[0],q[1]),(q[1],q[2]),(q[2],q[3]),(q[3],q[0]),(p2,q[1]),(p3,q[2]),(p4,q[3])]: c.line(a[0],a[1],b[0],b[1])
+
+def drawing_a(c):
+    border(c); titleblock(c,'Model A - Through Hole Block','2:1')
+    # front view
+    x,y=2.7*inch,3.95*inch; sx=1.95*inch/1.6; sy=1.95*inch/1.0; w=1.6*sx; h=1*sy
+    c.setLineWidth(1.2); c.rect(x,y,w,h,stroke=1,fill=0)
+    hx=x+.8*sx; hy=y+.5*sy; r=.25*sy; c.circle(hx,hy,r,stroke=1,fill=0)
+    c.setDash([10,3,3,3],0); c.setLineWidth(.5); c.line(hx-.45*inch,hy,hx+.45*inch,hy); c.line(hx,hy-.45*inch,hx,hy+.45*inch); c.setDash()
+    dim_h(c,x,x+w,y-.80*inch,'1.600 ± .020',y,y); dim_h(c,x,hx,y-.43*inch,'.800 ± .010',y,y); dim_v(c,x-.82*inch,y,y+h,'1.000 ± .020',x,x); dim_v(c,x-.45*inch,y,hy,'.500 ± .010',x,x)
+    # hole callout
+    c.setLineWidth(.55); c.line(hx+r*.7,hy-r*.7,hx+.42*inch,hy-.48*inch); c.line(hx+.42*inch,hy-.48*inch,hx+1.18*inch,hy-.48*inch); c.setFont('Helvetica',10); c.drawString(hx+.46*inch,hy-.44*inch,'Ø.500 ± .005 THRU')
+    # top
+    tx,ty=2.7*inch,7.45*inch; c.rect(tx,ty,w,1.55*inch,stroke=1,fill=0); c.setDash([8,4],0); c.line(tx+(0.8-.25)*sx,ty,tx+(0.8-.2
