@@ -35,3 +35,15 @@
  .course-home-page .hero-actions,.unit-overview-page .hero-actions{display:flex;flex-wrap:wrap;gap:.6rem}
  .course-home-page .hero-actions .btn,.unit-overview-page .hero-actions .btn{width:100%;text-align:center}
 }
+
+/* Exact shared structure for IED / POE / ADM course homes */
+.course-home-page #course-pathway>.grid.two,
+.course-home-page #course-pathway .grid.two{align-items:stretch}
+.course-home-page #course-pathway .unit-card{display:flex;flex-direction:column;min-height:260px}
+.course-home-page #course-pathway .unit-card>p{flex-grow:0}
+.course-home-page #course-pathway .unit-card>a.btn{margin-top:auto}
+.course-home-page #course-resources{padding-top:var(--section-space,2rem)}
+.course-home-page .course-habits{margin-top:var(--section-space,2rem)}
+.course-home-page .course-landing-intro .card,
+.course-home-page .course-snapshot .card{height:100%}
+.course-home-page #course-pathway .tag{align-self:flex-start}
