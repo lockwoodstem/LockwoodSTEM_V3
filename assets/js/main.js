@@ -579,3 +579,83 @@ document.addEventListener('DOMContentLoaded', () => {
     hero.after(intro);
   }
 });
+
+
+// Course home template normalization v2
+document.addEventListener('DOMContentLoaded', () => {
+  if(!document.body.classList.contains('course-home-page')) return;
+  const main=document.querySelector('main'); if(!main) return;
+  const course=(location.pathname.match(/\/courses\/(ied|poe|adm)\/index\.html$/i)||[])[1]?.toLowerCase();
+  if(!course) return;
+
+  // Force all three course home pages to use the same section identifiers and order.
+  const hero=main.querySelector('.page-hero');
+  const intro=main.querySelector('.course-landing-intro');
+  const overview=main.querySelector('.course-snapshot');
+  let pathway = course==='adm' ? main.querySelector('#adm-units') : (main.querySelector('#course-pathway') || [...main.querySelectorAll(':scope > section.container')].find(s=>/Units 0-5/i.test(s.innerText)));
+  const resources=main.querySelector('#ied-course-resources,#course-resources,#adm-course-resources');
+  const habits=main.querySelector('#course-habits,.course-habits') || [...main.querySelectorAll(':scope > section.light-section')].find(s=>/How students work in/i.test(s.innerText));
+
+  if(pathway){
+    pathway.id='course-pathway';
+    const sh=pathway.querySelector('.section-header');
+    if(sh){
+      let eye=sh.querySelector('.eyebrow');
+      if(!eye){eye=document.createElement('div');eye.className='eyebrow';sh.querySelector('div')?.prepend(eye);}
+      if(eye) eye.textContent='Course Pathway';
+      const h=sh.querySelector('h2'); if(h) h.textContent='Course Units';
+      const sub=sh.querySelector('.section-subtitle');
+      if(sub) sub.textContent='Open a unit to view its goals, lesson sequence, resources, major challenge, and required engineering evidence.';
+    }
+
+    // ADM used a unique linked-card component. Convert it to the same card/button pattern as IED and POE.
+    const admGrid=pathway.querySelector('.adm-unit-grid');
+    if(admGrid){
+      admGrid.className='grid two';
+      [...admGrid.querySelectorAll('.adm-unit-card')].forEach(a=>{
+        const href=a.getAttribute('href'), pill=a.querySelector('.unit-pill')?.textContent || 'Unit';
+        const title=a.querySelector('h3')?.textContent || '', desc=a.querySelector('p')?.textContent || '';
+        const card=document.createElement('article');card.className='card unit-card';
+        card.innerHTML='<span class="tag">'+pill+'</span><h3>'+title+'</h3><p>'+desc+'</p><a class="btn dark small" href="'+href+'">Open '+pill+'</a>';
+        a.replaceWith(card);
+      });
+    }
+
+    // Normalize all course unit cards to the same visible anatomy.
+    pathway.querySelectorAll('.unit-card').forEach(card=>{
+      let tag=card.querySelector(':scope > .tag,:scope > .status-pill');
+      if(tag){tag.className='tag';}
+      const h=card.querySelector('h3'), titleLink=h?.querySelector('a');
+      if(titleLink){
+        const href=titleLink.getAttribute('href'), title=titleLink.textContent;
+        h.textContent=title;
+        if(!card.querySelector(':scope > a.btn')){
+          const unit=(tag?.textContent.match(/Unit\s*\d+/i)||['Unit'])[0];
+          const b=document.createElement('a');b.className='btn dark small';b.href=href;b.textContent='Open '+unit;card.appendChild(b);
+        }
+      }
+    });
+  }
+
+  // Normalize resource headings.
+  if(resources){
+    resources.id='course-resources';
+    const eye=resources.querySelector('.section-header .eyebrow'); if(eye) eye.textContent='Resources';
+    const h=resources.querySelector('.section-header h2'); if(h) h.textContent='Course Resources';
+    const sub=resources.querySelector('.section-subtitle');
+    if(sub) sub.textContent='Course documents, templates, and support tools used throughout this course.';
+  }
+
+  // Put the common sections in exactly the same order on every course home.
+  let anchor=hero;
+  [intro,overview,pathway,resources,habits].forEach(section=>{
+    if(section && anchor){anchor.after(section);anchor=section;}
+  });
+
+  // Course-specific supplemental material follows the shared template rather than interrupting it.
+  const supplemental=[];
+  if(course==='poe'){
+    ['#design-challenges','#project-briefs','#project-support-templates'].forEach(sel=>{const s=main.querySelector(sel);if(s)supplemental.push(s);});
+  }
+  supplemental.forEach(s=>{if(anchor){anchor.after(s);anchor=s;}});
+});
