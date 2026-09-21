@@ -9,7 +9,7 @@
 <script defer src="../../../../assets/js/main.js"></script>
 <meta content="Design and 3D print production parts, then program a flexible robotic pick-and-pallet workcell using variables and reusable functions." name="description"/>
 <style>
-.process-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem;align-items:stretch;margin:1.25rem 0}.process-step{padding:1rem;border:1px solid rgba(0,0,0,.12);border-radius:12px;text-align:center;background:var(--surface,#fff)}.process-step strong{display:block;margin-bottom:.35rem}.process-arrow{display:none}.code-concept{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:1rem 1.15rem;border-radius:12px;background:#111827;color:#f9fafb;overflow:auto;margin:1rem 0}.route-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem}.route{padding:.85rem;border-radius:10px;text-align:center;border:1px solid rgba(0,0,0,.12);font-weight:700}.phase-number{font-weight:800;margin-right:.35rem}.success-list li,.requirements-list li{margin-bottom:.55rem}@media(max-width:800px){.process-flow,.route-grid{grid-template-columns:1fr}.process-step{text-align:left}}
+.process-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem;align-items:stretch;margin:1.25rem 0}.process-step{padding:1rem;border:1px solid rgba(0,0,0,.12);border-radius:12px;text-align:center;background:var(--surface,#fff)}.process-step strong{display:block;margin-bottom:.35rem}.process-arrow{display:none}.code-concept{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:1rem 1.15rem;border-radius:12px;background:#111827;color:#f9fafb;overflow:auto;margin:1rem 0}.route-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem}.route{padding:.85rem;border-radius:10px;text-align:center;border:1px solid rgba(0,0,0,.12);font-weight:700}.phase-number{font-weight:800;margin-right:.35rem}.success-list li,.requirements-list li{margin-bottom:.55rem}.hint-stack{display:grid;gap:.85rem}.hint-box{border:1px solid rgba(0,0,0,.12);border-radius:12px;overflow:hidden}.hint-box summary{cursor:pointer;font-weight:800;padding:1rem 1.15rem;background:rgba(0,0,0,.035)}.hint-box summary:hover{background:rgba(0,0,0,.065)}.hint-content{padding:1rem 1.15rem}.hint-content p:first-child{margin-top:0}.hint-content p:last-child{margin-bottom:0}.mini-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:.8rem 1rem;border-radius:10px;background:#111827;color:#f9fafb;overflow:auto;margin:.75rem 0}.hint-note{font-size:.95rem;opacity:.82}@media(max-width:800px){.process-flow,.route-grid{grid-template-columns:1fr}.process-step{text-align:left}}
 </style>
 </head>
 <body class="adm-unit-page site-consistency-v4 lesson-detail-page">
@@ -58,6 +58,43 @@
 <section class="container"><div class="grid two"><article class="card"><div class="eyebrow">Programming Standard</div><h2>Required Architecture</h2><ul class="unit-meta-list">
 <li><strong>Job variables:</strong> identify pickup zone and pallet destination.</li><li><strong>Position data:</strong> HOME plus safe approach and working positions.</li><li><strong>Pickup logic:</strong> one reusable function or equivalent structure for all three zones.</li><li><strong>Placement logic:</strong> one reusable function or equivalent structure for both pallets.</li><li><strong>Main program:</strong> set/read job variables → pick → place → return to a safe state.</li>
 </ul></article><article class="card"><div class="eyebrow">Validation</div><h2>Prove All Six Routes</h2><p>Before the final pick list, your cell must successfully demonstrate every possible source/destination combination.</p><div class="route-grid"><div class="route">1 → A</div><div class="route">1 → B</div><div class="route">2 → A</div><div class="route">2 → B</div><div class="route">3 → A</div><div class="route">3 → B</div></div></article></div></section>
+
+
+<section class="container" id="coding-hints"><article class="card">
+<div class="eyebrow">Python Help</div><h2>Coding Hints — Use These When You Get Stuck</h2>
+<p>These hints review Python structures that may be useful in this problem. They are intentionally general: you still need to decide how to apply them to your workcell, positions, and production logic.</p>
+<div class="hint-stack">
+<details class="hint-box"><summary>Hint 1 — Variables store information</summary><div class="hint-content">
+<p>A variable gives a value a name so your program can use it later. The value can change without changing every line that uses it.</p>
+<div class="mini-code">station = 2<br/>destination = "B"</div>
+<p class="hint-note">Think about which pieces of information should change from one production order to another.</p>
+</div></details>
+<details class="hint-box"><summary>Hint 2 — Use if / elif / else to make decisions</summary><div class="hint-content">
+<p>Conditional statements let the program choose different actions based on a value.</p>
+<div class="mini-code">if selection == 1:<br/>&nbsp;&nbsp;&nbsp;&nbsp;# do one action<br/>elif selection == 2:<br/>&nbsp;&nbsp;&nbsp;&nbsp;# do a different action<br/>else:<br/>&nbsp;&nbsp;&nbsp;&nbsp;# handle another case</div>
+<p class="hint-note">Ask yourself: where does the robot need to make a decision based on a job variable?</p>
+</div></details>
+<details class="hint-box"><summary>Hint 3 — Functions prevent repeated code</summary><div class="hint-content">
+<p>A function groups instructions that belong together. A parameter lets the same function receive different information each time it is called.</p>
+<div class="mini-code">def perform_task(location):<br/>&nbsp;&nbsp;&nbsp;&nbsp;# use location to decide what happens<br/>&nbsp;&nbsp;&nbsp;&nbsp;pass<br/><br/>perform_task(2)</div>
+<p class="hint-note">If you find yourself copying and pasting nearly identical robot code, consider whether part of it belongs in a function.</p>
+</div></details>
+<details class="hint-box"><summary>Hint 4 — Separate data from actions</summary><div class="hint-content">
+<p>Good automation programs often separate <strong>what the current job requests</strong> from <strong>how the machine performs the task</strong>. Variables can describe the job while functions contain reusable actions.</p>
+<div class="mini-code">job_value = 2<br/><br/>def run_action(choice):<br/>&nbsp;&nbsp;&nbsp;&nbsp;# reusable action logic goes here<br/>&nbsp;&nbsp;&nbsp;&nbsp;pass<br/><br/>run_action(job_value)</div>
+<p class="hint-note">A new production order should not require you to rewrite the robot's entire motion sequence.</p>
+</div></details>
+<details class="hint-box"><summary>Hint 5 — Validate unexpected values</summary><div class="hint-content">
+<p>Programs should have a plan for values that are not valid. An <code>else</code> branch can prevent the robot from trying to execute an undefined job.</p>
+<div class="mini-code">if choice == 1:<br/>&nbsp;&nbsp;&nbsp;&nbsp;# valid choice<br/>elif choice == 2:<br/>&nbsp;&nbsp;&nbsp;&nbsp;# valid choice<br/>else:<br/>&nbsp;&nbsp;&nbsp;&nbsp;print("Invalid selection")</div>
+<p class="hint-note">For a robot, stopping safely is usually better than guessing what an invalid value means.</p>
+</div></details>
+<details class="hint-box"><summary>Hint 6 — Debug one layer at a time</summary><div class="hint-content">
+<p>Do not troubleshoot the entire production cycle at once. First confirm variable values, then decision logic, then individual functions, and only then test the complete sequence.</p>
+<div class="mini-code">print("Current selection:", selection)</div>
+<p class="hint-note">Temporary print statements can help you verify what the program thinks is happening before the robot moves.</p>
+</div></details>
+</div></article></section>
 
 <section class="container"><article class="card"><div class="eyebrow">Safety</div><h2>Commission the Cell Safely</h2><ul class="unit-meta-list">
 <li>Know how to stop the robot before every test and keep hands outside the work envelope while it runs.</li><li>Run newly taught motion at reduced speed before full-cycle testing.</li><li>Use approach and retreat positions to maintain clearance around parts and fixtures.</li><li>Do not move pickup zones or pallets after positions are taught unless you revalidate the program.</li><li>Stop immediately if the robot, end effector, part, or fixture is at risk of collision.</li>
