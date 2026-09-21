@@ -29,7 +29,7 @@
 
 <section class="container" id="challenge"><article class="card">
 <div class="eyebrow">The Manufacturing Cell</div><h2>Your Challenge</h2>
-<p>Create <strong>three distinct 3D-printed production parts</strong>. Each part will begin in one of three fixed pickup zones. Your robotic arm must pick the requested part and deliver it to either Pallet A or Pallet B based on a teacher-provided pick list.</p>
+<p>Create <strong>one production-part CAD design and manufacture three color-coded copies</strong>. The three physical parts will use the same CAD geometry and will be distinguished by their 3D-print color. Each colored part will begin in one of three fixed pickup zones. Your robotic arm must pick the requested part and deliver it to either Pallet A or Pallet B based on a teacher-provided pick list.</p>
 <div class="process-flow"><div class="process-step"><strong>Pickup Zone 1</strong>Part / SKU</div><div class="process-step"><strong>Pickup Zone 2</strong>Part / SKU</div><div class="process-step"><strong>Pickup Zone 3</strong>Part / SKU</div><div class="process-step"><strong>Robotic Arm</strong>Variable-driven routing</div><div class="process-step"><strong>Pallet A / B</strong>Selected destination</div></div>
 <div class="code-concept">pickupZone = 1&nbsp;&nbsp;&nbsp;&nbsp;# 1, 2, or 3<br/>palletZone = 2&nbsp;&nbsp;&nbsp;&nbsp;# 1 or 2<br/><br/>pick_part(pickupZone)<br/>place_part(palletZone)</div>
 <p><strong>Core requirement:</strong> changing only the pickup and pallet variables must redirect the robot. Do not create six separate copies of the motion sequence.</p>
@@ -37,18 +37,18 @@
 
 <section class="container"><div class="grid two">
 <article class="card"><div class="eyebrow">Learning Targets</div><h2>What You Will Learn</h2><ul class="unit-meta-list">
-<li>Design CAD parts for reliable robotic handling and additive manufacturing.</li>
-<li>3D print and inspect production parts for repeatable placement and pickup.</li>
+<li>Design a CAD part for reliable robotic handling and additive manufacturing.</li>
+<li>3D print three color-coded copies of the production part and inspect them for repeatable placement and pickup.</li>
 <li>Define HOME, approach, pickup, and placement positions in a robotic workcell.</li>
 <li>Use variables and reusable functions to separate job instructions from robot motion.</li>
 <li>Commission, debug, and validate a flexible automated manufacturing process.</li>
 </ul></article>
 <article class="card"><div class="eyebrow">Design Requirements</div><h2>Your Parts</h2><ul class="unit-meta-list requirements-list">
-<li>Create at least <strong>three distinct CAD models</strong>.</li><li>Give each part a clear part name or SKU.</li><li>Use a stable bottom surface and repeatable orientation.</li><li>Include an accessible pickup surface or feature for the end effector.</li><li>Avoid fragile geometry or unnecessary print complexity.</li><li>Get teacher approval before printing.</li>
+<li>Create <strong>one CAD model</strong> that will serve as the production-part geometry.</li><li>3D print <strong>three copies of the same model in three different colors</strong>. Color is what distinguishes the three parts/SKUs.</li><li>Assign each color a clear part name or SKU and document the color-to-SKU relationship.</li><li>Keep the geometry and dimensions the same across all three printed parts.</li><li>Use a stable bottom surface and repeatable orientation.</li><li>Include an accessible pickup surface or feature for the end effector.</li><li>Avoid fragile geometry or unnecessary print complexity.</li><li>Get teacher approval before printing.</li>
 </ul></article></div></section>
 
 <section class="container"><article class="card"><div class="eyebrow">Project Workflow</div><h2>Complete the Problem in Five Phases</h2>
-<h3><span class="phase-number">1.</span>Design &amp; Manufacture</h3><p>Sketch and CAD three production parts. Evaluate printability and robot access, export the models, select efficient slicer settings, print the parts, and inspect the finished components.</p>
+<h3><span class="phase-number">1.</span>Design &amp; Manufacture</h3><p>Sketch and CAD one production part. Evaluate printability and robot access, export the model, and select efficient slicer settings. Print three geometrically identical copies in three different colors, then inspect the finished components for consistency.</p>
 <h3><span class="phase-number">2.</span>Configure the Workcell</h3><p>Establish Pickup Zones 1–3 and Pallets A–B. Define a safe HOME position plus approach and working positions for each location. Fixtures and zone markings must remain fixed after positions are taught.</p>
 <h3><span class="phase-number">3.</span>Build Flexible Robot Logic</h3><p>Create a pickup-zone variable with three valid choices and a pallet variable with two valid choices. Build reusable pickup and placement logic so the main program can execute a job using those values.</p>
 <h3><span class="phase-number">4.</span>Commission &amp; Debug</h3><p>Test motion without parts first, then validate complete transfers at reduced speed. Identify failures as mechanical, positioning, end-effector, or programming problems and make controlled revisions.</p>
@@ -101,7 +101,7 @@
 </ul></article></section>
 
 <section class="container" id="submit"><article class="card submit-card"><div class="eyebrow">What You Will Submit</div><h2>Required Evidence</h2><ul class="unit-meta-list submit-list success-list">
-<li>Three final CAD models and three usable 3D-printed production parts.</li><li>Completed Lesson 1.3.1 student engineering template.</li><li>Evidence that all six pickup-to-pallet routes were tested.</li><li>Final robot program using variable-driven source and destination selection.</li><li>Completed teacher pick-list results.</li><li>Final code pasted into the designated code section of the student template.</li>
+<li>One final CAD model and three usable, geometrically identical 3D-printed production parts in three different colors.</li><li>Completed Lesson 1.3.1 student engineering template.</li><li>Evidence that all six pickup-to-pallet routes were tested.</li><li>Final robot program using variable-driven source and destination selection.</li><li>Completed teacher pick-list results.</li><li>Final code pasted into the designated code section of the student template.</li>
 </ul></article></section>
 
 <section class="container"><article class="card resources-placeholder"><div class="eyebrow">Resources</div><h2>Lesson Resources</h2><p>Use the Lesson 1.3.1 project instructions and student engineering template provided by your instructor. Keep your CAD files, slicer files, robot program, testing evidence, and final code organized in your assigned project location.</p><p><strong>Before you begin:</strong> review the complete project instructions, then use the student template throughout the lesson rather than waiting until the final day to document your work.</p></article></section>
