@@ -9,3 +9,29 @@
 .adm-hint-library summary{cursor:pointer;font-weight:800;padding:.85rem 1rem;background:#eef5f9;color:#0b1f3a}
 .adm-hint-library .hint-body{padding:.9rem 1rem}
 .adm-hint-library code{white-space:pre-wrap}
+
+/* Unified course + unit landing-page system */
+.course-home-page .page-hero .hero-grid,
+.unit-overview-page .page-hero .hero-grid{align-items:stretch}
+.course-home-page .page-hero .hero-grid>aside,
+.course-home-page .page-hero .hero-grid>.hero-card,
+.unit-overview-page .page-hero .hero-grid>aside,
+.unit-overview-page .page-hero .hero-grid>.hero-card{height:100%}
+.course-home-page .course-hero-logo,
+.unit-overview-page .safe-unit-course-icon,
+.unit-overview-page .course-hero-logo{max-height:88px;width:auto;object-fit:contain}
+.course-home-page .unit-card,
+.unit-overview-page .unit-card{display:flex;flex-direction:column;height:100%}
+.course-home-page .unit-card .btn,
+.unit-overview-page .unit-card .btn{margin-top:auto;align-self:flex-start}
+.unit-overview-page .lesson-sequence-table-wrap{overflow-x:auto;border-radius:14px}
+.unit-overview-page .lesson-sequence-table{width:100%;border-collapse:separate;border-spacing:0}
+.unit-overview-page .lesson-sequence-table th{white-space:nowrap}
+.course-home-page .section-header,
+.unit-overview-page .section-header{margin-bottom:1.1rem}
+.course-home-page .page-hero,
+.unit-overview-page .page-hero{margin-bottom:0}
+@media(max-width:760px){
+ .course-home-page .hero-actions,.unit-overview-page .hero-actions{display:flex;flex-wrap:wrap;gap:.6rem}
+ .course-home-page .hero-actions .btn,.unit-overview-page .hero-actions .btn{width:100%;text-align:center}
+}
