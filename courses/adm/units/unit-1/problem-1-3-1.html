@@ -1,105 +1,76 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<title>ADM Unit 1 | Introduction to Industry 4.0</title>
+<title>ADM Problem 1.3.1 | Flexible Pick-and-Pallet Automation</title>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../../assets/css/styles.css" rel="stylesheet"/>
-<script defer="" src="../../../../assets/js/main.js"></script>
-<meta content="LockwoodSTEM student engineering courses, lessons, challenges, resources, and FabLab tools." name="description"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/></head>
+<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<script defer src="../../../../assets/js/main.js"></script>
+<meta content="Design and 3D print production parts, then program a flexible robotic pick-and-pallet workcell using variables and reusable functions." name="description"/>
+<style>
+.process-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem;align-items:stretch;margin:1.25rem 0}.process-step{padding:1rem;border:1px solid rgba(0,0,0,.12);border-radius:12px;text-align:center;background:var(--surface,#fff)}.process-step strong{display:block;margin-bottom:.35rem}.process-arrow{display:none}.code-concept{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:1rem 1.15rem;border-radius:12px;background:#111827;color:#f9fafb;overflow:auto;margin:1rem 0}.route-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem}.route{padding:.85rem;border-radius:10px;text-align:center;border:1px solid rgba(0,0,0,.12);font-weight:700}.phase-number{font-weight:800;margin-right:.35rem}.success-list li,.requirements-list li{margin-bottom:.55rem}@media(max-width:800px){.process-flow,.route-grid{grid-template-columns:1fr}.process-step{text-align:left}}
+</style>
+</head>
 <body class="adm-unit-page site-consistency-v4 lesson-detail-page">
 <a class="skip-link" href="#main">Skip to main content</a>
-<header class="site-header">
-<div class="container nav">
-<a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html">
-<img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
-<span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
-</a>
+<header class="site-header"><div class="container nav">
+<a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a>
 <button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
-<ul class="nav-links" id="site-navigation">
-<li><a aria-current="page" data-nav-section="courses" href="../../../../courses.html">Courses</a></li>
-<li><a data-nav-section="agenda" href="../../../../agenda.html">Daily Agenda</a></li>
-<li><a data-nav-section="resources" href="../../../../resources/index.html">Resources</a></li>
-<li><a data-nav-section="certifications" href="../../../../certifications/index.html">Certifications</a></li>
-<li><a data-nav-section="fablab" href="../../../../fablab/index.html">FabLab</a></li>
-<li><a data-nav-section="about" href="../../../../about/index.html">About</a></li>
-<li><a data-nav-section="challenges" href="../../../../challenge-library/index.html">Challenges</a></li></ul>
-</div>
-</header>
-<main id="main"><nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../index.html">ADM</a></li><li><a href="../unit-1.html">Unit 1</a></li><li aria-current="page">Pack and Ship Challenge</li></ol></nav>
-<section class="page-hero adm-hero">
-<div class="container hero-grid">
-<div>
-<div class="eyebrow">ADM Problem 1.3.1</div>
-<h1>Pack and Ship Challenge</h1>
-<p>Create a repeatable packaging or shipping process that organizes, moves, stacks, packs, or prepares objects for delivery.</p>
-<div class="hero-actions consistent-actions">
-<a class="btn consistent-action-link" href="../unit-1.html">Back to Unit 1</a>
-<a class="btn secondary consistent-action-link" href="#submit">What You Submit</a>
-</div>
-</div>
-<aside class="card dark">
-<span class="tag">Lesson Focus</span>
-<h3>Plan, package, deliver</h3>
-<p>This page is ready for lesson directions, resources, code, files, or project evidence when they are added.</p>
-</aside>
-</div>
-</section>
-<section class="container">
-<div class="grid two">
-<article class="card">
-<h2>Lesson Overview</h2>
-<p>Create a repeatable packaging or shipping process that organizes, moves, stacks, packs, or prepares objects for delivery.</p>
-<p class="placeholder-note">Use the focus question, lesson notes, and deliverables below to guide your work. Follow the class files, demonstrations, and approved references connected to this lesson.</p>
-</article>
-<article class="card">
-<h2>Notes</h2>
-<ul class="unit-meta-list">
-<li>Start by reviewing the lesson goal and identifying the system, process, or problem being studied.</li>
-<li>Record important setup details, vocabulary, assumptions, sketches, screenshots, measurements, or observations in your engineering notebook.</li>
-<li>Use evidence from testing, analysis, or reflection to explain what you learned.</li>
-<li>This project or challenge may span multiple class periods. Plan your work, document each test and revision, and prepare evidence that clearly communicates the final result.</li>
-</ul>
-</article>
-</div>
-</section>
-<section class="container" id="submit">
-<article class="card submit-card">
-<div class="eyebrow">What You Will Submit</div>
-<h2>What You Submit</h2>
-<ul class="unit-meta-list submit-list">
-<li>Engineering notebook entry for this lesson</li>
-<li>Planning, packaging, schedule, process map, or supply chain evidence</li>
-<li>Photo, screenshot, sketch, table, code, or other evidence of progress</li>
-<li>Short reflection explaining what was learned, tested, or revised</li>
-<li>Final project evidence, challenge summary, or presentation-ready reflection</li>
-</ul>
-</article>
-</section>
-<section class="container">
-<article class="card resources-placeholder">
-<div class="eyebrow">Resources</div>
-<h2>Lesson Resources</h2>
-<p>Use the course files, approved references, templates, or code examples connected to this lesson. Save your work in the assigned project folder.</p>
-</article>
-</section>
-<section class="container lesson-bottom-nav"><div class="lesson-bottom-nav-card"><div class="lesson-bottom-nav-links"><a class="btn secondary" href="challenge-1-5-manufacturing-throughput-investigation.html">← Previous Lesson</a><a class="btn" href="../unit-1.html">Back to Unit 1</a><a class="btn secondary" href="project-1-1-8.html">Next Lesson →</a></div></div></section></main>
-<footer class="footer">
-<div class="container footer-grid">
-<div>
-<img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
-<div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div>
-</div>
-<div class="footer-links">
-<a href="../../../../courses.html">Courses</a>
-<a href="../../../../agenda.html">Daily Agenda</a>
-<a href="../../../../resources/index.html">Resources</a>
-<a href="../../../../certifications/index.html">Certifications</a>
-<a href="../../../../fablab/index.html">FabLab</a>
-<a href="../../../../about/index.html">About</a>
-<a href="../../../../courses/ied/index.html">IED</a><a href="../../../../courses/poe/index.html">POE</a><a href="../../../../courses/adm/index.html">ADM</a><a href="../../../../challenge-library/index.html">Challenges</a></div>
-</div>
-</footer>
-<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body>
-</html>
+<ul class="nav-links" id="site-navigation"><li><a aria-current="page" data-nav-section="courses" href="../../../../courses.html">Courses</a></li><li><a data-nav-section="agenda" href="../../../../agenda.html">Daily Agenda</a></li><li><a data-nav-section="resources" href="../../../../resources/index.html">Resources</a></li><li><a data-nav-section="certifications" href="../../../../certifications/index.html">Certifications</a></li><li><a data-nav-section="fablab" href="../../../../fablab/index.html">FabLab</a></li><li><a data-nav-section="about" href="../../../../about/index.html">About</a></li><li><a data-nav-section="challenges" href="../../../../challenge-library/index.html">Challenges</a></li></ul>
+</div></header>
+<main id="main">
+<nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../index.html">ADM</a></li><li><a href="../unit-1.html">Unit 1</a></li><li aria-current="page">Flexible Pick-and-Pallet Automation</li></ol></nav>
+<section class="page-hero adm-hero"><div class="container hero-grid"><div>
+<div class="eyebrow">ADM Problem 1.3.1</div><h1>Flexible Pick-and-Pallet Automation</h1>
+<p>Design it. Print it. Program it. Reconfigure it. Build a robotic manufacturing cell that can move student-designed parts from three pickup zones to either of two pallet locations without rewriting the core motion program.</p>
+<div class="hero-actions consistent-actions"><a class="btn consistent-action-link" href="../unit-1.html">Back to Unit 1</a><a class="btn secondary consistent-action-link" href="#challenge">Start the Challenge</a><a class="btn secondary consistent-action-link" href="#submit">What You Submit</a></div>
+</div><aside class="card dark"><span class="tag">Driving Question</span><h3>How can one robot program handle changing production orders?</h3><p>Your solution must use variables to select where a part is picked up and where it is palletized. A new order should require new variable values—not a new motion program.</p></aside></div></section>
+
+<section class="container" id="challenge"><article class="card">
+<div class="eyebrow">The Manufacturing Cell</div><h2>Your Challenge</h2>
+<p>Create <strong>three distinct 3D-printed production parts</strong>. Each part will begin in one of three fixed pickup zones. Your robotic arm must pick the requested part and deliver it to either Pallet A or Pallet B based on a teacher-provided pick list.</p>
+<div class="process-flow"><div class="process-step"><strong>Pickup Zone 1</strong>Part / SKU</div><div class="process-step"><strong>Pickup Zone 2</strong>Part / SKU</div><div class="process-step"><strong>Pickup Zone 3</strong>Part / SKU</div><div class="process-step"><strong>Robotic Arm</strong>Variable-driven routing</div><div class="process-step"><strong>Pallet A / B</strong>Selected destination</div></div>
+<div class="code-concept">pickupZone = 1&nbsp;&nbsp;&nbsp;&nbsp;# 1, 2, or 3<br/>palletZone = 2&nbsp;&nbsp;&nbsp;&nbsp;# 1 or 2<br/><br/>pick_part(pickupZone)<br/>place_part(palletZone)</div>
+<p><strong>Core requirement:</strong> changing only the pickup and pallet variables must redirect the robot. Do not create six separate copies of the motion sequence.</p>
+</article></section>
+
+<section class="container"><div class="grid two">
+<article class="card"><div class="eyebrow">Learning Targets</div><h2>What You Will Learn</h2><ul class="unit-meta-list">
+<li>Design CAD parts for reliable robotic handling and additive manufacturing.</li>
+<li>3D print and inspect production parts for repeatable placement and pickup.</li>
+<li>Define HOME, approach, pickup, and placement positions in a robotic workcell.</li>
+<li>Use variables and reusable functions to separate job instructions from robot motion.</li>
+<li>Commission, debug, and validate a flexible automated manufacturing process.</li>
+</ul></article>
+<article class="card"><div class="eyebrow">Design Requirements</div><h2>Your Parts</h2><ul class="unit-meta-list requirements-list">
+<li>Create at least <strong>three distinct CAD models</strong>.</li><li>Give each part a clear part name or SKU.</li><li>Use a stable bottom surface and repeatable orientation.</li><li>Include an accessible pickup surface or feature for the end effector.</li><li>Avoid fragile geometry or unnecessary print complexity.</li><li>Get teacher approval before printing.</li>
+</ul></article></div></section>
+
+<section class="container"><article class="card"><div class="eyebrow">Project Workflow</div><h2>Complete the Problem in Five Phases</h2>
+<h3><span class="phase-number">1.</span>Design &amp; Manufacture</h3><p>Sketch and CAD three production parts. Evaluate printability and robot access, export the models, select efficient slicer settings, print the parts, and inspect the finished components.</p>
+<h3><span class="phase-number">2.</span>Configure the Workcell</h3><p>Establish Pickup Zones 1–3 and Pallets A–B. Define a safe HOME position plus approach and working positions for each location. Fixtures and zone markings must remain fixed after positions are taught.</p>
+<h3><span class="phase-number">3.</span>Build Flexible Robot Logic</h3><p>Create a pickup-zone variable with three valid choices and a pallet variable with two valid choices. Build reusable pickup and placement logic so the main program can execute a job using those values.</p>
+<h3><span class="phase-number">4.</span>Commission &amp; Debug</h3><p>Test motion without parts first, then validate complete transfers at reduced speed. Identify failures as mechanical, positioning, end-effector, or programming problems and make controlled revisions.</p>
+<h3><span class="phase-number">5.</span>Run the Production Pick List</h3><p>Your teacher will issue a production order. Configure the variables for each requested move and execute the order. You may change job-variable values between moves, but you may not rewrite or duplicate the core motion logic.</p>
+</article></section>
+
+<section class="container"><div class="grid two"><article class="card"><div class="eyebrow">Programming Standard</div><h2>Required Architecture</h2><ul class="unit-meta-list">
+<li><strong>Job variables:</strong> identify pickup zone and pallet destination.</li><li><strong>Position data:</strong> HOME plus safe approach and working positions.</li><li><strong>Pickup logic:</strong> one reusable function or equivalent structure for all three zones.</li><li><strong>Placement logic:</strong> one reusable function or equivalent structure for both pallets.</li><li><strong>Main program:</strong> set/read job variables → pick → place → return to a safe state.</li>
+</ul></article><article class="card"><div class="eyebrow">Validation</div><h2>Prove All Six Routes</h2><p>Before the final pick list, your cell must successfully demonstrate every possible source/destination combination.</p><div class="route-grid"><div class="route">1 → A</div><div class="route">1 → B</div><div class="route">2 → A</div><div class="route">2 → B</div><div class="route">3 → A</div><div class="route">3 → B</div></div></article></div></section>
+
+<section class="container"><article class="card"><div class="eyebrow">Safety</div><h2>Commission the Cell Safely</h2><ul class="unit-meta-list">
+<li>Know how to stop the robot before every test and keep hands outside the work envelope while it runs.</li><li>Run newly taught motion at reduced speed before full-cycle testing.</li><li>Use approach and retreat positions to maintain clearance around parts and fixtures.</li><li>Do not move pickup zones or pallets after positions are taught unless you revalidate the program.</li><li>Stop immediately if the robot, end effector, part, or fixture is at risk of collision.</li>
+</ul></article></section>
+
+<section class="container" id="submit"><article class="card submit-card"><div class="eyebrow">What You Will Submit</div><h2>Required Evidence</h2><ul class="unit-meta-list submit-list success-list">
+<li>Three final CAD models and three usable 3D-printed production parts.</li><li>Completed Lesson 1.3.1 student engineering template.</li><li>Evidence that all six pickup-to-pallet routes were tested.</li><li>Final robot program using variable-driven source and destination selection.</li><li>Completed teacher pick-list results.</li><li>Final code pasted into the designated code section of the student template.</li>
+</ul></article></section>
+
+<section class="container"><article class="card resources-placeholder"><div class="eyebrow">Resources</div><h2>Lesson Resources</h2><p>Use the Lesson 1.3.1 project instructions and student engineering template provided by your instructor. Keep your CAD files, slicer files, robot program, testing evidence, and final code organized in your assigned project location.</p><p><strong>Before you begin:</strong> review the complete project instructions, then use the student template throughout the lesson rather than waiting until the final day to document your work.</p></article></section>
+
+<section class="container lesson-bottom-nav"><div class="lesson-bottom-nav-card"><div class="lesson-bottom-nav-links"><a class="btn secondary" href="challenge-1-5-manufacturing-throughput-investigation.html">← Previous Lesson</a><a class="btn" href="../unit-1.html">Back to Unit 1</a><a class="btn secondary" href="project-1-1-8.html">Next Lesson →</a></div></div></section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../certifications/index.html">Certifications</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../../../about/index.html">About</a><a href="../../../../courses/ied/index.html">IED</a><a href="../../../../courses/poe/index.html">POE</a><a href="../../../../courses/adm/index.html">ADM</a><a href="../../../../challenge-library/index.html">Challenges</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+</body></html>
