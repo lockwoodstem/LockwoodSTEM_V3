@@ -457,3 +457,76 @@ document.addEventListener('DOMContentLoaded', () => {
   script.onload = () => run(window.LOCKWOODSTEM_LESSONS);
   document.head.appendChild(script);
 });
+
+
+// Standard lesson experience + manifest-synced unit maps v1
+document.addEventListener('DOMContentLoaded', () => {
+  const ensureStyles = () => {
+    if (document.querySelector('link[href*="lesson-experience.css"]')) return;
+    const l=document.createElement('link'); l.rel='stylesheet'; l.href='/assets/css/lesson-experience.css?v=1'; document.head.appendChild(l);
+  };
+  ensureStyles();
+
+  const loadManifest = (done) => {
+    if (window.LOCKWOODSTEM_LESSONS) return done(window.LOCKWOODSTEM_LESSONS);
+    const existing=document.querySelector('script[src*="lesson-manifest.js"]');
+    if(existing){existing.addEventListener('load',()=>done(window.LOCKWOODSTEM_LESSONS),{once:true});return;}
+    const s=document.createElement('script');s.src='/assets/js/lesson-manifest.js?v=3';s.onload=()=>done(window.LOCKWOODSTEM_LESSONS);document.head.appendChild(s);
+  };
+
+  loadManifest((manifest) => {
+    if(!manifest) return;
+    const path=location.pathname;
+    const unitMatch=path.match(/\/courses\/(ied|poe|adm)\/units\/unit-(\d+)\.html$/i);
+    if(unitMatch){
+      const course=unitMatch[1].toLowerCase(), unit=unitMatch[2], list=manifest[course]?.[unit];
+      if(list){
+        const rows=[...document.querySelectorAll('table tbody tr')];
+        list.forEach((item,i)=>{
+          const row=rows.find(r=>r.textContent.trim().startsWith(item[0])) || rows[i];
+          if(!row) return;
+          const cells=row.querySelectorAll('td'); if(cells.length<2) return;
+          cells[0].textContent=item[0];
+          const titleLink=cells[1].querySelector('a');
+          if(titleLink){titleLink.textContent=item[1];titleLink.href='unit-'+unit+'/'+item[2];}
+          else cells[1].textContent=item[1];
+          row.querySelectorAll('a.btn').forEach(a=>{if(/open/i.test(a.textContent))a.href='unit-'+unit+'/'+item[2];});
+        });
+      }
+    }
+
+    const lessonMatch=path.match(/\/courses\/(ied|poe|adm)\/units\/unit-(\d+)\/([^/]+\.html)$/i);
+    if(!lessonMatch) return;
+    const course=lessonMatch[1].toLowerCase(), unit=lessonMatch[2], file=lessonMatch[3];
+    const item=manifest[course]?.[unit]?.find(x=>x[2]===file);
+    const main=document.querySelector('main'); if(!main||!item) return;
+
+    // Standard student workflow panel. It supplements existing lesson content without deleting teacher-authored material.
+    if(!document.querySelector('.lesson-standard-tools')){
+      const panel=document.createElement('section');panel.className='container lesson-standard-tools lesson-section';
+      panel.innerHTML='<div class="section-header"><div><div class="eyebrow">Lesson Workflow</div><h2>'+item[0]+': '+item[1]+'</h2><p class="section-subtitle">Use the lesson sections in order. Check the required evidence before you submit.</p></div></div><div class="lesson-standard-grid"><article class="lesson-standard-card"><h3>1. Learn</h3><p>Review the lesson target, examples, and directions before beginning the task.</p></article><article class="lesson-standard-card"><h3>2. Build / Practice</h3><p>Complete the investigation, design, calculation, fabrication, or programming work described below.</p></article><article class="lesson-standard-card"><h3>3. Check</h3><p>Test your work against the lesson requirements and correct problems before submitting.</p></article></div>';
+      const firstContent=main.querySelector('.lesson-section, .lesson-web-section');
+      if(firstContent) firstContent.before(panel); else main.appendChild(panel);
+    }
+
+    // Standard submission reminder; specific assignment requirements remain authoritative in Google Classroom.
+    if(!document.querySelector('.lesson-submission-box')){
+      const submit=document.createElement('section');submit.className='container lesson-section';
+      submit.innerHTML='<article class="card lesson-submission-box"><span class="tag">Submission</span><h2>What do I submit?</h2><p>Submit the evidence identified in this lesson and in the associated Google Classroom assignment. Before submitting, confirm that your name/team information is complete, required files or photos are included, and your final work has been tested or checked.</p></article>';
+      const nav=main.querySelector('.lesson-bottom-nav'); if(nav) nav.before(submit); else main.appendChild(submit);
+    }
+
+    // Reusable ADM coding-help library appears only on pages that contain programming/code language.
+    if(course==='adm' && /\b(code|coding|program|python|variable|loop|conditional|function|sensor)\b/i.test(main.innerText) && !document.querySelector('.adm-hint-library')){
+      const hints=document.createElement('section');hints.className='container lesson-section adm-hint-library';
+      hints.innerHTML='<div class="section-header"><div><div class="eyebrow">Coding Support</div><h2>Python & Robot Programming Hints</h2><p class="section-subtitle">Open only the hint you need. These examples show general structures, not the solution to this assignment.</p></div></div>'+
+      '<details><summary>Variables — store values you may need to change</summary><div class="hint-body"><pre><code>selection = 2\ndestination = "B"</code></pre><p>Use a variable when the value may change while the overall program structure stays the same.</p></div></details>'+
+      '<details><summary>Conditionals — make a decision</summary><div class="hint-body"><pre><code>if selection == 1:\n    # action for choice 1\nelif selection == 2:\n    # action for choice 2\nelse:\n    # unexpected choice</code></pre><p>Remember: <code>=</code> assigns a value; <code>==</code> compares values.</p></div></details>'+
+      '<details><summary>Functions — reuse a sequence</summary><div class="hint-body"><pre><code>def perform_task(location):\n    # reusable actions\n    pass\n\nperform_task(2)</code></pre><p>If you are copying the same movement sequence repeatedly, consider what should become a function.</p></div></details>'+
+      '<details><summary>Loops — repeat without copying code</summary><div class="hint-body"><pre><code>for item in items:\n    # repeat an action for each item\n    pass</code></pre><p>Use a loop when the same kind of action must repeat for multiple items or cycles.</p></div></details>'+
+      '<details><summary>Debugging — test one layer at a time</summary><div class="hint-body"><ol><li>Print or inspect variable values.</li><li>Test decision logic before adding robot motion.</li><li>Test one position or subsystem at reduced speed.</li><li>Verify approach and clearance positions.</li><li>Check end-effector timing.</li><li>Run the complete sequence only after each part works.</li></ol><pre><code>print("Current selection:", selection)</code></pre></div></details>'+
+      '<details><summary>Common Python checks</summary><div class="hint-body"><p>Check indentation, colons after <code>if</code>/<code>elif</code>/<code>else</code>/<code>def</code>, matching variable names, string quotation marks, and whether a value is a number or a string.</p></div></details>';
+      const submit=main.querySelector('.lesson-submission-box')?.parentElement; if(submit) submit.before(hints); else main.appendChild(hints);
+    }
+  });
+});
