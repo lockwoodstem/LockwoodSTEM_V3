@@ -23,12 +23,8 @@ mp=ROOT/"assets/js/lesson-manifest.js"
 if mp.exists():
     ms=mp.read_text("utf-8")
     seen=set()
-    for course,unit,num,title,file in re.findall(r'"(ied|poe|adm)"[\s\S]*?',ms):
-        pass
     for num,title,file in re.findall(r'\["([^"]+)","([^"]+)","([^"]+\.html)"\]',ms):
-        key=num
-        if key in seen: warnings.append(f"manifest duplicate lesson number: {num}")
-        seen.add(key)
+        key=(num,file)\n        if key in seen: warnings.append(f"manifest duplicate entry: {num} -> {file}")\n        seen.add(key)
 # Resource inventory
 resource_ext={".pdf",".pptx",".docx",".xlsx",".zip",".stl",".step",".f3d"}
 referenced=set()
