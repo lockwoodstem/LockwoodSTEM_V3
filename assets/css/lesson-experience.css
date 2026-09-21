@@ -47,3 +47,14 @@
 .course-home-page .course-landing-intro .card,
 .course-home-page .course-snapshot .card{height:100%}
 .course-home-page #course-pathway .tag{align-self:flex-start}
+
+/* Lean lesson pages */
+.lesson-detail-page main>.lesson-section,
+.lesson-detail-page main>section.container{margin-top:1rem}
+.lesson-detail-page .section-header{margin-bottom:.8rem}
+.lesson-detail-page .section-header h2{margin-bottom:.25rem}
+.lesson-detail-page .card p:last-child,
+.lesson-detail-page .card ul:last-child,
+.lesson-detail-page .card ol:last-child{margin-bottom:0}
+.lesson-detail-page .lesson-bottom-nav{margin-top:1.35rem}
+.lesson-detail-page .resources-placeholder p{max-width:72ch}
