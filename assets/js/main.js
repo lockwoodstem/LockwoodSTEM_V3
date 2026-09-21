@@ -416,8 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Automatic course lesson navigation v1
 document.addEventListener('DOMContentLoaded', () => {
-  const manifest = window.LOCKWOODSTEM_LESSONS;
-  if (!manifest) return;
+  const run = (manifest) => {
   const match = location.pathname.match(/\/courses\/(ied|poe|adm)\/units\/unit-(\d+)\/([^/]+\.html)$/i);
   if (!match) return;
   const course = match[1].toLowerCase(), unit = match[2], file = match[3];
@@ -451,4 +450,10 @@ document.addEventListener('DOMContentLoaded', () => {
     '<a class="btn" href="../unit-'+esc(unit)+'.html">Unit '+esc(unit)+' Overview</a>' +
     (next ? '<a class="btn secondary" href="'+esc(hrefFor(next))+'">'+label(next)+' →</a>' : '<a class="btn secondary" href="../../index.html">Course Overview →</a>') +
     '</div></div>';
+  };
+  if (window.LOCKWOODSTEM_LESSONS) return run(window.LOCKWOODSTEM_LESSONS);
+  const script = document.createElement('script');
+  script.src = '/assets/js/lesson-manifest.js?v=2';
+  script.onload = () => run(window.LOCKWOODSTEM_LESSONS);
+  document.head.appendChild(script);
 });
