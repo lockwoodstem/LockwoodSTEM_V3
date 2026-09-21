@@ -659,3 +659,53 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   supplemental.forEach(s=>{if(anchor){anchor.after(s);anchor=s;}});
 });
+
+
+// Lean lesson-page pass v1: remove repeated scaffolding while preserving lesson-specific instruction.
+document.addEventListener('DOMContentLoaded', () => {
+  if(!document.body.classList.contains('lesson-detail-page')) return;
+  const main=document.querySelector('main'); if(!main) return;
+
+  // The lesson itself already contains objectives/tasks. The injected Learn/Build/Check panel repeated them.
+  main.querySelectorAll('.lesson-standard-tools').forEach(el=>el.remove());
+
+  // Never add a generic submission box when the author supplied a specific one.
+  const specificSubmit=main.querySelector('#submit,.submit-card,[class*="submission"][id]');
+  const generic=main.querySelector('.lesson-submission-box');
+  if(specificSubmit && generic) generic.closest('section')?.remove();
+
+  // Remove redundant resource cards whose only purpose is navigation; bottom navigation already handles this.
+  main.querySelectorAll('.resource-card').forEach(card=>{
+    const txt=card.textContent.replace(/\s+/g,' ').trim();
+    if(/Previous Lesson|Next Lesson|Open Unit|Unit Project/i.test(txt) && !/Student Packet|Worksheet|Presentation|Guide|Template|Download/i.test(txt)){
+      card.remove();
+    }
+  });
+
+  // Remove empty grids/sections left after redundant cards are removed.
+  main.querySelectorAll('.card-grid,.grid,.build-flow').forEach(grid=>{
+    if(!grid.children.length) grid.closest('section')?.remove();
+  });
+
+  // Shorten repeated section copy that adds no instruction.
+  main.querySelectorAll('.section-subtitle').forEach(p=>{
+    const t=p.textContent.trim();
+    if(/^(Open|Use) the (files|resources) you need/i.test(t) || /Use the guided build packet during class/i.test(t)) p.remove();
+  });
+
+  // If an ADM lesson already has its own coding-hints section, don't duplicate it with the global hint library.
+  if(main.querySelector('#coding-hints,.hint-stack,.hint-box')) main.querySelectorAll('.adm-hint-library').forEach(el=>el.remove());
+
+  // Consolidate oversized hero action sets: retain the primary task/resource action, unit return, and at most one other action.
+  const actions=main.querySelector('.lesson-mission-hero .mission-actions,.page-hero .hero-actions');
+  if(actions && actions.children.length>3){
+    const links=[...actions.querySelectorAll('a')];
+    const keep=new Set();
+    const primary=links.find(a=>/Start|Packet|Worksheet|Guide|Challenge/i.test(a.textContent)) || links[0];
+    const unit=links.find(a=>/Back to Unit/i.test(a.textContent));
+    if(primary) keep.add(primary); if(unit) keep.add(unit);
+    const resource=links.find(a=>/Presentation|Resource/i.test(a.textContent) && a!==primary);
+    if(resource) keep.add(resource);
+    links.forEach(a=>{if(!keep.has(a))a.remove();});
+  }
+});
