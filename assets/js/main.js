@@ -530,3 +530,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+// Unified course and unit landing-page presentation v1
+document.addEventListener('DOMContentLoaded', () => {
+  const body=document.body;
+  if(!body.matches('.course-home-page,.unit-overview-page')) return;
+  if(!document.querySelector('link[href*="lesson-experience.css"]')){
+    const l=document.createElement('link');l.rel='stylesheet';l.href='/assets/css/lesson-experience.css?v=2';document.head.appendChild(l);
+  }
+  const main=document.querySelector('main'), hero=main?.querySelector('.page-hero');
+  if(!main||!hero) return;
+
+  // Normalize hero support cards so course and unit pages use the same visual language.
+  const heroSide=hero.querySelector('.hero-grid > aside, .hero-grid > .hero-card');
+  if(heroSide){
+    heroSide.classList.add('card','dark');
+    const firstHeading=heroSide.querySelector('h2,h3');
+    if(firstHeading && !heroSide.querySelector(':scope > .tag')){
+      const tag=document.createElement('span');tag.className='tag';
+      tag.textContent=body.classList.contains('course-home-page')?'Course Focus':'Unit Goal';
+      heroSide.insertBefore(tag,firstHeading);
+    }
+  }
+
+  // Normalize unit cards on every course landing page.
+  if(body.classList.contains('course-home-page')){
+    main.querySelectorAll('.unit-card').forEach(card=>{
+      const h=card.querySelector('h3'), a=h?.querySelector('a');
+      if(a){
+        const href=a.getAttribute('href'), title=a.textContent;
+        h.textContent=title;
+        if(!card.querySelector(':scope > .btn')){
+          const b=document.createElement('a');b.className='btn dark small';b.href=href;
+          const unit=(card.querySelector('.tag,.status-pill')?.textContent.match(/Unit\s*\d+/i)||['Open Unit'])[0];
+          b.textContent='Open '+unit;card.appendChild(b);
+        }
+      }
+      const pill=card.querySelector('.status-pill');
+      if(pill){pill.classList.add('tag');pill.classList.remove('status-pill','ready');}
+    });
+  }
+
+  // Give every unit overview the same opening orientation block.
+  if(body.classList.contains('unit-overview-page') && !main.querySelector('.unit-landing-intro')){
+    const intro=document.createElement('section');intro.className='container course-landing-intro unit-landing-intro';
+    intro.innerHTML='<div class="grid two"><article class="card"><div class="eyebrow">Unit landing page</div><h2>Follow the unit pathway</h2><p>Use this page to open lessons in sequence, review the unit goals, and find the resources you need for the major project or challenge.</p></article><article class="card"><div class="eyebrow">Your Responsibility</div><h2>Build evidence as you go</h2><p>Keep your engineering evidence organized as you complete lessons: notes, calculations, sketches, CAD or code, photos, testing data, revisions, and reflections.</p></article></div>';
+    hero.after(intro);
+  }
+});
