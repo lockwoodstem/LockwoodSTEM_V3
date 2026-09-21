@@ -1,0 +1,11 @@
+/* Shared student lesson experience */
+.lesson-standard-tools{margin-top:1.25rem}
+.lesson-standard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.lesson-standard-card{background:#fff;border:1px solid #d9e3ec;border-radius:14px;padding:1rem}
+.lesson-standard-card h3{margin:.1rem 0 .5rem;color:#0b1f3a}
+.lesson-submission-box{border-left:6px solid #d9ab3d;background:#fff8e3}
+.lesson-submission-box .tag{margin-bottom:.45rem}
+.adm-hint-library details{background:#fff;border:1px solid #c9d8e4;border-radius:12px;margin:.65rem 0;overflow:hidden}
+.adm-hint-library summary{cursor:pointer;font-weight:800;padding:.85rem 1rem;background:#eef5f9;color:#0b1f3a}
+.adm-hint-library .hint-body{padding:.9rem 1rem}
+.adm-hint-library code{white-space:pre-wrap}
