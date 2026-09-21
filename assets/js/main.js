@@ -412,3 +412,43 @@ document.addEventListener('DOMContentLoaded', () => {
     cleanLessonCopy();
   }
 })();
+
+
+// Automatic course lesson navigation v1
+document.addEventListener('DOMContentLoaded', () => {
+  const manifest = window.LOCKWOODSTEM_LESSONS;
+  if (!manifest) return;
+  const match = location.pathname.match(/\/courses\/(ied|poe|adm)\/units\/unit-(\d+)\/([^/]+\.html)$/i);
+  if (!match) return;
+  const course = match[1].toLowerCase(), unit = match[2], file = match[3];
+  const units = manifest[course];
+  if (!units || !units[unit]) return;
+  const current = units[unit].findIndex(item => item[2] === file);
+  if (current < 0) return;
+
+  const esc = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const label = item => esc(item[0] + ': ' + item[1]);
+  const orderedUnits = Object.keys(units).sort((a,b) => Number(a)-Number(b));
+  const unitIndex = orderedUnits.indexOf(unit);
+  const previous = current > 0 ? units[unit][current-1] : (unitIndex > 0 ? units[orderedUnits[unitIndex-1]].at(-1) : null);
+  const next = current < units[unit].length-1 ? units[unit][current+1] : (unitIndex >= 0 && unitIndex < orderedUnits.length-1 ? units[orderedUnits[unitIndex+1]][0] : null);
+
+  const hrefFor = item => {
+    if (!item) return null;
+    const targetUnit = item[0].match(/(\d+)\./)?.[1] || unit;
+    return targetUnit === unit ? item[2] : '../unit-' + targetUnit + '/' + item[2];
+  };
+
+  let nav = document.querySelector('.lesson-bottom-nav');
+  if (!nav) {
+    nav = document.createElement('section');
+    nav.className = 'container lesson-bottom-nav';
+    const main = document.querySelector('main');
+    if (main) main.appendChild(nav); else return;
+  }
+  nav.innerHTML = '<div class="lesson-bottom-nav-card"><div class="lesson-bottom-nav-links">' +
+    (previous ? '<a class="btn secondary" href="'+esc(hrefFor(previous))+'">← '+label(previous)+'</a>' : '<span></span>') +
+    '<a class="btn" href="../unit-'+esc(unit)+'.html">Unit '+esc(unit)+' Overview</a>' +
+    (next ? '<a class="btn secondary" href="'+esc(hrefFor(next))+'">'+label(next)+' →</a>' : '<a class="btn secondary" href="../../index.html">Course Overview →</a>') +
+    '</div></div>';
+});
