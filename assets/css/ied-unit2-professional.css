@@ -1,0 +1,216 @@
+
+/* IED Unit 2 Professional CAD Lesson Layout */
+body.ied-u2-pro {
+  background:#f5f7f9;
+  color:#17212b;
+}
+.ied-u2-pro .u2-wrap {
+  width:min(1120px, calc(100% - 32px));
+  margin:0 auto;
+}
+.ied-u2-pro .u2-header {
+  background:#fff;
+  border:1px solid #d9e1e8;
+  border-radius:12px;
+  margin:24px auto 18px;
+  overflow:hidden;
+  box-shadow:0 2px 8px rgba(14,30,45,.05);
+}
+.ied-u2-pro .u2-header-band {
+  height:7px;
+  background:#0d5c91;
+}
+.ied-u2-pro .u2-header-body {
+  padding:28px 32px 26px;
+}
+.ied-u2-pro .u2-kicker {
+  margin:0 0 8px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:.82rem;
+  color:#4c6070;
+}
+.ied-u2-pro .u2-header h1 {
+  margin:0;
+  color:#10283c;
+  font-size:clamp(2rem,4vw,3.2rem);
+  line-height:1.05;
+}
+.ied-u2-pro .u2-question {
+  margin:16px 0 0;
+  font-size:1.08rem;
+  color:#384b5a;
+}
+.ied-u2-pro .u2-meta {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:18px 0 0;
+}
+.ied-u2-pro .u2-meta > div {
+  border-left:4px solid #0d5c91;
+  background:#f6f9fb;
+  padding:12px 14px;
+}
+.ied-u2-pro .u2-meta strong {
+  display:block;
+  color:#10283c;
+  margin-bottom:4px;
+}
+.ied-u2-pro .u2-section {
+  background:#fff;
+  border:1px solid #d9e1e8;
+  border-radius:12px;
+  padding:24px 28px;
+  margin:14px auto;
+}
+.ied-u2-pro .u2-section h2 {
+  margin:0 0 14px;
+  color:#123b58;
+  font-size:1.45rem;
+}
+.ied-u2-pro .u2-section h3 {
+  color:#193a50;
+  font-size:1.05rem;
+  margin:18px 0 8px;
+}
+.ied-u2-pro .u2-section p,
+.ied-u2-pro .u2-section li {
+  line-height:1.55;
+}
+.ied-u2-pro .u2-section ul,
+.ied-u2-pro .u2-section ol {
+  margin:.35rem 0 0 1.35rem;
+}
+.ied-u2-pro .u2-section li + li {
+  margin-top:.35rem;
+}
+.ied-u2-pro .u2-grid-2 {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.ied-u2-pro .u2-panel {
+  background:#f8fafb;
+  border:1px solid #dfe6eb;
+  border-radius:10px;
+  padding:18px;
+}
+.ied-u2-pro .u2-panel h3 {
+  margin-top:0;
+}
+.ied-u2-pro .u2-tools {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:10px;
+}
+.ied-u2-pro .u2-tool {
+  display:inline-block;
+  background:#edf4f8;
+  color:#123b58;
+  border:1px solid #cadce7;
+  border-radius:999px;
+  padding:6px 10px;
+  font-size:.9rem;
+  font-weight:700;
+}
+.ied-u2-pro .u2-note {
+  border-left:4px solid #d19b22;
+  background:#fff8e8;
+  padding:12px 14px;
+  margin:16px 0 0;
+}
+.ied-u2-pro .u2-checklist {
+  list-style:none;
+  margin-left:0 !important;
+  padding-left:0;
+}
+.ied-u2-pro .u2-checklist li {
+  position:relative;
+  padding-left:30px;
+}
+.ied-u2-pro .u2-checklist li:before {
+  content:"☐";
+  position:absolute;
+  left:0;
+  top:0;
+  font-size:1.1rem;
+}
+.ied-u2-pro .u2-video {
+  display:grid;
+  grid-template-columns:minmax(0,1.4fr) minmax(260px,.8fr);
+  gap:20px;
+  align-items:start;
+}
+.ied-u2-pro .u2-video iframe {
+  width:100%;
+  aspect-ratio:16/9;
+  border:0;
+  border-radius:10px;
+  background:#000;
+}
+.ied-u2-pro .u2-video h3 {
+  margin-top:0;
+}
+.ied-u2-pro .u2-actions {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+.ied-u2-pro .u2-actions a {
+  display:inline-block;
+  text-decoration:none;
+  padding:9px 13px;
+  border-radius:8px;
+  border:1px solid #b7c6d2;
+  color:#123b58;
+  background:#fff;
+  font-weight:700;
+}
+.ied-u2-pro .u2-actions a.primary {
+  background:#0d5c91;
+  color:#fff;
+  border-color:#0d5c91;
+}
+.ied-u2-pro .u2-lesson-nav {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin:18px auto 34px;
+}
+.ied-u2-pro .u2-lesson-nav a {
+  text-decoration:none;
+  font-weight:800;
+  color:#0d5c91;
+}
+.ied-u2-pro .u2-table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+.ied-u2-pro .u2-table th,
+.ied-u2-pro .u2-table td {
+  border-bottom:1px solid #dce4ea;
+  padding:10px 8px;
+  text-align:left;
+  vertical-align:top;
+}
+.ied-u2-pro .u2-table th {
+  background:#f3f6f8;
+  color:#193a50;
+}
+.ied-u2-pro .u2-unit-list a {
+  color:#0d5c91;
+  font-weight:700;
+  text-decoration:none;
+}
+@media (max-width:780px){
+  .ied-u2-pro .u2-meta,
+  .ied-u2-pro .u2-grid-2,
+  .ied-u2-pro .u2-video { grid-template-columns:1fr; }
+  .ied-u2-pro .u2-header-body { padding:22px 20px; }
+  .ied-u2-pro .u2-section { padding:20px; }
+}

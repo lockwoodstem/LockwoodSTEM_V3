@@ -1,41 +1,27 @@
-LockwoodSTEM IED Unit 2 Manual Update
-====================================
+IED Unit 2 Clean Redesign
+=========================
 
-UPLOAD / REPLACE
-----------------
-Copy these files into the root of your LockwoodSTEM_V3 repository while preserving paths:
+REPLACE / ADD
+1. Upload the contents of this ZIP to the ROOT of LockwoodSTEM_V3.
+2. Allow these files to replace the existing versions:
+   - courses/ied/units/unit-2.html
+   - courses/ied/units/unit-2/lesson-2-1.html through lesson-2-16.html
+3. Add:
+   - assets/css/ied-unit2-professional.css
+4. Delete the retired old pages if they still exist:
+   - courses/ied/units/unit-2/lesson-2-17.html
+   - courses/ied/units/unit-2/lesson-2-18.html
 
-courses/ied/units/unit-2.html
-courses/ied/units/unit-2/lesson-2-1.html
-...
-courses/ied/units/unit-2/lesson-2-16.html
-
-DELETE
-------
-Remove these retired pages from the repository:
-
-courses/ied/units/unit-2/lesson-2-17.html
-courses/ied/units/unit-2/lesson-2-18.html
-
-WHAT IS INCLUDED
-----------------
-- Revised Unit 2 sequence ending at Lesson 2.16.
-- Bracket 3 used across Lessons 2.5–2.7.
-- Rocket-specific CAD examples removed from Unit 2.
-- Standalone Revolve, Mirror/Pattern, and independent CAD tasks.
-- Design for additive manufacturing and slicer investigation.
-- Existing 3D Printer Certification retained as Lesson 2.14.
-- Peg/hole plus heat-set-insert tolerance tester in Lesson 2.15.
-- Testing and manufacturing recommendations in Lesson 2.16.
-- Video Help section included on every lesson page.
-
-MANUAL GITHUB UPLOAD
---------------------
-1. Open the LockwoodSTEM_V3 repository.
-2. Upload the CONTENTS of this package so the first folder is "courses".
-3. Allow the files to overwrite the existing versions.
-4. Delete lesson-2-17.html and lesson-2-18.html.
-5. Commit the changes.
-
-If you upload through GitHub's web interface, do not create an extra
-LockwoodSTEM_IED_Unit2_Update folder in the repository.
+DESIGN CHANGES
+- Removed Mission Briefing / Flight Plan / Mission Focus language.
+- Removed generic verb strips and repeated decorative cards.
+- Replaced the format with a professional CAD-lab structure:
+  Lesson goal → New Skills → Instructor Demonstration → Practice →
+  Assignment → Before You Submit → Video Help.
+- Removed decorative lesson imagery. The only remaining visual media are
+  the LockwoodSTEM logo and embedded instructional videos.
+- Simplified the Unit 2 hub and removed aerospace/rocket framing.
+- Kept rocket-specific modeling out of Unit 2.
+- Preserved Bracket 3 across Lessons 2.5–2.7.
+- Kept the existing printer certification at Lesson 2.14.
+- Kept the peg/hole + heat-set-insert tester in Lessons 2.15–2.16.
