@@ -1,25 +1,33 @@
-IED Unit 2 Dark Theme + Coaster Mini-Project Update
-=================================================
+IED Unit 2 Formatting Repair
+============================
 
-UPLOAD / REPLACE
-Upload the contents of this ZIP to the ROOT of LockwoodSTEM_V3.
+This version intentionally DOES NOT use the custom Unit 2 stylesheet.
 
-This package includes:
-- Updated dark-blue Unit 2 stylesheet.
-- Updated Unit 2 lesson hub with corrected lesson titles.
-- Updated Lessons 2.1–2.16 using the dark professional theme.
-- Rebuilt Lesson 2.10: Condensation-Draining Coaster Mini-Project.
-- Updated Lesson 2.11: Physical Part Evaluation & CAD Revision.
-- Four project images stored in:
-  assets/img/ied/unit-2/coaster-project/
+It matches the same shared page system used by the current IED Unit 1 and
+Unit 3 pages:
+- assets/css/styles.css
+- assets/css/unit-lesson-immersive.css
+- assets/css/ied-accessibility.css
+- assets/css/content-alignment.css
 
-PROJECT CONSTRAINTS
-- Maximum width/diameter: 80 mm.
-- Maximum total assembled thickness: 15 mm.
-- Two parts: outer collection tray + removable patterned insert.
-- Optional center logo/text on the insert.
-- Instructor prints the student model before Lesson 2.11.
+UPLOAD
+------
+Upload the contents of this ZIP to the ROOT of LockwoodSTEM_V3 and replace
+the matching files.
 
-DELETE IF STILL PRESENT
-courses/ied/units/unit-2/lesson-2-17.html
-courses/ied/units/unit-2/lesson-2-18.html
+Included:
+- courses/ied/units/unit-2.html
+- courses/ied/units/unit-2/lesson-2-1.html through lesson-2-16.html
+- assets/img/ied/unit-2/coaster-project/*.png
+
+IMPORTANT
+---------
+If you previously uploaded this file, it is no longer needed by Unit 2:
+assets/css/ied-unit2-professional.css
+
+You may leave it in the repository because nothing in this package links
+to it, or delete it if it is not used elsewhere.
+
+If old pages still exist, delete:
+- courses/ied/units/unit-2/lesson-2-17.html
+- courses/ied/units/unit-2/lesson-2-18.html
