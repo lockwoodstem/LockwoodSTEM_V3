@@ -1,27 +1,25 @@
-IED Unit 2 Clean Redesign
-=========================
+IED Unit 2 Dark Theme + Coaster Mini-Project Update
+=================================================
 
-REPLACE / ADD
-1. Upload the contents of this ZIP to the ROOT of LockwoodSTEM_V3.
-2. Allow these files to replace the existing versions:
-   - courses/ied/units/unit-2.html
-   - courses/ied/units/unit-2/lesson-2-1.html through lesson-2-16.html
-3. Add:
-   - assets/css/ied-unit2-professional.css
-4. Delete the retired old pages if they still exist:
-   - courses/ied/units/unit-2/lesson-2-17.html
-   - courses/ied/units/unit-2/lesson-2-18.html
+UPLOAD / REPLACE
+Upload the contents of this ZIP to the ROOT of LockwoodSTEM_V3.
 
-DESIGN CHANGES
-- Removed Mission Briefing / Flight Plan / Mission Focus language.
-- Removed generic verb strips and repeated decorative cards.
-- Replaced the format with a professional CAD-lab structure:
-  Lesson goal → New Skills → Instructor Demonstration → Practice →
-  Assignment → Before You Submit → Video Help.
-- Removed decorative lesson imagery. The only remaining visual media are
-  the LockwoodSTEM logo and embedded instructional videos.
-- Simplified the Unit 2 hub and removed aerospace/rocket framing.
-- Kept rocket-specific modeling out of Unit 2.
-- Preserved Bracket 3 across Lessons 2.5–2.7.
-- Kept the existing printer certification at Lesson 2.14.
-- Kept the peg/hole + heat-set-insert tester in Lessons 2.15–2.16.
+This package includes:
+- Updated dark-blue Unit 2 stylesheet.
+- Updated Unit 2 lesson hub with corrected lesson titles.
+- Updated Lessons 2.1–2.16 using the dark professional theme.
+- Rebuilt Lesson 2.10: Condensation-Draining Coaster Mini-Project.
+- Updated Lesson 2.11: Physical Part Evaluation & CAD Revision.
+- Four project images stored in:
+  assets/img/ied/unit-2/coaster-project/
+
+PROJECT CONSTRAINTS
+- Maximum width/diameter: 80 mm.
+- Maximum total assembled thickness: 15 mm.
+- Two parts: outer collection tray + removable patterned insert.
+- Optional center logo/text on the insert.
+- Instructor prints the student model before Lesson 2.11.
+
+DELETE IF STILL PRESENT
+courses/ied/units/unit-2/lesson-2-17.html
+courses/ied/units/unit-2/lesson-2-18.html

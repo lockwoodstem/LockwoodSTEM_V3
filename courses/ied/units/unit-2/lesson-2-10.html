@@ -1,60 +1,218 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<title>IED Unit 2 Lesson 2.10 | Independent Parametric Part Modeling | LockwoodSTEM</title>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Create a complete standalone manufactured component without a step-by-step modeling procedure." name="description"/>
+<html lang="en">
+<head>
+<title>IED Unit 2 Lesson 2.10 | Condensation-Draining Coaster Mini-Project | LockwoodSTEM</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Design a two-part 3D printed coaster with a removable patterned insert and condensation collection tray." name="description"/>
 <link href="../../../../assets/css/styles.css" rel="stylesheet"/>
-<link href="../../../../assets/css/ied-unit2-professional.css?v=20260922-v1" rel="stylesheet"/>
+<link href="../../../../assets/css/ied-unit2-professional.css?v=20260922-v2" rel="stylesheet"/>
 <script defer src="../../../../assets/js/main.js"></script>
-</head><body class="ied-u2-pro">
-<a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav">
-<a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a>
+</head>
+<body class="ied-u2-pro">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+<div class="container nav">
+<a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html">
+<img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
+<span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+</a>
 <button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
-<ul class="nav-links" id="site-navigation"><li><a aria-current="page" data-nav-section="courses" href="../../../../courses.html">Courses</a></li><li><a data-nav-section="agenda" href="../../../../agenda.html">Daily Agenda</a></li><li><a data-nav-section="resources" href="../../../../resources/index.html">Resources</a></li><li><a data-nav-section="certifications" href="../../../../certifications/index.html">Certifications</a></li><li><a data-nav-section="fablab" href="../../../../fablab/index.html">FabLab</a></li><li><a data-nav-section="about" href="../../../../about/index.html">About</a></li></ul></div></header>
+<ul class="nav-links" id="site-navigation">
+<li><a aria-current="page" href="../../../../courses.html">Courses</a></li>
+<li><a href="../../../../agenda.html">Daily Agenda</a></li>
+<li><a href="../../../../resources/index.html">Resources</a></li>
+<li><a href="../../../../certifications/index.html">Certifications</a></li>
+<li><a href="../../../../fablab/index.html">FabLab</a></li>
+<li><a href="../../../../about/index.html">About</a></li>
+</ul>
+</div>
+</header>
+
 <main id="main" class="u2-wrap">
-<nav aria-label="Breadcrumb" class="site-breadcrumbs"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../index.html">IED</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">2.10</li></ol></nav>
+<nav aria-label="Breadcrumb" class="site-breadcrumbs">
+<ol>
+<li><a href="../../../../index.html">Home</a></li>
+<li><a href="../../../../courses.html">Courses</a></li>
+<li><a href="../../index.html">IED</a></li>
+<li><a href="../unit-2.html">Unit 2</a></li>
+<li aria-current="page">2.10</li>
+</ol>
+</nav>
 
 <section class="u2-header">
-<div class="u2-header-band"></div><div class="u2-header-body">
+<div class="u2-header-band"></div>
+<div class="u2-header-body">
 <p class="u2-kicker">IED Unit 2 · Lesson 2.10</p>
-<h1>Independent Parametric Part Modeling</h1>
-<p class="u2-question"><strong>Essential question:</strong> How can an engineer plan an efficient modeling strategy from a technical drawing?</p>
-<div class="u2-meta"><div><strong>Lesson goal</strong>Create a complete standalone manufactured component without a step-by-step modeling procedure.</div><div><strong>Deliverable</strong>2.10 Independent CAD Modeling Challenge</div></div>
-<div class="u2-actions"><a class="primary" href="#demonstration">Instructor Demonstration</a><a href="#assignment">Assignment</a><a href="#video">Video Help</a></div>
-</div></section>
-
-<section class="u2-section">
-<h2>New Skills and Tools</h2>
-<div class="u2-tools"><span class="u2-tool">Student-selected Fusion tools from Lessons 2.1–2.9</span></div>
+<h1>Condensation-Draining Coaster Mini-Project</h1>
+<p class="u2-question"><strong>Essential question:</strong> How can multiple CAD features work together to create a functional product that solves a simple everyday problem?</p>
+<div class="u2-meta">
+<div><strong>Lesson goal</strong>Design a two-part coaster that supports a drink while allowing condensation to drain into a collection tray below.</div>
+<div><strong>Deliverable</strong>Two Fusion parts plus exported manufacturing files for instructor printing.</div>
+</div>
+<div class="u2-actions">
+<a class="primary" href="#design-brief">Design Brief</a>
+<a href="#requirements">Requirements</a>
+<a href="#workflow">CAD Workflow</a>
+<a href="#submit">What You Submit</a>
+</div>
+</div>
 </section>
 
-<section class="u2-section" id="demonstration">
+<section class="u2-section u2-project-hero">
+<div>
+<h2>Project Overview</h2>
+<p>You will design a compact two-part coaster that separates the drinking surface from collected condensation.</p>
+<p>The upper part is a removable patterned insert. Openings in the insert allow condensation to pass through. The lower part is a shallow tray that captures the water beneath the drink.</p>
+<p>Your coaster will be printed by the instructor. You will receive the finished part and evaluate it in Lesson 2.11.</p>
+<div class="u2-note"><strong>Important:</strong> You are responsible for the CAD design. The instructor will manufacture the model exactly as submitted whenever possible, so dimensional and design errors may appear in the physical print.</div>
+</div>
+<img src="../../../../assets/img/ied/unit-2/coaster-project/coaster-product-example.png" alt="Example assembled condensation-draining coaster with patterned insert and collection tray"/>
+</section>
+
+<section class="u2-section" id="design-brief">
+<h2>Design Brief</h2>
+<p>Design a two-part coaster that keeps a drinking cup above collected condensation. The design must include a removable upper insert and a lower collection tray.</p>
+
+<div class="u2-constraint-grid">
+<div class="u2-constraint"><strong>80 mm maximum</strong><span>Maximum overall width or diameter.</span></div>
+<div class="u2-constraint"><strong>15 mm maximum</strong><span>Maximum total assembled thickness.</span></div>
+<div class="u2-constraint"><strong>2 printed parts</strong><span>One outer tray and one removable insert.</span></div>
+<div class="u2-constraint"><strong>No supports preferred</strong><span>Design both parts for straightforward FDM printing.</span></div>
+</div>
+</section>
+
+<section class="u2-section">
+<h2>How the Coaster Works</h2>
+<div class="u2-gallery">
+<img src="../../../../assets/img/ied/unit-2/coaster-project/coaster-project-overview.png" alt="Diagram showing top view, exploded view, and section view of the two-part coaster"/>
+<img src="../../../../assets/img/ied/unit-2/coaster-project/coaster-exploded-view.png" alt="Exploded diagram showing removable mesh insert, support ledge, and condensation collection area"/>
+</div>
+</section>
+
+<section class="u2-section" id="requirements">
+<h2>Required Design Features</h2>
+<div class="u2-requirements">
+<div class="u2-panel">
+<h3>Outer Condensation Tray</h3>
+<ul>
+<li>Must fit completely within the 80 mm maximum footprint.</li>
+<li>Must contain a recessed area that can collect condensation.</li>
+<li>Must include an internal ledge, shoulder, or other support surface for the insert.</li>
+<li>Must have a stable flat bottom.</li>
+<li>Must allow the insert to be removed without destroying either part.</li>
+</ul>
+</div>
+<div class="u2-panel">
+<h3>Patterned Insert</h3>
+<ul>
+<li>Must support a cup or glass across the top surface.</li>
+<li>Must include repeated openings that allow water to drain into the tray.</li>
+<li>The pattern must be created using Mirror, Rectangular Pattern, Circular Pattern, or another appropriate repeated-feature method.</li>
+<li>The mesh must remain connected and strong enough to print as one part.</li>
+<li>The insert must fit inside or on top of the outer tray while remaining removable.</li>
+</ul>
+</div>
+</div>
+
+<h3>Optional Personalization</h3>
+<p>You may add a simple logo, initials, name, or short text in the center of the patterned insert. The personalized area may be raised or recessed, but it may not eliminate the drainage function or weaken the surrounding mesh.</p>
+</section>
+
+<section class="u2-section">
+<h2>Design Inspiration</h2>
+<p>These examples show different ways to solve the same design problem. Your coaster does not need to match any of them.</p>
+<img src="../../../../assets/img/ied/unit-2/coaster-project/coaster-design-variations.png" alt="Three example condensation coaster designs using hexagonal, radial, and square grid patterns"/>
+<div class="u2-note"><strong>Do not copy an example feature-for-feature.</strong> Use the images to understand the functional requirements, then create your own pattern, geometry, and personalization.</div>
+</section>
+
+<section class="u2-section">
+<h2>Fusion Skills You May Need</h2>
+<div class="u2-tools">
+<span class="u2-tool">Sketch Constraints</span>
+<span class="u2-tool">Dimensions</span>
+<span class="u2-tool">Extrude</span>
+<span class="u2-tool">Extrude Cut</span>
+<span class="u2-tool">Fillet</span>
+<span class="u2-tool">Chamfer</span>
+<span class="u2-tool">Mirror</span>
+<span class="u2-tool">Rectangular Pattern</span>
+<span class="u2-tool">Circular Pattern</span>
+<span class="u2-tool">Text</span>
+<span class="u2-tool">Inspect / Measure</span>
+</div>
+</section>
+
+<section class="u2-section">
 <h2>Instructor Demonstration</h2>
-<ol><li>Model planning only: identify likely base feature, cuts, holes, symmetry/repetition, and finishing features from a sample drawing.</li><li>Show how to inspect an early feature in the Timeline and test whether later geometry updates correctly.</li><li>Do not model the assigned student part.</li></ol>
-<div class="u2-note"><strong>During the demonstration:</strong> Follow along in Fusion only when directed. The goal is to understand the modeling decision, not simply copy clicks.</div>
+<ol>
+<li>Set the overall design envelope and explain the 80 mm × 15 mm limits.</li>
+<li>Create a simple tray cross-section and identify the collection area and insert-support ledge.</li>
+<li>Create one example opening in an insert and repeat it with a pattern tool.</li>
+<li>Show how to leave a central solid region for optional text or a logo.</li>
+<li>Demonstrate how to check the assembled height and the insert-to-tray relationship with Inspect/Measure.</li>
+</ol>
+<div class="u2-note"><strong>The instructor will not model a complete coaster.</strong> The demonstration covers techniques only. Your final geometry and pattern must be your own.</div>
+</section>
+
+<section class="u2-section" id="workflow">
+<h2>Recommended CAD Workflow</h2>
+<ol>
+<li><strong>Concept sketch:</strong> Decide on the overall shape, insert pattern, tray geometry, and optional personalization.</li>
+<li><strong>Plan critical dimensions:</strong> Identify the outer size, tray depth, insert thickness, support ledge, and insert clearance.</li>
+<li><strong>Model the tray:</strong> Create the lower condensation collection part first.</li>
+<li><strong>Model the insert:</strong> Create the removable upper part as a separate body/component or separate design as directed by the instructor.</li>
+<li><strong>Create the pattern:</strong> Build one opening or pattern unit and repeat it efficiently.</li>
+<li><strong>Add personalization:</strong> Add optional text or a simple logo only after the functional geometry works.</li>
+<li><strong>Verify:</strong> Use Inspect/Measure to confirm the final dimensions and assembled thickness.</li>
+<li><strong>Export:</strong> Export both parts in the format required by the instructor for printing.</li>
+</ol>
 </section>
 
 <section class="u2-section">
-<h2>Practice</h2>
-<ol><li>Complete the written modeling plan before beginning the assigned part.</li></ol>
+<h2>Before You Submit</h2>
+<ul class="u2-checklist">
+<li>Overall width or diameter is 80 mm or less.</li>
+<li>Total assembled thickness is 15 mm or less.</li>
+<li>Tray contains a functional condensation collection area.</li>
+<li>Insert is removable and supported above the collection area.</li>
+<li>Insert includes a repeated drainage pattern.</li>
+<li>Pattern geometry is connected and printable.</li>
+<li>Any center text/logo does not block most of the drainage area.</li>
+<li>Critical sketches are fully constrained where appropriate.</li>
+<li>Critical dimensions have been checked with Inspect/Measure.</li>
+<li>Both parts are ready for instructor printing.</li>
+</ul>
 </section>
 
-<section class="u2-section" id="assignment">
-<h2>Assignment</h2>
-<ol><li>Create the assigned machined bearing support, sensor mounting block, or equivalent component from the technical drawing.</li><li>Complete the dimensional verification and engineering change request.</li></ol>
+<section class="u2-section" id="submit">
+<h2>What You Submit</h2>
+<ol>
+<li>Concept sketch or design plan.</li>
+<li>Fusion model containing both coaster parts.</li>
+<li>Isometric screenshot of the assembled design.</li>
+<li>Screenshot showing the patterned insert.</li>
+<li>Critical dimension check showing the maximum width/diameter and total assembled thickness.</li>
+<li>Exported manufacturing file for the outer tray.</li>
+<li>Exported manufacturing file for the insert.</li>
+<li>Short prediction: <em>What feature of your design is most likely to need revision after the first print?</em></li>
+</ol>
 </section>
 
-<section class="u2-section u2-grid-2">
-<div><h2>Before You Submit</h2><ul class="u2-checklist"><li>Geometry matches the technical drawing.</li><li>Sketches are appropriately constrained.</li><li>Feature choices are logical.</li><li>Model survives the required edit test.</li><li>Critical dimensions are verified.</li></ul></div>
-<div><h2>What You Submit</h2><p><strong>2.10 Independent CAD Modeling Challenge</strong></p><p>Submit the file(s), screenshots, measurements, or written evidence specified by your instructor for this lesson.</p></div>
+<section class="u2-section">
+<h2>What Happens Next</h2>
+<p>The instructor will print your coaster before Lesson 2.11. When you receive the physical part, you will evaluate the fit of the insert, drainage function, print quality, strength, and overall usability. You will then revise the CAD model based on physical evidence.</p>
 </section>
 
-<section class="u2-section" id="video">
-<h2>Video Help</h2>
-<div class="u2-video"><iframe loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/vLyh0GIsA8Y?rel=0" title="Fusion 360 for Beginners - Parametric Modeling Tutorial"></iframe><div><h3>Fusion 360 for Beginners - Parametric Modeling Tutorial</h3><p>Use this video as a reference if you need to review the skill outside the instructor demonstration. Follow the class requirements when the video uses a different example or workflow.</p><div class="u2-actions"><a href="https://www.youtube.com/watch?v=vLyh0GIsA8Y" target="_blank" rel="noopener noreferrer">Open on YouTube</a></div></div></div>
-</section>
-
-<nav class="u2-lesson-nav" aria-label="Lesson navigation"><a href="lesson-2-9.html">← Lesson 2.9</a><a href="lesson-2-11.html">Lesson 2.11 →</a></nav>
+<nav class="u2-lesson-nav" aria-label="Lesson navigation">
+<a href="lesson-2-9.html">← Lesson 2.9</a>
+<a href="lesson-2-11.html">Lesson 2.11 →</a>
+</nav>
 </main>
-<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">Engineering design, fabrication, and manufacturing.</div></div></div></footer>
+
+<footer class="footer"><div class="container footer-grid"><div>
+<img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
+<div class="footer-note">Engineering design, fabrication, and manufacturing.</div>
+</div></div></footer>
 </body></html>
