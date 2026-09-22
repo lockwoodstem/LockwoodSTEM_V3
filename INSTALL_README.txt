@@ -1,33 +1,22 @@
-IED Unit 2 Formatting Repair
-============================
+Unit 2 Google Classroom Submission Update
+=======================================
 
-This version intentionally DOES NOT use the custom Unit 2 stylesheet.
+Upload the CONTENTS of this folder/ZIP to the root of your LockwoodSTEM_V3 repository
+and allow the 16 Unit 2 lesson HTML files to replace the existing versions.
 
-It matches the same shared page system used by the current IED Unit 1 and
-Unit 3 pages:
-- assets/css/styles.css
-- assets/css/unit-lesson-immersive.css
-- assets/css/ied-accessibility.css
-- assets/css/content-alignment.css
+Changed files:
+courses/ied/units/unit-2/lesson-2-1.html
+through
+courses/ied/units/unit-2/lesson-2-16.html
 
-UPLOAD
-------
-Upload the contents of this ZIP to the ROOT of LockwoodSTEM_V3 and replace
-the matching files.
+What changed:
+- Removed the separate Submission / What You Will Submit section.
+- Each lesson now has one combined Assignment & Submission section.
+- Added exact Google Classroom attachments and standardized filenames.
+- Added specific Fusion .f3d export directions where needed.
+- Added Fusion Save as Mesh -> 3MF directions for printable parts.
+- Added Bambu Studio Save Project As -> .3mf directions where needed.
+- Added explicit screenshot/photo/private-comment requirements.
+- Lesson 2.14 clearly states that no file upload is required.
 
-Included:
-- courses/ied/units/unit-2.html
-- courses/ied/units/unit-2/lesson-2-1.html through lesson-2-16.html
-- assets/img/ied/unit-2/coaster-project/*.png
-
-IMPORTANT
----------
-If you previously uploaded this file, it is no longer needed by Unit 2:
-assets/css/ied-unit2-professional.css
-
-You may leave it in the repository because nothing in this package links
-to it, or delete it if it is not used elsewhere.
-
-If old pages still exist, delete:
-- courses/ied/units/unit-2/lesson-2-17.html
-- courses/ied/units/unit-2/lesson-2-18.html
+No other course pages are included in this patch.
