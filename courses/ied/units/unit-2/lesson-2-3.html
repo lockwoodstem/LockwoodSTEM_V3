@@ -23,11 +23,23 @@ body.lesson-immersive-page .card.dark,body.lesson-immersive-page .card.dark *{co
 .constraint-grid .card strong{display:block;font-size:1.1rem;margin-bottom:.3rem}
 </style>
 
-<style id="u2_3_image_style">
+<style id="u2-fullwidth-assignment">
 
-.lesson-reference-image{display:block;width:100%;height:auto;border-radius:14px;border:1px solid #c7d2dc;box-shadow:0 10px 30px rgba(11,31,58,.12)}
-.reference-image-caption{margin-top:.75rem;color:#526579;font-size:.95rem}
-.reference-note{margin-top:.9rem;padding:.9rem 1rem;border-left:5px solid #f3c95c;background:#f8fafc;border-radius:.5rem}
+/* Unit 2 assignment layout: full-width student directions */
+body.lesson-immersive-page #task .lesson-grid.one{
+  display:block !important;
+  width:100% !important;
+  max-width:none !important;
+}
+body.lesson-immersive-page #task .student-task-card{
+  width:100% !important;
+  max-width:none !important;
+  grid-column:1 / -1 !important;
+  box-sizing:border-box;
+}
+body.lesson-immersive-page #task .student-task-card > *{
+  max-width:none !important;
+}
 
 </style>
 </head>
@@ -42,21 +54,6 @@ body.lesson-immersive-page .card.dark,body.lesson-immersive-page .card.dark *{co
 <section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Lesson Overview</div><h2>What You Are Learning</h2></div></div><div class="lesson-grid two"><article class="card lesson-card"><h3>Learning Targets</h3><ul><li>Apply common geometric constraints.</li><li>Diagnose under-constrained geometry by dragging.</li><li>Use constraints to preserve design intent without relying on Fix/UnFix.</li></ul></article><article class="card lesson-card"><h3>How to Approach the Work</h3><p>Use the instructor demonstration to understand the tool or design decision, then complete the assigned work independently and verify the result before submission.</p><div class="timeline"><span>Learn</span><span>Model</span><span>Verify</span><span>Revise</span><span>Submit</span></div></article></div></section>
 
 
-
-
-<section class="container lesson-section" id="lesson-2-3-reference">
-  <div class="section-header">
-    <div>
-      <div class="eyebrow">Reference Image</div>
-      <h2>Sketch Constraints Practice Sheet</h2>
-      <p class="section-subtitle">Use this sheet as the visual reference for the repair sketches and the most common constraint icons.</p>
-    </div>
-  </div>
-  <article class="card">
-    <img class="lesson-reference-image" src="../../../../assets/img/ied/unit-2/lesson-2-3-sketch-constraints-practice.png" alt="Sketch Constraints Practice Sheet"/>
-    <p class="reference-image-caption">Open the image in a new browser tab if you need to zoom in while working in Fusion.</p>
-  </article>
-</section>
 
 <section class="container lesson-section" id="task"><div class="lesson-grid one"><article class="card student-task-card"><div class="eyebrow">Assignment</div><h2>Sketch Constraints</h2><p>Constraints control how sketch geometry is allowed to move. Your job is to repair sketches using geometric relationships rather than locking geometry in place with Fix/UnFix.</p><h3>Step-by-Step Instructions</h3><ol class="mission-steps"><li><strong>Test each broken sketch first:</strong> Before adding any constraint, click and drag geometry to see how the sketch currently moves. Use the motion to identify what relationship is missing.</li><li><strong>Apply geometric constraints:</strong> Use Horizontal/Vertical, Coincident, Parallel, Perpendicular, Tangent, Equal, Concentric, Midpoint, and Symmetry as appropriate. Use the smallest number of constraints needed to communicate the design intent.</li><li><strong>Re-test the sketch:</strong> Drag the geometry again after each repair. A correct constraint should stop the unwanted motion while still allowing any intended freedom.</li><li><strong>Avoid unnecessary Fix/UnFix:</strong> Do not use Fix/UnFix as a shortcut to make geometry turn black. A sketch is only well constrained when its relationships and dimensions control it for a reason.</li><li><strong>Revise the Lesson 2.2 mounting plate:</strong> Open your mounting-plate sketch and add the appropriate geometric relationships. Leave dimensions for Lesson 2.4, so some controlled dimensional freedom should remain.</li><li><strong>Identify remaining degrees of freedom:</strong> Determine what can still move or change in the mounting plate and be ready to explain what dimension would eventually control it.</li></ol><h3>Before You Submit</h3><ul><li>Constraints match the intended geometry.</li><li>The sketch does not rely on Fix/UnFix as the primary control method.</li><li>The mounting plate still has intentional dimensional freedom.</li></ul></article></div></section>
 

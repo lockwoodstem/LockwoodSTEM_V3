@@ -23,11 +23,23 @@ body.lesson-immersive-page .card.dark,body.lesson-immersive-page .card.dark *{co
 .constraint-grid .card strong{display:block;font-size:1.1rem;margin-bottom:.3rem}
 </style>
 
-<style id="u2_4_image_style">
+<style id="u2-fullwidth-assignment">
 
-.lesson-reference-image{display:block;width:100%;height:auto;border-radius:14px;border:1px solid #c7d2dc;box-shadow:0 10px 30px rgba(11,31,58,.12)}
-.reference-image-caption{margin-top:.75rem;color:#526579;font-size:.95rem}
-.reference-note{margin-top:.9rem;padding:.9rem 1rem;border-left:5px solid #f3c95c;background:#f8fafc;border-radius:.5rem}
+/* Unit 2 assignment layout: full-width student directions */
+body.lesson-immersive-page #task .lesson-grid.one{
+  display:block !important;
+  width:100% !important;
+  max-width:none !important;
+}
+body.lesson-immersive-page #task .student-task-card{
+  width:100% !important;
+  max-width:none !important;
+  grid-column:1 / -1 !important;
+  box-sizing:border-box;
+}
+body.lesson-immersive-page #task .student-task-card > *{
+  max-width:none !important;
+}
 
 </style>
 </head>
@@ -42,21 +54,6 @@ body.lesson-immersive-page .card.dark,body.lesson-immersive-page .card.dark *{co
 <section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Lesson Overview</div><h2>What You Are Learning</h2></div></div><div class="lesson-grid two"><article class="card lesson-card"><h3>Learning Targets</h3><ul><li>Apply linear, angular, radius, and diameter dimensions.</li><li>Avoid redundant dimensions and over-constraint.</li><li>Create a fully constrained sketch that matches a technical drawing.</li></ul></article><article class="card lesson-card"><h3>How to Approach the Work</h3><p>Use the instructor demonstration to understand the tool or design decision, then complete the assigned work independently and verify the result before submission.</p><div class="timeline"><span>Learn</span><span>Model</span><span>Verify</span><span>Revise</span><span>Submit</span></div></article></div></section>
 
 
-
-
-<section class="container lesson-section" id="lesson-2-4-reference">
-  <div class="section-header">
-    <div>
-      <div class="eyebrow">Reference Image</div>
-      <h2>Dimensioned CAD Sketches Reference Sheet</h2>
-      <p class="section-subtitle">Use this reference sheet to review common dimension types and example fully defined sketches while completing the assignment.</p>
-    </div>
-  </div>
-  <article class="card">
-    <img class="lesson-reference-image" src="../../../../assets/img/ied/unit-2/lesson-2-4-dimensioned-cad-sketches-sheet.png" alt="Dimensioned CAD Sketches Reference Sheet"/>
-    <p class="reference-image-caption">Open the image in a new browser tab if you need to zoom in while working in Fusion.</p>
-  </article>
-</section>
 
 <section class="container lesson-section" id="task"><div class="lesson-grid one"><article class="card student-task-card"><div class="eyebrow">Assignment</div><h2>Dimensioned CAD Sketches</h2><p>You will combine geometric constraints with dimensions to create a precise sketch from engineering documentation. The final sketch must be both fully constrained and dimensionally correct.</p><h3>Step-by-Step Instructions</h3><ol class="mission-steps"><li><strong>Read the technical drawing before sketching:</strong> Identify the overall size, feature locations, hole sizes, radii/diameters, and any angular information before opening Sketch Dimension.</li><li><strong>Create the geometry:</strong> Draw the required lines, arcs, circles, and other profiles. Focus first on the correct topology and approximate arrangement.</li><li><strong>Apply geometric relationships:</strong> Add constraints such as horizontal, vertical, tangent, concentric, symmetry, and equal before entering dimensions.</li><li><strong>Add dimensions strategically:</strong> Use linear, angular, radius, and diameter dimensions to control size and location. Dimension from stable references such as the origin or centerlines when appropriate.</li><li><strong>Resolve over-constraint warnings:</strong> If Fusion reports that a dimension is redundant or over-constraining the sketch, stop and identify which existing relationship already controls that geometry. Do not simply delete random constraints.</li><li><strong>Verify the final sketch:</strong> Compare every critical dimension against the drawing. A black sketch is not automatically correct; it must also match the required geometry and dimensions.</li></ol><h3>Before You Submit</h3><ul><li>All required dimensions match the drawing.</li><li>No over-constraint warnings remain.</li><li>The sketch is fully constrained without unnecessary Fix constraints.</li><li>Dimensions are readable and not duplicated.</li></ul></article></div></section>
 

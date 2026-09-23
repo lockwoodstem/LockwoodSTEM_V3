@@ -1,15 +1,17 @@
-Bracket 3 Viewer Fix
-=====================
+Unit 2 Full-Width Assignment Layout Update
+=========================================
 
-Replace these three files in the repository:
-- courses/ied/units/unit-2/lesson-2-5.html
-- courses/ied/units/unit-2/lesson-2-6.html
-- courses/ied/units/unit-2/lesson-2-7.html
+Upload the contents of this ZIP to the root of the LockwoodSTEM_V3 repository.
 
-Cause of the problem:
-The previous embedded viewer omitted required data-stl-status, reset,
-auto-rotate, and fullscreen controls. The shared stl-lesson-viewer.js
-stopped during initialization before requesting the Bracket 3 model.
+Updated:
+- courses/ied/units/unit-2/lesson-2-1.html
+  through
+- courses/ied/units/unit-2/lesson-2-16.html
 
-This update uses the same complete viewer markup used in Unit 1 Lesson 1.5
-and reuses the existing Bracket 3 model data already in the repository.
+Change:
+The Assignment section on every Unit 2 lesson now spans the full width of
+the lesson content area instead of being constrained to the left side of
+the page.
+
+Only layout/CSS was changed. Assignment wording and submission content
+were not changed in this patch.

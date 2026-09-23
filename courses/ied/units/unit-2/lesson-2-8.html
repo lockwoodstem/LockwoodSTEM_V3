@@ -23,6 +23,25 @@ body.lesson-immersive-page .card.dark,body.lesson-immersive-page .card.dark *{co
 .constraint-grid .card strong{display:block;font-size:1.1rem;margin-bottom:.3rem}
 </style>
 
+<style id="u2-fullwidth-assignment">
+
+/* Unit 2 assignment layout: full-width student directions */
+body.lesson-immersive-page #task .lesson-grid.one{
+  display:block !important;
+  width:100% !important;
+  max-width:none !important;
+}
+body.lesson-immersive-page #task .student-task-card{
+  width:100% !important;
+  max-width:none !important;
+  grid-column:1 / -1 !important;
+  box-sizing:border-box;
+}
+body.lesson-immersive-page #task .student-task-card > *{
+  max-width:none !important;
+}
+
+</style>
 </head>
 <body class="safe-unit-page site-consistency-v4 lesson-detail-page immersive-lesson-page lesson-immersive-page">
 <a class="skip-link" href="#main">Skip to main content</a>
