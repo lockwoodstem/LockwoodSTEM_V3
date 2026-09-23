@@ -1,20 +1,20 @@
-Unit 2 Audit Fixes
-===================
+Bracket 3 Sketch Replacement
+=============================
 
-This patch applies the requested Unit 2 content/organization fixes.
+This patch replaces the previous Bracket 3 reference PDF in Lessons 2.5–2.7
+with the newly uploaded sketch PDF.
 
-Included updates:
-- Lesson 2.2: added the sketch practice image and clarified that it is for geometry only.
-- Lesson 2.3: added the sketch constraints reference image.
-- Lesson 2.4: added the dimensioned sketches reference image and clarified that
-  Sketches A-C are practice while Sketch D is the independent graded sketch.
-- Lessons 2.5, 2.6, 2.7: restored/added the working Bracket 3 interactive 3D model,
-  added the drawing download button, and made the PDF drawing the dimensional authority.
-- Lesson 2.8: added the uploaded revolve drawing PDF as a downloadable lesson resource.
+Updated:
+- courses/ied/units/unit-2/lesson-2-5.html
+- courses/ied/units/unit-2/lesson-2-6.html
+- courses/ied/units/unit-2/lesson-2-7.html
 
-Also included:
-- supporting image files for 2.2, 2.3, and 2.4
-- Bracket 3 drawing PDF
-- Lesson 2.8 drawing PDF
+Added:
+- downloads/references/IED_Unit2_Bracket_3_Sketch.pdf
+
+What changed:
+- The previous Bracket 3 drawing download was replaced with the new sketch PDF.
+- Button text now reads: "Download Bracket 3 Sketch"
+- Section wording was updated to refer to the sketch instead of the old drawing.
 
 Upload the contents of this ZIP to the ROOT of the repository and replace the matching files.
