@@ -1,79 +1,271 @@
 <!DOCTYPE html>
-
-<html lang="en"><head><title>POE Lesson 1.9: VEX Cargo Lift Engineering Challenge | LockwoodSTEM</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Design, build, test, and improve a VEX cargo lift that raises a 500 g payload at least 400 mm." name="description"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><script defer="" src="../../../../assets/js/main.js"></script><style id="poe-critical-contrast">
-body.immersive-lesson-page .lesson-section h2,
-body.immersive-lesson-page .lesson-section h3,
-body.immersive-lesson-page .lesson-section .section-subtitle,
-body.immersive-lesson-page .lesson-web-section h2,
-body.immersive-lesson-page .lesson-web-section h3,
-body.immersive-lesson-page .lesson-web-section .section-subtitle { color:#0b1f3a!important; -webkit-text-fill-color:#0b1f3a!important; opacity:1!important; }
-body.immersive-lesson-page details.answer-reveal,
-body.immersive-lesson-page details.lesson-answer-reveal { background:#061b31!important; color:#fff!important; border-radius:16px; padding:1rem; }
-body.immersive-lesson-page details.answer-reveal summary,
-body.immersive-lesson-page details.answer-reveal summary * { color:#ffd86a!important; -webkit-text-fill-color:#ffd86a!important; opacity:1!important; cursor:pointer; font-weight:800; }
-body.immersive-lesson-page details.answer-reveal p,
-body.immersive-lesson-page details.answer-reveal p *,
-body.immersive-lesson-page details.answer-reveal li,
-body.immersive-lesson-page details.answer-reveal li *,
-body.immersive-lesson-page details.answer-reveal .answer-panel,
-body.immersive-lesson-page details.answer-reveal .answer-panel * { color:#fff!important; -webkit-text-fill-color:#fff!important; opacity:1!important; text-shadow:none!important; }
-.choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}.choice-card{border:1px solid #d9e3ec;border-radius:14px;padding:1rem;background:#fff}.choice-card strong{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:999px;background:#d9ab3d;color:#061b31;margin-right:.5rem}.lesson-list-clean{margin:0;padding-left:1.25rem}.lesson-list-clean li{margin:.5rem 0}.poe-system-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.75rem;margin-top:1rem}.poe-system-strip span{display:block;background:#eaf4fb;border:1px solid #c9e6f4;border-radius:12px;padding:.75rem;font-weight:700;color:#0b4d78}.unit-lesson-table .btn.small{white-space:nowrap}.deliverable-card{border-left:6px solid #d9ab3d}.lesson-nav-row{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:space-between;margin-top:1.5rem}.lesson-nav-row .btn{margin:.25rem 0}.pacing-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.65rem}.pacing-strip span{display:block;border-radius:12px;background:#fff;border:1px solid #d9e3ec;padding:.7rem;color:#0b1f3a;font-weight:700}.pacing-strip em{display:block;font-style:normal;color:#0b4d78;font-size:.85rem;font-weight:800;margin-bottom:.2rem}
-</style><meta content="poe-contrast-v6-20260717" name="poe-contrast-version"/><style id="poe-contrast-v6-critical">
-html body.lesson-immersive-page main > section.container,
-html body.immersive-lesson-page main > section.container{background:#fff!important;color:#102033!important;border:1px solid #cbd5e1!important;border-radius:18px!important;box-shadow:0 10px 24px rgba(2,10,28,.10)!important;padding:2rem 1.35rem 1.35rem!important;margin-top:1.25rem!important}
-html body.lesson-immersive-page main > section.container .section-header h2,
-html body.lesson-immersive-page main > section.container .section-header h3,
-html body.immersive-lesson-page main > section.container .section-header h2,
-html body.immersive-lesson-page main > section.container .section-header h3{color:#0b1f3a!important;-webkit-text-fill-color:#0b1f3a!important;opacity:1!important;text-shadow:none!important}
-html body.lesson-immersive-page main > section.container .section-header .eyebrow,
-html body.immersive-lesson-page main > section.container .section-header .eyebrow{color:#8a5b00!important;-webkit-text-fill-color:#8a5b00!important;opacity:1!important}
-html body.lesson-immersive-page main > section.container .section-header .section-subtitle,
-html body.immersive-lesson-page main > section.container .section-header .section-subtitle{color:#475569!important;-webkit-text-fill-color:#475569!important;opacity:1!important}
-html body.lesson-immersive-page main > section.container details.answer-reveal,
-html body.lesson-immersive-page main > section.container details.lesson-answer-reveal,
-html body.immersive-lesson-page main > section.container details.answer-reveal,
-html body.immersive-lesson-page main > section.container details.lesson-answer-reveal{background:#071b31!important;color:#fff!important}
-html body.lesson-immersive-page main > section.container details.answer-reveal summary,
-html body.lesson-immersive-page main > section.container details.answer-reveal summary *,
-html body.lesson-immersive-page main > section.container details.lesson-answer-reveal summary,
-html body.lesson-immersive-page main > section.container details.lesson-answer-reveal summary *,
-html body.immersive-lesson-page main > section.container details.answer-reveal summary,
-html body.immersive-lesson-page main > section.container details.answer-reveal summary *,
-html body.immersive-lesson-page main > section.container details.lesson-answer-reveal summary,
-html body.immersive-lesson-page main > section.container details.lesson-answer-reveal summary *{color:#ffd86a!important;-webkit-text-fill-color:#ffd86a!important;opacity:1!important}
-html body.lesson-immersive-page main > section.container details.answer-reveal :is(p,li,span,strong,h2,h3,h4),
-html body.lesson-immersive-page main > section.container details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4),
-html body.immersive-lesson-page main > section.container details.answer-reveal :is(p,li,span,strong,h2,h3,h4),
-html body.immersive-lesson-page main > section.container details.lesson-answer-reveal :is(p,li,span,strong,h2,h3,h4){color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important}
-</style><link href="../../../../assets/css/poe-unit1-interactives.css?v=20260721-poe-u1-v1" rel="stylesheet"/><script defer="True" src="../../../../assets/js/poe-unit1-interactives.js?v=20260721-poe-u1-v1"></script><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
+<html lang="en">
+<head>
+<title>POE Lesson 1.9 | VEX Cargo Lift Engineering Challenge | LockwoodSTEM</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Design, build, test, and improve a VEX cargo lift that raises a 500 g payload at least 400 mm." name="description"/>
+<link href="../../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="../../../../assets/css/unit-lesson-immersive.css?v=20260824-u1-rebuild-v1" rel="stylesheet"/>
+<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<script defer src="../../../../assets/js/main.js"></script>
+<style>
+body.lesson-immersive-page .lesson-section h2,
+body.lesson-immersive-page .lesson-section h3,
+body.lesson-immersive-page .lesson-section p,
+body.lesson-immersive-page .lesson-section li,
+body.lesson-immersive-page .lesson-section td,
+body.lesson-immersive-page .lesson-section th{
+  color:#0b1f3a!important;
+  -webkit-text-fill-color:#0b1f3a!important;
+  opacity:1!important;
+}
+body.lesson-immersive-page .card.dark,
+body.lesson-immersive-page .card.dark *{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+.poe-brief-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+.poe-checklist{margin:.4rem 0 0;padding-left:1.25rem}
+.poe-checklist li{margin:.45rem 0}
+.poe-key-number{font-size:1.65rem;font-weight:800;margin:0 0 .25rem}
+.poe-rule-card{border-left:5px solid #d9ab3d}
+.poe-submit-card{border-left:6px solid #0b4d78}
+.poe-section-note{margin-top:.75rem;color:#475569!important;-webkit-text-fill-color:#475569!important}
+</style>
+</head>
+<body class="safe-unit-page site-consistency-v4 lesson-detail-page immersive-lesson-page lesson-immersive-page">
 <a class="skip-link" href="#main">Skip to main content</a>
-<header class="site-header"><div class="container nav"><a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" data-nav-section="courses" href="../../../../courses.html">Courses</a></li><li><a data-nav-section="agenda" href="../../../../agenda.html">Daily Agenda</a></li><li><a data-nav-section="resources" href="../../../../resources/index.html">Resources</a></li><li><a data-nav-section="certifications" href="../../../../certifications/index.html">Certifications</a></li><li><a data-nav-section="fablab" href="../../../../fablab/index.html">FabLab</a></li><li><a data-nav-section="about" href="../../../../about/index.html">About</a></li><li><a data-nav-section="challenges" href="../../../../challenge-library/index.html">Challenges</a></li></ul></div></header>
+<header class="site-header">
+<div class="container nav">
+<a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html">
+<img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
+<span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+</a>
+<button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
+<ul class="nav-links" id="site-navigation">
+<li><a aria-current="page" data-nav-section="courses" href="../../../../courses.html">Courses</a></li>
+<li><a data-nav-section="agenda" href="../../../../agenda.html">Daily Agenda</a></li>
+<li><a data-nav-section="resources" href="../../../../resources/index.html">Resources</a></li>
+<li><a data-nav-section="certifications" href="../../../../certifications/index.html">Certifications</a></li>
+<li><a data-nav-section="fablab" href="../../../../fablab/index.html">FabLab</a></li>
+<li><a data-nav-section="about" href="../../../../about/index.html">About</a></li>
+<li><a data-nav-section="challenges" href="../../../../challenge-library/index.html">Challenges</a></li>
+</ul>
+</div>
+</header>
+
 <main id="main">
-<nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-1.html">Unit 1</a></li><li aria-current="page">Lesson 1.9</li></ol></nav>
+<nav aria-label="Breadcrumb" class="site-breadcrumbs container">
+<ol>
+<li><a href="../../../../index.html">Home</a></li>
+<li><a href="../../../../courses.html">Courses</a></li>
+<li><a href="../../index.html">POE</a></li>
+<li><a href="../unit-1.html">Unit 1</a></li>
+<li aria-current="page">Lesson 1.9</li>
+</ol>
+</nav>
 
-<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img alt="POE course icon" class="lesson-course-icon" src="../../../../assets/img/course-icons/poe-course-icon.png"/><div class="mission-eyebrow">POE Unit 1 • Lesson 1.9</div><h1>VEX Cargo Lift Engineering Challenge</h1><p class="focus-question"><strong>Challenge:</strong> Design and build a VEX cargo lift that raises a <strong>500 g payload at least 400 mm vertically</strong> and completes <strong>three consecutive successful trials</strong>.</p><div class="mission-actions"><a class="btn" href="#student-work">Start Here</a><a class="btn secondary" href="#design-brief">Design Brief</a><a class="btn ghost" href="../unit-1.html">Unit 1 Overview</a></div></div><aside class="mission-panel"><span class="tag">First Open-Ended Build</span><h2>Use what you learned from the winch to engineer a guided, stable, repeatable lifting system.</h2><div class="verb-strip"><span>Design</span><span>Build</span><span>Test</span><span>Improve</span></div><p>There is no single correct design. Your team controls the structure, guide system, gearing, and lifting mechanism.</p></aside></div></section>
+<section class="lesson-mission-hero">
+<div class="container lesson-hero-grid">
+<div class="lesson-hero-copy">
+<img alt="POE course icon" class="lesson-course-icon" src="../../../../assets/img/course-icons/poe-course-icon.png"/>
+<div class="mission-eyebrow">POE Unit 1 • Lesson 1.9</div>
+<h1>VEX Cargo Lift Engineering Challenge</h1>
+<p class="focus-question"><strong>Challenge:</strong> Design and build a VEX cargo lift that raises a <strong>500 g payload at least 400 mm vertically</strong> and completes <strong>three consecutive successful trials</strong>.</p>
+<div class="mission-actions">
+<a class="btn" href="#student-work">Start Here</a>
+<a class="btn secondary" href="#design-brief">Design Brief</a>
+<a class="btn ghost" href="../unit-1.html">Unit 1 Overview</a>
+</div>
+</div>
+<aside class="mission-panel">
+<span class="tag">First Open-Ended Build</span>
+<h2>Turn the winch you built in 1.8 into a complete guided lifting system.</h2>
+<p>Your team chooses the structure, guide system, gearing, winch arrangement, and bracing.</p>
+</aside>
+</div>
+</section>
 
-<section class="container lesson-section poe-priority-section" id="student-work"><div class="section-header"><div><div class="eyebrow">Start Here</div><h2>What You Need to Do</h2><p class="section-subtitle">These are the pieces your team must complete for this challenge.</p></div></div><div class="card-grid lesson-card-grid"><article class="card"><span class="tag">Work On</span><ul class="lesson-list-clean"><li>Concept sketch and labeled mechanism plan</li><li>Freestanding VEX cargo lift</li><li>Guided payload platform</li><li>Motor-powered lifting system</li><li>Three official test trials</li><li>At least one engineering revision</li><li>Work and power calculations</li></ul></article><article class="card deliverable-card"><span class="tag blue">Submit</span><ul class="lesson-list-clean"><li>Initial concept sketch</li><li>Gear ratio/mechanical-system explanation</li><li>Three-trial test data</li><li>Average lift time</li><li>Work calculation</li><li>Power calculation</li><li>Problem + design revision</li><li>Final reflection</li></ul></article><article class="card"><span class="tag green">Done When</span><p>Your lift raises the 500 g payload at least 400 mm, remains freestanding, keeps the payload guided, and completes three successful trials in a row.</p></article></div></section>
+<section class="container lesson-section" id="student-work">
+<div class="section-header"><div><div class="eyebrow">Start Here</div><h2>What You Need to Do</h2><p class="section-subtitle">Use this as your checklist throughout the challenge.</p></div></div>
+<div class="poe-brief-grid">
+<article class="card">
+<h3>Work On</h3>
+<ul class="poe-checklist">
+<li>Concept sketch and labeled mechanism plan</li>
+<li>Freestanding VEX cargo lift</li>
+<li>Guided payload platform</li>
+<li>Motor-powered lifting system</li>
+<li>Three official test trials</li>
+<li>At least one engineering revision</li>
+<li>Work and power calculations</li>
+</ul>
+</article>
+<article class="card poe-submit-card">
+<h3>Submit</h3>
+<ul class="poe-checklist">
+<li>Initial concept sketch</li>
+<li>Mechanical-system / gear-ratio explanation</li>
+<li>Three-trial test data</li>
+<li>Average lift time</li>
+<li>Work calculation</li>
+<li>Power calculation</li>
+<li>Problem observed + design revision</li>
+<li>Final reflection</li>
+</ul>
+</article>
+<article class="card">
+<h3>Done When</h3>
+<p>Your lift raises the <strong>500 g payload at least 400 mm</strong>, remains freestanding, keeps the payload guided, and completes <strong>three successful trials in a row</strong>.</p>
+</article>
+</div>
+</section>
 
-<section class="container lesson-section" id="design-brief"><div class="section-header"><div><div class="eyebrow">Design Brief</div><h2>Mission Objective</h2></div></div><article class="card dark"><h3>Required Performance</h3><p>Design and build a VEX cargo lift that can raise a standardized <strong>500 g payload vertically at least 400 mm</strong>. The payload must travel on a guided platform, the structure must remain freestanding, and the lift must complete <strong>three consecutive successful lifting trials</strong> without student assistance.</p></article></section>
+<section class="container lesson-section" id="design-brief">
+<div class="section-header"><div><div class="eyebrow">Design Brief</div><h2>Mission Objective</h2></div></div>
+<article class="card dark">
+<h3>Required Performance</h3>
+<p>Design and build a VEX cargo lift that raises a standardized <strong>500 g payload vertically at least 400 mm</strong>. The payload must travel on a guided platform, the structure must remain freestanding, and the lift must complete <strong>three consecutive successful lifting trials</strong> without student assistance.</p>
+</article>
+</section>
 
-<section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Requirements</div><h2>Your Lift Must Include</h2></div></div><div class="card-grid"><article class="card"><h3>Structural Frame</h3><p>A freestanding VEX structure that supports the lift and remains upright without being held.</p></article><article class="card"><h3>Payload Platform</h3><p>The 500 g payload must sit on a platform, carrier, or tray. It may not hang directly from the string.</p></article><article class="card"><h3>Guided Vertical Motion</h3><p>Use rails, channels, rollers, wheels, sliding guides, or another approved method so the platform moves primarily up and down instead of swinging freely.</p></article><article class="card"><h3>Motor-Powered Lift</h3><p>A VEX motor must supply the lifting power. No manual assistance is allowed during an official trial.</p></article><article class="card"><h3>Power Transfer</h3><p>Connect the motor to the lift using a winch/drum, gears, chain and sprockets, pulleys, or an appropriate combination.</p></article><article class="card"><h3>Stable Base</h3><p>The structure must support itself throughout the lift.</p></article></div></section>
+<section class="container lesson-section">
+<div class="section-header"><div><div class="eyebrow">Requirements</div><h2>Your Lift Must Include</h2></div></div>
+<div class="poe-brief-grid">
+<article class="card"><h3>Structural Frame</h3><p>A freestanding VEX structure that supports the lift and remains upright without being held.</p></article>
+<article class="card"><h3>Payload Platform</h3><p>The payload must sit on a platform, tray, or carrier. It may not simply hang from the string.</p></article>
+<article class="card"><h3>Guided Vertical Motion</h3><p>Use rails, channels, rollers, wheels, sliding guides, or another approved method so the platform moves primarily up and down.</p></article>
+<article class="card"><h3>Motor-Powered Lift</h3><p>A VEX motor must provide the lifting power. No manual assistance is allowed during an official trial.</p></article>
+<article class="card"><h3>Power Transfer</h3><p>Use a winch/drum, gears, chain and sprockets, pulleys, or an appropriate combination.</p></article>
+<article class="card"><h3>Stable Base</h3><p>The lift must support itself throughout operation. Students may not stabilize it by hand.</p></article>
+</div>
+</section>
 
-<section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Performance Standard</div><h2>What Counts as Success?</h2></div></div><div class="lesson-table-wrap"><table class="unit-lesson-table"><thead><tr><th>Requirement</th><th>Standard</th></tr></thead><tbody><tr><td>Payload mass</td><td><strong>500 g</strong></td></tr><tr><td>Vertical lift distance</td><td><strong>400 mm minimum</strong></td></tr><tr><td>Successful trials</td><td><strong>3 consecutive trials</strong></td></tr><tr><td>Power source</td><td>VEX motor</td></tr><tr><td>Student assistance</td><td>None during official trial</td></tr><tr><td>Payload retention</td><td>Payload remains on platform</td></tr><tr><td>Structure</td><td>Freestanding and functional</td></tr></tbody></table></div></section>
+<section class="container lesson-section">
+<div class="section-header"><div><div class="eyebrow">Performance Standard</div><h2>What Counts as Success?</h2></div></div>
+<table class="table">
+<thead><tr><th>Requirement</th><th>Standard</th></tr></thead>
+<tbody>
+<tr><td>Payload mass</td><td><strong>500 g</strong></td></tr>
+<tr><td>Vertical lift distance</td><td><strong>400 mm minimum</strong></td></tr>
+<tr><td>Successful trials</td><td><strong>3 consecutive trials</strong></td></tr>
+<tr><td>Power source</td><td>VEX motor</td></tr>
+<tr><td>Student assistance</td><td>None during official trial</td></tr>
+<tr><td>Payload retention</td><td>Payload remains on platform</td></tr>
+<tr><td>Structure</td><td>Freestanding and functional</td></tr>
+</tbody>
+</table>
+</section>
 
-<section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Design Freedom</div><h2>What Your Team Gets to Decide</h2></div></div><div class="card-grid"><article class="card"><ul class="lesson-list-clean"><li>Overall lift geometry</li><li>Frame width and height</li><li>Platform design</li><li>Guide system</li><li>Motor location</li></ul></article><article class="card"><ul class="lesson-list-clean"><li>Winch/drum design</li><li>Gear ratio</li><li>Gears, chain/sprockets, or pulleys</li><li>Structural bracing</li><li>Cable/string routing</li></ul></article><article class="card"><ul class="lesson-list-clean"><li>Payload retention method</li><li>Speed-versus-torque strategy</li><li>How your design reduces friction</li><li>How your design prevents binding</li></ul></article></div></section>
+<section class="container lesson-section">
+<div class="section-header"><div><div class="eyebrow">Design Freedom</div><h2>What Your Team Gets to Decide</h2></div></div>
+<div class="poe-brief-grid">
+<article class="card"><h3>Structure</h3><ul class="poe-checklist"><li>Overall geometry</li><li>Frame width and height</li><li>Structural bracing</li><li>Base design</li></ul></article>
+<article class="card"><h3>Lift System</h3><ul class="poe-checklist"><li>Platform design</li><li>Guide system</li><li>Winch/drum design</li><li>Cable/string routing</li></ul></article>
+<article class="card"><h3>Power & Motion</h3><ul class="poe-checklist"><li>Motor location</li><li>Gear ratio</li><li>Gears, chain, sprockets, or pulleys</li><li>Speed-versus-torque strategy</li></ul></article>
+</div>
+</section>
 
-<section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Rules</div><h2>What You May Not Do</h2></div></div><article class="card"><ul class="lesson-list-clean"><li>Hold or stabilize the lift during an official trial.</li><li>Touch the payload or platform while it is moving.</li><li>Manually assist the motor, axle, drum, or lifting string.</li><li>Change the standardized payload mass.</li><li>Begin with the payload partially raised.</li><li>Allow the payload to hang freely instead of using a guided platform.</li><li>Use non-VEX structural components unless specifically approved.</li></ul><p><strong>If the mechanism jams, tips, drops the payload, or requires assistance, that trial does not count as successful.</strong></p></article></section>
+<section class="container lesson-section">
+<div class="section-header"><div><div class="eyebrow">Rules</div><h2>What You May Not Do</h2></div></div>
+<article class="card poe-rule-card">
+<ul class="poe-checklist">
+<li>Hold or stabilize the lift during an official trial.</li>
+<li>Touch the payload or platform while it is moving.</li>
+<li>Manually assist the motor, axle, drum, or lifting string.</li>
+<li>Change the standardized payload mass.</li>
+<li>Begin with the payload partially raised.</li>
+<li>Allow the payload to hang freely instead of using a guided platform.</li>
+<li>Use non-VEX structural components unless specifically approved.</li>
+</ul>
+<p><strong>If the lift jams, tips, drops the payload, or requires assistance, the trial is unsuccessful.</strong></p>
+</article>
+</section>
 
-<section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Before You Build</div><h2>Concept Sketch Required</h2></div></div><article class="card"><p>Your concept sketch must show and label the overall lift structure, payload platform, vertical guide system, motor location, power-transfer system, winch/drum or lifting mechanism, planned gear ratio, and major structural bracing.</p><p>Your team should be able to explain <strong>how power travels from the motor to the payload</strong> before construction begins.</p></article></section>
+<section class="container lesson-section">
+<div class="section-header"><div><div class="eyebrow">Before You Build</div><h2>Concept Sketch Required</h2></div></div>
+<article class="card">
+<p>Your concept sketch must clearly show and label:</p>
+<ul class="poe-checklist">
+<li>overall lift structure</li>
+<li>payload platform</li>
+<li>vertical guide system</li>
+<li>motor location</li>
+<li>power-transfer system</li>
+<li>winch/drum or lifting mechanism</li>
+<li>planned gear ratio</li>
+<li>major structural bracing</li>
+</ul>
+<p class="poe-section-note"><strong>Before building, your team should be able to explain how power travels from the motor to the payload.</strong></p>
+</article>
+</section>
 
-<section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Engineering Concepts</div><h2>Use the Physics You Already Know</h2></div></div><div class="card-grid"><article class="card"><h3>Gear Ratio</h3><p>How does your ratio change output speed and torque?</p></article><article class="card"><h3>Mechanical Advantage</h3><p>Does your mechanism increase the force available to raise the load?</p></article><article class="card"><h3>Work</h3><p><strong>W = Fd</strong>. Use the payload force and vertical lift distance.</p></article><article class="card"><h3>Power</h3><p><strong>P = W/t</strong>. Compare how quickly your mechanism performs the lift.</p></article><article class="card"><h3>Friction &amp; Alignment</h3><p>Look for rubbing, binding, uneven winding, and platform tilt.</p></article><article class="card"><h3>Structure &amp; Load Path</h3><p>Identify how the payload force travels through the cable, frame, bracing, and base.</p></article></div></section>
+<section class="container lesson-section">
+<div class="section-header"><div><div class="eyebrow">Engineering Concepts</div><h2>What You Should Be Thinking About</h2></div></div>
+<div class="poe-brief-grid">
+<article class="card"><h3>Gear Ratio</h3><p>How will your ratio change output speed and torque?</p></article>
+<article class="card"><h3>Mechanical Advantage</h3><p>Does your mechanism increase the force available to raise the payload?</p></article>
+<article class="card"><h3>Work</h3><p><strong>W = Fd</strong></p><p>Use the payload force and vertical lift distance.</p></article>
+<article class="card"><h3>Power</h3><p><strong>P = W/t</strong></p><p>Use the work performed and lift time.</p></article>
+<article class="card"><h3>Friction &amp; Alignment</h3><p>Look for rubbing, binding, uneven winding, or platform tilt.</p></article>
+<article class="card"><h3>Structure &amp; Load Path</h3><p>Follow how the payload force travels through the cable, frame, bracing, and base.</p></article>
+</div>
+</section>
 
-<section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Official Testing</div><h2>Three Consecutive Trials</h2></div></div><article class="card"><p>Before each trial, place the platform at the LOW position with the full 500 g payload on it. Remove your hands from the mechanism. Timing begins when the motor starts moving and stops when the payload reaches the required height.</p><div class="lesson-table-wrap"><table class="unit-lesson-table"><thead><tr><th>Trial</th><th>Payload</th><th>Lift Height</th><th>Lift Time</th><th>Success?</th></tr></thead><tbody><tr><td>1</td><td>500 g</td><td>_____ mm</td><td>_____ s</td><td>Yes / No</td></tr><tr><td>2</td><td>500 g</td><td>_____ mm</td><td>_____ s</td><td>Yes / No</td></tr><tr><td>3</td><td>500 g</td><td>_____ mm</td><td>_____ s</td><td>Yes / No</td></tr></tbody></table></div></article></section>
+<section class="container lesson-section">
+<div class="section-header"><div><div class="eyebrow">Official Testing</div><h2>Three Consecutive Trials</h2></div></div>
+<article class="card">
+<p>Start each trial with the platform at the LOW position and the complete 500 g payload resting on it. Remove your hands before the test begins. Timing starts when the motor begins moving and stops when the payload reaches the required height.</p>
+<table class="table">
+<thead><tr><th>Trial</th><th>Payload</th><th>Lift Height</th><th>Lift Time</th><th>Success?</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>500 g</td><td>_____ mm</td><td>_____ s</td><td>Yes / No</td></tr>
+<tr><td>2</td><td>500 g</td><td>_____ mm</td><td>_____ s</td><td>Yes / No</td></tr>
+<tr><td>3</td><td>500 g</td><td>_____ mm</td><td>_____ s</td><td>Yes / No</td></tr>
+</tbody>
+</table>
+</article>
+</section>
 
-<section class="container lesson-section"><div class="section-header"><div><div class="eyebrow">Iteration</div><h2>Required Design Revision</h2></div></div><article class="card"><p>Your first working design is not automatically your final design. Identify at least one problem or area for improvement, make a meaningful engineering revision, and document the change.</p><p>Possible issues include platform tilt, motor stalling, slow lifting, frame flex, gear skipping, uneven string winding, binding, base instability, excessive friction, or unnecessary mass.</p></article></section>
+<section class="container lesson-section">
+<div class="section-header"><div><div class="eyebrow">Iteration</div><h2>Required Design Revision</h2></div></div>
+<article class="card">
+<p>Your first working design is not automatically your final design. Identify at least one problem, make a meaningful engineering revision, and document the change.</p>
+<p>Possible issues include platform tilt, motor stalling, slow lifting, frame flex, gear skipping, uneven string winding, binding, base instability, excessive friction, or unnecessary mass.</p>
+</article>
+</section>
 
-<section class="container lesson-section" id="submit"><div class="section-header"><div><div class="eyebrow">Submission</div><h2>What You Will Submit</h2></div></div><article class="card deliverable-card"><ol class="mission-steps"><li>Initial concept sketch</li><li>Completed VEX cargo lift</li><li>Gear ratio and/or mechanical-system explanation</li><li>Three-trial testing data</li><li>Average lift time</li><li>Work calculation</li><li>Power calculation</li><li>Description of one problem observed during testing</li><li>Description of one design revision</li><li>Final reflection: explain the most important tradeoff your team made between speed, torque, stability, and reliability.</li></ol></article></section>
+<section class="container lesson-section" id="submit">
+<div class="section-header"><div><div class="eyebrow">Submission</div><h2>What You Will Submit</h2></div></div>
+<article class="card poe-submit-card">
+<ol class="mission-steps">
+<li><strong>Initial concept sketch</strong></li>
+<li><strong>Completed VEX cargo lift</strong></li>
+<li><strong>Gear ratio and/or mechanical-system explanation</strong></li>
+<li><strong>Three-trial testing data</strong></li>
+<li><strong>Average lift time</strong></li>
+<li><strong>Work calculation</strong></li>
+<li><strong>Power calculation</strong></li>
+<li><strong>One problem observed during testing</strong></li>
+<li><strong>One documented design revision</strong></li>
+<li><strong>Final reflection:</strong> Explain the most important tradeoff your team made between speed, torque, stability, and reliability.</li>
+</ol>
+</article>
+</section>
 
-<nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-1-8.html">← Previous Lesson</a><a class="btn" href="../unit-1.html">Unit 1 Overview</a></nav>
-</main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a> <a href="../../../../agenda.html">Daily Agenda</a> <a href="../../../../resources/index.html">Resources</a> <a href="../../../../certifications/index.html">Certifications</a> <a href="../../../../fablab/index.html">FabLab</a> <a href="../../../../about/index.html">About</a><a href="../../../../courses/ied/index.html">IED</a><a href="../../../../courses/poe/index.html">POE</a><a href="../../../../courses/adm/index.html">ADM</a><a href="../../../../challenge-library/index.html">Challenges</a></div></div></footer><button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body></html>
+<nav aria-label="Lesson navigation" class="container lesson-bottom-nav">
+<a class="btn secondary" href="lesson-1-8.html">← Previous Lesson</a>
+<a class="btn" href="../unit-1.html">Unit 1 Overview</a>
+</nav>
+</main>
+
+<footer class="footer">
+<div class="container footer-grid">
+<div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div>
+<div class="footer-links"><a href="../../../../courses.html">Courses</a> <a href="../../../../agenda.html">Daily Agenda</a> <a href="../../../../resources/index.html">Resources</a> <a href="../../../../certifications/index.html">Certifications</a> <a href="../../../../fablab/index.html">FabLab</a> <a href="../../../../about/index.html">About</a></div>
+</div>
+</footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+</body>
+</html>
