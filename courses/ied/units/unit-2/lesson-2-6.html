@@ -48,37 +48,54 @@ body.lesson-immersive-page .card.dark,body.lesson-immersive-page .card.dark *{co
 
 
 
+
 <section class="container lesson-section" id="bracket-3-model">
   <div class="section-header">
     <div>
       <div class="eyebrow">Reference Model</div>
       <h2>Bracket 3 Interactive 3D Model</h2>
-      <p class="section-subtitle">Use the same Bracket 3 model from Unit 1 as your reference while you build the CAD part in Lessons 2.5–2.7.</p>
+      <p class="section-subtitle">This is the same Bracket 3 model used in Unit 1 Lesson 1.5. Rotate it while comparing the geometry to your technical drawing.</p>
     </div>
   </div>
   <article class="card">
-    <p>This is the same Bracket 3 reference model used in Unit 1 Lesson 1.5. Rotate the model, inspect the overall form, and compare the geometry to your technical drawing as you complete the CAD model.</p>
-    <div class="bracket-viewer-wrap">
-      <div class="stl-viewer-card model-stl-viewer" data-stl-viewer data-model-src="../../../../assets/models/ied/unit-1/lesson-1-5/Bracket_3.virtual.stl" data-display-size="3.000 × 2.000 × 1.250 in">
-        <div class="stl-viewer-layout">
-          <div class="stl-viewer-stage">
-            <canvas aria-label="Interactive 3D model of Bracket 3" class="stl-viewer-canvas" data-stl-canvas></canvas>
-            <div class="stl-viewer-loading" data-stl-loading>Loading 3D model…</div>
+    <div class="stl-viewer-card model-stl-viewer" data-stl-viewer data-model-src="../../../../assets/models/ied/unit-1/lesson-1-5/Bracket_3.virtual.stl" data-display-size="3.000 × 2.000 × 1.250 in">
+      <div class="stl-viewer-layout">
+        <div class="stl-viewer-stage">
+          <canvas class="stl-viewer-canvas" data-stl-canvas tabindex="0" aria-label="Interactive 3D model: Bracket 3"></canvas>
+          <div class="stl-viewer-status" data-stl-status data-state="loading" aria-live="polite">Loading model…</div>
+          <div class="stl-viewer-hint">Drag to rotate • Scroll or pinch to zoom</div>
+          <div class="stl-viewer-dimensions" data-stl-dimensions>Overall dimensions: 3.000 × 2.000 × 1.250 in</div>
+        </div>
+        <div class="stl-viewer-controls">
+          <div class="stl-control-group">
+            <div class="stl-control-label">Display</div>
+            <button class="stl-mode-button" type="button" data-stl-mode="shaded" aria-pressed="true">Shaded model</button>
+            <button class="stl-mode-button" type="button" data-stl-mode="hidden" aria-pressed="false">Show hidden edges</button>
           </div>
-          <div class="stl-viewer-sidebar">
-            <div class="stl-viewer-stat"><span class="label">Overall dimensions</span><span class="value" data-stl-dimensions>Overall dimensions: 3.000 × 2.000 × 1.250 in</span></div>
-            <div class="stl-viewer-controls"><h3>Viewer Controls</h3><ul><li>Left mouse / drag: rotate</li><li>Mouse wheel: zoom</li><li>Right mouse / Shift + drag: pan</li><li>Double-click / Reset: recenter view</li></ul></div>
+          <div class="stl-control-group">
+            <div class="stl-control-label">Standard Views</div>
+            <button class="stl-action-button" type="button" data-stl-view="iso" aria-pressed="true">Isometric</button>
+            <button class="stl-action-button" type="button" data-stl-view="front" aria-pressed="false">Front</button>
+            <button class="stl-action-button" type="button" data-stl-view="top" aria-pressed="false">Top</button>
+            <button class="stl-action-button" type="button" data-stl-view="right" aria-pressed="false">Right</button>
           </div>
+          <div class="stl-control-group">
+            <div class="stl-control-label">Viewer Controls</div>
+            <label class="stl-switch-row"><input type="checkbox" data-stl-auto-rotate> Auto rotate</label>
+            <button class="stl-action-button primary" type="button" data-stl-reset>Reset View</button>
+            <button class="stl-action-button" type="button" data-stl-fullscreen>Full Screen</button>
+          </div>
+          <p class="stl-viewer-note"><strong>Reference use:</strong> Use the 3D viewer to interpret feature shape and location. Use the Unit 1 technical drawing for the exact dimensions required in your Fusion model.</p>
         </div>
       </div>
     </div>
     <div class="dimension-reference">
-      <h3>Key Bracket 3 Dimensions</h3>
-      <ul><li>Overall envelope: 3.000 L × 2.000 W × 1.250 H in</li><li>Base plate thickness: 0.250 in</li><li>Circular mounting pads: 4 × Ø1.000 in</li><li>Mounting holes: 4 × Ø0.250 through, concentric with the four mounting pads</li><li>Mounting-pad / hole-center pattern: 2.000 in apart along the length and 1.000 in apart across the width</li><li>Hole / pad center offsets: 0.500 in from each 3.000 in end and 0.500 in from each 2.000 in side</li><li>Raised center web thickness: 0.250 in</li><li>Upper arch outer radius: R0.625 in</li><li>Central top hole: Ø0.500 through, centered in the arch</li></ul>
+      <h3>Bracket 3 Dimension Reference — Inches</h3>
+      <ul><li>Overall envelope: 3.000 L × 2.000 W × 1.250 H in</li><li>Base plate thickness: 0.250 in</li><li>Circular mounting pads: 4 × Ø1.000 in</li><li>Mounting holes: 4 × Ø0.250 through, concentric with the four mounting pads</li><li>Mounting-pad / hole-center pattern: 2.000 in × 1.000 in center-to-center</li><li>Center base slot: 0.500 in wide × 1.000 in overall length with R0.250 ends; slot is centered in the base</li><li>Two upright ears: 0.092 in thick each with a 0.900 in clear gap between the inner faces</li><li>Each ear large hole: Ø0.400 through; center is 1.000 in above the base bottom</li><li>Each ear rounded top: R0.250, concentric with the Ø0.400 large hole</li><li>Each ear contains 3 obround slots: 0.586 in overall length × 0.125 in width</li><li>Obround slots are angled 50.2° to the base; slot centers are spaced 0.275 in apart</li><li>Slot centers are 0.535 in above the base bottom; measured from the lower ear edge, their offsets are 0.448, 0.723, and 0.998 in</li><li>Large-hole center on each ear is 0.950 in from the lower ear edge</li></ul>
     </div>
-    <p class="bracket-resource-note"><strong>Tip:</strong> Keep the Unit 1 technical drawing and this 3D model open together. Use the technical drawing for exact dimensions and use the 3D model to interpret shape, feature location, and overall geometry.</p>
   </article>
 </section>
+
 
 <section class="container lesson-section" id="task"><div class="lesson-grid one"><article class="card student-task-card"><div class="eyebrow">Assignment</div><h2>Cut Features and Holes — Bracket 3</h2><p>Continue the same Bracket 3 file from Lesson 2.5. This lesson focuses on removing material accurately using Extrude Cut and the Hole tool.</p><h3>Step-by-Step Instructions</h3><ol class="mission-steps"><li><strong>Open the existing Bracket 3 design:</strong> Do not start a new model. Use the same cloud design so the Timeline shows the progression from the original base feature.</li><li><strong>Plan each removed feature:</strong> Use the technical drawing to identify which features are custom cutouts and which are true circular holes.</li><li><strong>Create custom cut geometry:</strong> Sketch the required non-circular openings on the correct face. Fully constrain their position and size, then use Extrude with the Cut operation.</li><li><strong>Create engineered holes:</strong> Use the Hole tool for circular holes where appropriate. Set the location, diameter, and extent from the drawing rather than approximating the hole with an arbitrary sketch circle.</li><li><strong>Check cut extent:</strong> Verify whether each cut is Through All, To Object, or a specified depth. Make sure the result matches the documentation.</li><li><strong>Measure the finished features:</strong> Use Inspect/Measure to confirm hole diameters, center locations, spacing, and cut geometry.</li></ol><h3>Before You Submit</h3><ul><li>Custom openings use appropriate cut features.</li><li>Circular engineered holes use the Hole tool where directed.</li><li>Feature locations and diameters match the drawing.</li><li>The original base feature remains editable in the Timeline.</li></ul></article></div></section>
 
@@ -100,9 +117,15 @@ body.lesson-immersive-page .card.dark,body.lesson-immersive-page .card.dark *{co
   document.querySelectorAll('[data-stl-viewer]').forEach(card => {
     const target = card.querySelector('[data-stl-dimensions]');
     const desired = 'Overall dimensions: ' + card.dataset.displaySize;
-    const keepText = () => { if (target && target.textContent.trim() !== desired) target.textContent = desired; };
-    keepText();
-    if (target) new MutationObserver(keepText).observe(target, {childList:true, characterData:true, subtree:true});
+    const keepInches = () => {
+      if (target && target.textContent.trim() !== desired) target.textContent = desired;
+    };
+    keepInches();
+    if (target) new MutationObserver(keepInches).observe(target, {
+      childList: true,
+      characterData: true,
+      subtree: true
+    });
   });
 })();
 </script>
