@@ -7,6 +7,7 @@
 <meta content="Use the Bracket 3 documentation from Lesson 1.5 to create the base solid in Fusion." name="description"/>
 <link href="../../../../assets/css/styles.css" rel="stylesheet"/>
 <link href="../../../../assets/css/unit-lesson-immersive.css?v=20260824-u1-rebuild-v1" rel="stylesheet"/>
+<link href="../../../../assets/css/stl-lesson-viewer.css?v=20260908-ied15" rel="stylesheet"/>
 <link href="../../../../assets/css/ied-accessibility.css?v=20260720-a11y-v1" rel="stylesheet"/>
 <link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
 <script defer src="../../../../assets/js/main.js"></script>
@@ -23,6 +24,16 @@ body.lesson-immersive-page .card.dark,body.lesson-immersive-page .card.dark *{co
 .constraint-grid .card strong{display:block;font-size:1.1rem;margin-bottom:.3rem}
 </style>
 
+<style id="u2_5_model_style">
+
+.bracket-resource-note{margin-top:.9rem;padding:.9rem 1rem;border-left:5px solid #f3c95c;background:#f8fafc;border-radius:.5rem}
+.bracket-viewer-wrap{margin-top:1rem}
+.dimension-reference{margin-top:1rem;padding:1rem 1.1rem;border:1px solid #cbd5e1;border-radius:.7rem;background:#f8fafc}
+.dimension-reference h3{margin-top:0}
+.dimension-reference ul{margin-bottom:0}
+.dimension-reference li{margin:.34rem 0}
+
+</style>
 </head>
 <body class="safe-unit-page site-consistency-v4 lesson-detail-page immersive-lesson-page lesson-immersive-page">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -36,6 +47,39 @@ body.lesson-immersive-page .card.dark,body.lesson-immersive-page .card.dark *{co
 
 
 
+
+<section class="container lesson-section" id="bracket-3-model">
+  <div class="section-header">
+    <div>
+      <div class="eyebrow">Reference Model</div>
+      <h2>Bracket 3 Interactive 3D Model</h2>
+      <p class="section-subtitle">Use the same Bracket 3 model from Unit 1 as your reference while you build the CAD part in Lessons 2.5–2.7.</p>
+    </div>
+  </div>
+  <article class="card">
+    <p>This is the same Bracket 3 reference model used in Unit 1 Lesson 1.5. Rotate the model, inspect the overall form, and compare the geometry to your technical drawing as you complete the CAD model.</p>
+    <div class="bracket-viewer-wrap">
+      <div class="stl-viewer-card model-stl-viewer" data-stl-viewer data-model-src="../../../../assets/models/ied/unit-1/lesson-1-5/Bracket_3.virtual.stl" data-display-size="3.000 × 2.000 × 1.250 in">
+        <div class="stl-viewer-layout">
+          <div class="stl-viewer-stage">
+            <canvas aria-label="Interactive 3D model of Bracket 3" class="stl-viewer-canvas" data-stl-canvas></canvas>
+            <div class="stl-viewer-loading" data-stl-loading>Loading 3D model…</div>
+          </div>
+          <div class="stl-viewer-sidebar">
+            <div class="stl-viewer-stat"><span class="label">Overall dimensions</span><span class="value" data-stl-dimensions>Overall dimensions: 3.000 × 2.000 × 1.250 in</span></div>
+            <div class="stl-viewer-controls"><h3>Viewer Controls</h3><ul><li>Left mouse / drag: rotate</li><li>Mouse wheel: zoom</li><li>Right mouse / Shift + drag: pan</li><li>Double-click / Reset: recenter view</li></ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dimension-reference">
+      <h3>Key Bracket 3 Dimensions</h3>
+      <ul><li>Overall envelope: 3.000 L × 2.000 W × 1.250 H in</li><li>Base plate thickness: 0.250 in</li><li>Circular mounting pads: 4 × Ø1.000 in</li><li>Mounting holes: 4 × Ø0.250 through, concentric with the four mounting pads</li><li>Mounting-pad / hole-center pattern: 2.000 in apart along the length and 1.000 in apart across the width</li><li>Hole / pad center offsets: 0.500 in from each 3.000 in end and 0.500 in from each 2.000 in side</li><li>Raised center web thickness: 0.250 in</li><li>Upper arch outer radius: R0.625 in</li><li>Central top hole: Ø0.500 through, centered in the arch</li></ul>
+    </div>
+    <p class="bracket-resource-note"><strong>Tip:</strong> Keep the Unit 1 technical drawing and this 3D model open together. Use the technical drawing for exact dimensions and use the 3D model to interpret shape, feature location, and overall geometry.</p>
+  </article>
+</section>
+
 <section class="container lesson-section" id="task"><div class="lesson-grid one"><article class="card student-task-card"><div class="eyebrow">Assignment</div><h2>Creating 3D Parts with Extrude — Bracket 3</h2><p>You will begin modeling Bracket 3 using the technical drawing you created in Unit 1. This is the first part of one continuous model that will continue through Lessons 2.6 and 2.7.</p><h3>Step-by-Step Instructions</h3><ol class="mission-steps"><li><strong>Open the correct source information:</strong> Have your Bracket 3 technical documentation visible before modeling. Identify the best base face and the overall thickness of the part.</li><li><strong>Create the base sketch:</strong> Choose the origin plane that most directly matches the primary view of Bracket 3. Sketch the outside profile of the base geometry and fully constrain it using the dimensions from the drawing.</li><li><strong>Check the sketch before extruding:</strong> Confirm that the profile is closed and that every critical base dimension matches the technical drawing.</li><li><strong>Create the first solid feature:</strong> Use Extrude to give the base sketch the specified thickness. Make sure the operation creates a new solid body and that the direction and distance are correct.</li><li><strong>Verify the model:</strong> Use Inspect/Measure to check the overall width, height, and thickness. If a dimension is wrong, edit the original sketch or Extrude feature instead of adding corrective geometry.</li><li><strong>Keep the Timeline organized:</strong> Rename the base sketch or Extrude feature if directed by the instructor. Do not create holes, cuts, fillets, or chamfers yet.</li></ol><h3>Before You Submit</h3><ul><li>Base sketch matches the Unit 1 drawing.</li><li>Extrude thickness is correct.</li><li>Overall dimensions verify correctly.</li><li>Only the base solid exists at the end of the lesson.</li></ul></article></div></section>
 
 <section class="container lesson-section" id="submit"><article class="card submit-card"><div class="eyebrow">Submission</div><h2>What You Will Submit</h2><ul class="unit-meta-list submit-list"><li><strong>Fusion archive snapshot:</strong> current Bracket 3 model exported as <code>LastName_FirstName_2_5_Bracket3.f3d</code>.</li><li><strong>Isometric screenshot:</strong> base model with Browser and Timeline visible. Save as <code>LastName_FirstName_2_5_Bracket3.png</code>.</li></ul><p class="callout submission-standard"><strong>File requirements:</strong> Continue working in the same Bracket 3 cloud design through Lessons 2.5–2.7. For this lesson submission, create a snapshot with <strong>File → Export → Fusion 360 Archive Files (*.f3d)</strong>. Do not create a separate cloud design just for submission.</p></article></section>
@@ -48,5 +92,20 @@ body.lesson-immersive-page .card.dark,body.lesson-immersive-page .card.dark *{co
 </main>
 <footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a> <a href="../../../../agenda.html">Daily Agenda</a> <a href="../../../../resources/index.html">Resources</a> <a href="../../../../certifications/index.html">Certifications</a> <a href="../../../../fablab/index.html">FabLab</a> <a href="../../../../about/index.html">About</a></div></div></footer>
 <button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+
+<script src="../../../../assets/js/ied-lesson-1-5-bracket-loader.js?v=20260908"></script>
+<script src="../../../../assets/js/stl-lesson-viewer.js?v=20260908-ied15"></script>
+<script>
+(() => {
+  document.querySelectorAll('[data-stl-viewer]').forEach(card => {
+    const target = card.querySelector('[data-stl-dimensions]');
+    const desired = 'Overall dimensions: ' + card.dataset.displaySize;
+    const keepText = () => { if (target && target.textContent.trim() !== desired) target.textContent = desired; };
+    keepText();
+    if (target) new MutationObserver(keepText).observe(target, {childList:true, characterData:true, subtree:true});
+  });
+})();
+</script>
+
 </body>
 </html>
