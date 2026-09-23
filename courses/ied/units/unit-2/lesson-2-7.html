@@ -43,14 +43,14 @@ body.lesson-immersive-page #task .student-task-card > *{
 }
 
 </style>
-<style id="u2-bracket3-viewer-style">
+<style id="u2-common-reference-style">
 
+.lesson-reference-image{display:block;width:100%;height:auto;border-radius:14px;border:1px solid #c7d2dc;box-shadow:0 10px 30px rgba(11,31,58,.12)}
+.reference-image-caption{margin-top:.75rem;color:#526579;font-size:.95rem}
+.reference-note{margin-top:.95rem;padding:.95rem 1rem;border-left:5px solid #f3c95c;background:#f8fafc;border-radius:.55rem}
+.resource-button-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
+.bracket-resource-note{margin-top:.95rem;padding:.95rem 1rem;border-left:5px solid #f3c95c;background:#f8fafc;border-radius:.55rem}
 .bracket-viewer-wrap{margin-top:1rem}
-.dimension-reference{margin-top:1rem;padding:1rem 1.1rem;border:1px solid #cbd5e1;border-radius:.7rem;background:#f8fafc}
-.dimension-reference h3{margin-top:0}
-.dimension-reference ul{margin-bottom:0}
-.dimension-reference li{margin:.34rem 0}
-.bracket-resource-note{margin-top:.9rem;padding:.9rem 1rem;border-left:5px solid #f3c95c;background:#f8fafc;border-radius:.5rem}
 
 </style>
 </head>
@@ -70,56 +70,52 @@ body.lesson-immersive-page #task .student-task-card > *{
 <section class="container lesson-section" id="bracket-3-model">
   <div class="section-header">
     <div>
-      <div class="eyebrow">Reference Model</div>
-      <h2>Bracket 3 Interactive 3D Model</h2>
-      <p class="section-subtitle">Use the same Bracket 3 reference model from Unit 1 while you build and verify the Fusion model.</p>
+      <div class="eyebrow">Reference Resources</div>
+      <h2>Bracket 3 Reference Model and Drawing</h2>
+      <p class="section-subtitle">Use the 3D model to understand the geometry and the drawing PDF for all exact dimensions.</p>
     </div>
   </div>
   <article class="card">
-    <div class="stl-viewer-card model-stl-viewer"
-         data-stl-viewer
-         data-model-src="../../../../assets/models/ied/unit-1/lesson-1-5/Bracket_3.virtual.stl"
-         data-display-size="3.000 × 2.000 × 1.250 in">
-      <div class="stl-viewer-layout">
-        <div class="stl-viewer-stage">
-          <canvas class="stl-viewer-canvas" data-stl-canvas tabindex="0"
-                  aria-label="Interactive 3D model: Bracket 3"></canvas>
-          <div class="stl-viewer-status" data-stl-status data-state="loading" aria-live="polite">Loading model…</div>
-          <div class="stl-viewer-hint">Drag to rotate • Scroll or pinch to zoom</div>
-          <div class="stl-viewer-dimensions" data-stl-dimensions>
-            Overall dimensions: 3.000 × 2.000 × 1.250 in
+    <div class="resource-button-row">
+      <a class="btn secondary" download href="../../../../downloads/references/IED_Unit2_Bracket_3_Dimensioned_Drawing.pdf">Download Bracket 3 Drawing</a>
+    </div>
+    <div class="bracket-viewer-wrap">
+      <div class="stl-viewer-card model-stl-viewer"
+           data-stl-viewer
+           data-model-src="../../../../assets/models/ied/unit-1/lesson-1-5/Bracket_3.virtual.stl"
+           data-display-size="3.000 × 2.000 × 1.250 in">
+        <div class="stl-viewer-layout">
+          <div class="stl-viewer-stage">
+            <canvas class="stl-viewer-canvas" data-stl-canvas tabindex="0" aria-label="Interactive 3D model: Bracket 3"></canvas>
+            <div class="stl-viewer-status" data-stl-status data-state="loading" aria-live="polite">Loading model…</div>
+            <div class="stl-viewer-hint">Drag to rotate • Scroll or pinch to zoom</div>
+            <div class="stl-viewer-dimensions" data-stl-dimensions>Overall dimensions: 3.000 × 2.000 × 1.250 in</div>
           </div>
-        </div>
-        <div class="stl-viewer-controls">
-          <div class="stl-control-group">
-            <div class="stl-control-label">Display</div>
-            <button class="stl-mode-button" type="button" data-stl-mode="shaded" aria-pressed="true">Shaded model</button>
-            <button class="stl-mode-button" type="button" data-stl-mode="hidden" aria-pressed="false">Show hidden edges</button>
+          <div class="stl-viewer-controls">
+            <div class="stl-control-group">
+              <div class="stl-control-label">Display</div>
+              <button class="stl-mode-button" type="button" data-stl-mode="shaded" aria-pressed="true">Shaded model</button>
+              <button class="stl-mode-button" type="button" data-stl-mode="hidden" aria-pressed="false">Show hidden edges</button>
+            </div>
+            <div class="stl-control-group">
+              <div class="stl-control-label">Standard Views</div>
+              <button class="stl-action-button" type="button" data-stl-view="iso" aria-pressed="true">Isometric</button>
+              <button class="stl-action-button" type="button" data-stl-view="front" aria-pressed="false">Front</button>
+              <button class="stl-action-button" type="button" data-stl-view="top" aria-pressed="false">Top</button>
+              <button class="stl-action-button" type="button" data-stl-view="right" aria-pressed="false">Right</button>
+            </div>
+            <div class="stl-control-group">
+              <div class="stl-control-label">Viewer Controls</div>
+              <label class="stl-switch-row"><input type="checkbox" data-stl-auto-rotate> Auto rotate</label>
+              <button class="stl-action-button primary" type="button" data-stl-reset>Reset View</button>
+              <button class="stl-action-button" type="button" data-stl-fullscreen>Full Screen</button>
+            </div>
+            <p class="stl-viewer-note"><strong>Important:</strong> Use the interactive viewer to interpret shape, orientation, and feature location. Use the downloaded Bracket 3 drawing as the dimensional authority for your CAD model.</p>
           </div>
-          <div class="stl-control-group">
-            <div class="stl-control-label">Viewer Controls</div>
-            <label class="stl-switch-row"><input type="checkbox" data-stl-auto-rotate> Auto rotate</label>
-            <button class="stl-action-button primary" type="button" data-stl-reset>Reset View</button>
-            <button class="stl-action-button" type="button" data-stl-fullscreen>Full Screen</button>
-          </div>
-          <p class="stl-viewer-note"><strong>Reference use:</strong> Use the 3D model to interpret feature shape and location. Use the dimensioned drawing for exact dimensions.</p>
         </div>
       </div>
     </div>
-
-    <div class="dimension-reference">
-      <h3>Bracket 3 Dimension Reference — Inches</h3>
-      <ul><li>Overall envelope: 3.000 L × 2.000 W × 1.250 H in</li><li>Base plate thickness: 0.250 in</li><li>Circular mounting pads: 4 × Ø1.000 in</li><li>Mounting holes: 4 × Ø0.250 through, concentric with the four mounting pads</li><li>Mounting-pad / hole-center pattern: 2.000 in × 1.000 in center-to-center</li><li>Center base slot: 0.500 in wide × 1.000 in overall length with R0.250 ends; slot is centered in the base</li><li>Two upright ears: 0.092 in thick each with a 0.900 in clear gap between the inner faces</li><li>Each ear large hole: Ø0.400 through; center is 1.000 in above the base bottom</li><li>Each ear rounded top: R0.250, concentric with the Ø0.400 large hole</li><li>Each ear contains 3 obround slots: 0.586 in overall length × 0.125 in width</li><li>Obround slots are angled 50.2° to the base; slot centers are spaced 0.275 in apart</li><li>Slot centers are 0.535 in above the base bottom; measured from the lower ear edge, their offsets are 0.448, 0.723, and 0.998 in</li><li>Large-hole center on each ear is 0.950 in from the lower ear edge</li></ul>
-    </div>
-
-    <div class="resource-actions" style="margin-top:1rem">
-      <a class="btn secondary" download
-         href="../../../../downloads/references/IED_Unit2_Bracket_3_Dimensioned_Drawing.pdf">
-         Download Bracket 3 Drawing
-      </a>
-    </div>
-
-    <p class="bracket-resource-note"><strong>Recommended workflow:</strong> Keep the drawing and 3D viewer open together. Use the drawing for measurements and the model for interpreting the part geometry.</p>
+    <p class="bracket-resource-note"><strong>Recommended workflow:</strong> Keep the PDF drawing open while modeling. Use the 3D viewer when you need help interpreting the part geometry, but use the drawing whenever you need an exact dimension.</p>
   </article>
 </section>
 
@@ -147,9 +143,7 @@ body.lesson-immersive-page #task .student-task-card > *{
       if (target && target.textContent.trim() !== desired) target.textContent = desired;
     };
     keepInches();
-    if (target) new MutationObserver(keepInches).observe(target, {
-      childList:true, characterData:true, subtree:true
-    });
+    if (target) new MutationObserver(keepInches).observe(target, {childList:true, characterData:true, subtree:true});
   });
 })();
 </script>

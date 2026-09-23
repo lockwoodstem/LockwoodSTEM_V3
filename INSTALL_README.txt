@@ -1,22 +1,20 @@
-Lessons 2.5–2.7 Consolidated Fix
-================================
+Unit 2 Audit Fixes
+===================
 
-This update combines ALL current changes for Lessons 2.5–2.7:
-- Full-width Assignment instructions
-- Working Bracket 3 interactive 3D viewer
-- Bracket 3 dimension reference
-- Download Bracket 3 Drawing button
-- Shared dimensioned drawing PDF
+This patch applies the requested Unit 2 content/organization fixes.
 
-Upload the entire contents of this ZIP to the ROOT of the repository.
+Included updates:
+- Lesson 2.2: added the sketch practice image and clarified that it is for geometry only.
+- Lesson 2.3: added the sketch constraints reference image.
+- Lesson 2.4: added the dimensioned sketches reference image and clarified that
+  Sketches A-C are practice while Sketch D is the independent graded sketch.
+- Lessons 2.5, 2.6, 2.7: restored/added the working Bracket 3 interactive 3D model,
+  added the drawing download button, and made the PDF drawing the dimensional authority.
+- Lesson 2.8: added the uploaded revolve drawing PDF as a downloadable lesson resource.
 
-Replace:
-courses/ied/units/unit-2/lesson-2-5.html
-courses/ied/units/unit-2/lesson-2-6.html
-courses/ied/units/unit-2/lesson-2-7.html
+Also included:
+- supporting image files for 2.2, 2.3, and 2.4
+- Bracket 3 drawing PDF
+- Lesson 2.8 drawing PDF
 
-Add:
-downloads/references/IED_Unit2_Bracket_3_Dimensioned_Drawing.pdf
-
-This package intentionally consolidates the previous separate patches so
-a later update does not remove the viewer or drawing again.
+Upload the contents of this ZIP to the ROOT of the repository and replace the matching files.
