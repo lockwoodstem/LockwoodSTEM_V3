@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-24T23:59:00Z",
+  "generated": "2026-10-02T10:49:25.350Z",
   "lessons": [
     {
       "course": "IED",
@@ -37,7 +37,7 @@
       "lesson": 4,
       "number": "0.4",
       "type": "Lesson",
-      "title": "Engineering Design Process",
+      "title": "Launch Pad Challenge: Define & Imagine",
       "url": "courses/ied/units/unit-0/lesson-0-4.html",
       "presentation": "downloads/presentations/IED_Unit0_Lesson_0.4_Engineering_Design_Process.pptx"
     },
@@ -47,7 +47,7 @@
       "lesson": 5,
       "number": "0.5",
       "type": "Lesson",
-      "title": "Engineering Notebook & Documentation Basics",
+      "title": "Evaluate & Select",
       "url": "courses/ied/units/unit-0/lesson-0-5.html",
       "presentation": "downloads/presentations/IED_Unit0_Lesson_0.5_Engineering_Notebook_and_Documentation_Basics.pptx"
     },
@@ -57,7 +57,7 @@
       "lesson": 6,
       "number": "0.6",
       "type": "Lesson",
-      "title": "Problem Definition, Criteria & Constraints",
+      "title": "Develop the Design",
       "url": "courses/ied/units/unit-0/lesson-0-6.html",
       "presentation": "downloads/presentations/IED_Unit0_Lesson_0.6_Problem_Definition_Criteria_and_Constraints.pptx"
     },
@@ -67,7 +67,7 @@
       "lesson": 7,
       "number": "0.7",
       "type": "Lesson",
-      "title": "Rocket Launch Pad Design Challenge Launch",
+      "title": "Fabrication Readiness",
       "url": "courses/ied/units/unit-0/lesson-0-7.html"
     },
     {
@@ -76,7 +76,7 @@
       "lesson": 8,
       "number": "0.8",
       "type": "Lesson",
-      "title": "Launch Pad Build Plan",
+      "title": "Prototype Build",
       "url": "courses/ied/units/unit-0/lesson-0-8.html"
     },
     {
@@ -85,7 +85,7 @@
       "lesson": 9,
       "number": "0.9",
       "type": "Lesson",
-      "title": "Launch Pad Prototype Build Day",
+      "title": "Test & Improve",
       "url": "courses/ied/units/unit-0/lesson-0-9.html"
     },
     {
@@ -94,27 +94,8 @@
       "lesson": 10,
       "number": "0.10",
       "type": "Lesson",
-      "title": "Launch Pad Testing & Improvement",
+      "title": "Final Launch Pad Challenge & Design Review",
       "url": "courses/ied/units/unit-0/lesson-0-10.html"
-    },
-    {
-      "course": "IED",
-      "unit": 0,
-      "lesson": 11,
-      "number": "0.11",
-      "type": "Lesson",
-      "title": "Final Documentation & Design Review",
-      "url": "courses/ied/units/unit-0/lesson-0-11.html",
-      "presentation": "downloads/presentations/LS-TMP-018_Final_Design_Review_Slides_Template.pptx"
-    },
-    {
-      "course": "IED",
-      "unit": 0,
-      "lesson": 12,
-      "number": "0.12",
-      "type": "Lesson",
-      "title": "Unit 0 Portfolio Check & Design Reflection",
-      "url": "courses/ied/units/unit-0/lesson-0-12.html"
     },
     {
       "course": "IED",
@@ -167,7 +148,7 @@
       "lesson": 6,
       "number": "1.6",
       "type": "Lesson",
-      "title": "Rocket Reverse Engineering & Product Investigation",
+      "title": "Measurement, Precision & Tolerances",
       "url": "courses/ied/units/unit-1/lesson-1-6.html"
     },
     {
@@ -176,7 +157,7 @@
       "lesson": 7,
       "number": "1.7",
       "type": "Lesson",
-      "title": "Measurement, Precision & Tolerances",
+      "title": "Joining Methods & Assembly Systems",
       "url": "courses/ied/units/unit-1/lesson-1-7.html"
     },
     {
@@ -185,44 +166,8 @@
       "lesson": 8,
       "number": "1.8",
       "type": "Lesson",
-      "title": "Joining Methods & Assembly Systems",
+      "title": "Engineering Documentation Challenge",
       "url": "courses/ied/units/unit-1/lesson-1-8.html"
-    },
-    {
-      "course": "IED",
-      "unit": 1,
-      "lesson": 9,
-      "number": "1.9",
-      "type": "Lesson",
-      "title": "Documenting the Rocket Assembly",
-      "url": "courses/ied/units/unit-1/lesson-1-9.html"
-    },
-    {
-      "course": "IED",
-      "unit": 1,
-      "lesson": 10,
-      "number": "1.10",
-      "type": "Lesson",
-      "title": "Exploded Views & Bills of Materials",
-      "url": "courses/ied/units/unit-1/lesson-1-10.html"
-    },
-    {
-      "course": "IED",
-      "unit": 1,
-      "lesson": 11,
-      "number": "1.11",
-      "type": "Lesson",
-      "title": "Assembly Instructions & Technical Communication",
-      "url": "courses/ied/units/unit-1/lesson-1-11.html"
-    },
-    {
-      "course": "IED",
-      "unit": 1,
-      "lesson": 12,
-      "number": "1.12",
-      "type": "Lesson",
-      "title": "Engineering Change & Product Improvement Proposal",
-      "url": "courses/ied/units/unit-1/lesson-1-12.html"
     },
     {
       "course": "IED",
@@ -230,7 +175,7 @@
       "lesson": 1,
       "number": "2.1",
       "type": "Lesson",
-      "title": "From Engineering Documentation to CAD",
+      "title": "Getting Started with Fusion",
       "url": "courses/ied/units/unit-2/lesson-2-1.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.1_From_Engineering_Documentation_to_CAD.pptx"
     },
@@ -240,7 +185,7 @@
       "lesson": 2,
       "number": "2.2",
       "type": "Lesson",
-      "title": "Fusion 360 Interface and File Setup",
+      "title": "Sketch Planes and 2D Sketching",
       "url": "courses/ied/units/unit-2/lesson-2-2.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.2_Fusion_360_Interface_and_File_Setup.pptx"
     },
@@ -250,7 +195,7 @@
       "lesson": 3,
       "number": "2.3",
       "type": "Lesson",
-      "title": "Sketch Planes and 2D Sketching",
+      "title": "Sketch Constraints",
       "url": "courses/ied/units/unit-2/lesson-2-3.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.3_Sketch_Planes_and_2D_Sketching.pptx"
     },
@@ -260,7 +205,7 @@
       "lesson": 4,
       "number": "2.4",
       "type": "Lesson",
-      "title": "Sketch Constraints",
+      "title": "Dimensioned CAD Sketches",
       "url": "courses/ied/units/unit-2/lesson-2-4.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.4_Sketch_Constraints.pptx"
     },
@@ -270,7 +215,7 @@
       "lesson": 5,
       "number": "2.5",
       "type": "Lesson",
-      "title": "Dimensioned CAD Sketches",
+      "title": "Creating 3D Parts with Extrude — Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-5.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.5_Dimensioned_CAD_Sketches.pptx"
     },
@@ -280,7 +225,7 @@
       "lesson": 6,
       "number": "2.6",
       "type": "Lesson",
-      "title": "Extrude Basics",
+      "title": "Cut Features and Holes — Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-6.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.6_Extrude_Basics.pptx"
     },
@@ -290,7 +235,7 @@
       "lesson": 7,
       "number": "2.7",
       "type": "Lesson",
-      "title": "Cut Features and Holes",
+      "title": "Fillets, Chamfers, and Design Intent — Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-7.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.7_Cut_Features_and_Holes.pptx"
     },
@@ -300,7 +245,7 @@
       "lesson": 8,
       "number": "2.8",
       "type": "Lesson",
-      "title": "Fillets, Chamfers, and Design Intent",
+      "title": "Creating Rotational Parts with Revolve",
       "url": "courses/ied/units/unit-2/lesson-2-8.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.8_Fillets_Chamfers_and_Design_Intent.pptx"
     },
@@ -310,7 +255,7 @@
       "lesson": 9,
       "number": "2.9",
       "type": "Lesson",
-      "title": "Revolve Features: Nose Cone and Nozzle",
+      "title": "Mirror and Pattern Tools",
       "url": "courses/ied/units/unit-2/lesson-2-9.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.9_Revolve_Features_Nose_Cone_and_Nozzle.pptx"
     },
@@ -320,7 +265,7 @@
       "lesson": 10,
       "number": "2.10",
       "type": "Lesson",
-      "title": "Patterns and Symmetry: Rocket Fins",
+      "title": "Condensation-Draining Coaster Mini-Project",
       "url": "courses/ied/units/unit-2/lesson-2-10.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.10_Patterns_and_Symmetry_Rocket_Fins.pptx"
     },
@@ -330,7 +275,7 @@
       "lesson": 11,
       "number": "2.11",
       "type": "Lesson",
-      "title": "Parametric Rocket Part Modeling",
+      "title": "Coaster CAD Model Check & Revision",
       "url": "courses/ied/units/unit-2/lesson-2-11.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.11_Parametric_Rocket_Part_Modeling.pptx"
     },
@@ -340,7 +285,7 @@
       "lesson": 12,
       "number": "2.12",
       "type": "Lesson",
-      "title": "CAD Model Check and Revision",
+      "title": "Design for 3D Printing",
       "url": "courses/ied/units/unit-2/lesson-2-12.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.12_CAD_Model_Check_and_Revision.pptx"
     },
@@ -350,7 +295,7 @@
       "lesson": 13,
       "number": "2.13",
       "type": "Lesson",
-      "title": "Preparing CAD Files for 3D Printing",
+      "title": "Slicer Basics and Print Settings",
       "url": "courses/ied/units/unit-2/lesson-2-13.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.13_Preparing_CAD_Files_for_3D_Printing.pptx"
     },
@@ -360,7 +305,7 @@
       "lesson": 14,
       "number": "2.14",
       "type": "Lesson",
-      "title": "Slicer Basics and Print Settings",
+      "title": "FabLab 3D Printer Certification",
       "url": "courses/ied/units/unit-2/lesson-2-14.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.14_Slicer_Basics_and_Print_Settings.pptx"
     },
@@ -370,7 +315,7 @@
       "lesson": 15,
       "number": "2.15",
       "type": "Lesson",
-      "title": "FabLab 3D Printer Certification",
+      "title": "Design & Print a Manufacturing Tolerance Tester",
       "url": "courses/ied/units/unit-2/lesson-2-15.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.15_FabLab_3D_Printer_Certification.pptx"
     },
@@ -380,29 +325,9 @@
       "lesson": 16,
       "number": "2.16",
       "type": "Lesson",
-      "title": "Final 3D Printed Tolerance Tester Workday",
+      "title": "Tolerance Testing & Manufacturing Recommendations",
       "url": "courses/ied/units/unit-2/lesson-2-16.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.16_Final_3D_Printed_Tolerance_Tester_Workday.pptx"
-    },
-    {
-      "course": "IED",
-      "unit": 2,
-      "lesson": 17,
-      "number": "2.17",
-      "type": "Lesson",
-      "title": "3D Printing Post-Processing",
-      "url": "courses/ied/units/unit-2/lesson-2-17.html",
-      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.17_3D_Printing_Post_Processing.pptx"
-    },
-    {
-      "course": "IED",
-      "unit": 2,
-      "lesson": 18,
-      "number": "2.18",
-      "type": "Lesson",
-      "title": "Final Tolerance Tester Review and Recommendation",
-      "url": "courses/ied/units/unit-2/lesson-2-18.html",
-      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.18_Final_Tolerance_Tester_Review_and_Recommendation.pptx"
     },
     {
       "course": "IED",
