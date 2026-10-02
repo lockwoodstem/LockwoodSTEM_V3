@@ -935,7 +935,7 @@
       "lesson": 4,
       "number": "0.4",
       "type": "Lesson",
-      "title": "Hand Tool Certification",
+      "title": "CubeSat Challenge: Define & Design",
       "url": "courses/poe/units/unit-0/lesson-0-4.html",
       "presentation": "downloads/presentations/POE_Unit0_Lesson_0.4_Hand_Tool_Certification.pptx"
     },
@@ -945,7 +945,7 @@
       "lesson": 5,
       "number": "0.5",
       "type": "Lesson",
-      "title": "Laser Cutter Certification",
+      "title": "Evaluate & Develop",
       "url": "courses/poe/units/unit-0/lesson-0-5.html",
       "presentation": "downloads/presentations/POE_Unit0_Lesson_0.5_Laser_Cutter_Certification.pptx"
     },
@@ -955,7 +955,7 @@
       "lesson": 6,
       "number": "0.6",
       "type": "Lesson",
-      "title": "3D Printer Certification",
+      "title": "CAD & Assembly Design",
       "url": "courses/poe/units/unit-0/lesson-0-6.html",
       "presentation": "downloads/presentations/POE_Unit0_Lesson_0.6_3D_Printer_Certification.pptx"
     },
@@ -965,7 +965,7 @@
       "lesson": 7,
       "number": "0.7",
       "type": "Lesson",
-      "title": "Fusion Refresher: Sketches, Constraints & Dimensions",
+      "title": "Additive Manufacturing",
       "url": "courses/poe/units/unit-0/lesson-0-7.html",
       "presentation": "downloads/presentations/POE_Unit0_Lesson_0.7_Fusion_360_Refresher_Sketches_Constraints_and_Dimensions.pptx"
     },
@@ -975,7 +975,7 @@
       "lesson": 8,
       "number": "0.8",
       "type": "Lesson",
-      "title": "Fusion Refresher: Parts, Assemblies & Exports",
+      "title": "Laser Manufacturing",
       "url": "courses/poe/units/unit-0/lesson-0-8.html",
       "presentation": "downloads/presentations/POE_Unit0_Lesson_0.8_Fusion_360_Refresher_Parts_Assemblies_and_Exports.pptx"
     },
@@ -985,7 +985,7 @@
       "lesson": 9,
       "number": "0.9",
       "type": "Lesson",
-      "title": "Systems Thinking in Aerospace Engineering",
+      "title": "Fabrication & Assembly",
       "url": "courses/poe/units/unit-0/lesson-0-9.html",
       "presentation": "downloads/presentations/POE_Unit0_Lesson_0.9_Systems_Thinking_in_Aerospace_Engineering.pptx"
     },
@@ -995,27 +995,9 @@
       "lesson": 10,
       "number": "0.10",
       "type": "Lesson",
-      "title": "VEX and Rover Readiness Orientation",
+      "title": "CubeSat Lightweight Structure Competition",
       "url": "courses/poe/units/unit-0/lesson-0-10.html",
       "presentation": "downloads/presentations/POE_Unit0_Lesson_0.10_VEX_and_Rover_Readiness_Orientation.pptx"
-    },
-    {
-      "course": "POE",
-      "unit": 0,
-      "lesson": 11,
-      "number": "0.11",
-      "type": "Lesson",
-      "title": "Lunar Rock Payload Device: Plan and Design",
-      "url": "courses/poe/units/unit-0/lesson-0-11.html"
-    },
-    {
-      "course": "POE",
-      "unit": 0,
-      "lesson": 12,
-      "number": "0.12",
-      "type": "Lesson",
-      "title": "Lunar Rock Payload Device: Build, Test, Improve, and Defend",
-      "url": "courses/poe/units/unit-0/lesson-0-12.html"
     },
     {
       "course": "POE",
@@ -1095,7 +1077,7 @@
       "lesson": 9,
       "number": "1.9",
       "type": "Lesson",
-      "title": "Energy Sources for Aerospace Systems",
+      "title": "VEX Cargo Lift Engineering Challenge",
       "url": "courses/poe/units/unit-1/lesson-1-9.html"
     },
     {
@@ -1104,7 +1086,7 @@
       "lesson": 10,
       "number": "1.10",
       "type": "Lesson",
-      "title": "Electrical Basics: Voltage, Current, and Resistance",
+      "title": "VEX Crane Stability and Torque Challenge",
       "url": "courses/poe/units/unit-1/lesson-1-10.html"
     },
     {
@@ -1113,7 +1095,7 @@
       "lesson": 11,
       "number": "1.11",
       "type": "Lesson",
-      "title": "Motors and Electrical-to-Mechanical Power",
+      "title": "Combined Mechanisms Design Challenge",
       "url": "courses/poe/units/unit-1/lesson-1-11.html"
     },
     {
@@ -1122,7 +1104,7 @@
       "lesson": 12,
       "number": "1.12",
       "type": "Lesson",
-      "title": "Design Brief: VEX Rover Mechanisms Challenge",
+      "title": "Mechanism Testing, Data Analysis, and Improvement",
       "url": "courses/poe/units/unit-1/lesson-1-12.html"
     },
     {
@@ -1131,53 +1113,8 @@
       "lesson": 13,
       "number": "1.13",
       "type": "Lesson",
-      "title": "Research, Criteria, Constraints, and Decision Matrix",
+      "title": "Final Mechanism Design Review",
       "url": "courses/poe/units/unit-1/lesson-1-13.html"
-    },
-    {
-      "course": "POE",
-      "unit": 1,
-      "lesson": 14,
-      "number": "1.14",
-      "type": "Lesson",
-      "title": "Concept Sketching and Mechanism Planning",
-      "url": "courses/poe/units/unit-1/lesson-1-14.html"
-    },
-    {
-      "course": "POE",
-      "unit": 1,
-      "lesson": 15,
-      "number": "1.15",
-      "type": "Lesson",
-      "title": "Prototype Build Day 1: Structure and Motion",
-      "url": "courses/poe/units/unit-1/lesson-1-15.html"
-    },
-    {
-      "course": "POE",
-      "unit": 1,
-      "lesson": 16,
-      "number": "1.16",
-      "type": "Lesson",
-      "title": "Prototype Build Day 2: Power, Load, and Troubleshooting",
-      "url": "courses/poe/units/unit-1/lesson-1-16.html"
-    },
-    {
-      "course": "POE",
-      "unit": 1,
-      "lesson": 17,
-      "number": "1.17",
-      "type": "Lesson",
-      "title": "Mechanism Testing and Data Analysis",
-      "url": "courses/poe/units/unit-1/lesson-1-17.html"
-    },
-    {
-      "course": "POE",
-      "unit": 1,
-      "lesson": 18,
-      "number": "1.18",
-      "type": "Lesson",
-      "title": "Final Design Review and Reflection",
-      "url": "courses/poe/units/unit-1/lesson-1-18.html"
     },
     {
       "course": "POE",
@@ -1993,7 +1930,7 @@
       "unit": 1,
       "number": "1.3.1",
       "type": "Problem",
-      "title": "Pack and Ship Challenge",
+      "title": "Flexible Pick-and-Pallet Automation",
       "url": "courses/adm/units/unit-1/problem-1-3-1.html"
     },
     {
