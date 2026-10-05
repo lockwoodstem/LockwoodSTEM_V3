@@ -1938,7 +1938,7 @@
       "unit": 2,
       "number": "2.1.1",
       "type": "Activity",
-      "title": "Industrial Workcell",
+      "title": "Anatomy of an Automated Workcell",
       "url": "courses/adm/units/unit-2/activity-2-1-1.html"
     },
     {
@@ -1946,7 +1946,7 @@
       "unit": 2,
       "number": "2.1.2",
       "type": "Activity",
-      "title": "Workcell Safety",
+      "title": "Workcell Safety & Operating States",
       "url": "courses/adm/units/unit-2/activity-2-1-2.html"
     },
     {
@@ -1954,7 +1954,7 @@
       "unit": 2,
       "number": "2.1.3",
       "type": "Activity",
-      "title": "Sorting by Color",
+      "title": "Optical Sensing & Color Detection",
       "url": "courses/adm/units/unit-2/activity-2-1-3.html"
     },
     {
@@ -1962,7 +1962,7 @@
       "unit": 2,
       "number": "2.1.4",
       "type": "Activity",
-      "title": "Conditionals and Loops",
+      "title": "Sensor-Based Decision Logic",
       "url": "courses/adm/units/unit-2/activity-2-1-4.html"
     },
     {
@@ -1970,7 +1970,7 @@
       "unit": 2,
       "number": "2.1.5",
       "type": "Activity",
-      "title": "Material Transportation",
+      "title": "Conveyor Systems & Feedback Control",
       "url": "courses/adm/units/unit-2/activity-2-1-5.html"
     },
     {
@@ -1978,7 +1978,7 @@
       "unit": 2,
       "number": "2.1.6",
       "type": "Activity",
-      "title": "Pneumatics",
+      "title": "Pneumatics & Automated Actuation",
       "url": "courses/adm/units/unit-2/activity-2-1-6.html"
     },
     {
@@ -1986,7 +1986,7 @@
       "unit": 2,
       "number": "2.1.7",
       "type": "Project",
-      "title": "Sorting Challenge",
+      "title": "Automated Sorting Challenge",
       "url": "courses/adm/units/unit-2/project-2-1-7.html"
     },
     {
@@ -1994,7 +1994,7 @@
       "unit": 2,
       "number": "2.2.1",
       "type": "Activity",
-      "title": "Machine Vision",
+      "title": "Machine Vision & AI Vision Sensor",
       "url": "courses/adm/units/unit-2/activity-2-2-1.html"
     },
     {
@@ -2002,7 +2002,7 @@
       "unit": 2,
       "number": "2.2.2",
       "type": "Activity",
-      "title": "Bring Your Own Sensors",
+      "title": "External Sensors: Analog & Digital",
       "url": "courses/adm/units/unit-2/activity-2-2-2.html"
     },
     {
@@ -2010,7 +2010,7 @@
       "unit": 2,
       "number": "2.2.3",
       "type": "Activity",
-      "title": "Sensor Applications",
+      "title": "Sensor Monitoring & Automated Response",
       "url": "courses/adm/units/unit-2/activity-2-2-3.html"
     },
     {
@@ -2018,7 +2018,7 @@
       "unit": 2,
       "number": "2.2.4",
       "type": "Project",
-      "title": "Handshaking",
+      "title": "Workcell Handshaking & Verified Movement",
       "url": "courses/adm/units/unit-2/project-2-2-4.html"
     },
     {
@@ -2026,7 +2026,7 @@
       "unit": 2,
       "number": "2.3.1",
       "type": "Activity",
-      "title": "Predictive Maintenance",
+      "title": "Predictive Maintenance & Motor Health",
       "url": "courses/adm/units/unit-2/activity-2-3-1.html"
     },
     {
@@ -2034,7 +2034,7 @@
       "unit": 2,
       "number": "2.3.2",
       "type": "Activity",
-      "title": "Maximizing Productivity",
+      "title": "Design of Experiments & Workcell Optimization",
       "url": "courses/adm/units/unit-2/activity-2-3-2.html"
     },
     {
@@ -2050,7 +2050,7 @@
       "unit": 2,
       "number": "2.4.1",
       "type": "Problem",
-      "title": "Coordinated Movement",
+      "title": "Coordinated Workcell System Challenge",
       "url": "courses/adm/units/unit-2/problem-2-4-1.html"
     },
     {
