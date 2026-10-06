@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 z" fill="#0b1f3a"/>
+    </marker>
+    <style>
+      .bg{fill:#ffffff}
+      .title{font:700 42px Arial,sans-serif;fill:#0b1f3a}
+      .sub{font:24px Arial,sans-serif;fill:#526579}
+      .label{font:700 30px Arial,sans-serif;fill:#0b1f3a}
+      .note{font:22px Arial,sans-serif;fill:#526579}
+      .shape{fill:none;stroke:#0b1f3a;stroke-width:5}
+      .center{fill:none;stroke:#7a8ba0;stroke-width:2;stroke-dasharray:10 8}
+      .dim{fill:none;stroke:#0b1f3a;stroke-width:2.5;marker-start:url(#arrow);marker-end:url(#arrow)}
+      .ext{stroke:#8091a5;stroke-width:2}
+      .dtxt{font:700 22px Arial,sans-serif;fill:#0b1f3a}
+      .panel{fill:#f8fafc;stroke:#c7d2dc;stroke-width:2}
+      .accent{fill:#f3c95c}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="1100"/>
+  <text x="80" y="70" class="title">IED 2.4 — Dimensioned CAD Sketches</text>
+  <text x="80" y="110" class="sub">Create each profile in Fusion using geometric constraints first, then dimensions. All dimensions are in mm.</text>
+
+  <!-- Panel A -->
+  <rect x="60" y="150" width="720" height="400" rx="20" class="panel"/>
+  <rect x="85" y="175" width="60" height="42" rx="10" class="accent"/>
+  <text x="106" y="207" class="label">A</text>
+  <text x="165" y="205" class="note">Guided practice — rectangle + centered hole</text>
+  <rect x="215" y="280" width="360" height="180" class="shape"/>
+  <circle cx="350" cy="370" r="45" class="shape"/>
+  <line x1="350" y1="300" x2="350" y2="440" class="center"/>
+  <line x1="280" y1="370" x2="420" y2="370" class="center"/>
+  <!-- A width 80 -->
+  <line x1="215" y1="480" x2="215" y2="515" class="ext"/><line x1="575" y1="480" x2="575" y2="515" class="ext"/>
+  <line x1="225" y1="505" x2="565" y2="505" class="dim"/><text x="382" y="498" class="dtxt">80</text>
+  <!-- A height 40 -->
+  <line x1="185" y1="280" x2="215" y2="280" class="ext"/><line x1="185" y1="460" x2="215" y2="460" class="ext"/>
+  <line x1="195" y1="290" x2="195" y2="450" class="dim"/><text x="150" y="378" class="dtxt">40</text>
+  <!-- A hole -->
+  <line x1="350" y1="370" x2="395" y2="325" class="ext"/><text x="400" y="320" class="dtxt">Ø20</text>
+  <!-- A horizontal center -->
+  <line x1="215" y1="245" x2="215" y2="280" class="ext"/><line x1="350" y1="245" x2="350" y2="300" class="ext"/>
+  <line x1="225" y1="255" x2="340" y2="255" class="dim"/><text x="270" y="247" class="dtxt">30</text>
+
+  <!-- Panel B -->
+  <rect x="820" y="150" width="720" height="400" rx="20" class="panel"/>
+  <rect x="845" y="175" width="60" height="42" rx="10" class="accent"/>
+  <text x="866" y="207" class="label">B</text>
+  <text x="925" y="205" class="note">Guided practice — stepped profile</text>
+  <!-- valid L shape: overall 90 x 60; notch left 35 x 25 -->
+  <path d="M1010 460 L1370 460 L1370 260 L1150 260 L1150 375 L1010 375 Z" class="shape"/>
+  <!-- B overall width -->
+  <line x1="1010" y1="480" x2="1010" y2="520" class="ext"/><line x1="1370" y1="480" x2="1370" y2="520" class="ext"/>
+  <line x1="1020" y1="510" x2="1360" y2="510" class="dim"/><text x="1175" y="503" class="dtxt">90</text>
+  <!-- B overall height -->
+  <line x1="1390" y1="260" x2="1430" y2="260" class="ext"/><line x1="1390" y1="460" x2="1430" y2="460" class="ext"/>
+  <line x1="1420" y1="270" x2="1420" y2="450" class="dim"/><text x="1435" y="370" class="dtxt">60</text>
+  <!-- B notch width 35 -->
+  <line x1="1010" y1="350" x2="1010" y2="375" class="ext"/><line x1="1150" y1="350" x2="1150" y2="375" class="ext"/>
+  <line x1="1020" y1="360" x2="1140" y2="360" class="dim"/><text x="1068" y="352" class="dtxt">35</text>
+  <!-- B notch height 25 -->
+  <line x1="970" y1="375" x2="1010" y2="375" class="ext"/><line x1="970" y1="460" x2="1010" y2="460" class="ext"/>
+  <line x1="980" y1="385" x2="980" y2="450" class="dim"/><text x="935" y="425" class="dtxt">25</text>
+
+  <!-- Panel C -->
+  <rect x="60" y="590" width="720" height="400" rx="20" class="panel"/>
+  <rect x="85" y="615" width="60" height="42" rx="10" class="accent"/>
+  <text x="106" y="647" class="label">C</text>
+  <text x="165" y="645" class="note">Guided practice — patterned holes</text>
+  <rect x="205" y="715" width="420" height="180" class="shape"/>
+  <circle cx="285" cy="805" r="32" class="shape"/><circle cx="545" cy="805" r="32" class="shape"/>
+  <line x1="285" y1="755" x2="285" y2="855" class="center"/><line x1="235" y1="805" x2="335" y2="805" class="center"/>
+  <line x1="545" y1="755" x2="545" y2="855" class="center"/><line x1="495" y1="805" x2="595" y2="805" class="center"/>
+  <!-- C overall width 100 -->
+  <line x1="205" y1="915" x2="205" y2="950" class="ext"/><line x1="625" y1="915" x2="625" y2="950" class="ext"/>
+  <line x1="215" y1="940" x2="615" y2="940" class="dim"/><text x="400" y="932" class="dtxt">100</text>
+  <!-- C overall height 45 -->
+  <line x1="175" y1="715" x2="205" y2="715" class="ext"/><line x1="175" y1="895" x2="205" y2="895" class="ext"/>
+  <line x1="185" y1="725" x2="185" y2="885" class="dim"/><text x="145" y="812" class="dtxt">45</text>
+  <!-- C first hole offset 20 -->
+  <line x1="205" y1="685" x2="205" y2="715" class="ext"/><line x1="285" y1="685" x2="285" y2="755" class="ext"/>
+  <line x1="215" y1="695" x2="275" y2="695" class="dim"/><text x="238" y="687" class="dtxt">20</text>
+  <!-- C spacing 60 -->
+  <line x1="285" y1="670" x2="285" y2="755" class="ext"/><line x1="545" y1="670" x2="545" y2="755" class="ext"/>
+  <line x1="295" y1="680" x2="535" y2="680" class="dim"/><text x="402" y="672" class="dtxt">60</text>
+  <text x="495" y="745" class="dtxt">2X Ø16</text>
+
+  <!-- Panel D -->
+  <rect x="820" y="590" width="720" height="400" rx="20" class="panel"/>
+  <rect x="845" y="615" width="60" height="42" rx="10" class="accent"/>
+  <text x="866" y="647" class="label">D</text>
+  <text x="925" y="645" class="note">Independent precision sketch</text>
+  <!-- Base 100 x 35 with centered top semicircle R30; concentric Ø20 -->
+  <path d="M1000 895 L1420 895 L1420 755 L1336 755 A126 126 0 0 0 1084 755 L1000 755 Z" class="shape"/>
+  <circle cx="1210" cy="755" r="42" class="shape"/>
+  <line x1="1210" y1="650" x2="1210" y2="860" class="center"/><line x1="1110" y1="755" x2="1310" y2="755" class="center"/>
+  <!-- D width -->
+  <line x1="1000" y1="915" x2="1000" y2="950" class="ext"/><line x1="1420" y1="915" x2="1420" y2="950" class="ext"/>
+  <line x1="1010" y1="940" x2="1410" y2="940" class="dim"/><text x="1192" y="932" class="dtxt">100</text>
+  <!-- D base height -->
+  <line x1="960" y1="755" x2="1000" y2="755" class="ext"/><line x1="960" y1="895" x2="1000" y2="895" class="ext"/>
+  <line x1="970" y1="765" x2="970" y2="885" class="dim"/><text x="925" y="832" class="dtxt">35</text>
+  <!-- D radius -->
+  <line x1="1210" y1="755" x2="1295" y2="690" class="ext"/><text x="1305" y="685" class="dtxt">R30</text>
+  <line x1="1210" y1="755" x2="1250" y2="715" class="ext"/><text x="1258" y="710" class="dtxt">Ø20</text>
+  <!-- D center -->
+  <line x1="1000" y1="705" x2="1000" y2="755" class="ext"/><line x1="1210" y1="705" x2="1210" y2="650" class="ext"/>
+  <line x1="1010" y1="715" x2="1200" y2="715" class="dim"/><text x="1095" y="707" class="dtxt">50</text>
+
+  <text x="80" y="1045" class="note">A–C: guided practice/reference • D: independent graded precision sketch • Use geometric constraints before dimensions.</text>
+</svg>
