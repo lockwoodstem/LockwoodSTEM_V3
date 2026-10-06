@@ -355,7 +355,7 @@
       "lesson": 6,
       "number": "3.6",
       "type": "Lesson",
-      "title": "Rocket Assembly Design Challenge — Launch",
+      "title": "Compressed-Air Rocket Assembly Challenge — Launch",
       "url": "courses/ied/units/unit-3/lesson-3-6.html"
     },
     {
@@ -364,7 +364,7 @@
       "lesson": 7,
       "number": "3.7",
       "type": "Lesson",
-      "title": "Rocket Assembly CAD Workday",
+      "title": "Rocket Component Design & CAD Assembly",
       "url": "courses/ied/units/unit-3/lesson-3-7.html"
     },
     {
@@ -373,7 +373,7 @@
       "lesson": 8,
       "number": "3.8",
       "type": "Lesson",
-      "title": "Assembly Verification & Design Review",
+      "title": "Digital Assembly Design Review",
       "url": "courses/ied/units/unit-3/lesson-3-8.html"
     },
     {
@@ -382,7 +382,7 @@
       "lesson": 9,
       "number": "3.9",
       "type": "Lesson",
-      "title": "Prototype Manufacturing Preparation",
+      "title": "Manufacturing & Fabrication Preparation",
       "url": "courses/ied/units/unit-3/lesson-3-9.html"
     },
     {
@@ -391,7 +391,7 @@
       "lesson": 10,
       "number": "3.10",
       "type": "Lesson",
-      "title": "Prototype Assembly & Fit Test",
+      "title": "Physical Rocket Assembly & Fit Testing",
       "url": "courses/ied/units/unit-3/lesson-3-10.html"
     },
     {
@@ -400,7 +400,7 @@
       "lesson": 11,
       "number": "3.11",
       "type": "Lesson",
-      "title": "Engineering Change & Revision",
+      "title": "Engineering Change & Final Revision",
       "url": "courses/ied/units/unit-3/lesson-3-11.html"
     },
     {
@@ -409,7 +409,7 @@
       "lesson": 12,
       "number": "3.12",
       "type": "Lesson",
-      "title": "Assembly Drawing & Exploded Documentation",
+      "title": "Assembly Drawing, Exploded View & BOM",
       "url": "courses/ied/units/unit-3/lesson-3-12.html"
     },
     {
@@ -418,7 +418,7 @@
       "lesson": 13,
       "number": "3.13",
       "type": "Lesson",
-      "title": "Final Rocket Assembly Design Package",
+      "title": "Flight Readiness Review & Final Design Package",
       "url": "courses/ied/units/unit-3/lesson-3-13.html"
     },
     {
@@ -427,7 +427,7 @@
       "lesson": 14,
       "number": "3.14",
       "type": "Lesson",
-      "title": "Final Rocket Assembly Design Review",
+      "title": "Compressed-Air Rocket Flight Test & Post-Flight Review",
       "url": "courses/ied/units/unit-3/lesson-3-14.html"
     },
     {
