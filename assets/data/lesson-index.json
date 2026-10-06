@@ -302,28 +302,7 @@
       "number": "2.14",
       "type": "Lesson",
       "title": "FabLab 3D Printer Certification",
-      "url": "courses/ied/units/unit-2/lesson-2-14.html",
-      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.14_Slicer_Basics_and_Print_Settings.pptx"
-    },
-    {
-      "course": "IED",
-      "unit": 2,
-      "lesson": 15,
-      "number": "2.15",
-      "type": "Lesson",
-      "title": "Design & Print a Manufacturing Tolerance Tester",
-      "url": "courses/ied/units/unit-2/lesson-2-15.html",
-      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.15_FabLab_3D_Printer_Certification.pptx"
-    },
-    {
-      "course": "IED",
-      "unit": 2,
-      "lesson": 16,
-      "number": "2.16",
-      "type": "Lesson",
-      "title": "Tolerance Testing & Manufacturing Recommendations",
-      "url": "courses/ied/units/unit-2/lesson-2-16.html",
-      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.16_Final_3D_Printed_Tolerance_Tester_Workday.pptx"
+      "url": "courses/ied/units/unit-2/lesson-2-14.html"
     },
     {
       "course": "IED",
