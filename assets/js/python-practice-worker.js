@@ -1,4 +1,5 @@
-const PYODIDE_URL = "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.js";
+import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs";
+
 const PYODIDE_INDEX = "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/";
 let pyodideReady = null;
 
@@ -18,12 +19,9 @@ arm = MockArm()
 
 async function ensurePyodide() {
   if (!pyodideReady) {
-    pyodideReady = (async () => {
-      importScripts(PYODIDE_URL);
-      return await loadPyodide({ indexURL: PYODIDE_INDEX });
-    })();
+    pyodideReady = loadPyodide({ indexURL: PYODIDE_INDEX });
   }
-  return pyodideReady;
+  return await pyodideReady;
 }
 
 self.onmessage = async (event) => {
@@ -47,6 +45,6 @@ _buffer.getvalue()
 `);
     self.postMessage({ id, type: "result", output: String(output || "(no printed output)") });
   } catch (error) {
-    self.postMessage({ id, type: "error", output: String(error) });
+    self.postMessage({ id, type: "error", output: String(error && error.stack ? error.stack : error) });
   }
 };
