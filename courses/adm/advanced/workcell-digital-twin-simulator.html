@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Advanced Challenge | Workcell Digital Twin Simulator | ADM</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<script defer src="../../../assets/js/main.js"></script>
+<meta name="description" content="Advanced ADM vibe-coding challenge: build a Python digital twin simulator for a VEX-style automated workcell."/>
+</head>
+<body class="adm-course-page site-consistency-v4">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container nav">
+<a aria-label="LockwoodSTEM home" class="brand" href="../../../index.html">
+<img alt="LockwoodSTEM logo" class="brand-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/>
+<span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span>
+</a>
+<button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
+<ul class="nav-links" id="site-navigation">
+<li><a aria-current="page" href="../../../courses.html">Courses</a></li>
+<li><a href="../../../agenda.html">Daily Agenda</a></li>
+<li><a href="../../../resources/index.html">Resources</a></li>
+<li><a href="../../../certifications/index.html">Certifications</a></li>
+<li><a href="../../../fablab/index.html">FabLab</a></li>
+<li><a href="../../../about/index.html">About</a></li>
+</ul></div></header>
+
+<main id="main">
+<nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol>
+<li><a href="../../../index.html">Home</a></li>
+<li><a href="../../../courses.html">Courses</a></li>
+<li><a href="../index.html">ADM</a></li>
+<li aria-current="page">Advanced Workcell Simulator Challenge</li>
+</ol></nav>
+
+<section class="page-hero adm-hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">ADM Advanced Programming Challenge</div>
+<h1>Build a Workcell Digital Twin Simulator</h1>
+<p>Use Python and AI-assisted development to create a simplified digital twin of a robotic workcell. Your simulator should model movement, magnet state, parts, errors, and production status without using the physical robot.</p>
+<div class="hero-actions consistent-actions">
+<a class="btn" href="#challenge">Start Challenge</a>
+<a class="btn secondary" href="../index.html">Back to ADM</a>
+</div>
+</div>
+<aside class="card dark">
+<span class="tag">Vibe Coding Allowed</span>
+<h3>Use AI as a development partner</h3>
+<p>You may use ChatGPT, Copilot, or another approved AI tool to generate, revise, debug, and explain code. You are responsible for testing, understanding, and improving what the AI produces.</p>
+</aside>
+</div>
+</section>
+
+<section class="container">
+<div class="grid three">
+<article class="card"><span class="tag">Recommended Time</span><h3>5–8 class periods</h3><p>Work independently through the milestones while other students complete Python remediation.</p></article>
+<article class="card"><span class="tag">Core Language</span><h3>Python</h3><p>The required simulator logic should be written in Python. A graphical interface is an optional extension.</p></article>
+<article class="card"><span class="tag">Final Product</span><h3>Working digital twin</h3><p>Your program should accept simulated Workcell commands, update system state, detect errors, and report what the system is doing.</p></article>
+</div>
+</section>
+
+<section class="container" id="challenge">
+<div class="section-header"><div><div class="eyebrow">Challenge Brief</div><h2>The Problem</h2></div></div>
+<article class="card">
+<p>Engineers often test automation software in a digital environment before connecting it to physical equipment. Your task is to create a simplified <strong>digital twin</strong> of a VEX-style robotic workcell.</p>
+<p>Your simulator does not need exact robot physics. It must accurately represent the <strong>logic and state</strong> of the system: where the arm is, whether the magnet is on, whether a part is being carried, whether a requested move is valid, and what has happened during the production run.</p>
+</article>
+</section>
+
+<section class="container">
+<div class="section-header"><div><div class="eyebrow">AI / Vibe-Coding Rules</div><h2>How You May Use AI</h2></div></div>
+<div class="grid two">
+<article class="card"><span class="tag green">Allowed</span><h3>Use AI aggressively</h3>
+<ul class="unit-meta-list">
+<li>Ask AI to generate starter code, classes, functions, test cases, or interface ideas.</li>
+<li>Paste errors into AI and ask for debugging help.</li>
+<li>Ask AI to refactor repetitive code.</li>
+<li>Ask AI to explain unfamiliar code line-by-line.</li>
+<li>Ask AI to suggest new features or improvements.</li>
+<li>Use AI to help create documentation and a README after you understand the program.</li>
+</ul>
+</article>
+<article class="card"><span class="tag orange">Your Responsibility</span><h3>You still own the result</h3>
+<ul class="unit-meta-list">
+<li>You must be able to explain how your simulator works.</li>
+<li>You must test AI-generated code instead of assuming it is correct.</li>
+<li>You must fix or revise code that does not meet the challenge requirements.</li>
+<li>You must keep a short AI development log showing important prompts, changes, and decisions.</li>
+<li>You must be able to make a small requested change during the final check without starting over.</li>
+</ul>
+</article>
+</div>
+</section>
+
+<section class="container">
+<div class="section-header"><div><div class="eyebrow">Required Features</div><h2>Minimum Viable Simulator</h2><p>Complete all six before adding extensions.</p></div></div>
+<div class="grid two">
+<article class="card"><h3>1. Robot State</h3><p>Track current <code>x</code>, <code>y</code>, and <code>z</code> coordinates and begin at a defined home position.</p></article>
+<article class="card"><h3>2. Movement Commands</h3><p>Create methods or functions that behave like:</p><pre><code>arm.move_to(x, y, z)
+arm.move_inc(dx, dy, dz)</code></pre><p>Each valid move should update and report the new simulated position.</p></article>
+<article class="card"><h3>3. Magnet State</h3><p>Track whether the simulated end-effector magnet is ON or OFF using VEX-style commands.</p></article>
+<article class="card"><h3>4. Workspace Limits</h3><p>Define legal X, Y, and Z ranges. Invalid movement requests must be rejected without changing the stored position.</p></article>
+<article class="card"><h3>5. Part Handling</h3><p>Create at least three simulated parts. Allow pickup only at an appropriate location and track whether the arm is carrying a part.</p></article>
+<article class="card"><h3>6. Production Log</h3><p>Record movements, pickups, placements, errors, and production totals. Print a clear summary at the end.</p></article>
+</div>
+</section>
+
+<section class="container">
+<div class="section-header"><div><div class="eyebrow">Milestones</div><h2>Build in Stages</h2></div></div>
+<div class="grid two">
+<article class="card"><span class="tag">Checkpoint 1</span><h3>Robot State + Movement</h3><ul class="unit-meta-list"><li>Store X/Y/Z.</li><li>Implement <code>move_to()</code>.</li><li>Implement <code>move_inc()</code>.</li><li>Demonstrate at least five movement commands.</li></ul></article>
+<article class="card"><span class="tag">Checkpoint 2</span><h3>Validation + Errors</h3><ul class="unit-meta-list"><li>Add workspace boundaries.</li><li>Reject invalid coordinates.</li><li>Prove rejected commands do not change system state.</li></ul></article>
+<article class="card"><span class="tag">Checkpoint 3</span><h3>Magnet + Parts</h3><ul class="unit-meta-list"><li>Track magnet state.</li><li>Create at least three parts.</li><li>Allow valid pickup and placement.</li><li>Track the carried part.</li></ul></article>
+<article class="card"><span class="tag">Checkpoint 4</span><h3>Production Run</h3><ul class="unit-meta-list"><li>Move at least three parts.</li><li>Include at least one intentionally invalid command.</li><li>Print a final production summary and event log.</li></ul></article>
+</div>
+</section>
+
+<section class="container">
+<div class="section-header"><div><div class="eyebrow">Required Testing</div><h2>Prove It Works</h2></div></div>
+<article class="card">
+<ol class="unit-meta-list">
+<li>Move to a valid absolute coordinate and report the new position.</li>
+<li>Use a relative movement and report the result.</li>
+<li>Attempt a move outside the workspace and show the error response.</li>
+<li>Turn the magnet on when no part is available.</li>
+<li>Successfully acquire a part at a valid location.</li>
+<li>Move while carrying the part.</li>
+<li>Place the part at a valid destination.</li>
+<li>Attempt one logically invalid action and show how the simulator handles it.</li>
+<li>Complete a three-part production run.</li>
+<li>Print a final summary showing moves, parts transferred, and errors encountered.</li>
+</ol>
+</article>
+</section>
+
+<section class="container">
+<div class="section-header"><div><div class="eyebrow">Advanced Extensions</div><h2>Choose Your Upgrade</h2><p>After the core simulator works, add one or more.</p></div></div>
+<div class="grid two">
+<article class="card"><span class="tag blue">A</span><h3>Cycle-Time Simulation</h3><p>Estimate movement time based on distance and compare production strategies.</p></article>
+<article class="card"><span class="tag blue">B</span><h3>Restricted Zones</h3><p>Create areas the simulated arm may not enter and detect violations.</p></article>
+<article class="card"><span class="tag blue">C</span><h3>State Machine</h3><p>Add states such as <code>IDLE</code>, <code>MOVING</code>, <code>PICKING</code>, <code>PLACING</code>, <code>COMPLETE</code>, and <code>ERROR</code>.</p></article>
+<article class="card"><span class="tag blue">D</span><h3>2D Visualization</h3><p>Create a graphical top-down workspace showing parts, destinations, and the end-effector location.</p></article>
+<article class="card"><span class="tag blue">E</span><h3>Path History</h3><p>Store every position visited and display or plot the movement path.</p></article>
+<article class="card"><span class="tag blue">F</span><h3>3D Digital Twin</h3><p>Create a simplified 3D visualization. Exact VEX geometry is not required.</p></article>
+</div>
+</section>
+
+<section class="container">
+<div class="section-header"><div><div class="eyebrow">Deliverables</div><h2>What You Submit</h2></div></div>
+<article class="card submit-card">
+<ol class="unit-meta-list">
+<li><strong>Final simulator code.</strong></li>
+<li><strong>Test evidence</strong> showing the required test cases.</li>
+<li><strong>AI Development Log</strong> with at least five meaningful prompts or AI interactions, what the AI suggested, and what you accepted, rejected, or changed.</li>
+<li><strong>Bug log</strong> documenting at least three problems and how they were fixed.</li>
+<li><strong>README / user guide</strong> explaining how to run and use the simulator.</li>
+<li><strong>Short reflection</strong> explaining one place where AI helped significantly and one place where the AI-generated solution was incomplete, incorrect, or needed improvement.</li>
+</ol>
+</article>
+</section>
+
+<section class="container">
+<div class="section-header"><div><div class="eyebrow">Final Check</div><h2>Explain + Modify</h2></div></div>
+<article class="card">
+<p>You will complete a short teacher check before the project is considered finished. You should be able to:</p>
+<ul class="unit-meta-list">
+<li>Explain the purpose of the major sections of your program.</li>
+<li>Identify where the simulator stores its current state.</li>
+<li>Explain how invalid commands are detected.</li>
+<li>Describe how a part is picked up and released.</li>
+<li>Make one small change requested by the teacher, such as changing a workspace limit, adding a part, or changing a destination coordinate.</li>
+</ul>
+<p>You do <strong>not</strong> need to memorize every line of code. You do need to understand the system you built.</p>
+</article>
+</section>
+
+<section class="container">
+<div class="section-header"><div><div class="eyebrow">Assessment</div><h2>50-Point Rubric</h2></div></div>
+<div class="lesson-sequence-table-wrap">
+<table class="lesson-sequence-table adm-lesson-sequence-table">
+<thead><tr><th>Category</th><th>Points</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr><td class="lesson-table-title">Core Simulator Functionality</td><td>15</td><td>Movement, state, magnet, parts, and production logging work as required.</td></tr>
+<tr><td class="lesson-table-title">Testing & Error Handling</td><td>10</td><td>Required tests are demonstrated and invalid actions are handled cleanly.</td></tr>
+<tr><td class="lesson-table-title">Iteration & AI-Assisted Development</td><td>10</td><td>AI log shows useful prompting, evaluation of AI output, revision, and debugging rather than simple copy/paste.</td></tr>
+<tr><td class="lesson-table-title">Understanding & Final Modification</td><td>10</td><td>Student can explain the major system logic and successfully make a small requested change.</td></tr>
+<tr><td class="lesson-table-title">Documentation</td><td>5</td><td>README, bug log, test evidence, and reflection clearly document the project.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="container lesson-bottom-nav"><div class="lesson-bottom-nav-card"><div class="lesson-bottom-nav-links"><a class="btn" href="../index.html">Back to ADM</a></div></div></section>
+</main>
+
+<footer class="footer"><div class="container footer-grid">
+<div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div>
+<div class="footer-links"><a href="../../../courses.html">Courses</a><a href="../../../courses/adm/index.html">ADM</a><a href="../../../resources/index.html">Resources</a><a href="../../../fablab/index.html">FabLab</a></div>
+</div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+</body>
+</html>
