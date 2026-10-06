@@ -1,5 +1,5 @@
 (() => {
-  const WORKER_URL = "../../../assets/js/python-practice-worker.js";
+  const WORKER_URL = "../../../assets/js/python-practice-worker.js?v=20261006-4";
   let worker = null;
   let runCounter = 0;
   let activeRun = null;
@@ -8,6 +8,14 @@
     if (worker) worker.terminate();
     worker = new Worker(WORKER_URL, { type: 'module' });
     worker.onmessage = handleWorkerMessage;
+    worker.onerror = (event) => {
+      if (activeRun) {
+        setStatus(activeRun.root, "Loader Error", "error");
+        setOutput(activeRun.root, "Python runtime failed to load. Refresh the page and try again.\n\n" + (event.message || "Unknown worker error"));
+        if (activeRun.button) activeRun.button.disabled = false;
+        activeRun = null;
+      }
+    };
     return worker;
   }
 
