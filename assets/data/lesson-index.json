@@ -265,9 +265,8 @@
       "lesson": 10,
       "number": "2.10",
       "type": "Lesson",
-      "title": "Condensation-Draining Coaster Mini-Project",
-      "url": "courses/ied/units/unit-2/lesson-2-10.html",
-      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.10_Patterns_and_Symmetry_Rocket_Fins.pptx"
+      "title": "Puzzle Cube Concept Design & Sketching",
+      "url": "courses/ied/units/unit-2/lesson-2-10.html"
     },
     {
       "course": "IED",
@@ -275,9 +274,8 @@
       "lesson": 11,
       "number": "2.11",
       "type": "Lesson",
-      "title": "Coaster CAD Model Check & Revision",
-      "url": "courses/ied/units/unit-2/lesson-2-11.html",
-      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.11_Parametric_Rocket_Part_Modeling.pptx"
+      "title": "Puzzle Cube CAD Modeling",
+      "url": "courses/ied/units/unit-2/lesson-2-11.html"
     },
     {
       "course": "IED",
@@ -285,9 +283,8 @@
       "lesson": 12,
       "number": "2.12",
       "type": "Lesson",
-      "title": "Design for 3D Printing",
-      "url": "courses/ied/units/unit-2/lesson-2-12.html",
-      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.12_CAD_Model_Check_and_Revision.pptx"
+      "title": "Puzzle Cube Technical Drawing & Exploded View",
+      "url": "courses/ied/units/unit-2/lesson-2-12.html"
     },
     {
       "course": "IED",
@@ -295,9 +292,8 @@
       "lesson": 13,
       "number": "2.13",
       "type": "Lesson",
-      "title": "Slicer Basics and Print Settings",
-      "url": "courses/ied/units/unit-2/lesson-2-13.html",
-      "presentation": "downloads/presentations/IED_Unit2_Lesson_2.13_Preparing_CAD_Files_for_3D_Printing.pptx"
+      "title": "Puzzle Cube Manufacturing & Final Verification",
+      "url": "courses/ied/units/unit-2/lesson-2-13.html"
     },
     {
       "course": "IED",
