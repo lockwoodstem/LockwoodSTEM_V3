@@ -10,5 +10,7 @@
 .python-lab textarea:focus{outline:3px solid rgba(59,130,246,.35);outline-offset:-3px}
 .python-lab pre{margin:0;min-height:330px;padding:1rem;white-space:pre-wrap;word-break:break-word;background:#111827;color:#d1fae5;font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
 .python-lab__controls{display:flex;flex-wrap:wrap;gap:.65rem;padding:.85rem 1rem;border-top:1px solid rgba(15,23,42,.1);background:#f8fafc}
-.python-lab__note{margin:0;padding:.85rem 1rem;background:#eff6ff;border-top:1px solid #bfdbfe;font-size:.92rem}
+.python-lab__note{margin:0;padding:.85rem 1rem;background:#eff6ff;border-top:1px solid #bfdbfe;font-size:.92rem;color:#0f172a}
+.python-lab__note strong{color:#0f172a}
+.python-lab__note code{color:#0f172a;background:#dbeafe;padding:.08rem .28rem;border-radius:.25rem}
 @media (max-width:800px){.python-lab__body{grid-template-columns:1fr}.python-lab__pane+.python-lab__pane{border-left:0;border-top:1px solid rgba(15,23,42,.12)}.python-lab textarea,.python-lab pre{min-height:260px}}
