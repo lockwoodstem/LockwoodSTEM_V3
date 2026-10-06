@@ -310,9 +310,8 @@
       "lesson": 1,
       "number": "3.1",
       "type": "Lesson",
-      "title": "From Printed Testers to Rocket Assembly",
-      "url": "courses/ied/units/unit-3/lesson-3-1.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.1_From_Printed_Testers_to_Rocket_Assembly.pptx"
+      "title": "From Bodies to Components & Assemblies",
+      "url": "courses/ied/units/unit-3/lesson-3-1.html"
     },
     {
       "course": "IED",
@@ -320,9 +319,8 @@
       "lesson": 2,
       "number": "3.2",
       "type": "Lesson",
-      "title": "CAD Components and Assembly Files",
-      "url": "courses/ied/units/unit-3/lesson-3-2.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.2_CAD_Components_and_Assembly_Files.pptx"
+      "title": "Components & Assembly File Organization",
+      "url": "courses/ied/units/unit-3/lesson-3-2.html"
     },
     {
       "course": "IED",
@@ -330,9 +328,8 @@
       "lesson": 3,
       "number": "3.3",
       "type": "Lesson",
-      "title": "Inserting and Positioning Rocket Parts",
-      "url": "courses/ied/units/unit-3/lesson-3-3.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.3_Inserting_and_Positioning_Rocket_Parts.pptx"
+      "title": "Placing & Positioning Components",
+      "url": "courses/ied/units/unit-3/lesson-3-3.html"
     },
     {
       "course": "IED",
@@ -340,9 +337,8 @@
       "lesson": 4,
       "number": "3.4",
       "type": "Lesson",
-      "title": "Assembly Alignment and Fit Checks",
-      "url": "courses/ied/units/unit-3/lesson-3-4.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.4_Assembly_Alignment_and_Fit_Checks.pptx"
+      "title": "Joints & Assembly Relationships",
+      "url": "courses/ied/units/unit-3/lesson-3-4.html"
     },
     {
       "course": "IED",
@@ -350,9 +346,8 @@
       "lesson": 5,
       "number": "3.5",
       "type": "Lesson",
-      "title": "Joints and Assembly Relationships",
-      "url": "courses/ied/units/unit-3/lesson-3-5.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.5_Joints_and_Assembly_Relationships.pptx"
+      "title": "Fit, Alignment & Interference Checks",
+      "url": "courses/ied/units/unit-3/lesson-3-5.html"
     },
     {
       "course": "IED",
@@ -360,9 +355,8 @@
       "lesson": 6,
       "number": "3.6",
       "type": "Lesson",
-      "title": "Fin Placement and Symmetry",
-      "url": "courses/ied/units/unit-3/lesson-3-6.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.6_Fin_Placement_and_Symmetry.pptx"
+      "title": "Rocket Assembly Design Challenge — Launch",
+      "url": "courses/ied/units/unit-3/lesson-3-6.html"
     },
     {
       "course": "IED",
@@ -370,9 +364,8 @@
       "lesson": 7,
       "number": "3.7",
       "type": "Lesson",
-      "title": "Rocket Assembly Revision Workday",
-      "url": "courses/ied/units/unit-3/lesson-3-7.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.7_Rocket_Assembly_Revision_Workday.pptx"
+      "title": "Rocket Assembly CAD Workday",
+      "url": "courses/ied/units/unit-3/lesson-3-7.html"
     },
     {
       "course": "IED",
@@ -380,9 +373,8 @@
       "lesson": 8,
       "number": "3.8",
       "type": "Lesson",
-      "title": "Exploded CAD Views",
-      "url": "courses/ied/units/unit-3/lesson-3-8.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.8_Exploded_CAD_Views.pptx"
+      "title": "Assembly Verification & Design Review",
+      "url": "courses/ied/units/unit-3/lesson-3-8.html"
     },
     {
       "course": "IED",
@@ -390,9 +382,8 @@
       "lesson": 9,
       "number": "3.9",
       "type": "Lesson",
-      "title": "Assembly Motion and Functional Checks",
-      "url": "courses/ied/units/unit-3/lesson-3-9.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.9_Assembly_Motion_and_Functional_Checks.pptx"
+      "title": "Prototype Manufacturing Preparation",
+      "url": "courses/ied/units/unit-3/lesson-3-9.html"
     },
     {
       "course": "IED",
@@ -400,9 +391,8 @@
       "lesson": 10,
       "number": "3.10",
       "type": "Lesson",
-      "title": "Export, Slice, and Submit Rocket Parts for 3D Printing",
-      "url": "courses/ied/units/unit-3/lesson-3-10.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.10_Export_Slice_and_Submit_Rocket_Parts_for_3D_Printing.pptx"
+      "title": "Prototype Assembly & Fit Test",
+      "url": "courses/ied/units/unit-3/lesson-3-10.html"
     },
     {
       "course": "IED",
@@ -410,9 +400,8 @@
       "lesson": 11,
       "number": "3.11",
       "type": "Lesson",
-      "title": "Prototype Assembly Build Day",
-      "url": "courses/ied/units/unit-3/lesson-3-11.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.11_Prototype_Assembly_Build_Day.pptx"
+      "title": "Engineering Change & Revision",
+      "url": "courses/ied/units/unit-3/lesson-3-11.html"
     },
     {
       "course": "IED",
@@ -420,9 +409,8 @@
       "lesson": 12,
       "number": "3.12",
       "type": "Lesson",
-      "title": "Prototype Fit Testing and Revision Notes",
-      "url": "courses/ied/units/unit-3/lesson-3-12.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.12_Prototype_Fit_Testing_and_Revision_Notes.pptx"
+      "title": "Assembly Drawing & Exploded Documentation",
+      "url": "courses/ied/units/unit-3/lesson-3-12.html"
     },
     {
       "course": "IED",
@@ -430,9 +418,8 @@
       "lesson": 13,
       "number": "3.13",
       "type": "Lesson",
-      "title": "Introduction to Technical Drawing Sheets",
-      "url": "courses/ied/units/unit-3/lesson-3-13.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.13_Introduction_to_Technical_Drawing_Sheets.pptx"
+      "title": "Final Rocket Assembly Design Package",
+      "url": "courses/ied/units/unit-3/lesson-3-13.html"
     },
     {
       "course": "IED",
@@ -440,39 +427,8 @@
       "lesson": 14,
       "number": "3.14",
       "type": "Lesson",
-      "title": "Part and Assembly Drawing Views",
-      "url": "courses/ied/units/unit-3/lesson-3-14.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.14_Part_and_Assembly_Drawing_Views.pptx"
-    },
-    {
-      "course": "IED",
-      "unit": 3,
-      "lesson": 15,
-      "number": "3.15",
-      "type": "Lesson",
-      "title": "Parts List, Balloons, Notes, and Revisions",
-      "url": "courses/ied/units/unit-3/lesson-3-15.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.15_Parts_List_Balloons_Notes_and_Revisions.pptx"
-    },
-    {
-      "course": "IED",
-      "unit": 3,
-      "lesson": 16,
-      "number": "3.16",
-      "type": "Lesson",
-      "title": "Final Rocket Assembly Design Package Workday",
-      "url": "courses/ied/units/unit-3/lesson-3-16.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.16_Final_Rocket_Assembly_Design_Package_Workday.pptx"
-    },
-    {
-      "course": "IED",
-      "unit": 3,
-      "lesson": 17,
-      "number": "3.17",
-      "type": "Lesson",
-      "title": "Final Rocket Assembly Presentation",
-      "url": "courses/ied/units/unit-3/lesson-3-17.html",
-      "presentation": "downloads/presentations/IED_Unit3_Lesson_3.17_Final_Rocket_Assembly_Presentation.pptx"
+      "title": "Final Rocket Assembly Design Review",
+      "url": "courses/ied/units/unit-3/lesson-3-14.html"
     },
     {
       "course": "IED",
