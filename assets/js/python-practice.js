@@ -6,7 +6,7 @@
 
   function createWorker() {
     if (worker) worker.terminate();
-    worker = new Worker(WORKER_URL);
+    worker = new Worker(WORKER_URL, { type: 'module' });
     worker.onmessage = handleWorkerMessage;
     return worker;
   }
