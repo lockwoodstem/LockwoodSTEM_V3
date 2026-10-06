@@ -1,23 +1,81 @@
 (() => {
-  const WORKER_URL = "../../../assets/js/python-practice-worker.js?v=20261006-4";
-  let worker = null;
-  let runCounter = 0;
-  let activeRun = null;
+  const PYODIDE_SCRIPT = "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.js";
+  const PYODIDE_INDEX = "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/";
+  let pyodidePromise = null;
+  let running = false;
 
-  function createWorker() {
-    if (worker) worker.terminate();
-    worker = new Worker(WORKER_URL, { type: 'module' });
-    worker.onmessage = handleWorkerMessage;
-    worker.onerror = (event) => {
-      if (activeRun) {
-        setStatus(activeRun.root, "Loader Error", "error");
-        setOutput(activeRun.root, "Python runtime failed to load. Refresh the page and try again.\n\n" + (event.message || "Unknown worker error"));
-        if (activeRun.button) activeRun.button.disabled = false;
-        activeRun = null;
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      if (window.loadPyodide) return resolve();
+      let script = document.querySelector('script[data-lockwood-pyodide]');
+      if (script) {
+        script.addEventListener('load', resolve, { once: true });
+        script.addEventListener('error', reject, { once: true });
+        return;
       }
-    };
-    return worker;
+      script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.dataset.lockwoodPyodide = 'true';
+      script.onload = resolve;
+      script.onerror = () => reject(new Error('Unable to load the browser Python runtime.'));
+      document.head.appendChild(script);
+    });
   }
+
+  async function getPyodide() {
+    if (!pyodidePromise) {
+      pyodidePromise = (async () => {
+        await loadScript(PYODIDE_SCRIPT);
+        return await window.loadPyodide({ indexURL: PYODIDE_INDEX });
+      })();
+    }
+    return await pyodidePromise;
+  }
+
+  const mockPrelude = `
+class MockArm:
+    def move_to(self, x, y, z):
+        print(f"ARM: move_to(x={x}, y={y}, z={z})")
+
+    def move_inc(self, x, y, z):
+        print(f"ARM: move_inc(dx={x}, dy={y}, dz={z})")
+
+    def set_end_effector_magnet(self, enabled):
+        print("MAGNET: ON" if enabled else "MAGNET: OFF")
+
+arm = MockArm()
+`;
+
+  const guardedRunner = `
+import io, contextlib, traceback, sys, time
+
+_buffer = io.StringIO()
+_start_time = time.monotonic()
+_max_seconds = 2.5
+_max_lines = 100000
+_line_count = 0
+
+def _student_trace(frame, event, arg):
+    global _line_count
+    if event == "line":
+        _line_count += 1
+        if _line_count > _max_lines or time.monotonic() - _start_time > _max_seconds:
+            raise RuntimeError("Program stopped: possible infinite loop or code running too long.")
+    return _student_trace
+
+try:
+    with contextlib.redirect_stdout(_buffer), contextlib.redirect_stderr(_buffer):
+        sys.settrace(_student_trace)
+        try:
+            exec(__mock_prelude__ + "\\n" + __student_code__, {})
+        finally:
+            sys.settrace(None)
+except Exception:
+    traceback.print_exc(file=_buffer)
+
+_buffer.getvalue()
+`;
 
   function setStatus(root, text, state) {
     const el = root?.querySelector('[data-python-status]');
@@ -31,68 +89,38 @@
     if (el) el.textContent = text || '(no printed output)';
   }
 
-  function finishRun() {
-    if (!activeRun) return;
-    clearTimeout(activeRun.timeout);
-    if (activeRun.button) activeRun.button.disabled = false;
-    activeRun = null;
-  }
-
-  function handleWorkerMessage(event) {
-    const msg = event.data || {};
-    if (!activeRun || msg.id !== activeRun.id) return;
-    const root = activeRun.root;
-
-    if (msg.type === 'loading') {
-      setStatus(root, 'Loading Python…', 'loading');
-      setOutput(root, 'Loading browser Python runtime…');
-      return;
-    }
-
-    if (msg.type === 'running') {
-      setStatus(root, 'Running…', 'running');
-      setOutput(root, 'Running code…');
-      activeRun.timeout = setTimeout(() => {
-        worker?.terminate();
-        worker = null;
-        setStatus(root, 'Stopped', 'error');
-        setOutput(root, 'Program stopped: it ran too long. Check for an infinite loop or code that never reaches a stopping condition.');
-        if (activeRun?.button) activeRun.button.disabled = false;
-        activeRun = null;
-      }, 5000);
-      return;
-    }
-
-    if (msg.type === 'result') {
-      setOutput(root, msg.output);
-      setStatus(root, 'Finished', 'ready');
-      finishRun();
-      return;
-    }
-
-    if (msg.type === 'error') {
-      setOutput(root, msg.output || 'Unknown Python error');
-      setStatus(root, 'Error', 'error');
-      finishRun();
-    }
-  }
-
-  function runLab(root) {
+  async function runLab(root) {
     const editor = root.querySelector('[data-python-editor]');
     const runButton = root.querySelector('[data-python-run]');
     if (!editor || !runButton) return;
 
-    if (activeRun) {
-      setOutput(root, 'Another run is still active. Wait for it to finish or reload the page.');
+    if (running) {
+      setOutput(root, 'Another Python program is currently running. Try again when it finishes.');
       return;
     }
 
-    if (!worker) createWorker();
-
-    const id = ++runCounter;
+    running = true;
     runButton.disabled = true;
-    activeRun = { id, root, button: runButton, timeout: null };
-    worker.postMessage({ id, code: editor.value });
+    setStatus(root, 'Loading Python…', 'loading');
+    setOutput(root, 'Loading browser Python runtime…');
+
+    try {
+      const pyodide = await getPyodide();
+      setStatus(root, 'Running…', 'running');
+      setOutput(root, 'Running code…');
+      pyodide.globals.set('__student_code__', editor.value);
+      pyodide.globals.set('__mock_prelude__', mockPrelude);
+      const result = await pyodide.runPythonAsync(guardedRunner);
+      setOutput(root, String(result || '(no printed output)'));
+      setStatus(root, 'Finished', 'ready');
+    } catch (error) {
+      setOutput(root, 'Python runtime error:\n\n' + String(error && error.stack ? error.stack : error));
+      setStatus(root, 'Error', 'error');
+      pyodidePromise = null;
+    } finally {
+      running = false;
+      runButton.disabled = false;
+    }
   }
 
   function initLab(root) {
