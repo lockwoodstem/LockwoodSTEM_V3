@@ -1,94 +1,90 @@
 (() => {
-  const PYODIDE_URL = "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.js";
-  const PYODIDE_INDEX = "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/";
-  let pyodidePromise = null;
+  const WORKER_URL = "../../../assets/js/python-practice-worker.js";
+  let worker = null;
+  let runCounter = 0;
+  let activeRun = null;
 
-  function loadScript(src) {
-    return new Promise((resolve, reject) => {
-      if (document.querySelector('script[data-pyodide-loader]')) {
-        const existing = document.querySelector('script[data-pyodide-loader]');
-        if (window.loadPyodide) return resolve();
-        existing.addEventListener('load', resolve, { once: true });
-        existing.addEventListener('error', reject, { once: true });
-        return;
-      }
-      const s = document.createElement('script');
-      s.src = src;
-      s.async = true;
-      s.dataset.pyodideLoader = 'true';
-      s.onload = resolve;
-      s.onerror = reject;
-      document.head.appendChild(s);
-    });
+  function createWorker() {
+    if (worker) worker.terminate();
+    worker = new Worker(WORKER_URL);
+    worker.onmessage = handleWorkerMessage;
+    return worker;
   }
-
-  async function getPyodide() {
-    if (!pyodidePromise) {
-      pyodidePromise = (async () => {
-        await loadScript(PYODIDE_URL);
-        return await window.loadPyodide({ indexURL: PYODIDE_INDEX });
-      })();
-    }
-    return pyodidePromise;
-  }
-
-  const mockPrelude = `
-class MockArm:
-    def move_to(self, x, y, z):
-        print(f"ARM: move_to(x={x}, y={y}, z={z})")
-
-    def move_inc(self, x, y, z):
-        print(f"ARM: move_inc(dx={x}, dy={y}, dz={z})")
-
-    def set_end_effector_magnet(self, enabled):
-        print("MAGNET: ON" if enabled else "MAGNET: OFF")
-
-arm = MockArm()
-`;
 
   function setStatus(root, text, state) {
-    const el = root.querySelector('[data-python-status]');
+    const el = root?.querySelector('[data-python-status]');
     if (!el) return;
     el.textContent = text;
     el.dataset.state = state || '';
   }
 
   function setOutput(root, text) {
-    const el = root.querySelector('[data-python-output]');
+    const el = root?.querySelector('[data-python-output]');
     if (el) el.textContent = text || '(no printed output)';
   }
 
-  async function runLab(root) {
+  function finishRun() {
+    if (!activeRun) return;
+    clearTimeout(activeRun.timeout);
+    if (activeRun.button) activeRun.button.disabled = false;
+    activeRun = null;
+  }
+
+  function handleWorkerMessage(event) {
+    const msg = event.data || {};
+    if (!activeRun || msg.id !== activeRun.id) return;
+    const root = activeRun.root;
+
+    if (msg.type === 'loading') {
+      setStatus(root, 'Loading Python…', 'loading');
+      setOutput(root, 'Loading browser Python runtime…');
+      return;
+    }
+
+    if (msg.type === 'running') {
+      setStatus(root, 'Running…', 'running');
+      setOutput(root, 'Running code…');
+      activeRun.timeout = setTimeout(() => {
+        worker?.terminate();
+        worker = null;
+        setStatus(root, 'Stopped', 'error');
+        setOutput(root, 'Program stopped: it ran too long. Check for an infinite loop or code that never reaches a stopping condition.');
+        if (activeRun?.button) activeRun.button.disabled = false;
+        activeRun = null;
+      }, 5000);
+      return;
+    }
+
+    if (msg.type === 'result') {
+      setOutput(root, msg.output);
+      setStatus(root, 'Finished', 'ready');
+      finishRun();
+      return;
+    }
+
+    if (msg.type === 'error') {
+      setOutput(root, msg.output || 'Unknown Python error');
+      setStatus(root, 'Error', 'error');
+      finishRun();
+    }
+  }
+
+  function runLab(root) {
     const editor = root.querySelector('[data-python-editor]');
     const runButton = root.querySelector('[data-python-run]');
     if (!editor || !runButton) return;
-    runButton.disabled = true;
-    setStatus(root, 'Loading Python…', 'loading');
-    setOutput(root, 'Starting Python runtime…');
 
-    try {
-      const pyodide = await getPyodide();
-      setStatus(root, 'Running…', 'running');
-      const code = editor.value;
-      pyodide.globals.set('__student_code__', code);
-      const result = await pyodide.runPythonAsync(`
-import io, contextlib, traceback
-_buffer = io.StringIO()
-try:
-    with contextlib.redirect_stdout(_buffer), contextlib.redirect_stderr(_buffer):
-        exec(${JSON.stringify(mockPrelude)} + "\\n" + __student_code__, {})
-except Exception:
-    traceback.print_exc(file=_buffer)
-_buffer.getvalue()
-`);
-      setOutput(root, String(result || '(no printed output)'));
-      setStatus(root, 'Finished', 'ready');
-    } catch (err) {
-      setOutput(root, String(err));
-      setStatus(root, 'Error', 'error');
-    } finally {
-      runButton.disabled = false;
+    if (activeRun) {
+      setOutput(root, 'Another run is still active. Wait for it to finish or reload the page.');
+      return;
     }
+
+    if (!worker) createWorker();
+
+    const id = ++runCounter;
+    runButton.disabled = true;
+    activeRun = { id, root, button: runButton, timeout: null };
+    worker.postMessage({ id, code: editor.value });
   }
 
   function initLab(root) {
@@ -99,13 +95,14 @@ _buffer.getvalue()
     root.querySelector('[data-python-run]')?.addEventListener('click', () => runLab(root));
     root.querySelector('[data-python-reset]')?.addEventListener('click', () => {
       editor.value = editor.dataset.initialCode || '';
-      setOutput(root, 'Code reset. Click Run Code when ready.');
+      setOutput(root, 'Code reset. Predict the output, then click Run Code.');
       setStatus(root, 'Ready', 'ready');
     });
     root.querySelector('[data-python-clear]')?.addEventListener('click', () => {
       setOutput(root, '');
       setStatus(root, 'Ready', 'ready');
     });
+
     editor.addEventListener('keydown', (event) => {
       if (event.key === 'Tab') {
         event.preventDefault();
