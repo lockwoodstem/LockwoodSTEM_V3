@@ -14,3 +14,7 @@
 .python-lab .python-lab__note strong{color:#0f172a !important}
 .python-lab .python-lab__note code{color:#0f172a !important;background:#dbeafe;padding:.08rem .28rem;border-radius:.25rem}
 @media (max-width:800px){.python-lab__body{grid-template-columns:1fr}.python-lab__pane+.python-lab__pane{border-left:0;border-top:1px solid rgba(15,23,42,.12)}.python-lab textarea,.python-lab pre{min-height:260px}}
+.python-lab .python-lab__label{color:#0f172a !important}
+.python-lab .python-lab__note{color:#0f172a !important}
+.python-lab .python-lab__note strong{color:#0f172a !important}
+.python-lab .python-lab__note code{color:#0f172a !important;background:#dbeafe}
