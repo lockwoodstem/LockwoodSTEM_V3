@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base target="_top">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{font-family:Arial,sans-serif;color:#0b1f3a}body{margin:0;background:#f8fafc}.wrap{max-width:920px;margin:auto;padding:24px}
+.card{background:white;border:1px solid #d7e0ea;border-radius:18px;padding:20px;margin-bottom:18px;box-shadow:0 8px 20px rgba(15,23,42,.06)}
+h1,h2,h3{margin-top:0}label{display:block;font-weight:700;margin:.8rem 0 .35rem}input,select{width:100%;box-sizing:border-box;padding:12px;border:1px solid #aebdca;border-radius:10px;font-size:16px}
+button{border:0;border-radius:10px;padding:12px 16px;font-weight:800;background:#0b1f3a;color:#fff;cursor:pointer}button.secondary{background:#e8eef5;color:#0b1f3a}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.status{padding:12px;border-radius:10px;background:#eef5fb;margin-top:12px}.success{background:#e7f7ed}.error{background:#fdecec;color:#8a1f1f}.hidden{display:none}.tag{display:inline-block;background:#f3c95c;padding:6px 10px;border-radius:999px;font-weight:800;margin-bottom:12px}.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:12px}.slot{background:#fff;color:#0b1f3a;border:2px solid #cbd5e1}.slot.selected{border-color:#0b1f3a;background:#edf4fb}.muted{color:#5b6b7c;font-size:.92rem}@media(max-width:650px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+<span class="tag">Cirrus G7 • 30 Minutes</span>
+<h1>Reserve the Simulator</h1>
+<p class="muted">Enter your information first. The system will determine whether you need Orientation or may reserve a regular Simulator Session.</p>
+<div class="grid">
+<div><label for="name">Student name</label><input id="name" autocomplete="name"></div>
+<div><label for="email">School email</label><input id="email" type="email" autocomplete="email" value="<?= initialEmail ?>"></div>
+</div>
+<div style="margin-top:14px"><button onclick="loadSlots()">Check Available Times</button></div>
+<div id="studentStatus" class="status hidden"></div>
+</div>
+
+<div id="slotCard" class="card hidden">
+<h2>Available Times</h2>
+<p id="sessionTypeText"></p>
+<div id="slots" class="slots"></div>
+<div id="slotMessage" class="status hidden"></div>
+</div>
+
+<div id="confirmCard" class="card hidden">
+<h2>Confirm Reservation</h2>
+<p id="selectedText"></p>
+<button onclick="book()">Reserve This Time</button>
+</div>
+
+<div id="resultCard" class="card hidden"></div>
+
+<div class="card">
+<h2>Cancel a Reservation</h2>
+<p class="muted">Use the reservation ID shown on your confirmation.</p>
+<div class="grid"><div><label for="cancelEmail">School email</label><input id="cancelEmail" type="email"></div><div><label for="cancelId">Reservation ID</label><input id="cancelId" placeholder="SIM-XXXXXXXX"></div></div>
+<div style="margin-top:14px"><button class="secondary" onclick="cancelBooking()">Cancel Reservation</button></div>
+<div id="cancelResult" class="status hidden"></div>
+</div>
+</div>
+
+<script>
+let selectedSlot=null;
+function esc(v){return String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function status(id,text,type){const el=document.getElementById(id);el.className='status '+(type||'');el.textContent=text;el.classList.remove('hidden')}
+function loadSlots(){
+ const email=document.getElementById('email').value.trim();
+ const name=document.getElementById('name').value.trim();
+ if(!email||!name){status('studentStatus','Enter your name and school email first.','error');return}
+ status('studentStatus','Checking your simulator status…','');
+ google.script.run.withSuccessHandler(renderSlots).withFailureHandler(e=>status('studentStatus',e.message,'error')).getAvailableSlots(email);
+}
+function renderSlots(data){
+ if(!data.ok){status('studentStatus',data.message||'Unable to load availability.','error');return}
+ status('studentStatus',data.orientationComplete?'Orientation complete — you may reserve a Simulator Session.':'Orientation required — your next reservation will be a 30-minute Orientation.','');
+ document.getElementById('slotCard').classList.remove('hidden');
+ document.getElementById('sessionTypeText').innerHTML='<strong>Session type:</strong> '+esc(data.sessionType);
+ const slots=document.getElementById('slots');slots.innerHTML='';selectedSlot=null;document.getElementById('confirmCard').classList.add('hidden');
+ if(!data.slots.length){slots.innerHTML='<p>No open times are currently available.</p>';return}
+ data.slots.forEach(s=>{
+  const b=document.createElement('button');b.className='slot';b.type='button';
+  b.innerHTML='<strong>'+esc(s.dateLabel)+'</strong><br>'+esc(s.timeLabel)+(s.note?'<br><span class="muted">'+esc(s.note)+'</span>':'');
+  b.onclick=()=>{document.querySelectorAll('.slot').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');selectedSlot=s;document.getElementById('confirmCard').classList.remove('hidden');document.getElementById('selectedText').textContent=s.dateLabel+' • '+s.timeLabel};
+  slots.appendChild(b);
+ })
+}
+function book(){
+ if(!selectedSlot)return;
+ const form={name:document.getElementById('name').value.trim(),email:document.getElementById('email').value.trim(),slotKey:selectedSlot.key};
+ google.script.run.withSuccessHandler(data=>{
+  const card=document.getElementById('resultCard');card.classList.remove('hidden');
+  if(data.ok){card.innerHTML='<div class="status success"><strong>Reservation confirmed.</strong><br>'+esc(data.sessionType)+'<br>'+esc(data.dateLabel)+' • '+esc(data.timeLabel)+'<br><br><strong>Reservation ID:</strong> '+esc(data.reservationId)+'</div><p class="muted">Save your reservation ID in case you need to cancel.</p>';loadSlots()}
+  else card.innerHTML='<div class="status error">'+esc(data.message)+'</div>';
+ }).withFailureHandler(e=>status('slotMessage',e.message,'error')).bookSlot(form);
+}
+function cancelBooking(){
+ const email=document.getElementById('cancelEmail').value.trim(),id=document.getElementById('cancelId').value.trim();
+ if(!email||!id){status('cancelResult','Enter both your email and reservation ID.','error');return}
+ google.script.run.withSuccessHandler(d=>status('cancelResult',d.message,d.ok?'success':'error')).withFailureHandler(e=>status('cancelResult',e.message,'error')).cancelReservation(email,id);
+}
+</script>
+</body>
+</html>
