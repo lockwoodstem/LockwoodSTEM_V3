@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head>
+<title>Practice 3 | Production Loops & Batch Processing | ADM Python Practice</title>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<link href="../../../assets/css/python-practice.css?v=20261006-8" rel="stylesheet"/>
+<script defer src="../../../assets/js/main.js"></script>
+<script defer src="../../../assets/js/python-practice.js?v=20261006-5"></script>
+<meta name="description" content="Production Loops & Batch Processing — ADM Python Crash Course practice assignment."/>
+</head><body class="adm-course-page site-consistency-v4">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container nav">
+<a aria-label="LockwoodSTEM home" class="brand" href="../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a>
+<button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
+<ul class="nav-links" id="site-navigation"><li><a href="../../../courses.html">Courses</a></li><li><a href="../../../agenda.html">Daily Agenda</a></li><li><a href="../../../resources/index.html">Resources</a></li><li><a href="../../../certifications/index.html">Certifications</a></li><li><a href="../../../fablab/index.html">FabLab</a></li><li><a href="../../../about/index.html">About</a></li></ul>
+</div></header>
+<main id="main">
+<nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../../index.html">Home</a></li><li><a href="../../../courses.html">Courses</a></li><li><a href="../index.html">ADM</a></li><li><a href="../python-crash-course.html">Python Crash Course</a></li><li aria-current="page">Practice 3</li></ol></nav>
+<section class="page-hero adm-hero"><div class="container hero-grid"><div><div class="eyebrow">ADM Python Practice • Practice 3</div><h1>Production Loops & Batch Processing</h1><p>Build a simulated production program that processes a batch of parts and alternates pallet destinations.</p><div class="hero-actions consistent-actions"><a class="btn" href="#assignment">Start Assignment</a><a class="btn secondary" href="../python-crash-course.html">Back to Crash Course</a></div></div><aside class="card dark"><span class="tag">20 Points</span><h3>Use after Lessons P.6–P.8</h3><p>Practice for loops, while loops, counters, and decisions inside repeated production cycles.</p></aside></div></section>
+
+<section class="container" id="assignment"><div class="section-header"><div><div class="eyebrow">Practice Assignment</div><h2>What You Need to Do</h2></div></div>
+<article class="card"><ol class="unit-meta-list"><li>Use a <strong>for loop</strong> to process six parts.</li><li>Number the parts from 1 through 6 in the printed output.</li><li>Route odd-numbered parts to Pallet 1 and even-numbered parts to Pallet 2.</li><li>Keep separate counters for how many parts reach each pallet.</li><li>Print a production summary after the loop.</li><li>Then change the batch size from 6 to 10 by editing only one variable.</li></ol></article></section>
+
+<section class="container"><div class="section-header"><div><div class="eyebrow">Browser Python Lab</div><h2>Build and Test Your Program</h2><p class="section-subtitle">Modify the starter code until all required behaviors work. No physical Workcell is needed.</p></div></div>
+<div class="python-lab" data-python-lab>
+<div class="python-lab__header"><div><div class="eyebrow">Interactive Python Practice</div><h3>Production Loops & Batch Processing</h3></div><span class="python-lab__status" data-python-status>Ready</span></div>
+<div class="python-lab__body">
+<div class="python-lab__pane"><span class="python-lab__label">Editable Python Code</span><textarea data-python-editor spellcheck="false">batch_size = 6
+pallet_1_count = 0
+pallet_2_count = 0
+
+# TODO: create a for loop that processes the batch
+
+# TODO: route odd-numbered parts to Pallet 1
+# and even-numbered parts to Pallet 2
+
+# TODO: update the counters
+
+print("Pallet 1 total:", pallet_1_count)
+print("Pallet 2 total:", pallet_2_count)
+</textarea></div>
+<div class="python-lab__pane"><span class="python-lab__label">Output &amp; Errors</span><pre data-python-output>Predict what will happen, then click Run Code.</pre></div>
+</div>
+<div class="python-lab__controls"><button class="btn small" type="button" data-python-run>Run Code</button><button class="btn small secondary" type="button" data-python-reset>Reset Code</button><button class="btn small secondary" type="button" data-python-clear>Clear Output</button></div>
+<p class="python-lab__note"><strong>Tip:</strong> Press Ctrl+Enter (Cmd+Enter on Mac) to run. The mock <code>arm</code> prints simulated Workcell actions instead of controlling hardware.</p>
+</div></section>
+
+<section class="container"><div class="section-header"><div><div class="eyebrow">Success Criteria</div><h2>Check Your Work</h2></div></div><article class="card"><ul class="unit-meta-list"><li>The loop processes exactly the number stored in <code>batch_size</code>.</li><li>Each part is assigned to exactly one pallet.</li><li>The two pallet counters add up to the total batch size.</li><li>Changing only <code>batch_size</code> successfully changes the production run.</li></ul></article></section>
+
+<section class="container"><div class="section-header"><div><div class="eyebrow">Submission</div><h2>What to Turn In</h2></div></div><article class="card submit-card"><ul class="unit-meta-list"><li><strong>Your final Python code</strong> copied into the assignment submission.</li><li><strong>A screenshot of the final output</strong> showing that the program ran successfully.</li><li><strong>One debugging note:</strong> identify one problem you encountered and explain how you fixed it.</li></ul></article></section>
+
+<nav aria-label="Practice assignment navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="practice-2.html">← Previous Practice</a><a class="btn" href="practice-4.html">Next Practice →</a></nav>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../courses.html">Courses</a><a href="../index.html">ADM</a><a href="../python-crash-course.html">Python Crash Course</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+</body></html>
