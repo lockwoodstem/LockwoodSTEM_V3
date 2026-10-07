@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="en"><head>
+<title>Practice 2 | Part Inspection & Routing Logic | ADM Python Practice</title>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<link href="../../../assets/css/python-practice.css?v=20261006-8" rel="stylesheet"/>
+<script defer src="../../../assets/js/main.js"></script>
+<script defer src="../../../assets/js/python-practice.js?v=20261006-5"></script>
+<meta name="description" content="Part Inspection & Routing Logic — ADM Python Crash Course practice assignment."/>
+</head><body class="adm-course-page site-consistency-v4">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container nav">
+<a aria-label="LockwoodSTEM home" class="brand" href="../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a>
+<button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
+<ul class="nav-links" id="site-navigation"><li><a href="../../../courses.html">Courses</a></li><li><a href="../../../agenda.html">Daily Agenda</a></li><li><a href="../../../resources/index.html">Resources</a></li><li><a href="../../../certifications/index.html">Certifications</a></li><li><a href="../../../fablab/index.html">FabLab</a></li><li><a href="../../../about/index.html">About</a></li></ul>
+</div></header>
+<main id="main">
+<nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../../index.html">Home</a></li><li><a href="../../../courses.html">Courses</a></li><li><a href="../index.html">ADM</a></li><li><a href="../python-crash-course.html">Python Crash Course</a></li><li aria-current="page">Practice 2</li></ol></nav>
+<section class="page-hero adm-hero"><div class="container hero-grid"><div><div class="eyebrow">ADM Python Practice • Practice 2</div><h1>Part Inspection & Routing Logic</h1><p>Write decision logic that determines whether a part passes inspection and where it should be routed.</p><div class="hero-actions consistent-actions"><a class="btn" href="#assignment">Start Assignment</a><a class="btn secondary" href="../python-crash-course.html">Back to Crash Course</a></div></div><aside class="card dark"><span class="tag">15 Points</span><h3>Use after Lessons P.4–P.5</h3><p>Practice comparisons, Boolean logic, and if/elif/else routing.</p></aside></div></section>
+
+<section class="container" id="assignment"><div class="section-header"><div><div class="eyebrow">Practice Assignment</div><h2>What You Need to Do</h2></div></div>
+<article class="card"><ol class="unit-meta-list"><li>Create variables for <strong>part_height</strong>, <strong>minimum_height</strong>, <strong>maximum_height</strong>, and <strong>destination</strong>.</li><li>Create a Boolean expression that determines whether the part height is acceptable.</li><li>If the part is acceptable, route destination 1 to Pallet 1 and destination 2 to Pallet 2.</li><li>If the destination is invalid, print an error message.</li><li>If the part fails inspection, route it to a reject location instead of a pallet.</li></ol></article></section>
+
+<section class="container"><div class="section-header"><div><div class="eyebrow">Browser Python Lab</div><h2>Build and Test Your Program</h2><p class="section-subtitle">Modify the starter code until all required behaviors work. No physical Workcell is needed.</p></div></div>
+<div class="python-lab" data-python-lab>
+<div class="python-lab__header"><div><div class="eyebrow">Interactive Python Practice</div><h3>Part Inspection & Routing Logic</h3></div><span class="python-lab__status" data-python-status>Ready</span></div>
+<div class="python-lab__body">
+<div class="python-lab__pane"><span class="python-lab__label">Editable Python Code</span><textarea data-python-editor spellcheck="false">part_height = 48
+minimum_height = 45
+maximum_height = 50
+destination = 2
+
+# TODO: calculate part_ok
+
+# TODO: use if / elif / else to:
+# 1. reject an out-of-spec part
+# 2. route destination 1
+# 3. route destination 2
+# 4. handle an invalid destination
+</textarea></div>
+<div class="python-lab__pane"><span class="python-lab__label">Output &amp; Errors</span><pre data-python-output>Predict what will happen, then click Run Code.</pre></div>
+</div>
+<div class="python-lab__controls"><button class="btn small" type="button" data-python-run>Run Code</button><button class="btn small secondary" type="button" data-python-reset>Reset Code</button><button class="btn small secondary" type="button" data-python-clear>Clear Output</button></div>
+<p class="python-lab__note"><strong>Tip:</strong> Press Ctrl+Enter (Cmd+Enter on Mac) to run. The mock <code>arm</code> prints simulated Workcell actions instead of controlling hardware.</p>
+</div></section>
+
+<section class="container"><div class="section-header"><div><div class="eyebrow">Success Criteria</div><h2>Check Your Work</h2></div></div><article class="card"><ul class="unit-meta-list"><li>A part below 45 or above 50 is rejected.</li><li>A valid part with destination 1 reaches Pallet 1.</li><li>A valid part with destination 2 reaches Pallet 2.</li><li>An invalid destination produces a clear error message.</li></ul></article></section>
+
+<section class="container"><div class="section-header"><div><div class="eyebrow">Submission</div><h2>What to Turn In</h2></div></div><article class="card submit-card"><ul class="unit-meta-list"><li><strong>Your final Python code</strong> copied into the assignment submission.</li><li><strong>A screenshot of the final output</strong> showing that the program ran successfully.</li><li><strong>One debugging note:</strong> identify one problem you encountered and explain how you fixed it.</li></ul></article></section>
+
+<nav aria-label="Practice assignment navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="practice-1.html">← Previous Practice</a><a class="btn" href="practice-3.html">Next Practice →</a></nav>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../courses.html">Courses</a><a href="../index.html">ADM</a><a href="../python-crash-course.html">Python Crash Course</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+</body></html>
