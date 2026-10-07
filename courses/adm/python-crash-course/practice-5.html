@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en"><head>
+<title>Practice 5 | Workcell Programming Mini-Challenge | ADM Python Practice</title>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<link href="../../../assets/css/python-practice.css?v=20261006-8" rel="stylesheet"/>
+<script defer src="../../../assets/js/main.js"></script>
+<script defer src="../../../assets/js/python-practice.js?v=20261006-5"></script>
+<meta name="description" content="Workcell Programming Mini-Challenge — ADM Python Crash Course practice assignment."/>
+</head><body class="adm-course-page site-consistency-v4">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container nav">
+<a aria-label="LockwoodSTEM home" class="brand" href="../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a>
+<button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button>
+<ul class="nav-links" id="site-navigation"><li><a href="../../../courses.html">Courses</a></li><li><a href="../../../agenda.html">Daily Agenda</a></li><li><a href="../../../resources/index.html">Resources</a></li><li><a href="../../../certifications/index.html">Certifications</a></li><li><a href="../../../fablab/index.html">FabLab</a></li><li><a href="../../../about/index.html">About</a></li></ul>
+</div></header>
+<main id="main">
+<nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../../index.html">Home</a></li><li><a href="../../../courses.html">Courses</a></li><li><a href="../index.html">ADM</a></li><li><a href="../python-crash-course.html">Python Crash Course</a></li><li aria-current="page">Practice 5</li></ol></nav>
+<section class="page-hero adm-hero"><div class="container hero-grid"><div><div class="eyebrow">ADM Python Practice • Practice 5</div><h1>Workcell Programming Mini-Challenge</h1><p>Create a complete simulated production program using the major Python skills from the crash course.</p><div class="hero-actions consistent-actions"><a class="btn" href="#assignment">Start Assignment</a><a class="btn secondary" href="../python-crash-course.html">Back to Crash Course</a></div></div><aside class="card dark"><span class="tag">30 Points</span><h3>Use after Lessons P.1–P.10</h3><p>Integrate variables, calculations, decisions, loops, functions, counters, and error handling.</p></aside></div></section>
+
+<section class="container" id="assignment"><div class="section-header"><div><div class="eyebrow">Practice Assignment</div><h2>What You Need to Do</h2></div></div>
+<article class="card"><ol class="unit-meta-list"><li>Define three pickup zones using variables.</li><li>Define two pallet destinations.</li><li>Create reusable pickup and placement functions.</li><li>Use a loop to process at least six parts.</li><li>Use decision logic to select the correct pickup zone and pallet destination.</li><li>Track the number of successfully processed parts.</li><li>Detect at least one invalid input and print a clear error instead of attempting the move.</li><li>Print a final production summary.</li></ol></article></section>
+
+<section class="container"><div class="section-header"><div><div class="eyebrow">Browser Python Lab</div><h2>Build and Test Your Program</h2><p class="section-subtitle">Modify the starter code until all required behaviors work. No physical Workcell is needed.</p></div></div>
+<div class="python-lab" data-python-lab>
+<div class="python-lab__header"><div><div class="eyebrow">Interactive Python Practice</div><h3>Workcell Programming Mini-Challenge</h3></div><span class="python-lab__status" data-python-status>Ready</span></div>
+<div class="python-lab__body">
+<div class="python-lab__pane"><span class="python-lab__label">Editable Python Code</span><textarea data-python-editor spellcheck="false">safe_z = 120
+parts_completed = 0
+
+# Pickup zones
+pickup_1_x = 100
+pickup_2_x = 160
+pickup_3_x = 220
+pickup_y = 150
+pickup_z = 45
+
+# Pallets
+pallet_1_x = 300
+pallet_1_y = 80
+pallet_2_x = 300
+pallet_2_y = 160
+pallet_z = 45
+
+def pick_part(x, y, z):
+    # Build this function
+    pass
+
+def place_part(x, y, z):
+    # Build this function
+    pass
+
+# Create a production loop.
+# Each cycle should choose a pickup zone and destination,
+# validate them, move the simulated part, and update the count.
+
+print("Parts completed:", parts_completed)
+</textarea></div>
+<div class="python-lab__pane"><span class="python-lab__label">Output &amp; Errors</span><pre data-python-output>Predict what will happen, then click Run Code.</pre></div>
+</div>
+<div class="python-lab__controls"><button class="btn small" type="button" data-python-run>Run Code</button><button class="btn small secondary" type="button" data-python-reset>Reset Code</button><button class="btn small secondary" type="button" data-python-clear>Clear Output</button></div>
+<p class="python-lab__note"><strong>Tip:</strong> Press Ctrl+Enter (Cmd+Enter on Mac) to run. The mock <code>arm</code> prints simulated Workcell actions instead of controlling hardware.</p>
+</div></section>
+
+<section class="container"><div class="section-header"><div><div class="eyebrow">Success Criteria</div><h2>Check Your Work</h2></div></div><article class="card"><ul class="unit-meta-list"><li>The program uses variables rather than repeating raw coordinates unnecessarily.</li><li>Functions handle repeated movement sequences.</li><li>A loop performs the production cycles.</li><li>Decision logic selects locations and catches invalid choices.</li><li>The program produces a clear final summary.</li><li>You can explain how changing one pickup-zone variable affects the program.</li></ul></article></section>
+
+<section class="container"><div class="section-header"><div><div class="eyebrow">Submission</div><h2>What to Turn In</h2></div></div><article class="card submit-card"><ul class="unit-meta-list"><li><strong>Your final Python code</strong> copied into the assignment submission.</li><li><strong>A screenshot of the final output</strong> showing that the program ran successfully.</li><li><strong>One debugging note:</strong> identify one problem you encountered and explain how you fixed it.</li></ul></article></section>
+
+<nav aria-label="Practice assignment navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="practice-4.html">← Previous Practice</a><a class="btn" href="../python-crash-course.html">Back to Crash Course</a></nav>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../courses.html">Courses</a><a href="../index.html">ADM</a><a href="../python-crash-course.html">Python Crash Course</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+</body></html>
