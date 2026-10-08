@@ -29,29 +29,59 @@ document.addEventListener("click", async function(event) {
 document.addEventListener("DOMContentLoaded",()=>{const grid=document.querySelector("#challenge-card-grid");if(grid){const cards=[...grid.querySelectorAll(".challenge-card")];const c={search:document.querySelector("#challenge-search"),course:document.querySelector("#challenge-course"),unit:document.querySelector("#challenge-unit"),category:document.querySelector("#challenge-category"),difficulty:document.querySelector("#challenge-difficulty"),time:document.querySelector("#challenge-time"),tool:document.querySelector("#challenge-tool")};const count=document.querySelector("#challenge-result-count"),empty=document.querySelector("#challenge-empty-state");const apply=()=>{const v=Object.fromEntries(Object.entries(c).map(([k,e])=>[k,e?e.value.trim().toLowerCase():""]));let n=0;cards.forEach(card=>{const ok=(!v.search||card.dataset.search.includes(v.search))&&(!v.course||card.dataset.course.toLowerCase()===v.course)&&(!v.unit||card.dataset.unit===v.unit)&&(!v.category||card.dataset.category.toLowerCase()===v.category)&&(!v.difficulty||card.dataset.difficulty.toLowerCase()===v.difficulty)&&(!v.time||card.dataset.time.toLowerCase()===v.time)&&(!v.tool||card.dataset.tools.toLowerCase().includes(v.tool));card.hidden=!ok;if(ok)n++});if(count)count.textContent=n;if(empty)empty.hidden=n!==0};Object.values(c).forEach(e=>{if(e)e.addEventListener(e.tagName==="INPUT"?"input":"change",apply)});const reset=document.querySelector("#challenge-reset");if(reset)reset.addEventListener("click",()=>{Object.values(c).forEach(e=>{if(e)e.value=""});apply()});apply()}const f=document.querySelector("#challenge-id-field");if(f)f.value=new URLSearchParams(location.search).get("challenge")||""});
 
 
-// Site-wide consistency and navigation pass v4
-document.addEventListener('DOMContentLoaded', () => {
-  // Keep the Academy tab available on every page that uses the shared navigation.
-  const siteNav = document.querySelector('#site-navigation, .site-header .nav-links');
-  if (siteNav && !siteNav.querySelector('[data-nav-section="academy"], a[href*="/academy/"], a[href="academy/index.html"]')) {
-    const coursesLink = [...siteNav.querySelectorAll('a[href]')].find(a => /courses\.html(?:$|[?#])/i.test(a.getAttribute('href') || ''));
-    let academyHref = 'academy/index.html';
-    if (coursesLink) {
-      try {
-        const coursesUrl = new URL(coursesLink.getAttribute('href'), window.location.href);
-        academyHref = new URL('academy/index.html', coursesUrl).href;
-      } catch {}
+// Site-wide consistency and navigation pass v5
+function ensureAcademyNavLink(){
+  const nav=document.querySelector('#site-navigation, .site-header .nav-links');
+  if(!nav) return;
+
+  // Remove accidental duplicates while preserving an existing author-supplied Academy link.
+  const academyLinks=[...nav.querySelectorAll('a[href]')].filter(a=>{
+    const href=(a.getAttribute('href')||'').toLowerCase();
+    return a.dataset.navSection==='academy' || /(^|\/)academy\/index\.html(?:$|[?#])/.test(href) || /\/academy\/(?:$|[?#])/.test(href);
+  });
+
+  let academy=academyLinks.shift() || null;
+  academyLinks.forEach(a=>(a.closest('li')||a).remove());
+
+  if(!academy){
+    const li=document.createElement('li');
+    academy=document.createElement('a');
+    academy.textContent='Academy';
+    academy.dataset.navSection='academy';
+
+    // Resolve from the Courses link because every course page already has a correct
+    // relative path back to the site root.
+    const courses=[...nav.querySelectorAll('a[href]')].find(a=>/courses\.html(?:$|[?#])/i.test(a.getAttribute('href')||''));
+    if(courses){
+      const href=courses.getAttribute('href')||'';
+      academy.href=href.replace(/courses\.html(?:[?#].*)?$/i,'academy/index.html');
+    }else{
+      academy.href='/academy/index.html';
     }
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = academyHref;
-    a.dataset.navSection = 'academy';
-    a.textContent = 'Academy';
-    const aboutLink = [...siteNav.querySelectorAll('a[href]')].find(a => (a.dataset.navSection || '').toLowerCase() === 'about' || /\/about\//i.test(a.getAttribute('href') || ''));
-    const aboutLi = aboutLink?.closest('li');
-    siteNav.insertBefore(li, aboutLi || null);
-    li.appendChild(a);
+
+    li.appendChild(academy);
+    const about=[...nav.querySelectorAll('a[href]')].find(a=>
+      (a.dataset.navSection||'').toLowerCase()==='about' ||
+      /(^|\/)about\/index\.html/i.test(a.getAttribute('href')||'')
+    );
+    nav.insertBefore(li,about?.closest('li')||null);
+  }else{
+    academy.dataset.navSection='academy';
   }
+
+  if(location.pathname.toLowerCase().includes('/academy/')){
+    academy.setAttribute('aria-current','page');
+    academy.classList.add('is-active');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  ensureAcademyNavLink();
+
+  // Re-run after other navigation enhancement code in case an older page rebuilds its nav.
+  requestAnimationFrame(ensureAcademyNavLink);
+  window.setTimeout(ensureAcademyNavLink,250);
+
   const path = window.location.pathname.toLowerCase();
   let section = '';
   if (path.includes('/courses/') || path.endsWith('/courses.html')) section = 'courses';
