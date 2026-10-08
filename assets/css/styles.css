@@ -3926,3 +3926,133 @@ nav a[aria-current="page"]:focus{
 @media(max-width:900px){.cnc-step-grid,.cnc-resource-grid,.challenge-grid{grid-template-columns:1fr 1fr}.cnc-inspection-row{grid-template-columns:1fr 1fr}.cnc-inspection-row .status{grid-column:1/-1}.print-header{display:block}.print-id{margin-top:1rem}}
 @media(max-width:650px){.cnc-step-grid,.cnc-resource-grid,.cnc-form-grid,.cnc-check-grid,.challenge-grid{grid-template-columns:1fr}}
 @media print{.site-header,.footer,.back-to-top,.print-actions,.site-breadcrumbs,.page-hero{display:none!important}.cnc-tool-shell{box-shadow:none!important;border:none!important;padding:0!important}.container{width:100%!important}.printable-sheet{border:none;padding:0}.print-section{break-inside:avoid}body{background:#fff!important}}
+
+
+/* Persistent course subnavigation + site consistency v1 */
+.course-subnav{
+  position:sticky;
+  top:0;
+  z-index:85;
+  background:rgba(8,24,45,.98);
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.14);
+  box-shadow:0 8px 24px rgba(2,10,28,.10);
+  backdrop-filter:blur(10px);
+}
+.course-subnav-inner{
+  min-height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+.course-subnav-identity{
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  min-width:0;
+  color:#fff;
+  text-decoration:none;
+  font-weight:900;
+}
+.course-subnav-short{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:42px;
+  min-height:30px;
+  padding:.25rem .55rem;
+  border-radius:999px;
+  background:var(--gold,#c8a24a);
+  color:#08182d;
+  font-size:.78rem;
+  letter-spacing:.05em;
+}
+.course-subnav-name{
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  font-size:.9rem;
+}
+.course-subnav-links{
+  display:flex;
+  align-items:center;
+  gap:.25rem;
+  overflow-x:auto;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.course-subnav-links::-webkit-scrollbar{display:none}
+.course-subnav-links a{
+  flex:0 0 auto;
+  color:#eaf1f8;
+  text-decoration:none;
+  font-size:.82rem;
+  font-weight:800;
+  padding:.55rem .72rem;
+  border-radius:9px;
+  transition:background .15s ease,color .15s ease;
+}
+.course-subnav-links a:hover,
+.course-subnav-links a:focus-visible,
+.course-subnav-links a[aria-current="page"],
+.course-subnav-links a.is-contextual{
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  outline:none;
+}
+.course-subnav-links a:focus-visible{
+  box-shadow:0 0 0 3px rgba(200,162,74,.42);
+}
+@media(max-width:860px){
+  .course-subnav{
+    position:relative;
+  }
+  .course-subnav-inner{
+    display:block;
+    padding-top:.65rem;
+    padding-bottom:.55rem;
+  }
+  .course-subnav-identity{
+    margin-bottom:.45rem;
+  }
+  .course-subnav-links{
+    margin:0 -.15rem;
+    padding-bottom:.1rem;
+  }
+}
+@media(max-width:560px){
+  .course-subnav-name{font-size:.82rem}
+  .course-subnav-links a{font-size:.78rem;padding:.5rem .62rem}
+}
+
+/* Shared visual consistency */
+.site-header .brand-sub{
+  letter-spacing:.02em;
+}
+.page-hero,
+.course-home-page .page-hero,
+.unit-overview-page .page-hero{
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.footer{
+  opacity:1;
+}
+.footer-note{
+  max-width:460px;
+}
+.course-home-page .section-header,
+.unit-overview-page .section-header,
+.lesson-detail-page .section-header{
+  margin-bottom:1.1rem;
+}
+.course-home-page .card,
+.unit-overview-page .card,
+.lesson-detail-page .card{
+  border-color:var(--line,#d8e0e8);
+}
+.course-home-page .btn,
+.unit-overview-page .btn,
+.lesson-detail-page .btn{
+  font-weight:850;
+}
