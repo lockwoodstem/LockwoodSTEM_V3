@@ -1,7 +1,7 @@
 const CONFIG = {
   TIME_ZONE: Session.getScriptTimeZone() || 'America/New_York',
   SLOT_MINUTES: 30,
-  DAYS_AHEAD: 60,
+  DAYS_AHEAD: 14,
   MAX_ACTIVE_RESERVATIONS_PER_STUDENT: 1
 };
 
@@ -203,6 +203,10 @@ function addFreeFlightWindow_(
       if (!slotMap[key]) {
         slotMap[key] = {
           key,
+          dateKey:
+            Utilities.formatDate(start,CONFIG.TIME_ZONE,'yyyy-MM-dd'),
+          dayLabel:
+            Utilities.formatDate(start,CONFIG.TIME_ZONE,'EEEE'),
           dateLabel:
             Utilities.formatDate(start,CONFIG.TIME_ZONE,'EEE, MMM d'),
           timeLabel:
@@ -266,6 +270,10 @@ function instructorLedSessions_(now,horizon,blackoutKeys,reservations) {
       end,
       title: String(title || 'Instructor-Led Session').trim(),
       note: note || '',
+      dateKey:
+        Utilities.formatDate(start,CONFIG.TIME_ZONE,'yyyy-MM-dd'),
+      dayLabel:
+        Utilities.formatDate(start,CONFIG.TIME_ZONE,'EEEE'),
       dateLabel:
         Utilities.formatDate(start,CONFIG.TIME_ZONE,'EEE, MMM d'),
       timeLabel:
@@ -678,8 +686,16 @@ function combineDateTime_(date,timeValue) {
   let m = 0;
 
   if (timeValue instanceof Date) {
-    h = timeValue.getHours();
-    m = timeValue.getMinutes();
+    const formatted =
+      Utilities.formatDate(
+        timeValue,
+        CONFIG.TIME_ZONE,
+        'HH:mm'
+      );
+
+    const parts = formatted.split(':');
+    h = Number(parts[0]);
+    m = Number(parts[1]);
 
   } else {
     const text =
@@ -711,6 +727,15 @@ function combineDateTime_(date,timeValue) {
         h += 12;
       }
     }
+  }
+
+  if (
+    !Number.isFinite(h) ||
+    !Number.isFinite(m) ||
+    h < 0 || h > 23 ||
+    m < 0 || m > 59
+  ) {
+    return null;
   }
 
   return new Date(
