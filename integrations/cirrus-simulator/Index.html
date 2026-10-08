@@ -23,11 +23,22 @@ button.secondary{background:#e8eef5;color:#0b1f3a}
 .type-btn{background:#fff;color:#0b1f3a;border:2px solid #9fb0c3;text-align:left;min-height:92px}
 .type-btn.selected{border-color:#0b1f3a;background:#eaf2fb}
 .type-btn strong{display:block;font-size:1.05rem;margin-bottom:5px}
-.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:12px}
-.slot{background:#fff;color:#0b1f3a;border:2px solid #cbd5e1;text-align:left}
-.slot.selected{border-color:#0b1f3a;background:#edf4fb}
+.availability-toolbar{display:flex;justify-content:space-between;gap:12px;align-items:end;flex-wrap:wrap;margin:14px 0}
+.availability-toolbar label{margin:0}
+.availability-toolbar select{min-width:220px;padding:10px 12px;border:1px solid #8295aa;border-radius:10px;background:#fff;color:#0b1f3a;font-size:15px}
+.table-wrap{overflow-x:auto;border:1px solid #cbd5e1;border-radius:14px;background:#fff}
+.availability-table{width:100%;border-collapse:collapse;min-width:680px}
+.availability-table th{background:#0b1f3a;color:#fff;text-align:left;padding:11px 12px;font-size:.84rem;letter-spacing:.03em}
+.availability-table td{padding:11px 12px;border-top:1px solid #e2e8f0;vertical-align:middle}
+.availability-table tr:nth-child(even) td{background:#f8fafc}
+.availability-table tr.selected-row td{background:#e7f0f9}
+.availability-table .date-cell strong{display:block}
+.availability-table .date-cell span{display:block;color:#617083;font-size:.86rem;margin-top:2px}
+.select-slot{padding:8px 12px;white-space:nowrap}
+.select-slot.selected{background:#c8a24a;color:#0b1f3a}
+.day-count{font-size:.9rem;color:#4e6074;font-weight:700}
 .muted{color:#4e6074;font-size:.92rem}
-@media(max-width:650px){.grid,.type-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.grid,.type-grid{grid-template-columns:1fr}.availability-toolbar{align-items:stretch}.availability-toolbar select{width:100%;min-width:0}}
 </style>
 </head>
 <body>
@@ -74,7 +85,14 @@ button.secondary{background:#e8eef5;color:#0b1f3a}
 <div id="slotCard" class="card hidden">
 <h2 id="slotHeading">Available Times</h2>
 <p id="sessionTypeText"></p>
-<div id="slots" class="slots"></div>
+<div class="availability-toolbar">
+  <div>
+    <label for="dayFilter">Show availability for</label>
+    <select id="dayFilter" onchange="applyDayFilter()"><option value="">All available days</option></select>
+  </div>
+  <div class="day-count" id="dayCount"></div>
+</div>
+<div id="slots"></div>
 <div id="slotMessage" class="status hidden"></div>
 </div>
 
@@ -209,10 +227,11 @@ function chooseType(type){
 function renderSlots(data,type){
   const card=document.getElementById('slotCard');
   const slots=document.getElementById('slots');
+  const dayFilter=document.getElementById('dayFilter');
 
   card.classList.remove('hidden');
-  slots.innerHTML='';
   selectedSlot=null;
+  window.currentSlotData=[...(data||[])].sort((a,b)=>a.key.localeCompare(b.key));
 
   document.getElementById('confirmCard').classList.add('hidden');
 
@@ -222,50 +241,87 @@ function renderSlots(data,type){
       : 'Available Times';
 
   document.getElementById('sessionTypeText').innerHTML=
-    '<strong>Session type:</strong> '+esc(type);
+    '<strong>Session type:</strong> '+esc(type)+
+    ' <span class="muted">• Showing the next 14 days only.</span>';
 
-  if(!data.length){
+  if(!window.currentSlotData.length){
+    dayFilter.innerHTML='<option value="">All available days</option>';
     slots.innerHTML=
-      '<p>No open sessions are currently available for this type.</p>';
+      '<p>No open sessions are currently available for this type in the next two weeks.</p>';
+    document.getElementById('dayCount').textContent='';
     return;
   }
 
-  data.forEach(s=>{
-    const b=document.createElement('button');
-    b.className='slot';
-    b.type='button';
-
-    let html=
-      '<strong>'+esc(s.dateLabel)+'</strong><br>'+
-      esc(s.timeLabel);
-
-    if(s.title){
-      html+='<br><strong>'+esc(s.title)+'</strong>';
+  const seen=new Set();
+  const days=[];
+  window.currentSlotData.forEach(s=>{
+    const key=s.dateKey||s.dateLabel;
+    if(!seen.has(key)){
+      seen.add(key);
+      days.push({key,label:s.dateLabel});
     }
-
-    if(s.note){
-      html+='<br><span class="muted">'+esc(s.note)+'</span>';
-    }
-
-    b.innerHTML=html;
-
-    b.onclick=()=>{
-      document.querySelectorAll('.slot').forEach(
-        x=>x.classList.remove('selected')
-      );
-
-      b.classList.add('selected');
-      selectedSlot=s;
-
-      document.getElementById('confirmCard').classList.remove('hidden');
-
-      document.getElementById('selectedText').textContent=
-        (s.title ? s.title+' • ' : '')+
-        s.dateLabel+' • '+s.timeLabel;
-    };
-
-    slots.appendChild(b);
   });
+
+  dayFilter.innerHTML=
+    '<option value="">All available days</option>'+
+    days.map(d=>'<option value="'+esc(d.key)+'">'+esc(d.label)+'</option>').join('');
+
+  applyDayFilter();
+}
+
+function applyDayFilter(){
+  const selectedDay=document.getElementById('dayFilter').value;
+  const rows=(window.currentSlotData||[]).filter(s=>
+    !selectedDay || (s.dateKey||s.dateLabel)===selectedDay
+  );
+  renderAvailabilityTable(rows);
+}
+
+function renderAvailabilityTable(data){
+  const slots=document.getElementById('slots');
+  const count=document.getElementById('dayCount');
+
+  if(!data.length){
+    slots.innerHTML='<p>No times match that day.</p>';
+    count.textContent='0 available sessions';
+    return;
+  }
+
+  const distinctDays=new Set(data.map(s=>s.dateKey||s.dateLabel)).size;
+  count.textContent=
+    data.length+' available session'+(data.length===1?'':'s')+
+    ' across '+distinctDays+' day'+(distinctDays===1?'':'s');
+
+  slots.innerHTML=
+    '<div class="table-wrap"><table class="availability-table">'+
+    '<thead><tr><th>Day</th><th>Time</th><th>Session</th><th>Notes</th><th></th></tr></thead>'+
+    '<tbody>'+
+    data.map((s,i)=>{
+      const session=s.title || selectedType || 'Available';
+      const note=s.note || '—';
+      const selected=selectedSlot && selectedSlot.key===s.key;
+      return '<tr data-slot-index="'+i+'"'+(selected?' class="selected-row"':'')+'>'+
+        '<td class="date-cell"><strong>'+esc(s.dayLabel||'')+'</strong><span>'+esc(s.dateLabel)+'</span></td>'+
+        '<td><strong>'+esc(s.timeLabel)+'</strong></td>'+
+        '<td>'+esc(session)+'</td>'+
+        '<td class="muted">'+esc(note)+'</td>'+
+        '<td><button type="button" class="select-slot'+(selected?' selected':'')+'" onclick="selectTableSlot(\''+esc(s.key)+'\')">'+(selected?'Selected':'Select')+'</button></td>'+
+      '</tr>';
+    }).join('')+
+    '</tbody></table></div>';
+}
+
+function selectTableSlot(key){
+  const s=(window.currentSlotData||[]).find(x=>x.key===key);
+  if(!s)return;
+  selectedSlot=s;
+
+  document.getElementById('confirmCard').classList.remove('hidden');
+  document.getElementById('selectedText').textContent=
+    (s.title ? s.title+' • ' : '')+
+    s.dateLabel+' • '+s.timeLabel;
+
+  applyDayFilter();
 }
 
 function book(){
