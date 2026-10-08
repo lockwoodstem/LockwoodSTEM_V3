@@ -90,7 +90,8 @@ function buildFreeFlightSlots_(now,horizon,reservations,blackoutKeys,instructorS
   const oneTimeDisplay = oneTimeRange.getDisplayValues();
 
   for (let i = 1; i < oneTime.length; i++) {
-    const [dateValue,, ,enabled,note] = oneTime[i];
+    const [, , ,enabled,note] = oneTime[i];
+    const dateValue = oneTimeDisplay[i][0];
     const startValue = oneTimeDisplay[i][1];
     const endValue = oneTimeDisplay[i][2];
 
@@ -121,14 +122,16 @@ function buildFreeFlightSlots_(now,horizon,reservations,blackoutKeys,instructorS
       weekday,
       ,
       ,
-      startDateValue,
-      endDateValue,
+      ,
+      ,
       enabled,
       note
     ] = recurring[i];
 
     const startValue = recurringDisplay[i][1];
     const endValue = recurringDisplay[i][2];
+    const startDateValue = recurringDisplay[i][3];
+    const endDateValue = recurringDisplay[i][4];
 
     if (
       !isTruthy_(enabled) ||
@@ -215,7 +218,7 @@ function addFreeFlightWindow_(
         slotMap[key] = {
           key,
           dateKey:
-            Utilities.formatDate(start,CONFIG.TIME_ZONE,'yyyy-MM-dd'),
+            localDateKey_(start),
           dayLabel:
             Utilities.formatDate(start,CONFIG.TIME_ZONE,'EEEE'),
           dateLabel:
@@ -289,7 +292,7 @@ function instructorLedSessions_(now,horizon,blackoutKeys,reservations) {
       title: String(title || 'Instructor-Led Session').trim(),
       note: note || '',
       dateKey:
-        Utilities.formatDate(start,CONFIG.TIME_ZONE,'yyyy-MM-dd'),
+        localDateKey_(start),
       dayLabel:
         Utilities.formatDate(start,CONFIG.TIME_ZONE,'EEEE'),
       dateLabel:
