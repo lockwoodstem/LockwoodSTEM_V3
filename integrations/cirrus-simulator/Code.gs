@@ -42,6 +42,8 @@ function getReservationOptions(email) {
     freeFlightSlots,
     instructorLedSlots: instructorSessions.map(s => ({
       key: s.key,
+      dateKey: s.dateKey,
+      dayLabel: s.dayLabel,
       dateLabel: s.dateLabel,
       timeLabel: s.timeLabel,
       title: s.title,
@@ -83,10 +85,14 @@ function getStudentStatus(email) {
 function buildFreeFlightSlots_(now,horizon,reservations,blackoutKeys,instructorSessions) {
   const slotMap = {};
 
-  const oneTime = sheet_('Availability').getDataRange().getValues();
+  const oneTimeRange = sheet_('Availability').getDataRange();
+  const oneTime = oneTimeRange.getValues();
+  const oneTimeDisplay = oneTimeRange.getDisplayValues();
 
   for (let i = 1; i < oneTime.length; i++) {
-    const [dateValue,startValue,endValue,enabled,note] = oneTime[i];
+    const [dateValue,, ,enabled,note] = oneTime[i];
+    const startValue = oneTimeDisplay[i][1];
+    const endValue = oneTimeDisplay[i][2];
 
     if (!isTruthy_(enabled) || !dateValue || !startValue || !endValue) continue;
 
@@ -106,18 +112,23 @@ function buildFreeFlightSlots_(now,horizon,reservations,blackoutKeys,instructorS
     );
   }
 
-  const recurring = sheet_('Recurring Availability').getDataRange().getValues();
+  const recurringRange = sheet_('Recurring Availability').getDataRange();
+  const recurring = recurringRange.getValues();
+  const recurringDisplay = recurringRange.getDisplayValues();
 
   for (let i = 1; i < recurring.length; i++) {
     const [
       weekday,
-      startValue,
-      endValue,
+      ,
+      ,
       startDateValue,
       endDateValue,
       enabled,
       note
     ] = recurring[i];
+
+    const startValue = recurringDisplay[i][1];
+    const endValue = recurringDisplay[i][2];
 
     if (
       !isTruthy_(enabled) ||
@@ -223,20 +234,26 @@ function addFreeFlightWindow_(
 }
 
 function instructorLedSessions_(now,horizon,blackoutKeys,reservations) {
-  const values =
-    sheet_('Instructor Led Sessions').getDataRange().getValues();
+  const range =
+    sheet_('Instructor Led Sessions').getDataRange();
+
+  const values = range.getValues();
+  const displayValues = range.getDisplayValues();
 
   const sessions = [];
 
   for (let i = 1; i < values.length; i++) {
     const [
       dateValue,
-      startValue,
-      endValue,
+      ,
+      ,
       title,
       enabled,
       note
     ] = values[i];
+
+    const startValue = displayValues[i][1];
+    const endValue = displayValues[i][2];
 
     if (
       !isTruthy_(enabled) ||
@@ -680,53 +697,45 @@ function dateOnly_(value) {
 }
 
 function combineDateTime_(date,timeValue) {
-  if (!date) return null;
+  if (!date || timeValue === null || timeValue === undefined) return null;
 
   let h = 0;
   let m = 0;
 
-  if (timeValue instanceof Date) {
-    const formatted =
-      Utilities.formatDate(
-        timeValue,
-        CONFIG.TIME_ZONE,
-        'HH:mm'
-      );
+  // Availability times are intentionally read with getDisplayValues(), so
+  // this parser uses the exact clock time visible in Google Sheets instead
+  // of converting a time-only Date through a timezone.
+  if (!(timeValue instanceof Date)) {
+    const text = String(timeValue).trim();
 
-    const parts = formatted.split(':');
-    h = Number(parts[0]);
-    m = Number(parts[1]);
-
-  } else {
-    const text =
-      String(timeValue).trim();
-
-    let match =
-      text.match(
-        /^(\d{1,2}):(\d{2})$/
-      );
+    // 12-hour format: 2:45 PM, 2:45:00 PM, 2 PM
+    let match = text.match(
+      /^(\d{1,2})(?::(\d{2}))?(?::\d{2})?\s*(AM|PM)$/i
+    );
 
     if (match) {
-      h = Number(match[1]);
-      m = Number(match[2]);
-
-    } else {
-      match =
-        text.match(
-          /^(\d{1,2})(?::(\d{2}))?\s*(AM|PM)$/i
-        );
-
-      if (!match) return null;
-
       h = Number(match[1]) % 12;
       m = Number(match[2] || 0);
 
-      if (
-        match[3].toUpperCase() === 'PM'
-      ) {
+      if (match[3].toUpperCase() === 'PM') {
         h += 12;
       }
+    } else {
+      // 24-hour format: 14:45 or 14:45:00
+      match = text.match(
+        /^(\d{1,2}):(\d{2})(?::\d{2})?$/
+      );
+
+      if (!match) return null;
+
+      h = Number(match[1]);
+      m = Number(match[2]);
     }
+
+  } else {
+    // Fallback only. Normal availability processing should use display text.
+    h = timeValue.getHours();
+    m = timeValue.getMinutes();
   }
 
   if (
