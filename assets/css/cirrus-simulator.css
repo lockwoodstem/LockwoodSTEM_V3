@@ -38,3 +38,41 @@
 .cirrus-policy .card.dark p{color:#fff!important}
 .cirrus-policy .card.dark .tag{background:#f3c95c;color:#0b1f3a!important}
 @media(max-width:800px){.cirrus-hero-grid{grid-template-columns:1fr}#cirrusReservationFrame{height:980px}}
+
+/* Simulator footer contrast */
+.cirrus-simulator-page .footer{
+  background:#071629!important;
+  background-color:#071629!important;
+  opacity:1!important;
+}
+.cirrus-simulator-page .footer::before,
+.cirrus-simulator-page .footer::after{opacity:1!important}
+.cirrus-simulator-page .footer,
+.cirrus-simulator-page .footer *{
+  color:#fff!important;
+}
+.cirrus-simulator-page .footer a{
+  color:#fff!important;
+  opacity:1!important;
+}
+.cirrus-simulator-page .footer-note{
+  color:#dbe7f3!important;
+  opacity:1!important;
+}
+.cirrus-simulator-page .footer-logo{
+  opacity:1!important;
+}
+
+/* Make flight lesson section visually prominent */
+#flight-lessons{
+  padding-top:2.5rem;
+  padding-bottom:2rem;
+}
+#flight-lessons .card{
+  border:1px solid #b7c5d4;
+  box-shadow:0 10px 26px rgba(15,23,42,.08);
+}
+#flight-lessons .tag{
+  background:#f3c95c;
+  color:#0b1f3a!important;
+}
