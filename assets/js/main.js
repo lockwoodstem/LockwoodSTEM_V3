@@ -31,6 +31,27 @@ document.addEventListener("DOMContentLoaded",()=>{const grid=document.querySelec
 
 // Site-wide consistency and navigation pass v4
 document.addEventListener('DOMContentLoaded', () => {
+  // Keep the Academy tab available on every page that uses the shared navigation.
+  const siteNav = document.querySelector('#site-navigation, .site-header .nav-links');
+  if (siteNav && !siteNav.querySelector('[data-nav-section="academy"], a[href*="/academy/"], a[href="academy/index.html"]')) {
+    const coursesLink = [...siteNav.querySelectorAll('a[href]')].find(a => /courses\.html(?:$|[?#])/i.test(a.getAttribute('href') || ''));
+    let academyHref = 'academy/index.html';
+    if (coursesLink) {
+      try {
+        const coursesUrl = new URL(coursesLink.getAttribute('href'), window.location.href);
+        academyHref = new URL('academy/index.html', coursesUrl).href;
+      } catch {}
+    }
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = academyHref;
+    a.dataset.navSection = 'academy';
+    a.textContent = 'Academy';
+    const aboutLink = [...siteNav.querySelectorAll('a[href]')].find(a => (a.dataset.navSection || '').toLowerCase() === 'about' || /\/about\//i.test(a.getAttribute('href') || ''));
+    const aboutLi = aboutLink?.closest('li');
+    siteNav.insertBefore(li, aboutLi || null);
+    li.appendChild(a);
+  }
   const path = window.location.pathname.toLowerCase();
   let section = '';
   if (path.includes('/courses/') || path.endsWith('/courses.html')) section = 'courses';
@@ -38,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (path.includes('/resources/')) section = 'resources';
   else if (path.includes('/certifications/')) section = 'certifications';
   else if (path.includes('/fablab/')) section = 'fablab';
+  else if (path.includes('/academy/')) section = 'academy';
   else if (path.includes('/about/')) section = 'about';
   else if (path.includes('/challenge-')) section = 'challenges';
 
