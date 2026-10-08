@@ -1,5 +1,5 @@
 const CONFIG = {
-  TIME_ZONE: Session.getScriptTimeZone() || 'America/New_York',
+  TIME_ZONE: 'America/New_York',
   SLOT_MINUTES: 30,
   DAYS_AHEAD: 14,
   MAX_ACTIVE_RESERVATIONS_PER_STUDENT: 1
@@ -244,7 +244,7 @@ function instructorLedSessions_(now,horizon,blackoutKeys,reservations) {
 
   for (let i = 1; i < values.length; i++) {
     const [
-      dateValue,
+      ,
       ,
       ,
       title,
@@ -252,6 +252,7 @@ function instructorLedSessions_(now,horizon,blackoutKeys,reservations) {
       note
     ] = values[i];
 
+    const dateValue = displayValues[i][0];
     const startValue = displayValues[i][1];
     const endValue = displayValues[i][2];
 
@@ -524,20 +525,40 @@ function markOrientationComplete(email) {
 }
 
 function blackoutDateKeys_() {
+  const range =
+    sheet_('Blackout Dates').getDataRange();
+
   const values =
-    sheet_('Blackout Dates').getDataRange().getValues();
+    range.getValues();
+
+  const displayValues =
+    range.getDisplayValues();
 
   const keys = new Set();
 
   for (let i = 1; i < values.length; i++) {
-    const [dateValue,enabled] = values[i];
+    const enabled =
+      values[i][1];
 
-    if (!isTruthy_(enabled) || !dateValue) continue;
+    const dateText =
+      String(
+        displayValues[i][0] || ''
+      ).trim();
 
-    const day = dateOnly_(dateValue);
+    if (
+      !isTruthy_(enabled) ||
+      !dateText
+    ) {
+      continue;
+    }
+
+    const day =
+      dateOnly_(dateText);
 
     if (day) {
-      keys.add(dateKey_(day));
+      keys.add(
+        localDateKey_(day)
+      );
     }
   }
 
@@ -682,17 +703,82 @@ function isTruthy_(value) {
 }
 
 function dateOnly_(value) {
-  const d =
-    value instanceof Date
-      ? new Date(value)
-      : new Date(value);
+  if (
+    value === null ||
+    value === undefined ||
+    value === ''
+  ) {
+    return null;
+  }
 
-  if (isNaN(d)) return null;
+  // Prefer exact displayed sheet dates such as 10/12/2026.
+  if (!(value instanceof Date)) {
+    const text =
+      String(value).trim();
+
+    let match =
+      text.match(
+        /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/
+      );
+
+    if (match) {
+      const month =
+        Number(match[1]) - 1;
+
+      const day =
+        Number(match[2]);
+
+      const year =
+        Number(match[3]);
+
+      const parsed =
+        new Date(
+          year,
+          month,
+          day,
+          12,
+          0,
+          0,
+          0
+        );
+
+      if (
+        parsed.getFullYear() !== year ||
+        parsed.getMonth() !== month ||
+        parsed.getDate() !== day
+      ) {
+        return null;
+      }
+
+      return parsed;
+    }
+
+    const fallback =
+      new Date(text);
+
+    if (isNaN(fallback)) {
+      return null;
+    }
+
+    return new Date(
+      fallback.getFullYear(),
+      fallback.getMonth(),
+      fallback.getDate(),
+      12,
+      0,
+      0,
+      0
+    );
+  }
 
   return new Date(
-    d.getFullYear(),
-    d.getMonth(),
-    d.getDate()
+    value.getFullYear(),
+    value.getMonth(),
+    value.getDate(),
+    12,
+    0,
+    0,
+    0
   );
 }
 
@@ -770,12 +856,25 @@ function weekdayName_(date) {
   ][date.getDay()];
 }
 
+function localDateKey_(date) {
+  const y =
+    date.getFullYear();
+
+  const m =
+    String(
+      date.getMonth() + 1
+    ).padStart(2,'0');
+
+  const d =
+    String(
+      date.getDate()
+    ).padStart(2,'0');
+
+  return y + '-' + m + '-' + d;
+}
+
 function dateKey_(date) {
-  return Utilities.formatDate(
-    date,
-    CONFIG.TIME_ZONE,
-    'yyyy-MM-dd'
-  );
+  return localDateKey_(date);
 }
 
 function maxDate_(a,b) {
