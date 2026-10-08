@@ -761,3 +761,130 @@ document.addEventListener('DOMContentLoaded', () => {
     links.forEach(a=>{if(!keep.has(a))a.remove();});
   }
 });
+
+
+// Persistent course subnavigation + branding normalization v1
+(() => {
+  const COURSE_CONFIG = {
+    ied: {
+      name: 'Introduction to Engineering Design',
+      short: 'IED',
+      path: '/courses/ied/',
+      home: '/courses/ied/index.html'
+    },
+    poe: {
+      name: 'Principles of Engineering',
+      short: 'POE',
+      path: '/courses/poe/',
+      home: '/courses/poe/index.html'
+    },
+    adm: {
+      name: 'Advanced Manufacturing',
+      short: 'ADM',
+      path: '/courses/adm/',
+      home: '/courses/adm/index.html'
+    },
+    ae: {
+      name: 'Aerospace Engineering',
+      short: 'AE',
+      path: '/courses/aerospace-engineering/',
+      home: '/courses/aerospace-engineering/index.html'
+    }
+  };
+
+  function currentCourse(){
+    const path=location.pathname.toLowerCase();
+    if(path.includes('/courses/ied/')) return COURSE_CONFIG.ied;
+    if(path.includes('/courses/poe/')) return COURSE_CONFIG.poe;
+    if(path.includes('/courses/adm/')) return COURSE_CONFIG.adm;
+    if(path.includes('/courses/aerospace-engineering/')) return COURSE_CONFIG.ae;
+    return null;
+  }
+
+  function courseRelativeUrl(absolutePath){
+    try{
+      return new URL(absolutePath, location.origin).href;
+    }catch{
+      return absolutePath;
+    }
+  }
+
+  function ensureCourseSubnav(){
+    const course=currentCourse();
+    const header=document.querySelector('.site-header');
+    if(!course || !header) return;
+    if(document.querySelector('.course-subnav')) return;
+
+    const nav=document.createElement('nav');
+    nav.className='course-subnav';
+    nav.setAttribute('aria-label', course.name+' course navigation');
+
+    const inner=document.createElement('div');
+    inner.className='container course-subnav-inner';
+
+    const identity=document.createElement('a');
+    identity.className='course-subnav-identity';
+    identity.href=courseRelativeUrl(course.home);
+    identity.innerHTML='<span class="course-subnav-short">'+course.short+'</span><span class="course-subnav-name">'+course.name+'</span>';
+    inner.appendChild(identity);
+
+    const links=document.createElement('div');
+    links.className='course-subnav-links';
+
+    const items=[
+      ['Course Home', course.home],
+      ['Units', course.home+'#course-pathway'],
+      ['Resources', course.home+'#course-resources'],
+      ['Challenges', '/challenge-library/index.html'],
+      ['Certifications', '/certifications/index.html']
+    ];
+
+    items.forEach(([label,href])=>{
+      const a=document.createElement('a');
+      a.href=courseRelativeUrl(href);
+      a.textContent=label;
+
+      const current=location.pathname.toLowerCase();
+      if(label==='Course Home' && current===course.home.toLowerCase()) a.setAttribute('aria-current','page');
+      if(label==='Units' && /\/units\//.test(current)) a.classList.add('is-contextual');
+      links.appendChild(a);
+    });
+
+    inner.appendChild(links);
+    nav.appendChild(inner);
+    header.after(nav);
+  }
+
+  function normalizeBranding(){
+    // Keep the site identity consistent even on older pages.
+    document.querySelectorAll('.brand-title').forEach(el=>el.textContent='LockwoodSTEM');
+    document.querySelectorAll('.brand-sub').forEach(el=>el.textContent='Engineering & Aerospace Hub');
+
+    document.querySelectorAll('.footer-note').forEach(el=>{
+      const text=(el.textContent||'').trim();
+      if(!/simulator|flight training/i.test(text)){
+        el.textContent='Engineering, fabrication, aerospace, and flight training resources.';
+      }
+    });
+
+    document.querySelectorAll('img[alt*="Cornerstone" i]').forEach(img=>{
+      img.alt='Aerospace Academy graphic';
+    });
+
+    // Normalize Academy language without tying it to a school or organization.
+    document.querySelectorAll('.eyebrow').forEach(el=>{
+      if(/cornerstone charter academy/i.test(el.textContent||'')) el.textContent='Aerospace Academy';
+    });
+  }
+
+  function initCourseShell(){
+    normalizeBranding();
+    ensureCourseSubnav();
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',initCourseShell);
+  }else{
+    initCourseShell();
+  }
+})();
