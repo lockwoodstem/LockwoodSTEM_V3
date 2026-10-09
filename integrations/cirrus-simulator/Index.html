@@ -38,6 +38,23 @@ button.secondary{background:#e8eef5;color:#0b1f3a}
 .select-slot.selected{background:#c8a24a;color:#0b1f3a}
 .day-count{font-size:.9rem;color:#4e6074;font-weight:700}
 .muted{color:#4e6074;font-size:.92rem}
+.schedule-card{margin-top:18px}
+.schedule-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:14px}
+.schedule-head h2{margin:0}
+.schedule-head p{margin:.35rem 0 0}
+.schedule-note{font-size:.82rem;color:#5b6b7d;font-weight:700}
+.schedule-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.schedule-day{border:1px solid #cbd5e1;border-radius:14px;background:#fff;overflow:hidden;min-height:138px}
+.schedule-day.today{border-color:#0b1f3a;box-shadow:inset 0 0 0 1px #0b1f3a}
+.schedule-date{padding:9px 10px;background:#eef3f8;border-bottom:1px solid #d7e0ea}
+.schedule-date strong{display:block;font-size:.9rem}
+.schedule-date span{display:block;font-size:.78rem;color:#607186;margin-top:2px}
+.schedule-bookings{padding:7px;display:grid;gap:6px}
+.schedule-booking{padding:7px 8px;border-radius:9px;background:#eaf2fb;border-left:3px solid #0b1f3a;font-size:.76rem;line-height:1.3}
+.schedule-booking strong{display:block}
+.schedule-booking span{display:block;color:#4f6175;margin-top:2px}
+.schedule-empty{font-size:.76rem;color:#8190a0;padding:7px 2px}
+@media(max-width:820px){.schedule-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.grid,.type-grid{grid-template-columns:1fr}.availability-toolbar{align-items:stretch}.availability-toolbar select{width:100%;min-width:0}}
 </style>
 </head>
@@ -65,6 +82,18 @@ button.secondary{background:#e8eef5;color:#0b1f3a}
 </div>
 
 <div id="studentStatus" class="status hidden"></div>
+</div>
+
+<div id="reservationScheduleCard" class="card schedule-card hidden">
+<div class="schedule-head">
+  <div>
+    <span class="tag">Two-Week Schedule</span>
+    <h2>Simulator Reservations</h2>
+    <p class="muted">See when the simulator is already booked before choosing a session.</p>
+  </div>
+  <div class="schedule-note">Names shown as first name + last initial</div>
+</div>
+<div id="reservationSchedule" class="status">Loading schedule…</div>
 </div>
 
 <div id="typeCard" class="card hidden">
@@ -157,10 +186,69 @@ function loadOptions(){
 
   status('studentStatus','Checking your simulator status…','');
 
+  loadReservationSchedule(email);
+
   google.script.run
     .withSuccessHandler(renderOptions)
     .withFailureHandler(e=>status('studentStatus',e.message,'error'))
     .getReservationOptions(email);
+}
+
+function loadReservationSchedule(email){
+  const card=document.getElementById('reservationScheduleCard');
+  const root=document.getElementById('reservationSchedule');
+
+  card.classList.remove('hidden');
+  root.className='status';
+  root.textContent='Loading schedule…';
+
+  google.script.run
+    .withSuccessHandler(renderReservationSchedule)
+    .withFailureHandler(e=>{
+      root.className='status error';
+      root.textContent=e.message||'Unable to load schedule.';
+    })
+    .getReservationSchedule(email);
+}
+
+function renderReservationSchedule(data){
+  const root=document.getElementById('reservationSchedule');
+
+  if(!data||!data.ok){
+    root.className='status error';
+    root.textContent=(data&&data.message)||'Unable to load schedule.';
+    return;
+  }
+
+  const grouped={};
+
+  (data.items||[]).forEach(item=>{
+    if(!grouped[item.dateKey])grouped[item.dateKey]=[];
+    grouped[item.dateKey].push(item);
+  });
+
+  root.className='schedule-grid';
+
+  root.innerHTML=(data.days||[]).map(day=>{
+    const items=grouped[day.dateKey]||[];
+
+    const bookings=items.length
+      ? items.map(item=>
+          '<div class="schedule-booking">'+
+            '<strong>'+esc(item.timeLabel)+'</strong>'+
+            '<span>'+esc(item.displayName)+' • '+esc(item.sessionType)+'</span>'+
+          '</div>'
+        ).join('')
+      : '<div class="schedule-empty">No reservation</div>';
+
+    return '<section class="schedule-day'+(day.isToday?' today':'')+'">'+
+      '<div class="schedule-date">'+
+        '<strong>'+esc(day.weekday)+'</strong>'+
+        '<span>'+esc(day.dateLabel)+(day.isToday?' • Today':'')+'</span>'+
+      '</div>'+
+      '<div class="schedule-bookings">'+bookings+'</div>'+
+    '</section>';
+  }).join('');
 }
 
 function renderOptions(data){
@@ -378,7 +466,13 @@ function cancelBooking(){
 
   google.script.run
     .withSuccessHandler(
-      d=>status('cancelResult',d.message,d.ok?'success':'error')
+      d=>{
+        status('cancelResult',d.message,d.ok?'success':'error');
+        if(d.ok){
+          const email=document.getElementById('email').value.trim();
+          if(email)loadReservationSchedule(email);
+        }
+      }
     )
     .withFailureHandler(
       e=>status('cancelResult',e.message,'error')
