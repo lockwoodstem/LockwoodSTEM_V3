@@ -14,6 +14,110 @@ function doGet(e) {
     .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
 
+function getReservationSchedule(email) {
+  ensureSheets_();
+
+  email = normalizeEmail_(email);
+  if (!email) {
+    return {ok:false,message:'Enter your school email first.'};
+  }
+
+  const settings = settings_();
+  const domain =
+    String(settings.AllowedEmailDomain || '')
+      .trim()
+      .toLowerCase();
+
+  if (domain && !email.endsWith('@' + domain)) {
+    return {ok:false,message:'Please use your approved school email address.'};
+  }
+
+  const now = new Date();
+  const todayText =
+    Utilities.formatDate(now, CONFIG.TIME_ZONE, 'MM/dd/yyyy');
+  const startDay = dateOnly_(todayText);
+  const endDay = new Date(startDay);
+  endDay.setDate(endDay.getDate() + CONFIG.DAYS_AHEAD - 1);
+  endDay.setHours(23,59,59,999);
+
+  const rows =
+    sheet_('Reservations')
+      .getDataRange()
+      .getValues()
+      .slice(1);
+
+  const items = [];
+
+  rows.forEach(r => {
+    if (String(r[7] || '').toLowerCase() !== 'confirmed') return;
+
+    const start =
+      r[2] instanceof Date ? r[2] : new Date(r[2]);
+
+    const end =
+      r[3] instanceof Date ? r[3] : new Date(r[3]);
+
+    if (!start || !end || isNaN(start) || isNaN(end)) return;
+    if (start < startDay || start > endDay) return;
+
+    items.push({
+      dateKey:
+        Utilities.formatDate(start, CONFIG.TIME_ZONE, 'yyyy-MM-dd'),
+      weekday:
+        Utilities.formatDate(start, CONFIG.TIME_ZONE, 'EEE'),
+      dateLabel:
+        Utilities.formatDate(start, CONFIG.TIME_ZONE, 'MMM d'),
+      timeLabel:
+        Utilities.formatDate(start, CONFIG.TIME_ZONE, 'h:mm a') +
+        ' – ' +
+        Utilities.formatDate(end, CONFIG.TIME_ZONE, 'h:mm a'),
+      displayName:
+        privacySafeName_(r[4]),
+      sessionType:
+        String(r[6] || 'Reserved').trim()
+    });
+  });
+
+  items.sort((a,b) =>
+    (a.dateKey + a.timeLabel).localeCompare(b.dateKey + b.timeLabel)
+  );
+
+  const days = [];
+
+  for (let i = 0; i < CONFIG.DAYS_AHEAD; i++) {
+    const d = new Date(startDay);
+    d.setDate(startDay.getDate() + i);
+
+    days.push({
+      dateKey: localDateKey_(d),
+      weekday: Utilities.formatDate(d, CONFIG.TIME_ZONE, 'EEE'),
+      dateLabel: Utilities.formatDate(d, CONFIG.TIME_ZONE, 'MMM d'),
+      isToday: i === 0
+    });
+  }
+
+  return {ok:true,days,items};
+}
+
+function privacySafeName_(fullName) {
+  const cleaned =
+    String(fullName || '')
+      .replace(/\s+/g,' ')
+      .trim();
+
+  if (!cleaned) return 'Reserved';
+
+  const parts = cleaned.split(' ');
+  const first = parts[0];
+
+  if (parts.length === 1) return first;
+
+  const last = parts[parts.length - 1];
+  const initial = last.charAt(0).toUpperCase();
+
+  return first + (initial ? ' ' + initial + '.' : '');
+}
+
 function getReservationOptions(email) {
   ensureSheets_();
 
