@@ -32,3 +32,26 @@
 .u2-section-lead{max-width:850px}
 .u2-note{font-size:.94rem;color:#475569}
 @media (max-width:700px){.u2-mini-table{font-size:.9rem}.u2-thread{grid-template-columns:1fr 1fr}}
+
+/* Unit 2 lesson-page cleanup + embedded student resources */
+.lesson-detail-page .lesson-section{padding-top:1.35rem;padding-bottom:1.35rem}
+.lesson-detail-page .section-header{margin-bottom:.9rem}
+.lesson-detail-page .section-header h2{margin-bottom:.35rem}
+.lesson-detail-page .card{border-radius:16px}
+.lesson-detail-page .u2-concept-grid{grid-template-columns:repeat(auto-fit,minmax(265px,1fr));align-items:stretch}
+.lesson-detail-page .u2-concept-grid .card{padding:1.05rem 1.1rem}
+.lesson-detail-page .u2-lesson-bridge .card{padding:1.05rem 1.1rem}
+.lesson-detail-page .u2-example,.lesson-detail-page .u2-apply,.lesson-detail-page .u2-submit{padding:1.1rem 1.2rem}
+.lesson-detail-page .u2-apply ol,.lesson-detail-page .u2-submit ul{margin-bottom:0}
+.lesson-detail-page .u2-vocab{padding-top:.15rem}
+.lesson-detail-page .mission-actions{gap:.55rem}
+.u2-resource-panel{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(230px,.8fr);gap:1rem;align-items:center;padding:1.15rem 1.2rem;border:2px solid #0b4d78;border-radius:16px;background:linear-gradient(135deg,#f7fbfe,#eef7fc)}
+.u2-resource-panel h2{margin:.15rem 0 .35rem}
+.u2-resource-panel p{margin:.2rem 0}
+.u2-resource-actions{display:flex;gap:.55rem;justify-content:flex-end;flex-wrap:wrap}
+.u2-resource-actions .btn{white-space:nowrap}
+.u2-resource-note{font-size:.92rem;color:#475569}
+.u2-mini-table{display:block;overflow-x:auto}
+.lesson-detail-page .answer-reveal{border:1px solid #d6dee8;border-radius:12px;background:#fff;padding:.15rem .8rem}
+.lesson-detail-page .answer-reveal+ .answer-reveal{margin-top:.6rem}
+@media(max-width:780px){.u2-resource-panel{grid-template-columns:1fr}.u2-resource-actions{justify-content:flex-start}}
