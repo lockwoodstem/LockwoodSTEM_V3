@@ -24,7 +24,9 @@ if mp.exists():
     ms=mp.read_text("utf-8")
     seen=set()
     for num,title,file in re.findall(r'\["([^"]+)","([^"]+)","([^"]+\.html)"\]',ms):
-        key=(num,file)\n        if key in seen: warnings.append(f"manifest duplicate entry: {num} -> {file}")\n        seen.add(key)
+        key=(num,file)
+        if key in seen: warnings.append(f"manifest duplicate entry: {num} -> {file}")
+        seen.add(key)
 # Resource inventory
 resource_ext={".pdf",".pptx",".docx",".xlsx",".zip",".stl",".step",".f3d"}
 referenced=set()
