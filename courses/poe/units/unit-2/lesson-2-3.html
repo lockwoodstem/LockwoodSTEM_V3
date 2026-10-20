@@ -1,1 +1,292 @@
-<!DOCTYPE html><html lang="en"><head><title>POE Unit 2 Lesson 2.3 | Beam Deflection | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="description" content="POE Unit 2 Lesson 2.3: Free-Body Diagrams & Reaction Forces. How can a bridge be simplified into a free-body diagram that shows the applied load and support reactions?"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main"><nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">2.3</li></ol></nav><section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Mechanics Foundations • Lesson 2.3</div><h1>Beam Deflection</h1><p class="focus-question"><strong>Engineering question:</strong> What determines how far a beam bends under load?</p><div class="mission-actions"><a class="btn" href="#learn">Learn</a><a class="btn secondary" href="#practice">Practice</a><a class="btn secondary" href="#apply">Apply</a><a class="btn secondary" href="#submit">Submit</a><a class="btn ghost" href="../unit-2.html">Unit 2</a></div></div><aside class="mission-panel"><span class="tag">Foundational instruction</span><h2>Learn it before the bridge project</h2><p>Use varied engineering examples to master the mechanics, then apply the technique to your final structural design later in the unit.</p></aside></div></section><section class="container lesson-section"><article class="card"><h2>Learning Targets</h2><ul><li>Distinguish strength from stiffness</li><li>Predict the effect of beam span and section depth</li><li>Interpret controlled deflection tests</li></ul></article></section><section class="container lesson-section" id="learn"><div class="section-header"><h2>Learn the Concept</h2></div><article class="card"><ul><li>Deflection is displacement under load, not necessarily failure</li><li>For a simply supported beam with a central point load, δ = PL³/(48EI) under ideal linear-elastic assumptions</li><li>I for a rectangular section about its horizontal centroidal axis = bh³/12</li></ul><p><strong>During instruction:</strong> Sketch the forces, geometry, variables or joints discussed and record units for every quantity.</p></article></section><section class="container lesson-section" id="practice"><div class="section-header"><h2>Practice Together</h2></div><article class="card"><p>Compare two otherwise identical beams, one 200 mm long and one 400 mm long. Under the ideal central-load model, by what factor does deflection change?</p><p><strong>Show:</strong> a labeled diagram, a mathematical model when relevant, and a final statement interpreting the result.</p></article></section><section class="container lesson-section" id="apply"><div class="section-header"><h2>Apply the Skill</h2></div><article class="card"><p>Design a fair test comparing two wooden ruler orientations with the same span and load. Identify your independent, dependent and controlled variables.</p><p><strong>Check your understanding:</strong> Why can a tall, narrow beam resist vertical bending better than the same beam laid flat?</p></article></section><section class="container lesson-section" id="submit"><article class="card"><h2>Student Evidence</h2><p>Beam deflection predictions and experimental plan. Use your engineering notebook or teacher-provided guided notes; include dimensions, units and a conclusion.</p><p><strong>Looking ahead:</strong> These mechanics techniques will be revisited when students analyze the bridge design in Lessons 2.15–2.20.</p></article></section><nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-2.html">← 2.2 Centroids &amp; Center of Gravity</a><a class="btn" href="lesson-2-4.html">2.4 Free-Body Diagrams →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer><button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POE 2.3 | Beam Deflection — Learning Studio | LockwoodSTEM</title>
+<meta name="description" content="Learn beam deflection with engineering diagrams, video instruction, a full worked example, an interactive span-load-depth simulator, fair-testing guidance and self-check questions."/>
+<link href="../../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/>
+<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/>
+<script defer src="../../../../assets/js/main.js"></script>
+<style id="poe23-learning-studio">
+html{scroll-behavior:smooth}
+.poe23{--ink:#092940;--blue:#0b567e;--aqua:#147f88;--gold:#e2ac37;--edge:#cadbe7}
+.poe23 .poe23-lead{font-size:1.09rem;line-height:1.65;color:#294456}
+.poe23 .poe23-eyebrow{color:#875d0a;font-weight:850;text-transform:uppercase;letter-spacing:.09em;font-size:.82rem}
+.poe23 .poe23-section-header{margin-bottom:1rem}
+.poe23 .poe23-section-header h2{margin:.25rem 0 .3rem}
+.poe23 .poe23-section-header p{margin:.1rem 0;max-width:860px;color:#4b6475}
+.poe23 .poe23-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
+.poe23 .poe23-metric{background:#f1f7fb;border:1px solid #bdd4e4;border-radius:14px;padding:.9rem 1rem}
+.poe23 .poe23-metric strong{display:block;color:#0b4772;font-size:1.05rem}
+.poe23 .poe23-metric span{display:block;font-size:.94rem;color:#40596a;margin-top:.2rem}
+.poe23 .poe23-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe23 .poe23-thirds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.poe23 .poe23-panel{background:#f7fbfd;border:1px solid var(--edge);border-radius:16px;padding:1.1rem 1.15rem}
+.poe23 .poe23-panel h3{color:var(--ink);margin:.15rem 0 .5rem}
+.poe23 .poe23-panel p{margin:.3rem 0 .65rem}
+.poe23 .poe23-panel ul{padding-left:1.2rem;margin:.4rem 0}
+.poe23 .poe23-pill{display:inline-block;border-radius:99px;padding:.2rem .6rem;background:#e3f0f5;color:#0c5672;font-size:.75rem;font-weight:900;letter-spacing:.03em}
+.poe23 .poe23-pill.gold{background:#fbefcf;color:#7d540d}
+.poe23 .poe23-mini{font-size:.9rem;color:#536b79}
+.poe23 .poe23-formula{font-size:clamp(1.05rem,1.6vw,1.28rem);letter-spacing:.01em;font-weight:850;color:#0b4163;background:#edf6fb;border-left:5px solid #147a9e;border-radius:10px;padding:.8rem 1rem;margin:.8rem 0;overflow-wrap:anywhere}
+.poe23 .poe23-graphic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe23 .poe23-large-svg{max-width:870px}
+.poe23 svg .poe23-axis{fill:none;stroke:#455f73;stroke-width:1.8}
+.poe23 svg .poe23-guide{stroke:#4c879e;stroke-dasharray:5 5;stroke-width:1.35;fill:none}
+.poe23 svg .poe23-dim{fill:none;stroke:#2b648b;stroke-width:1.15}
+.poe23 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#17384e}
+.poe23 svg text.poe23-annotation{font-size:13px;font-weight:750}
+.poe23 svg text.poe23-small{font-size:13px}
+.poe23 svg text.poe23-tiny{font-size:11px}
+.poe23 svg text.poe23-strong{font-weight:800}
+.poe23 .poe23-lesson-steps{list-style:none!important;margin:0;padding:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe23 .poe23-lesson-steps li{border-left:4px solid #167a94;padding:.7rem .75rem;border-radius:9px;background:#f2f8fc;font-weight:750;font-size:.92rem}
+.poe23 .poe23-lesson-steps li span{display:block;color:#527283;font-size:.78rem;font-weight:700}
+.poe23 .poe23-video{background:#f7fbff;border:1px solid #cfdfeb;border-radius:16px;overflow:hidden}
+.poe23 .poe23-video-copy{padding:1rem}
+.poe23 .poe23-video-copy h3{margin:.25rem 0}
+.poe23 .poe23-frame{aspect-ratio:16/9;background:#071e35;position:relative}
+.poe23 .poe23-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe23 .poe23-video a{font-weight:800}
+.poe23 .poe23-video p{margin:.4rem 0}
+.poe23 .poe23-tablewrap{overflow-x:auto}
+.poe23 .poe23-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.poe23 .poe23-table td,.poe23 .poe23-table th{border:1px solid #c8dbe8;text-align:left;padding:.55rem .7rem}
+.poe23 .poe23-table th{background:#eaf4fb;color:#0c3554}
+.poe23 .poe23-table .poe23-total{background:#f1f8e8;font-weight:850}
+.poe23 .poe23-steps{padding-left:1.55rem}
+.poe23 .poe23-steps li{padding-bottom:.45rem}
+.poe23 .poe23-caution{background:#fff9e9;border-left:5px solid #d59b22;padding:.8rem 1rem;border-radius:10px}
+.poe23 details.poe23-reveal{border:1px solid #b9d3e4;background:#f7fbff;border-radius:12px;padding:.8rem 1rem;margin:.65rem 0}
+.poe23 details.poe23-reveal summary{color:#0b4c73;cursor:pointer;font-weight:850}
+.poe23 details.poe23-reveal[open]{border-color:#0d8b9a}
+.poe23 details.poe23-reveal p{margin:.7rem 0 .15rem}
+.poe23 .poe23-explorer{background:#f2f9fc;border:1px solid #9dc6db;border-radius:16px;padding:1rem}
+.poe23 .poe23-explorer label{font-weight:800;color:#0b4163;display:block;margin:.5rem 0}
+.poe23 .poe23-explorer input[type=range]{width:min(100%,440px);accent-color:#0a7991;cursor:pointer}
+.poe23 .poe23-output{font-size:1.2rem;font-weight:850;color:#0a506d;background:#fff;border:1px solid #b9d5e5;padding:.7rem;border-radius:10px}
+.poe23 .poe23-resources a{display:block;margin:.4rem 0;font-weight:800;overflow-wrap:anywhere}
+.poe23 .poe23-checklist{list-style:none!important;padding:0!important}
+.poe23 .poe23-checklist li{padding:.45rem 0 .45rem 1.7rem;position:relative}
+.poe23 .poe23-checklist li::before{content:"□";position:absolute;left:0;top:.32rem;font-size:1.3rem;color:#0b567e}
+.poe23 a:focus-visible,.poe23 input:focus-visible,.poe23 summary:focus-visible{outline:3px solid #ca8b20;outline-offset:3px}
+@media(max-width:980px){.poe23 .poe23-thirds{grid-template-columns:1fr 1fr}.poe23 .poe23-lesson-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.poe23 .poe23-grid,.poe23 .poe23-thirds,.poe23 .poe23-overview{grid-template-columns:1fr}}
+@media print{.poe23 .poe23-video,.poe23 #explore,.poe23 .mission-actions{display:none!important}.poe23 details.poe23-reveal:not([open]){display:none}}
+
+.poe23 .poe23-illustration{display:block;width:100%;height:auto;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe23 .poe23-twin{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe23 .poe23-twin>*{min-width:0}
+.poe23 svg .beam{stroke:#1b5a7b;fill:none;stroke-width:8;stroke-linecap:round}
+.poe23 svg .beam-original{stroke:#c6d5df;stroke-width:4;stroke-dasharray:8 6;fill:none}
+.poe23 svg .beam-deflected{stroke:#008d94;stroke-width:6;fill:none;stroke-linecap:round}
+.poe23 svg .poe23-support{fill:#d6e9f5;stroke:#123f5b;stroke-width:1.8}
+.poe23 svg .poe23-force{stroke:#d97726;stroke-width:3;fill:none}
+.poe23 .poe23-param{background:#f6fafc;border-radius:12px;padding:.65rem .8rem;margin:.6rem 0}
+.poe23 .poe23-param label{display:flex;gap:.7rem;align-items:center;justify-content:space-between}
+.poe23 .poe23-param label strong{white-space:nowrap;font-variant-numeric:tabular-nums}
+.poe23 .poe23-param input[type="range"]{width:100%;accent-color:#0a7991}
+.poe23 .poe23-data{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:1rem 0}
+.poe23 .poe23-data div{border:1px solid #cadee8;border-radius:12px;padding:.6rem .8rem;background:#fff}
+.poe23 .poe23-data strong{display:block;font-size:1.15rem;color:#0c4966;font-variant-numeric:tabular-nums}
+.poe23 .poe23-data span{font-size:.82rem;color:#496475}
+.poe23 .poe23-variable{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe23 .poe23-variable div{border:1px solid #cadde8;border-radius:12px;background:#fff;padding:.75rem}
+.poe23 .poe23-variable b{display:block;font-size:1.12rem;color:#0b5779}
+.poe23 .poe23-progress-card{padding:1rem;border:1px solid #bfdae6;border-radius:12px;background:#f5fafc}
+.poe23 .poe23-progress-card strong{color:#0c4966}
+.poe23 .poe23-solution{font-variant-numeric:tabular-nums}
+.poe23 .poe23-resource-link{display:inline-block;margin-top:.3rem;font-weight:800}
+.poe23 .poe23-print{float:right;font-size:.85rem}
+@media(max-width:760px){.poe23 .poe23-twin,.poe23 .poe23-variable{grid-template-columns:1fr}.poe23 .poe23-print{float:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container nav"><a class="brand" aria-label="LockwoodSTEM home" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
+<main class="poe23" id="main">
+<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.3</li></ol></nav>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img class="lesson-course-icon" alt="POE course icon" src="../../../../assets/img/course-icons/poe-course-icon.png"/><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.3</div><h1>Beam Deflection</h1><p class="focus-question"><strong>Engineering question:</strong> Why does one beam bend more than another, even if they carry the same load?</p><div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#watch">Watch Videos</a><a class="btn secondary" href="#worked">Worked Example</a><a class="btn secondary" href="#explore">Beam Explorer</a><a class="btn secondary" href="#practice">Check Understanding</a><a class="btn ghost" href="#submit">What to Submit</a></div></div><aside class="mission-panel"><span class="tag">Learn • Watch • Calculate • Experiment</span><h2>Predict how a beam bends.</h2><p>Understand the behavior, explore the variables, and calculate deflection with realistic units before comparing structures in the bridge design challenge.</p><p><strong>Materials:</strong> scientific calculator, ruler, paper or 2.3 guided practice packet.</p></aside></div></section>
+<section class="container lesson-section" id="start"><div class="poe23-section-header"><div class="poe23-eyebrow">Your learning pathway</div><h2>What you will be able to do</h2><p>By the end, you should explain beam deflection, make relative predictions and solve a straightforward central-load problem.</p></div>
+<div class="poe23-overview"><div class="poe23-metric"><strong>01 · Observe</strong><span>Identify support type, load location and maximum deflection.</span></div><div class="poe23-metric"><strong>02 · Predict</strong><span>Describe how span, force, material and cross-section affect bending.</span></div><div class="poe23-metric"><strong>03 · Calculate &amp; test</strong><span>Apply a beam formula and plan a controlled engineering comparison.</span></div></div>
+<div class="poe23-panel" style="margin-top:1rem"><h3>Suggested 45–50 minute learning sequence</h3><ol class="poe23-lesson-steps"><li>Notice &amp; predict<span>4–5 minutes</span></li><li>Concepts &amp; video<span>10–12 minutes</span></li><li>Worked example<span>12–15 minutes</span></li><li>Explorer &amp; practice<span>15–18 minutes</span></li></ol><p class="poe23-mini">Finish additional problems or the fair-testing plan after class, as directed.</p></div></section>
+<section class="container lesson-section" id="learn"><div class="poe23-section-header"><div class="poe23-eyebrow">01 / Understand the behavior</div><h2>Deflection is not the same as failure</h2><p>Imagine a wood strip spanning two desks. It sags when you place a weight in the middle. That movement is <strong>deflection</strong>.</p></div>
+<div class="poe23-grid"><article class="poe23-panel"><span class="poe23-pill">Deflection</span><h3>How far does it move?</h3><p><strong>Beam deflection</strong> is the displacement of a beam from its original position under load. It is usually measured in <strong>millimeters (mm)</strong>.</p><p>A beam can bend and then return to its original position when unloaded. Elastic deflection is not automatically failure; excessive deflection can still prevent a design from functioning.</p></article>
+<article class="poe23-panel"><span class="poe23-pill gold">Stiffness versus strength</span><h3>Two different questions</h3><p><strong>Stiffness:</strong> How strongly does a part resist deformation? A stiffer beam bends less under the same load.</p><p><strong>Strength:</strong> How much stress can a part withstand before yielding, breaking or otherwise failing?</p><p class="poe23-caution"><strong>Important:</strong> Less deflection does not automatically prove that a beam has sufficient strength or is safe.</p></article></div>
+<div class="poe23-panel" style="margin-top:1rem"><h3>Read the engineering diagram</h3><svg class="poe23-illustration" viewBox="0 0 760 310" role="img" aria-label="Simply supported beam between two supports A and B. A downward point load P acts at the midpoint of span L. Straight unloaded position shown dashed; bent beam and midspan deflection delta shown exaggerated.">
+<defs><marker id="ldArrow" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#d97726"/></marker></defs>
+<path d="M95 158H660" stroke="#c4d4de" stroke-width="5" stroke-dasharray="10 7" fill="none"/>
+<path d="M95 158Q377 246 660 158" stroke="#008e97" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M95 158L69 197H121Z M660 158L634 197H686Z" class="poe23-support"/>
+<path d="M55 202H135 M620 202H700" stroke="#50697c" stroke-width="3"/>
+<path d="M377 48V122" class="poe23-force" marker-end="url(#ldArrow)"/>
+<text x="393" y="70" class="poe23-small">P ↓ (center load)</text>
+<path d="M377 158V224" stroke="#b4741e" stroke-width="2" stroke-dasharray="4 3"/>
+<path d="M390 158V202" stroke="#b4741e" stroke-width="1.5"/>
+<text x="403" y="193" class="poe23-small">δ max</text>
+<text x="84" y="220" class="poe23-small">A</text><text x="651" y="220" class="poe23-small">B</text>
+<path d="M95 217V267 M660 217V267 M95 256H660" stroke="#355e74" stroke-width="1.8"/>
+<path d="M95 247V265 M660 247V265" stroke="#355e74" stroke-width="1.8"/>
+<text x="377" y="282" text-anchor="middle" class="poe23-small">L = support-to-support span</text>
+<text x="110" y="38" class="poe23-tiny">Dashed: unloaded position</text>
+<text x="110" y="60" class="poe23-tiny">Teal: deflected shape (exaggerated)</text>
+</svg>
+<div class="poe23-variable"><div><b>P — Applied force</b><p>Downward point load at the center, measured in newtons (N).</p></div><div><b>L — Span</b><p>Distance between the two supports, not the total stock length.</p></div><div><b>δ — Deflection</b><p>Maximum vertical displacement at the midpoint for this symmetrical load.</p></div><div><b>Supports</b><p>They keep the beam from falling while permitting the rotations assumed by a simply supported model.</p></div></div></div></section>
+<section class="container lesson-section" id="supports"><div class="poe23-section-header"><div class="poe23-eyebrow">02 / Choose the correct model</div><h2>Support conditions change the answer</h2><p>A beam resting on two supports is not the same as a shelf rigidly mounted to a wall.</p></div><svg class="poe23-illustration" viewBox="0 0 760 255" role="img" aria-label="Comparison of a simply supported beam with two supports and a cantilever beam fixed at one end, showing different boundary conditions.">
+<g><text x="198" y="32" text-anchor="middle" class="poe23-small">Simply supported: two supports</text><path d="M45 109H352" class="beam"/><path d="M70 110L50 140H90Z M326 110L306 140H346Z" class="poe23-support"/><path d="M42 145H97 M299 145H356" stroke="#344e65" stroke-width="2"/><path d="M198 52V97" class="poe23-force"/><path d="M189 84L198 100L207 84" fill="none" stroke="#d97726" stroke-width="3"/><text x="199" y="193" text-anchor="middle" class="poe23-small">Midspan load → largest bend at center</text></g>
+<g><text x="564" y="32" text-anchor="middle" class="poe23-small">Cantilever: one end fixed</text><rect x="423" y="78" width="22" height="110" fill="#c5d6e1" stroke="#365c75"/><path d="M445 118H700" stroke="#9bb7c9" stroke-dasharray="7 4" stroke-width="5"/><path d="M445 118Q580 117 700 168" stroke="#008e97" fill="none" stroke-width="7" stroke-linecap="round"/><path d="M690 50V103" class="poe23-force"/><path d="M681 91L690 106L699 91" stroke="#d97726" fill="none" stroke-width="3"/><text x="572" y="221" text-anchor="middle" class="poe23-small">Tip load → largest bend at free end</text></g>
+</svg>
+<div class="poe23-grid"><article class="poe23-panel"><h3>Simply supported beam</h3><p>For today's numerical formula, the beam rests on supports at its two ends with one load at its midpoint. This is the idealized <strong>three-point bending</strong> setup.</p><p>Under a centered load and a symmetric beam, the upward support reactions are equal: <strong>R<sub>A</sub> = R<sub>B</sub> = P/2</strong>.</p></article>
+<article class="poe23-panel"><h3>Cantilever</h3><p>One end is fixed and the other is free. Under a load at its tip, maximum deflection is at the free end. Its formula is <strong>different</strong> from the simply supported case.</p><p class="poe23-caution"><strong>Do not mix formulas:</strong> first identify the supports, then the load arrangement.</p></article></div></section>
+<section class="container lesson-section" id="watch"><div class="poe23-section-header"><div class="poe23-eyebrow">03 / Watch &amp; note</div><h2>Video learning library</h2><p>Start with the formula-based example, then watch how beam orientation affects the stiffness. The third video is a deeper extension; its calculus derivations are not required in this lesson. If embedding is blocked at school, use the direct YouTube links.</p></div>
+<div class="poe23-grid">
+<article class="poe23-video">
+<div class="poe23-frame"><iframe src="https://www.youtube-nocookie.com/embed/Gj13yyQUT-4" title="Beam Deflection using Formulas — instructional video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div class="poe23-video-copy"><span class="poe23-pill">Start here · Worked method</span><h3>Beam Deflection using Formulas</h3><p>Mark Mattson demonstrates how to select and apply standard beam-deflection formulas. Focus on the simply supported central-load cases.</p><p class="poe23-mini"><strong>Pause and do:</strong> Identify P, L, E, I and the result's units in one example.</p><a href="https://www.youtube.com/watch?v=Gj13yyQUT-4" target="_blank" rel="noopener noreferrer">Open video on YouTube ↗</a></div></article>
+<article class="poe23-video">
+<div class="poe23-frame"><iframe src="https://www.youtube-nocookie.com/embed/Bls5KnQOWkY" title="Understanding the Area Moment of Inertia — instructional video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div class="poe23-video-copy"><span class="poe23-pill">Visual concept · Geometry</span><h3>Understanding the Area Moment of Inertia</h3><p>The Efficient Engineer explains why two beams with the same material and area can bend by very different amounts when oriented differently.</p><p class="poe23-mini"><strong>Pause and do:</strong> Draw the same rectangular strip flat and on edge, labeling which direction is stiffer.</p><a href="https://www.youtube.com/watch?v=Bls5KnQOWkY" target="_blank" rel="noopener noreferrer">Open video on YouTube ↗</a></div></article>
+</div><details class="poe23-reveal" style="margin-top:1rem"><summary>Optional extension: advanced beam-deflection analysis video</summary><div class="poe23-grid" style="margin-top:.9rem"><div class="poe23-video"><div class="poe23-frame"><iframe src="https://www.youtube-nocookie.com/embed/MvBqCeZllpQ" title="Understanding the Deflection of Beams, The Efficient Engineer" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe23-video-copy"><h3>Understanding the Deflection of Beams</h3><p>Extension: how engineers analyze different bending and deflection cases. The calculus methods shown go beyond the required POE calculations.</p><a href="https://www.youtube.com/watch?v=MvBqCeZllpQ" target="_blank" rel="noopener noreferrer">Open advanced video on YouTube ↗</a></div></div><div class="poe23-panel"><h3>Guiding questions</h3><p>Why are boundary conditions important? Why does increasing <em>EI</em> make beams deflect less? Which of the methods in the video looks easiest to apply to a familiar problem?</p></div></div></details></section>
+<section class="container lesson-section" id="formula"><div class="poe23-section-header"><div class="poe23-eyebrow">04 / Core models</div><h2>The two equations you need</h2><p>The formulas below apply to a <strong>straight, prismatic, uniform, linearly elastic beam</strong> under small deflections and the support/loading assumptions shown. We use mm and N throughout.</p></div>
+<div class="poe23-grid"><article class="poe23-panel"><h3>Deflection under a centered point load</h3><div class="poe23-formula">δ<sub>max</sub> = P L³ / (48 E I)</div><p><strong>P</strong> = applied central force (N)</p><p><strong>L</strong> = distance between supports (mm)</p><p><strong>E</strong> = elastic modulus, or material stiffness (N/mm²)</p><p><strong>I</strong> = second moment of area of the cross-section (mm⁴)</p><p><strong>δ</strong> = midpoint deflection (mm)</p></article>
+<article class="poe23-panel"><h3>Rectangle cross-section</h3><div class="poe23-formula">I = b h³ / 12</div><p><strong>b</strong> = width of the section (mm), perpendicular to the bending direction.</p><p><strong>h</strong> = depth in the direction the beam bends (mm).</p><p>The <strong>height is cubed</strong>. That makes the orientation of a rectangular beam especially important.</p><p class="poe23-caution"><strong>Units check:</strong> (N · mm³) ÷ [(N/mm²) · mm⁴] = mm.</p></article></div>
+<div class="poe23-section-header" style="margin-top:1.2rem"><h3>How does each factor affect deflection?</h3></div>
+<div class="poe23-tablewrap"><table class="poe23-table"><thead><tr><th>Change one variable</th><th>Deflection becomes</th><th>Why?</th></tr></thead><tbody>
+<tr><td>Double the force P</td><td>2× as much</td><td>Directly proportional to load</td></tr>
+<tr><td>Double the span L</td><td>8× as much</td><td>L is cubed (2³ = 8)</td></tr>
+<tr><td>Double material modulus E</td><td>½ as much</td><td>E is in the denominator</td></tr>
+<tr><td>Double width b; keep h fixed</td><td>½ as much</td><td>I doubles</td></tr>
+<tr><td>Double height h; keep b fixed</td><td>⅛ as much</td><td>I increases 8×</td></tr>
+</tbody></table></div><p class="poe23-mini">Each row is an idealized <em>one-variable-at-a-time</em> prediction. Changing multiple factors requires recomputing the formula.</p></section>
+<section class="container lesson-section" id="worked"><div class="poe23-section-header"><div class="poe23-eyebrow">05 / Solve from start to finish</div><h2>Worked example: a small wooden beam</h2><p>A rectangular beam spans <strong>400 mm</strong> between simple supports and carries a <strong>30 N</strong> point load at its center. For practice, use an assumed modulus <strong>E = 10,000 N/mm²</strong>. Its cross-section is 20 mm wide and 10 mm high.</p></div>
+<div class="poe23-grid">
+<article class="poe23-panel"><span class="poe23-pill">Step 1 · Identify dimensions</span><h3>Sketch and list your data</h3><svg class="poe23-illustration" viewBox="0 0 810 335" role="img" aria-label="Same rectangular beam rotated 90 degrees. Flat position has 20 millimeter width and 10 millimeter height with moment of inertia 1667 millimeters to the fourth. On-edge position has 10 millimeter width and 20 millimeter height and moment of inertia 6667 millimeters to the fourth.">
+<text x="196" y="36" text-anchor="middle" class="poe23-small">FLAT</text><text x="603" y="36" text-anchor="middle" class="poe23-small">ON EDGE</text>
+<rect x="116" y="174" width="160" height="80" rx="2" fill="#d5e9f5" stroke="#14466a" stroke-width="4"/>
+<rect x="563" y="94" width="80" height="160" rx="2" fill="#b7e1da" stroke="#146857" stroke-width="4"/>
+<path d="M116 264V289 M276 264V289 M116 283H276 M102 174H80 M102 254H80 M89 174V254" stroke="#366681" stroke-width="1.8" fill="none"/>
+<path d="M563 264V289 M643 264V289 M563 283H643 M654 94H679 M654 254H679 M670 94V254" stroke="#366681" stroke-width="1.8" fill="none"/>
+<text x="196" y="309" text-anchor="middle" class="poe23-small">b = 20 mm</text>
+<text x="603" y="309" text-anchor="middle" class="poe23-small">b = 10 mm</text>
+<text x="68" y="214" text-anchor="middle" class="poe23-small" transform="rotate(-90 68 214)">h = 10 mm</text>
+<text x="698" y="173" text-anchor="middle" class="poe23-small" transform="rotate(-90 698 173)">h = 20 mm</text>
+<path d="M196 67V122 M603 59V81" class="poe23-force"/>
+<path d="M185 112L196 127L207 112 M592 71L603 86L614 71" stroke="#d97726" stroke-width="3" fill="none"/>
+<text x="196" y="48" text-anchor="middle" class="poe23-tiny">Vertical bending load</text>
+<text x="603" y="48" text-anchor="middle" class="poe23-tiny">Vertical bending load</text>
+</svg><p class="poe23-mini">For this first calculation, use the <strong>flat</strong> orientation: b = 20 mm, h = 10 mm. The second orientation is for comparison.</p><div class="poe23-formula">P = 30 N · L = 400 mm<br/>E = 10,000 N/mm²</div><p>Use the same units for every term before substituting.</p></article>
+<article class="poe23-panel"><span class="poe23-pill gold">Steps 2–4 · Calculate</span><h3>Find I, then δ</h3>
+<ol class="poe23-steps"><li><strong>Compute I:</strong> I = (20)(10³)/12 = <strong>1,666.67 mm⁴</strong>.</li>
+<li><strong>Set up the model:</strong> δ = (30)(400³) / [(48)(10,000)(1,666.67)].</li>
+<li><strong>Calculate:</strong> δ = <strong>2.40 mm</strong> at the beam center.</li>
+<li><strong>Interpret:</strong> The idealized model predicts a 2.40 mm downward displacement at midspan.</li></ol>
+<div class="poe23-formula">Answer: δ<sub>max</sub> ≈ 2.40 mm</div>
+<p><strong>Reasonableness check:</strong> The value is small compared with a 400 mm span. It describes elastic behavior only—not whether the beam will fail.</p></article>
+</div>
+<div class="poe23-panel" style="margin-top:1rem"><h3>What changes if you rotate the beam 90°?</h3>
+<div class="poe23-grid"><div><p><strong>Flat:</strong> b = 20 mm, h = 10 mm → I = 1,666.67 mm⁴ → <strong>δ = 2.40 mm</strong>.</p></div><div><p><strong>On edge:</strong> b = 10 mm, h = 20 mm → I = 6,666.67 mm⁴ → <strong>δ = 0.60 mm</strong>.</p></div></div>
+<p class="poe23-caution"><strong>Important distinction:</strong> Rotating the 20 × 10 mm rectangle makes I four times larger, reducing deflection to one-quarter. Doubling height <em>without changing width</em> would instead make I eight times larger.</p>
+<details class="poe23-reveal"><summary>Explain why the on-edge position is stiffer</summary><p>More material lies farther from the cross-section's horizontal centroidal axis, increasing the second moment of area I. A higher EI means lower predicted deflection under the same force and span. The material and cross-sectional area are unchanged when the strip is rotated.</p></details></div></section>
+<section class="container lesson-section" id="explore"><div class="poe23-section-header"><div class="poe23-eyebrow">06 / Interactive engineering explorer</div><h2>Change the beam. Watch the bending.</h2><p>Change one slider at a time. The model calculates midpoint deflection for a <strong>simply supported, center-loaded rectangular beam</strong>. Use the graph to see trends—not the actual physical scale of bending.</p></div>
+<div class="poe23-explorer">
+<div class="poe23-grid"><div class="poe23-panel">
+<div class="poe23-param"><label for="beamForce">Center force P <strong id="beamForceValue">30 N</strong></label><input id="beamForce" type="range" min="5" max="60" step="5" value="30"/></div>
+<div class="poe23-param"><label for="beamSpan">Support span L <strong id="beamSpanValue">400 mm</strong></label><input id="beamSpan" type="range" min="200" max="600" step="25" value="400"/></div>
+<div class="poe23-param"><label for="beamDepth">Section height h <strong id="beamDepthValue">10 mm</strong></label><input id="beamDepth" type="range" min="8" max="30" step="1" value="10"/></div>
+<p class="poe23-mini"><strong>Held constant:</strong> width b = 20 mm; modulus E = 10,000 N/mm². All quantities are assumed idealized teaching values, not a certified material specification.</p>
+<div class="poe23-data"><div><strong id="beamI">1,666.67 mm⁴</strong><span>Second moment of area, I</span></div><div><strong id="beamDeflection">2.40 mm</strong><span>Predicted center deflection, δ</span></div></div>
+<p id="beamInterpretation" class="poe23-output" aria-live="polite">At these settings, the calculated midpoint deflection is 2.40 mm.</p>
+<button id="beamReset" class="btn secondary" type="button">Reset to worked example</button>
+</div>
+<div class="poe23-panel"><h3>Idealized beam behavior</h3>
+<svg id="beamExplorerSvg" class="poe23-illustration" viewBox="0 0 600 310" role="img" aria-label="Beam under centered load with graphically exaggerated deflection">
+<defs><marker id="beamExpArrow" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#d97726"/></marker></defs>
+<line x1="70" y1="135" x2="530" y2="135" class="beam-original"/>
+<path id="beamDeflectedPath" class="beam-deflected" d="M70 135 Q300 174 530 135"/>
+<path d="M70 135L52 164H88Z M530 135L512 164H548Z" class="poe23-support"/>
+<path d="M42 167H98 M502 167H558" stroke="#516e7b" stroke-width="2"/>
+<line x1="300" y1="40" x2="300" y2="113" class="poe23-force" marker-end="url(#beamExpArrow)"/><text x="315" y="56" class="poe23-small" id="beamForceSvg">P = 30 N</text>
+<line x1="300" y1="135" x2="300" y2="170" stroke="#ca8a28" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="325" y="190" class="poe23-small" id="beamDeltaSvg">δ ≈ 2.40 mm</text>
+<path d="M70 182V216M530 182V216M70 206H530" fill="none" stroke="#346c86" stroke-width="2"/>
+<text x="300" y="225" class="poe23-small" text-anchor="middle" id="beamSpanSvg">Span L = 400 mm</text>
+<text x="300" y="264" class="poe23-small" text-anchor="middle">Teal deformation is visually exaggerated.</text>
+<text x="300" y="283" class="poe23-tiny" text-anchor="middle">Formula estimates elastic bending, not failure.</text>
+</svg>
+<div class="poe23-caution"><strong>Model limits:</strong> assumes small deflection, linear elasticity, constant cross-section, simple supports and a single central point load. Real printed or wooden parts may behave differently.</div>
+</div></div></div></section>
+<section class="container lesson-section" id="test"><div class="poe23-section-header"><div class="poe23-eyebrow">07 / Think like an experimental engineer</div><h2>Design a fair beam test</h2><p>You want to compare the same wooden ruler held flat and on edge between two supports. What must stay the same to make your comparison meaningful?</p></div>
+<div class="poe23-grid"><article class="poe23-panel"><h3>Proposed controlled investigation</h3><ol class="poe23-steps"><li>Use one piece of wood with a rectangular cross-section and mark a consistent span.</li><li>Rest its ends on two supports and apply a modest load at the center using a <strong>teacher-approved</strong> setup.</li><li>Measure how far the center moves, using a ruler or displacement indicator.</li><li>Rotate the beam 90°; reset the supports and keep the same force and span.</li><li>Repeat the measurements and compare average deflection.</li></ol><p class="poe23-caution">Do not use body weight, climb on structures or load school fixtures. Perform any physical testing only with instructor-approved materials and loads.</p></article>
+<article class="poe23-panel"><h3>Record the variables</h3>
+<div class="poe23-tablewrap"><table class="poe23-table"><thead><tr><th>Variable type</th><th>Example</th></tr></thead><tbody><tr><td>Independent</td><td>Cross-section orientation: flat vs. on edge</td></tr><tr><td>Dependent</td><td>Measured center deflection (mm)</td></tr><tr><td>Controlled</td><td>Same material, piece, span, force, load location and measurement method</td></tr></tbody></table></div>
+<p><strong>Before the test:</strong> Which orientation do you predict will bend less? Use the I formula to justify it.</p>
+<details class="poe23-reveal"><summary>Reveal expected trend</summary><p>For a wide, thin rectangle rotated upright, the effective section height increases. The second moment of area about the bending axis is larger, so it usually bends less under otherwise identical conditions.</p></details></article></div></section>
+<section class="container lesson-section" id="practice"><div class="poe23-section-header"><div class="poe23-eyebrow">08 / Check understanding</div><h2>Practice first, then reveal the reasoning</h2><p>Write your prediction and any calculations in your 2.3 worksheet or notebook before opening each answer.</p></div>
+<div class="poe23-grid">
+<article class="poe23-panel"><span class="poe23-pill">Check A · Scaling</span><h3>1. Double the span</h3><p>Beam B is the same as Beam A in all respects except its support span is twice as long. How many times greater is its theoretical deflection under the same centered load?</p>
+<details class="poe23-reveal"><summary>Show answer</summary><p><strong>8 times greater.</strong> Since δ ∝ L³, doubling L produces 2³ = 8 times the deflection.</p></details></article>
+<article class="poe23-panel"><span class="poe23-pill">Check B · Material &amp; force</span><h3>2. Two changes</h3><p>What happens if the central load doubles and E also doubles, while span and cross-section remain unchanged?</p><details class="poe23-reveal"><summary>Show answer</summary><p><strong>No change in the calculated deflection.</strong> Doubling P doubles the numerator, but doubling E doubles the denominator, so the effects cancel.</p></details></article>
+<article class="poe23-panel"><span class="poe23-pill gold">Check C · Geometry</span><h3>3. Flat or on edge?</h3><p>Using the worked example, calculate I for a 10 mm-wide, 20 mm-high section. How does its predicted deflection compare with the flat 20 × 10 mm section?</p><details class="poe23-reveal"><summary>Show worked solution</summary><p>I = (10)(20³)/12 = <strong>6,666.67 mm⁴</strong>. This is 4× the flat section's I, so its deflection is <strong>0.60 mm</strong>, one-quarter of the original 2.40 mm.</p></details></article>
+<article class="poe23-panel"><span class="poe23-pill gold">Check D · Calculate</span><h3>4. New beam problem</h3><p>For a simply supported beam: P = 20 N, L = 300 mm, E = 9,000 N/mm², b = 15 mm and h = 12 mm. Find I and δ.</p><details class="poe23-reveal"><summary>Show worked solution</summary><p>I = (15)(12³)/12 = <strong>2,160 mm⁴</strong>. δ = (20)(300³)/[(48)(9,000)(2,160)] = <strong>0.579 mm</strong> (about 0.58 mm).</p></details></article>
+<article class="poe23-panel"><span class="poe23-pill">Check E · Model selection</span><h3>5. A shelf bolted to the wall</h3><p>Can you use δ = PL³/(48EI) directly for a shelf fixed at one end and loaded at the free tip? Explain.</p><details class="poe23-reveal"><summary>Show answer</summary><p><strong>No.</strong> The formula assumes two simple supports and a centered point load. The wall-mounted shelf is a cantilever with different boundary conditions and a different formula.</p></details></article>
+<article class="poe23-panel"><span class="poe23-pill">Check F · Evidence</span><h3>6. Strength or stiffness?</h3><p>A beam under a small weight bends 3 mm but returns to its original shape when the weight is removed. Has it necessarily failed?</p><details class="poe23-reveal"><summary>Show answer</summary><p><strong>No.</strong> Reversible deflection is consistent with elastic behavior. The amount could still be unacceptable for a design that has a strict stiffness/deflection limit.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="resources"><div class="poe23-section-header"><div class="poe23-eyebrow">Resource library</div><h2>Useful explanations, diagrams and reference material</h2><p>These external links are optional study resources. The learning and worked exercises above are sufficient to complete the lesson.</p></div>
+<div class="poe23-grid">
+<article class="poe23-panel"><h3>Understanding beam bending</h3><p>Readable explanation of beam deformation, why engineers study deflection, and additional methods.</p><a class="poe23-resource-link" href="https://efficientengineer.com/beam-deflection/" target="_blank" rel="noopener noreferrer">The Efficient Engineer — Deflection of Beams ↗</a></article>
+<article class="poe23-panel"><h3>Why beam height matters</h3><p>Visual explanation of the second moment of area and why cross-section orientation changes stiffness.</p><a class="poe23-resource-link" href="https://efficientengineer.com/area-moment-of-inertia/" target="_blank" rel="noopener noreferrer">The Efficient Engineer — Area Moment of Inertia ↗</a></article>
+<article class="poe23-panel"><h3>Deflection formula and derivation</h3><p>University-level reference showing the central point-load formula and how beam deflection is modeled.</p><a class="poe23-resource-link" href="https://eng.libretexts.org/Bookshelves/Mechanical_Engineering/Mechanics_of_Materials_%28Roylance%29/04%3A_Bending/4.03%3A_Beam_Displacements" target="_blank" rel="noopener noreferrer">Engineering LibreTexts — Beam Displacements ↗</a></article>
+<article class="poe23-panel"><h3>Extra section-shape calculator</h3><p>Explore I for rectangles and other cross-sections after you understand the rectangular formula.</p><a class="poe23-resource-link" href="https://efficientengineer.com/area-moment-of-inertia-calculator/" target="_blank" rel="noopener noreferrer">The Efficient Engineer — Cross-Section Calculator ↗</a></article>
+</div></section>
+<section class="container lesson-section" id="submit"><div class="poe23-section-header"><div class="poe23-eyebrow">Student submission</div><h2>What you need to submit</h2><p>Complete the <strong>POE 2.3 Beam Deflection classwork and homework worksheet</strong> (or teacher-directed notebook equivalent). The guided resources and self-check answers are study aids; turn in your own calculations and reasoning.</p></div>
+<div class="poe23-grid"><article class="poe23-panel"><h3>Required evidence</h3><ul class="poe23-checklist">
+<li>Clearly labeled beam sketches: supports, point load, span and displacement.</li>
+<li>A written distinction between <strong>stiffness</strong> and <strong>strength</strong>.</li>
+<li>Correct I = bh³/12 calculation for a rectangular beam and appropriate units.</li>
+<li>Deflection calculations showing δ = PL³/(48EI) with consistent N–mm units.</li>
+<li>Comparisons of beam orientation, span and load with explanations.</li>
+<li>A proposed fair test identifying independent, dependent and controlled variables.</li>
+</ul></article>
+<article class="poe23-panel"><h3>Before submitting</h3><ul class="poe23-checklist"><li>All measurements and final answers include units.</li><li>The selected formula matches the load and support setup.</li><li>Conclusions describe the trend and not merely the number.</li><li>Diagrams and calculations are readable.</li></ul>
+<p><strong>Due date:</strong> Refer to the <a href="../../../../agenda.html">Daily Agenda</a> for the current deadline. Follow the submission method provided by your teacher.</p><p><a class="btn secondary" href="#start">Review Lesson ↑</a></p></article></div></section>
+<nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-2.html">← Lesson 2.2: Centroids &amp; Center of Gravity</a><a class="btn" href="lesson-2-4.html">Next: 2.4 Free-Body Diagrams →</a></nav>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+<script>
+(function(){
+"use strict";
+const ids=["beamForce","beamSpan","beamDepth"];
+const inputs=ids.map(id=>document.getElementById(id));
+const path=document.getElementById("beamDeflectedPath");
+const reset=document.getElementById("beamReset");
+if(inputs.some(el=>!el)||!path)return;
+const get=id=>document.getElementById(id);
+function render(){
+const P=Number(inputs[0].value),L=Number(inputs[1].value),h=Number(inputs[2].value);
+const b=20,E=10000,I=b*Math.pow(h,3)/12;
+const delta=P*Math.pow(L,3)/(48*E*I);
+get("beamForceValue").textContent=P+" N";
+get("beamSpanValue").textContent=L+" mm";
+get("beamDepthValue").textContent=h+" mm";
+get("beamI").textContent=I.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})+" mm⁴";
+get("beamDeflection").textContent=delta.toFixed(2)+" mm";
+get("beamInterpretation").textContent="At these settings, the idealized midpoint deflection is "+delta.toFixed(2)+" mm. Change one parameter at a time to test how the result depends on the variable.";
+get("beamForceSvg").textContent="P = "+P+" N";
+get("beamSpanSvg").textContent="Span L = "+L+" mm";
+get("beamDeltaSvg").textContent="δ ≈ "+delta.toFixed(2)+" mm";
+const amplitude=9+Math.min(49,Math.max(0,delta*6)); // VISUAL EXAGGERATION; NOT TO SCALE
+let d="";
+for(let i=0;i<=50;i++){
+ const u=i/50,t=Math.min(u,1-u),shape=t*(3-4*t*t),x=70+460*u,y=135+amplitude*shape;
+ d+=(i?" L":"M")+x.toFixed(2)+" "+y.toFixed(2);
+}
+path.setAttribute("d",d);
+get("beamExplorerSvg").setAttribute("aria-label","Simply supported beam with "+P+" newton center load, "+L+" millimeter span, "+h+" millimeter section depth; calculated midpoint deflection "+delta.toFixed(2)+" millimeters. Shape exaggerated for visibility.");
+}
+inputs.forEach(el=>el.addEventListener("input",render));
+if(reset)reset.addEventListener("click",()=>{inputs[0].value=30;inputs[1].value=400;inputs[2].value=10;render();});
+render();
+})();
+</script></body></html>
