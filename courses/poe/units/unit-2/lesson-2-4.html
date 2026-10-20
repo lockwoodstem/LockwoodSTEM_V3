@@ -1,1 +1,285 @@
-<!DOCTYPE html><html lang="en"><head><title>POE Unit 2 Lesson 2.4 | Free-Body Diagrams | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="description" content="POE Unit 2 Lesson 2.4: Vectors & Force Components. How do angled members carry load, and how can one diagonal force be separated into horizontal and vertical effects?"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main"><nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">2.4</li></ol></nav><section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Mechanics Foundations • Lesson 2.4</div><h1>Free-Body Diagrams</h1><p class="focus-question"><strong>Engineering question:</strong> How do engineers isolate a system and represent all external forces?</p><div class="mission-actions"><a class="btn" href="#learn">Learn</a><a class="btn secondary" href="#practice">Practice</a><a class="btn secondary" href="#apply">Apply</a><a class="btn secondary" href="#submit">Submit</a><a class="btn ghost" href="../unit-2.html">Unit 2</a></div></div><aside class="mission-panel"><span class="tag">Foundational instruction</span><h2>Learn it before the bridge project</h2><p>Use varied engineering examples to master the mechanics, then apply the technique to your final structural design later in the unit.</p></aside></div></section><section class="container lesson-section"><article class="card"><h2>Learning Targets</h2><ul><li>Identify applied forces and support reactions</li><li>Draw a clear system boundary</li><li>Check vertical-force equilibrium</li></ul></article></section><section class="container lesson-section" id="learn"><div class="section-header"><h2>Learn the Concept</h2></div><article class="card"><ul><li>A free-body diagram includes only forces acting externally on the selected body</li><li>A roller support supplies one normal reaction; an ideal pin may supply horizontal and vertical reactions</li><li>For a stationary object, ΣFx = 0 and ΣFy = 0</li></ul><p><strong>During instruction:</strong> Sketch the forces, geometry, variables or joints discussed and record units for every quantity.</p></article></section><section class="container lesson-section" id="practice"><div class="section-header"><h2>Practice Together</h2></div><article class="card"><p>Draw an FBD of a horizontal shelf resting on two supports with a downward 60 N point load at its center. Label the unknown reactions rather than assuming their values.</p><p><strong>Show:</strong> a labeled diagram, a mathematical model when relevant, and a final statement interpreting the result.</p></article></section><section class="container lesson-section" id="apply"><div class="section-header"><h2>Apply the Skill</h2></div><article class="card"><p>Create FBDs for a hanging sign and a block on a horizontal tabletop. Include relevant supports, directions and dimensions.</p><p><strong>Check your understanding:</strong> Why are the forces between two internal members omitted when drawing an FBD of the entire assembly?</p></article></section><section class="container lesson-section" id="submit"><article class="card"><h2>Student Evidence</h2><p>Two annotated free-body diagrams. Use your engineering notebook or teacher-provided guided notes; include dimensions, units and a conclusion.</p><p><strong>Looking ahead:</strong> These mechanics techniques will be revisited when students analyze the bridge design in Lessons 2.15–2.20.</p></article></section><nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-3.html">← 2.3 Beam Deflection</a><a class="btn" href="lesson-2-5.html">2.5 Calculating Force Vectors →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer><button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POE 2.4 | Free-Body Diagrams — Learning Studio | LockwoodSTEM</title>
+<meta name="description" content="Learn free-body diagrams with video lessons, technical schematics, step-by-step examples, interactive force builder, and self-check practice."/>
+<link href="../../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/>
+<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/>
+<script defer src="../../../../assets/js/main.js"></script>
+<style id="poe24-learning-studio">
+html{scroll-behavior:smooth}
+.poe24{--ink:#092940;--blue:#0b567e;--aqua:#147f88;--gold:#e2ac37;--edge:#cadbe7}
+.poe24 .poe24-lead{font-size:1.09rem;line-height:1.65;color:#294456}
+.poe24 .poe24-eyebrow{color:#875d0a;font-weight:850;text-transform:uppercase;letter-spacing:.09em;font-size:.82rem}
+.poe24 .poe24-section-header{margin-bottom:1rem}
+.poe24 .poe24-section-header h2{margin:.25rem 0 .3rem}
+.poe24 .poe24-section-header p{margin:.1rem 0;max-width:860px;color:#4b6475}
+.poe24 .poe24-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
+.poe24 .poe24-metric{background:#f1f7fb;border:1px solid #bdd4e4;border-radius:14px;padding:.9rem 1rem}
+.poe24 .poe24-metric strong{display:block;color:#0b4772;font-size:1.05rem}
+.poe24 .poe24-metric span{display:block;font-size:.94rem;color:#40596a;margin-top:.2rem}
+.poe24 .poe24-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe24 .poe24-thirds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.poe24 .poe24-panel{background:#f7fbfd;border:1px solid var(--edge);border-radius:16px;padding:1.1rem 1.15rem}
+.poe24 .poe24-panel h3{color:var(--ink);margin:.15rem 0 .5rem}
+.poe24 .poe24-panel p{margin:.3rem 0 .65rem}
+.poe24 .poe24-panel ul{padding-left:1.2rem;margin:.4rem 0}
+.poe24 .poe24-pill{display:inline-block;border-radius:99px;padding:.2rem .6rem;background:#e3f0f5;color:#0c5672;font-size:.75rem;font-weight:900;letter-spacing:.03em}
+.poe24 .poe24-pill.gold{background:#fbefcf;color:#7d540d}
+.poe24 .poe24-mini{font-size:.9rem;color:#536b79}
+.poe24 .poe24-formula{font-size:clamp(1.05rem,1.6vw,1.28rem);letter-spacing:.01em;font-weight:850;color:#0b4163;background:#edf6fb;border-left:5px solid #147a9e;border-radius:10px;padding:.8rem 1rem;margin:.8rem 0;overflow-wrap:anywhere}
+.poe24 .poe24-graphic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe24 .poe24-large-svg{max-width:870px}
+.poe24 svg .poe24-axis{fill:none;stroke:#455f73;stroke-width:1.8}
+.poe24 svg .poe24-guide{stroke:#4c879e;stroke-dasharray:5 5;stroke-width:1.35;fill:none}
+.poe24 svg .poe24-dim{fill:none;stroke:#2b648b;stroke-width:1.15}
+.poe24 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#17384e}
+.poe24 svg text.poe24-annotation{font-size:13px;font-weight:750}
+.poe24 svg text.poe24-small{font-size:13px}
+.poe24 svg text.poe24-tiny{font-size:11px}
+.poe24 svg text.poe24-strong{font-weight:800}
+.poe24 .poe24-lesson-steps{list-style:none!important;margin:0;padding:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe24 .poe24-lesson-steps li{border-left:4px solid #167a94;padding:.7rem .75rem;border-radius:9px;background:#f2f8fc;font-weight:750;font-size:.92rem}
+.poe24 .poe24-lesson-steps li span{display:block;color:#527283;font-size:.78rem;font-weight:700}
+.poe24 .poe24-video{background:#f7fbff;border:1px solid #cfdfeb;border-radius:16px;overflow:hidden}
+.poe24 .poe24-video-copy{padding:1rem}
+.poe24 .poe24-video-copy h3{margin:.25rem 0}
+.poe24 .poe24-frame{aspect-ratio:16/9;background:#071e35;position:relative}
+.poe24 .poe24-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe24 .poe24-video a{font-weight:800}
+.poe24 .poe24-video p{margin:.4rem 0}
+.poe24 .poe24-tablewrap{overflow-x:auto}
+.poe24 .poe24-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.poe24 .poe24-table td,.poe24 .poe24-table th{border:1px solid #c8dbe8;text-align:left;padding:.55rem .7rem}
+.poe24 .poe24-table th{background:#eaf4fb;color:#0c3554}
+.poe24 .poe24-table .poe24-total{background:#f1f8e8;font-weight:850}
+.poe24 .poe24-steps{padding-left:1.55rem}
+.poe24 .poe24-steps li{padding-bottom:.45rem}
+.poe24 .poe24-caution{background:#fff9e9;border-left:5px solid #d59b22;padding:.8rem 1rem;border-radius:10px}
+.poe24 details.poe24-reveal{border:1px solid #b9d3e4;background:#f7fbff;border-radius:12px;padding:.8rem 1rem;margin:.65rem 0}
+.poe24 details.poe24-reveal summary{color:#0b4c73;cursor:pointer;font-weight:850}
+.poe24 details.poe24-reveal[open]{border-color:#0d8b9a}
+.poe24 details.poe24-reveal p{margin:.7rem 0 .15rem}
+.poe24 .poe24-explorer{background:#f2f9fc;border:1px solid #9dc6db;border-radius:16px;padding:1rem}
+.poe24 .poe24-explorer label{font-weight:800;color:#0b4163;display:block;margin:.5rem 0}
+.poe24 .poe24-explorer input[type=range]{width:min(100%,440px);accent-color:#0a7991;cursor:pointer}
+.poe24 .poe24-output{font-size:1.2rem;font-weight:850;color:#0a506d;background:#fff;border:1px solid #b9d5e5;padding:.7rem;border-radius:10px}
+.poe24 .poe24-resources a{display:block;margin:.4rem 0;font-weight:800;overflow-wrap:anywhere}
+.poe24 .poe24-checklist{list-style:none!important;padding:0!important}
+.poe24 .poe24-checklist li{padding:.45rem 0 .45rem 1.7rem;position:relative}
+.poe24 .poe24-checklist li::before{content:"□";position:absolute;left:0;top:.32rem;font-size:1.3rem;color:#0b567e}
+.poe24 a:focus-visible,.poe24 input:focus-visible,.poe24 summary:focus-visible{outline:3px solid #ca8b20;outline-offset:3px}
+@media(max-width:980px){.poe24 .poe24-thirds{grid-template-columns:1fr 1fr}.poe24 .poe24-lesson-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.poe24 .poe24-grid,.poe24 .poe24-thirds,.poe24 .poe24-overview{grid-template-columns:1fr}}
+@media print{.poe24 .poe24-video,.poe24 #explore,.poe24 .mission-actions{display:none!important}.poe24 details.poe24-reveal:not([open]){display:none}}
+
+.poe24 .poe24-illustration{display:block;width:100%;height:auto;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe24 .poe24-twin{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe24 .poe24-twin>*{min-width:0}
+.poe24 svg .beam{stroke:#1b5a7b;fill:none;stroke-width:8;stroke-linecap:round}
+.poe24 svg .beam-original{stroke:#c6d5df;stroke-width:4;stroke-dasharray:8 6;fill:none}
+.poe24 svg .beam-deflected{stroke:#008d94;stroke-width:6;fill:none;stroke-linecap:round}
+.poe24 svg .poe24-support{fill:#d6e9f5;stroke:#123f5b;stroke-width:1.8}
+.poe24 svg .poe24-force{stroke:#d97726;stroke-width:3;fill:none}
+.poe24 .poe24-param{background:#f6fafc;border-radius:12px;padding:.65rem .8rem;margin:.6rem 0}
+.poe24 .poe24-param label{display:flex;gap:.7rem;align-items:center;justify-content:space-between}
+.poe24 .poe24-param label strong{white-space:nowrap;font-variant-numeric:tabular-nums}
+.poe24 .poe24-param input[type="range"]{width:100%;accent-color:#0a7991}
+.poe24 .poe24-data{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:1rem 0}
+.poe24 .poe24-data div{border:1px solid #cadee8;border-radius:12px;padding:.6rem .8rem;background:#fff}
+.poe24 .poe24-data strong{display:block;font-size:1.15rem;color:#0c4966;font-variant-numeric:tabular-nums}
+.poe24 .poe24-data span{font-size:.82rem;color:#496475}
+.poe24 .poe24-variable{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe24 .poe24-variable div{border:1px solid #cadde8;border-radius:12px;background:#fff;padding:.75rem}
+.poe24 .poe24-variable b{display:block;font-size:1.12rem;color:#0b5779}
+.poe24 .poe24-progress-card{padding:1rem;border:1px solid #bfdae6;border-radius:12px;background:#f5fafc}
+.poe24 .poe24-progress-card strong{color:#0c4966}
+.poe24 .poe24-solution{font-variant-numeric:tabular-nums}
+.poe24 .poe24-resource-link{display:inline-block;margin-top:.3rem;font-weight:800}
+.poe24 .poe24-print{float:right;font-size:.85rem}
+@media(max-width:760px){.poe24 .poe24-twin,.poe24 .poe24-variable{grid-template-columns:1fr}.poe24 .poe24-print{float:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.poe24 .poe24-schematic{width:100%;display:block;max-width:900px;height:auto;background:#fff;border:1px solid #d2e4ec;border-radius:12px;margin:.75rem auto}
+.poe24 svg .poe24-head{font-size:15px;font-weight:850;fill:#113d57}
+.poe24 svg .poe24-note{font-size:13px;font-weight:760;fill:#183d53}
+.poe24 svg .poe24-caption{font-size:11px;fill:#405c6e}
+.poe24 .poe24-force-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-bottom:1rem}
+.poe24 .poe24-force-grid>div{background:#f5fafc;border:1px solid #cfdfeb;border-radius:11px;padding:.85rem}
+.poe24 .poe24-force-grid strong{display:block;color:#0d5472;margin-bottom:.2rem}
+.poe24 .poe24-force-grid span{font-size:.94rem;color:#3a5263}
+.poe24 .poe24-switches{display:flex;gap:.55rem;flex-wrap:wrap;margin:.75rem 0}
+.poe24 .poe24-switches button{border:1px solid #7ba1b9;background:#fff;color:#104c6c;border-radius:10px;padding:.65rem .85rem;font-weight:780;cursor:pointer}
+.poe24 .poe24-switches button[aria-pressed="true"]{background:#105a7b;color:white;border-color:#105a7b}
+.poe24 .poe24-switches button:hover{border-color:#147a9e}
+.poe24 .poe24-builder-note{background:#f2f9fc;border:1px solid #b7d4e5;border-radius:12px;padding:1rem;min-height:100px}
+.poe24 .poe24-builder-note h3{margin:0 0 .25rem}
+.poe24 .poe24-builder-note p{margin:.3rem 0}
+.poe24 .poe24-explorer input[type=range]{width:min(440px,100%);accent-color:#147a9e}
+.poe24 .poe24-checklist{list-style:none!important;margin:.4rem 0;padding:0!important}
+.poe24 .poe24-checklist li{position:relative;padding:.5rem 0 .5rem 1.6rem}
+.poe24 .poe24-checklist li:before{content:"□";position:absolute;left:0;top:.39rem;color:#147a9e;font-size:1.25rem}
+@media(max-width:880px){.poe24 .poe24-force-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.poe24 .poe24-force-grid{grid-template-columns:1fr}}
+</style></head>
+<body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container nav"><a class="brand" aria-label="LockwoodSTEM home" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
+<main class="poe24" id="main">
+<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.4</li></ol></nav>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img class="lesson-course-icon" alt="POE course icon" src="../../../../assets/img/course-icons/poe-course-icon.png"/><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.4</div><h1>Free-Body Diagrams</h1><p class="focus-question"><strong>Engineering question:</strong> How do we isolate a system to identify the forces that act on it?</p>
+<div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#watch">Watch Videos</a><a class="btn secondary" href="#worked">Worked Example</a><a class="btn secondary" href="#builder">Interactive FBD Builder</a><a class="btn secondary" href="#practice">Self-Check</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
+<aside class="mission-panel"><span class="tag">Learn • Watch • Draw • Check</span><h2>Make invisible forces visible.</h2><p>Learn to isolate a body, replace constraints with reactions, and verify a diagram with equilibrium.</p><p><strong>Materials:</strong> pencil, ruler, calculator, engineering notebook or Lesson 2.4 classwork/homework packet.</p></aside></div></section>
+<section class="container lesson-section" id="start"><div class="poe24-section-header"><div class="poe24-eyebrow">Your learning pathway</div><h2>Learning targets</h2><p>Follow the modules in order. Pause the videos and draw on paper before viewing the solutions.</p></div>
+<div class="poe24-overview"><div class="poe24-metric"><strong>01 · Isolate</strong><span>Choose a system boundary and draw only the selected body.</span></div><div class="poe24-metric"><strong>02 · Identify</strong><span>Replace supports with external forces and reactions.</span></div><div class="poe24-metric"><strong>03 · Check</strong><span>Label each force and apply simple equilibrium checks.</span></div></div>
+<div class="poe24-panel" style="margin-top:1rem"><h3>Suggested 45–50 minute sequence</h3><ol class="poe24-lesson-steps"><li>Observe &amp; predict<span>5 minutes</span></li><li>Read &amp; watch<span>10 minutes</span></li><li>Worked examples<span>15 minutes</span></li><li>Builder &amp; practice<span>15–20 minutes</span></li></ol></div></section>
+<section class="container lesson-section" id="learn"><div class="poe24-section-header"><div class="poe24-eyebrow">01 / Understand</div><h2>What is a free-body diagram?</h2><p>An <strong>FBD</strong> is a simplified drawing of one isolated body with all external forces and relevant external moments acting <em>on that body</em>.</p></div>
+<div class="poe24-grid"><article class="poe24-panel"><span class="poe24-pill">Choose the body</span><h3>What are we analyzing?</h3><p>A box, lamp, beam or an entire structure can be our body. Redraw it alone as a simplified line, rectangle or point. Remove the table, cables, ground or supports from the isolated view.</p><p>We select the <strong>system boundary</strong> first: only interactions that cross this boundary create external loads on our FBD.</p></article>
+<article class="poe24-panel"><span class="poe24-pill gold">Show the forces</span><h3>Replace the surroundings with arrows</h3><p>Every interaction with something outside the body becomes a force or moment as appropriate. Include gravity, applied loads and reactions. Draw and label arrows with correct directions.</p><p class="poe24-caution"><strong>Important:</strong> Do not draw both members of a Newton's third-law pair on the <em>same body's</em> FBD. The table's upward force on a box belongs; the box's downward force on the table does not.</p></article></div>
+<div class="poe24-panel" style="margin-top:1rem"><h3>Example: 12 kg box on a level table</h3><svg class="poe24-schematic" viewBox="0 0 680 272" role="img" aria-label="Twelve kilogram crate sitting on a table, and isolated crate with 117.6 N normal force upward and 117.6 N weight downward."><defs><marker id="crate-load" markerWidth="8" markerHeight="8" refX="6.2" refY="3" orient="auto"><path d="M0 0L6.5 3L0 6Z" fill="#bd6924"/></marker><marker id="crate-react" markerWidth="8" markerHeight="8" refX="6.2" refY="3" orient="auto"><path d="M0 0L6.5 3L0 6Z" fill="#0a8794"/></marker></defs>
+<text x="163" y="24" text-anchor="middle" class="poe24-head">ON THE TABLE</text>
+<text x="498" y="24" text-anchor="middle" class="poe24-head">ISOLATED CRATE</text>
+<rect x="116" y="117" width="95" height="76" rx="4" fill="#d5e9f5" stroke="#16506f" stroke-width="2.5"/>
+<path d="M63 199H266" stroke="#5c7885" stroke-width="7"/>
+<text x="163" y="157" text-anchor="middle" class="poe24-note">12 kg</text>
+<rect x="448" y="112" width="100" height="81" rx="4" fill="#d5e9f5" stroke="#16506f" stroke-width="2.5"/>
+<path d="M498 112V50" stroke="#0a8794" stroke-width="3.5" marker-end="url(#crate-react)"/>
+<path d="M498 193V243" stroke="#bd6924" stroke-width="3.5" marker-end="url(#crate-load)"/>
+<text x="516" y="64" class="poe24-caption">N = 117.6 N</text>
+<text x="517" y="245" class="poe24-caption">W = 117.6 N</text></svg>
+<p>Weight: <strong>W = mg = (12 kg)(9.8 m/s²) = 117.6 N downward</strong>. The stationary crate receives an upward <strong>normal reaction N = 117.6 N</strong>. The table itself does not appear in the isolated crate diagram.</p></div></section>
+<section class="container lesson-section" id="supports"><div class="poe24-section-header"><div class="poe24-eyebrow">02 / Force vocabulary and supports</div><h2>Which forces should you include?</h2><p>Each arrow must have a known or assumed direction, a label and a point or line where it acts.</p></div>
+<div class="poe24-force-grid"><div><strong>Weight W</strong><span>Gravity pulling the body downward; W = mg.</span></div><div><strong>Normal N</strong><span>Contact force perpendicular to a surface.</span></div><div><strong>Tension T</strong><span>Force exerted by a taut cable along its length.</span></div><div><strong>Applied force P or F</strong><span>Known push, pull or externally applied load.</span></div><div><strong>Friction f</strong><span>Force parallel to contact resisting relative sliding.</span></div><div><strong>Reactions Aₓ, Aᵧ, Bᵧ</strong><span>Unknown support forces created by constraints.</span></div></div>
+<h3>Recognize the three main support symbols</h3><svg class="poe24-schematic" viewBox="0 0 680 272" role="img" aria-label="Three support types: pin can react in x and y, roller on flat surface reacts vertically, fixed support can react in x y and with a moment."><defs><marker id="supports-load" markerWidth="8" markerHeight="8" refX="6.2" refY="3" orient="auto"><path d="M0 0L6.5 3L0 6Z" fill="#bd6924"/></marker><marker id="supports-react" markerWidth="8" markerHeight="8" refX="6.2" refY="3" orient="auto"><path d="M0 0L6.5 3L0 6Z" fill="#0a8794"/></marker></defs>
+<text x="105" y="30" class="poe24-head" text-anchor="middle">PIN</text>
+<path d="M35 110H175" stroke="#16506f" stroke-width="7"/><path d="M105 110L85 140H125Z" fill="#d5e9f5" stroke="#16506f" stroke-width="2"/>
+<path d="M105 210V121 M105 110H166" stroke="#0a8794" stroke-width="3" marker-end="url(#supports-react)"/>
+<text x="122" y="193" class="poe24-caption">Aᵧ</text><text x="144" y="92" class="poe24-caption">Aₓ</text>
+<text x="105" y="248" class="poe24-caption" text-anchor="middle">2 force components</text>
+<text x="340" y="30" class="poe24-head" text-anchor="middle">ROLLER</text>
+<path d="M269 110H411" stroke="#16506f" stroke-width="7"/><circle cx="340" cy="132" r="13" fill="#d5e9f5" stroke="#16506f" stroke-width="2"/>
+<path d="M303 150H378" stroke="#536f81" stroke-width="2"/>
+<path d="M340 210V121" stroke="#0a8794" stroke-width="3" marker-end="url(#supports-react)"/>
+<text x="357" y="189" class="poe24-caption">Bᵧ</text><text x="340" y="248" class="poe24-caption" text-anchor="middle">1 normal reaction</text>
+<text x="575" y="30" class="poe24-head" text-anchor="middle">FIXED</text>
+<rect x="500" y="65" width="18" height="143" fill="#d5e9f5" stroke="#16506f"/>
+<path d="M518 110H642" stroke="#16506f" stroke-width="7"/>
+<path d="M518 208V121 M518 110H577" stroke="#0a8794" stroke-width="3" marker-end="url(#supports-react)"/>
+<path d="M547 80C576 47 610 78 585 98" stroke="#0a8794" stroke-width="3" fill="none" marker-end="url(#supports-react)"/>
+<text x="532" y="191" class="poe24-caption">Fᵧ</text><text x="551" y="91" class="poe24-caption">Fₓ</text><text x="603" y="73" class="poe24-caption">M</text>
+<text x="575" y="248" class="poe24-caption" text-anchor="middle">2 forces + moment</text></svg>
+<div class="poe24-grid"><article class="poe24-panel"><h3>Pin and roller</h3><p>An ideal <strong>pin</strong> can exert horizontal and vertical forces, but no reaction moment. An ideal <strong>roller on flat ground</strong> exerts one vertical normal reaction. A roller on a sloping surface reacts perpendicular to that surface.</p></article>
+<article class="poe24-panel"><h3>Fixed connection and cable</h3><p>A <strong>fixed support</strong> can exert horizontal force, vertical force and a resisting moment. A taut cable only pulls <em>along the cable</em>. We will calculate reaction moments later in Unit 2.</p></article></div></section>
+<section class="container lesson-section" id="watch"><div class="poe24-section-header"><div class="poe24-eyebrow">03 / Video library</div><h2>Watch and sketch along</h2><p>Begin with the engineering mechanics introduction. Use the second video for everyday weight, tension, friction and normal-force situations. If embedded playback is blocked, use the YouTube links.</p></div>
+<div class="poe24-grid">
+<article class="poe24-video"><div class="poe24-frame"><iframe src="https://www.youtube-nocookie.com/embed/eYyvALSj2MQ" title="Introduction to Free Body Diagrams (FBD) | Statics" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe24-video-copy"><span class="poe24-pill">Spoon Feed Me · Intro engineering mechanics</span><h3>Introduction to Free Body Diagrams (FBD) | Statics</h3><p class="poe24-mini"><strong>While watching:</strong> Pause at the simply supported beam and write down which reactions the supports can supply.</p><a href="https://www.youtube.com/watch?v=eYyvALSj2MQ" target="_blank" rel="noopener noreferrer">Watch directly on YouTube ↗</a></div></article>
+<article class="poe24-video"><div class="poe24-frame"><iframe src="https://www.youtube-nocookie.com/embed/52R61aSWHg0" title="Free Body Diagrams — Tension, Friction, Inclined Planes &amp; Net Force" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe24-video-copy"><span class="poe24-pill">The Organic Chemistry Tutor · Force examples</span><h3>Free Body Diagrams — Tension, Friction, Inclined Planes &amp; Net Force</h3><p class="poe24-mini"><strong>While watching:</strong> Sketch a hanging object, then compare your chosen arrows with the explanation.</p><a href="https://www.youtube.com/watch?v=52R61aSWHg0" target="_blank" rel="noopener noreferrer">Watch directly on YouTube ↗</a></div></article>
+</div>
+<details class="poe24-reveal" style="margin-top:1rem"><summary>Optional advanced video: how FBDs lead to shear and moment diagrams</summary><div class="poe24-grid" style="margin-top:.8rem"><article class="poe24-video"><div class="poe24-frame"><iframe src="https://www.youtube-nocookie.com/embed/C-FEVzI8oe8" title="Understanding Shear Force and Bending Moment Diagrams" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe24-video-copy"><span class="poe24-pill">The Efficient Engineer · Beyond today's lesson</span><h3>Understanding Shear Force and Bending Moment Diagrams</h3><p class="poe24-mini"><strong>While watching:</strong> Notice that engineers draw a beam FBD before evaluating its internal shear and bending moments.</p><a href="https://www.youtube.com/watch?v=C-FEVzI8oe8" target="_blank" rel="noopener noreferrer">Watch directly on YouTube ↗</a></div></article><article class="poe24-panel"><h3>What is optional?</h3><p>Internal shear/moment diagrams and their calculations are beyond Lesson 2.4. Use the video to preview why an accurate FBD matters for later engineering analysis.</p></article></div></details></section>
+<section class="container lesson-section" id="worked"><div class="poe24-section-header"><div class="poe24-eyebrow">04 / Worked beam example</div><h2>From physical setup to force diagram</h2><p>A simply supported beam carries a <strong>60 N downward point load at its midpoint</strong>, with pin A and roller B 4 m apart. Neglect the beam's self-weight.</p></div>
+<div class="poe24-grid"><article class="poe24-panel"><h3>1. Physical setup</h3><svg class="poe24-schematic" viewBox="0 0 680 272" role="img" aria-label="Beam supported by a pin at A and roller at B, 4 m apart, with a downward 60 N force at the midpoint."><defs><marker id="beam-scene-load" markerWidth="8" markerHeight="8" refX="6.2" refY="3" orient="auto"><path d="M0 0L6.5 3L0 6Z" fill="#bd6924"/></marker><marker id="beam-scene-react" markerWidth="8" markerHeight="8" refX="6.2" refY="3" orient="auto"><path d="M0 0L6.5 3L0 6Z" fill="#0a8794"/></marker></defs>
+<text x="340" y="24" text-anchor="middle" class="poe24-head">PHYSICAL SETUP</text>
+<rect x="80" y="105" width="520" height="15" rx="2" fill="#d5e9f5" stroke="#16506f" stroke-width="2"/>
+<path d="M100 121L78 157H122Z" fill="#d5e9f5" stroke="#16506f" stroke-width="2.3"/>
+<circle cx="579" cy="140" r="12" fill="#d5e9f5" stroke="#16506f" stroke-width="2.3"/><path d="M550 158H608" stroke="#607b8c" stroke-width="2"/>
+<path d="M340 39V96" stroke="#bd6924" stroke-width="3.5" marker-end="url(#beam-scene-load)"/>
+<text x="356" y="63" class="poe24-note">60 N downward</text>
+<text x="100" y="184" text-anchor="middle" class="poe24-note">A · pin</text>
+<text x="579" y="184" text-anchor="middle" class="poe24-note">B · roller</text>
+<path d="M100 199V229 M579 199V229 M100 222H579" stroke="#536f81" stroke-width="1.5"/>
+<text x="340" y="243" text-anchor="middle" class="poe24-note">Span L = 4.0 m</text>
+<text x="340" y="265" text-anchor="middle" class="poe24-caption">Beam self-weight ignored in this example</text></svg><p>Identify the beam as the body. The load, pin and roller interact with it from the outside.</p></article><article class="poe24-panel"><h3>2. Isolated beam FBD</h3><svg class="poe24-schematic" viewBox="0 0 680 272" role="img" aria-label="Isolated beam with downward 60 N midpoint load and upward 30 N pin and roller reactions. Horizontal pin reaction is zero."><defs><marker id="beam-fbd-load" markerWidth="8" markerHeight="8" refX="6.2" refY="3" orient="auto"><path d="M0 0L6.5 3L0 6Z" fill="#bd6924"/></marker><marker id="beam-fbd-react" markerWidth="8" markerHeight="8" refX="6.2" refY="3" orient="auto"><path d="M0 0L6.5 3L0 6Z" fill="#0a8794"/></marker></defs>
+<text x="340" y="24" text-anchor="middle" class="poe24-head">FREE-BODY DIAGRAM · BEAM ONLY</text>
+<path d="M94 132H586" stroke="#16506f" stroke-width="7" stroke-linecap="round"/>
+<path d="M340 34V119" stroke="#bd6924" stroke-width="3.5" marker-end="url(#beam-fbd-load)"/>
+<path d="M94 229V142 M586 229V142" stroke="#0a8794" stroke-width="3.5" marker-end="url(#beam-fbd-react)"/>
+<text x="359" y="65" class="poe24-note">P = 60 N</text>
+<text x="27" y="244" class="poe24-note">Aᵧ = 30 N</text>
+<text x="557" y="244" class="poe24-note">Bᵧ = 30 N</text>
+<text x="57" y="111" class="poe24-caption">Aₓ = 0</text>
+<text x="94" y="128" class="poe24-caption" text-anchor="middle">A</text>
+<text x="586" y="128" class="poe24-caption" text-anchor="middle">B</text></svg><p>Remove the physical support symbols and add their possible reactions. Here <strong>Aₓ = 0 N</strong> because there is no horizontal load.</p></article></div>
+<div class="poe24-panel" style="margin-top:1rem"><h3>3. Use equilibrium and symmetry</h3><ol class="poe24-steps"><li>Horizontal: <strong>ΣFₓ = Aₓ = 0</strong>.</li><li>Vertical: <strong>ΣFᵧ = Aᵧ + Bᵧ − 60 = 0</strong>.</li><li>The load is at the center and the arrangement is symmetric, so <strong>Aᵧ = Bᵧ</strong>.</li><li>Therefore <strong>Aᵧ = Bᵧ = 30 N upward</strong>.</li></ol><div class="poe24-formula">+30 N +30 N −60 N = 0 N</div>
+<p class="poe24-caution"><strong>Do not split off-center loads equally.</strong> For an off-center point load, support reactions differ. We'll solve those cases using moments in Lesson 2.6.</p></div></section>
+<section class="container lesson-section" id="builder"><div class="poe24-section-header"><div class="poe24-eyebrow">05 / Interactive FBD builder</div><h2>Reveal the forces step by step</h2><p>Before pressing each button, predict what the drawing should contain. Then adjust the centered load to test whether your reaction forces still balance.</p></div>
+<div class="poe24-explorer"><label for="forceSlider"><strong>Centered load P:</strong> <output for="forceSlider" id="sliderReadout">60 N</output></label><input id="forceSlider" type="range" min="20" max="160" step="10" value="60"/>
+<div class="poe24-switches" role="group" aria-label="FBD builder stages"><button type="button" data-stage="0" aria-pressed="true">1 · Isolate</button><button type="button" data-stage="1" aria-pressed="false">2 · Add load</button><button type="button" data-stage="2" aria-pressed="false">3 · Add reactions</button><button type="button" data-stage="3" aria-pressed="false">4 · Check balance</button></div>
+<svg class="poe24-schematic" viewBox="0 0 680 272" role="img" aria-label="Interactive FBD builder shows a single beam, then a central load, pin and roller reactions, followed by a vertical equilibrium check."><defs><marker id="builder-load" markerWidth="8" markerHeight="8" refX="6.2" refY="3" orient="auto"><path d="M0 0L6.5 3L0 6Z" fill="#bd6924"/></marker><marker id="builder-react" markerWidth="8" markerHeight="8" refX="6.2" refY="3" orient="auto"><path d="M0 0L6.5 3L0 6Z" fill="#0a8794"/></marker></defs>
+<text x="340" y="25" class="poe24-head" text-anchor="middle">BEAM ISOLATED · 4.0 m SPAN</text>
+<path d="M94 130H586" stroke="#16506f" stroke-width="8" stroke-linecap="round"/>
+<text x="94" y="121" class="poe24-caption">A</text><text x="581" y="121" class="poe24-caption">B</text>
+<g id="showLoad" style="display:none"><path d="M340 43V119" stroke="#bd6924" stroke-width="3.5" marker-end="url(#builder-load)"/><text id="loadLabel" x="360" y="68" class="poe24-note">P = 60 N</text></g>
+<g id="showReactions" style="display:none"><path d="M94 222V140M586 222V140" stroke="#0a8794" stroke-width="3.5" marker-end="url(#builder-react)"/><text id="ayLabel" x="27" y="241" class="poe24-note">Aᵧ = ?</text><text id="byLabel" x="553" y="241" class="poe24-note">Bᵧ = ?</text><text id="axLabel" x="98" y="96" class="poe24-caption">Aₓ = ?</text></g>
+<g id="showSolution" style="display:none"><rect x="188" y="240" width="304" height="26" rx="7" fill="#e7f4f6"/><text x="340" y="259" id="equationLabel" text-anchor="middle" class="poe24-note">30 + 30 − 60 = 0 N</text></g></svg><div class="poe24-builder-note" aria-live="polite"><h3 id="stageTitle">Step 1 · Isolate</h3><p id="stageMessage">The beam is alone. Which forces from the original physical setup will act on this body?</p></div><p class="poe24-mini">Teaching model: single centered vertical load, equal span halves, no beam self-weight or horizontal loading. Assumes ideal pin/roller supports.</p></div></section>
+<section class="container lesson-section" id="apply"><div class="poe24-section-header"><div class="poe24-eyebrow">06 / Transfer the skill</div><h2>Draw other everyday FBDs</h2><p>A good FBD works for more than beams: the same reasoning applies to lamps, signs, crates and components.</p></div>
+<div class="poe24-grid"><article class="poe24-panel"><h3>Hanging lamp</h3><svg class="poe24-schematic" viewBox="0 0 680 272" role="img" aria-label="Suspended lamp with vertical cable, and FBD showing upward tension 90 N and downward weight 90 N."><defs><marker id="lamp-load" markerWidth="8" markerHeight="8" refX="6.2" refY="3" orient="auto"><path d="M0 0L6.5 3L0 6Z" fill="#bd6924"/></marker><marker id="lamp-react" markerWidth="8" markerHeight="8" refX="6.2" refY="3" orient="auto"><path d="M0 0L6.5 3L0 6Z" fill="#0a8794"/></marker></defs>
+<text x="165" y="28" class="poe24-head" text-anchor="middle">HANGING LAMP</text>
+<text x="495" y="28" class="poe24-head" text-anchor="middle">LAMP FBD</text>
+<path d="M88 51H244" stroke="#526d7c" stroke-width="7"/><path d="M165 55V122" stroke="#16506f" stroke-width="3"/>
+<path d="M137 126H193L212 160L165 207L120 160Z" fill="#d5e9f5" stroke="#16506f" stroke-width="2.5"/>
+<text x="165" y="235" text-anchor="middle" class="poe24-caption">W = 90 N</text>
+<circle cx="495" cy="142" r="8" fill="#d5e9f5" stroke="#16506f" stroke-width="2"/>
+<path d="M495 133V65" stroke="#0a8794" stroke-width="3.5" marker-end="url(#lamp-react)"/>
+<path d="M495 151V222" stroke="#bd6924" stroke-width="3.5" marker-end="url(#lamp-load)"/>
+<text x="513" y="75" class="poe24-note">T = 90 N</text>
+<text x="513" y="226" class="poe24-note">W = 90 N</text></svg><p>A lamp weighs 90 N and hangs from one vertical cable. If motionless, <strong>T = W = 90 N</strong> for this simplified example.</p><details class="poe24-reveal"><summary>Why does the tension arrow point upward?</summary><p>The taut cable pulls the lamp toward its attachment. The lamp's weight acts downward.</p></details></article>
+<article class="poe24-panel"><h3>Crate pushed but not moving</h3><p>A 12 kg crate remains stationary while a person pushes horizontally to the right with 30 N on a rough floor.</p><ul><li>Weight W = 117.6 N downward.</li><li>Normal N = 117.6 N upward.</li><li>Applied push = 30 N right.</li><li>Static friction = 30 N left, assuming it can oppose the push.</li></ul>
+<details class="poe24-reveal"><summary>Verify equilibrium</summary><p>ΣFₓ = +30 −30 = 0; ΣFᵧ = +117.6 −117.6 = 0. Actual static friction is the amount needed to prevent sliding, <em>up to</em> its maximum; it is not always μₛN.</p></details></article></div></section>
+<section class="container lesson-section" id="practice"><div class="poe24-section-header"><div class="poe24-eyebrow">07 / Practice independently</div><h2>Draw first, then open each answer</h2><p>Use the Lesson 2.4 practice worksheet or engineering notebook. The answers are intentionally hidden so you can test your understanding.</p></div>
+<div class="poe24-grid">
+<article class="poe24-panel"><span class="poe24-pill">Check A</span><h3>Stationary 5 kg crate</h3><p>Draw all external forces on a 5 kg crate at rest on a level table. Use g = 9.8 m/s².</p><details class="poe24-reveal"><summary>Reveal explanation</summary><p>Weight = 49 N downward; normal = 49 N upward. With no horizontal interactions, no horizontal forces are needed.</p></details></article>
+<article class="poe24-panel"><span class="poe24-pill">Check B</span><h3>Center-loaded 100 N beam</h3><p>Draw the FBD for a pin-and-roller beam with a centered downward 100 N load. Neglect self-weight. Find the reactions.</p><details class="poe24-reveal"><summary>Reveal explanation</summary><p>Aₓ = 0; Aᵧ = 50 N upward; Bᵧ = 50 N upward. Include 100 N downward at midpoint. The geometry and load are symmetric.</p></details></article>
+<article class="poe24-panel"><span class="poe24-pill">Check C</span><h3>Box pushed left</h3><p>A box stays still when pushed left by 25 N across a rough level floor. Name the force types and directions.</p><details class="poe24-reveal"><summary>Reveal explanation</summary><p>Applied force 25 N left; static friction 25 N right (if sufficient friction); weight down; normal up.</p></details></article>
+<article class="poe24-panel"><span class="poe24-pill">Check D</span><h3>Identify the support</h3><p>Which support can resist x and y translation yet allows rotation? Which support also prevents rotation?</p><details class="poe24-reveal"><summary>Reveal explanation</summary><p>An ideal pin resists horizontal and vertical translation but allows rotation. A fixed support additionally resists rotation via a moment reaction.</p></details></article>
+<article class="poe24-panel"><span class="poe24-pill">Check E</span><h3>Off-center load</h3><p>A beam has a downward point load close to A, far from B. Can the reactions simply be divided equally?</p><details class="poe24-reveal"><summary>Reveal explanation</summary><p>No. The symmetric 50/50 shortcut applies only to centered loads with symmetric supports. Moment equilibrium is needed for off-center reaction magnitudes.</p></details></article>
+<article class="poe24-panel"><span class="poe24-pill">Check F</span><h3>Internal versus external</h3><p>Two bars are joined by a pin. When drawing the FBD of the entire two-bar assembly, why is their internal pin force omitted?</p><details class="poe24-reveal"><summary>Reveal explanation</summary><p>Both bars are inside the system boundary, so their mutual forces are internal and cancel. If you isolate just one bar, the connecting pin force becomes external and must appear.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="resources"><div class="poe24-section-header"><div class="poe24-eyebrow">Reference desk</div><h2>More diagrams and engineering explanations</h2><p>Open-access materials can reinforce the lesson and extend your knowledge.</p></div><div class="poe24-grid">
+<article class="poe24-panel"><h3>Step-by-step free-body diagrams</h3><p>Five-step FBD method, examples and full 2D reaction table.</p><a href="https://engineeringstatics.org/Chapter_05-free-body-diagrams.html" target="_blank" rel="noopener noreferrer">Engineering Statics — Free-Body Diagrams ↗</a></article>
+<article class="poe24-panel"><h3>Support and reaction reference</h3><p>Explanations of pin, roller and fixed constraints.</p><a href="https://pressbooks.library.upei.ca/statics/chapter/reaction-forces/" target="_blank" rel="noopener noreferrer">Engineering Mechanics — Supports ↗</a></article>
+<article class="poe24-panel"><h3>Additional worked examples</h3><p>Open engineering textbook examples of isolated systems.</p><a href="https://eng.libretexts.org/Bookshelves/Mechanical_Engineering/Engineering_Statics%3A_Open_and_Interactive_%28Baker_and_Haynes%29/05%3A_Rigid_Body_Equilibrium/5.02%3A_Free_Body_Diagrams" target="_blank" rel="noopener noreferrer">Engineering LibreTexts — FBDs ↗</a></article>
+<article class="poe24-panel"><h3>Key vocabulary</h3><p><strong>Boundary:</strong> the body/system selected. <strong>Reaction:</strong> force or moment from a restraint. <strong>Equilibrium:</strong> net force and net moment are zero. <strong>External load:</strong> force exerted from outside the system boundary.</p></article></div></section>
+<section class="container lesson-section" id="submit"><div class="poe24-section-header"><div class="poe24-eyebrow">Assignment submission</div><h2>Exactly what to submit</h2><p>Complete your <strong>POE 2.4 Free-Body Diagrams classwork and homework worksheet</strong> (or notebook equivalent if directed). Use the site to learn and check, but turn in your own annotated diagrams and explanations.</p></div>
+<div class="poe24-grid"><article class="poe24-panel"><h3>Required evidence</h3><ul class="poe24-checklist"><li>Center-loaded beam FBD with known force and appropriate support reactions.</li><li>Independent hanging-object and crate FBDs with labeled force types.</li><li>Additional assigned beam/sign/crate practice FBDs from the worksheet.</li><li>At least one force-equilibrium check with units.</li><li>A short explanation of what makes a force external to the selected body.</li></ul></article>
+<article class="poe24-panel"><h3>Quality check</h3><ul class="poe24-checklist"><li>Object isolated clearly (no support symbols inside the final FBD).</li><li>External forces identified without duplicates.</li><li>Support reactions match the constraint type.</li><li>Arrows and labels are readable, and values have units.</li><li>Answer includes the independent practice and homework.</li></ul><p><strong>Due:</strong> See the <a href="../../../../agenda.html">Daily Agenda</a> for the current deadline and use your instructor's submission method.</p><p><a href="#start" class="btn secondary">Review lesson ↑</a></p></article></div></section>
+<nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-3.html">← Lesson 2.3: Beam Deflection</a><a class="btn" href="lesson-2-5.html">Next: 2.5 Calculating Force Vectors →</a></nav>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+<script>
+(function(){
+"use strict";
+const choices=Array.from(document.querySelectorAll("button[data-stage]"));
+const slider=document.getElementById("forceSlider");
+const needed=["showLoad","showReactions","showSolution","sliderReadout","loadLabel","ayLabel","byLabel","axLabel","equationLabel","stageTitle","stageMessage","builder"];
+const ids={};needed.forEach(k=>ids[k]=document.getElementById(k));
+if(!slider || choices.length!==4 || needed.some(k=>!ids[k]))return;
+let stage=0;
+const explanations=[
+["Step 1 · Isolate","The beam is shown without physical supports. Predict which external interactions must now become arrows."],
+["Step 2 · Add load","Place the downward P arrow at the beam's center. A force arrow represents a load acting ON the beam."],
+["Step 3 · Add reactions","Pin A can supply Aₓ and Aᵧ; roller B on level ground supplies Bᵧ. They are unknown before equilibrium is checked."],
+["Step 4 · Check equilibrium","There is no horizontal load, so Aₓ = 0. This centered, symmetric setup has Aᵧ = Bᵧ = P/2. Check that the upward and downward loads balance."]
+];
+function render(){
+const P=Number(slider.value),R=P/2;
+ids.showLoad.style.display=stage>=1?"":"none";
+ids.showReactions.style.display=stage>=2?"":"none";
+ids.showSolution.style.display=stage>=3?"":"none";
+ids.sliderReadout.textContent=P+" N";
+ids.loadLabel.textContent="P = "+P+" N";
+ids.ayLabel.textContent=stage===3?"Aᵧ = "+R+" N":"Aᵧ = ?";
+ids.byLabel.textContent=stage===3?"Bᵧ = "+R+" N":"Bᵧ = ?";
+ids.axLabel.textContent=stage===3?"Aₓ = 0 N":"Aₓ = ?";
+ids.equationLabel.textContent=R+" + "+R+" − "+P+" = 0 N";
+ids.stageTitle.textContent=explanations[stage][0];
+ids.stageMessage.textContent=explanations[stage][1];
+choices.forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.stage)===stage)));
+ids.builder.setAttribute("aria-label","Beam FBD building stage "+(stage+1)+" of 4. Center load "+P+" N."+ (stage===3?" Upward reactions "+R+" N each.":" Reactions not yet solved."));
+}
+choices.forEach(b=>b.addEventListener("click",()=>{stage=Number(b.dataset.stage);render();}));
+slider.addEventListener("input",render);render();
+})();
+</script></body></html>
