@@ -310,7 +310,7 @@
       "lesson": 1,
       "number": "3.1",
       "type": "Lesson",
-      "title": "From Bodies to Components & Assemblies",
+      "title": "Revolute Joints & Rotational Motion",
       "url": "courses/ied/units/unit-3/lesson-3-1.html"
     },
     {
@@ -319,7 +319,7 @@
       "lesson": 2,
       "number": "3.2",
       "type": "Lesson",
-      "title": "Components & Assembly File Organization",
+      "title": "Slider Joints & Linear Motion",
       "url": "courses/ied/units/unit-3/lesson-3-2.html"
     },
     {
@@ -328,7 +328,7 @@
       "lesson": 3,
       "number": "3.3",
       "type": "Lesson",
-      "title": "Placing & Positioning Components",
+      "title": "Joint Limits & Motion Relationships",
       "url": "courses/ied/units/unit-3/lesson-3-3.html"
     },
     {
@@ -337,7 +337,7 @@
       "lesson": 4,
       "number": "3.4",
       "type": "Lesson",
-      "title": "Joints & Assembly Relationships",
+      "title": "Multi-Component Mechanical Assemblies",
       "url": "courses/ied/units/unit-3/lesson-3-4.html"
     },
     {
@@ -346,7 +346,7 @@
       "lesson": 5,
       "number": "3.5",
       "type": "Lesson",
-      "title": "Fit, Alignment & Interference Checks",
+      "title": "Interference, Clearance & Motion Verification",
       "url": "courses/ied/units/unit-3/lesson-3-5.html"
     },
     {
@@ -355,7 +355,7 @@
       "lesson": 6,
       "number": "3.6",
       "type": "Lesson",
-      "title": "Compressed-Air Rocket Assembly Challenge — Launch",
+      "title": "Rocket Design Challenge & Concept Development",
       "url": "courses/ied/units/unit-3/lesson-3-6.html"
     },
     {
