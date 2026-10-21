@@ -1,1 +1,411 @@
-<!DOCTYPE html><html lang="en"><head><title>POE Unit 2 Lesson 2.6 | Calculating Moments | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="description" content="POE Unit 2 Lesson 2.6: Trusses, Bracing & Load Paths. How can truss geometry move bridge loads efficiently from the load point to the two supports?"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main"><nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">2.6</li></ol></nav><section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Mechanics Foundations • Lesson 2.6</div><h1>Calculating Moments</h1><p class="focus-question"><strong>Engineering question:</strong> How do force magnitude and perpendicular distance produce rotation?</p><div class="mission-actions"><a class="btn" href="#learn">Learn</a><a class="btn secondary" href="#practice">Practice</a><a class="btn secondary" href="#apply">Apply</a><a class="btn secondary" href="#submit">Submit</a><a class="btn ghost" href="../unit-2.html">Unit 2</a></div></div><aside class="mission-panel"><span class="tag">Foundational instruction</span><h2>Learn it before the bridge project</h2><p>Use varied engineering examples to master the mechanics, then apply the technique to your final structural design later in the unit.</p></aside></div></section><section class="container lesson-section"><article class="card"><h2>Learning Targets</h2><ul><li>Calculate scalar moments about a pivot</li><li>Apply a consistent clockwise/counterclockwise sign convention</li><li>Use ΣM = 0 to determine support reactions</li></ul></article></section><section class="container lesson-section" id="learn"><div class="section-header"><h2>Learn the Concept</h2></div><article class="card"><ul><li>Moment magnitude M = Fd⊥; unit N·m</li><li>A force whose line of action passes through the pivot makes zero moment about that pivot</li><li>In static equilibrium, ΣM = 0 along with ΣFx = 0 and ΣFy = 0</li></ul><p><strong>During instruction:</strong> Sketch the forces, geometry, variables or joints discussed and record units for every quantity.</p></article></section><section class="container lesson-section" id="practice"><div class="section-header"><h2>Practice Together</h2></div><article class="card"><p>A 30 N force acts downward 0.40 m to the right of a pivot. Find its moment and rotational direction.</p><p><strong>Show:</strong> a labeled diagram, a mathematical model when relevant, and a final statement interpreting the result.</p></article></section><section class="container lesson-section" id="apply"><div class="section-header"><h2>Apply the Skill</h2></div><article class="card"><p>For a 4.0 m simply supported beam with 80 N acting 1.0 m from the left, calculate the right and left reactions.</p><p><strong>Check your understanding:</strong> Why is the reaction at a chosen pivot often convenient when writing a moment equation?</p></article></section><section class="container lesson-section" id="submit"><article class="card"><h2>Student Evidence</h2><p>Moment calculations and checked support reactions. Use your engineering notebook or teacher-provided guided notes; include dimensions, units and a conclusion.</p><p><strong>Looking ahead:</strong> These mechanics techniques will be revisited when students analyze the bridge design in Lessons 2.15–2.20.</p></article></section><nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-5.html">← 2.5 Calculating Force Vectors</a><a class="btn" href="lesson-2-7.html">2.7 Introduction to Truss Systems →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer><button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POE 2.6 | Calculating Moments — Learning Studio | LockwoodSTEM</title>
+<meta name="description" content="Learn to calculate moments and off-center beam reactions using illustrated examples, instructional videos, interactive lever and bridge models, and guided practice."/>
+<link href="../../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/>
+<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/>
+<script defer src="../../../../assets/js/main.js"></script>
+<style id="poe26-learning-studio">
+html{scroll-behavior:smooth}
+.poe26{--ink:#092940;--blue:#0b567e;--aqua:#147f88;--gold:#e2ac37;--edge:#cadbe7}
+.poe26 .poe26-lead{font-size:1.09rem;line-height:1.65;color:#294456}
+.poe26 .poe26-eyebrow{color:#875d0a;font-weight:850;text-transform:uppercase;letter-spacing:.09em;font-size:.82rem}
+.poe26 .poe26-section-header{margin-bottom:1rem}
+.poe26 .poe26-section-header h2{margin:.25rem 0 .3rem}
+.poe26 .poe26-section-header p{margin:.1rem 0;max-width:860px;color:#4b6475}
+.poe26 .poe26-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
+.poe26 .poe26-metric{background:#f1f7fb;border:1px solid #bdd4e4;border-radius:14px;padding:.9rem 1rem}
+.poe26 .poe26-metric strong{display:block;color:#0b4772;font-size:1.05rem}
+.poe26 .poe26-metric span{display:block;font-size:.94rem;color:#40596a;margin-top:.2rem}
+.poe26 .poe26-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe26 .poe26-thirds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.poe26 .poe26-panel{background:#f7fbfd;border:1px solid var(--edge);border-radius:16px;padding:1.1rem 1.15rem}
+.poe26 .poe26-panel h3{color:var(--ink);margin:.15rem 0 .5rem}
+.poe26 .poe26-panel p{margin:.3rem 0 .65rem}
+.poe26 .poe26-panel ul{padding-left:1.2rem;margin:.4rem 0}
+.poe26 .poe26-pill{display:inline-block;border-radius:99px;padding:.2rem .6rem;background:#e3f0f5;color:#0c5672;font-size:.75rem;font-weight:900;letter-spacing:.03em}
+.poe26 .poe26-pill.gold{background:#fbefcf;color:#7d540d}
+.poe26 .poe26-mini{font-size:.9rem;color:#536b79}
+.poe26 .poe26-formula{font-size:clamp(1.05rem,1.6vw,1.28rem);letter-spacing:.01em;font-weight:850;color:#0b4163;background:#edf6fb;border-left:5px solid #147a9e;border-radius:10px;padding:.8rem 1rem;margin:.8rem 0;overflow-wrap:anywhere}
+.poe26 .poe26-graphic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe26 .poe26-large-svg{max-width:870px}
+.poe26 svg .poe26-axis{fill:none;stroke:#455f73;stroke-width:1.8}
+.poe26 svg .poe26-guide{stroke:#4c879e;stroke-dasharray:5 5;stroke-width:1.35;fill:none}
+.poe26 svg .poe26-dim{fill:none;stroke:#2b648b;stroke-width:1.15}
+.poe26 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#17384e}
+.poe26 svg text.poe26-annotation{font-size:13px;font-weight:750}
+.poe26 svg text.poe26-small{font-size:13px}
+.poe26 svg text.poe26-tiny{font-size:11px}
+.poe26 svg text.poe26-strong{font-weight:800}
+.poe26 .poe26-lesson-steps{list-style:none!important;margin:0;padding:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe26 .poe26-lesson-steps li{border-left:4px solid #167a94;padding:.7rem .75rem;border-radius:9px;background:#f2f8fc;font-weight:750;font-size:.92rem}
+.poe26 .poe26-lesson-steps li span{display:block;color:#527283;font-size:.78rem;font-weight:700}
+.poe26 .poe26-video{background:#f7fbff;border:1px solid #cfdfeb;border-radius:16px;overflow:hidden}
+.poe26 .poe26-video-copy{padding:1rem}
+.poe26 .poe26-video-copy h3{margin:.25rem 0}
+.poe26 .poe26-frame{aspect-ratio:16/9;background:#071e35;position:relative}
+.poe26 .poe26-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe26 .poe26-video a{font-weight:800}
+.poe26 .poe26-video p{margin:.4rem 0}
+.poe26 .poe26-tablewrap{overflow-x:auto}
+.poe26 .poe26-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.poe26 .poe26-table td,.poe26 .poe26-table th{border:1px solid #c8dbe8;text-align:left;padding:.55rem .7rem}
+.poe26 .poe26-table th{background:#eaf4fb;color:#0c3554}
+.poe26 .poe26-table .poe26-total{background:#f1f8e8;font-weight:850}
+.poe26 .poe26-steps{padding-left:1.55rem}
+.poe26 .poe26-steps li{padding-bottom:.45rem}
+.poe26 .poe26-caution{background:#fff9e9;border-left:5px solid #d59b22;padding:.8rem 1rem;border-radius:10px}
+.poe26 details.poe26-reveal{border:1px solid #b9d3e4;background:#f7fbff;border-radius:12px;padding:.8rem 1rem;margin:.65rem 0}
+.poe26 details.poe26-reveal summary{color:#0b4c73;cursor:pointer;font-weight:850}
+.poe26 details.poe26-reveal[open]{border-color:#0d8b9a}
+.poe26 details.poe26-reveal p{margin:.7rem 0 .15rem}
+.poe26 .poe26-explorer{background:#f2f9fc;border:1px solid #9dc6db;border-radius:16px;padding:1rem}
+.poe26 .poe26-explorer label{font-weight:800;color:#0b4163;display:block;margin:.5rem 0}
+.poe26 .poe26-explorer input[type=range]{width:min(100%,440px);accent-color:#0a7991;cursor:pointer}
+.poe26 .poe26-output{font-size:1.2rem;font-weight:850;color:#0a506d;background:#fff;border:1px solid #b9d5e5;padding:.7rem;border-radius:10px}
+.poe26 .poe26-resources a{display:block;margin:.4rem 0;font-weight:800;overflow-wrap:anywhere}
+.poe26 .poe26-checklist{list-style:none!important;padding:0!important}
+.poe26 .poe26-checklist li{padding:.45rem 0 .45rem 1.7rem;position:relative}
+.poe26 .poe26-checklist li::before{content:"□";position:absolute;left:0;top:.32rem;font-size:1.3rem;color:#0b567e}
+.poe26 a:focus-visible,.poe26 input:focus-visible,.poe26 summary:focus-visible{outline:3px solid #ca8b20;outline-offset:3px}
+@media(max-width:980px){.poe26 .poe26-thirds{grid-template-columns:1fr 1fr}.poe26 .poe26-lesson-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.poe26 .poe26-grid,.poe26 .poe26-thirds,.poe26 .poe26-overview{grid-template-columns:1fr}}
+@media print{.poe26 .poe26-video,.poe26 #explore,.poe26 .mission-actions{display:none!important}.poe26 details.poe26-reveal:not([open]){display:none}}
+
+.poe26 .poe26-illustration{display:block;width:100%;height:auto;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe26 .poe26-twin{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe26 .poe26-twin>*{min-width:0}
+.poe26 svg .beam{stroke:#1b5a7b;fill:none;stroke-width:8;stroke-linecap:round}
+.poe26 svg .beam-original{stroke:#c6d5df;stroke-width:4;stroke-dasharray:8 6;fill:none}
+.poe26 svg .beam-deflected{stroke:#008d94;stroke-width:6;fill:none;stroke-linecap:round}
+.poe26 svg .poe26-support{fill:#d6e9f5;stroke:#123f5b;stroke-width:1.8}
+.poe26 svg .poe26-force{stroke:#d97726;stroke-width:3;fill:none}
+.poe26 .poe26-param{background:#f6fafc;border-radius:12px;padding:.65rem .8rem;margin:.6rem 0}
+.poe26 .poe26-param label{display:flex;gap:.7rem;align-items:center;justify-content:space-between}
+.poe26 .poe26-param label strong{white-space:nowrap;font-variant-numeric:tabular-nums}
+.poe26 .poe26-param input[type="range"]{width:100%;accent-color:#0a7991}
+.poe26 .poe26-data{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:1rem 0}
+.poe26 .poe26-data div{border:1px solid #cadee8;border-radius:12px;padding:.6rem .8rem;background:#fff}
+.poe26 .poe26-data strong{display:block;font-size:1.15rem;color:#0c4966;font-variant-numeric:tabular-nums}
+.poe26 .poe26-data span{font-size:.82rem;color:#496475}
+.poe26 .poe26-variable{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe26 .poe26-variable div{border:1px solid #cadde8;border-radius:12px;background:#fff;padding:.75rem}
+.poe26 .poe26-variable b{display:block;font-size:1.12rem;color:#0b5779}
+.poe26 .poe26-progress-card{padding:1rem;border:1px solid #bfdae6;border-radius:12px;background:#f5fafc}
+.poe26 .poe26-progress-card strong{color:#0c4966}
+.poe26 .poe26-solution{font-variant-numeric:tabular-nums}
+.poe26 .poe26-resource-link{display:inline-block;margin-top:.3rem;font-weight:800}
+.poe26 .poe26-print{float:right;font-size:.85rem}
+@media(max-width:760px){.poe26 .poe26-twin,.poe26 .poe26-variable{grid-template-columns:1fr}.poe26 .poe26-print{float:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.poe26 .poe26-schematic{width:100%;display:block;max-width:900px;height:auto;background:#fff;border:1px solid #d2e4ec;border-radius:12px;margin:.75rem auto}
+.poe26 svg .poe26-head{font-size:15px;font-weight:850;fill:#113d57}
+.poe26 svg .poe26-note{font-size:13px;font-weight:760;fill:#183d53}
+.poe26 svg .poe26-caption{font-size:11px;fill:#405c6e}
+.poe26 .poe26-force-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-bottom:1rem}
+.poe26 .poe26-force-grid>div{background:#f5fafc;border:1px solid #cfdfeb;border-radius:11px;padding:.85rem}
+.poe26 .poe26-force-grid strong{display:block;color:#0d5472;margin-bottom:.2rem}
+.poe26 .poe26-force-grid span{font-size:.94rem;color:#3a5263}
+.poe26 .poe26-switches{display:flex;gap:.55rem;flex-wrap:wrap;margin:.75rem 0}
+.poe26 .poe26-switches button{border:1px solid #7ba1b9;background:#fff;color:#104c6c;border-radius:10px;padding:.65rem .85rem;font-weight:780;cursor:pointer}
+.poe26 .poe26-switches button[aria-pressed="true"]{background:#105a7b;color:white;border-color:#105a7b}
+.poe26 .poe26-switches button:hover{border-color:#147a9e}
+.poe26 .poe26-builder-note{background:#f2f9fc;border:1px solid #b7d4e5;border-radius:12px;padding:1rem;min-height:100px}
+.poe26 .poe26-builder-note h3{margin:0 0 .25rem}
+.poe26 .poe26-builder-note p{margin:.3rem 0}
+.poe26 .poe26-explorer input[type=range]{width:min(440px,100%);accent-color:#147a9e}
+.poe26 .poe26-checklist{list-style:none!important;margin:.4rem 0;padding:0!important}
+.poe26 .poe26-checklist li{position:relative;padding:.5rem 0 .5rem 1.6rem}
+.poe26 .poe26-checklist li:before{content:"□";position:absolute;left:0;top:.39rem;color:#147a9e;font-size:1.25rem}
+@media(max-width:880px){.poe26 .poe26-force-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.poe26 .poe26-force-grid{grid-template-columns:1fr}}
+
+.poe26 .poe26-schematic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d5e3ec;border-radius:14px;margin:.75rem auto}
+.poe26 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25465e}
+.poe26 svg .poe26-small{font-size:12px}
+.poe26 svg .poe26-label{font-size:14px;font-weight:800}
+.poe26 .poe26-key{display:flex;flex-wrap:wrap;gap:.8rem;font-weight:700;color:#446479;font-size:.9rem}
+.poe26 .poe26-key b{display:inline-block;width:15px;height:4px;vertical-align:middle;margin-right:.35rem}
+.poe26 .poe26-concept{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe26 .poe26-concept>div{border:1px solid #c1d7e4;background:#f5fbfd;border-radius:12px;padding:.85rem 1rem}
+.poe26 .poe26-concept strong{display:block;color:#0a5278;margin-bottom:.35rem}
+.poe26 .poe26-flow-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe26 .poe26-flow-list>div{background:#eef7fa;border-left:4px solid #147a9e;padding:.75rem;border-radius:9px;font-weight:750}
+.poe26 .poe26-flow-list small{display:block;color:#44677a}
+.poe26 .poe26-assumption{background:#fff8e8;border-left:5px solid #c89025;border-radius:10px;padding:.75rem 1rem}
+.poe26 .poe26-notation{background:#f1f8fc;border:1px solid #b8d3e6;border-radius:10px;padding:.75rem 1rem}
+.poe26 .poe26-formula-equation{background:#ecf7fb;border-left:5px solid #0c7994;padding:.8rem 1.1rem;border-radius:10px;font-size:1.22rem;font-weight:850;color:#06466a;margin:.65rem 0;overflow-wrap:anywhere}
+.poe26 .poe26-tablewrap{max-width:100%;overflow-x:auto}
+.poe26 .poe26-table{width:100%;border-collapse:collapse}
+.poe26 .poe26-table th,.poe26 .poe26-table td{border:1px solid #c5d9e6;padding:.55rem .65rem;text-align:left}
+.poe26 .poe26-table th{background:#eaf4fb;color:#0b496d}
+.poe26 .poe26-table td{font-variant-numeric:tabular-nums}
+.poe26 .poe26-control{padding:.8rem;background:#f8fbfd;border:1px solid #c5dce9;border-radius:12px;margin-bottom:.65rem}
+.poe26 .poe26-control label{display:flex;align-items:center;justify-content:space-between;gap:.6rem;font-weight:790;color:#0a5377;margin:0 0 .4rem}
+.poe26 .poe26-control label output{font-variant-numeric:tabular-nums}
+.poe26 .poe26-control input[type=range]{width:100%;accent-color:#0b7897}
+.poe26 .poe26-control-check{display:flex;align-items:center;gap:.6rem;color:#0a4b6a;font-weight:780;margin:.65rem 0}
+.poe26 .poe26-control-check input{width:20px;height:20px;accent-color:#0b7897}
+.poe26 .poe26-answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe26 .poe26-answers>div{background:#fff;border:1px solid #b9d7e4;border-radius:12px;padding:.7rem}
+.poe26 .poe26-answers strong{display:block;color:#0a496c;font-size:1.13rem;font-variant-numeric:tabular-nums}
+.poe26 .poe26-answers span{color:#4c6477;font-size:.88rem}
+.poe26 .poe26-simulator{background:#eef7fa;border:1px solid #9abfd2;border-radius:17px;padding:1.1rem}
+.poe26 .poe26-simulator .poe26-grid>*{min-width:0}
+.poe26 .poe26-teacher-note{color:#466478;font-size:.91rem}
+.poe26 .poe26-checklist{list-style:none!important;padding:0!important}
+.poe26 .poe26-checklist li{padding:.48rem .2rem .48rem 1.6rem;position:relative}
+.poe26 .poe26-checklist li:before{content:"□";position:absolute;left:0;top:.32rem;color:#0b7d95;font-size:1.2rem}
+.poe26 .poe26-resource a{display:block;font-weight:800;margin:.4rem 0}
+.poe26 .poe26-ratio{color:#144b65;font-weight:800}
+@media(max-width:960px){.poe26 .poe26-concept{grid-template-columns:1fr 1fr}.poe26 .poe26-flow-list{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.poe26 .poe26-concept,.poe26 .poe26-answers,.poe26 .poe26-flow-list{grid-template-columns:1fr}}
+
+.poe26 .poe26-schematic{display:block;width:100%;max-width:950px;height:auto;border:1px solid #c9dfec;background:#fff;border-radius:14px;margin:.85rem auto}
+.poe26 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25485e}
+.poe26 svg .poe26-heading{font-weight:850;font-size:15px}
+.poe26 svg .poe26-label{font-weight:760;font-size:14px}
+.poe26 svg .poe26-small{font-size:12px}
+.poe26 .poe26-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe26 .poe26-flow>div{border-left:4px solid #147a9e;background:#f1f8fc;border-radius:10px;padding:.75rem;font-weight:750;color:#13445f}
+.poe26 .poe26-flow small{display:block;font-size:.8rem;color:#587084;font-weight:650}
+.poe26 .poe26-definitions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe26 .poe26-definitions>div{padding:.9rem;background:#f1f8fb;border-radius:12px;border:1px solid #c5dce8}
+.poe26 .poe26-definitions strong{display:block;color:#0a5574}
+.poe26 .poe26-formula-equation{margin:.7rem 0;padding:.8rem 1rem;background:#edf7fb;border-left:5px solid #0f7c91;color:#104969;border-radius:12px;font-weight:850;font-size:1.14rem;overflow-wrap:anywhere}
+.poe26 .poe26-alert{background:#fff7e7;padding:.75rem 1rem;border-left:5px solid #c59022;border-radius:11px}
+.poe26 .poe26-controls{background:#f0f8fb;border:1px solid #abd0dd;border-radius:16px;padding:1rem}
+.poe26 .poe26-control{border:1px solid #c3d9e3;border-radius:10px;padding:.8rem;background:#fff;margin:.65rem 0}
+.poe26 .poe26-control label{display:flex;justify-content:space-between;gap:.7rem;color:#144d6b;font-weight:780}
+.poe26 .poe26-control output{font-variant-numeric:tabular-nums}
+.poe26 .poe26-control input[type="range"]{accent-color:#127894;width:100%}
+.poe26 .poe26-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe26 .poe26-results>div{background:#fff;padding:.75rem;border:1px solid #bfd9e6;border-radius:10px}
+.poe26 .poe26-results strong{font-size:1.15rem;color:#0b506d;display:block;font-variant-numeric:tabular-nums}
+.poe26 .poe26-results span{display:block;font-size:.86rem;color:#4d6676}
+.poe26 .poe26-moment-sign{margin:.55rem 0;font-weight:800;color:#0e5371}
+.poe26 .poe26-checklist{list-style:none!important;padding:0!important}
+.poe26 .poe26-checklist li{position:relative;padding:.4rem .2rem .4rem 1.55rem}
+.poe26 .poe26-checklist li::before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.2rem;color:#167c9a}
+.poe26 .poe26-resource a{font-weight:850;display:block;margin:.6rem 0}
+.poe26 .poe26-tablewrap{overflow-x:auto}
+.poe26 .poe26-table{border-collapse:collapse;width:100%;font-size:.96rem}
+.poe26 .poe26-table td,.poe26 .poe26-table th{border:1px solid #c8dbe8;padding:.6rem;text-align:left;vertical-align:top}
+.poe26 .poe26-table th{background:#e7f2f9;color:#0a4360}
+@media(max-width:940px){.poe26 .poe26-definitions,.poe26 .poe26-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.poe26 .poe26-definitions,.poe26 .poe26-results,.poe26 .poe26-flow{grid-template-columns:1fr}}
+</style></head>
+<body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container nav"><a class="brand" aria-label="LockwoodSTEM home" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
+<main class="poe26" id="main">
+<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.6</li></ol></nav>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img class="lesson-course-icon" alt="POE course icon" src="../../../../assets/img/course-icons/poe-course-icon.png"/><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.6</div><h1>Calculating Moments</h1><p class="focus-question"><strong>Engineering question:</strong> Why does the same downward load produce different support reactions when it moves along a bridge?</p>
+<div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#watch">Watch Videos</a><a class="btn secondary" href="#worked">Worked Examples</a><a class="btn secondary" href="#explore">Interactive Labs</a><a class="btn secondary" href="#practice">Self-Check</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
+<aside class="mission-panel"><span class="tag">Learn • Watch • Calculate • Experiment</span><h2>Forces can cause rotation.</h2><p>Use moment calculations to understand levers, pivot points and why a beam shares its load unequally between two supports.</p><p><strong>Materials:</strong> ruler, pencil, calculator, notebook or Lesson 2.6 worksheet.</p></aside></div></section>
+<section class="container lesson-section" id="start"><div class="poe26-section-header"><div class="poe26-eyebrow">Learning pathway</div><h2>What you'll learn</h2><p>Everything needed for the introductory calculations, diagrams and self-checks is provided below.</p></div>
+<div class="poe26-overview"><div class="poe26-metric"><strong>01 · Interpret</strong><span>Recognize forces, moment arms and pivots.</span></div><div class="poe26-metric"><strong>02 · Calculate</strong><span>Find positive and negative moments using perpendicular distance.</span></div><div class="poe26-metric"><strong>03 · Apply</strong><span>Find the reactions of a loaded, simply supported beam.</span></div></div>
+<div class="poe26-panel" style="margin-top:1rem"><h3>Suggested 45–50 minute learning sequence</h3><div class="poe26-flow"><div>Observe &amp; predict<small>5 minutes</small></div><div>Read &amp; watch<small>10 minutes</small></div><div>Worked example<small>15 minutes</small></div><div>Experiment &amp; check<small>15–20 minutes</small></div></div></div></section>
+<section class="container lesson-section" id="learn"><div class="poe26-section-header"><div class="poe26-eyebrow">01 / Core concept</div><h2>Moment = turning effect of a force</h2><p>When you open a door by pushing near the handle, the force acts farther from the hinge and creates more turning effect than the same force applied near the hinge.</p></div>
+<div class="poe26-definitions"><div><strong>Force (F)</strong><span>The push or pull; measured in newtons (N).</span></div><div><strong>Pivot / moment center (O)</strong><span>The point about which we calculate rotation.</span></div><div><strong>Perpendicular distance (d⊥)</strong><span>The shortest distance from the pivot to the force's line of action; measured in meters (m).</span></div></div>
+<svg class="poe26-schematic" viewBox="0 0 large 290" role="img" aria-label="Horizontal lever pivot at left, 30-newton downward force acts 0.4 meters right of pivot producing 12 newton-meter clockwise moment."><defs><marker id="leverload" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c36b26"/></marker><marker id="leverreaction" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0a8690"/></marker></defs>
+<text x="340" y="32" text-anchor="middle" class="poe26-heading">HOW A FORCE CREATES A MOMENT</text>
+<path d="M100 148H586" stroke="#23526c" stroke-width="13" stroke-linecap="round"/>
+<path d="M100 157L76 193H124Z" fill="#d9e9f5" stroke="#23526c" stroke-width="2"/>
+<path d="M471 61V134" stroke="#c36b26" stroke-width="4" marker-end="url(#leverload)"/>
+<text x="492" y="74" class="poe26-label">F = 30 N ↓</text>
+<text x="78" y="214" class="poe26-label">Pivot O</text>
+<path d="M100 176V246 M471 176V246 M100 235H471" fill="none" stroke="#4f7890" stroke-width="1.8"/>
+<text x="285" y="264" class="poe26-label" text-anchor="middle">d⊥ = 0.40 m</text>
+<path d="M131 105A49 49 0 0 1 178 148" fill="none" stroke="#d09425" stroke-width="3"/>
+<path d="M164 139L179 149L176 133" fill="none" stroke="#d09425" stroke-width="3"/>
+<text x="165" y="88" class="poe26-small">Clockwise = negative</text>
+<text x="538" y="215" class="poe26-label">M = −12 N·m</text></svg>
+<div class="poe26-grid"><article class="poe26-panel"><h3>The basic moment equation</h3><div class="poe26-formula-equation">|M<sub>O</sub>| = F × d⊥</div><p>For a force perpendicular to a horizontal lever, the moment arm equals the horizontal distance. <strong>30 N × 0.40 m = 12 N·m</strong>.</p><p>To give the moment a sign, check which way the force tends to rotate the body around the selected point O.</p></article>
+<article class="poe26-panel"><h3>Line of action matters</h3><p>The lever arm is <strong>not always</strong> the distance along the object. It is the shortest perpendicular distance between the pivot and the infinite straight <em>line of action</em> of the force.</p><p>If the force's line of action passes through O, then d⊥ = 0 and its moment about O is <strong>zero</strong>, even if the force is large.</p></article></div></section>
+<section class="container lesson-section" id="signs"><div class="poe26-section-header"><div class="poe26-eyebrow">02 / Direction and units</div><h2>Clockwise or counterclockwise?</h2><p>We will use the conventional sign system: <strong>counterclockwise (CCW) is positive</strong>, and <strong>clockwise (CW) is negative</strong>.</p></div>
+<svg class="poe26-schematic" viewBox="0 0 700 290" role="img" aria-label="Two downward forces on opposite sides of a pivot. A downward force on left produces counterclockwise moment, while downward force on right produces clockwise moment."><defs><marker id="signsload" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c36b26"/></marker><marker id="signsreaction" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0a8690"/></marker></defs>
+<text x="350" y="31" class="poe26-heading" text-anchor="middle">SAME DIRECTION FORCE · OPPOSITE ROTATION</text>
+<path d="M71 147H627" stroke="#23526c" stroke-width="11" stroke-linecap="round"/>
+<path d="M350 154L326 193H374Z" fill="#d9e9f5" stroke="#23526c" stroke-width="2"/>
+<path d="M175 59V136 M524 59V136" stroke="#c36b26" stroke-width="4" marker-end="url(#signsload)"/>
+<text x="132" y="52" class="poe26-small">Down at left</text><text x="492" y="52" class="poe26-small">Down at right</text>
+<text x="145" y="226" class="poe26-label">Counterclockwise (+)</text><text x="469" y="226" class="poe26-label">Clockwise (−)</text>
+<text x="350" y="226" text-anchor="middle" class="poe26-small">Pivot O</text>
+<path d="M332 113A45 45 0 0 0 369 114" fill="none" stroke="#0a8690" stroke-width="3"/>
+<text x="350" y="276" text-anchor="middle" class="poe26-small">Choose a pivot; classify the rotational effect of each force about it.</text></svg>
+<div class="poe26-grid"><article class="poe26-panel"><span class="poe26-pill">Counterclockwise</span><h3>Positive moment (+)</h3><p>Push down to the <strong>left</strong> of a pivot, or push up to its right: the tendency is counterclockwise.</p></article><article class="poe26-panel"><span class="poe26-pill gold">Clockwise</span><h3>Negative moment (−)</h3><p>Push down to the <strong>right</strong> of a pivot, or push up to its left: the tendency is clockwise.</p></article></div>
+<div class="poe26-alert" style="margin-top:1rem"><strong>Units:</strong> Moment is N·m (newton-meters). It is dimensionally equivalent to a joule, but <strong>moments are not energy</strong> and should be labeled N·m. To convert N·mm to N·m, divide by 1,000.</div></section>
+<section class="container lesson-section" id="angle"><div class="poe26-section-header"><div class="poe26-eyebrow">03 / Angled forces</div><h2>Only the perpendicular part creates a moment</h2><p>If a force is not perpendicular to the lever, use the perpendicular force component—or the perpendicular moment arm—to calculate its moment.</p></div>
+<svg class="poe26-schematic" viewBox="0 0 700 290" role="img" aria-label="Lever points right from pivot O. A force at 30 degrees below the lever acts down and right at the lever tip. Perpendicular part of force equals F sine 30 degrees; moment arm equals r sine 30 degrees."><defs><marker id="angleload" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c36b26"/></marker><marker id="anglereaction" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0a8690"/></marker></defs>
+<path d="M75 191H626" stroke="#23526c" stroke-width="9" stroke-linecap="round"/>
+<circle cx="75" cy="191" r="12" fill="#0b7391"/>
+<text x="45" y="217" class="poe26-label">O</text>
+<path d="M410 191L550 272" stroke="#c36b26" stroke-width="4" marker-end="url(#angleload)"/>
+<path d="M410 191V266" stroke="#0a8690" stroke-width="3" marker-end="url(#anglereaction)"/>
+<path d="M410 191H550" stroke="#8babc0" stroke-width="1.7" stroke-dasharray="5 4"/>
+<path d="M452 191A42 42 0 0 1 446 212" stroke="#bb8a26" stroke-width="2.2" fill="none"/>
+<text x="457" y="214" class="poe26-small">30°</text>
+<text x="548" y="251" class="poe26-small">F</text><text x="326" y="274" class="poe26-small">F⊥ = F sin30°</text>
+<text x="225" y="170" class="poe26-label">Distance r</text>
+<text x="350" y="27" text-anchor="middle" class="poe26-heading">AN ANGLED FORCE USES THE PERPENDICULAR COMPONENT</text>
+</svg>
+<div class="poe26-grid"><article class="poe26-panel"><h3>Use the angle between r and F</h3><div class="poe26-formula-equation">|M| = r F |sin θ|</div><p>Here <strong>r</strong> is the straight distance from the pivot to where the force acts, and θ is the angle between the position vector and the force vector.</p><p>Example: 40 N at 30° below a 0.50 m horizontal lever → |M| = (0.50)(40)(sin30°) = <strong>10 N·m</strong>, clockwise, so <strong>M = −10 N·m</strong>.</p></article>
+<article class="poe26-panel"><h3>Use force components instead</h3><div class="poe26-formula-equation">M = rₓ Fᵧ − rᵧ Fₓ</div><p>For a horizontal lever extending right from the pivot, rᵧ = 0, so <strong>M = rₓFᵧ</strong>. Horizontal force Fₓ makes no moment about the pivot in this case.</p><p class="poe26-mini">This directly builds on the sine/cosine components in Lesson 2.5.</p></article></div></section>
+<section class="container lesson-section" id="watch"><div class="poe26-section-header"><div class="poe26-eyebrow">04 / Video learning library</div><h2>Watch, pause, and solve</h2><p>These two verified lessons cover both the concept of torque/moment and its application to beam support reactions. Use the direct links if YouTube embeds are blocked at school.</p></div>
+<div class="poe26-grid">
+<article class="poe26-video"><div class="poe26-frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/jg4e8W44_E4" title="Torque, Lever Arm, and Moment of Force" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe26-video-copy"><span class="poe26-pill">The Organic Chemistry Tutor · Introduction</span><h3>Torque, Lever Arm, and Moment of Force</h3><p class="poe26-mini"><strong>Watch and do:</strong> Sketch one door or lever example. Label the pivot, force, perpendicular lever arm, and CW/CCW direction.</p><a href="https://www.youtube.com/watch?v=jg4e8W44_E4" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article>
+<article class="poe26-video"><div class="poe26-frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/sxkEgZ9IueQ" title="Calculate Support Reactions of a Simply Supported Beam with a Point Load" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe26-video-copy"><span class="poe26-pill">Eurocoded · Applied statics</span><h3>Calculate Support Reactions of a Simply Supported Beam with a Point Load</h3><p class="poe26-mini"><strong>Watch and do:</strong> Before the example is solved, draw Aᵧ and Bᵧ. Explain why moments about the left support eliminate its reactions.</p><a href="https://www.youtube.com/watch?v=sxkEgZ9IueQ" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article>
+</div></section>
+<section class="container lesson-section" id="worked"><div class="poe26-section-header"><div class="poe26-eyebrow">05 / Worked calculations</div><h2>From a lever to a bridge support reaction</h2><p>Always begin with a free-body diagram, choose a pivot, and write the sign convention beside your equations.</p></div>
+<div class="poe26-grid"><article class="poe26-panel"><span class="poe26-pill">Example A · Single moment</span><h3>30 N downward at 0.40 m</h3><ol class="poe26-steps"><li>Choose the pivot at the left end of a horizontal lever.</li><li>The downward force acts 0.40 m to the right.</li><li>Moment magnitude: |M| = Fd = 30(0.40) = <strong>12 N·m</strong>.</li><li>Downward on the right tends clockwise → negative sign.</li></ol><div class="poe26-formula-equation">M<sub>O</sub> = −12 N·m (CW)</div>
+<p><strong>Interpretation:</strong> doubling the force or lever arm doubles the moment magnitude.</p></article>
+<article class="poe26-panel"><span class="poe26-pill gold">Example B · Unequal beam reactions</span><h3>80 N at 1.0 m on a 4.0 m span</h3>
+<svg class="poe26-schematic" viewBox="0 0 700 290" role="img" aria-label="Simply supported horizontal 4-meter beam has vertical 80-newton downward point load 1 meter from left pin support A; upward A reaction equals 60 newtons and B reaction 20 newtons."><defs><marker id="beamload" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c36b26"/></marker><marker id="beamreaction" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0a8690"/></marker></defs>
+<text x="350" y="27" text-anchor="middle" class="poe26-heading">WORKED EXAMPLE · OFF-CENTER LOAD</text>
+<path d="M98 130H610" stroke="#23526c" stroke-width="10" stroke-linecap="round"/>
+<path d="M98 136L75 174H121Z" stroke="#145579" fill="#d9e9f5" stroke-width="2"/>
+<circle cx="610" cy="150" r="11" fill="#d9e9f5" stroke="#145579" stroke-width="2"/>
+<path d="M590 165H632" stroke="#3c6278" stroke-width="2"/>
+<path d="M226 49V117" stroke="#c36b26" stroke-width="4" marker-end="url(#beamload)"/>
+<text x="244" y="56" class="poe26-label">80 N ↓</text>
+<path d="M98 232V140 M610 232V140" stroke="#0a8690" stroke-width="3.8" marker-end="url(#beamreaction)"/>
+<text x="72" y="248" class="poe26-label">Aᵧ = 60 N</text><text x="541" y="248" class="poe26-label">Bᵧ = 20 N</text>
+<text x="98" y="126" text-anchor="middle" class="poe26-small">A</text><text x="610" y="126" text-anchor="middle" class="poe26-small">B</text>
+<path d="M98 185V214 M226 185V214 M610 185V214 M98 202H226 M226 202H610" stroke="#52768b" stroke-width="1.5" fill="none"/>
+<text x="162" y="197" class="poe26-small" text-anchor="middle">1.0 m</text><text x="418" y="197" class="poe26-small" text-anchor="middle">3.0 m</text></svg><ol class="poe26-steps"><li>FBD: 80 N downward at x = 1.0 m, reaction Aᵧ at x = 0, reaction Bᵧ at x = 4.0 m.</li><li>Take moments about A, CCW positive: <strong>ΣM<sub>A</sub> = +Bᵧ(4.0) −80(1.0) = 0</strong>.</li><li>Solve: Bᵧ = 80/4 = <strong>20 N upward</strong>.</li><li>Vertical equilibrium: <strong>ΣFᵧ = Aᵧ +20−80 = 0</strong>, so Aᵧ = <strong>60 N upward</strong>.</li><li>Horizontal: Aₓ = 0 because no horizontal force acts.</li></ol>
+<div class="poe26-formula-equation">Aᵧ = 60 N ↑ &nbsp;·&nbsp; Bᵧ = 20 N ↑</div>
+</article></div>
+<div class="poe26-panel" style="margin-top:1rem"><h3>Check the same answer about the other support</h3><p>Taking moments about B: ΣM<sub>B</sub> = +80(3.0) −Aᵧ(4.0) = 240 −240 = <strong>0 N·m</strong>.</p><p><strong>Why choose a support as pivot?</strong> Any force whose line of action passes through that chosen pivot has a zero moment about it, eliminating its unknown magnitude from the equation.</p>
+<div class="poe26-formula-equation">General rule: Bᵧ = Pa/L &nbsp;·&nbsp; Aᵧ = P(L − a)/L</div><p class="poe26-mini">For one downward point load P between a pin at A and roller at B, with span L and load distance a from A. These are equilibrium reactions, not a material strength or deflection calculation.</p></div></section>
+<section class="container lesson-section" id="explore"><div class="poe26-section-header"><div class="poe26-eyebrow">06 / Interactive learning lab</div><h2>Change forces and geometry to see what happens</h2><p>Use the two models below. Move one slider at a time and make a prediction before checking the calculated answer.</p></div>
+<div class="poe26-controls">
+<div class="poe26-section-header"><h3>Lab A · Moment about a pivot</h3><p>Force applied at the tip of a horizontal lever extending right. Angle θ is measured counterclockwise from +x: −90° means straight down.</p></div>
+<div class="poe26-grid"><article class="poe26-panel">
+<div class="poe26-control"><label for="momentF">Force magnitude F <output id="momentFText">30 N</output></label><input id="momentF" type="range" min="5" max="100" step="5" value="30"/></div>
+<div class="poe26-control"><label for="momentD">Lever distance r <output id="momentDText">0.40 m</output></label><input id="momentD" type="range" min="0.1" max="1" step="0.05" value="0.4"/></div>
+<div class="poe26-control"><label for="momentTheta">Force angle θ <output id="momentThetaText">−90°</output></label><input id="momentTheta" type="range" min="-180" max="180" step="5" value="-90"/></div>
+<div class="poe26-results"><div><strong id="momentFperp">−30.00 N</strong><span>Signed perpendicular force component</span></div><div><strong id="momentValue">−12.00 N·m</strong><span>Signed moment about O</span></div></div>
+<p class="poe26-moment-sign" id="momentDirection" aria-live="polite">Clockwise (negative)</p><button type="button" class="btn secondary" id="momentReset">Reset Lab A</button></article>
+<article class="poe26-panel"><svg class="poe26-schematic" viewBox="0 0 700 320" id="momentVisualizer" role="img" aria-label="Interactive lever diagram showing force angle and moment about a pivot">
+<defs><marker id="m6v" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c36b26"/></marker></defs>
+<text x="350" y="30" text-anchor="middle" class="poe26-heading">LEVER AND APPLIED FORCE</text>
+<path d="M90 180H590" stroke="#bed8e4" stroke-width="15" stroke-linecap="round"/>
+<path d="M90 180L68 219H112Z" stroke="#1d5672" fill="#d9e9f5" stroke-width="2"/>
+<path id="momentLever" d="M90 180H300" stroke="#1d5672" stroke-width="9" stroke-linecap="round"/>
+<path id="momentVector" d="M300 180V264" stroke="#c36b26" stroke-width="4" marker-end="url(#m6v)"/>
+<circle id="momentForceDot" cx="300" cy="180" r="6" fill="#c36b26"/>
+<text id="momentLabel" x="318" y="288" class="poe26-label">30 N at −90°</text>
+<text x="74" y="249" class="poe26-label">Pivot O</text>
+<text id="momentDistanceLabel" x="240" y="156" class="poe26-label" text-anchor="middle">r = 0.40 m</text>
+<text x="350" y="313" text-anchor="middle" class="poe26-small">Force arrow length is illustrative; lever geometry is drawn for comparison.</text></svg><p class="poe26-mini">The diagram shows a straight lever and applied force. Arrow length is illustrative; the numbers use F sinθ and rF sinθ.</p><div class="poe26-alert"><strong>Question:</strong> At θ = 0° or ±180°, why does moment become zero? Hint: where is the force's line of action relative to the pivot?</div></article></div></div>
+<div class="poe26-controls" style="margin-top:1rem">
+<div class="poe26-section-header"><h3>Lab B · Bridge support reactions</h3><p>Slide the vertical load along a <strong>4.0 m simply supported beam</strong>. Pin A is at the left, roller B at the right. Support reactions follow static equilibrium.</p></div>
+<div class="poe26-grid"><article class="poe26-panel">
+<div class="poe26-control"><label for="beamP">Downward load P <output id="beamPText">80 N</output></label><input id="beamP" type="range" min="20" max="160" step="10" value="80"/></div>
+<div class="poe26-control"><label for="beamA">Distance from A (a) <output id="beamAText">1.0 m</output></label><input id="beamA" type="range" min=".5" max="3.5" step=".25" value="1"/></div>
+<div class="poe26-results"><div><strong id="beamReactionA">60.00 N</strong><span>Left reaction Aᵧ</span></div><div><strong id="beamReactionB">20.00 N</strong><span>Right reaction Bᵧ</span></div><div><strong id="beamMomentA">80.00 N·m</strong><span>Applied load moment magnitude about A</span></div><div><strong id="beamCheck">0.00 N·m</strong><span>ΣM<sub>A</sub> equilibrium residual</span></div></div>
+<p id="beamExplanation" class="poe26-moment-sign" aria-live="polite">The load is closer to A, so the left support carries more.</p><button type="button" id="beamReset" class="btn secondary">Reset Lab B</button></article>
+<article class="poe26-panel"><svg class="poe26-schematic" id="reactionVisualizer" viewBox="0 0 700 330" role="img" aria-label="Interactive simply supported beam with movable point load, pin A at left and roller B at right">
+<defs><marker id="m6down" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c36b26"/></marker><marker id="m6up" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0a8690"/></marker></defs>
+<text x="350" y="28" class="poe26-heading" text-anchor="middle">ONE LOAD · TWO SUPPORT REACTIONS</text>
+<path d="M90 137H610" stroke="#1d5672" stroke-width="10" stroke-linecap="round"/>
+<path d="M90 141L67 176H113Z" fill="#d9e9f5" stroke="#1d5672" stroke-width="2"/>
+<circle cx="610" cy="154" r="11" stroke="#1d5672" fill="#d9e9f5" stroke-width="2"/>
+<path d="M583 168H637" stroke="#40677b" stroke-width="2"/>
+<path id="beamLoadArrow" d="M220 46V127" stroke="#c36b26" stroke-width="4" marker-end="url(#m6down)"/>
+<text id="beamLoadText" x="239" y="60" class="poe26-label">P = 80 N</text>
+<path d="M90 238V148M610 238V148" stroke="#0a8690" stroke-width="4" marker-end="url(#m6up)"/>
+<text id="beamAyText" x="40" y="260" class="poe26-label">Aᵧ = 60 N</text>
+<text id="beamByText" x="551" y="260" class="poe26-label">Bᵧ = 20 N</text>
+<path d="M90 193V215M610 193V215M90 208H610" stroke="#618096" stroke-width="1.7"/>
+<path id="beamDistanceTick" d="M220 190V220" stroke="#b67c2b" stroke-width="2"/>
+<text id="beamLeftText" x="155" y="227" text-anchor="middle" class="poe26-small">a=1.0 m</text>
+<text id="beamRightText" x="416" y="227" text-anchor="middle" class="poe26-small">b=3.0 m</text>
+<text x="350" y="308" text-anchor="middle" class="poe26-small">Pinned A + roller B; beam weight neglected in this learning model.</text></svg><div class="poe26-formula-equation" id="beamMomentEquation">ΣM<sub>A</sub> = 20(4.0) −80(1.0) = 0</div><p class="poe26-mini"><strong>Try:</strong> center the load (a = 2.0 m). Why do both reactions become 40 N?</p></article></div></div></section>
+<section class="container lesson-section" id="investigate"><div class="poe26-section-header"><div class="poe26-eyebrow">07 / Engineering application</div><h2>Planning a safe, fair moments experiment</h2><p>You can investigate turning effects with a ruler or small lever, a fulcrum and teacher-approved small masses. Your drawing and calculations are the main work; any physical test must be instructor-approved.</p></div>
+<div class="poe26-grid"><article class="poe26-panel"><h3>Predict before testing</h3><ol class="poe26-steps"><li>Place a ruler on a stable pivot, marked as O.</li><li>Choose a small known downward force (or compute weight W = mg).</li><li>Vary the distance from the pivot while holding the force constant.</li><li>Predict the clockwise or counterclockwise moment at each position.</li><li>Record F (N), d⊥ (m), and moment (N·m), including sign.</li></ol><p class="poe26-alert"><strong>Safety:</strong> No standing on bridges, school fixtures or improvised loaded spans. Use only instructor-approved small weights and supports.</p></article>
+<article class="poe26-panel"><h3>Identify your variables</h3><div class="poe26-tablewrap"><table class="poe26-table"><thead><tr><th>Type</th><th>What to measure or control</th></tr></thead><tbody><tr><td>Independent</td><td>Distance from pivot</td></tr><tr><td>Dependent</td><td>Calculated moment magnitude</td></tr><tr><td>Controls</td><td>Same force, lever orientation, pivot and measurement method</td></tr></tbody></table></div><p><strong>Prediction:</strong> Increasing the distance by 50% while force stays constant increases moment magnitude by 50% for a perpendicular force.</p></article></div></section>
+<section class="container lesson-section" id="practice"><div class="poe26-section-header"><div class="poe26-eyebrow">08 / Independent practice</div><h2>Sketch and solve before revealing the answers</h2><p>Use CCW positive, CW negative. Include moment units and show how you chose the pivot.</p></div>
+<div class="poe26-grid">
+<article class="poe26-panel"><span class="poe26-pill">Check A</span><h3>Basic clockwise moment</h3><p>A 30 N force acts vertically downward 0.40 m to the right of pivot O. Calculate its signed moment.</p><details class="poe26-reveal"><summary>Reveal worked answer</summary><p>M = −(30)(0.40) = <strong>−12.0 N·m</strong>, clockwise.</p></details></article>
+<article class="poe26-panel"><span class="poe26-pill">Check B</span><h3>Counterclockwise sign</h3><p>A 15 N downward force acts 0.60 m <em>left</em> of pivot O. What is its moment?</p><details class="poe26-reveal"><summary>Reveal worked answer</summary><p>Downward to the left produces counterclockwise rotation. M = +(15)(0.60) = <strong>+9.0 N·m</strong>.</p></details></article>
+<article class="poe26-panel"><span class="poe26-pill">Check C</span><h3>Angle changes moment</h3><p>A 50 N force acts 0.40 m to the right of a pivot at 30° <em>above</em> the horizontal. Calculate its moment about the pivot.</p><details class="poe26-reveal"><summary>Reveal worked answer</summary><p>M = rF sinθ = (0.40)(50)(sin30°) = <strong>+10.0 N·m (CCW)</strong>.</p></details></article>
+<article class="poe26-panel"><span class="poe26-pill">Check D</span><h3>Off-center bridge reaction</h3><p>A 4.0 m simply supported beam carries 80 N downward 1.0 m from A. Find Aᵧ and Bᵧ.</p><details class="poe26-reveal"><summary>Reveal worked answer</summary><p>ΣM<sub>A</sub> = 4Bᵧ−80(1) = 0 ⇒ <strong>Bᵧ = 20 N upward</strong>. ΣFᵧ = Aᵧ+20−80=0 ⇒ <strong>Aᵧ=60 N upward</strong>.</p></details></article>
+<article class="poe26-panel"><span class="poe26-pill">Check E</span><h3>New beam geometry</h3><p>A 5.0 m simply supported beam has a 120 N downward load 3.0 m from A. Find the reactions.</p><details class="poe26-reveal"><summary>Reveal worked answer</summary><p>ΣM<sub>A</sub> = 5Bᵧ−120(3) = 0 ⇒ Bᵧ = <strong>72 N upward</strong>. Aᵧ = 120−72 = <strong>48 N upward</strong>.</p></details></article>
+<article class="poe26-panel"><span class="poe26-pill">Check F</span><h3>Why pivot choice matters</h3><p>Why do statics problems often take moments about a support? What happens if a force's line of action passes through that point?</p><details class="poe26-reveal"><summary>Reveal worked answer</summary><p>A force whose line of action passes through the chosen pivot has zero perpendicular moment arm, so its moment about that point is zero. Choosing a pivot at a support can eliminate unknown reaction forces from the moment equation.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="resources"><div class="poe26-section-header"><div class="poe26-eyebrow">Reference desk</div><h2>Study resources and engineering explanations</h2><p>Open-access textbooks and references expand the on-page examples, with additional equations and diagrams.</p></div>
+<div class="poe26-grid"><article class="poe26-panel poe26-resource"><h3>2D moments and equilibrium</h3><p>University-level statics chapter describing how to choose a moment center and solve unknown support reactions.</p><a href="https://engineeringstatics.org/Chapter_05-2d-rigid-body-equilibrium.html" target="_blank" rel="noopener noreferrer">Engineering Statics — Rigid-Body Equilibrium ↗</a></article>
+<article class="poe26-panel poe26-resource"><h3>Understanding moment equilibrium</h3><p>Why translational and rotational equilibrium are both necessary.</p><a href="https://engineeringstatics.org/Chapter_05-equations-of-equilibrium.html" target="_blank" rel="noopener noreferrer">Engineering Statics — Equations of Equilibrium ↗</a></article>
+<article class="poe26-panel poe26-resource"><h3>Off-center point-load beams</h3><p>Reference diagrams and calculations of pin-and-roller reactions and how they change with load location.</p><a href="https://calcresource.com/statics-simple-beam-reactions.html" target="_blank" rel="noopener noreferrer">CalcResource — Simply Supported Beam Reactions ↗</a></article>
+<article class="poe26-panel"><h3>Vocabulary</h3><p><strong>Moment:</strong> turning effect of force about a point.</p><p><strong>Moment arm:</strong> perpendicular distance to force's line of action.</p><p><strong>Moment equilibrium:</strong> sum of signed moments equals zero.</p><p><strong>Support reaction:</strong> force or moment supplied by a restraint.</p></article></div></section>
+<section class="container lesson-section" id="submit"><div class="poe26-section-header"><div class="poe26-eyebrow">Student submission</div><h2>Exactly what to submit</h2><p>Complete the <strong>POE 2.6 Calculating Moments classwork/homework worksheet</strong> or teacher-directed notebook equivalent. Use the on-page resources to learn the method and check your calculations.</p></div>
+<div class="poe26-grid"><article class="poe26-panel"><h3>Required evidence</h3><ul class="poe26-checklist"><li>Two or more labeled moment sketches showing pivot, force, perpendicular distance, and CW/CCW direction.</li><li>Moment calculations using consistent N and m units with proper signs.</li><li>At least one problem with an angled force using sinθ or perpendicular-force components.</li><li>An off-center beam FBD showing applied load and both support reactions.</li><li>A moment equilibrium equation and force equilibrium check, including the calculated support reactions.</li><li>All additional assigned independent and homework questions.</li></ul></article>
+<article class="poe26-panel"><h3>Final quality check</h3><ul class="poe26-checklist"><li>CCW positive and CW negative convention stated.</li><li>Moment arms measured perpendicular to force lines of action.</li><li>Moments labeled N·m (or correct consistent moment units).</li><li>Reactions sum to the downward applied load for these single-load problems.</li><li>A numerical check confirms ΣM = 0 and ΣFᵧ = 0.</li></ul><p><strong>Due date:</strong> Check the <a href="../../../../agenda.html">Daily Agenda</a> and follow your teacher's submission instructions.</p><p><a class="btn secondary" href="#start">Review Lesson ↑</a></p></article></div></section>
+<nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a href="lesson-2-5.html" class="btn secondary">← Lesson 2.5: Calculating Force Vectors</a><a href="lesson-2-7.html" class="btn">Next: 2.7 Introduction to Truss Systems →</a></nav>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+<script>
+(function(){
+"use strict";
+const get=id=>document.getElementById(id);
+const mf=get("momentF"),md=get("momentD"),mt=get("momentTheta");
+const bp=get("beamP"),ba=get("beamA");
+if(!mf||!md||!mt||!bp||!ba)return;
+const format=(n,d=2)=>Number(n).toFixed(d);
+const signed=n=>Math.abs(n)<1e-9?"0.00":(n>0?"+":"−")+Math.abs(n).toFixed(2);
+function redrawMoment(){
+const F=Number(mf.value),r=Number(md.value),theta=Number(mt.value),rad=theta*Math.PI/180;
+const perpendicular=F*Math.sin(rad),moment=r*perpendicular;
+get("momentFText").textContent=F+" N";get("momentDText").textContent=r.toFixed(2)+" m";get("momentThetaText").textContent=(theta>0?"+":"")+theta+"°";
+get("momentFperp").textContent=signed(perpendicular)+" N";get("momentValue").textContent=signed(moment)+" N·m";
+get("momentDirection").textContent=Math.abs(moment)<1e-8?"Zero moment · line of action through pivot":moment>0?"Counterclockwise (positive)":"Clockwise (negative)";
+const originX=90,originY=180,tipX=originX+r*430;
+const vx=F*Math.cos(rad),vy=F*Math.sin(rad),scale=Math.min(1,92/Math.max(1,F));
+const endX=tipX+vx*scale,endY=originY-vy*scale;
+get("momentLever").setAttribute("d","M90 180 H"+tipX.toFixed(1));
+get("momentVector").setAttribute("d","M"+tipX.toFixed(1)+" 180 L"+endX.toFixed(1)+" "+endY.toFixed(1));
+get("momentForceDot").setAttribute("cx",tipX.toFixed(1));
+get("momentLabel").setAttribute("x",String(Math.min(570,Math.max(200,endX+12))));
+get("momentLabel").setAttribute("y",String(Math.min(295,Math.max(60,endY-10))));
+get("momentLabel").textContent=F+" N at "+theta+"°";
+get("momentDistanceLabel").textContent="r = "+r.toFixed(2)+" m";
+get("momentDistanceLabel").setAttribute("x",String((90+tipX)/2));
+get("momentVisualizer").setAttribute("aria-label","Horizontal lever, "+r.toFixed(2)+" meter distance, "+F+" newton force at "+theta+" degrees; moment "+moment.toFixed(2)+" newton-meters, "+(moment>0?"counterclockwise":moment<0?"clockwise":"zero")+".");
+}
+function redrawBeam(){
+const P=Number(bp.value),a=Number(ba.value),L=4,b=L-a;
+const A=P*b/L,B=P*a/L,residual=B*L-P*a;
+get("beamPText").textContent=P+" N";get("beamAText").textContent=a.toFixed(2)+" m";
+get("beamReactionA").textContent=A.toFixed(2)+" N";
+get("beamReactionB").textContent=B.toFixed(2)+" N";
+get("beamMomentA").textContent=(P*a).toFixed(2)+" N·m";
+get("beamCheck").textContent=residual.toFixed(2)+" N·m";
+get("beamExplanation").textContent=Math.abs(A-B)<1e-9?"The load is centered, so the reactions are equal.":A>B?"The load is closer to A, so the left support carries more.":"The load is closer to B, so the right support carries more.";
+const x=90+520*a/L;
+get("beamLoadArrow").setAttribute("d","M"+x.toFixed(2)+" 46 V127");
+get("beamLoadText").setAttribute("x",String(Math.min(555,x+15)));
+get("beamLoadText").textContent="P = "+P+" N";
+get("beamDistanceTick").setAttribute("d","M"+x.toFixed(2)+" 190 V220");
+get("beamLeftText").setAttribute("x",String((90+x)/2));
+get("beamRightText").setAttribute("x",String((x+610)/2));
+get("beamLeftText").textContent="a = "+a.toFixed(2)+" m";
+get("beamRightText").textContent="b = "+b.toFixed(2)+" m";
+get("beamAyText").textContent="Aᵧ = "+A.toFixed(1)+" N";
+get("beamByText").textContent="Bᵧ = "+B.toFixed(1)+" N";
+get("beamMomentEquation").innerHTML="ΣM<sub>A</sub> = "+B.toFixed(1)+"(4.0) −"+P+"("+a.toFixed(2)+") = 0";
+get("reactionVisualizer").setAttribute("aria-label","Four-meter beam, downward point load "+P+" newtons "+a.toFixed(2)+" meters from A. Reaction A "+A.toFixed(2)+" newtons upward, B "+B.toFixed(2)+" newtons upward.");
+}
+[mf,md,mt].forEach(el=>el.addEventListener("input",redrawMoment));
+[bp,ba].forEach(el=>el.addEventListener("input",redrawBeam));
+get("momentReset").addEventListener("click",()=>{mf.value=30;md.value=.4;mt.value=-90;redrawMoment();});
+get("beamReset").addEventListener("click",()=>{bp.value=80;ba.value=1;redrawBeam();});
+redrawMoment();redrawBeam();
+})();
+</script></body></html>
