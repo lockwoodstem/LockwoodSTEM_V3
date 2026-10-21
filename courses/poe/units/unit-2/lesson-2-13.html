@@ -1,1 +1,413 @@
-<!DOCTYPE html><html lang="en"><head><title>POE Unit 2 Lesson 2.13 | Materials Testing Lab | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main"><nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">2.13</li></ol></nav><section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Materials &amp; Testing • Lesson 2.13</div><h1>Materials Testing Lab</h1><p class="focus-question"><strong>Engineering question:</strong> How can controlled tests support material decisions?</p><div class="mission-actions"><a class="btn" href="#learn">Learn</a><a class="btn secondary" href="#practice">Practice</a><a class="btn secondary" href="#apply">Apply</a><a class="btn secondary" href="#submit">Submit</a><a class="btn ghost" href="../unit-2.html">Unit 2</a></div></div><aside class="mission-panel"><span class="tag">Phase 2: Materials knowledge</span><h2>Build evidence through experiments</h2><p>Learn properties and test methods using varied structures before beginning bridge fabrication.</p></aside></div></section><section class="container lesson-section"><article class="card"><h2>Learning Targets</h2><ul><li>Control specimen shape, span and loading method</li><li>Measure force and displacement</li><li>Compare results while acknowledging measurement uncertainty</li></ul></article></section><section class="container lesson-section" id="learn"><div class="section-header"><h2>Learn the Concept</h2></div><article class="card"><ul><li>Change only one independent variable in a comparative test</li><li>Repeat trials when possible, and report units and dimensions</li><li>Use teacher-approved equipment and safety rules; avoid placing hands near loaded members</li></ul></article></section><section class="container lesson-section" id="practice"><div class="section-header"><h2>Practice Together</h2></div><article class="card"><p>Plan a deflection test of strips with equal span and different orientations; identify controlled variables.</p><p>Show your reasoning, annotate diagrams and use correct units.</p></article></section><section class="container lesson-section" id="apply"><div class="section-header"><h2>Apply the Skill</h2></div><article class="card"><p>Collect and graph force-versus-deflection measurements; note failure or permanent deformation if observed.</p><p><strong>Check your understanding:</strong> Can two specimens be compared fairly if their lengths differ?</p></article></section><section class="container lesson-section" id="submit"><article class="card"><h2>Student Evidence</h2><p>Materials lab report and data table. Provide clearly identified assumptions, measurements and conclusions.</p></article></section><nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-12.html">← 2.12 Structural Failure</a><a class="btn" href="lesson-2-14.html">2.14 Structural Efficiency →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer></body></html>
+<!DOCTYPE html><html lang="en"><head><title>POE 2.13 | Hands-On Materials Testing Lab | LockwoodSTEM</title><meta name="description" content="Conduct a real three-point bending experiment using digital force gauges and measured material strips. Includes apparatus diagrams, safe procedures, printable worksheets, live measured-data graphs and CSV export."/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script><style id="poe213-hands-on-lab">
+.poe213{--edge:#ccdeea;--deep:#123f5b;--mid:#0b6480}
+.poe213 .poe213-section-header{margin-bottom:1rem}
+.poe213 .poe213-section-header h2{margin:.25rem 0 .4rem}
+.poe213 .poe213-section-header p{max-width:930px;color:#4d6678}
+.poe213 .poe213-eyebrow{color:#926918;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;font-weight:850}
+.poe213 .poe213-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.poe213 .poe213-metric,.poe213 .poe213-panel{background:#f7fbfd;border:1px solid var(--edge);border-radius:15px;padding:1rem 1.1rem;min-width:0}
+.poe213 .poe213-metric strong{display:block;color:#0c5575;font-size:1.04rem}
+.poe213 .poe213-metric span{display:block;color:#506a7a;margin-top:.35rem}
+.poe213 .poe213-panel h3{margin:.15rem 0 .6rem;color:#103e5a}
+.poe213 .poe213-panel p{margin:.45rem 0 .8rem}
+.poe213 .poe213-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe213 .poe213-gridcompact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.poe213 .poe213-panel li{margin:.4rem 0}
+.poe213 .poe213-banner{border-radius:10px;padding:.8rem 1rem;border-left:5px solid #147b98;background:#edf8fc}
+.poe213 .poe213-caution{border-radius:10px;padding:.85rem 1rem;border-left:5px solid #c28d32;background:#fff9eb}
+.poe213 .poe213-stepset{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem}
+.poe213 .poe213-stepset>div{background:#edf6fb;padding:.75rem;border-radius:11px;border-left:4px solid #197e9b}
+.poe213 .poe213-stepset strong{display:block;color:#0f5672}
+.poe213 .poe213-stepset small{color:#576f7e;font-size:.78rem;display:block}
+.poe213 .poe213-mini{font-size:.89rem;color:#536e7c}
+.poe213 .poe213-graphic{display:block;background:white;width:100%;height:auto;border-radius:14px;border:1px solid #cbdfe9;margin:.8rem auto}
+.poe213 .poe213-graphic text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#24475c}
+.poe213 .poe213-graphic .poe213-svgtext,.poe213 .poe213-graphic-title{font-size:13px;font-weight:800}
+.poe213 .poe213-graphic .poe213-svgsmall{font-size:11px}
+.poe213 .poe213-pill{display:inline-block;border-radius:100px;font-size:.75rem;font-weight:850;padding:.2rem .6rem;background:#e0f1f5;color:#125871}
+.poe213 .poe213-video{padding:0;overflow:hidden}
+.poe213 .poe213-frame{position:relative;aspect-ratio:16/9;background:#132d43}
+.poe213 .poe213-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe213 .poe213-video-copy{padding:1rem}
+.poe213 .poe213-video-copy h3{line-height:1.27;margin:.4rem 0}
+.poe213 .poe213-video-copy a,.poe213 .poe213-resource a{display:block;font-weight:800;margin:.4rem 0}
+.poe213 details{background:#f0f8fc;padding:.7rem .85rem;border-radius:9px;margin:.7rem 0;border:1px solid #c7dce8}
+.poe213 details summary{font-weight:850;color:#0b4f6e;cursor:pointer}
+.poe213 .poe213-tablewrap{overflow-x:auto;margin:.7rem 0}
+.poe213 .poe213-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.poe213 .poe213-table th,.poe213 .poe213-table td{border:1px solid #c8dbe5;text-align:left;padding:.45rem;vertical-align:middle}
+.poe213 .poe213-table th{background:#e7f2f7;color:#134965}
+.poe213 .poe213-table td:first-child{font-weight:770}
+.poe213 .poe213-input,.poe213 .poe213-data{box-sizing:border-box;font:inherit;width:100%;background:white;border:1px solid #a9c7d8;border-radius:7px;padding:.5rem;color:#133c54}
+.poe213 .poe213-data{min-width:90px}
+.poe213 .poe213-label{display:block;color:#114e6b;font-weight:800;font-size:.85rem;margin:.65rem 0 .23rem}
+.poe213 .poe213-interactive{background:#eaf6fb;padding:1rem;border-radius:15px;border:1px solid #9ac7d8}
+.poe213 .poe213-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;margin:.85rem 0}
+.poe213 .poe213-results>div{background:white;border:1px solid #c5dce9;padding:.7rem;border-radius:9px}
+.poe213 .poe213-results strong{font-size:1.06rem;color:#13516e;display:block;font-variant-numeric:tabular-nums}
+.poe213 .poe213-results span{font-size:.8rem;color:#547082}
+.poe213 .poe213-actions{display:flex;gap:.65rem;flex-wrap:wrap;margin:.7rem 0}
+.poe213 .poe213-formula{background:#edf7fc;padding:.8rem;border-left:5px solid #137e95;font-weight:850;font-size:1.07rem;color:#0c4d6e;border-radius:10px;margin:.65rem 0;overflow-wrap:anywhere}
+.poe213 .poe213-threes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem}
+.poe213 .poe213-threes>div{background:#eff7fa;padding:.6rem;border-radius:10px}
+.poe213 .poe213-threes p{font-size:.86rem}
+.poe213 .poe213-checklist{list-style:none!important;padding:0!important}
+.poe213 .poe213-checklist li{padding:.38rem 0 .38rem 1.55rem;position:relative}
+.poe213 .poe213-checklist li::before{content:"□";position:absolute;left:0;top:.3rem;color:#0c8299;font-size:1.25rem}
+.poe213 .poe213-legend{display:flex;gap:1rem;flex-wrap:wrap;color:#536e7b;font-size:.86rem;margin:.6rem 0}
+.poe213 .poe213-legend i{display:inline-block;width:16px;height:4px;vertical-align:middle;margin-right:.35rem}
+.poe213 button:focus-visible,.poe213 a:focus-visible,.poe213 input:focus-visible,.poe213 textarea:focus-visible{outline:3px solid #c99836;outline-offset:2px}
+#poe213Paper{display:none}
+@media(max-width:940px){.poe213 .poe213-overview,.poe213 .poe213-stepset{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:730px){.poe213 .poe213-grid,.poe213 .poe213-overview,.poe213 .poe213-stepset,.poe213 .poe213-results,.poe213 .poe213-threes{grid-template-columns:1fr}}
+@page{size:letter;margin:0.45in}
+@media print{
+body.poe213-paper-only{background:white!important;color:#141414!important}
+body.poe213-paper-only header,body.poe213-paper-only footer,body.poe213-paper-only .skip-link,body.poe213-paper-only main,body.poe213-paper-only nav{display:none!important}
+body.poe213-paper-only #poe213Paper{display:block!important;font:9pt Arial,sans-serif;color:black;margin:0}
+#poe213Paper .poe213-paper-page{break-after:page;page-break-after:always}
+#poe213Paper .poe213-paper-page:last-child{break-after:auto;page-break-after:auto}
+#poe213Paper h1{font-size:15pt;text-align:center;margin:0 0 .1in}
+#poe213Paper h2{font-size:10.5pt;margin:.12in 0 .04in}
+#poe213Paper p{margin:.07in 0}
+#poe213Paper .poe213-paper-sub{text-align:center;color:#555;font-size:9pt}
+#poe213Paper table{width:100%;border-collapse:collapse;margin:.06in 0}
+#poe213Paper th,#poe213Paper td{border:1px solid #555;padding:.06in;text-align:left}
+#poe213Paper td{height:.25in}
+#poe213Paper th{background:#efefef}
+#poe213Paper .poe213-paper-spec{margin:.14in 0}
+#poe213Paper .poe213-paper-space{height:1.15in;border:1px solid #777;color:#666;font-style:italic;padding:.1in}
+#poe213Paper .poe213-paper-graph{height:2.7in;border:1px solid #777;background-image:linear-gradient(#ddd 1px,transparent 1px),linear-gradient(90deg,#ddd 1px,transparent 1px);background-size:.25in .25in;margin:.07in 0}
+#poe213Paper .poe213-paper-lines>div{height:.26in;border-bottom:1px solid #aaa}
+}
+</style></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main" class="poe213">
+<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.13</li></ol></nav>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.13</div><h1>Materials Testing Lab</h1>
+<p class="focus-question"><strong>Engineering question:</strong> Which of our actual material strips resists bending most effectively—and how confident are we in the measurements?</p>
+<div class="mission-actions"><a class="btn" href="#start">Start Lab</a><a class="btn secondary" href="#setup">Build Test Station</a><a class="btn secondary" href="#procedure">Testing Steps</a><a class="btn secondary" href="#recorder">Enter Real Data</a><a class="btn secondary" href="#analysis">Graph &amp; Analyze</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
+<aside class="mission-panel"><span class="tag">Hands-on experimental engineering</span><h2>Today we test real samples.</h2><p>Use pre-cut strips of different materials, a digital force gauge and measurement tools to collect <strong>paired force–deflection readings</strong>.</p><p>These are actual experimental measurements—not the hypothetical material presets used in Lesson 2.11.</p></aside></div></section>
+<section class="container lesson-section" id="start"><div class="poe213-section-header"><div class="poe213-eyebrow">The mission</div><h2>A fair comparison of materials</h2><p>You will load strips across two supports, measure how far the midpoint deflects, then plot force against deflection. Use the graph's early straight-line slope to compare experimental <strong>bending stiffness</strong>.</p></div>
+<div class="poe213-overview"><div class="poe213-metric"><strong>01 · Measure</strong><span>Record actual width, thickness, support span, orientation and force-gauge units.</span></div><div class="poe213-metric"><strong>02 · Test</strong><span>Apply increasing force carefully while measuring midspan deflection.</span></div><div class="poe213-metric"><strong>03 · Explain</strong><span>Graph your paired measurements, compare slopes and identify experimental uncertainty.</span></div></div>
+<div class="poe213-banner" style="margin-top:1rem"><strong>Today's variables:</strong> Independent variable for comparison = material. Observed response = deflection under loading, or equivalently the force–deflection slope k = ΔF/Δδ. Controlled variables = <strong>support span, nominal specimen geometry, orientation, loading point, method and measurement technique.</strong> Always measure actual strip dimensions, even if pre-cut to identical nominal sizes.</div>
+<div class="poe213-panel" style="margin-top:1rem"><h3>Recommended schedule</h3><div class="poe213-stepset">
+<div><strong>Prepare &amp; check</strong><small>5–10 min</small></div><div><strong>Demonstration</strong><small>5 min</small></div><div><strong>Run tests</strong><small>25–35 min</small></div><div><strong>Graph &amp; analyze</strong><small>20–30 min, next class if needed</small></div></div>
+<p class="poe213-mini">Suggested two-session lesson: one 45–50 minute session for physical testing and another short session for analysis, reflection and final lab submission. The instructor may adjust group size and timing to match available gauges and specimens.</p></div></section>
+<section class="container lesson-section" id="equipment"><div class="poe213-section-header"><div class="poe213-eyebrow">01 / Station inventory</div><h2>Equipment and responsibilities</h2><p>You already have the pre-cut material samples and digital force gauges. Each group also needs a stable way to support and measure the strips.</p></div>
+<div class="poe213-grid">
+<article class="poe213-panel"><h3>Required equipment</h3><ul>
+<li>At least <strong>two materials</strong> in strips of the same nominal size; label specimen IDs.</li>
+<li>One digital force gauge with an appropriate compression range and safe contact tip.</li>
+<li>Two equally high, fixed, rounded supports with measured and adjustable center-to-center spacing.</li>
+<li>Metric ruler and calipers to measure span, width and thickness.</li>
+<li>A fixed ruler or dial indicator measuring midpoint deflection; a fixed side camera with a metric reference scale is an acceptable observation aid.</li>
+<li>Safety glasses, stable work surface and teacher-approved fixture or support arrangement.</li>
+</ul><p class="poe213-mini">Optional: digital scale for specimen mass, camera for evidence, a gauge stand to improve axial alignment and spreadsheets for analysis.</p></article>
+<article class="poe213-panel"><h3>Assign a team of 3–4</h3>
+<div class="poe213-threes"><div><strong>Operator</strong><p>Applies controlled, gradual load with gauge; communicates current reading.</p></div><div><strong>Measurement lead</strong><p>Observes center movement from a safe side position without touching the specimen.</p></div><div><strong>Recorder / safety</strong><p>Records paired values and watches for damage or test-limit exceedance.</p></div></div>
+<p><strong>Switch roles</strong> between specimens when time and equipment permit. No one holds the test strip by hand during loading.</p></article></div></section>
+<section class="container lesson-section" id="setup"><div class="poe213-section-header"><div class="poe213-eyebrow">02 / Set up the test</div><h2>Three-point bending: two supports, one center load</h2><p>Position the strip across two rounded supports and push <strong>straight downward at midspan</strong> using the digital force gauge. Measure the displacement of the strip itself, using a stationary reference attached to the fixture rather than the moving gauge.</p></div>
+<svg class="poe213-graphic" viewBox="0 0 900 380" role="img" aria-label="Three-point bending test apparatus. A specimen spans two equally high round supports, a digital force gauge pushes vertically at the midpoint with a rounded loading tip, a separate fixed-scale position reference measures center deflection. The support-to-support center distance L, specimen width b and thickness t are recorded.">
+<defs><marker id="p213-load" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bc7131"/></marker><marker id="p213-react" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0d8793"/></marker></defs>
+<text x="450" y="33" text-anchor="middle" class="poe213-graphic-title">SIMPLE THREE-POINT BENDING FIXTURE</text>
+<rect x="371" y="45" width="156" height="55" rx="9" fill="#daeaf4" stroke="#2e617c" stroke-width="2"/>
+<text x="449" y="67" text-anchor="middle" class="poe213-svgtext">DIGITAL FORCE</text><text x="449" y="84" text-anchor="middle" class="poe213-svgtext">GAUGE (N)</text>
+<path d="M450 101V181" stroke="#bc7131" stroke-width="5" marker-end="url(#p213-load)"/>
+<path d="M189 197Q450 205 711 197" stroke="#d7aa68" stroke-width="18" stroke-linecap="round" fill="none"/>
+<path d="M189 190H711" stroke="#aabdc8" stroke-width="2" stroke-dasharray="8 5"/>
+<circle cx="232" cy="220" r="11" fill="#dbeaf2" stroke="#27566f" stroke-width="2"/>
+<circle cx="667" cy="220" r="11" fill="#dbeaf2" stroke="#27566f" stroke-width="2"/>
+<rect x="204" y="237" width="56" height="24" rx="4" fill="#c6d9e3" stroke="#27566f" stroke-width="2"/>
+<rect x="639" y="237" width="56" height="24" rx="4" fill="#c6d9e3" stroke="#27566f" stroke-width="2"/>
+<path d="M232 284V234M667 284V234" stroke="#0d8793" stroke-width="4" marker-end="url(#p213-react)"/>
+<path d="M232 296V316M667 296V316M232 306H667" stroke="#587a90" stroke-width="2" fill="none"/>
+<text x="450" y="330" text-anchor="middle" class="poe213-svgtext">MEASURED SUPPORT SPAN L (mm)</text>
+<path d="M451 190V206" stroke="#bc7131" stroke-width="2" stroke-dasharray="4 3"/><text x="466" y="227" class="poe213-svgsmall">δ: center deflection</text>
+<rect x="745" y="157" width="22" height="120" fill="#f0f6fb" stroke="#7b9bae" stroke-width="2"/>
+<path d="M745 170h14" stroke="#527990" stroke-width="1.4"/><path d="M745 182h8" stroke="#527990" stroke-width="1.4"/><path d="M745 194h14" stroke="#527990" stroke-width="1.4"/><path d="M745 206h8" stroke="#527990" stroke-width="1.4"/><path d="M745 218h14" stroke="#527990" stroke-width="1.4"/><path d="M745 230h8" stroke="#527990" stroke-width="1.4"/><path d="M745 242h14" stroke="#527990" stroke-width="1.4"/><path d="M745 254h8" stroke="#527990" stroke-width="1.4"/><path d="M745 266h14" stroke="#527990" stroke-width="1.4"/>
+<text x="744" y="145" class="poe213-svgsmall">Fixed ruler / camera reference</text>
+<text x="80" y="178" class="poe213-svgsmall">Sample strip</text><text x="80" y="194" class="poe213-svgsmall">width b, thickness t</text>
+<text x="450" y="365" text-anchor="middle" class="poe213-svgsmall">Teaching schematic: gauge and loading tip must be steady, aligned, and instructor-approved</text>
+</svg>
+<div class="poe213-grid">
+<article class="poe213-panel"><h3>Before loading</h3><ol>
+<li>Secure the fixture so the supports cannot slide or tip. Both supports must have the same height and a consistent contact shape.</li>
+<li>Choose a <strong>common measured span L</strong> that safely fits the shortest strips, with enough overhang at both ends to stay seated.</li>
+<li>Mark midpoint between the supports. Align a rounded gauge tip <strong>perpendicular</strong> to the strip over the mark.</li>
+<li>Fix a ruler/indicator or camera reference so deflection is read relative to the unloaded specimen, not relative to a moving hand.</li>
+<li>Check digital gauge capacity and set compression units to <strong>N</strong> if supported; otherwise convert readings before analysis.</li>
+<li>Under instructor supervision, gently contact the specimen, tare force appropriately and set displacement to zero at the same reference state without appreciable preload.</li></ol>
+</article>
+<article class="poe213-panel"><h3>Measure each individual strip</h3><svg class="poe213-graphic" viewBox="0 0 800 240" role="img" aria-label="Rectangular specimen cross-section with width b horizontal and thickness t vertical; width and thickness measured separately even if strips are nominally identical, with t in the bending direction.">
+<rect x="183" y="64" width="400" height="84" rx="7" fill="#e5bf85" stroke="#976e3d" stroke-width="3"/>
+<path d="M183 173V195M583 173V195M183 185H583" stroke="#3a7390" stroke-width="2"/>
+<text x="383" y="214" text-anchor="middle" class="poe213-graphic-title">Width b</text>
+<path d="M611 64H642M611 148H642M630 64V148" stroke="#3a7390" stroke-width="2"/>
+<text x="653" y="112" class="poe213-svgtext">t</text>
+<text x="385" y="40" text-anchor="middle" class="poe213-svgtext">Viewed at the midpoint: record true b and t for each sample</text>
+</svg><p>Record strip <strong>overall length</strong>, <strong>width b</strong>, and <strong>thickness t</strong> at the center (mm). Also record grain/ply/print orientation, any knots, chips or defects and measured mass if a scale is available.</p>
+<div class="poe213-equation">Cross-section I = bt³ / 12 (mm⁴)</div>
+<p><strong>Important:</strong> t is the thickness <em>in the direction of bending</em>. Incorrectly swapping b and t causes a large error because thickness is cubed.</p></article></div>
+<div class="poe213-caution" style="margin-top:1rem"><strong>Safety first:</strong> Eye protection is required. The teacher sets the allowable force, deflection and gauge capacity limits after a pilot test using the weakest sample. Do not deliberately snap, overload or launch fragments. Keep fingers, faces and measuring tools out of the loading path. Stop immediately at a crack, sudden force drop, slipping support, permanent kink or loss of alignment. Any failure-to-break experiment requires a separate teacher-approved shielded procedure.</div></section>
+<section class="container lesson-section" id="watch"><div class="poe213-section-header"><div class="poe213-eyebrow">03 / Video learning resources</div><h2>See what a three-point bending test looks like</h2><p>These verified professional demonstrations use purpose-built testing machines. Our lab applies the <em>same support-and-center-load principle</em> with your force gauges, but it is a classroom comparison—not a standards-certified ASTM test.</p></div>
+<div class="poe213-grid"><article class="poe213-panel poe213-video"><div class="poe213-frame"><iframe src="https://www.youtube-nocookie.com/embed/veVwA3-Vpmg" title="Plastic 3 Point Bend Flexural Test — ASTM D790" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe213-video-copy"><span class="poe213-pill">ADMET Testing Systems</span><h3>Plastic 3 Point Bend Flexural Test — ASTM D790</h3><p><strong>While watching:</strong> Identify the two supports, central loading nose and the way load/deflection are recorded. Note that your class apparatus is simpler.</p><a href="https://www.youtube.com/watch?v=veVwA3-Vpmg" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article>
+<article class="poe213-panel poe213-video"><div class="poe213-frame"><iframe src="https://www.youtube-nocookie.com/embed/TvCEwMR3Mw0" title="Materials Testing: Young’s Modulus, Three-Point Bending and Column Buckling" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe213-video-copy"><span class="poe213-pill">PASCO · Materials testing webinar</span><h3>Materials Testing: Young’s Modulus, Three-Point Bending and Column Buckling</h3><p><strong>While watching:</strong> Observe the relationship between specimen geometry, applied force and the load–deflection curve. Your worksheet will use actual readings.</p><a href="https://www.youtube.com/watch?v=TvCEwMR3Mw0" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article></div>
+<div class="poe213-banner" style="margin-top:1rem"><strong>Video question:</strong> Why must the support span, specimen thickness, load position and measured displacement reference remain consistent between materials? Answer in one or two sentences before testing.</div></section>
+<section class="container lesson-section" id="procedure"><div class="poe213-section-header"><div class="poe213-eyebrow">04 / Student test procedure</div><h2>Collect force and displacement together</h2><p>The preferred approach is <strong>non-destructive, incremental loading</strong>. One student holds a small prescribed displacement while the recorder reads the force. Use an instructor-selected safe loading sequence based on gauge sensitivity and the weakest material.</p></div>
+<div class="poe213-grid"><article class="poe213-panel"><h3>Loading sequence</h3><ol>
+<li><strong>Label and inspect</strong> the strip; measure its width/thickness and any visible defects before testing.</li>
+<li><strong>Set the span:</strong> measure center-to-center support distance; keep it identical for each material.</li>
+<li><strong>Seat and tare:</strong> position the strip and gauge, apply only a tiny seating load if authorized, then establish paired zero readings (0 N, 0 mm).</li>
+<li><strong>Load slowly:</strong> increase deflection in small, teacher-specified steps. A 0.5 mm step is an <em>illustrative example only</em>, not a required or universally safe increment.</li>
+<li><strong>At each step:</strong> one student holds the reading steady, another measures the vertical center displacement, and the recorder logs the <strong>simultaneous force and displacement</strong>.</li>
+<li><strong>Stop at the approved limit:</strong> do not chase higher numbers after warning signs; record why the test stopped.</li>
+<li><strong>Unload gradually:</strong> measure residual (permanent) displacement once the load returns near zero, if safe.</li>
+<li><strong>Repeat</strong> with the next material, without changing the span, tip, measurement reference or loading method.</li></ol></article>
+<article class="poe213-panel"><h3>Data-quality rules</h3>
+<ul><li>Record <strong>actual gauge force</strong> at each observed deflection; do not assume the force equals a target.</li>
+<li>Record values with units: N and mm. If gauge reads lbf or kgf, convert to N before making a graph.</li>
+<li>Use at least <strong>three nonzero paired readings</strong> in a safe approximately linear response region per specimen if equipment resolution permits; 5 or 6 is better.</li>
+<li>If a specimen slips, a gauge is misaligned, or its curve becomes nonlinear, <strong>stop and annotate</strong>. Do not erase unexpected data silently.</li>
+<li>Repeat with another specimen of the same material if available. Repeating a load cycle on the <em>same</em> strip is not an independent material replicate.</li>
+<li>If a force gauge has a peak-hold mode, use <strong>live force readout</strong> for paired data. Peak hold can be used separately to document a maximum, but it does not pair a peak to a particular displacement automatically.</li></ul>
+<p class="poe213-caution"><strong>Instrument caution:</strong> Hand-held force gauges can introduce side forces and variable load rates. A fixed gauge stand and separate deflection indicator improve accuracy; without them, describe the result as an approximate comparison and report setup limitations.</p></article></div></section>
+<section class="container lesson-section" id="paper"><div class="poe213-section-header"><div class="poe213-eyebrow">05 / Print-ready lab pages</div><h2>Blank measurements sheet for each group</h2><p>The print control opens a formatted two-page data sheet with two sample tables, safety checks and analysis questions. Use one pair of pages per comparison, and more copies if teams have additional specimens or repeat trials.</p></div>
+<div class="poe213-actions"><button id="printLabSheet" type="button" class="btn">Print Blank Lab Data Sheet</button><a href="#recorder" class="btn secondary">Use Digital Data Recorder ↓</a></div>
+<p class="poe213-mini">If printing is unavailable, draw the same columns in an engineering notebook and export your digital data table as CSV before leaving the webpage.</p></section>
+<section class="container lesson-section" id="recorder"><div class="poe213-section-header"><div class="poe213-eyebrow">06 / Enter your actual measurements</div><h2>Digital force–deflection data recorder</h2><p>Enter readings for two physical specimens. Results are calculated <strong>only from the numbers you type</strong>. The site does not make up measurements or send them to a server.</p></div>
+<div class="poe213-interactive">
+<div class="poe213-banner"><strong>Save your work:</strong> Measurements are stored only in this open browser page and may disappear if you refresh or close it. Use <strong>Export CSV</strong> after each experiment to keep your data. The printed lab sheet is the reliable paper backup.</div>
+<div class="poe213-grid" style="margin-top:1rem">
+<div class="poe213-panel">
+<h3>Shared apparatus settings</h3>
+<label class="poe213-label" for="labSpan">Measured support span L (mm)</label><input class="poe213-input" id="labSpan" type="number" min="1" step=".1" placeholder="Measure span first"/>
+<label class="poe213-label" for="labNotes">Test conditions / class notes</label><textarea id="labNotes" class="poe213-input" rows="2" placeholder="Gauge units, loading increments, apparatus, limits, measurement method..."></textarea>
+</div>
+<div class="poe213-panel"><h3>Before entering numbers</h3><ul class="poe213-checklist"><li>Both groups use the same span and loading technique.</li><li>Force is entered in N; displacement is in mm.</li><li>The 0 N and 0 mm condition uses a consistent baseline.</li><li>The force–deflection pairs come from actual measurements.</li></ul></div></div>
+<div class="poe213-grid" style="margin-top:1rem">
+<div class="poe213-panel"><h3>Specimen A · measured properties</h3>
+<div class="poe213-gridcompact">
+<div><label class="poe213-label" for="nameA">Material</label><input class="poe213-input" id="nameA" placeholder="e.g., basswood"/></div>
+<div><label class="poe213-label" for="idA">Sample ID / trial</label><input class="poe213-input" id="idA" placeholder="e.g., BW-1"/></div>
+<div><label class="poe213-label" for="widthA">Width b (mm)</label><input class="poe213-input" type="number" min=".01" step=".01" id="widthA" placeholder="Actual width"/></div>
+<div><label class="poe213-label" for="thickA">Thickness t (mm)</label><input class="poe213-input" type="number" min=".01" step=".01" id="thickA" placeholder="Actual thickness"/></div>
+<div><label class="poe213-label" for="massA">Specimen mass (g) · optional</label><input class="poe213-input" type="number" min="0" step=".001" id="massA" placeholder="If measured"/></div>
+<div><label class="poe213-label" for="orientationA">Grain / ply orientation</label><input class="poe213-input" id="orientationA" placeholder="Along grain; cross grain..."/></div></div>
+<div class="poe213-tablewrap"><table class="poe213-table"><thead><tr><th>Step</th><th>Deflection δ (mm)</th><th>Force F (N)</th></tr></thead><tbody id="rowsA"><tr><td>1</td><td><input class="poe213-data" data-row="0" data-group="A" data-kind="d" type="number" min="0" step=".01" aria-label="Specimen A, step 1, deflection in mm"/></td><td><input class="poe213-data" data-row="0" data-group="A" data-kind="f" type="number" min="0" step=".01" aria-label="Specimen A, step 1, applied force in N"/></td></tr><tr><td>2</td><td><input class="poe213-data" data-row="1" data-group="A" data-kind="d" type="number" min="0" step=".01" aria-label="Specimen A, step 2, deflection in mm"/></td><td><input class="poe213-data" data-row="1" data-group="A" data-kind="f" type="number" min="0" step=".01" aria-label="Specimen A, step 2, applied force in N"/></td></tr><tr><td>3</td><td><input class="poe213-data" data-row="2" data-group="A" data-kind="d" type="number" min="0" step=".01" aria-label="Specimen A, step 3, deflection in mm"/></td><td><input class="poe213-data" data-row="2" data-group="A" data-kind="f" type="number" min="0" step=".01" aria-label="Specimen A, step 3, applied force in N"/></td></tr><tr><td>4</td><td><input class="poe213-data" data-row="3" data-group="A" data-kind="d" type="number" min="0" step=".01" aria-label="Specimen A, step 4, deflection in mm"/></td><td><input class="poe213-data" data-row="3" data-group="A" data-kind="f" type="number" min="0" step=".01" aria-label="Specimen A, step 4, applied force in N"/></td></tr><tr><td>5</td><td><input class="poe213-data" data-row="4" data-group="A" data-kind="d" type="number" min="0" step=".01" aria-label="Specimen A, step 5, deflection in mm"/></td><td><input class="poe213-data" data-row="4" data-group="A" data-kind="f" type="number" min="0" step=".01" aria-label="Specimen A, step 5, applied force in N"/></td></tr><tr><td>6</td><td><input class="poe213-data" data-row="5" data-group="A" data-kind="d" type="number" min="0" step=".01" aria-label="Specimen A, step 6, deflection in mm"/></td><td><input class="poe213-data" data-row="5" data-group="A" data-kind="f" type="number" min="0" step=".01" aria-label="Specimen A, step 6, applied force in N"/></td></tr></tbody></table></div>
+<div class="poe213-results"><div><strong id="stiffnessA">—</strong><span>Measured effective k = F/δ slope (N/mm)</span></div><div><strong id="modulusA">—</strong><span>Estimated effective bending E (N/mm²)</span></div></div>
+<div class="poe213-mini" id="dataQualityA" aria-live="polite">Enter at least three measured nonzero pairs to calculate a slope.</div></div><div class="poe213-panel"><h3>Specimen B · measured properties</h3>
+<div class="poe213-gridcompact">
+<div><label class="poe213-label" for="nameB">Material</label><input class="poe213-input" id="nameB" placeholder="e.g., basswood"/></div>
+<div><label class="poe213-label" for="idB">Sample ID / trial</label><input class="poe213-input" id="idB" placeholder="e.g., BW-1"/></div>
+<div><label class="poe213-label" for="widthB">Width b (mm)</label><input class="poe213-input" type="number" min=".01" step=".01" id="widthB" placeholder="Actual width"/></div>
+<div><label class="poe213-label" for="thickB">Thickness t (mm)</label><input class="poe213-input" type="number" min=".01" step=".01" id="thickB" placeholder="Actual thickness"/></div>
+<div><label class="poe213-label" for="massB">Specimen mass (g) · optional</label><input class="poe213-input" type="number" min="0" step=".001" id="massB" placeholder="If measured"/></div>
+<div><label class="poe213-label" for="orientationB">Grain / ply orientation</label><input class="poe213-input" id="orientationB" placeholder="Along grain; cross grain..."/></div></div>
+<div class="poe213-tablewrap"><table class="poe213-table"><thead><tr><th>Step</th><th>Deflection δ (mm)</th><th>Force F (N)</th></tr></thead><tbody id="rowsB"><tr><td>1</td><td><input class="poe213-data" data-row="0" data-group="B" data-kind="d" type="number" min="0" step=".01" aria-label="Specimen B, step 1, deflection in mm"/></td><td><input class="poe213-data" data-row="0" data-group="B" data-kind="f" type="number" min="0" step=".01" aria-label="Specimen B, step 1, applied force in N"/></td></tr><tr><td>2</td><td><input class="poe213-data" data-row="1" data-group="B" data-kind="d" type="number" min="0" step=".01" aria-label="Specimen B, step 2, deflection in mm"/></td><td><input class="poe213-data" data-row="1" data-group="B" data-kind="f" type="number" min="0" step=".01" aria-label="Specimen B, step 2, applied force in N"/></td></tr><tr><td>3</td><td><input class="poe213-data" data-row="2" data-group="B" data-kind="d" type="number" min="0" step=".01" aria-label="Specimen B, step 3, deflection in mm"/></td><td><input class="poe213-data" data-row="2" data-group="B" data-kind="f" type="number" min="0" step=".01" aria-label="Specimen B, step 3, applied force in N"/></td></tr><tr><td>4</td><td><input class="poe213-data" data-row="3" data-group="B" data-kind="d" type="number" min="0" step=".01" aria-label="Specimen B, step 4, deflection in mm"/></td><td><input class="poe213-data" data-row="3" data-group="B" data-kind="f" type="number" min="0" step=".01" aria-label="Specimen B, step 4, applied force in N"/></td></tr><tr><td>5</td><td><input class="poe213-data" data-row="4" data-group="B" data-kind="d" type="number" min="0" step=".01" aria-label="Specimen B, step 5, deflection in mm"/></td><td><input class="poe213-data" data-row="4" data-group="B" data-kind="f" type="number" min="0" step=".01" aria-label="Specimen B, step 5, applied force in N"/></td></tr><tr><td>6</td><td><input class="poe213-data" data-row="5" data-group="B" data-kind="d" type="number" min="0" step=".01" aria-label="Specimen B, step 6, deflection in mm"/></td><td><input class="poe213-data" data-row="5" data-group="B" data-kind="f" type="number" min="0" step=".01" aria-label="Specimen B, step 6, applied force in N"/></td></tr></tbody></table></div>
+<div class="poe213-results"><div><strong id="stiffnessB">—</strong><span>Measured effective k = F/δ slope (N/mm)</span></div><div><strong id="modulusB">—</strong><span>Estimated effective bending E (N/mm²)</span></div></div>
+<div class="poe213-mini" id="dataQualityB" aria-live="polite">Enter at least three measured nonzero pairs to calculate a slope.</div></div>
+</div>
+<div class="poe213-actions"><button type="button" class="btn" id="exportData">Export CSV of Measured Data</button><button type="button" class="btn secondary" id="resetData">Clear All Digital Entries</button></div>
+</div></section>
+<section class="container lesson-section" id="analysis"><div class="poe213-section-header"><div class="poe213-eyebrow">07 / Analyze experimental evidence</div><h2>Graph force against center deflection</h2><p>Deflection belongs on the <strong>x-axis (mm)</strong> and force on the <strong>y-axis (N)</strong>. The initial roughly linear relationship has a slope that represents the specimen's effective bending stiffness.</p></div>
+<div class="poe213-grid">
+<div class="poe213-panel"><h3>Your actual measured graph</h3><svg id="liveChart" class="poe213-graphic" viewBox="0 0 730 370" role="img" aria-label="Measured force plotted on the vertical axis against measured midspan deflection on the horizontal axis. Dataset A teal and B orange. Enter real observations in the tables to see points and best-fit slopes.">
+<path d="M84 36V304H696" stroke="#54758c" stroke-width="2.2" fill="none"/>
+<text x="365" y="358" text-anchor="middle" class="poe213-svgtext">Measured center deflection δ (mm) →</text>
+<text x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)" class="poe213-svgtext">Measured applied force F (N) →</text>
+<g id="graphGrid" stroke="#dfebf0" stroke-width="1.2"></g>
+<g id="graphPointsA"></g><g id="graphPointsB"></g>
+<path id="fitLineA" d="" fill="none" stroke="#0c8a91" stroke-width="2.6" stroke-dasharray="7 4"/>
+<path id="fitLineB" d="" fill="none" stroke="#bc7833" stroke-width="2.6" stroke-dasharray="7 4"/>
+<text id="graphX" x="695" y="326" text-anchor="end" class="poe213-svgsmall">0 mm</text>
+<text id="graphY" x="77" y="26" text-anchor="end" class="poe213-svgsmall">0 N</text>
+<text x="477" y="70" class="poe213-svgsmall">A · teal</text>
+<text x="477" y="89" class="poe213-svgsmall">B · orange</text>
+<text id="graphHint" x="366" y="199" text-anchor="middle" class="poe213-svgtext">Enter measurements below to draw the graph</text>
+</svg><div class="poe213-legend"><span><i style="background:#0c8a91"></i>Specimen A</span><span><i style="background:#bc7833"></i>Specimen B</span><span>Dashed = constrained-through-zero trend</span></div>
+<p class="poe213-mini">The best-fit slope is calculated from your completed pairs using k = Σ(δF) / Σ(δ²), assuming readings were tared at (0, 0). Use only data in the visibly elastic, approximately linear portion. If the test has a preload or offset, correct the zero or use a different fit and document it.</p></div>
+<div class="poe213-panel"><h3>From slope to an estimated modulus</h3>
+<div class="poe213-formula">k = ΔF / Δδ (N/mm)</div>
+<div class="poe213-formula">I = bt³ / 12 (mm⁴)</div>
+<div class="poe213-formula">E<sub>estimated</sub> = kL³ / (48I) (N/mm²)</div>
+<p>The model assumes a <strong>slender, simply supported, centrally loaded rectangular strip</strong>, small elastic deflection and a valid effective bending modulus. It is not a direct measurement of tensile strength, ultimate load, fracture toughness or guaranteed wood stiffness.</p>
+<p><strong>Example with invented practice data only:</strong> A classroom strip has span L = 120 mm, b = 10 mm, t = 3 mm, and measured early-region slope k = 2.0 N/mm. Then I = 22.5 mm⁴, so E ≈ <strong>3,200 N/mm²</strong>. This is an arithmetic demonstration, not today's measured class result.</p>
+<div class="poe213-caution"><strong>Experimental accuracy:</strong> If deflection is close to the ruler's resolution, E estimates may be unreliable. Nonlinear response, shear deformation, support compliance, inaccurate thickness and imperfect center loading can also bias the slope. Comparing measured F/δ slopes may be more defensible than claiming a precise published material modulus.</div>
+</div></div>
+<div class="poe213-panel" style="margin-top:1rem"><h3>How to interpret the comparison</h3><div class="poe213-stepset"><div><strong>1. Check geometry</strong><small>Same L and comparable b/t?</small></div><div><strong>2. Check graph</strong><small>Straight near origin, or curved?</small></div><div><strong>3. Compare k</strong><small>At equal dimensions, larger N/mm means less bending per N.</small></div><div><strong>4. Report caveats</strong><small>Repeatability, grain, slippage, resolution and instrument support.</small></div></div>
+<p>A strip with smaller deflection at a particular shared load is <strong>stiffer as tested</strong>. To make claims about the underlying material rather than only those specimens, account for actual cross-section dimensions, anisotropy and repeatability. Do not confuse stiffness with maximum strength or failure load.</p></div></section>
+<section class="container lesson-section" id="apply"><div class="poe213-section-header"><div class="poe213-eyebrow">08 / Lab report task</div><h2>Make an evidence-based recommendation</h2><p>Use two or more real materials, at least three usable nonzero readings per specimen and additional material replicates if available. Discuss the force–deflection graph, not just which strip “felt strongest.”</p></div>
+<div class="poe213-grid"><article class="poe213-panel"><h3>Required analysis questions</h3><ol>
+<li>Which physical strip had the <strong>largest initial force–deflection slope</strong> k? Provide the measured value and units.</li>
+<li>Which had the <strong>smaller deflection at a comparable applied load</strong>? If actual loads differed, use the graph trend or interpolation within your measured elastic region.</li>
+<li>How did measured width and thickness compare? Explain why even small differences in t can change bending stiffness.</li>
+<li>What observations indicated the strip remained elastic or began slipping, permanently deforming, cracking or otherwise behaving nonlinearly?</li>
+<li>What two limitations of your equipment or method could have changed the result? Propose one improvement.</li>
+<li>Given these results, which material would you investigate for a <strong>lightweight bridge member</strong>, and what additional strength, buckling or joint test would be needed before choosing it?</li></ol></article>
+<article class="poe213-panel"><h3>Real-world use of the results</h3><p>Use actual specimen evidence to refine the material choices from 2.11. For the bridge capstone, selecting a material still requires consideration of mass, connection quality, compression buckling, grain direction and manufacturing rules.</p><p>The bridge's final performance requirements—including <strong>400 mm clear span, 100 N center design load, ≤10 mm deflection and ≤150 g completed mass</strong>—apply to the final bridge, <strong>not</strong> directly to these small test strips.</p>
+<p class="poe213-banner"><strong>Core insight:</strong> You are not declaring the “strongest material” from an elastic bending experiment. You are identifying which test specimen had a larger <strong>measured flexural stiffness</strong> and what more must be tested.</p></article></div></section>
+<section class="container lesson-section" id="practice"><div class="poe213-section-header"><div class="poe213-eyebrow">09 / Self-check</div><h2>Try the calculation, then reveal the solution</h2></div>
+<div class="poe213-grid">
+<article class="poe213-panel"><span class="poe213-pill">Check A</span><h3>Find the experimental stiffness</h3><p>A sample requires 2 N at 0.5 mm, 4 N at 1 mm and 6 N at 1.5 mm. What is the force–deflection slope?</p><details><summary>Reveal reasoning</summary><p>The points follow F = kδ with <strong>k = 4 N/mm</strong> (e.g., 6 N / 1.5 mm). This describes specimen stiffness for this geometry and load range.</p></details></article>
+<article class="poe213-panel"><span class="poe213-pill">Check B</span><h3>Why measure thickness?</h3><p>Two nominally identical strips have the same width, but one is 2 mm thick and the other is 3 mm. Does that matter?</p><details><summary>Reveal reasoning</summary><p>Yes. For bending about the same axis, I = bt³/12. The 3 mm strip has <strong>(3/2)³ ≈ 3.38 times</strong> the second moment of area, so test deflection can differ greatly even for the same material E.</p></details></article>
+<article class="poe213-panel"><span class="poe213-pill">Check C</span><h3>Gauge units</h3><p>A digital gauge displays 1.0 kgf. What force should be entered in a graph labeled newtons?</p><details><summary>Reveal reasoning</summary><p>Approximately <strong>9.81 N</strong>. Check the force gauge's selected units before transcription.</p></details></article>
+<article class="poe213-panel"><span class="poe213-pill">Check D</span><h3>Nonlinearity</h3><p>At the last loading step, force drops sharply while deflection increases. Should that point be included in the initial elastic slope fit?</p><details><summary>Reveal reasoning</summary><p>No. First document the event and stop according to safety limits. Fit only the clearly linear, elastic region; the sudden drop may indicate damage, slippage or another change that requires investigation.</p></details></article>
+<article class="poe213-panel"><span class="poe213-pill">Check E</span><h3>Repeat trials</h3><p>You load the same strip twice and obtain similar slopes. Have you tested two independent pieces of material?</p><details><summary>Reveal reasoning</summary><p>No. That is <strong>repeated loading of one specimen</strong>; a second physical strip is an independent sample and is better for estimating between-sample variability.</p></details></article>
+<article class="poe213-panel"><span class="poe213-pill">Check F</span><h3>What can the test prove?</h3><p>If plywood shows less deflection than balsa at 5 N, have you proven it will hold a larger ultimate load?</p><details><summary>Reveal reasoning</summary><p>No. The observation compares elastic bending response in the test configuration. Failure capacity requires separate approved tests and consideration of material dimensions and orientation.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="resources"><div class="poe213-section-header"><div class="poe213-eyebrow">Reference library</div><h2>Reliable materials-testing resources</h2></div>
+<div class="poe213-grid">
+<article class="poe213-panel poe213-resource"><h3>PASCO — Three-Point Bending Experiment</h3><p>Uses applied force and midpoint flex to investigate specimen stiffness and determine flexural modulus from a load–displacement graph.</p><a target="_blank" rel="noopener noreferrer" href="https://www.pasco.com/resources/lab-experiments/1365">Read PASCO's experiment ↗</a></article>
+<article class="poe213-panel poe213-resource"><h3>Instron — Flexural Testing Guide</h3><p>Explains why loading-tip alignment, support geometry, span and accurate displacement measurement matter in three-point bending.</p><a target="_blank" rel="noopener noreferrer" href="https://www.instron.com/en/testing-solutions/astm-standards/the-definitive-guide-to-astm-d790/">Read testing guidance ↗</a></article>
+<article class="poe213-panel poe213-resource"><h3>University of Cambridge — Three-Point Bend Theory</h3><p>Introduces the force–displacement slope and relationship k = 48EI/L³ using simple beam theory.</p><a target="_blank" rel="noopener noreferrer" href="https://mi.eng.cam.ac.uk/IALego/bender_files/bend_theory.pdf">Read beam testing explanation ↗</a></article>
+<article class="poe213-panel poe213-resource"><h3>Digital force gauge operating manuals</h3><p>Check your own gauge's live-force mode, compression direction, tare/zero procedure, resolution and overload capacity. Control/display details vary by model.</p><a target="_blank" rel="noopener noreferrer" href="https://mark-10.com/products/force-gauges/">See an example force-gauge manufacturer ↗</a></article>
+</div></section>
+<section class="container lesson-section" id="submit"><div class="poe213-section-header"><div class="poe213-eyebrow">Student submission</div><h2>Exactly what to submit</h2><p>Submit a <strong>POE 2.13 Materials Testing Lab Report</strong> (teacher-approved PDF, worksheet or notebook pages) with your real experimental measurements. Do not substitute model-generated values from 2.11.</p></div>
+<div class="poe213-grid"><article class="poe213-panel"><h3>Required report evidence</h3><ul class="poe213-checklist">
+<li>Objective, hypothesis and identification of independent, dependent and controlled variables.</li>
+<li>One labeled diagram or photograph showing the actual support points, gauge contact location, span and deflection reference.</li>
+<li>Material and specimen IDs, grain/orientation, dimensions (especially actual b and t), and force-gauge units.</li>
+<li>At least three nonzero paired measured force–deflection readings for each of two materials, preferably more where safe.</li>
+<li>A graph of <strong>force (N) versus center deflection (mm)</strong> with both materials identified and units labeled.</li>
+<li>A clearly shown stiffness calculation (slope in N/mm) for each specimen; optional effective E calculation using the measured geometry.</li>
+<li>Observations about return to original shape, residual set, slipping, damage or other notable behavior. Report "not observed" if no failure occurred.</li>
+<li>A short conclusion comparing measured performance and explaining at least two limitations plus a specific improvement.</li>
+</ul></article>
+<article class="poe213-panel"><h3>Submission quality check</h3><ul class="poe213-checklist">
+<li>Graphs and tables use real measurements—not assumed or fabricated data.</li>
+<li>Sample span, orientation and loading method are consistent or deviations explained.</li>
+<li>Initial slope is calculated from the linear elastic region only.</li>
+<li>Repeat loading of one piece is not described as independent sample replication.</li>
+<li>Stiffness results are not mislabeled ultimate strength or safe bridge capacity.</li>
+<li>Exported CSV, printed data sheets or teacher-required evidence files are included.</li>
+</ul><p><strong>Due date:</strong> Check the <a href="../../../../agenda.html">Daily Agenda</a> and follow your teacher's directions.</p>
+<a class="btn secondary" href="#start">Return to lesson ↑</a></article></div></section>
+<nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-12.html">← Lesson 2.12: Structural Failure</a><a class="btn" href="lesson-2-14.html">Next: 2.14 Structural Efficiency →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer><section id="poe213Paper" aria-label="Printable materials testing lab data sheet">
+<div class="poe213-paper-page">
+<h1>POE 2.13 · MATERIALS TESTING LAB</h1><p class="poe213-paper-sub">Actual Three-Point Bending Data • Sheet 1 of 2</p>
+<p>Team: __________________________________________  Period: __________  Date: _______________</p>
+<p><strong>Purpose:</strong> Compare measured force–deflection behavior of physical strips under matched testing conditions.</p>
+<p><strong>Safety signoff:</strong> ☐ Goggles ☐ Gauge in range ☐ Fixture stable ☐ Hands clear ☐ Teacher-approved limit</p>
+<p>Span L = __________ mm &nbsp; Force unit = _______ &nbsp; Displacement method = ____________________</p>
+<p>Teacher-approved max force/deflection or stopping rule: ______________________________________________</p>
+<div class="poe213-paper-spec"><h2>SPECIMEN A · PHYSICAL STRIP</h2>
+<p>Material: ________________________ Sample ID: ________________ Trial: _________</p>
+<p>Overall length: ______ mm &nbsp; Width b: ______ mm &nbsp; Thickness t: ______ mm &nbsp; Mass (optional): ______ g</p>
+<p>Grain/ply/print orientation: ________________________ Visible defects: ________________________</p>
+<table><thead><tr><th>Point</th><th>Force (N)</th><th>Center deflection (mm)</th><th>Observed behavior / comments</th></tr></thead><tbody>
+<tr><td>1</td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td></tr><tr><td>4</td><td></td><td></td><td></td></tr><tr><td>5</td><td></td><td></td><td></td></tr><tr><td>6</td><td></td><td></td><td></td></tr>
+</tbody></table><p>Residual deflection after unloading: _______ mm  Test stop condition: __________________________</p></div><div class="poe213-paper-spec"><h2>SPECIMEN B · PHYSICAL STRIP</h2>
+<p>Material: ________________________ Sample ID: ________________ Trial: _________</p>
+<p>Overall length: ______ mm &nbsp; Width b: ______ mm &nbsp; Thickness t: ______ mm &nbsp; Mass (optional): ______ g</p>
+<p>Grain/ply/print orientation: ________________________ Visible defects: ________________________</p>
+<table><thead><tr><th>Point</th><th>Force (N)</th><th>Center deflection (mm)</th><th>Observed behavior / comments</th></tr></thead><tbody>
+<tr><td>1</td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td></tr><tr><td>4</td><td></td><td></td><td></td></tr><tr><td>5</td><td></td><td></td><td></td></tr><tr><td>6</td><td></td><td></td><td></td></tr>
+</tbody></table><p>Residual deflection after unloading: _______ mm  Test stop condition: __________________________</p></div>
+</div>
+<div class="poe213-paper-page">
+<h1>POE 2.13 · EXPERIMENTAL ANALYSIS</h1><p class="poe213-paper-sub">Actual Three-Point Bending Data • Sheet 2 of 2</p>
+<p>Team: __________________________________________  Materials compared: __________________________</p>
+<h2>Apparatus sketch</h2><div class="poe213-paper-space"><span>Label both support points, span L, loading gauge, midpoint and deflection reference.</span></div>
+<h2>Graph and slope</h2><p>Graph force F (N) vertically versus midpoint deflection δ (mm) horizontally. Draw each material and determine its early elastic slope.</p>
+<div class="poe213-paper-graph"></div>
+<p>Specimen A slope k<sub>A</sub> = __________ N/mm &nbsp; Specimen B slope k<sub>B</sub> = __________ N/mm</p>
+<p>One sample calculation (show units): _________________________________________________________________</p>
+<h2>Evidence-based conclusions</h2>
+<ol><li>Which specimen has greater measured bending stiffness? Support the claim with two values.</li><li>What dimensions, orientation or measurement issues could have influenced your result?</li><li>What additional test would be needed before claiming that material is best for the bridge?</li></ol>
+<div class="poe213-paper-lines"><div></div><div></div><div></div><div></div><div></div></div>
+</div>
+</section><script>
+(function(){
+"use strict";
+const g=id=>document.getElementById(id);
+if(!g("labSpan")||!g("exportData")||!g("liveChart"))return;
+const svgns="http://www.w3.org/2000/svg";
+const groups=["A","B"];
+function number(value){if(value===null||String(value).trim()==="")return null;const n=Number(value);return Number.isFinite(n)?n:null;}
+function positive(id){const n=number(g(id).value);return n!==null&&n>0?n:null;}
+function readings(group){
+ const body=g("rows"+group),rs=Array.from(body.querySelectorAll("tr"));
+ return rs.map((r,i)=>({index:i+1,d:number(r.querySelector('[data-kind="d"]').value),f:number(r.querySelector('[data-kind="f"]').value)}));
+}
+function fit(data){
+ const pairs=data.filter(p=>p.d!==null&&p.f!==null&&p.d>0&&p.f>=0);
+ if(pairs.length<3)return {n:pairs.length,k:null,pairs};
+ let cross=0,sq=0;
+ pairs.forEach(p=>{cross+=p.d*p.f;sq+=p.d*p.d;});
+ const k=sq>1e-10?cross/sq:null;
+ return {n:pairs.length,k,pairs};
+}
+function info(group,L){
+ const b=positive("width"+group),t=positive("thick"+group),m=number(g("mass"+group).value);
+ const raw=readings(group),f=fit(raw),I=b!==null&&t!==null?b*Math.pow(t,3)/12:null;
+ const E=f.k!==null&&L!==null&&I!==null?f.k*Math.pow(L,3)/(48*I):null;
+ const allCompleted=raw.filter(p=>p.d!==null&&p.f!==null);
+ const incomplete=raw.filter(p=>(p.d!==null)!==(p.f!==null)).length;
+ return {group,b,t,m,L,raw,f,I,E,allCompleted,incomplete,name:g("name"+group).value.trim(),sample:g("id"+group).value.trim(),orientation:g("orientation"+group).value.trim()};
+}
+function elem(name,attrs,parent){
+ const e=document.createElementNS(svgns,name);
+ for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);
+ parent.appendChild(e);return e;
+}
+function graph(a,b){
+ const all=a.f.pairs.concat(b.f.pairs);
+ const ax=Math.max(.5,...all.map(x=>x.d))*1.22;
+ const ay=Math.max(1,...all.map(x=>x.f))*1.28;
+ const gx=x=>84+x/ax*590,gy=y=>304-y/ay*245;
+ const grid=g("graphGrid");grid.replaceChildren();
+ for(let i=1;i<5;i++){
+  elem("line",{x1:84+590*i/5,y1:36,x2:84+590*i/5,y2:304},grid);
+  elem("line",{x1:84,y1:304-245*i/5,x2:696,y2:304-245*i/5},grid);
+ }
+ for(const [n,obj,col] of [["A",a,"#0c8a91"],["B",b,"#bc7833"]]){
+  const plot=g("graphPoints"+n);plot.replaceChildren();
+  obj.f.pairs.forEach(p=>elem("circle",{cx:gx(p.d),cy:gy(p.f),r:5.5,fill:col,stroke:"#fff","stroke-width":1.3},plot));
+  const line=g("fitLine"+n);
+  if(obj.f.k!==null){
+   const xEnd=Math.min(ax,ay/obj.f.k);
+   line.setAttribute("d","M84 304 L"+gx(xEnd).toFixed(1)+" "+gy(obj.f.k*xEnd).toFixed(1));
+  }else line.setAttribute("d","");
+ }
+ g("graphHint").style.display=all.length?"none":"";
+ g("graphX").textContent=ax.toFixed(2)+" mm";g("graphY").textContent=ay.toFixed(1)+" N";
+ g("liveChart").setAttribute("aria-label","Live force versus deflection plot from entered measurements. "+all.length+" completed positive displacement-force pairs in total. Specimen A "+(a.f.k!==null?"slope "+a.f.k.toFixed(2)+" newtons per millimeter":"insufficient points")+"; specimen B "+(b.f.k!==null?"slope "+b.f.k.toFixed(2)+" newtons per millimeter":"insufficient points")+".");
+}
+function update(){
+ const L=positive("labSpan"),a=info("A",L),b=info("B",L);
+ for(const x of [a,b]){
+  g("stiffness"+x.group).textContent=x.f.k===null?"—":x.f.k.toFixed(3)+" N/mm";
+  g("modulus"+x.group).textContent=x.E===null?"—":x.E.toFixed(0)+" N/mm²";
+  let msg=x.f.n<3?"Enter "+(3-x.f.n)+" more nonzero force/deflection pair(s).":"Calculated through-origin slope from "+x.f.n+" usable nonzero paired points. Check that these readings are within the initial elastic region.";
+  if(x.incomplete)msg+=" "+x.incomplete+" row(s) have only force or only deflection.";
+  if(x.f.k!==null&&x.E===null)msg+=" Enter shared L and this specimen's actual b and t for estimated E.";
+  g("dataQuality"+x.group).textContent=msg;
+ }
+ graph(a,b);
+}
+document.querySelectorAll("#recorder input,#recorder textarea").forEach(el=>el.addEventListener("input",update));
+g("resetData").addEventListener("click",()=>{
+ if(!window.confirm("Clear all measurements and specimen information on this page? Export CSV first if you need to keep them."))return;
+ document.querySelectorAll("#recorder input,#recorder textarea").forEach(el=>el.value="");
+ update();
+});
+function csvCell(value){const s=String(value===null||value===undefined?"":value);return '"'+s.replace(/"/g,'""')+'"';}
+g("exportData").addEventListener("click",()=>{
+ const L=positive("labSpan"),all=groups.map(n=>info(n,L));
+ if(!all.some(x=>x.allCompleted.length)){window.alert("Enter some actual paired measurements before exporting.");return;}
+ const header=["Material","Specimen ID / Trial","Orientation","Span L (mm)","Width b (mm)","Thickness t (mm)","Mass (g)","Point","Center deflection (mm)","Force (N)","Calculated slope k (N/mm)","Estimated bending modulus E (N/mm2)","Test notes"];
+ const rows=[header.join(",")];
+ all.forEach(x=>x.raw.forEach(p=>{
+  if(p.d===null&&p.f===null)return;
+  const fields=[x.name,x.sample,x.orientation,x.L,x.b,x.t,x.m,p.index,p.d,p.f,x.f.k,x.E,g("labNotes").value];
+  rows.push(fields.map(csvCell).join(","));
+ }));
+ const blob=new Blob([rows.join("\r\n")+"\r\n"],{type:"text/csv;charset=utf-8"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=url;a.download="POE_2-13_Real_Material_Testing_Data.csv";document.body.appendChild(a);a.click();a.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),2500);
+});
+g("printLabSheet").addEventListener("click",()=>{document.body.classList.add("poe213-paper-only");window.print();});
+window.addEventListener("afterprint",()=>document.body.classList.remove("poe213-paper-only"));
+update();
+})();
+</script></body></html>
