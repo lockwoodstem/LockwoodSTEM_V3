@@ -1,1 +1,639 @@
-<!DOCTYPE html><html lang="en"><head><title>POE Unit 2 Lesson 2.11 | Structural Materials & Properties | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main"><nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">2.11</li></ol></nav><section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Materials &amp; Testing • Lesson 2.11</div><h1>Structural Materials & Properties</h1><p class="focus-question"><strong>Engineering question:</strong> How do engineers select a material for a load-bearing job?</p><div class="mission-actions"><a class="btn" href="#learn">Learn</a><a class="btn secondary" href="#practice">Practice</a><a class="btn secondary" href="#apply">Apply</a><a class="btn secondary" href="#submit">Submit</a><a class="btn ghost" href="../unit-2.html">Unit 2</a></div></div><aside class="mission-panel"><span class="tag">Phase 2: Materials knowledge</span><h2>Build evidence through experiments</h2><p>Learn properties and test methods using varied structures before beginning bridge fabrication.</p></aside></div></section><section class="container lesson-section"><article class="card"><h2>Learning Targets</h2><ul><li>Distinguish strength, stiffness, toughness and density</li><li>Compare grain direction and material variability</li><li>Match materials to specific functional needs</li></ul></article></section><section class="container lesson-section" id="learn"><div class="section-header"><h2>Learn the Concept</h2></div><article class="card"><ul><li>Stiffness is resistance to deflection; strength is resistance to failure</li><li>Density helps estimate mass; low mass alone is not evidence of safety</li><li>Manufacturing process and connections affect usable material performance</li></ul></article></section><section class="container lesson-section" id="practice"><div class="section-header"><h2>Practice Together</h2></div><article class="card"><p>Compare a wood strip, plywood sample and polymer sample for stiffness and mass without assuming their properties are identical.</p><p>Show your reasoning, annotate diagrams and use correct units.</p></article></section><section class="container lesson-section" id="apply"><div class="section-header"><h2>Apply the Skill</h2></div><article class="card"><p>Complete a selection matrix for a shelf, a support post and a gusset plate. Justify your rankings.</p><p><strong>Check your understanding:</strong> Why might the lightest material be a poor choice for a compression member?</p></article></section><section class="container lesson-section" id="submit"><article class="card"><h2>Student Evidence</h2><p>Material property comparisons. Provide clearly identified assumptions, measurements and conclusions.</p></article></section><nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-10.html">← 2.10 Truss Design &amp; Simulation</a><a class="btn" href="lesson-2-12.html">2.12 Structural Failure →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer></body></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POE 2.11 | Structural Materials &amp; Properties — Learning Studio | LockwoodSTEM</title>
+<meta name="description" content="Explore material stiffness, strength, toughness, density, wood grain and plywood layers through technical diagrams, video lessons, a live bending comparison and a material selection matrix."/>
+<link href="../../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/>
+<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/>
+<script defer src="../../../../assets/js/main.js"></script>
+<style id="poe211-learning-studio">
+html{scroll-behavior:smooth}
+.poe211{--ink:#092940;--blue:#0b567e;--aqua:#147f88;--gold:#e2ac37;--edge:#cadbe7}
+.poe211 .poe211-lead{font-size:1.09rem;line-height:1.65;color:#294456}
+.poe211 .poe211-eyebrow{color:#875d0a;font-weight:850;text-transform:uppercase;letter-spacing:.09em;font-size:.82rem}
+.poe211 .poe211-section-header{margin-bottom:1rem}
+.poe211 .poe211-section-header h2{margin:.25rem 0 .3rem}
+.poe211 .poe211-section-header p{margin:.1rem 0;max-width:860px;color:#4b6475}
+.poe211 .poe211-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
+.poe211 .poe211-metric{background:#f1f7fb;border:1px solid #bdd4e4;border-radius:14px;padding:.9rem 1rem}
+.poe211 .poe211-metric strong{display:block;color:#0b4772;font-size:1.05rem}
+.poe211 .poe211-metric span{display:block;font-size:.94rem;color:#40596a;margin-top:.2rem}
+.poe211 .poe211-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe211 .poe211-thirds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.poe211 .poe211-panel{background:#f7fbfd;border:1px solid var(--edge);border-radius:16px;padding:1.1rem 1.15rem}
+.poe211 .poe211-panel h3{color:var(--ink);margin:.15rem 0 .5rem}
+.poe211 .poe211-panel p{margin:.3rem 0 .65rem}
+.poe211 .poe211-panel ul{padding-left:1.2rem;margin:.4rem 0}
+.poe211 .poe211-pill{display:inline-block;border-radius:99px;padding:.2rem .6rem;background:#e3f0f5;color:#0c5672;font-size:.75rem;font-weight:900;letter-spacing:.03em}
+.poe211 .poe211-pill.gold{background:#fbefcf;color:#7d540d}
+.poe211 .poe211-mini{font-size:.9rem;color:#536b79}
+.poe211 .poe211-formula{font-size:clamp(1.05rem,1.6vw,1.28rem);letter-spacing:.01em;font-weight:850;color:#0b4163;background:#edf6fb;border-left:5px solid #147a9e;border-radius:10px;padding:.8rem 1rem;margin:.8rem 0;overflow-wrap:anywhere}
+.poe211 .poe211-graphic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe211 .poe211-large-svg{max-width:870px}
+.poe211 svg .poe211-axis{fill:none;stroke:#455f73;stroke-width:1.8}
+.poe211 svg .poe211-guide{stroke:#4c879e;stroke-dasharray:5 5;stroke-width:1.35;fill:none}
+.poe211 svg .poe211-dim{fill:none;stroke:#2b648b;stroke-width:1.15}
+.poe211 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#17384e}
+.poe211 svg text.poe211-annotation{font-size:13px;font-weight:750}
+.poe211 svg text.poe211-small{font-size:13px}
+.poe211 svg text.poe211-tiny{font-size:11px}
+.poe211 svg text.poe211-strong{font-weight:800}
+.poe211 .poe211-lesson-steps{list-style:none!important;margin:0;padding:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe211 .poe211-lesson-steps li{border-left:4px solid #167a94;padding:.7rem .75rem;border-radius:9px;background:#f2f8fc;font-weight:750;font-size:.92rem}
+.poe211 .poe211-lesson-steps li span{display:block;color:#527283;font-size:.78rem;font-weight:700}
+.poe211 .poe211-video{background:#f7fbff;border:1px solid #cfdfeb;border-radius:16px;overflow:hidden}
+.poe211 .poe211-video-copy{padding:1rem}
+.poe211 .poe211-video-copy h3{margin:.25rem 0}
+.poe211 .poe211-frame{aspect-ratio:16/9;background:#071e35;position:relative}
+.poe211 .poe211-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe211 .poe211-video a{font-weight:800}
+.poe211 .poe211-video p{margin:.4rem 0}
+.poe211 .poe211-tablewrap{overflow-x:auto}
+.poe211 .poe211-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.poe211 .poe211-table td,.poe211 .poe211-table th{border:1px solid #c8dbe8;text-align:left;padding:.55rem .7rem}
+.poe211 .poe211-table th{background:#eaf4fb;color:#0c3554}
+.poe211 .poe211-table .poe211-total{background:#f1f8e8;font-weight:850}
+.poe211 .poe211-steps{padding-left:1.55rem}
+.poe211 .poe211-steps li{padding-bottom:.45rem}
+.poe211 .poe211-caution{background:#fff9e9;border-left:5px solid #d59b22;padding:.8rem 1rem;border-radius:10px}
+.poe211 details.poe211-reveal{border:1px solid #b9d3e4;background:#f7fbff;border-radius:12px;padding:.8rem 1rem;margin:.65rem 0}
+.poe211 details.poe211-reveal summary{color:#0b4c73;cursor:pointer;font-weight:850}
+.poe211 details.poe211-reveal[open]{border-color:#0d8b9a}
+.poe211 details.poe211-reveal p{margin:.7rem 0 .15rem}
+.poe211 .poe211-explorer{background:#f2f9fc;border:1px solid #9dc6db;border-radius:16px;padding:1rem}
+.poe211 .poe211-explorer label{font-weight:800;color:#0b4163;display:block;margin:.5rem 0}
+.poe211 .poe211-explorer input[type=range]{width:min(100%,440px);accent-color:#0a7991;cursor:pointer}
+.poe211 .poe211-output{font-size:1.2rem;font-weight:850;color:#0a506d;background:#fff;border:1px solid #b9d5e5;padding:.7rem;border-radius:10px}
+.poe211 .poe211-resources a{display:block;margin:.4rem 0;font-weight:800;overflow-wrap:anywhere}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{padding:.45rem 0 .45rem 1.7rem;position:relative}
+.poe211 .poe211-checklist li::before{content:"□";position:absolute;left:0;top:.32rem;font-size:1.3rem;color:#0b567e}
+.poe211 a:focus-visible,.poe211 input:focus-visible,.poe211 summary:focus-visible{outline:3px solid #ca8b20;outline-offset:3px}
+@media(max-width:980px){.poe211 .poe211-thirds{grid-template-columns:1fr 1fr}.poe211 .poe211-lesson-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.poe211 .poe211-grid,.poe211 .poe211-thirds,.poe211 .poe211-overview{grid-template-columns:1fr}}
+@media print{.poe211 .poe211-video,.poe211 #explore,.poe211 .mission-actions{display:none!important}.poe211 details.poe211-reveal:not([open]){display:none}}
+
+.poe211 .poe211-illustration{display:block;width:100%;height:auto;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe211 .poe211-twin{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe211 .poe211-twin>*{min-width:0}
+.poe211 svg .beam{stroke:#1b5a7b;fill:none;stroke-width:8;stroke-linecap:round}
+.poe211 svg .beam-original{stroke:#c6d5df;stroke-width:4;stroke-dasharray:8 6;fill:none}
+.poe211 svg .beam-deflected{stroke:#008d94;stroke-width:6;fill:none;stroke-linecap:round}
+.poe211 svg .poe211-support{fill:#d6e9f5;stroke:#123f5b;stroke-width:1.8}
+.poe211 svg .poe211-force{stroke:#d97726;stroke-width:3;fill:none}
+.poe211 .poe211-param{background:#f6fafc;border-radius:12px;padding:.65rem .8rem;margin:.6rem 0}
+.poe211 .poe211-param label{display:flex;gap:.7rem;align-items:center;justify-content:space-between}
+.poe211 .poe211-param label strong{white-space:nowrap;font-variant-numeric:tabular-nums}
+.poe211 .poe211-param input[type="range"]{width:100%;accent-color:#0a7991}
+.poe211 .poe211-data{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:1rem 0}
+.poe211 .poe211-data div{border:1px solid #cadee8;border-radius:12px;padding:.6rem .8rem;background:#fff}
+.poe211 .poe211-data strong{display:block;font-size:1.15rem;color:#0c4966;font-variant-numeric:tabular-nums}
+.poe211 .poe211-data span{font-size:.82rem;color:#496475}
+.poe211 .poe211-variable{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe211 .poe211-variable div{border:1px solid #cadde8;border-radius:12px;background:#fff;padding:.75rem}
+.poe211 .poe211-variable b{display:block;font-size:1.12rem;color:#0b5779}
+.poe211 .poe211-progress-card{padding:1rem;border:1px solid #bfdae6;border-radius:12px;background:#f5fafc}
+.poe211 .poe211-progress-card strong{color:#0c4966}
+.poe211 .poe211-solution{font-variant-numeric:tabular-nums}
+.poe211 .poe211-resource-link{display:inline-block;margin-top:.3rem;font-weight:800}
+.poe211 .poe211-print{float:right;font-size:.85rem}
+@media(max-width:760px){.poe211 .poe211-twin,.poe211 .poe211-variable{grid-template-columns:1fr}.poe211 .poe211-print{float:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.poe211 .poe211-schematic{width:100%;display:block;max-width:900px;height:auto;background:#fff;border:1px solid #d2e4ec;border-radius:12px;margin:.75rem auto}
+.poe211 svg .poe211-head{font-size:15px;font-weight:850;fill:#113d57}
+.poe211 svg .poe211-note{font-size:13px;font-weight:760;fill:#183d53}
+.poe211 svg .poe211-caption{font-size:11px;fill:#405c6e}
+.poe211 .poe211-force-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-bottom:1rem}
+.poe211 .poe211-force-grid>div{background:#f5fafc;border:1px solid #cfdfeb;border-radius:11px;padding:.85rem}
+.poe211 .poe211-force-grid strong{display:block;color:#0d5472;margin-bottom:.2rem}
+.poe211 .poe211-force-grid span{font-size:.94rem;color:#3a5263}
+.poe211 .poe211-switches{display:flex;gap:.55rem;flex-wrap:wrap;margin:.75rem 0}
+.poe211 .poe211-switches button{border:1px solid #7ba1b9;background:#fff;color:#104c6c;border-radius:10px;padding:.65rem .85rem;font-weight:780;cursor:pointer}
+.poe211 .poe211-switches button[aria-pressed="true"]{background:#105a7b;color:white;border-color:#105a7b}
+.poe211 .poe211-switches button:hover{border-color:#147a9e}
+.poe211 .poe211-builder-note{background:#f2f9fc;border:1px solid #b7d4e5;border-radius:12px;padding:1rem;min-height:100px}
+.poe211 .poe211-builder-note h3{margin:0 0 .25rem}
+.poe211 .poe211-builder-note p{margin:.3rem 0}
+.poe211 .poe211-explorer input[type=range]{width:min(440px,100%);accent-color:#147a9e}
+.poe211 .poe211-checklist{list-style:none!important;margin:.4rem 0;padding:0!important}
+.poe211 .poe211-checklist li{position:relative;padding:.5rem 0 .5rem 1.6rem}
+.poe211 .poe211-checklist li:before{content:"□";position:absolute;left:0;top:.39rem;color:#147a9e;font-size:1.25rem}
+@media(max-width:880px){.poe211 .poe211-force-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.poe211 .poe211-force-grid{grid-template-columns:1fr}}
+
+.poe211 .poe211-schematic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d5e3ec;border-radius:14px;margin:.75rem auto}
+.poe211 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25465e}
+.poe211 svg .poe211-small{font-size:12px}
+.poe211 svg .poe211-label{font-size:14px;font-weight:800}
+.poe211 .poe211-key{display:flex;flex-wrap:wrap;gap:.8rem;font-weight:700;color:#446479;font-size:.9rem}
+.poe211 .poe211-key b{display:inline-block;width:15px;height:4px;vertical-align:middle;margin-right:.35rem}
+.poe211 .poe211-concept{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe211 .poe211-concept>div{border:1px solid #c1d7e4;background:#f5fbfd;border-radius:12px;padding:.85rem 1rem}
+.poe211 .poe211-concept strong{display:block;color:#0a5278;margin-bottom:.35rem}
+.poe211 .poe211-flow-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe211 .poe211-flow-list>div{background:#eef7fa;border-left:4px solid #147a9e;padding:.75rem;border-radius:9px;font-weight:750}
+.poe211 .poe211-flow-list small{display:block;color:#44677a}
+.poe211 .poe211-assumption{background:#fff8e8;border-left:5px solid #c89025;border-radius:10px;padding:.75rem 1rem}
+.poe211 .poe211-notation{background:#f1f8fc;border:1px solid #b8d3e6;border-radius:10px;padding:.75rem 1rem}
+.poe211 .poe211-formula-equation{background:#ecf7fb;border-left:5px solid #0c7994;padding:.8rem 1.1rem;border-radius:10px;font-size:1.22rem;font-weight:850;color:#06466a;margin:.65rem 0;overflow-wrap:anywhere}
+.poe211 .poe211-tablewrap{max-width:100%;overflow-x:auto}
+.poe211 .poe211-table{width:100%;border-collapse:collapse}
+.poe211 .poe211-table th,.poe211 .poe211-table td{border:1px solid #c5d9e6;padding:.55rem .65rem;text-align:left}
+.poe211 .poe211-table th{background:#eaf4fb;color:#0b496d}
+.poe211 .poe211-table td{font-variant-numeric:tabular-nums}
+.poe211 .poe211-control{padding:.8rem;background:#f8fbfd;border:1px solid #c5dce9;border-radius:12px;margin-bottom:.65rem}
+.poe211 .poe211-control label{display:flex;align-items:center;justify-content:space-between;gap:.6rem;font-weight:790;color:#0a5377;margin:0 0 .4rem}
+.poe211 .poe211-control label output{font-variant-numeric:tabular-nums}
+.poe211 .poe211-control input[type=range]{width:100%;accent-color:#0b7897}
+.poe211 .poe211-control-check{display:flex;align-items:center;gap:.6rem;color:#0a4b6a;font-weight:780;margin:.65rem 0}
+.poe211 .poe211-control-check input{width:20px;height:20px;accent-color:#0b7897}
+.poe211 .poe211-answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe211 .poe211-answers>div{background:#fff;border:1px solid #b9d7e4;border-radius:12px;padding:.7rem}
+.poe211 .poe211-answers strong{display:block;color:#0a496c;font-size:1.13rem;font-variant-numeric:tabular-nums}
+.poe211 .poe211-answers span{color:#4c6477;font-size:.88rem}
+.poe211 .poe211-simulator{background:#eef7fa;border:1px solid #9abfd2;border-radius:17px;padding:1.1rem}
+.poe211 .poe211-simulator .poe211-grid>*{min-width:0}
+.poe211 .poe211-teacher-note{color:#466478;font-size:.91rem}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{padding:.48rem .2rem .48rem 1.6rem;position:relative}
+.poe211 .poe211-checklist li:before{content:"□";position:absolute;left:0;top:.32rem;color:#0b7d95;font-size:1.2rem}
+.poe211 .poe211-resource a{display:block;font-weight:800;margin:.4rem 0}
+.poe211 .poe211-ratio{color:#144b65;font-weight:800}
+@media(max-width:960px){.poe211 .poe211-concept{grid-template-columns:1fr 1fr}.poe211 .poe211-flow-list{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.poe211 .poe211-concept,.poe211 .poe211-answers,.poe211 .poe211-flow-list{grid-template-columns:1fr}}
+
+.poe211 .poe211-schematic{display:block;width:100%;max-width:950px;height:auto;border:1px solid #c9dfec;background:#fff;border-radius:14px;margin:.85rem auto}
+.poe211 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25485e}
+.poe211 svg .poe211-heading{font-weight:850;font-size:15px}
+.poe211 svg .poe211-label{font-weight:760;font-size:14px}
+.poe211 svg .poe211-small{font-size:12px}
+.poe211 .poe211-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe211 .poe211-flow>div{border-left:4px solid #147a9e;background:#f1f8fc;border-radius:10px;padding:.75rem;font-weight:750;color:#13445f}
+.poe211 .poe211-flow small{display:block;font-size:.8rem;color:#587084;font-weight:650}
+.poe211 .poe211-definitions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe211 .poe211-definitions>div{padding:.9rem;background:#f1f8fb;border-radius:12px;border:1px solid #c5dce8}
+.poe211 .poe211-definitions strong{display:block;color:#0a5574}
+.poe211 .poe211-formula-equation{margin:.7rem 0;padding:.8rem 1rem;background:#edf7fb;border-left:5px solid #0f7c91;color:#104969;border-radius:12px;font-weight:850;font-size:1.14rem;overflow-wrap:anywhere}
+.poe211 .poe211-alert{background:#fff7e7;padding:.75rem 1rem;border-left:5px solid #c59022;border-radius:11px}
+.poe211 .poe211-controls{background:#f0f8fb;border:1px solid #abd0dd;border-radius:16px;padding:1rem}
+.poe211 .poe211-control{border:1px solid #c3d9e3;border-radius:10px;padding:.8rem;background:#fff;margin:.65rem 0}
+.poe211 .poe211-control label{display:flex;justify-content:space-between;gap:.7rem;color:#144d6b;font-weight:780}
+.poe211 .poe211-control output{font-variant-numeric:tabular-nums}
+.poe211 .poe211-control input[type="range"]{accent-color:#127894;width:100%}
+.poe211 .poe211-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe211 .poe211-results>div{background:#fff;padding:.75rem;border:1px solid #bfd9e6;border-radius:10px}
+.poe211 .poe211-results strong{font-size:1.15rem;color:#0b506d;display:block;font-variant-numeric:tabular-nums}
+.poe211 .poe211-results span{display:block;font-size:.86rem;color:#4d6676}
+.poe211 .poe211-moment-sign{margin:.55rem 0;font-weight:800;color:#0e5371}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{position:relative;padding:.4rem .2rem .4rem 1.55rem}
+.poe211 .poe211-checklist li::before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.2rem;color:#167c9a}
+.poe211 .poe211-resource a{font-weight:850;display:block;margin:.6rem 0}
+.poe211 .poe211-tablewrap{overflow-x:auto}
+.poe211 .poe211-table{border-collapse:collapse;width:100%;font-size:.96rem}
+.poe211 .poe211-table td,.poe211 .poe211-table th{border:1px solid #c8dbe8;padding:.6rem;text-align:left;vertical-align:top}
+.poe211 .poe211-table th{background:#e7f2f9;color:#0a4360}
+@media(max-width:940px){.poe211 .poe211-definitions,.poe211 .poe211-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.poe211 .poe211-definitions,.poe211 .poe211-results,.poe211 .poe211-flow{grid-template-columns:1fr}}
+
+.poe211 .poe211-svg{display:block;width:100%;height:auto;background:#fff;border:1px solid #d3e1eb;border-radius:14px;margin:.7rem auto}
+.poe211 .poe211-svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#27485e}
+.poe211 .poe211-svg .poe211-small{font-size:12px}
+.poe211 .poe211-svg .poe211-label{font-size:14px;font-weight:800}
+.poe211 .poe211-svg .poe211-heading{font-size:15px;font-weight:850}
+.poe211 .poe211-svg .poe211-member{stroke:#275773;stroke-width:9;stroke-linecap:round;transition:stroke .12s ease,opacity .12s ease}
+.poe211 .poe211-svg .poe211-accent{stroke:#0f897d}
+.poe211 #memberExplorerGraphic .poe211-member{stroke-width:9}
+.poe211 .poe211-buttons{display:flex;gap:.45rem;flex-wrap:wrap;margin:.75rem 0}
+.poe211 .poe211-buttons button{background:#fff;border:1px solid #9ebccd;border-radius:9px;padding:.6rem .75rem;color:#124c67;font-size:.91rem;font-weight:760;cursor:pointer}
+.poe211 .poe211-buttons button[aria-pressed="true"]{background:#105676;border-color:#105676;color:#fff}
+.poe211 .poe211-buttons button:hover{border-color:#0a7893}
+.poe211 .poe211-interactive{border:1px solid #b2d1df;background:#f2f9fc;padding:1rem;border-radius:16px}
+.poe211 .poe211-interactive h3{margin-top:0}
+.poe211 .poe211-guide-panel{padding:.85rem 1rem;background:#fff;border:1px solid #c8deea;border-radius:12px;min-height:4.5rem}
+.poe211 .poe211-guide-panel strong{display:block;color:#0d5373;margin-bottom:.25rem}
+.poe211 .poe211-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe211 .poe211-flow>div{padding:.75rem;border-radius:10px;background:#eaf5fa;border-left:4px solid #0e829c;font-weight:750}
+.poe211 .poe211-flow small{display:block;font-weight:600;color:#42667b}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{padding:.42rem .25rem .42rem 1.6rem;position:relative}
+.poe211 .poe211-checklist li:before{content:"□";position:absolute;left:0;top:.34rem;color:#118199;font-size:1.25rem}
+.poe211 .poe211-warning{border-left:5px solid #bc861f;background:#fff8e9;border-radius:11px;padding:.8rem 1rem}
+.poe211 .poe211-two-force{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.poe211 .poe211-two-force>div{background:#f4f9fc;border:1px solid #d0e1ea;border-radius:12px;padding:.9rem}
+.poe211 .poe211-two-force h3{margin:.1rem 0 .4rem}
+.poe211 .poe211-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.poe211 .poe211-stats>div{background:#fff;border:1px solid #c7ddea;padding:.75rem;border-radius:12px}
+.poe211 .poe211-stats strong{font-size:1.12rem;display:block;color:#0b5879}
+.poe211 .poe211-stats span{font-size:.85rem;color:#516779}
+.poe211 .poe211-resource a{display:block;font-weight:800;margin:.35rem 0}
+.poe211 .poe211-mini-note{background:#ecf7fa;border:1px solid #a3ceda;border-radius:12px;padding:.8rem 1rem}
+.poe211 .poe211-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.poe211 .poe211-tags span{font-size:.85rem;font-weight:850;color:#0b577a;background:#dceef5;padding:.25rem .6rem;border-radius:99px}
+.poe211 button:focus-visible,.poe211 a:focus-visible,.poe211 summary:focus-visible{outline:3px solid #c58c26;outline-offset:3px}
+@media(max-width:920px){.poe211 .poe211-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:670px){.poe211 .poe211-flow,.poe211 .poe211-two-force,.poe211 .poe211-stats{grid-template-columns:1fr}.poe211 .poe211-buttons button{flex:1 1 auto}}
+@media(prefers-reduced-motion:reduce){.poe211 .poe211-svg .poe211-member{transition:none}}
+
+.poe211 .poe211-diagram{width:100%;max-width:940px;height:auto;display:block;margin:.8rem auto;border:1px solid #d2e2ec;border-radius:13px;background:#fff}
+.poe211 svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;fill:#24465b}
+.poe211 svg text.poe211-label{font-size:13px;font-weight:800}
+.poe211 svg text.poe211-small{font-size:11px}
+.poe211 .poe211-diagram .poe211-truss-compression{stroke:#bf7a30;stroke-width:10;stroke-linecap:round}
+.poe211 .poe211-diagram .poe211-truss-tension{stroke:#108576;stroke-width:10;stroke-linecap:round}
+.poe211 .poe211-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe211 .poe211-flow>div{background:#edf7fb;border-left:4px solid #147a9e;padding:.8rem;border-radius:10px;color:#124d69;font-weight:760}
+.poe211 .poe211-flow small{font-size:.78rem;font-weight:600;display:block;color:#577083}
+.poe211 .poe211-equation{font-weight:850;color:#0b4869;font-size:1.15rem;padding:.7rem 1rem;background:#eaf6fb;border-left:5px solid #137e9c;border-radius:10px;margin:.65rem 0;overflow-wrap:anywhere}
+.poe211 .poe211-nuance{background:#fff8e7;border-left:5px solid #c28b22;border-radius:10px;padding:.8rem 1rem}
+.poe211 .poe211-concept-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.poe211 .poe211-concept-cards>div{border-radius:12px;background:#f3fafc;border:1px solid #c8deea;padding:.8rem}
+.poe211 .poe211-concept-cards strong{display:block;color:#0d5271;margin-bottom:.25rem}
+.poe211 .poe211-data-table{width:100%;border-collapse:collapse;font-size:.94rem}
+.poe211 .poe211-data-table td,.poe211 .poe211-data-table th{border:1px solid #c7dce7;padding:.6rem;text-align:left;vertical-align:top}
+.poe211 .poe211-data-table th{background:#e7f4fa;color:#134a6a}
+.poe211 .poe211-table-wrap{overflow-x:auto}
+.poe211 .poe211-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}
+.poe211 .poe211-badges span{border-radius:90px;background:#e1eff5;padding:.35rem .65rem;font-size:.85rem;font-weight:820;color:#0c5679}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{position:relative;padding:.45rem 0 .45rem 1.55rem}
+.poe211 .poe211-checklist li:before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.25rem;color:#087d9b}
+.poe211 .poe211-lab{border:1px solid #a8d2df;border-radius:15px;background:#f1f9fc;padding:1rem}
+.poe211 .poe211-control{padding:.65rem .8rem;border:1px solid #c8dce8;background:#fff;border-radius:10px;margin:.65rem 0}
+.poe211 .poe211-control label{display:flex;justify-content:space-between;gap:.75rem;font-weight:800;color:#0c5274}
+.poe211 .poe211-control output{font-variant-numeric:tabular-nums}
+.poe211 .poe211-control input[type=range]{accent-color:#0b7899;width:100%}
+.poe211 .poe211-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.poe211 .poe211-results>div{background:#fff;border:1px solid #c2dce7;border-radius:10px;padding:.75rem}
+.poe211 .poe211-results strong{display:block;color:#0c506d;font-size:1.12rem;font-variant-numeric:tabular-nums}
+.poe211 .poe211-results span{color:#516d7a;font-size:.84rem}
+.poe211 .poe211-switches{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}
+.poe211 .poe211-switches button{padding:.6rem .8rem;border:1px solid #94b4c9;background:#fff;border-radius:9px;font-size:.9rem;font-weight:780;color:#135273;cursor:pointer}
+.poe211 .poe211-switches button[aria-pressed="true"]{background:#0e5678;color:#fff;border-color:#0e5678}
+.poe211 .poe211-switches button:hover{border-color:#0d7992}
+.poe211 .poe211-step-explanation{padding:.75rem 1rem;background:#fff;border:1px solid #b9d3e2;border-radius:11px;min-height:112px}
+.poe211 .poe211-step-explanation h3{margin:.15rem 0 .5rem}
+.poe211 .poe211-note{font-size:.9rem;color:#4e6573}
+.poe211 .poe211-resource a{display:block;font-weight:800;margin:.55rem 0;overflow-wrap:anywhere}
+.poe211 .poe211-mini-formula{font-size:.92rem;background:#f4fbff;border:1px solid #cddfea;padding:.65rem;border-radius:10px}
+.poe211 #solverStageJoint{stroke:#e8ab30;stroke-width:5;fill:#153d58;display:none}
+@media(max-width:950px){.poe211 .poe211-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.poe211 .poe211-concept-cards,.poe211 .poe211-flow,.poe211 .poe211-results{grid-template-columns:1fr}}
+
+.poe211 .poe211-illustration{display:block;width:100%;max-width:950px;height:auto;background:#fff;border:1px solid #d0e1eb;border-radius:14px;margin:.8rem auto}
+.poe211 svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;fill:#284960}
+.poe211 svg text.poe211-label{font-size:13px;font-weight:750}
+.poe211 svg text.poe211-small{font-size:11px}
+.poe211 .poe211-solid,.poe211 .poe211-member{stroke:#285878;stroke-width:8;stroke-linecap:round;fill:none}
+.poe211 .poe211-member{stroke-width:9}
+.poe211 .poe211-load{stroke:#c37529;stroke-width:3.4;fill:none}
+.poe211 .poe211-react{stroke:#0c8c94;stroke-width:3.4;fill:none}
+.poe211 .poe211-force{stroke:#275b82;stroke-width:3.2;fill:none}
+.poe211 .poe211-dimension{stroke:#7992a6;stroke-width:1.5;fill:none}
+.poe211 .poe211-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe211 .poe211-flow>div{background:#eef8fb;border-left:4px solid #14859b;padding:.72rem .8rem;border-radius:10px;font-weight:770;color:#0a4e6c}
+.poe211 .poe211-flow small{display:block;color:#537385;font-size:.79rem;font-weight:650}
+.poe211 .poe211-equation{font-size:1.1rem;background:#eaf6fb;border-left:5px solid #0f7992;border-radius:10px;padding:.8rem 1rem;color:#0b4e70;font-weight:850;margin:.7rem 0;overflow-wrap:anywhere}
+.poe211 .poe211-note{background:#fff8e8;border-left:5px solid #c48a27;padding:.8rem 1rem;border-radius:11px}
+.poe211 .poe211-learning-card{background:#f3f9fc;border:1px solid #c8dce8;border-radius:12px;padding:.8rem 1rem}
+.poe211 .poe211-learning-card h3{margin:.2rem 0 .5rem}
+.poe211 .poe211-list-compact{margin:.4rem 0;padding-left:1.25rem}
+.poe211 .poe211-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin:.75rem 0}
+.poe211 .poe211-badges span{border-radius:99px;padding:.25rem .7rem;background:#e0eff5;color:#15516f;font-size:.83rem;font-weight:790}
+.poe211 .poe211-tablewrap{overflow-x:auto}
+.poe211 .poe211-table{width:100%;border-collapse:collapse;font-size:.93rem}
+.poe211 .poe211-table th,.poe211 .poe211-table td{border:1px solid #c6dbe7;padding:.55rem .65rem;text-align:left;vertical-align:top}
+.poe211 .poe211-table th{background:#eaf4fa;color:#0e526c}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{position:relative;padding:.45rem .25rem .45rem 1.5rem}
+.poe211 .poe211-checklist li::before{content:"□";position:absolute;left:0;top:.29rem;font-size:1.25rem;color:#0e8795}
+.poe211 .poe211-interactive{background:#eef8fb;border:1px solid #add1df;border-radius:16px;padding:1.05rem}
+.poe211 .poe211-control{border:1px solid #c4dce7;border-radius:12px;padding:.75rem .85rem;background:#fff;margin:.65rem 0}
+.poe211 .poe211-control label{display:flex;justify-content:space-between;gap:.65rem;color:#0e5271;font-weight:810}
+.poe211 .poe211-control input[type="range"]{width:100%;accent-color:#107f93}
+.poe211 .poe211-control output{font-variant-numeric:tabular-nums}
+.poe211 .poe211-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe211 .poe211-stats>div{border:1px solid #c3dce7;border-radius:10px;padding:.8rem;background:#fff}
+.poe211 .poe211-stats strong{display:block;font-size:1.07rem;color:#0c4f69;font-variant-numeric:tabular-nums}
+.poe211 .poe211-stats span{font-size:.83rem;color:#486b7b}
+.poe211 .poe211-stepbuttons{display:flex;gap:.5rem;flex-wrap:wrap;margin:.75rem 0}
+.poe211 .poe211-stepbuttons button{border:1px solid #93b9c8;border-radius:9px;background:white;color:#165477;font-weight:750;padding:.58rem .76rem;cursor:pointer}
+.poe211 .poe211-stepbuttons button[aria-pressed="true"]{background:#0e5675;border-color:#0e5675;color:#fff}
+.poe211 .poe211-stage-note{background:white;border:1px solid #b5d3df;border-radius:12px;padding:.8rem 1rem;min-height:110px}
+.poe211 .poe211-stage-note h3{margin:.15rem 0 .45rem}
+.poe211 .poe211-resource a{font-weight:820;display:block;margin:.45rem 0}
+.poe211 #cutLine{pointer-events:none}
+.poe211 #liveTruss [data-id]{transition:stroke .15s ease,opacity .15s ease}
+@media(max-width:960px){.poe211 .poe211-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.poe211 .poe211-flow,.poe211 .poe211-stats{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.poe211 #liveTruss [data-id]{transition:none}}
+
+.poe211 .poe211-drawing,.poe211 .poe211-guidegraphic{display:block;width:100%;height:auto;background:#fff;border:1px solid #d1e1eb;border-radius:12px;margin:.65rem auto}
+.poe211 .poe211-drawing .poe211-svgtext,.poe211 .poe211-guidegraphic text{font-family:system-ui,Segoe UI,Arial,sans-serif;font-size:11px;fill:#23465e;font-weight:690}
+.poe211 .poe211-bar{stroke:#2c6886;stroke-width:4.5;stroke-linecap:round}
+.poe211 .poe211-deformed{stroke:#dea72a;stroke-width:3;stroke-dasharray:4 3;stroke-linecap:round}
+.poe211 .poe211-lab{padding:1rem;border:1px solid #abd1dd;border-radius:16px;background:#edf7fb}
+.poe211 .poe211-control{background:#fff;border:1px solid #c4d9e5;border-radius:12px;padding:.75rem;margin:.6rem 0}
+.poe211 .poe211-control label{font-weight:790;color:#0b526f;display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.poe211 .poe211-control output{font-variant-numeric:tabular-nums}
+.poe211 .poe211-control input[type="range"]{width:100%;accent-color:#117f97}
+.poe211 .poe211-statlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe211 .poe211-statlist>div{background:#fff;border:1px solid #c0dbe5;border-radius:11px;padding:.7rem}
+.poe211 .poe211-statlist strong{display:block;color:#0a4b69;font-size:1.09rem;font-variant-numeric:tabular-nums}
+.poe211 .poe211-statlist span{font-size:.83rem;color:#536c7c}
+.poe211 .poe211-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.poe211 .poe211-flow>div{background:#eff7fa;border:1px solid #c8dde7;padding:.8rem;border-radius:11px}
+.poe211 .poe211-flow strong{display:block;color:#0b5272}
+.poe211 .poe211-flow span{font-size:.88rem;color:#536b7a}
+.poe211 .poe211-warning{background:#fff8ea;border-left:5px solid #c39230;padding:.8rem 1rem;border-radius:10px}
+.poe211 .poe211-formula{background:#eaf6fa;border-left:4px solid #11819b;padding:.7rem 1rem;font-size:1.09rem;font-weight:850;color:#0b4c68;border-radius:9px;margin:.7rem 0}
+.poe211 .poe211-tablewrap{overflow-x:auto;margin:.6rem 0}
+.poe211 .poe211-table{border-collapse:collapse;width:100%;font-size:.93rem}
+.poe211 .poe211-table th,.poe211 .poe211-table td{padding:.55rem .65rem;border:1px solid #c6dae7;text-align:left;vertical-align:middle;font-variant-numeric:tabular-nums}
+.poe211 .poe211-table th{background:#e7f2fa;color:#0c496a}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{padding:.43rem .2rem .43rem 1.55rem;position:relative}
+.poe211 .poe211-checklist li:before{content:"□";position:absolute;left:0;top:.29rem;font-size:1.25rem;color:#0c849b}
+.poe211 .poe211-feedback{border:1px solid #b1d5e1;padding:.85rem 1rem;border-radius:10px;background:#fff;min-height:78px}
+.poe211 .poe211-legend{font-size:.88rem;color:#456474;display:flex;flex-wrap:wrap;gap:.9rem;margin:.65rem 0}
+.poe211 .poe211-legend b{display:inline-block;width:16px;height:4px;vertical-align:middle;margin-right:.3rem}
+.poe211 .poe211-resource a{display:block;font-weight:800;margin:.45rem 0}
+.poe211 .poe211-panel{min-width:0}
+.poe211 input[type="checkbox"]{accent-color:#147e91}
+@media(max-width:940px){.poe211 .poe211-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:690px){.poe211 .poe211-flow,.poe211 .poe211-statlist{grid-template-columns:1fr}}
+
+.poe211 .poe211-diagram{display:block;width:100%;height:auto;background:white;border:1px solid #cadfeb;border-radius:13px;margin:.8rem auto}
+.poe211 .poe211-diagram text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#2a4a60}
+.poe211 .poe211-diagram text.poe211-svghead{font-size:15px;font-weight:840}
+.poe211 .poe211-diagram text.poe211-svglabel{font-size:14px;font-weight:770}
+.poe211 .poe211-diagram text.poe211-svgnote{font-size:11px}
+.poe211 .poe211-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem}
+.poe211 .poe211-flow>div{border-left:4px solid #147f95;background:#eef7fb;border-radius:10px;padding:.8rem;font-weight:800;color:#0c5072}
+.poe211 .poe211-flow small{display:block;font-size:.8rem;color:#546d7a}
+.poe211 .poe211-grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.poe211 .poe211-grid3>div{background:#eff8fb;border:1px solid #c5dce7;border-radius:12px;padding:.85rem}
+.poe211 .poe211-grid3 strong{display:block;font-size:1.03rem;color:#0b5171}
+.poe211 .poe211-grid3 p{font-size:.9rem;margin:.45rem 0}
+.poe211 .poe211-eq{background:#eaf5fb;border-left:5px solid #0e7f95;border-radius:10px;padding:.8rem 1rem;color:#0d506d;font-weight:850;margin:.7rem 0;font-size:1.15rem;overflow-wrap:anywhere}
+.poe211 .poe211-warning{background:#fff8ea;border-left:5px solid #c18b29;border-radius:11px;padding:.8rem 1rem}
+.poe211 .poe211-lab{background:#eff8fb;border:1px solid #a9d0dd;border-radius:15px;padding:1.1rem}
+.poe211 .poe211-control{background:#fff;border:1px solid #c3dae6;border-radius:10px;margin:.6rem 0;padding:.75rem}
+.poe211 .poe211-control label{display:flex;justify-content:space-between;gap:.65rem;font-weight:790;color:#0d5373}
+.poe211 .poe211-control input[type=range]{width:100%;accent-color:#128397}
+.poe211 .poe211-control select{width:100%;padding:.5rem;border:1px solid #abc5d7;border-radius:8px;background:#fff;font:inherit;color:#164b64}
+.poe211 .poe211-control output{font-variant-numeric:tabular-nums}
+.poe211 .poe211-simresults{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe211 .poe211-simresults>div{background:white;border:1px solid #bfd8e5;padding:.8rem;border-radius:11px}
+.poe211 .poe211-simresults strong{display:block;color:#0c5374;font-size:1.1rem;font-variant-numeric:tabular-nums}
+.poe211 .poe211-simresults span{font-size:.83rem;color:#547184}
+.poe211 .poe211-matrix{overflow-x:auto}
+.poe211 .poe211-matrix table{width:100%;min-width:610px;border-collapse:collapse;font-size:.92rem}
+.poe211 .poe211-matrix th,.poe211 .poe211-matrix td{padding:.6rem;border:1px solid #c4dbe7;text-align:left;vertical-align:top}
+.poe211 .poe211-matrix th{background:#e7f2f9;color:#0c4c6b}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{padding:.42rem .2rem .42rem 1.6rem;position:relative}
+.poe211 .poe211-checklist li:before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.25rem;color:#13839b}
+.poe211 .poe211-resource a{display:block;margin:.55rem 0;font-weight:800;overflow-wrap:anywhere}
+.poe211 .poe211-note{font-size:.89rem;color:#516e7d}
+.poe211 .poe211-equationline{color:#1a536c;font-size:.95rem;font-weight:780}
+.poe211 .poe211-choices{display:flex;flex-wrap:wrap;gap:.6rem}
+.poe211 .poe211-choices>span{background:#e2f1f6;border-radius:99px;padding:.35rem .65rem;color:#0b5472;font-size:.86rem;font-weight:800}
+.poe211 #poe211Graph{max-width:800px}
+@media(max-width:950px){.poe211 .poe211-grid3,.poe211 .poe211-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.poe211 .poe211-grid3,.poe211 .poe211-flow,.poe211 .poe211-simresults{grid-template-columns:1fr}}
+</style></head>
+<body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container nav"><a class="brand" aria-label="LockwoodSTEM home" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
+<main id="main" class="poe211">
+<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.11</li></ol></nav>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img alt="POE course icon" class="lesson-course-icon" src="../../../../assets/img/course-icons/poe-course-icon.png"/><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.11</div><h1>Structural Materials &amp; Properties</h1>
+<p class="focus-question"><strong>Engineering question:</strong> How do engineers choose a material that is stiff enough, strong enough and light enough for a particular job?</p>
+<div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#watch">Watch Videos</a><a class="btn secondary" href="#grain">See Grain &amp; Layers</a><a class="btn secondary" href="#lab">Interactive Bending Lab</a><a class="btn secondary" href="#apply">Selection Matrix</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
+<aside class="mission-panel"><span class="tag">Observe • Calculate • Evaluate • Select</span><h2>Materials are engineering decisions.</h2><p>Connect stress–strain behavior, density, grain orientation and fabrication choices to the bridge project—then defend a selection using evidence.</p><p><strong>Bring:</strong> calculator, engineering notebook or Lesson 2.11 materials comparison worksheet.</p></aside></div></section>
+<section class="container lesson-section" id="start"><div class="poe211-section-header"><div class="poe211-eyebrow">Learning pathway</div><h2>What you'll learn</h2><p>Use the reading, short videos and diagrams to learn each concept. Then compare two specimens in an interactive three-point bending model. The later materials lab will replace illustrative properties with measurements.</p></div>
+<div class="poe211-overview"><div class="poe211-metric"><strong>01 · Describe</strong><span>Distinguish stiffness, strength, density, ductility and toughness.</span></div><div class="poe211-metric"><strong>02 · Investigate</strong><span>Predict the effects of grain, material choice and specimen thickness on deflection.</span></div><div class="poe211-metric"><strong>03 · Select</strong><span>Use an evidence-based matrix for a beam, post and bridge connection.</span></div></div>
+<div class="poe211-panel" style="margin-top:1rem"><h3>Suggested 45–50 minute pathway</h3><div class="poe211-flow"><div>Observe<small>5 minutes</small></div><div>Read and watch<small>10–12 minutes</small></div><div>Run virtual tests<small>15 minutes</small></div><div>Compare and explain<small>15–18 minutes</small></div></div></div></section>
+<section class="container lesson-section" id="properties"><div class="poe211-section-header"><div class="poe211-eyebrow">01 / What does “better” mean?</div><h2>Five important material properties</h2><p>Different materials may perform best for different engineering requirements. A material that is very stiff may not be the lightest or the toughest.</p></div>
+<div class="poe211-grid3">
+<div><strong>Stiffness</strong><p>How strongly a material resists <em>elastic deformation</em>. Material stiffness is commonly measured by elastic modulus <strong>E</strong>. Structural bending stiffness depends on <strong>EI</strong>, so geometry also matters.</p></div>
+<div><strong>Strength</strong><p>Resistance to failure or permanent deformation under a specified loading mode. Tensile, compressive and bending strengths are not interchangeable.</p></div>
+<div><strong>Density</strong><p>Mass per unit volume, <strong>ρ = m/V</strong>. Low density can help meet a mass limit, but density alone does not establish load capacity.</p></div>
+<div><strong>Ductility</strong><p>Ability to undergo plastic deformation before fracture. Not every material yields in the same way; brittle materials may fracture with little plastic deformation.</p></div>
+<div><strong>Toughness</strong><p>Energy absorbed per unit volume before fracture, represented qualitatively by total area under a stress–strain curve.</p></div>
+<div><strong>Directional behavior</strong><p>Properties may depend on orientation: wood grain, plywood plies and 3D-print layers can all make a material behave differently in different directions.</p></div>
+</div>
+<div class="poe211-grid" style="margin-top:1rem"><article class="poe211-panel"><h3>Material behavior vs. structure behavior</h3><p>The <strong>elastic modulus E</strong> describes material stiffness. A beam's <strong>bending stiffness EI</strong> also includes its area moment of inertia I, which depends on the cross-section shape and orientation.</p><p class="poe211-warning"><strong>Critical distinction:</strong> A thicker strip can bend less even if made from the same material. Lower deflection alone does <em>not</em> mean the material has a larger E or higher strength.</p></article>
+<article class="poe211-panel"><h3>Stress and strain</h3><div class="poe211-eq">σ = F/A &nbsp;·&nbsp; ε = ΔL/L₀ &nbsp;·&nbsp; E = σ/ε (linear elastic range)</div><p>Axial stress σ is measured in N/mm², strain ε has no units, and E is the initial elastic slope of the stress–strain curve.</p><p><strong>1 N/mm² = 1 MPa.</strong> Always state the loading mode when comparing material strengths.</p></article></div></section>
+<section class="container lesson-section" id="curve"><div class="poe211-section-header"><div class="poe211-eyebrow">02 / Learn to read evidence</div><h2>What does a stress–strain graph reveal?</h2><p>The initial slope identifies the elastic modulus. The curve's later behavior helps describe yielding, ductility and fracture—but you must not assume all materials have the same shaped curve.</p></div>
+<svg class="poe211-diagram" viewBox="0 0 700 320" role="img" aria-label="Qualitative stress versus strain diagram with a steeper initial elastic slope, yield point, ductile extended deformation curve and an illustrative brittle failure curve that fractures at low strain. No numerical scales.">
+<path d="M72 263H654M72 263V26" stroke="#587d91" stroke-width="2.2" fill="none"/>
+<path d="M644 257L657 263L644 269 M66 38L72 26L78 38" stroke="#587d91" fill="none" stroke-width="2"/>
+<text x="362" y="302" text-anchor="middle" class="poe211-svglabel">Strain (deformation ÷ initial length) →</text>
+<text transform="translate(23 165) rotate(-90)" text-anchor="middle" class="poe211-svglabel">Stress (force ÷ area) →</text>
+<path d="M72 263L235 117C269 91 289 126 335 104S448 94 483 141" fill="none" stroke="#148c82" stroke-width="5" stroke-linecap="round"/>
+<circle cx="235" cy="117" r="5" fill="#148c82"/>
+<path d="M72 263L185 56" fill="none" stroke="#c47b32" stroke-width="4.4" stroke-linecap="round"/>
+<path d="M72 263L265 78" fill="none" stroke="#497fba" stroke-width="2.3" stroke-dasharray="7 5"/>
+<text x="342" y="73" class="poe211-svglabel">Ductile (qualitative)</text><text x="192" y="42" class="poe211-svglabel">Brittle</text>
+<text x="242" y="121" class="poe211-svgnote">Yield region</text>
+<text x="489" y="144" class="poe211-svgnote">Fracture</text>
+<text x="186" y="281" class="poe211-svgnote">Initial slope = E</text>
+<text x="390" y="219" class="poe211-svgnote">Toughness relates to the area</text>
+<text x="390" y="237" class="poe211-svgnote">under the stress–strain curve</text>
+<text x="365" y="316" text-anchor="middle" class="poe211-svgnote">Illustrative curves only, not data for basswood, plywood or PLA</text>
+</svg>
+<div class="poe211-grid"><article class="poe211-panel"><h3>Understand the slope</h3><p>In a simple tensile test, <strong>stress ÷ strain in the initial linear region</strong> gives E. A steeper initial slope means greater material axial stiffness for the specific loading direction being measured.</p><details class="poe211-reveal"><summary>Why isn't a high E the same as high strength?</summary><p>Elastic modulus describes <em>how much the material stretches</em> under a stress in the elastic region, not the stress at which it yields, cracks or breaks. Strong and stiff are separate properties.</p></details></article>
+<article class="poe211-panel"><h3>Why toughness matters</h3><p>Two materials can reach similar maximum stress yet absorb very different amounts of energy before fracture. One can fail suddenly; another may deform substantially.</p><details class="poe211-reveal"><summary>Where is toughness on the graph?</summary><p>It is associated with <strong>total area under the stress–strain curve</strong> through fracture, expressed as energy per unit volume. The graphic is qualitative and contains no material-specific data.</p></details></article></div></section>
+<section class="container lesson-section" id="grain"><div class="poe211-section-header"><div class="poe211-eyebrow">03 / Natural and manufactured materials</div><h2>Wood grain, plywood plies and print orientation</h2><p>Structure inside a material can change its behavior. For wood, grain, moisture, knots and fiber alignment matter; plywood uses bonded cross-oriented veneer layers.</p></div>
+<svg class="poe211-diagram" viewBox="0 0 710 305" role="img" aria-label="Wood fibers in an along-grain strip and across-grain strip. Simplified alternating plywood plies with orientations 0, 90, 0. The stiffness and failure behavior depend on grain, defects, layers and loading orientation.">
+<text x="132" y="28" text-anchor="middle" class="poe211-svghead">SOLID WOOD · ALONG</text><text x="366" y="28" text-anchor="middle" class="poe211-svghead">SOLID WOOD · ACROSS</text><text x="608" y="28" text-anchor="middle" class="poe211-svghead">PLYWOOD · PLIES</text>
+<rect x="24" y="59" width="216" height="125" fill="#f2d8ab" stroke="#b78f55" stroke-width="2" rx="9"/>
+<rect x="255" y="59" width="216" height="125" fill="#f2d8ab" stroke="#b78f55" stroke-width="2" rx="9"/>
+<path d="M37 74H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M37 89H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M37 104H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M37 119H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M37 134H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M37 149H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M37 164H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/>
+<path d="M272 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M294 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M316 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M338 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M360 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M382 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M404 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M426 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/><path d="M448 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"/>
+<g stroke="#b88748" stroke-width="1.8" fill="none"><path d="M501 65H692"/><path d="M501 89H692"/><path d="M501 113H692"/><path d="M501 137H692"/><path d="M501 161H692"/></g>
+<rect x="502" y="63" width="190" height="21" rx="3" fill="#f5dda8" stroke="#b48b4c"/><text x="594" y="78" text-anchor="middle" class="poe211-svgnote">→ long ply</text><rect x="502" y="87" width="190" height="21" rx="3" fill="#dfc394" stroke="#b48b4c"/><text x="594" y="102" text-anchor="middle" class="poe211-svgnote">⊥ cross ply</text><rect x="502" y="111" width="190" height="21" rx="3" fill="#f5dda8" stroke="#b48b4c"/><text x="594" y="126" text-anchor="middle" class="poe211-svgnote">→ long ply</text><rect x="502" y="135" width="190" height="21" rx="3" fill="#dfc394" stroke="#b48b4c"/><text x="594" y="150" text-anchor="middle" class="poe211-svgnote">⊥ cross ply</text><rect x="502" y="159" width="190" height="21" rx="3" fill="#f5dda8" stroke="#b48b4c"/><text x="594" y="174" text-anchor="middle" class="poe211-svgnote">→ long ply</text>
+<path d="M40 209H217 M278 209H456" stroke="#217a9b" stroke-width="3.6"/>
+<path d="M204 201L217 209L204 217 M443 201L456 209L443 217" stroke="#217a9b" fill="none" stroke-width="2.5"/>
+<text x="132" y="234" text-anchor="middle" class="poe211-svgnote">Load along fibers</text>
+<text x="366" y="234" text-anchor="middle" class="poe211-svgnote">Load across fibers</text>
+<text x="597" y="248" text-anchor="middle" class="poe211-svgnote">Alternating veneer directions</text>
+<text x="355" y="285" text-anchor="middle" class="poe211-svgnote">These are schematic orientations—not guaranteed strength rankings for every species or panel.</text>
+</svg>
+<div class="poe211-grid"><article class="poe211-panel"><h3>Wood strips and craft sticks</h3><p>Balsa and basswood strips are natural wood. A property measured <em>along the fibers</em> may differ greatly from a property measured <em>across the fibers</em>. Defects, moisture, species and sample variability complicate simple comparisons.</p><p><strong>For bridge members:</strong> record grain direction and avoid assuming each wooden strip has identical stiffness or strength.</p></article>
+<article class="poe211-panel"><h3>Plywood and layered fabrication</h3><p>Plywood bonds multiple veneer plies, usually with successive grain directions crossed. This improves directional balance and dimensional stability, but bending properties still depend on layup, thickness and panel orientation.</p><p><strong>For bridge gussets:</strong> document thickness, grain/face direction and joint layout. Cutting defects and glue quality affect real performance.</p></article></div>
+<div class="poe211-panel" style="margin-top:1rem"><h3>Printed polymer orientation is another useful comparison</h3><p>A 3D-printed coupon can behave differently when loaded along deposited roads versus across layer bonds. Results depend on the filament, processing temperature, voids, perimeter count and build orientation.</p>
+<p class="poe211-warning"><strong>Unit 2 manufacturing rule:</strong> PLA/PETG printed parts are permitted only as approved <strong>joint fittings, brackets, gussets or mounts</strong>. No 3D-printed bridge chords, beams, diagonals or decks. Acrylic is not an approved bridge material. See the <a href="../unit-2.html#challenge">Unit 2 construction requirements</a> before planning fabrication.</p></div></section>
+<section class="container lesson-section" id="watch"><div class="poe211-section-header"><div class="poe211-eyebrow">04 / Instructional video library</div><h2>Watch and take notes</h2><p>Start with Young's modulus. Then study strength, ductility and toughness; the third video surveys other important mechanical properties.</p></div>
+<div class="poe211-grid">
+<article class="poe211-video"><div class="poe211-frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DLE-ieOVFjI" title="Understanding Young’s Modulus" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="poe211-video-copy"><span class="poe211-pill">The Efficient Engineer · Elasticity</span><h3>Understanding Young’s Modulus</h3><p><strong>Pause and try:</strong> Explain how the initial stress–strain slope relates to E. Identify why geometry still matters to bending stiffness.</p><a href="https://www.youtube.com/watch?v=DLE-ieOVFjI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article>
+<article class="poe211-video"><div class="poe211-frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/WSRqJdT2COE" title="Understanding Material Strength, Ductility and Toughness" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="poe211-video-copy"><span class="poe211-pill">The Efficient Engineer · Failure properties</span><h3>Understanding Material Strength, Ductility and Toughness</h3><p><strong>Pause and try:</strong> Distinguish the slope of the curve from the yield/ultimate stress and from toughness.</p><a href="https://www.youtube.com/watch?v=WSRqJdT2COE" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article>
+</div>
+<details class="poe211-reveal" style="margin-top:1rem"><summary>Optional comprehensive video: Mechanical Properties of Materials</summary><div class="poe211-grid" style="margin-top:.8rem"><article class="poe211-video"><div class="poe211-frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/uW5v1qQaXRA" title="Mechanical Properties of Materials" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="poe211-video-copy"><span class="poe211-pill">Welding and NDT · Extended survey</span><h3>Mechanical Properties of Materials</h3><p><strong>Pause and try:</strong> Focus on 04:28 strength, 06:55 ductility, 10:33 stiffness, and 10:56 toughness.</p><a href="https://www.youtube.com/watch?v=uW5v1qQaXRA" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article><article class="poe211-panel"><h3>Why this video is optional</h3><p>It introduces thirteen properties, including fatigue, hardness and creep. For 2.11, focus on the five named learning targets; detailed structural failure analysis comes in 2.12.</p></article></div></details></section>
+<section class="container lesson-section" id="test"><div class="poe211-section-header"><div class="poe211-eyebrow">05 / How engineers test stiffness</div><h2>Three-point bending: control the specimen dimensions</h2><p>A rectangular strip supported at both ends is pushed downward at its midpoint. Under simple linear-elastic beam assumptions, smaller center displacement at a fixed load suggests greater <em>flexural stiffness</em> of that specific specimen.</p></div>
+<svg class="poe211-diagram" viewBox="0 0 720 300" role="img" aria-label="Three point bending test setup: narrow rectangular specimen 150 millimeter support span, two supports, centered 5-newton downward load, and measured downward center displacement delta. Rectangular specimen width b 12 millimeters and thickness t 3 millimeters.">
+<defs><marker id="b211down" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c3762c"/></marker><marker id="b211up" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#078a96"/></marker></defs>
+<text x="350" y="25" text-anchor="middle" class="poe211-svghead">THREE-POINT BENDING · CLASSROOM MODEL</text>
+<path d="M101 119H619" stroke="#caa26b" stroke-width="14" stroke-linecap="round"/>
+<path d="M135 127L115 159H155Z" fill="#dbe8f1" stroke="#245575" stroke-width="2"/>
+<circle cx="585" cy="145" r="12" fill="#dbe8f1" stroke="#245575" stroke-width="2"/><path d="M562 161H608" stroke="#547789" stroke-width="2"/>
+<path d="M360 51V105" stroke="#c3762c" stroke-width="3.5" marker-end="url(#b211down)"/>
+<path d="M135 217V136M585 217V136" stroke="#078a96" stroke-width="3.5" marker-end="url(#b211up)"/>
+<text x="378" y="63" class="poe211-svglabel">P = 5 N down</text>
+<text x="67" y="236" class="poe211-svgnote">P/2 up</text><text x="579" y="236" class="poe211-svgnote">P/2 up</text>
+<path d="M135 184V203 M585 184V203 M135 195H585" stroke="#658194" stroke-width="1.4"/>
+<text x="360" y="215" text-anchor="middle" class="poe211-svglabel">L = 150 mm (span)</text>
+<path d="M360 132V155" stroke="#835d16" stroke-width="1.7" stroke-dasharray="4 3"/>
+<text x="375" y="158" class="poe211-svgnote">δ at center</text>
+<text x="356" y="284" text-anchor="middle" class="poe211-svgnote">Specimen: width b = 12 mm, thickness t = 3 mm; measure load and center displacement</text>
+</svg>
+<div class="poe211-grid"><article class="poe211-panel"><h3>Use the beam equation</h3><div class="poe211-eq">I = bt³ / 12</div><div class="poe211-eq">δ = PL³ / (48EI)</div><p>For a slender simply supported rectangular beam under a centered force P, I is the second moment of area and δ is predicted center displacement. E is an effective elastic bending modulus for the tested orientation.</p></article>
+<article class="poe211-panel"><h3>What must stay constant?</h3><p>Use the same span <strong>L</strong>, specimen width <strong>b</strong>, specimen thickness <strong>t</strong>, and applied <strong>P</strong> to isolate differences due to E. All measurements need units. Repeat tests with multiple samples to account for variability.</p><p class="poe211-warning"><strong>Limit:</strong> This model assumes small elastic deflection and shear/bending behavior adequately described by simple Euler–Bernoulli beam theory. It does not predict when a material will fracture, delaminate or buckle.</p></article></div></section>
+<section class="container lesson-section" id="lab"><div class="poe211-section-header"><div class="poe211-eyebrow">06 / Interactive material bending lab</div><h2>Compare two specimens using the same load</h2><p>Choose two illustrative material presets and orientation conditions. The calculation keeps <strong>force, span, width and thickness equal</strong>, so you can isolate the effect of <em>assumed effective modulus</em>—or change a shared variable to investigate geometry.</p></div>
+<div class="poe211-lab"><div class="poe211-grid">
+<article class="poe211-panel">
+<div class="poe211-control"><label for="sampleA">Specimen A material</label><select id="sampleA"><option value="basswood" selected="selected">Basswood strip · illustrative</option><option value="balsa">Balsa strip · illustrative</option><option value="plywood">Plywood coupon · illustrative</option><option value="pla">3D-printed PLA coupon · illustrative</option></select></div>
+<div class="poe211-control"><label for="orientationA">Specimen A orientation</label><select id="orientationA"><option value="along" selected="selected">Along main fiber / print-road direction</option><option value="across">Across main fiber / through print layers</option></select></div>
+<div class="poe211-control"><label for="sampleB">Specimen B material</label><select id="sampleB"><option value="basswood">Basswood strip · illustrative</option><option value="balsa">Balsa strip · illustrative</option><option value="plywood" selected="selected">Plywood coupon · illustrative</option><option value="pla">3D-printed PLA coupon · illustrative</option></select></div>
+<div class="poe211-control"><label for="orientationB">Specimen B orientation</label><select id="orientationB"><option value="along" selected="selected">Along main fiber / print-road direction</option><option value="across">Across main fiber / through print layers</option></select></div>
+<div class="poe211-control"><label for="appliedP">Shared applied force <output id="appliedPText">5 N</output></label><input id="appliedP" type="range" min="1" max="12" step="1" value="5"/></div>
+<div class="poe211-control"><label for="spanL">Shared support span <output id="spanLText">150 mm</output></label><input id="spanL" type="range" min="100" max="200" step="10" value="150"/></div>
+<div class="poe211-control"><label for="widthB">Shared width b <output id="widthBText">12 mm</output></label><input id="widthB" type="range" min="8" max="20" step="2" value="12"/></div>
+<div class="poe211-control"><label for="thicknessT">Shared thickness t <output id="thicknessTText">3.0 mm</output></label><input id="thicknessT" type="range" min="2" max="6" step=".5" value="3"/></div>
+<button class="btn secondary" type="button" id="resetBending">Reset to baseline</button>
+</article>
+<article class="poe211-panel"><h3>Calculated load–displacement curves</h3><svg id="poe211Graph" class="poe211-diagram" viewBox="0 0 710 310" role="img" aria-label="Interactive predicted linear load versus displacement chart for two hypothetical uniform simply supported specimens with different elastic moduli.">
+<path d="M74 35V255H670" stroke="#59788d" stroke-width="2.2" fill="none"/>
+<path d="M68 47L74 32L80 47 M656 249L672 255L656 261" stroke="#59788d" fill="none" stroke-width="2"/>
+<text x="340" y="298" text-anchor="middle" class="poe211-svglabel">Center displacement δ (mm)</text>
+<text x="24" y="150" text-anchor="middle" transform="rotate(-90 24 150)" class="poe211-svglabel">Applied load (N)</text>
+<g id="graphGrid" stroke="#d9e4eb" stroke-width="1.1"></g>
+<path id="plotA" d="M74 255" fill="none" stroke="#0a8c92" stroke-width="4.2" stroke-linecap="round"/>
+<path id="plotB" d="M74 255" fill="none" stroke="#c57f32" stroke-width="4.2" stroke-linecap="round"/>
+<circle id="pointA" r="6" cx="74" cy="255" fill="#0a8c92" stroke="#fff" stroke-width="2"/>
+<circle id="pointB" r="6" cx="74" cy="255" fill="#c57f32" stroke="#fff" stroke-width="2"/>
+<text id="graphXmax" x="659" y="277" text-anchor="end" class="poe211-svgnote">0 mm</text>
+<text id="graphYmax" x="68" y="25" text-anchor="end" class="poe211-svgnote">0 N</text>
+<text x="500" y="60" class="poe211-svgnote">A · teal</text><text x="500" y="78" class="poe211-svgnote">B · orange</text>
+</svg>
+<div class="poe211-simresults">
+<div><strong id="eA">9,000 N/mm²</strong><span>A · effective E assumption</span></div>
+<div><strong id="eB">6,000 N/mm²</strong><span>B · effective E assumption</span></div>
+<div><strong id="deltaA">1.447 mm</strong><span>A · predicted center displacement</span></div>
+<div><strong id="deltaB">2.170 mm</strong><span>B · predicted center displacement</span></div>
+<div><strong id="massA">2.27 g</strong><span>A · specimen mass estimate</span></div>
+<div><strong id="massB">3.51 g</strong><span>B · specimen mass estimate</span></div>
+</div><p class="poe211-equationline" id="stressLine">Geometric section I = 27.00 mm⁴</p><p id="modelInterpretation" class="poe211-warning" aria-live="polite">Preset moduli and densities are hypothetical for classroom exploration—not measured values for your actual samples.</p>
+</article></div>
+<div class="poe211-warning" style="margin-top:1rem"><strong>Important modeling assumptions:</strong> Illustrative effective moduli and orientation multipliers are deliberately simplified teaching numbers, <em>not</em> verified data for any species, plywood grade or printed part. All virtual specimens have identical geometry in each run. Specimen mass is a density × volume estimate for the test strip only. Linear elastic bending, no slip at supports, no joint effects or material failure assumed. This simulation cannot certify load capacity or test a finished bridge.</div></div>
+<div class="poe211-grid" style="margin-top:1rem">
+<article class="poe211-panel"><span class="poe211-pill">Check Investigation A</span><h3>Vary the thickness</h3><p>Keep materials and load unchanged. Increase t from 3 to 6 mm. What happens to I and δ?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>Since I ∝ t³, doubling thickness multiplies I by <strong>8</strong> and the predicted deflection becomes <strong>1/8</strong> as large at the same E, load, span and width. Specimen material volume and mass double.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check Investigation B</span><h3>Vary the span</h3><p>Keep E, b, t and P unchanged. Increase span L from 100 mm to 200 mm. What happens to the predicted center deflection?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>δ ∝ L³ for this simply supported center-loaded beam. Doubling the span multiplies predicted center deflection by <strong>8</strong>. The physical specimen must still be long enough to reach both supports.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="examples"><div class="poe211-section-header"><div class="poe211-eyebrow">07 / Fully worked example</div><h2>Two equal-sized coupons, different elastic moduli</h2><p>Compare illustrative basswood E = 9,000 N/mm² against illustrative plywood E = 6,000 N/mm² using the same 150 mm span, 12 mm width, 3 mm thickness and centered 5 N force.</p></div>
+<div class="poe211-grid"><article class="poe211-panel"><h3>Step 1 · Cross-section geometry</h3><div class="poe211-eq">I = 12(3³)/12 = 27 mm⁴</div><p>Both samples use the same I, which isolates the assumed material-property difference.</p><h3>Step 2 · Specimen A</h3><div class="poe211-eq">δ<sub>A</sub> = 5(150³)/[48(9,000)(27)]</div><p><strong>δ<sub>A</sub> ≈ 1.447 mm</strong> (model result).</p></article>
+<article class="poe211-panel"><h3>Step 3 · Specimen B</h3><div class="poe211-eq">δ<sub>B</sub> = 5(150³)/[48(6,000)(27)]</div><p><strong>δ<sub>B</sub> ≈ 2.170 mm</strong> (model result).</p>
+<h3>Step 4 · Interpret carefully</h3><p>A predicts less deflection because its assumed modulus is larger. This says nothing about which sample fails first, which has better joints, or the properties of actual classroom stock.</p></article></div>
+<div class="poe211-panel" style="margin-top:1rem"><h3>What about specimen mass?</h3><p>Test-strip volume = (150)(12)(3) = 5,400 mm³ = <strong>5.40 cm³</strong>. With illustrative densities 0.42 g/cm³ and 0.65 g/cm³, A is <strong>2.27 g</strong> and B is <strong>3.51 g</strong>. These are nominal estimates for this test strip, not full bridge mass or supplier specifications.</p>
+<p class="poe211-warning"><strong>Evidence vs. assumptions:</strong> Use measured sample mass and load/displacement in Lesson 2.13 to replace these theoretical estimates and compare multiple specimens.</p></div></section>
+<section class="container lesson-section" id="apply"><div class="poe211-section-header"><div class="poe211-eyebrow">08 / Materials selection matrix</div><h2>Choose materials for three structural jobs</h2><p>Evaluate alternatives by function rather than declaring one universally “best.” Consider a shelf in bending, a support post in compression, and a bridge connection/gusset that transfers load.</p></div>
+<div class="poe211-matrix"><table><thead><tr><th>Application</th><th>Essential priorities</th><th>Options to compare</th><th>Questions to justify your choice</th></tr></thead><tbody>
+<tr><td><strong>Shelf / horizontal strip</strong></td><td>Bending stiffness, strength, span, mass</td><td>Plywood panel; basswood strip; balsa strip</td><td>What E and section I resist bending? Is thickness changed? What about fiber orientation?</td></tr>
+<tr><td><strong>Support post / truss strut</strong></td><td>Compression resistance, buckling, straightness, mass</td><td>Basswood; balsa; craft-stick laminate</td><td>How long and slender is the member? Which specimen defects or joint misalignment matter?</td></tr>
+<tr><td><strong>Bridge gusset / connection</strong></td><td>Load transfer, connection integrity, manufacturability, mass</td><td>Plywood gusset; interlocking wood joint; approved printed fitting</td><td>Is the connection within the unit's size, material and fastener rules? Can forces transfer without splitting or slip?</td></tr>
+</tbody></table></div>
+<div class="poe211-grid" style="margin-top:1rem"><article class="poe211-panel"><h3>A defensible scoring method</h3><p>Rank each option on a <strong>1–5 scale</strong> for stiffness, strength/failure resistance, density/mass efficiency, fabrication/connection fit and rule compliance. Support each score with a measured value, cited reference, or explicitly labeled hypothesis.</p><p>Do not award high scores just because a material feels rigid when held in your hand. Use the same geometry and testing conditions.</p></article>
+<article class="poe211-panel"><h3>Unit 2 bridge reminders</h3><p>Approved primary bridge materials include balsa, basswood, craft sticks and plywood. Local plywood gussets, printed connection fittings and M3 nuts/bolts have specific dimensional/manufacturing limits. Acrylic and printed continuous structural members are prohibited.</p><p>Review the <a href="../unit-2.html">Unit 2 specification</a> before proposing a physical construction choice.</p></article></div></section>
+<section class="container lesson-section" id="practice"><div class="poe211-section-header"><div class="poe211-eyebrow">09 / Independent checks</div><h2>Test your understanding before opening each answer</h2><p>Answer in complete sentences or calculations, using correct units and stating assumptions.</p></div>
+<div class="poe211-grid">
+<article class="poe211-panel"><span class="poe211-pill">Check A</span><h3>Strength or stiffness?</h3><p>Two samples deflect the same amount at 5 N but one breaks at a lower load. Are they equally strong?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>Not necessarily. Similar displacement at 5 N suggests comparable <em>specimen stiffness</em> under those conditions, but the one that fails earlier has lower observed capacity in that test.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check B</span><h3>Density calculation</h3><p>A specimen has volume 8.0 cm³ and mass 4.0 g. Find density.</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>ρ = m/V = 4.0/8.0 = <strong>0.50 g/cm³</strong>.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check C</span><h3>Thickness matters</h3><p>For a constant E and beam width, what happens to bending stiffness EI when rectangular beam thickness doubles?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>I = bt³/12, so I becomes <strong>8 times larger</strong>, and EI becomes eight times larger if E is unchanged.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check D</span><h3>Grain orientation</h3><p>Why should grain orientation be recorded on a basswood sample's test report?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>Wood is anisotropic/orthotropic; properties along fibers can differ from those across fibers. The observed stiffness/strength can therefore depend on how the specimen was cut and loaded.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check E</span><h3>Toughness and stiffness</h3><p>A material has a steep initial stress–strain slope, but fractures at low strain. Is high stiffness evidence that it is tough?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>No. Stiffness refers to the initial elastic slope E; toughness relates to <strong>total energy absorbed up to fracture</strong>. A brittle material can be stiff but not particularly tough.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check F</span><h3>Fair comparison</h3><p>You test a 3 mm plywood strip and a 6 mm basswood strip of equal span. Can the smaller deflection prove the winning material has the higher E?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>No. Thickness alters I with the <strong>cube</strong> of thickness. To compare material E, control width, thickness, span and load and use an appropriate material model.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check G</span><h3>Mass versus safety</h3><p>Why might the lightest material be a poor choice for a long compression member?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>It could lack sufficient stiffness, column stability or compressive strength. Slender members may buckle, while connections and fabrication defects can limit real capacity.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check H</span><h3>Printed parts</h3><p>Can you design the entire bridge chord as a 3D-printed PLA beam because PLA coupons seem stiff?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>No. The Unit 2 manufacturing rules permit approved printed <strong>connectors/fittings only</strong>, not fully printed chords or beams. A coupon stiffness comparison does not override the assignment constraints.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="resources"><div class="poe211-section-header"><div class="poe211-eyebrow">Reference desk</div><h2>Trusted learning resources</h2><p>Use these sources when you need additional material-property background, examples or information on plywood construction.</p></div>
+<div class="poe211-grid">
+<article class="poe211-panel poe211-resource"><h3>OpenStax · Stress, Strain and Elastic Modulus</h3><p>Free university physics chapter with definitions and example calculations of elastic deformation.</p><a href="https://openstax.org/books/university-physics-volume-1/pages/12-3-stress-strain-and-elastic-modulus" target="_blank" rel="noopener noreferrer">Read elastic modulus concepts ↗</a></article>
+<article class="poe211-panel poe211-resource"><h3>US Forest Service · Wood Handbook</h3><p>Engineering resource on wood anisotropy, mechanical properties, moisture and wood-based composites.</p><a href="https://research.fs.usda.gov/fpl/wood-handbook" target="_blank" rel="noopener noreferrer">Explore the Wood Handbook ↗</a></article>
+<article class="poe211-panel poe211-resource"><h3>APA · The Engineered Wood Association</h3><p>Photographs and explanations of plywood veneers, cross-lamination and directional properties.</p><a href="https://www.apawood.org/engineered-wood-products/plywood-osb/plywood/" target="_blank" rel="noopener noreferrer">Explore plywood structure ↗</a></article>
+<article class="poe211-panel poe211-resource"><h3>Looking ahead · Materials Testing Lab</h3><p>Lesson 2.13 will use actual sample masses, dimensions and bending results so your material decisions are supported by classroom measurements.</p><a href="lesson-2-13.html">Preview Lesson 2.13 ↗</a></article></div></section>
+<section class="container lesson-section" id="submit"><div class="poe211-section-header"><div class="poe211-eyebrow">Student submission</div><h2>Exactly what to submit</h2><p>Complete the <strong>POE 2.11 Structural Materials &amp; Properties comparison worksheet</strong> or a teacher-approved engineering notebook equivalent. The main deliverable is a <strong>materials selection matrix</strong> supported by material-property evidence.</p></div>
+<div class="poe211-grid"><article class="poe211-panel"><h3>Required evidence</h3><ul class="poe211-checklist">
+<li>A five-property vocabulary comparison distinguishing stiffness, strength, density, ductility and toughness.</li>
+<li>One annotated sketch showing grain alignment or plywood cross-oriented plies and its relevance to the loading direction.</li>
+<li>A fully labeled two-material bending comparison with sample dimensions, force and assumed/recorded E values.</li>
+<li>Predicted deflections (or teacher-approved test observations), estimated/measured masses and units.</li>
+<li>A materials selection matrix evaluating at least three candidate materials across shelf, post and gusset applications.</li>
+<li>Justification for your choices with at least two specific quantitative observations and one limitation/uncertainty.</li>
+</ul></article>
+<article class="poe211-panel"><h3>Quality check</h3><ul class="poe211-checklist">
+<li>Do not label hypothetical E or density numbers as real measured properties.</li><li>State all controlled variables for the material comparison.</li>
+<li>Use mm for specimen dimensions, N for load, N/mm² for E and mm for deflection.</li>
+<li>Keep claims about strength and failure separate from elastic bending predictions.</li>
+<li>Ensure bridge-related choices follow the approved construction rules.</li>
+<li>Include any additional assigned worksheet or homework questions.</li></ul>
+<p><strong>Due date:</strong> Check the <a href="../../../../agenda.html">Daily Agenda</a> and follow your teacher's submission instructions.</p>
+<a class="btn secondary" href="#start">Review lesson ↑</a></article></div></section>
+<nav class="container lesson-bottom-nav" aria-label="Lesson navigation"><a class="btn secondary" href="lesson-2-10.html">← Lesson 2.10: Truss Design &amp; Simulation</a><a class="btn" href="lesson-2-12.html">Next: 2.12 Structural Failure →</a></nav>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+<script>
+(function(){
+"use strict";
+const g=id=>document.getElementById(id);
+const field=["sampleA","sampleB","orientationA","orientationB","appliedP","spanL","widthB","thicknessT","resetBending"];
+if(field.some(id=>!g(id)))return;
+const assumptions={
+ basswood:{name:"Basswood strip",E:9000,rho:.42,factor:.18},
+ balsa:{name:"Balsa strip",E:3000,rho:.16,factor:.22},
+ plywood:{name:"Plywood coupon",E:6000,rho:.65,factor:.65},
+ pla:{name:"Printed PLA coupon",E:2500,rho:1.22,factor:.60}
+};
+function write(id,t){g(id).textContent=t;}
+function values(id,orient,P,L,b,t){
+ const item=assumptions[g(id).value],isCross=g(orient).value==="across";
+ const eff=item.E*(isCross?item.factor:1),I=b*Math.pow(t,3)/12;
+ const d=P*Math.pow(L,3)/(48*eff*I);
+ return {name:item.name,E:eff,rho:item.rho,delta:d,mass:L*b*t/1000*item.rho,orient:isCross?"across":"along",factor:item.factor};
+}
+function linePath(result,load,limitX,limitY){
+ let out="";for(let i=0;i<=18;i++){const force=load*i/18;const def=result.delta*force/load;const x=74+def/limitX*574,y=255-force/limitY*205;out+=(i?"L":"M")+x.toFixed(2)+","+y.toFixed(2);}
+ return out;
+}
+function render(){
+ const P=Number(g("appliedP").value),L=Number(g("spanL").value),b=Number(g("widthB").value),t=Number(g("thicknessT").value);
+ const a=values("sampleA","orientationA",P,L,b,t),c=values("sampleB","orientationB",P,L,b,t);
+ write("appliedPText",P+" N");write("spanLText",L+" mm");write("widthBText",b+" mm");write("thicknessTText",t.toFixed(1)+" mm");
+ write("eA",a.E.toLocaleString("en-US")+" N/mm²");write("eB",c.E.toLocaleString("en-US")+" N/mm²");
+ write("deltaA",a.delta.toFixed(3)+" mm");write("deltaB",c.delta.toFixed(3)+" mm");
+ write("massA",a.mass.toFixed(2)+" g");write("massB",c.mass.toFixed(2)+" g");
+ const I=b*t*t*t/12,maxY=P*1.35,maxX=Math.max(a.delta,c.delta)*1.55;
+ write("stressLine","I = "+I.toFixed(2)+" mm⁴ · estimated surface bending stress magnitude at the current load = "+(3*P*L/(2*b*t*t)).toFixed(2)+" N/mm² (same geometry, no failure prediction).");
+ g("plotA").setAttribute("d",linePath(a,P,maxX,maxY));g("plotB").setAttribute("d",linePath(c,P,maxX,maxY));
+ for(const [name,res] of [["pointA",a],["pointB",c]]){g(name).setAttribute("cx",(74+res.delta/maxX*574).toFixed(2));g(name).setAttribute("cy",(255-P/maxY*205).toFixed(2));}
+ write("graphXmax",maxX.toFixed(2)+" mm");
+ write("graphYmax",maxY.toFixed(1)+" N");
+ const grid=g("graphGrid");while(grid.firstChild)grid.removeChild(grid.firstChild);
+ for(let i=1;i<5;i++){
+  const v=document.createElementNS("http://www.w3.org/2000/svg","line");v.setAttribute("x1",74+i*574/5);v.setAttribute("x2",74+i*574/5);v.setAttribute("y1","35");v.setAttribute("y2","255");grid.appendChild(v);
+  const h=document.createElementNS("http://www.w3.org/2000/svg","line");h.setAttribute("x1","74");h.setAttribute("x2","670");h.setAttribute("y1",255-i*205/5);h.setAttribute("y2",255-i*205/5);grid.appendChild(h);
+ }
+ write("modelInterpretation",Math.abs(a.delta-c.delta)<.0001?"Both illustrative specimens have the same predicted displacement under these inputs. This does not imply identical strength.":(a.delta<c.delta?"Specimen A":"Specimen B")+" has the smaller predicted displacement with the shared geometry and force. The mass estimates reflect separate illustrative densities. Neither result predicts failure or validates real material properties.");
+ g("poe211Graph").setAttribute("aria-label","Predicted linear applied-load versus center-displacement curves; A effective modulus "+a.E+" N/mm squared with "+a.delta.toFixed(3)+" millimeter displacement at "+P+" newtons; B modulus "+c.E+" with "+c.delta.toFixed(3)+" millimeter displacement. These are hypothetical values.");
+}
+["sampleA","sampleB","orientationA","orientationB"].forEach(id=>g(id).addEventListener("change",render));
+["appliedP","spanL","widthB","thicknessT"].forEach(id=>g(id).addEventListener("input",render));
+g("resetBending").addEventListener("click",()=>{g("sampleA").value="basswood";g("sampleB").value="plywood";g("orientationA").value="along";g("orientationB").value="along";g("appliedP").value=5;g("spanL").value=150;g("widthB").value=12;g("thicknessT").value=3;render();});
+render();
+})();
+</script></body></html>
