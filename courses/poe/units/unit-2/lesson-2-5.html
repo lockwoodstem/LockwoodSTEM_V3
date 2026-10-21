@@ -1,1 +1,356 @@
-<!DOCTYPE html><html lang="en"><head><title>POE Unit 2 Lesson 2.5 | Calculating Force Vectors | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="description" content="POE Unit 2 Lesson 2.5: Moments, Equilibrium & Bridge Reactions. Why does the same load become much harder for a bridge to carry when it is moved farther from a support?"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main"><nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">2.5</li></ol></nav><section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Mechanics Foundations • Lesson 2.5</div><h1>Calculating Force Vectors</h1><p class="focus-question"><strong>Engineering question:</strong> How can one angled force be expressed as horizontal and vertical components?</p><div class="mission-actions"><a class="btn" href="#learn">Learn</a><a class="btn secondary" href="#practice">Practice</a><a class="btn secondary" href="#apply">Apply</a><a class="btn secondary" href="#submit">Submit</a><a class="btn ghost" href="../unit-2.html">Unit 2</a></div></div><aside class="mission-panel"><span class="tag">Foundational instruction</span><h2>Learn it before the bridge project</h2><p>Use varied engineering examples to master the mechanics, then apply the technique to your final structural design later in the unit.</p></aside></div></section><section class="container lesson-section"><article class="card"><h2>Learning Targets</h2><ul><li>Draw coordinate axes and force directions</li><li>Apply sine and cosine correctly</li><li>Use signs and units in vector components</li></ul></article></section><section class="container lesson-section" id="learn"><div class="section-header"><h2>Learn the Concept</h2></div><article class="card"><ul><li>With θ measured from +x: Fx = F cos θ, Fy = F sin θ</li><li>Direction controls positive and negative signs</li><li>Vector magnitude F = √(Fx² + Fy²)</li></ul><p><strong>During instruction:</strong> Sketch the forces, geometry, variables or joints discussed and record units for every quantity.</p></article></section><section class="container lesson-section" id="practice"><div class="section-header"><h2>Practice Together</h2></div><article class="card"><p>A 100 N cable force acts 30° above the horizontal. Calculate horizontal and vertical components and label their directions.</p><p><strong>Show:</strong> a labeled diagram, a mathematical model when relevant, and a final statement interpreting the result.</p></article></section><section class="container lesson-section" id="apply"><div class="section-header"><h2>Apply the Skill</h2></div><article class="card"><p>Resolve forces of 80 N at 45° above +x and 50 N at 60° below +x; explain the sign of each component.</p><p><strong>Check your understanding:</strong> Why does using an angle measured from vertical swap which component uses sine and cosine?</p></article></section><section class="container lesson-section" id="submit"><article class="card"><h2>Student Evidence</h2><p>Completed component diagrams and calculations. Use your engineering notebook or teacher-provided guided notes; include dimensions, units and a conclusion.</p><p><strong>Looking ahead:</strong> These mechanics techniques will be revisited when students analyze the bridge design in Lessons 2.15–2.20.</p></article></section><nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-4.html">← 2.4 Free-Body Diagrams</a><a class="btn" href="lesson-2-6.html">2.6 Calculating Moments →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer><button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button></body></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POE 2.5 | Calculating Force Vectors — Learning Studio | LockwoodSTEM</title>
+<meta name="description" content="Learn force vectors and x-y components with vector diagrams, guided trig calculations, videos, an interactive resultant explorer, and independent practice."/>
+<link href="../../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/>
+<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/>
+<script defer src="../../../../assets/js/main.js"></script>
+<style id="poe25-learning-studio">
+html{scroll-behavior:smooth}
+.poe25{--ink:#092940;--blue:#0b567e;--aqua:#147f88;--gold:#e2ac37;--edge:#cadbe7}
+.poe25 .poe25-lead{font-size:1.09rem;line-height:1.65;color:#294456}
+.poe25 .poe25-eyebrow{color:#875d0a;font-weight:850;text-transform:uppercase;letter-spacing:.09em;font-size:.82rem}
+.poe25 .poe25-section-header{margin-bottom:1rem}
+.poe25 .poe25-section-header h2{margin:.25rem 0 .3rem}
+.poe25 .poe25-section-header p{margin:.1rem 0;max-width:860px;color:#4b6475}
+.poe25 .poe25-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
+.poe25 .poe25-metric{background:#f1f7fb;border:1px solid #bdd4e4;border-radius:14px;padding:.9rem 1rem}
+.poe25 .poe25-metric strong{display:block;color:#0b4772;font-size:1.05rem}
+.poe25 .poe25-metric span{display:block;font-size:.94rem;color:#40596a;margin-top:.2rem}
+.poe25 .poe25-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe25 .poe25-thirds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.poe25 .poe25-panel{background:#f7fbfd;border:1px solid var(--edge);border-radius:16px;padding:1.1rem 1.15rem}
+.poe25 .poe25-panel h3{color:var(--ink);margin:.15rem 0 .5rem}
+.poe25 .poe25-panel p{margin:.3rem 0 .65rem}
+.poe25 .poe25-panel ul{padding-left:1.2rem;margin:.4rem 0}
+.poe25 .poe25-pill{display:inline-block;border-radius:99px;padding:.2rem .6rem;background:#e3f0f5;color:#0c5672;font-size:.75rem;font-weight:900;letter-spacing:.03em}
+.poe25 .poe25-pill.gold{background:#fbefcf;color:#7d540d}
+.poe25 .poe25-mini{font-size:.9rem;color:#536b79}
+.poe25 .poe25-formula{font-size:clamp(1.05rem,1.6vw,1.28rem);letter-spacing:.01em;font-weight:850;color:#0b4163;background:#edf6fb;border-left:5px solid #147a9e;border-radius:10px;padding:.8rem 1rem;margin:.8rem 0;overflow-wrap:anywhere}
+.poe25 .poe25-graphic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe25 .poe25-large-svg{max-width:870px}
+.poe25 svg .poe25-axis{fill:none;stroke:#455f73;stroke-width:1.8}
+.poe25 svg .poe25-guide{stroke:#4c879e;stroke-dasharray:5 5;stroke-width:1.35;fill:none}
+.poe25 svg .poe25-dim{fill:none;stroke:#2b648b;stroke-width:1.15}
+.poe25 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#17384e}
+.poe25 svg text.poe25-annotation{font-size:13px;font-weight:750}
+.poe25 svg text.poe25-small{font-size:13px}
+.poe25 svg text.poe25-tiny{font-size:11px}
+.poe25 svg text.poe25-strong{font-weight:800}
+.poe25 .poe25-lesson-steps{list-style:none!important;margin:0;padding:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe25 .poe25-lesson-steps li{border-left:4px solid #167a94;padding:.7rem .75rem;border-radius:9px;background:#f2f8fc;font-weight:750;font-size:.92rem}
+.poe25 .poe25-lesson-steps li span{display:block;color:#527283;font-size:.78rem;font-weight:700}
+.poe25 .poe25-video{background:#f7fbff;border:1px solid #cfdfeb;border-radius:16px;overflow:hidden}
+.poe25 .poe25-video-copy{padding:1rem}
+.poe25 .poe25-video-copy h3{margin:.25rem 0}
+.poe25 .poe25-frame{aspect-ratio:16/9;background:#071e35;position:relative}
+.poe25 .poe25-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe25 .poe25-video a{font-weight:800}
+.poe25 .poe25-video p{margin:.4rem 0}
+.poe25 .poe25-tablewrap{overflow-x:auto}
+.poe25 .poe25-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.poe25 .poe25-table td,.poe25 .poe25-table th{border:1px solid #c8dbe8;text-align:left;padding:.55rem .7rem}
+.poe25 .poe25-table th{background:#eaf4fb;color:#0c3554}
+.poe25 .poe25-table .poe25-total{background:#f1f8e8;font-weight:850}
+.poe25 .poe25-steps{padding-left:1.55rem}
+.poe25 .poe25-steps li{padding-bottom:.45rem}
+.poe25 .poe25-caution{background:#fff9e9;border-left:5px solid #d59b22;padding:.8rem 1rem;border-radius:10px}
+.poe25 details.poe25-reveal{border:1px solid #b9d3e4;background:#f7fbff;border-radius:12px;padding:.8rem 1rem;margin:.65rem 0}
+.poe25 details.poe25-reveal summary{color:#0b4c73;cursor:pointer;font-weight:850}
+.poe25 details.poe25-reveal[open]{border-color:#0d8b9a}
+.poe25 details.poe25-reveal p{margin:.7rem 0 .15rem}
+.poe25 .poe25-explorer{background:#f2f9fc;border:1px solid #9dc6db;border-radius:16px;padding:1rem}
+.poe25 .poe25-explorer label{font-weight:800;color:#0b4163;display:block;margin:.5rem 0}
+.poe25 .poe25-explorer input[type=range]{width:min(100%,440px);accent-color:#0a7991;cursor:pointer}
+.poe25 .poe25-output{font-size:1.2rem;font-weight:850;color:#0a506d;background:#fff;border:1px solid #b9d5e5;padding:.7rem;border-radius:10px}
+.poe25 .poe25-resources a{display:block;margin:.4rem 0;font-weight:800;overflow-wrap:anywhere}
+.poe25 .poe25-checklist{list-style:none!important;padding:0!important}
+.poe25 .poe25-checklist li{padding:.45rem 0 .45rem 1.7rem;position:relative}
+.poe25 .poe25-checklist li::before{content:"□";position:absolute;left:0;top:.32rem;font-size:1.3rem;color:#0b567e}
+.poe25 a:focus-visible,.poe25 input:focus-visible,.poe25 summary:focus-visible{outline:3px solid #ca8b20;outline-offset:3px}
+@media(max-width:980px){.poe25 .poe25-thirds{grid-template-columns:1fr 1fr}.poe25 .poe25-lesson-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.poe25 .poe25-grid,.poe25 .poe25-thirds,.poe25 .poe25-overview{grid-template-columns:1fr}}
+@media print{.poe25 .poe25-video,.poe25 #explore,.poe25 .mission-actions{display:none!important}.poe25 details.poe25-reveal:not([open]){display:none}}
+
+.poe25 .poe25-illustration{display:block;width:100%;height:auto;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe25 .poe25-twin{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe25 .poe25-twin>*{min-width:0}
+.poe25 svg .beam{stroke:#1b5a7b;fill:none;stroke-width:8;stroke-linecap:round}
+.poe25 svg .beam-original{stroke:#c6d5df;stroke-width:4;stroke-dasharray:8 6;fill:none}
+.poe25 svg .beam-deflected{stroke:#008d94;stroke-width:6;fill:none;stroke-linecap:round}
+.poe25 svg .poe25-support{fill:#d6e9f5;stroke:#123f5b;stroke-width:1.8}
+.poe25 svg .poe25-force{stroke:#d97726;stroke-width:3;fill:none}
+.poe25 .poe25-param{background:#f6fafc;border-radius:12px;padding:.65rem .8rem;margin:.6rem 0}
+.poe25 .poe25-param label{display:flex;gap:.7rem;align-items:center;justify-content:space-between}
+.poe25 .poe25-param label strong{white-space:nowrap;font-variant-numeric:tabular-nums}
+.poe25 .poe25-param input[type="range"]{width:100%;accent-color:#0a7991}
+.poe25 .poe25-data{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:1rem 0}
+.poe25 .poe25-data div{border:1px solid #cadee8;border-radius:12px;padding:.6rem .8rem;background:#fff}
+.poe25 .poe25-data strong{display:block;font-size:1.15rem;color:#0c4966;font-variant-numeric:tabular-nums}
+.poe25 .poe25-data span{font-size:.82rem;color:#496475}
+.poe25 .poe25-variable{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe25 .poe25-variable div{border:1px solid #cadde8;border-radius:12px;background:#fff;padding:.75rem}
+.poe25 .poe25-variable b{display:block;font-size:1.12rem;color:#0b5779}
+.poe25 .poe25-progress-card{padding:1rem;border:1px solid #bfdae6;border-radius:12px;background:#f5fafc}
+.poe25 .poe25-progress-card strong{color:#0c4966}
+.poe25 .poe25-solution{font-variant-numeric:tabular-nums}
+.poe25 .poe25-resource-link{display:inline-block;margin-top:.3rem;font-weight:800}
+.poe25 .poe25-print{float:right;font-size:.85rem}
+@media(max-width:760px){.poe25 .poe25-twin,.poe25 .poe25-variable{grid-template-columns:1fr}.poe25 .poe25-print{float:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.poe25 .poe25-schematic{width:100%;display:block;max-width:900px;height:auto;background:#fff;border:1px solid #d2e4ec;border-radius:12px;margin:.75rem auto}
+.poe25 svg .poe25-head{font-size:15px;font-weight:850;fill:#113d57}
+.poe25 svg .poe25-note{font-size:13px;font-weight:760;fill:#183d53}
+.poe25 svg .poe25-caption{font-size:11px;fill:#405c6e}
+.poe25 .poe25-force-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-bottom:1rem}
+.poe25 .poe25-force-grid>div{background:#f5fafc;border:1px solid #cfdfeb;border-radius:11px;padding:.85rem}
+.poe25 .poe25-force-grid strong{display:block;color:#0d5472;margin-bottom:.2rem}
+.poe25 .poe25-force-grid span{font-size:.94rem;color:#3a5263}
+.poe25 .poe25-switches{display:flex;gap:.55rem;flex-wrap:wrap;margin:.75rem 0}
+.poe25 .poe25-switches button{border:1px solid #7ba1b9;background:#fff;color:#104c6c;border-radius:10px;padding:.65rem .85rem;font-weight:780;cursor:pointer}
+.poe25 .poe25-switches button[aria-pressed="true"]{background:#105a7b;color:white;border-color:#105a7b}
+.poe25 .poe25-switches button:hover{border-color:#147a9e}
+.poe25 .poe25-builder-note{background:#f2f9fc;border:1px solid #b7d4e5;border-radius:12px;padding:1rem;min-height:100px}
+.poe25 .poe25-builder-note h3{margin:0 0 .25rem}
+.poe25 .poe25-builder-note p{margin:.3rem 0}
+.poe25 .poe25-explorer input[type=range]{width:min(440px,100%);accent-color:#147a9e}
+.poe25 .poe25-checklist{list-style:none!important;margin:.4rem 0;padding:0!important}
+.poe25 .poe25-checklist li{position:relative;padding:.5rem 0 .5rem 1.6rem}
+.poe25 .poe25-checklist li:before{content:"□";position:absolute;left:0;top:.39rem;color:#147a9e;font-size:1.25rem}
+@media(max-width:880px){.poe25 .poe25-force-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.poe25 .poe25-force-grid{grid-template-columns:1fr}}
+
+.poe25 .poe25-schematic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d5e3ec;border-radius:14px;margin:.75rem auto}
+.poe25 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25465e}
+.poe25 svg .poe25-small{font-size:12px}
+.poe25 svg .poe25-label{font-size:14px;font-weight:800}
+.poe25 .poe25-key{display:flex;flex-wrap:wrap;gap:.8rem;font-weight:700;color:#446479;font-size:.9rem}
+.poe25 .poe25-key b{display:inline-block;width:15px;height:4px;vertical-align:middle;margin-right:.35rem}
+.poe25 .poe25-concept{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe25 .poe25-concept>div{border:1px solid #c1d7e4;background:#f5fbfd;border-radius:12px;padding:.85rem 1rem}
+.poe25 .poe25-concept strong{display:block;color:#0a5278;margin-bottom:.35rem}
+.poe25 .poe25-flow-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe25 .poe25-flow-list>div{background:#eef7fa;border-left:4px solid #147a9e;padding:.75rem;border-radius:9px;font-weight:750}
+.poe25 .poe25-flow-list small{display:block;color:#44677a}
+.poe25 .poe25-assumption{background:#fff8e8;border-left:5px solid #c89025;border-radius:10px;padding:.75rem 1rem}
+.poe25 .poe25-notation{background:#f1f8fc;border:1px solid #b8d3e6;border-radius:10px;padding:.75rem 1rem}
+.poe25 .poe25-formula-equation{background:#ecf7fb;border-left:5px solid #0c7994;padding:.8rem 1.1rem;border-radius:10px;font-size:1.22rem;font-weight:850;color:#06466a;margin:.65rem 0;overflow-wrap:anywhere}
+.poe25 .poe25-tablewrap{max-width:100%;overflow-x:auto}
+.poe25 .poe25-table{width:100%;border-collapse:collapse}
+.poe25 .poe25-table th,.poe25 .poe25-table td{border:1px solid #c5d9e6;padding:.55rem .65rem;text-align:left}
+.poe25 .poe25-table th{background:#eaf4fb;color:#0b496d}
+.poe25 .poe25-table td{font-variant-numeric:tabular-nums}
+.poe25 .poe25-control{padding:.8rem;background:#f8fbfd;border:1px solid #c5dce9;border-radius:12px;margin-bottom:.65rem}
+.poe25 .poe25-control label{display:flex;align-items:center;justify-content:space-between;gap:.6rem;font-weight:790;color:#0a5377;margin:0 0 .4rem}
+.poe25 .poe25-control label output{font-variant-numeric:tabular-nums}
+.poe25 .poe25-control input[type=range]{width:100%;accent-color:#0b7897}
+.poe25 .poe25-control-check{display:flex;align-items:center;gap:.6rem;color:#0a4b6a;font-weight:780;margin:.65rem 0}
+.poe25 .poe25-control-check input{width:20px;height:20px;accent-color:#0b7897}
+.poe25 .poe25-answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe25 .poe25-answers>div{background:#fff;border:1px solid #b9d7e4;border-radius:12px;padding:.7rem}
+.poe25 .poe25-answers strong{display:block;color:#0a496c;font-size:1.13rem;font-variant-numeric:tabular-nums}
+.poe25 .poe25-answers span{color:#4c6477;font-size:.88rem}
+.poe25 .poe25-simulator{background:#eef7fa;border:1px solid #9abfd2;border-radius:17px;padding:1.1rem}
+.poe25 .poe25-simulator .poe25-grid>*{min-width:0}
+.poe25 .poe25-teacher-note{color:#466478;font-size:.91rem}
+.poe25 .poe25-checklist{list-style:none!important;padding:0!important}
+.poe25 .poe25-checklist li{padding:.48rem .2rem .48rem 1.6rem;position:relative}
+.poe25 .poe25-checklist li:before{content:"□";position:absolute;left:0;top:.32rem;color:#0b7d95;font-size:1.2rem}
+.poe25 .poe25-resource a{display:block;font-weight:800;margin:.4rem 0}
+.poe25 .poe25-ratio{color:#144b65;font-weight:800}
+@media(max-width:960px){.poe25 .poe25-concept{grid-template-columns:1fr 1fr}.poe25 .poe25-flow-list{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.poe25 .poe25-concept,.poe25 .poe25-answers,.poe25 .poe25-flow-list{grid-template-columns:1fr}}
+</style></head>
+<body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container nav"><a class="brand" aria-label="LockwoodSTEM home" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
+<main class="poe25" id="main">
+<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.5</li></ol></nav>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img alt="POE course icon" class="lesson-course-icon" src="../../../../assets/img/course-icons/poe-course-icon.png"/><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.5</div><h1>Calculating Force Vectors</h1><p class="focus-question"><strong>Engineering question:</strong> How can we describe an angled force using horizontal and vertical components—and combine several forces into one resultant?</p><div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#watch">Watch Videos</a><a class="btn secondary" href="#worked">Worked Examples</a><a class="btn secondary" href="#explore">Interactive Vectors</a><a class="btn secondary" href="#practice">Practice</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
+<aside class="mission-panel"><span class="tag">Learn • Watch • Resolve • Combine</span><h2>Think in two directions.</h2><p>Develop the vector math you will use with force diagrams, support reactions, and diagonal members in the bridge project.</p><p><strong>Bring:</strong> calculator in degree mode, pencil, ruler, engineering notebook or 2.5 worksheet.</p></aside></div></section>
+<section class="container lesson-section" id="start"><div class="poe25-section-header"><div class="poe25-eyebrow">Learning pathway</div><h2>What you'll learn</h2><p>Complete the modules in order. The diagrams and video prompts are designed for learning without a separate teacher presentation.</p></div>
+<div class="poe25-overview"><div class="poe25-metric"><strong>01 · Describe</strong><span>Distinguish a force's magnitude, direction and x/y components.</span></div><div class="poe25-metric"><strong>02 · Calculate</strong><span>Resolve forces using sine and cosine and assign correct signs.</span></div><div class="poe25-metric"><strong>03 · Combine</strong><span>Add component forces and find a resultant's magnitude and direction.</span></div></div>
+<div class="poe25-panel" style="margin-top:1rem"><h3>Suggested 45–50 minute sequence</h3><div class="poe25-flow-list"><div>Observe &amp; predict<small>5 minutes</small></div><div>Learn &amp; watch<small>10–12 minutes</small></div><div>Worked examples<small>12–15 minutes</small></div><div>Explore &amp; check<small>15–18 minutes</small></div></div><p class="poe25-mini">For independent pacing, you can use the optional short video and additional practice after class.</p></div></section>
+<section class="container lesson-section" id="learn"><div class="poe25-section-header"><div class="poe25-eyebrow">01 / Start with direction</div><h2>A force is a vector, not just a number</h2><p>A <strong>scalar</strong> has magnitude only (such as 100 kg of mass). A <strong>vector</strong> has magnitude <em>and</em> direction (such as a 100 N pull at 30° upward and to the right).</p></div>
+<div class="poe25-concept"><div><strong>Magnitude</strong>How strong is the force? Measured in newtons (N); magnitude is never negative.</div><div><strong>Direction</strong>Which way does it act? An angle must be measured from a clearly identified reference axis.</div><div><strong>Components</strong>How much of that force acts along the x and y axes? These values can be positive, negative or zero.</div></div>
+<div class="poe25-grid" style="margin-top:1rem"><article class="poe25-panel"><h3>Think before you calculate</h3><p>Imagine a cable pulling a joint up and right. Do you expect both x and y components to be positive? What if the cable pulls down and right instead?</p><details class="poe25-reveal"><summary>Check your prediction</summary><p>Up/right gives <strong>+x, +y</strong>. Down/right gives <strong>+x, −y</strong>. The force magnitude stays positive; component <em>signs</em> tell us the direction.</p></details></article>
+<article class="poe25-panel"><h3>Our angle convention</h3><p>We measure θ <strong>counterclockwise from the positive x-axis</strong>, unless a problem explicitly says otherwise. A clockwise angle can be written as negative.</p><p class="poe25-assumption"><strong>Calculator:</strong> Set the trig mode to <strong>DEG (degrees)</strong>, not radians, for all problems on this page.</p></article></div></section>
+<section class="container lesson-section" id="components"><div class="poe25-section-header"><div class="poe25-eyebrow">02 / Resolve one force</div><h2>One diagonal force = two perpendicular components</h2><p>To resolve means to replace one vector with horizontal and vertical vectors that add back to the original force.</p></div>
+<svg id="componentDrawing" class="poe25-schematic" viewBox="0 0 700 310" role="img" aria-label="One 100 newton force acts 30 degrees above positive x. Its horizontal component 86.6 newtons points right, its vertical component 50 newtons points up. Red diagonal force, blue horizontal and green vertical components.">
+<defs><marker id="c-main" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c26a2d"/></marker><marker id="c-x" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0e789c"/></marker><marker id="c-y" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#138d74"/></marker></defs>
+<path d="M92 230H582 M135 283V28" stroke="#859cac" stroke-width="2"/><path d="M572 225L584 230L572 235 M130 39L135 27L140 39" stroke="#859cac" fill="none" stroke-width="2"/>
+<text x="590" y="236" class="poe25-small">+x</text><text x="143" y="36" class="poe25-small">+y</text>
+<path d="M135 230H430" stroke="#0e789c" stroke-width="4" marker-end="url(#c-x)"/>
+<path d="M430 230V59" stroke="#138d74" stroke-width="4" marker-end="url(#c-y)"/>
+<path d="M135 230L430 59" stroke="#c26a2d" stroke-width="5" marker-end="url(#c-main)"/>
+<path d="M180 230A45 45 0 0 0 173.9 207.5" fill="none" stroke="#c26a2d" stroke-width="2.6"/>
+<text x="193" y="219" class="poe25-small">θ = 30°</text>
+<text x="260" y="251" class="poe25-label" fill="#0e789c">Fₓ = +86.6 N</text>
+<text x="443" y="140" class="poe25-label" fill="#138d74">Fᵧ = +50.0 N</text>
+<text x="297" y="92" class="poe25-label" fill="#b45b25">F = 100 N</text>
+<circle cx="135" cy="230" r="5" fill="#27485e"/><text x="111" y="254" class="poe25-small">O</text></svg><div class="poe25-grid">
+<article class="poe25-panel"><span class="poe25-pill">Horizontal</span><h3>The adjacent leg</h3><div class="poe25-formula-equation">Fₓ = F cos θ</div><p>Fₓ lies along the x-axis. For the drawn 30° force, cosine calculates the <strong>horizontal</strong> share.</p><p><strong>Fₓ = 100 cos 30° ≈ +86.60 N</strong></p></article>
+<article class="poe25-panel"><span class="poe25-pill gold">Vertical</span><h3>The opposite leg</h3><div class="poe25-formula-equation">Fᵧ = F sin θ</div><p>Fᵧ lies along the y-axis. For the drawn 30° force, sine calculates the <strong>vertical</strong> share.</p><p><strong>Fᵧ = 100 sin 30° = +50.00 N</strong></p></article></div>
+<div class="poe25-notation" style="margin-top:1rem"><strong>Memory trick:</strong> COS = Adjacent / Hypotenuse; SIN = Opposite / Hypotenuse. The force F is the triangle's hypotenuse. These expressions assume θ is measured from <strong>+x</strong>; otherwise identify the adjacent and opposite legs first.</div></section>
+<section class="container lesson-section" id="signs"><div class="poe25-section-header"><div class="poe25-eyebrow">03 / Quadrants and signs</div><h2>Direction tells you the sign</h2><p>The same positive force magnitude can generate positive or negative components depending on which quadrant contains the vector.</p></div>
+<div class="poe25-grid"><div class="poe25-panel"><svg id="quadrantDrawing" class="poe25-schematic" viewBox="0 0 700 310" role="img" aria-label="Four quadrant xy plane illustrating angles measured counterclockwise from positive x and showing component signs: quadrant 1 positive x positive y; quadrant 2 negative x positive y; quadrant 3 negative x negative y; quadrant 4 positive x negative y.">
+<defs><marker id="qarr" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0e688c"/></marker></defs>
+<path d="M68 145H628 M350 284V25" stroke="#678ca2" stroke-width="2.4" marker-end="url(#qarr)"/>
+<text x="639" y="150" class="poe25-small">+x</text><text x="358" y="21" class="poe25-small">+y</text>
+<text x="508" y="62" class="poe25-label">I</text><text x="170" y="62" class="poe25-label">II</text><text x="170" y="227" class="poe25-label">III</text><text x="509" y="227" class="poe25-label">IV</text>
+<text x="485" y="88" class="poe25-small">+x, +y</text><text x="147" y="88" class="poe25-small">−x, +y</text>
+<text x="144" y="251" class="poe25-small">−x, −y</text><text x="485" y="251" class="poe25-small">+x, −y</text>
+<path d="M350 145L455 69 M350 145L241 70 M350 145L241 225 M350 145L455 224" stroke="#c26a2d" stroke-width="4" stroke-linecap="round" marker-end="url(#qarr)"/>
+<text x="355" y="164" class="poe25-small">O</text>
+</svg><p class="poe25-mini">Standard-angle convention: 0° points right, 90° points up, 180° points left, and −90° points down.</p></div>
+<div class="poe25-panel"><h3>Examples using signed angles from +x</h3><div class="poe25-tablewrap"><table class="poe25-table"><thead><tr><th>Angle θ</th><th>Fₓ</th><th>Fᵧ</th></tr></thead><tbody><tr><td>+30°</td><td>Positive</td><td>Positive</td></tr><tr><td>+150°</td><td>Negative</td><td>Positive</td></tr><tr><td>−135°</td><td>Negative</td><td>Negative</td></tr><tr><td>−60°</td><td>Positive</td><td>Negative</td></tr></tbody></table></div>
+<p><strong>Worked sign check:</strong> For 50 N at −60°, Fₓ = 50 cos(−60°) = <strong>+25.0 N</strong>; Fᵧ = 50 sin(−60°) = <strong>−43.30 N</strong>.</p></div></div>
+<div class="poe25-assumption" style="margin-top:1rem"><strong>Angle measured from the vertical?</strong> If α is measured from the positive <em>y-axis</em> toward the positive x-axis in quadrant I, then Fₓ = F sin α and Fᵧ = F cos α. This is because horizontal is opposite α and vertical is adjacent α. Always sketch before choosing sine or cosine.</div></section>
+<section class="container lesson-section" id="watch"><div class="poe25-section-header"><div class="poe25-eyebrow">04 / Video lessons</div><h2>Watch, pause, and work along</h2><p>Begin with vector basics, then study analytical vector addition. The short third video is helpful if you only need a quick review of resolving one force.</p></div>
+<div class="poe25-grid">
+<article class="poe25-video"><div class="poe25-frame"><iframe src="https://www.youtube-nocookie.com/embed/EwSHKuSxX_8" title="Vectors — Basic Introduction — Physics" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe25-video-copy"><span class="poe25-pill">The Organic Chemistry Tutor</span><h3>Vectors — Basic Introduction — Physics</h3><p class="poe25-mini"><strong>Pause and practice:</strong> Write the difference between a scalar and vector, then draw one force with a positive x component and negative y component.</p><a href="https://www.youtube.com/watch?v=EwSHKuSxX_8" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a></div></article>
+<article class="poe25-video"><div class="poe25-frame"><iframe src="https://www.youtube-nocookie.com/embed/xS-gdFgZel0" title="Addition of Vectors By Means of Components — Physics" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe25-video-copy"><span class="poe25-pill">The Organic Chemistry Tutor</span><h3>Addition of Vectors By Means of Components — Physics</h3><p class="poe25-mini"><strong>Pause and practice:</strong> Pause before the resultant is calculated. Try adding x components and y components independently.</p><a href="https://www.youtube.com/watch?v=xS-gdFgZel0" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a></div></article>
+</div>
+<details class="poe25-reveal" style="margin-top:1rem"><summary>Short optional refresher: resolving x and y components</summary><div class="poe25-grid" style="margin-top:.7rem"><article class="poe25-video"><div class="poe25-frame"><iframe src="https://www.youtube-nocookie.com/embed/rTRYM7tA_vE" title="Resolving a force into x &amp; y components" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe25-video-copy"><span class="poe25-pill">Kim Ketelsleger · Short review</span><h3>Resolving a force into x &amp; y components</h3><p class="poe25-mini"><strong>Pause and practice:</strong> Predict which leg is adjacent to the stated angle and label the signs.</p><a href="https://www.youtube.com/watch?v=rTRYM7tA_vE" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a></div></article><article class="poe25-panel"><h3>Video viewing checklist</h3><ul><li>Which angle is used and from which axis is it measured?</li><li>Why are cosine and sine both needed?</li><li>How does adding components simplify two-force problems?</li></ul></article></div></details></section>
+<section class="container lesson-section" id="worked"><div class="poe25-section-header"><div class="poe25-eyebrow">05 / Complete worked examples</div><h2>Calculate, interpret, and verify</h2><p>Follow the same method every time: sketch axes → identify θ → resolve → assign signs → check the result.</p></div>
+<div class="poe25-grid"><article class="poe25-panel"><span class="poe25-pill">Example A · One force</span><h3>100 N cable at +30°</h3><ol class="poe25-steps"><li><strong>Draw:</strong> F points up/right. θ = +30° from +x.</li><li><strong>Calculate horizontal:</strong> Fₓ = (100)cos30° = <strong>+86.60 N</strong>.</li><li><strong>Calculate vertical:</strong> Fᵧ = (100)sin30° = <strong>+50.00 N</strong>.</li><li><strong>Check magnitude:</strong> √(86.60² + 50.00²) ≈ <strong>100 N</strong>.</li><li><strong>Interpret:</strong> The cable's horizontal pull is larger than its upward pull.</li></ol><p class="poe25-formula-equation">F = (86.60 i + 50.00 j) N</p></article>
+<article class="poe25-panel"><span class="poe25-pill gold">Example B · Two forces</span><h3>80 N @ +45° and 50 N @ −60°</h3>
+<svg id="sumDrawing" class="poe25-schematic" viewBox="0 0 700 310" role="img" aria-label="Two forces applied at the origin: 80 N at 45 degrees above +x and 50 N at 60 degrees below +x. Their resultant points slightly above the positive x axis.">
+<defs><marker id="sum-a" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#126f96"/></marker><marker id="sum-b" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bb6427"/></marker><marker id="sum-r" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#138d74"/></marker></defs>
+<path d="M75 170H655M173 275V25" stroke="#98aebb" stroke-width="1.7"/><text x="658" y="176" class="poe25-small">+x</text><text x="182" y="29" class="poe25-small">+y</text>
+<path d="M173 170L308 35" stroke="#126f96" stroke-width="4" marker-end="url(#sum-a)"/>
+<path d="M173 170L245 294" stroke="#bb6427" stroke-width="4" marker-end="url(#sum-b)"/>
+<path d="M173 170L400 133" stroke="#138d74" stroke-width="5" marker-end="url(#sum-r)"/>
+<text x="220" y="61" class="poe25-small">F₁ = 80 N @ +45°</text>
+<text x="253" y="279" class="poe25-small">F₂ = 50 N @ −60°</text>
+<text x="402" y="119" class="poe25-small">R ≈ 82.64 N @ +9.24°</text>
+</svg>
+<div class="poe25-tablewrap"><table class="poe25-table"><thead><tr><th>Force</th><th>Fₓ (N)</th><th>Fᵧ (N)</th></tr></thead><tbody>
+<tr><td>F₁ = 80 N @ +45°</td><td>+56.57</td><td>+56.57</td></tr>
+<tr><td>F₂ = 50 N @ −60°</td><td>+25.00</td><td>−43.30</td></tr>
+<tr><td><strong>Sum</strong></td><td><strong>+81.57</strong></td><td><strong>+13.27</strong></td></tr></tbody></table></div>
+<p><strong>Magnitude:</strong> R = √(81.57² + 13.27²) = <strong>82.64 N</strong>.</p><p><strong>Direction:</strong> θ = atan2(+13.27, +81.57) ≈ <strong>+9.24°</strong> above +x.</p><p class="poe25-mini">Intermediate values are rounded for display. Calculations use unrounded component values.</p></article></div>
+<div class="poe25-panel" style="margin-top:1rem"><h3>The complete resultant method</h3>
+<div class="poe25-grid"><div><div class="poe25-formula-equation">Rₓ = ΣFₓ &nbsp;·&nbsp; Rᵧ = ΣFᵧ</div><p>Add <em>only</em> x components together; add <em>only</em> y components together. Never add magnitudes directly unless the vectors point along the same line in the same direction.</p></div>
+<div><div class="poe25-formula-equation">|R| = √(Rₓ² + Rᵧ²)</div><p>Calculate direction from the component signs and a quadrant-aware inverse tangent: <strong>θ = atan2(Rᵧ,Rₓ)</strong>. If your calculator only has tan⁻¹, sketch the quadrant and correct the angle accordingly.</p></div></div></div></section>
+<section class="container lesson-section" id="explore"><div class="poe25-section-header"><div class="poe25-eyebrow">06 / Interactive force laboratory</div><h2>Change the angle and watch the components</h2><p>Adjust magnitude and angle of Force 1. Then activate a second force (50 N at −60°) to see their component sum and resultant. The graph and numbers update immediately.</p></div>
+<div class="poe25-simulator">
+<div class="poe25-grid">
+<article class="poe25-panel">
+<div class="poe25-control"><label for="vecMagnitude">Force 1 magnitude <output for="vecMagnitude" id="vecMagnitudeText">100 N</output></label><input id="vecMagnitude" type="range" min="0" max="180" step="5" value="100"/></div>
+<div class="poe25-control"><label for="vecAngle">Angle θ from +x <output for="vecAngle" id="vecAngleText">+30°</output></label><input id="vecAngle" type="range" min="-180" max="180" step="5" value="30"/></div>
+<label class="poe25-control-check" for="vecSecond"><input id="vecSecond" type="checkbox"/> Add Force 2: 50 N at −60°</label>
+<div class="poe25-answers">
+<div><strong id="outFx">+86.60 N</strong><span>Force 1 · Fₓ</span></div>
+<div><strong id="outFy">+50.00 N</strong><span>Force 1 · Fᵧ</span></div>
+<div><strong id="outRx">+86.60 N</strong><span>Resultant · Rₓ</span></div>
+<div><strong id="outRy">+50.00 N</strong><span>Resultant · Rᵧ</span></div>
+<div><strong id="outRmag">100.00 N</strong><span>Resultant magnitude |R|</span></div>
+<div><strong id="outRangle">+30.0°</strong><span>Resultant angle from +x</span></div>
+</div><p id="vecStatus" class="poe25-notation" aria-live="polite">In Quadrant I: +x, +y. Horizontal component is positive; vertical component is positive.</p>
+<button type="button" class="btn secondary" id="vecReset">Reset the model</button>
+</article>
+<article class="poe25-panel"><h3>Vector diagram</h3>
+<svg class="poe25-schematic" id="vectorCanvas" viewBox="0 0 700 460" role="img" aria-label="Interactive xy vector plane with current force and signed components.">
+<defs><marker id="vec1Arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bb6229"/></marker><marker id="vecXArrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#116f96"/></marker><marker id="vecYArrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#168b79"/></marker><marker id="vec2Arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#7764b3"/></marker><marker id="resultArrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#104a6e"/></marker></defs>
+<path d="M40 225H660M350 33V417" stroke="#8da8b8" stroke-width="1.9"/>
+<path d="M648 218L662 225L648 232 M343 45L350 30L357 45" stroke="#8da8b8" stroke-width="1.9" fill="none"/>
+<text x="669" y="229" class="poe25-small">+x</text><text x="358" y="27" class="poe25-small">+y</text>
+<text x="355" y="244" class="poe25-small">O</text>
+<line id="vecXLine" x1="350" y1="225" x2="477" y2="225" stroke="#116f96" stroke-width="4" marker-end="url(#vecXArrow)"/>
+<line id="vecYLine" x1="477" y1="225" x2="477" y2="154" stroke="#168b79" stroke-width="4" marker-end="url(#vecYArrow)"/>
+<line id="vec1Line" x1="350" y1="225" x2="477" y2="154" stroke="#bb6229" stroke-width="5" marker-end="url(#vec1Arrow)"/>
+<line id="vec2Line" x1="350" y1="225" x2="350" y2="225" stroke="#7764b3" stroke-width="4" marker-end="url(#vec2Arrow)" style="display:none"/>
+<line id="vecResultLine" x1="350" y1="225" x2="350" y2="225" stroke="#104a6e" stroke-width="5" marker-end="url(#resultArrow)" style="display:none"/>
+<text x="350" y="435" text-anchor="middle" class="poe25-small">Arrows are scaled consistently for the chosen loads (not a physical model).</text>
+</svg>
+<div class="poe25-key"><span><b style="background:#bb6229"></b>Force 1</span><span><b style="background:#116f96"></b>Fₓ</span><span><b style="background:#168b79"></b>Fᵧ</span><span><b style="background:#7764b3"></b>Force 2</span><span><b style="background:#104a6e"></b>Resultant</span></div>
+<div class="poe25-assumption" style="margin-top:.75rem"><strong>Reminder:</strong> A zero-length component is hidden. Negative components point left or down. The displayed resultant angle uses the standard angle convention relative to +x.</div></article>
+</div></div></section>
+<section class="container lesson-section" id="apply"><div class="poe25-section-header"><div class="poe25-eyebrow">07 / Engineering application</div><h2>Vectors inside a bridge truss</h2><p>A diagonal truss member acts along its own axis. The force it exerts on a joint can be understood as an x force and a y force. This helps solve joint equilibrium in later Unit 2 lessons.</p></div>
+<div class="poe25-grid"><div class="poe25-panel"><svg id="bridgeVectors" class="poe25-schematic" viewBox="0 0 700 310" role="img" aria-label="A simplified bridge diagonal member rises to the right from a lower joint. Tension force on the joint points up and right along the member; horizontal and vertical force components act right and up. Diagram demonstrates decomposition of a known inclined member force.">
+<defs><marker id="brmain" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c26a2d"/></marker><marker id="brx" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0e789c"/></marker><marker id="bry" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#138d74"/></marker></defs>
+<path d="M92 243H619" stroke="#456b86" stroke-width="4" stroke-dasharray="10 5"/>
+<path d="M123 240L450 64" stroke="#738b9e" stroke-width="20" stroke-linecap="round"/>
+<path d="M123 240L450 64" stroke="#dce8ee" stroke-width="15" stroke-linecap="round"/>
+<circle cx="123" cy="240" r="12" fill="#0a486d"/><circle cx="450" cy="64" r="12" fill="#0a486d"/>
+<path d="M123 240L432 73" stroke="#c26a2d" stroke-width="4.6" marker-end="url(#brmain)"/>
+<path d="M123 240H430" stroke="#0e789c" stroke-width="3.6" marker-end="url(#brx)"/>
+<path d="M430 240V85" stroke="#138d74" stroke-width="3.6" marker-end="url(#bry)"/>
+<text x="243" y="260" class="poe25-small">Horizontal component</text><text x="442" y="179" class="poe25-small">Vertical component</text><text x="186" y="130" class="poe25-label">Member force (tension)</text>
+<text x="110" y="276" class="poe25-small">Joint</text></svg><p class="poe25-mini">This diagram shows an example of a diagonal <strong>tension</strong> member pulling a lower joint up and right. A member in compression would exert a different force direction on that joint.</p></div>
+<article class="poe25-panel"><h3>Example: 120 N member force at +35°</h3>
+<ol class="poe25-steps"><li>Choose the joint where the diagonal attaches.</li><li>Draw the member force along the diagonal, 35° above +x.</li><li>Compute Fₓ = 120 cos35° = <strong>+98.30 N</strong>.</li><li>Compute Fᵧ = 120 sin35° = <strong>+68.83 N</strong>.</li><li>Interpret: the diagonal contributes both horizontal and vertical force at the joint.</li></ol>
+<p class="poe25-assumption"><strong>Do not confuse components with extra forces:</strong> The x and y arrows are an <em>equivalent representation</em> of the original diagonal force. Do not count all three when summing forces.</p></article></div></section>
+<section class="container lesson-section" id="practice"><div class="poe25-section-header"><div class="poe25-eyebrow">08 / Independent practice</div><h2>Calculate first, reveal answers second</h2><p>Sketch axes and a force arrow for each problem. Use DEG mode, show trig setup, use signs and round final values to two decimals.</p></div>
+<div class="poe25-grid">
+<article class="poe25-panel"><span class="poe25-pill">Check A · Fundamentals</span><h3>75 N @ +60°</h3><p>Find the signed horizontal and vertical components.</p><details class="poe25-reveal"><summary>Reveal solution</summary><p>Fₓ = 75 cos60° = <strong>+37.50 N</strong>. Fᵧ = 75 sin60° = <strong>+64.95 N</strong>. Both are positive in quadrant I.</p></details></article>
+<article class="poe25-panel"><span class="poe25-pill">Check B · Below horizontal</span><h3>90 N @ −30°</h3><p>Calculate Fₓ and Fᵧ. Which component is negative?</p><details class="poe25-reveal"><summary>Reveal solution</summary><p>Fₓ = 90 cos(−30°) = <strong>+77.94 N</strong>; Fᵧ = 90 sin(−30°) = <strong>−45.00 N</strong>. The force points down/right.</p></details></article>
+<article class="poe25-panel"><span class="poe25-pill">Check C · Quadrant II</span><h3>40 N @ +150°</h3><p>Find both components and verify their signs from a sketch.</p><details class="poe25-reveal"><summary>Reveal solution</summary><p>Fₓ = 40 cos150° = <strong>−34.64 N</strong>; Fᵧ = 40 sin150° = <strong>+20.00 N</strong>. The force points left/up.</p></details></article>
+<article class="poe25-panel"><span class="poe25-pill">Check D · Reverse the process</span><h3>Fₓ = −30 N and Fᵧ = +40 N</h3><p>Find magnitude and direction as a counterclockwise angle from +x.</p><details class="poe25-reveal"><summary>Reveal solution</summary><p>Magnitude = √(30² + 40²) = <strong>50.00 N</strong>. Vector is in quadrant II: θ = atan2(+40, −30) ≈ <strong>+126.87°</strong>.</p></details></article>
+<article class="poe25-panel"><span class="poe25-pill">Check E · Sum two forces</span><h3>80 N @ +45° and 50 N @ −60°</h3><p>Calculate the resultant components, magnitude and direction.</p><details class="poe25-reveal"><summary>Reveal solution</summary><p>Rₓ = 56.57 + 25.00 = <strong>+81.57 N</strong>; Rᵧ = 56.57 − 43.30 = <strong>+13.27 N</strong>. |R| ≈ <strong>82.64 N</strong>, θ ≈ <strong>+9.24°</strong>.</p></details></article>
+<article class="poe25-panel"><span class="poe25-pill">Check F · From the vertical</span><h3>100 N at 20° to the right of +y</h3><p>Explain whether sine or cosine gives the horizontal component. Then calculate both components.</p><details class="poe25-reveal"><summary>Reveal solution</summary><p>The angle is measured from +y, so horizontal is opposite: Fₓ = 100 sin20° = <strong>+34.20 N</strong>. Vertical is adjacent: Fᵧ = 100 cos20° = <strong>+93.97 N</strong>.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="resources"><div class="poe25-section-header"><div class="poe25-eyebrow">Resource desk</div><h2>References for review and extension</h2><p>These open textbooks expand the explanations above and include additional examples and diagrams.</p></div>
+<div class="poe25-grid"><article class="poe25-panel poe25-resource"><h3>Engineering Statics: Vector Addition</h3><p>Open engineering textbook covering orthogonal components, coordinate axes, force addition and an interactive vector diagram.</p><a href="https://engineeringstatics.org/vector_algebra_2D.html" target="_blank" rel="noopener noreferrer">Read Engineering Statics Section 2.6 ↗</a></article>
+<article class="poe25-panel poe25-resource"><h3>OpenStax: Vectors and Components</h3><p>Free university physics reading with diagrams and equations for vector coordinates and components.</p><a href="https://openstax.org/books/university-physics-volume-1/pages/2-2-coordinate-systems-and-components-of-a-vector" target="_blank" rel="noopener noreferrer">Read OpenStax: Coordinate Systems ↗</a></article>
+<article class="poe25-panel poe25-resource"><h3>Analytical Vector Addition</h3><p>Accessible force-components and resultant-force examples, from diagrams to calculated magnitude.</p><a href="https://openstax.org/books/physics/pages/5-2-vector-addition-and-subtraction-analytical-methods" target="_blank" rel="noopener noreferrer">Read OpenStax: Analytical Addition ↗</a></article>
+<article class="poe25-panel"><h3>Vocabulary review</h3><p><strong>Resultant:</strong> a single vector with the same combined effect as several vectors.</p><p><strong>Component:</strong> one perpendicular part of a force vector.</p><p><strong>Quadrant:</strong> one of four regions of the xy-plane.</p><p><strong>Resolve:</strong> express a vector as two perpendicular components.</p></article></div></section>
+<section class="container lesson-section" id="submit"><div class="poe25-section-header"><div class="poe25-eyebrow">Student submission</div><h2>Exactly what to submit</h2><p>Complete your <strong>POE 2.5 Calculating Force Vectors classwork and homework worksheet</strong> (or equivalent teacher-directed notebook work). The examples and revealed solutions are for learning and checking—not a substitute for showing your own work.</p></div>
+<div class="poe25-grid"><article class="poe25-panel"><h3>Required evidence</h3><ul class="poe25-checklist"><li>Axes and labeled force arrows for every assigned vector problem.</li><li>Correctly identified reference angle and indicated direction.</li><li>Fₓ and Fᵧ calculations with sine/cosine, signs and N units.</li><li>At least one vector reconstructed from components (magnitude and angle).</li><li>Resultant calculations showing ΣFₓ and ΣFᵧ for two angled forces.</li><li>A short written explanation of component signs and how a diagonal bridge force transfers force along x and y.</li></ul></article>
+<article class="poe25-panel"><h3>Final quality check</h3><ul class="poe25-checklist"><li>Calculator was set to degrees.</li><li>Angle was measured from the specified axis.</li><li>Negative components are labeled correctly.</li><li>Resultant magnitude is nonnegative and its direction matches the quadrant.</li><li>Numbers are rounded appropriately and include units.</li><li>All assigned independent and homework questions are included.</li></ul>
+<p><strong>Due:</strong> Check the <a href="../../../../agenda.html">Daily Agenda</a> for the current deadline. Follow the teacher's submission directions.</p>
+<a href="#start" class="btn secondary">Review lesson ↑</a></article></div></section>
+<nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a href="lesson-2-4.html" class="btn secondary">← Lesson 2.4: Free-Body Diagrams</a><a href="lesson-2-6.html" class="btn">Next: 2.6 Calculating Moments →</a></nav></main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+<script>
+(function(){
+"use strict";
+const get=id=>document.getElementById(id);
+const magSlider=get("vecMagnitude"),angSlider=get("vecAngle"),second=get("vecSecond"),reset=get("vecReset"),canvas=get("vectorCanvas");
+if(!magSlider||!angSlider||!second||!reset||!canvas)return;
+const cx=350,cy=225;
+const sign=(v,n)=>Math.abs(v)<1e-9?"0.00":(v>0?"+":"−")+Math.abs(v).toFixed(n||2);
+const angleDisplay=v=>(Math.abs(v)<1e-9?"0.0":(v>=0?"+":"−")+Math.abs(v).toFixed(1))+"°";
+function line(id,x1,y1,x2,y2,active){
+const el=get(id);if(!el)return;
+el.setAttribute("x1",x1.toFixed(2));el.setAttribute("y1",y1.toFixed(2));
+el.setAttribute("x2",x2.toFixed(2));el.setAttribute("y2",y2.toFixed(2));
+el.style.display=active?"":"none";
+}
+function render(){
+const f=Number(magSlider.value),ang=Number(angSlider.value),rad=ang*Math.PI/180;
+const fx=f*Math.cos(rad),fy=f*Math.sin(rad),active=second.checked;
+const f2x=active?25:0,f2y=active?50*Math.sin(-Math.PI/3):0;
+const rx=fx+f2x,ry=fy+f2y,r=Math.hypot(rx,ry),theta=r<1e-9?null:Math.atan2(ry,rx)*180/Math.PI;
+const span=Math.max(180,Math.abs(fx),Math.abs(fy),Math.abs(rx),Math.abs(ry),50);
+const scale=Math.min(250/span,160/span);
+const pos=(x,y)=>[cx+x*scale,cy-y*scale];
+const p1=pos(fx,fy),px=pos(fx,0),p2=pos(f2x,f2y),pr=pos(rx,ry);
+line("vecXLine",cx,cy,px[0],px[1],Math.abs(fx)>1e-6);
+line("vecYLine",px[0],px[1],p1[0],p1[1],Math.abs(fy)>1e-6);
+line("vec1Line",cx,cy,p1[0],p1[1],f>0);
+line("vec2Line",cx,cy,p2[0],p2[1],active);
+line("vecResultLine",cx,cy,pr[0],pr[1],active&&r>1e-6);
+get("vecMagnitudeText").textContent=f+" N";
+get("vecAngleText").textContent=(ang>0?"+":"")+ang+"°";
+get("outFx").textContent=sign(fx)+" N";get("outFy").textContent=sign(fy)+" N";
+get("outRx").textContent=sign(rx)+" N";get("outRy").textContent=sign(ry)+" N";
+get("outRmag").textContent=r.toFixed(2)+" N";
+get("outRangle").textContent=theta===null?"Undefined":angleDisplay(theta);
+const direction=(x,y)=>Math.abs(x)<1e-6&&Math.abs(y)<1e-6?"zero vector":(x>=0?"right":"left")+" and "+(y>=0?"up":"down");
+get("vecStatus").textContent=(f===0?"Force 1 has zero magnitude; its angle does not change its components.":("Force 1 points "+direction(fx,fy)+". "))+
+(active?"Resultant components include Force 2 = (+25.00, −43.30) N.":"Turn on Force 2 to combine vectors.")+
+(theta===null?" The zero resultant has no defined direction.":"");
+canvas.setAttribute("aria-label","Interactive vector diagram. Force 1 magnitude "+f+" newtons, angle "+ang+" degrees. Signed components x "+fx.toFixed(2)+" newtons and y "+fy.toFixed(2)+" newtons. "+(active?"A second 50 newton force at negative 60 degrees is present. ":"")+"Resultant "+r.toFixed(2)+" newtons"+(theta===null?", no defined angle.":", at "+theta.toFixed(2)+" degrees from positive x."));
+}
+magSlider.addEventListener("input",render);angSlider.addEventListener("input",render);second.addEventListener("change",render);
+reset.addEventListener("click",()=>{magSlider.value=100;angSlider.value=30;second.checked=false;render();});
+render();
+})();
+</script></body></html>
