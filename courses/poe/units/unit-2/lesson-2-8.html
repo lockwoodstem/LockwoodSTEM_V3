@@ -1,1 +1,488 @@
-<!DOCTYPE html><html lang="en"><head><title>POE Unit 2 Lesson 2.8 | Calculating Truss Forces | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main"><nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">2.8</li></ol></nav><section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Mechanics Foundations • Lesson 2.8</div><h1>Calculating Truss Forces</h1><p class="focus-question"><strong>Engineering question:</strong> How can equilibrium reveal the force inside each truss member?</p><div class="mission-actions"><a class="btn" href="#learn">Learn</a><a class="btn secondary" href="#practice">Practice</a><a class="btn secondary" href="#apply">Apply</a><a class="btn secondary" href="#submit">Submit</a><a class="btn ghost" href="../unit-2.html">Unit 2</a></div></div><aside class="mission-panel"><span class="tag">Foundational instruction</span><h2>Learn it before the bridge project</h2><p>Use varied engineering examples to master the mechanics, then apply the technique to your final structural design later in the unit.</p></aside></div></section><section class="container lesson-section"><article class="card"><h2>Learning Targets</h2><ul><li>Find external support reactions first</li><li>Draw a free-body diagram of an individual joint</li><li>Use ΣFx and ΣFy to solve member forces</li></ul></article></section><section class="container lesson-section" id="learn"><div class="section-header"><h2>Learn the Concept</h2></div><article class="card"><ul><li>Method of joints: start at a joint with no more than two unknown member forces</li><li>Assume each unknown member is in tension (force points away from the joint); negative result means compression</li><li>Solve joint-by-joint using force components</li></ul><p><strong>During instruction:</strong> Sketch the forces, geometry, variables or joints discussed and record units for every quantity.</p></article></section><section class="container lesson-section" id="practice"><div class="section-header"><h2>Practice Together</h2></div><article class="card"><p>At a joint, a 100 N downward load is supported by two identical diagonal members at 45° to the horizontal. Assuming symmetry, solve the axial magnitude in each member.</p><p><strong>Show:</strong> a labeled diagram, a mathematical model when relevant, and a final statement interpreting the result.</p></article></section><section class="container lesson-section" id="apply"><div class="section-header"><h2>Apply the Skill</h2></div><article class="card"><p>Analyze a supplied small symmetrical truss: calculate reactions, then resolve forces at a joint with at most two unknowns.</p><p><strong>Check your understanding:</strong> Why is a negative member force not automatically an incorrect answer?</p></article></section><section class="container lesson-section" id="submit"><article class="card"><h2>Student Evidence</h2><p>Worked method-of-joints calculations. Use your engineering notebook or teacher-provided guided notes; include dimensions, units and a conclusion.</p><p><strong>Looking ahead:</strong> These mechanics techniques will be revisited when students analyze the bridge design in Lessons 2.15–2.20.</p></article></section><nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-7.html">← 2.7 Introduction to Truss Systems</a><a class="btn" href="lesson-2-9.html">2.9 Advanced Truss Analysis →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer></body></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POE 2.8 | Calculating Truss Forces — Learning Studio | LockwoodSTEM</title>
+<meta name="description" content="Learn method-of-joints truss calculations with teacher-guided videos, individual joint FBDs, fully worked compression/tension solutions and an interactive truss force explorer."/>
+<link href="../../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/>
+<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/>
+<script defer src="../../../../assets/js/main.js"></script>
+<style id="poe28-learning-studio">
+html{scroll-behavior:smooth}
+.poe28{--ink:#092940;--blue:#0b567e;--aqua:#147f88;--gold:#e2ac37;--edge:#cadbe7}
+.poe28 .poe28-lead{font-size:1.09rem;line-height:1.65;color:#294456}
+.poe28 .poe28-eyebrow{color:#875d0a;font-weight:850;text-transform:uppercase;letter-spacing:.09em;font-size:.82rem}
+.poe28 .poe28-section-header{margin-bottom:1rem}
+.poe28 .poe28-section-header h2{margin:.25rem 0 .3rem}
+.poe28 .poe28-section-header p{margin:.1rem 0;max-width:860px;color:#4b6475}
+.poe28 .poe28-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
+.poe28 .poe28-metric{background:#f1f7fb;border:1px solid #bdd4e4;border-radius:14px;padding:.9rem 1rem}
+.poe28 .poe28-metric strong{display:block;color:#0b4772;font-size:1.05rem}
+.poe28 .poe28-metric span{display:block;font-size:.94rem;color:#40596a;margin-top:.2rem}
+.poe28 .poe28-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe28 .poe28-thirds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.poe28 .poe28-panel{background:#f7fbfd;border:1px solid var(--edge);border-radius:16px;padding:1.1rem 1.15rem}
+.poe28 .poe28-panel h3{color:var(--ink);margin:.15rem 0 .5rem}
+.poe28 .poe28-panel p{margin:.3rem 0 .65rem}
+.poe28 .poe28-panel ul{padding-left:1.2rem;margin:.4rem 0}
+.poe28 .poe28-pill{display:inline-block;border-radius:99px;padding:.2rem .6rem;background:#e3f0f5;color:#0c5672;font-size:.75rem;font-weight:900;letter-spacing:.03em}
+.poe28 .poe28-pill.gold{background:#fbefcf;color:#7d540d}
+.poe28 .poe28-mini{font-size:.9rem;color:#536b79}
+.poe28 .poe28-formula{font-size:clamp(1.05rem,1.6vw,1.28rem);letter-spacing:.01em;font-weight:850;color:#0b4163;background:#edf6fb;border-left:5px solid #147a9e;border-radius:10px;padding:.8rem 1rem;margin:.8rem 0;overflow-wrap:anywhere}
+.poe28 .poe28-graphic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe28 .poe28-large-svg{max-width:870px}
+.poe28 svg .poe28-axis{fill:none;stroke:#455f73;stroke-width:1.8}
+.poe28 svg .poe28-guide{stroke:#4c879e;stroke-dasharray:5 5;stroke-width:1.35;fill:none}
+.poe28 svg .poe28-dim{fill:none;stroke:#2b648b;stroke-width:1.15}
+.poe28 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#17384e}
+.poe28 svg text.poe28-annotation{font-size:13px;font-weight:750}
+.poe28 svg text.poe28-small{font-size:13px}
+.poe28 svg text.poe28-tiny{font-size:11px}
+.poe28 svg text.poe28-strong{font-weight:800}
+.poe28 .poe28-lesson-steps{list-style:none!important;margin:0;padding:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe28 .poe28-lesson-steps li{border-left:4px solid #167a94;padding:.7rem .75rem;border-radius:9px;background:#f2f8fc;font-weight:750;font-size:.92rem}
+.poe28 .poe28-lesson-steps li span{display:block;color:#527283;font-size:.78rem;font-weight:700}
+.poe28 .poe28-video{background:#f7fbff;border:1px solid #cfdfeb;border-radius:16px;overflow:hidden}
+.poe28 .poe28-video-copy{padding:1rem}
+.poe28 .poe28-video-copy h3{margin:.25rem 0}
+.poe28 .poe28-frame{aspect-ratio:16/9;background:#071e35;position:relative}
+.poe28 .poe28-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe28 .poe28-video a{font-weight:800}
+.poe28 .poe28-video p{margin:.4rem 0}
+.poe28 .poe28-tablewrap{overflow-x:auto}
+.poe28 .poe28-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.poe28 .poe28-table td,.poe28 .poe28-table th{border:1px solid #c8dbe8;text-align:left;padding:.55rem .7rem}
+.poe28 .poe28-table th{background:#eaf4fb;color:#0c3554}
+.poe28 .poe28-table .poe28-total{background:#f1f8e8;font-weight:850}
+.poe28 .poe28-steps{padding-left:1.55rem}
+.poe28 .poe28-steps li{padding-bottom:.45rem}
+.poe28 .poe28-caution{background:#fff9e9;border-left:5px solid #d59b22;padding:.8rem 1rem;border-radius:10px}
+.poe28 details.poe28-reveal{border:1px solid #b9d3e4;background:#f7fbff;border-radius:12px;padding:.8rem 1rem;margin:.65rem 0}
+.poe28 details.poe28-reveal summary{color:#0b4c73;cursor:pointer;font-weight:850}
+.poe28 details.poe28-reveal[open]{border-color:#0d8b9a}
+.poe28 details.poe28-reveal p{margin:.7rem 0 .15rem}
+.poe28 .poe28-explorer{background:#f2f9fc;border:1px solid #9dc6db;border-radius:16px;padding:1rem}
+.poe28 .poe28-explorer label{font-weight:800;color:#0b4163;display:block;margin:.5rem 0}
+.poe28 .poe28-explorer input[type=range]{width:min(100%,440px);accent-color:#0a7991;cursor:pointer}
+.poe28 .poe28-output{font-size:1.2rem;font-weight:850;color:#0a506d;background:#fff;border:1px solid #b9d5e5;padding:.7rem;border-radius:10px}
+.poe28 .poe28-resources a{display:block;margin:.4rem 0;font-weight:800;overflow-wrap:anywhere}
+.poe28 .poe28-checklist{list-style:none!important;padding:0!important}
+.poe28 .poe28-checklist li{padding:.45rem 0 .45rem 1.7rem;position:relative}
+.poe28 .poe28-checklist li::before{content:"□";position:absolute;left:0;top:.32rem;font-size:1.3rem;color:#0b567e}
+.poe28 a:focus-visible,.poe28 input:focus-visible,.poe28 summary:focus-visible{outline:3px solid #ca8b20;outline-offset:3px}
+@media(max-width:980px){.poe28 .poe28-thirds{grid-template-columns:1fr 1fr}.poe28 .poe28-lesson-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.poe28 .poe28-grid,.poe28 .poe28-thirds,.poe28 .poe28-overview{grid-template-columns:1fr}}
+@media print{.poe28 .poe28-video,.poe28 #explore,.poe28 .mission-actions{display:none!important}.poe28 details.poe28-reveal:not([open]){display:none}}
+
+.poe28 .poe28-illustration{display:block;width:100%;height:auto;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe28 .poe28-twin{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe28 .poe28-twin>*{min-width:0}
+.poe28 svg .beam{stroke:#1b5a7b;fill:none;stroke-width:8;stroke-linecap:round}
+.poe28 svg .beam-original{stroke:#c6d5df;stroke-width:4;stroke-dasharray:8 6;fill:none}
+.poe28 svg .beam-deflected{stroke:#008d94;stroke-width:6;fill:none;stroke-linecap:round}
+.poe28 svg .poe28-support{fill:#d6e9f5;stroke:#123f5b;stroke-width:1.8}
+.poe28 svg .poe28-force{stroke:#d97726;stroke-width:3;fill:none}
+.poe28 .poe28-param{background:#f6fafc;border-radius:12px;padding:.65rem .8rem;margin:.6rem 0}
+.poe28 .poe28-param label{display:flex;gap:.7rem;align-items:center;justify-content:space-between}
+.poe28 .poe28-param label strong{white-space:nowrap;font-variant-numeric:tabular-nums}
+.poe28 .poe28-param input[type="range"]{width:100%;accent-color:#0a7991}
+.poe28 .poe28-data{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:1rem 0}
+.poe28 .poe28-data div{border:1px solid #cadee8;border-radius:12px;padding:.6rem .8rem;background:#fff}
+.poe28 .poe28-data strong{display:block;font-size:1.15rem;color:#0c4966;font-variant-numeric:tabular-nums}
+.poe28 .poe28-data span{font-size:.82rem;color:#496475}
+.poe28 .poe28-variable{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe28 .poe28-variable div{border:1px solid #cadde8;border-radius:12px;background:#fff;padding:.75rem}
+.poe28 .poe28-variable b{display:block;font-size:1.12rem;color:#0b5779}
+.poe28 .poe28-progress-card{padding:1rem;border:1px solid #bfdae6;border-radius:12px;background:#f5fafc}
+.poe28 .poe28-progress-card strong{color:#0c4966}
+.poe28 .poe28-solution{font-variant-numeric:tabular-nums}
+.poe28 .poe28-resource-link{display:inline-block;margin-top:.3rem;font-weight:800}
+.poe28 .poe28-print{float:right;font-size:.85rem}
+@media(max-width:760px){.poe28 .poe28-twin,.poe28 .poe28-variable{grid-template-columns:1fr}.poe28 .poe28-print{float:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.poe28 .poe28-schematic{width:100%;display:block;max-width:900px;height:auto;background:#fff;border:1px solid #d2e4ec;border-radius:12px;margin:.75rem auto}
+.poe28 svg .poe28-head{font-size:15px;font-weight:850;fill:#113d57}
+.poe28 svg .poe28-note{font-size:13px;font-weight:760;fill:#183d53}
+.poe28 svg .poe28-caption{font-size:11px;fill:#405c6e}
+.poe28 .poe28-force-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-bottom:1rem}
+.poe28 .poe28-force-grid>div{background:#f5fafc;border:1px solid #cfdfeb;border-radius:11px;padding:.85rem}
+.poe28 .poe28-force-grid strong{display:block;color:#0d5472;margin-bottom:.2rem}
+.poe28 .poe28-force-grid span{font-size:.94rem;color:#3a5263}
+.poe28 .poe28-switches{display:flex;gap:.55rem;flex-wrap:wrap;margin:.75rem 0}
+.poe28 .poe28-switches button{border:1px solid #7ba1b9;background:#fff;color:#104c6c;border-radius:10px;padding:.65rem .85rem;font-weight:780;cursor:pointer}
+.poe28 .poe28-switches button[aria-pressed="true"]{background:#105a7b;color:white;border-color:#105a7b}
+.poe28 .poe28-switches button:hover{border-color:#147a9e}
+.poe28 .poe28-builder-note{background:#f2f9fc;border:1px solid #b7d4e5;border-radius:12px;padding:1rem;min-height:100px}
+.poe28 .poe28-builder-note h3{margin:0 0 .25rem}
+.poe28 .poe28-builder-note p{margin:.3rem 0}
+.poe28 .poe28-explorer input[type=range]{width:min(440px,100%);accent-color:#147a9e}
+.poe28 .poe28-checklist{list-style:none!important;margin:.4rem 0;padding:0!important}
+.poe28 .poe28-checklist li{position:relative;padding:.5rem 0 .5rem 1.6rem}
+.poe28 .poe28-checklist li:before{content:"□";position:absolute;left:0;top:.39rem;color:#147a9e;font-size:1.25rem}
+@media(max-width:880px){.poe28 .poe28-force-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.poe28 .poe28-force-grid{grid-template-columns:1fr}}
+
+.poe28 .poe28-schematic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d5e3ec;border-radius:14px;margin:.75rem auto}
+.poe28 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25465e}
+.poe28 svg .poe28-small{font-size:12px}
+.poe28 svg .poe28-label{font-size:14px;font-weight:800}
+.poe28 .poe28-key{display:flex;flex-wrap:wrap;gap:.8rem;font-weight:700;color:#446479;font-size:.9rem}
+.poe28 .poe28-key b{display:inline-block;width:15px;height:4px;vertical-align:middle;margin-right:.35rem}
+.poe28 .poe28-concept{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe28 .poe28-concept>div{border:1px solid #c1d7e4;background:#f5fbfd;border-radius:12px;padding:.85rem 1rem}
+.poe28 .poe28-concept strong{display:block;color:#0a5278;margin-bottom:.35rem}
+.poe28 .poe28-flow-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe28 .poe28-flow-list>div{background:#eef7fa;border-left:4px solid #147a9e;padding:.75rem;border-radius:9px;font-weight:750}
+.poe28 .poe28-flow-list small{display:block;color:#44677a}
+.poe28 .poe28-assumption{background:#fff8e8;border-left:5px solid #c89025;border-radius:10px;padding:.75rem 1rem}
+.poe28 .poe28-notation{background:#f1f8fc;border:1px solid #b8d3e6;border-radius:10px;padding:.75rem 1rem}
+.poe28 .poe28-formula-equation{background:#ecf7fb;border-left:5px solid #0c7994;padding:.8rem 1.1rem;border-radius:10px;font-size:1.22rem;font-weight:850;color:#06466a;margin:.65rem 0;overflow-wrap:anywhere}
+.poe28 .poe28-tablewrap{max-width:100%;overflow-x:auto}
+.poe28 .poe28-table{width:100%;border-collapse:collapse}
+.poe28 .poe28-table th,.poe28 .poe28-table td{border:1px solid #c5d9e6;padding:.55rem .65rem;text-align:left}
+.poe28 .poe28-table th{background:#eaf4fb;color:#0b496d}
+.poe28 .poe28-table td{font-variant-numeric:tabular-nums}
+.poe28 .poe28-control{padding:.8rem;background:#f8fbfd;border:1px solid #c5dce9;border-radius:12px;margin-bottom:.65rem}
+.poe28 .poe28-control label{display:flex;align-items:center;justify-content:space-between;gap:.6rem;font-weight:790;color:#0a5377;margin:0 0 .4rem}
+.poe28 .poe28-control label output{font-variant-numeric:tabular-nums}
+.poe28 .poe28-control input[type=range]{width:100%;accent-color:#0b7897}
+.poe28 .poe28-control-check{display:flex;align-items:center;gap:.6rem;color:#0a4b6a;font-weight:780;margin:.65rem 0}
+.poe28 .poe28-control-check input{width:20px;height:20px;accent-color:#0b7897}
+.poe28 .poe28-answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe28 .poe28-answers>div{background:#fff;border:1px solid #b9d7e4;border-radius:12px;padding:.7rem}
+.poe28 .poe28-answers strong{display:block;color:#0a496c;font-size:1.13rem;font-variant-numeric:tabular-nums}
+.poe28 .poe28-answers span{color:#4c6477;font-size:.88rem}
+.poe28 .poe28-simulator{background:#eef7fa;border:1px solid #9abfd2;border-radius:17px;padding:1.1rem}
+.poe28 .poe28-simulator .poe28-grid>*{min-width:0}
+.poe28 .poe28-teacher-note{color:#466478;font-size:.91rem}
+.poe28 .poe28-checklist{list-style:none!important;padding:0!important}
+.poe28 .poe28-checklist li{padding:.48rem .2rem .48rem 1.6rem;position:relative}
+.poe28 .poe28-checklist li:before{content:"□";position:absolute;left:0;top:.32rem;color:#0b7d95;font-size:1.2rem}
+.poe28 .poe28-resource a{display:block;font-weight:800;margin:.4rem 0}
+.poe28 .poe28-ratio{color:#144b65;font-weight:800}
+@media(max-width:960px){.poe28 .poe28-concept{grid-template-columns:1fr 1fr}.poe28 .poe28-flow-list{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.poe28 .poe28-concept,.poe28 .poe28-answers,.poe28 .poe28-flow-list{grid-template-columns:1fr}}
+
+.poe28 .poe28-schematic{display:block;width:100%;max-width:950px;height:auto;border:1px solid #c9dfec;background:#fff;border-radius:14px;margin:.85rem auto}
+.poe28 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25485e}
+.poe28 svg .poe28-heading{font-weight:850;font-size:15px}
+.poe28 svg .poe28-label{font-weight:760;font-size:14px}
+.poe28 svg .poe28-small{font-size:12px}
+.poe28 .poe28-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe28 .poe28-flow>div{border-left:4px solid #147a9e;background:#f1f8fc;border-radius:10px;padding:.75rem;font-weight:750;color:#13445f}
+.poe28 .poe28-flow small{display:block;font-size:.8rem;color:#587084;font-weight:650}
+.poe28 .poe28-definitions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe28 .poe28-definitions>div{padding:.9rem;background:#f1f8fb;border-radius:12px;border:1px solid #c5dce8}
+.poe28 .poe28-definitions strong{display:block;color:#0a5574}
+.poe28 .poe28-formula-equation{margin:.7rem 0;padding:.8rem 1rem;background:#edf7fb;border-left:5px solid #0f7c91;color:#104969;border-radius:12px;font-weight:850;font-size:1.14rem;overflow-wrap:anywhere}
+.poe28 .poe28-alert{background:#fff7e7;padding:.75rem 1rem;border-left:5px solid #c59022;border-radius:11px}
+.poe28 .poe28-controls{background:#f0f8fb;border:1px solid #abd0dd;border-radius:16px;padding:1rem}
+.poe28 .poe28-control{border:1px solid #c3d9e3;border-radius:10px;padding:.8rem;background:#fff;margin:.65rem 0}
+.poe28 .poe28-control label{display:flex;justify-content:space-between;gap:.7rem;color:#144d6b;font-weight:780}
+.poe28 .poe28-control output{font-variant-numeric:tabular-nums}
+.poe28 .poe28-control input[type="range"]{accent-color:#127894;width:100%}
+.poe28 .poe28-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe28 .poe28-results>div{background:#fff;padding:.75rem;border:1px solid #bfd9e6;border-radius:10px}
+.poe28 .poe28-results strong{font-size:1.15rem;color:#0b506d;display:block;font-variant-numeric:tabular-nums}
+.poe28 .poe28-results span{display:block;font-size:.86rem;color:#4d6676}
+.poe28 .poe28-moment-sign{margin:.55rem 0;font-weight:800;color:#0e5371}
+.poe28 .poe28-checklist{list-style:none!important;padding:0!important}
+.poe28 .poe28-checklist li{position:relative;padding:.4rem .2rem .4rem 1.55rem}
+.poe28 .poe28-checklist li::before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.2rem;color:#167c9a}
+.poe28 .poe28-resource a{font-weight:850;display:block;margin:.6rem 0}
+.poe28 .poe28-tablewrap{overflow-x:auto}
+.poe28 .poe28-table{border-collapse:collapse;width:100%;font-size:.96rem}
+.poe28 .poe28-table td,.poe28 .poe28-table th{border:1px solid #c8dbe8;padding:.6rem;text-align:left;vertical-align:top}
+.poe28 .poe28-table th{background:#e7f2f9;color:#0a4360}
+@media(max-width:940px){.poe28 .poe28-definitions,.poe28 .poe28-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.poe28 .poe28-definitions,.poe28 .poe28-results,.poe28 .poe28-flow{grid-template-columns:1fr}}
+
+.poe28 .poe28-svg{display:block;width:100%;height:auto;background:#fff;border:1px solid #d3e1eb;border-radius:14px;margin:.7rem auto}
+.poe28 .poe28-svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#27485e}
+.poe28 .poe28-svg .poe28-small{font-size:12px}
+.poe28 .poe28-svg .poe28-label{font-size:14px;font-weight:800}
+.poe28 .poe28-svg .poe28-heading{font-size:15px;font-weight:850}
+.poe28 .poe28-svg .poe28-member{stroke:#275773;stroke-width:9;stroke-linecap:round;transition:stroke .12s ease,opacity .12s ease}
+.poe28 .poe28-svg .poe28-accent{stroke:#0f897d}
+.poe28 #memberExplorerGraphic .poe28-member{stroke-width:9}
+.poe28 .poe28-buttons{display:flex;gap:.45rem;flex-wrap:wrap;margin:.75rem 0}
+.poe28 .poe28-buttons button{background:#fff;border:1px solid #9ebccd;border-radius:9px;padding:.6rem .75rem;color:#124c67;font-size:.91rem;font-weight:760;cursor:pointer}
+.poe28 .poe28-buttons button[aria-pressed="true"]{background:#105676;border-color:#105676;color:#fff}
+.poe28 .poe28-buttons button:hover{border-color:#0a7893}
+.poe28 .poe28-interactive{border:1px solid #b2d1df;background:#f2f9fc;padding:1rem;border-radius:16px}
+.poe28 .poe28-interactive h3{margin-top:0}
+.poe28 .poe28-guide-panel{padding:.85rem 1rem;background:#fff;border:1px solid #c8deea;border-radius:12px;min-height:4.5rem}
+.poe28 .poe28-guide-panel strong{display:block;color:#0d5373;margin-bottom:.25rem}
+.poe28 .poe28-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe28 .poe28-flow>div{padding:.75rem;border-radius:10px;background:#eaf5fa;border-left:4px solid #0e829c;font-weight:750}
+.poe28 .poe28-flow small{display:block;font-weight:600;color:#42667b}
+.poe28 .poe28-checklist{list-style:none!important;padding:0!important}
+.poe28 .poe28-checklist li{padding:.42rem .25rem .42rem 1.6rem;position:relative}
+.poe28 .poe28-checklist li:before{content:"□";position:absolute;left:0;top:.34rem;color:#118199;font-size:1.25rem}
+.poe28 .poe28-warning{border-left:5px solid #bc861f;background:#fff8e9;border-radius:11px;padding:.8rem 1rem}
+.poe28 .poe28-two-force{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.poe28 .poe28-two-force>div{background:#f4f9fc;border:1px solid #d0e1ea;border-radius:12px;padding:.9rem}
+.poe28 .poe28-two-force h3{margin:.1rem 0 .4rem}
+.poe28 .poe28-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.poe28 .poe28-stats>div{background:#fff;border:1px solid #c7ddea;padding:.75rem;border-radius:12px}
+.poe28 .poe28-stats strong{font-size:1.12rem;display:block;color:#0b5879}
+.poe28 .poe28-stats span{font-size:.85rem;color:#516779}
+.poe28 .poe28-resource a{display:block;font-weight:800;margin:.35rem 0}
+.poe28 .poe28-mini-note{background:#ecf7fa;border:1px solid #a3ceda;border-radius:12px;padding:.8rem 1rem}
+.poe28 .poe28-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.poe28 .poe28-tags span{font-size:.85rem;font-weight:850;color:#0b577a;background:#dceef5;padding:.25rem .6rem;border-radius:99px}
+.poe28 button:focus-visible,.poe28 a:focus-visible,.poe28 summary:focus-visible{outline:3px solid #c58c26;outline-offset:3px}
+@media(max-width:920px){.poe28 .poe28-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:670px){.poe28 .poe28-flow,.poe28 .poe28-two-force,.poe28 .poe28-stats{grid-template-columns:1fr}.poe28 .poe28-buttons button{flex:1 1 auto}}
+@media(prefers-reduced-motion:reduce){.poe28 .poe28-svg .poe28-member{transition:none}}
+
+.poe28 .poe28-diagram{width:100%;max-width:940px;height:auto;display:block;margin:.8rem auto;border:1px solid #d2e2ec;border-radius:13px;background:#fff}
+.poe28 svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;fill:#24465b}
+.poe28 svg text.poe28-label{font-size:13px;font-weight:800}
+.poe28 svg text.poe28-small{font-size:11px}
+.poe28 .poe28-diagram .poe28-truss-compression{stroke:#bf7a30;stroke-width:10;stroke-linecap:round}
+.poe28 .poe28-diagram .poe28-truss-tension{stroke:#108576;stroke-width:10;stroke-linecap:round}
+.poe28 .poe28-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe28 .poe28-flow>div{background:#edf7fb;border-left:4px solid #147a9e;padding:.8rem;border-radius:10px;color:#124d69;font-weight:760}
+.poe28 .poe28-flow small{font-size:.78rem;font-weight:600;display:block;color:#577083}
+.poe28 .poe28-equation{font-weight:850;color:#0b4869;font-size:1.15rem;padding:.7rem 1rem;background:#eaf6fb;border-left:5px solid #137e9c;border-radius:10px;margin:.65rem 0;overflow-wrap:anywhere}
+.poe28 .poe28-nuance{background:#fff8e7;border-left:5px solid #c28b22;border-radius:10px;padding:.8rem 1rem}
+.poe28 .poe28-concept-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.poe28 .poe28-concept-cards>div{border-radius:12px;background:#f3fafc;border:1px solid #c8deea;padding:.8rem}
+.poe28 .poe28-concept-cards strong{display:block;color:#0d5271;margin-bottom:.25rem}
+.poe28 .poe28-data-table{width:100%;border-collapse:collapse;font-size:.94rem}
+.poe28 .poe28-data-table td,.poe28 .poe28-data-table th{border:1px solid #c7dce7;padding:.6rem;text-align:left;vertical-align:top}
+.poe28 .poe28-data-table th{background:#e7f4fa;color:#134a6a}
+.poe28 .poe28-table-wrap{overflow-x:auto}
+.poe28 .poe28-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}
+.poe28 .poe28-badges span{border-radius:90px;background:#e1eff5;padding:.35rem .65rem;font-size:.85rem;font-weight:820;color:#0c5679}
+.poe28 .poe28-checklist{list-style:none!important;padding:0!important}
+.poe28 .poe28-checklist li{position:relative;padding:.45rem 0 .45rem 1.55rem}
+.poe28 .poe28-checklist li:before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.25rem;color:#087d9b}
+.poe28 .poe28-lab{border:1px solid #a8d2df;border-radius:15px;background:#f1f9fc;padding:1rem}
+.poe28 .poe28-control{padding:.65rem .8rem;border:1px solid #c8dce8;background:#fff;border-radius:10px;margin:.65rem 0}
+.poe28 .poe28-control label{display:flex;justify-content:space-between;gap:.75rem;font-weight:800;color:#0c5274}
+.poe28 .poe28-control output{font-variant-numeric:tabular-nums}
+.poe28 .poe28-control input[type=range]{accent-color:#0b7899;width:100%}
+.poe28 .poe28-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.poe28 .poe28-results>div{background:#fff;border:1px solid #c2dce7;border-radius:10px;padding:.75rem}
+.poe28 .poe28-results strong{display:block;color:#0c506d;font-size:1.12rem;font-variant-numeric:tabular-nums}
+.poe28 .poe28-results span{color:#516d7a;font-size:.84rem}
+.poe28 .poe28-switches{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}
+.poe28 .poe28-switches button{padding:.6rem .8rem;border:1px solid #94b4c9;background:#fff;border-radius:9px;font-size:.9rem;font-weight:780;color:#135273;cursor:pointer}
+.poe28 .poe28-switches button[aria-pressed="true"]{background:#0e5678;color:#fff;border-color:#0e5678}
+.poe28 .poe28-switches button:hover{border-color:#0d7992}
+.poe28 .poe28-step-explanation{padding:.75rem 1rem;background:#fff;border:1px solid #b9d3e2;border-radius:11px;min-height:112px}
+.poe28 .poe28-step-explanation h3{margin:.15rem 0 .5rem}
+.poe28 .poe28-note{font-size:.9rem;color:#4e6573}
+.poe28 .poe28-resource a{display:block;font-weight:800;margin:.55rem 0;overflow-wrap:anywhere}
+.poe28 .poe28-mini-formula{font-size:.92rem;background:#f4fbff;border:1px solid #cddfea;padding:.65rem;border-radius:10px}
+.poe28 #solverStageJoint{stroke:#e8ab30;stroke-width:5;fill:#153d58;display:none}
+@media(max-width:950px){.poe28 .poe28-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.poe28 .poe28-concept-cards,.poe28 .poe28-flow,.poe28 .poe28-results{grid-template-columns:1fr}}
+</style></head>
+<body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container nav"><a class="brand" aria-label="LockwoodSTEM home" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
+<main class="poe28" id="main">
+<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.8</li></ol></nav>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img src="../../../../assets/img/course-icons/poe-course-icon.png" alt="POE course icon" class="lesson-course-icon"/><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.8</div><h1>Calculating Truss Forces</h1><p class="focus-question"><strong>Engineering question:</strong> How can we calculate the internal force in each truss member using equilibrium at its joints?</p><div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#watch">Watch Videos</a><a class="btn secondary" href="#worked">Solved Example</a><a class="btn secondary" href="#explore">Interactive Truss</a><a class="btn secondary" href="#practice">Practice</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
+<aside class="mission-panel"><span class="tag">Learn • Calculate • Explore • Check</span><h2>Find the force in every member.</h2><p>Build on Lessons 2.4–2.7 to solve a simple pin-jointed truss using the <strong>method of joints</strong>, including force directions and compression versus tension.</p><p><strong>Materials:</strong> pencil, ruler, calculator in degree mode and the Lesson 2.8 classwork/homework worksheet or notebook.</p></aside></div></section>
+<section class="container lesson-section" id="start"><div class="poe28-section-header"><div class="poe28-eyebrow">Learning pathway</div><h2>What you'll be able to do</h2><p>Complete the modules in order. Read the worked example and sketch force arrows before revealing the practice answers.</p></div>
+<div class="poe28-overview"><div class="poe28-metric"><strong>01 · Find reactions</strong><span>Apply whole-truss equilibrium before calculating internal forces.</span></div><div class="poe28-metric"><strong>02 · Solve joints</strong><span>Isolate a joint and use ΣFₓ = 0 and ΣFᵧ = 0.</span></div><div class="poe28-metric"><strong>03 · Classify members</strong><span>Explain what positive and negative assumed-tension answers mean.</span></div></div>
+<div class="poe28-panel" style="margin-top:1rem"><h3>Suggested 45–50 minute sequence</h3><div class="poe28-flow"><div>Concept &amp; conventions<small>5 minutes</small></div><div>Instructional video<small>10–12 minutes</small></div><div>Follow full solution<small>15 minutes</small></div><div>Explorer &amp; practice<small>15–18 minutes</small></div></div><p class="poe28-note">Finish the remaining practice and worksheet outside class as assigned.</p></div></section>
+<section class="container lesson-section" id="learn"><div class="poe28-section-header"><div class="poe28-eyebrow">01 / Fundamentals</div><h2>How does the method of joints work?</h2><p>Every joint of an ideal truss is in equilibrium. If you isolate one joint, all connected members exert forces along their own axes, and those forces must balance the applied loads and support reactions at that joint. <a href="https://engineeringstatics.org/method-of-joints.html" target="_blank" rel="noopener noreferrer">Read the reference method ↗</a></p></div>
+<div class="poe28-concept-cards"><div><strong>Whole-truss FBD</strong>Start with supports and external forces. Reactions usually come from ΣM = 0, ΣFₓ = 0 and ΣFᵧ = 0.</div><div><strong>Joint FBD</strong>Isolate a single pin as a dot. Draw connected member forces along member directions plus any external loads at that joint.</div><div><strong>At most two unknowns</strong>A 2D joint gives two independent force equations: ΣFₓ = 0 and ΣFᵧ = 0. Start with a joint containing no more than two unknowns.</div></div>
+<div class="poe28-grid" style="margin-top:1rem"><article class="poe28-panel"><h3>Assume unknown members are in tension</h3><p>Initially draw an unknown member force <strong>away</strong> from the isolated joint. After solving, a <strong>positive</strong> force means tension (a pull). A <strong>negative</strong> force means compression (a push); the real force acts in the direction opposite the assumed arrow.</p><p class="poe28-mini-formula"><strong>Rule:</strong> +F = tension under the outward-arrow convention; −F = compression.</p></article>
+<article class="poe28-panel"><h3>Ideal-model assumptions</h3><p>Members are straight, weightless two-force members; ideal joints are frictionless pins; loads act at joints; and the structure is in static equilibrium. Actual manufactured bridges have connection stiffness, self-weight, imperfections and bending effects.</p><p class="poe28-nuance"><strong>Critical:</strong> A calculated axial force is not a load limit or proof that a bridge will withstand that force. Real designs also require member strength, buckling, connection and stability checks.</p></article></div>
+<div class="poe28-badges"><span>Whole structure: ΣM = 0</span><span>Individual joint: ΣFₓ = 0</span><span>Individual joint: ΣFᵧ = 0</span></div></section>
+<section class="container lesson-section" id="method"><div class="poe28-section-header"><div class="poe28-eyebrow">02 / Your repeatable process</div><h2>A five-step method students can follow</h2></div>
+<div class="poe28-flow"><div>1 · Draw the truss<small>Mark all loads, supports, geometry and joint labels.</small></div><div>2 · Find reactions<small>Use whole-truss moment and force equilibrium.</small></div><div>3 · Choose a joint<small>Start where at most two member forces are unknown.</small></div><div>4 · Resolve &amp; solve<small>Draw outward assumed-tension arrows; use x/y components.</small></div></div>
+<div class="poe28-panel" style="margin-top:.8rem"><h3>5 · Transfer member forces and check</h3><p>When a member force is found, transfer its correct direction to the joint at the other end. For tension, the member pulls both joints toward itself along its axis (away from each isolated joint); for compression, it pushes outward on each joint. Check force equilibrium at a remaining joint to catch sign errors.</p>
+<p><strong>Geometry shortcut:</strong> For a right triangle with rise <em>h</em>, horizontal run <em>r</em> and diagonal length <em>d</em>, sin θ = h/d and cos θ = r/d. Units cancel in these ratios.</p></div></section>
+<section class="container lesson-section" id="watch"><div class="poe28-section-header"><div class="poe28-eyebrow">03 / Video learning library</div><h2>Learn from fully worked examples</h2><p>Start with the step-by-step Jeff Hanson lesson, then use the second explanation to reinforce how negative values identify compression. Both are linked directly if embeds are blocked by the school network.</p></div>
+<div class="poe28-grid">
+<article class="poe28-video"><div class="poe28-frame"><iframe src="https://www.youtube-nocookie.com/embed/BVCIQfFzguk" title="Statics Lesson 48: Trusses, Method of Joints" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="poe28-video-copy"><span class="poe28-pill">Jeff Hanson · Worked statics lesson</span><h3>Statics Lesson 48: Trusses, Method of Joints</h3><p class="poe28-mini"><strong>Pause and practice:</strong> At 01:46 find support reactions; at 04:19 note how the first joint is selected; at 06:53 sketch assumed-tension member arrows.</p><a href="https://www.youtube.com/watch?v=BVCIQfFzguk" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article>
+<article class="poe28-video"><div class="poe28-frame"><iframe src="https://www.youtube-nocookie.com/embed/08ChRvOt9iI" title="Truss Analysis by Method of Joints Explained" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="poe28-video-copy"><span class="poe28-pill">Engineer4Free · Second explanation</span><h3>Truss Analysis by Method of Joints Explained</h3><p class="poe28-mini"><strong>Pause and practice:</strong> Try drawing the joint FBD yourself. Decide whether a negative answer is a mistake or a compression force.</p><a href="https://www.youtube.com/watch?v=08ChRvOt9iI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article>
+</div>
+<details class="poe28-reveal" style="margin-top:1rem"><summary>Optional extension: a member that carries zero force</summary><p>Some members carry no axial force under a <em>particular</em> idealized load case. The on-page zero-force-member example below introduces the simplest inspection rule; identifying many zero-force members is extended in Lesson 2.9.</p></details></section>
+<section class="container lesson-section" id="worked"><div class="poe28-section-header"><div class="poe28-eyebrow">04 / Fully worked example</div><h2>Analyze an entire triangular truss</h2><p>A triangular truss spans <strong>4.0 m</strong> with supports A (pin) and B (roller). Apex C is centered <strong>1.5 m</strong> above the base. An external <strong>120 N downward</strong> point load acts at C. Neglect the truss's self-weight.</p></div>
+<svg id="wholeTrussDiagram" class="poe28-diagram" viewBox="0 0 760 350" role="img" aria-label="Symmetrical triangular truss with A pin at left, B roller at right, C at 1.5 meter height, 4 meter span and downward 120 newton apex load. Vertical reactions at A and B are 60 newtons each; diagonals AC and BC carry 100 newtons compression and bottom AB carries 80 newtons tension.">
+<defs><marker id="wdn" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bd692c"/></marker><marker id="wup" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#128993"/></marker></defs>
+<path d="M130 250L380 63L630 250" stroke="#c67d37" stroke-width="11" stroke-linecap="round" fill="none"/><path d="M130 250H630" stroke="#118777" stroke-width="11" stroke-linecap="round"/>
+<circle cx="130" cy="250" r="9" fill="#1c405c"/><circle cx="630" cy="250" r="9" fill="#1c405c"/><circle cx="380" cy="63" r="9" fill="#1c405c"/>
+<path d="M130 258L109 290H151Z" fill="#d8e9f3" stroke="#234d69" stroke-width="2"/><circle cx="630" cy="280" r="10" fill="#d8e9f3" stroke="#234d69" stroke-width="2"/><path d="M604 292H658" stroke="#54788b" stroke-width="2"/>
+<path d="M380 11V49" stroke="#bd692c" stroke-width="3.4" marker-end="url(#wdn)"/>
+<path d="M130 330V266 M630 330V266" stroke="#128993" stroke-width="3.5" marker-end="url(#wup)"/>
+<text x="400" y="27" class="poe28-label">P = 120 N</text><text x="138" y="335" class="poe28-label">Aᵧ = +60 N</text><text x="522" y="335" class="poe28-label">Bᵧ = +60 N</text>
+<text x="114" y="240" class="poe28-label">A</text><text x="637" y="240" class="poe28-label">B</text><text x="394" y="58" class="poe28-label">C</text>
+<text x="158" y="116" class="poe28-label">AC: 100 N (C)</text><text x="475" y="116" class="poe28-label">BC: 100 N (C)</text><text x="334" y="238" class="poe28-label">AB: 80 N (T)</text>
+<text x="365" y="306" class="poe28-small" text-anchor="middle">Span: 4.0 m · rise: 1.5 m · half-run: 2.0 m</text></svg>
+<div class="poe28-grid"><article class="poe28-panel"><span class="poe28-pill">Step 1 · Reactions</span><h3>Find Aᵧ and Bᵧ</h3><p>Use the <em>whole truss</em>, with CCW moments positive and coordinates measured from A.</p>
+<div class="poe28-equation">ΣM<sub>A</sub> = Bᵧ(4) −120(2) = 0</div><p><strong>Bᵧ = 60 N upward</strong>.</p><div class="poe28-equation">ΣFᵧ = Aᵧ +60−120 = 0</div><p><strong>Aᵧ = 60 N upward</strong>; Aₓ = 0 because no horizontal external load acts.</p></article>
+<article class="poe28-panel"><span class="poe28-pill gold">Step 2 · Geometry</span><h3>Resolve member directions</h3><p>Each diagonal has a horizontal run of <strong>2.0 m</strong> and vertical rise of <strong>1.5 m</strong>.</p><p>Diagonal length d = √(2² + 1.5²) = <strong>2.5 m</strong>.</p><div class="poe28-equation">sin θ = 1.5/2.5 = 0.6<br/>cos θ = 2.0/2.5 = 0.8</div><p>θ = arctan(1.5/2) ≈ <strong>36.87°</strong> above the horizontal. These two ratios will simplify both joint equations.</p></article></div>
+<div class="poe28-grid" style="margin-top:1rem"><article class="poe28-panel"><span class="poe28-pill">Step 3 · Joint C</span><h3>Calculate AC and BC (diagonals)</h3>
+<svg id="jointCFigure" class="poe28-diagram" viewBox="0 0 760 350" role="img" aria-label="Isolated apex joint C under 120 N downward load with two 100 N compressive member forces pushing diagonally upward and inward to balance the load. Each diagonal forms angle 36.87 degrees above horizontal.">
+<defs><marker id="jccomp" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bd7a2f"/></marker><marker id="jcload" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#b8602a"/></marker></defs>
+<circle cx="360" cy="175" r="9" fill="#1b425d"/>
+<path d="M360 175L248 91M360 175L472 91" stroke="#bd7a2f" stroke-width="4.3" marker-end="url(#jccomp)"/>
+<path d="M360 175V274" stroke="#b8602a" stroke-width="4" marker-end="url(#jcload)"/>
+<path d="M316 175A44 44 0 0 1 324.8 148.6" fill="none" stroke="#758a9c" stroke-width="1.7"/>
+<text x="255" y="82" class="poe28-label">100 N (AC pushes)</text><text x="443" y="82" class="poe28-label">100 N (BC pushes)</text>
+<text x="375" y="277" class="poe28-label">120 N ↓</text><text x="372" y="175" class="poe28-label">C</text>
+<text x="208" y="231" class="poe28-small">ΣFᵧ: +60 +60 −120 = 0 N</text>
+<text x="208" y="252" class="poe28-small">ΣFₓ: −80 +80 = 0 N</text>
+<text x="208" y="324" class="poe28-small">Actual compression arrows PUSH on the isolated joint.</text></svg>
+<p><strong>Start with both unknown member forces assumed in tension:</strong> at joint C, draw arrows along CA and CB pointing down-left and down-right. Symmetry gives F<sub>AC</sub> = F<sub>BC</sub> = F.</p>
+<div class="poe28-equation">ΣFᵧ = −0.6F−0.6F−120 = 0</div>
+<p>Solve: −1.2F = 120 ⇒ <strong>F = −100 N</strong>.</p><p>A negative force under the assumed-tension convention means each member is actually in <strong>compression, magnitude 100 N</strong>. The diagram shows the corrected <em>actual</em> forces pushing upward on C.</p>
+<div class="poe28-equation">F<sub>AC</sub> = F<sub>BC</sub> = −100 N (C)</div>
+</article>
+<article class="poe28-panel"><span class="poe28-pill gold">Step 4 · Joint A</span><h3>Calculate AB (bottom tie)</h3>
+<svg id="jointAFigure" class="poe28-diagram" viewBox="0 0 760 350" role="img" aria-label="Isolated joint A with 60 N upward support reaction, 80 N bottom-tie tension to the right, and 100 N diagonal member compression pushing down and left along AC. Equilibrium balances 80 horizontal and 60 vertical component magnitudes.">
+<defs><marker id="jaT" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#148778"/></marker><marker id="jaC" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c37c2d"/></marker><marker id="jaR" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0f8792"/></marker></defs>
+<circle cx="295" cy="176" r="9" fill="#1b425d"/>
+<path d="M295 176V67" stroke="#0f8792" stroke-width="4" marker-end="url(#jaR)"/>
+<path d="M295 176H478" stroke="#148778" stroke-width="4" marker-end="url(#jaT)"/>
+<path d="M295 176L165 274" stroke="#c37c2d" stroke-width="4" marker-end="url(#jaC)"/>
+<text x="309" y="81" class="poe28-label">Aᵧ = 60 N ↑</text>
+<text x="487" y="181" class="poe28-label">AB = 80 N (T)</text>
+<text x="112" y="302" class="poe28-label">AC = 100 N (C)</text>
+<text x="306" y="194" class="poe28-label">A</text>
+<text x="336" y="255" class="poe28-small">Compression AC gives −80 N (x) and −60 N (y).</text>
+<text x="336" y="275" class="poe28-small">ΣFₓ = 80 − 80 = 0 N</text>
+<text x="336" y="294" class="poe28-small">ΣFᵧ = 60 − 60 = 0 N</text></svg>
+<p>The 60 N upward reaction is known. AC is now known to be 100 N in compression, so at joint A it acts down-left.</p>
+<div class="poe28-equation">ΣFₓ = F<sub>AB</sub> −100(0.8) = 0</div>
+<p><strong>F<sub>AB</sub> = +80 N</strong>, so member AB is in <strong>tension</strong>.</p>
+<div class="poe28-equation">ΣFᵧ = 60−100(0.6) = 0</div>
+<p>The vertical force check at A is satisfied. The positive 80 N value is consistent with the bottom member pulling joint A to the right.</p></article></div>
+<div class="poe28-panel" style="margin-top:1rem"><h3>Step 5 · Final check and results</h3>
+<div class="poe28-table-wrap"><table class="poe28-data-table"><thead><tr><th>Quantity</th><th>Signed (tension-positive)</th><th>Physical interpretation</th></tr></thead><tbody><tr><td>Aᵧ</td><td>+60 N</td><td>Upward external reaction at A</td></tr><tr><td>Bᵧ</td><td>+60 N</td><td>Upward external reaction at B</td></tr><tr><td>AC</td><td>−100 N</td><td>Compression</td></tr><tr><td>BC</td><td>−100 N</td><td>Compression</td></tr><tr><td>AB</td><td>+80 N</td><td>Tension</td></tr></tbody></table></div>
+<p><strong>Joint B check:</strong> ΣFᵧ = +60−100(0.6) = 0; ΣFₓ = −80+100(0.8) = 0. All joint equilibrium conditions are satisfied. The signed member forces are <strong>not</strong> the same as the positive magnitudes you would use for an eventual strength calculation.</p></div></section>
+<section class="container lesson-section" id="explore"><div class="poe28-section-header"><div class="poe28-eyebrow">05 / Interactive engineering lab</div><h2>Change the load or shape of the truss</h2><p>Keep the span at 4.0 m while varying apex load P and rise h. Watch what happens to the diagonal compression and bottom-tie tension. Use the stage buttons to focus on the whole truss or each joint.</p></div>
+<div class="poe28-lab"><div class="poe28-grid">
+<article class="poe28-panel"><div class="poe28-control"><label for="trussLoad">Apex load P <output id="trussLoadValue">120 N</output></label><input id="trussLoad" type="range" min="20" max="200" step="10" value="120"/></div>
+<div class="poe28-control"><label for="trussRise">Truss rise h <output id="trussRiseValue">1.50 m</output></label><input id="trussRise" type="range" min="1" max="3" step=".25" value="1.5"/></div>
+<div class="poe28-results"><div><strong id="trussAy">60.00 N</strong><span>Support Aᵧ (up)</span></div><div><strong id="trussBy">60.00 N</strong><span>Support Bᵧ (up)</span></div>
+<div><strong id="trussDiag">100.00 N (C)</strong><span>Each diagonal AC and BC</span></div><div><strong id="trussTie">80.00 N (T)</strong><span>Bottom member AB</span></div>
+<div><strong id="trussAngle">36.87°</strong><span>Diagonal angle θ</span></div><div><strong id="trussResidual">0.00 N</strong><span>Vertical equilibrium residual</span></div></div>
+<p class="poe28-mini-formula"><strong>What the model calculates:</strong> Aᵧ = Bᵧ = P/2; |F<sub>AC</sub>| = |F<sub>BC</sub>| = P/(2sinθ) compression; F<sub>AB</sub> = [P/(2tanθ)] tension.</p>
+<button id="trussReset" class="btn secondary" type="button">Reset to worked example</button>
+</article>
+<article class="poe28-panel"><h3>Interactive truss FBD</h3>
+<svg id="trussSolverFigure" class="poe28-diagram" viewBox="0 0 760 450" role="img" aria-label="Interactive symmetric triangular truss. Change top joint load and height to recompute the support reactions and diagonal compression and bottom tie tension.">
+<defs><marker id="solD" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#b9662e"/></marker><marker id="solU" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0c8392"/></marker></defs>
+<line id="solverAC" x1="200" y1="330" x2="380" y2="195" class="poe28-truss-compression"/>
+<line id="solverBC" x1="380" y1="195" x2="560" y2="330" class="poe28-truss-compression"/>
+<line x1="200" y1="330" x2="560" y2="330" class="poe28-truss-tension"/>
+<circle cx="200" cy="330" r="8" fill="#163c5a"/><circle cx="560" cy="330" r="8" fill="#163c5a"/><circle id="solverApex" cx="380" cy="195" r="9" fill="#163c5a"/>
+<path d="M200 339L181 367H219Z" fill="#daeaf3" stroke="#355d74" stroke-width="2"/>
+<circle cx="560" cy="357" r="10" fill="#daeaf3" stroke="#355d74" stroke-width="2"/>
+<path d="M539 369H581" stroke="#355d74" stroke-width="2"/>
+<line x1="200" y1="413" x2="200" y2="340" stroke="#0c8392" stroke-width="3.2" marker-end="url(#solU)"/>
+<line x1="560" y1="413" x2="560" y2="340" stroke="#0c8392" stroke-width="3.2" marker-end="url(#solU)"/>
+<line id="solverLoad" x1="380" y1="145" x2="380" y2="182" stroke="#b9662e" stroke-width="3.5" marker-end="url(#solD)"/>
+<text id="solverLoadText" x="399" y="148" class="poe28-label">P = 120 N ↓</text>
+<text id="solverAy" x="95" y="430" class="poe28-label">Aᵧ = 60 N</text>
+<text id="solverBy" x="569" y="430" class="poe28-label">Bᵧ = 60 N</text>
+<text x="185" y="322" class="poe28-label">A</text><text x="568" y="322" class="poe28-label">B</text>
+<text id="solverApexText" x="394" y="187" class="poe28-label">C</text>
+<text x="380" y="319" text-anchor="middle" class="poe28-label">AB (T)</text>
+<text x="96" y="82" class="poe28-small">Span A–B fixed at 4.0 m</text>
+<text x="96" y="102" class="poe28-small">Rise of apex C is adjustable</text>
+<text x="380" y="385" text-anchor="middle" class="poe28-small">Sloping members: compression · base: tension</text>
+</svg>
+<div class="poe28-switches" role="group" aria-label="Examine stages of truss analysis"><button type="button" data-solver-step="0" aria-pressed="true">Whole truss</button><button type="button" data-solver-step="1" aria-pressed="false">Joint C</button><button type="button" data-solver-step="2" aria-pressed="false">Joint A</button><button type="button" data-solver-step="3" aria-pressed="false">Check Joint B</button></div>
+<div class="poe28-step-explanation" aria-live="polite"><h3 id="solverStageTitle">1 · Whole-truss reactions</h3><p id="solverStageText">Begin with the applied load and the supports. The load is centered, so each vertical reaction equals half the total downward load.</p><p class="poe28-mini-formula" id="solverStageEquation">ΣFᵧ = Aᵧ + Bᵧ − P = 0</p></div>
+</article></div><p class="poe28-note"><strong>Assumptions:</strong> ideal symmetric pin-jointed triangle, load applied downward only at C, weightless members and no other loads. Display shows internal <em>force demand</em>, not allowable capacity or a failure prediction.</p></div>
+<div class="poe28-grid" style="margin-top:1rem"><article class="poe28-panel"><h3>Prediction A: Double the load</h3><p>Keep h = 1.50 m. Change P from 60 to 120 N. What happens to all calculated reactions and member forces?</p><details class="poe28-reveal"><summary>Check</summary><p>Every calculated force doubles. This ideal static analysis is linear in P while geometry is unchanged.</p></details></article><article class="poe28-panel"><h3>Prediction B: Make the triangle taller</h3><p>Keep P constant and increase h from 1.00 m to 3.00 m. How do the diagonal compression and bottom-tie tension magnitudes change?</p><details class="poe28-reveal"><summary>Check</summary><p>Both decrease. The diagonals become steeper, so each supplies more upward force per unit axial force; the bottom tie also needs less tension to balance the horizontal components. External support reactions remain P/2 each.</p></details></article></div></section>
+<section class="container lesson-section" id="second-example"><div class="poe28-section-header"><div class="poe28-eyebrow">06 / Quick second example</div><h2>100 N load on a 45° triangular truss</h2><p>Use a span of 4 m, a rise of 2 m and a centered downward 100 N apex load. The two diagonals make 45° angles with the horizontal.</p></div>
+<div class="poe28-grid"><article class="poe28-panel"><h3>Apply the same method</h3><ol class="poe28-steps"><li>External reactions: Aᵧ = Bᵧ = 100/2 = <strong>50 N up</strong>.</li><li>Joint C: −2F sin45° −100 = 0 ⇒ F = <strong>−70.71 N</strong>.</li><li>Thus each diagonal has <strong>70.71 N compression</strong>.</li><li>Joint A: F<sub>AB</sub> −70.71 cos45° = 0 ⇒ <strong>AB = +50.00 N tension</strong>.</li></ol></article>
+<article class="poe28-panel"><h3>Why 45° is useful</h3><p>sin45° = cos45° ≈ 0.7071. The equal diagonal component fractions simplify the calculations.</p>
+<div class="poe28-equation">70.71(0.7071) ≈ 50.00 N</div>
+<p class="poe28-nuance"><strong>Remember:</strong> Steeper geometry can reduce required axial forces in this particular model, but that does not by itself decide which truss design is strongest or most material-efficient.</p></article></div></section>
+<section class="container lesson-section" id="zero-force"><div class="poe28-section-header"><div class="poe28-eyebrow">07 / Preview a special case</div><h2>What is a zero-force member?</h2><p>An unloaded truss joint with <strong>three connected members, two collinear</strong>, provides a useful shortcut: the third, noncollinear member has zero axial force for that specific load case.</p></div>
+<div class="poe28-grid"><div class="poe28-panel"><svg id="zeroForceDiagram" class="poe28-diagram" viewBox="0 0 760 350" role="img" aria-label="Unloaded joint J with collinear members AJ and JB and one vertical noncollinear member JC. If no external load or support reaction acts at J, vertical member JC is a zero-force member for that loading condition.">
+<path d="M115 186H635" stroke="#386681" stroke-width="9" stroke-linecap="round"/><path d="M375 186V65" stroke="#cc8a38" stroke-width="9" stroke-linecap="round"/>
+<circle cx="375" cy="186" r="10" fill="#174566"/>
+<text x="92" y="179" class="poe28-label">A</text><text x="639" y="179" class="poe28-label">B</text><text x="386" y="201" class="poe28-label">J</text><text x="390" y="69" class="poe28-label">C</text>
+<text x="154" y="215" class="poe28-small">AJ collinear</text><text x="504" y="215" class="poe28-small">JB collinear</text><text x="399" y="126" class="poe28-label">JC = 0 N</text>
+<text x="375" y="271" class="poe28-small" text-anchor="middle">At J: no external load or support reaction</text>
+<text x="375" y="293" class="poe28-small" text-anchor="middle">Only vertical contribution comes from JC → ΣFᵧ = 0 ⇒ JC = 0 N</text></svg></div><article class="poe28-panel"><h3>Why member JC is zero</h3><p>At joint J, member AJ and JB lie on the same horizontal line. There is no external load or support reaction applied at J.</p><div class="poe28-equation">ΣFᵧ = F<sub>JC</sub> = 0</div><p>Because JC is the only vertical force on the isolated joint, its axial force must equal <strong>0 N</strong>.</p><p class="poe28-nuance"><strong>Not a reason to remove JC from a real bridge.</strong> It may be important for bracing, buckling resistance or a different future load case.</p></article></div></section>
+<section class="container lesson-section" id="apply"><div class="poe28-section-header"><div class="poe28-eyebrow">08 / Your engineering task</div><h2>Analyze, annotate and interpret a simple truss</h2><p>Complete the assigned 2.8 worksheet or notebook pages. The default practice case is the 4.0 m span, 1.5 m rise triangle shown above; your teacher may assign a different force or geometry.</p></div>
+<div class="poe28-grid"><article class="poe28-panel"><h3>Part A · Draw and organize</h3><ol class="poe28-steps"><li>Draw the entire truss with joint letters, dimensions, applied load and supports.</li><li>Sketch its whole-structure FBD and find all support reactions.</li><li>Draw separate FBDs of joints C and A, with <em>assumed-tension</em> arrows on unknown members.</li><li>Mark horizontal/vertical component ratios for each diagonal.</li></ol></article>
+<article class="poe28-panel"><h3>Part B · Calculate and explain</h3><ol class="poe28-steps"><li>Solve at C using ΣFₓ = 0 and ΣFᵧ = 0 (symmetry may simplify).</li><li>Carry the now-known AC force to joint A and solve AB.</li><li>Check equilibrium at B.</li><li>Report every force magnitude in N and mark each member <strong>T</strong> or <strong>C</strong>.</li><li>Explain why a negative result under your assumed sign convention indicates compression.</li></ol></article></div></section>
+<section class="container lesson-section" id="practice"><div class="poe28-section-header"><div class="poe28-eyebrow">09 / Independent checks</div><h2>Try each problem before viewing its solution</h2><p>Use paper for free-body diagrams, equations and final results. Write force signs and whether members are in tension or compression.</p></div>
+<div class="poe28-grid">
+<article class="poe28-panel"><span class="poe28-pill">Check A · Symmetric joint</span><h3>100 N load and 45° diagonals</h3><p>Joint C has a 100 N downward load and two identical 45° members. Assume tension for both unknowns. Determine their axial force and classify them.</p><details class="poe28-reveal"><summary>Reveal worked reasoning</summary><p>Symmetry gives F<sub>1</sub> = F<sub>2</sub> = F. From ΣFᵧ = −2F sin45°−100=0, <strong>F = −70.71 N</strong>. Both members are in <strong>compression</strong>; magnitudes are 70.71 N each.</p></details></article>
+<article class="poe28-panel"><span class="poe28-pill">Check B · Joint selection</span><h3>Where should you start?</h3><p>A truss joint has three completely unknown member forces and no other information. Can you solve all three forces using the two independent equations at this single planar joint?</p><details class="poe28-reveal"><summary>Reveal worked reasoning</summary><p><strong>No.</strong> A planar joint supplies ΣFₓ = 0 and ΣFᵧ = 0: two independent scalar equations. Start at another joint with at most two unknown member forces, or solve known reactions first.</p></details></article>
+<article class="poe28-panel"><span class="poe28-pill">Check C · 3–4–5 geometry</span><h3>Resolve a 50 N diagonal</h3><p>A member force of 50 N acts upward and right, along a diagonal with horizontal run 4 and rise 3. What are its signed x and y components?</p><details class="poe28-reveal"><summary>Reveal worked reasoning</summary><p>Diagonal length is 5, so Fₓ = +50(4/5) = <strong>+40 N</strong>, Fᵧ = +50(3/5) = <strong>+30 N</strong>. This resolves a force, not a complete truss solution.</p></details></article>
+<article class="poe28-panel"><span class="poe28-pill">Check D · Compression convention</span><h3>What does −85 N mean?</h3><p>You drew a member force arrow away from an isolated joint and calculated −85 N. Is your answer automatically wrong? What force does the member actually exert on that joint?</p><details class="poe28-reveal"><summary>Reveal worked reasoning</summary><p>The negative sign means the assumed outward tension direction was incorrect. The member has <strong>85 N compression</strong> and pushes on the joint opposite the outward assumed arrow.</p></details></article>
+<article class="poe28-panel"><span class="poe28-pill">Check E · Change the height</span><h3>100 N apex load, 4 m span, 1 m rise</h3><p>For a symmetric triangle with halfspan 2 m, determine the magnitude of compression in each diagonal and the bottom tie tension.</p><details class="poe28-reveal"><summary>Reveal worked reasoning</summary><p>sinθ = 1/√5 = 0.44721, cosθ = 2/√5 = 0.89443. Each diagonal magnitude = 100/[2(0.44721)] = <strong>111.80 N compression</strong>. Tie = 111.80(0.89443) = <strong>100.00 N tension</strong>. Reactions are 50 N each.</p></details></article>
+<article class="poe28-panel"><span class="poe28-pill">Check F · Zero-force member</span><h3>A three-member joint with no external load</h3><p>At joint J, JA and JB are collinear and JC is noncollinear. No external load or support reaction is applied at J. Determine the member force JC.</p><details class="poe28-reveal"><summary>Reveal worked reasoning</summary><p>Member <strong>JC = 0 N</strong> for this idealized loading case. The perpendicular component of the other two collinear forces is zero; equilibrium forces the noncollinear member force to be zero.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="resources"><div class="poe28-section-header"><div class="poe28-eyebrow">Resource library</div><h2>Reference explanations and extra examples</h2><p>The diagrams and solved examples on this page are enough for the core lesson. These openly available engineering resources provide additional practice and deeper explanations.</p></div>
+<div class="poe28-grid"><article class="poe28-panel poe28-resource"><h3>Engineering Statics · Method of Joints</h3><p>Free, illustrated textbook explanation of joint free-body diagrams, tension assumptions, reactions and member force transfer. Includes its own truss interactive.</p><a href="https://engineeringstatics.org/method-of-joints.html" target="_blank" rel="noopener noreferrer">Open Method of Joints ↗</a></article>
+<article class="poe28-panel poe28-resource"><h3>Engineering Statics · Simple Trusses</h3><p>Explains ideal-truss assumptions, counting stable arrangements and zero-force members.</p><a href="https://engineeringstatics.org/Chapter_06-trusses.html" target="_blank" rel="noopener noreferrer">Open truss introduction ↗</a></article>
+<article class="poe28-panel poe28-resource"><h3>Efficient Engineer · Truss Analysis</h3><p>Illustrated explanation of the method of joints and method of sections; advanced portions preview the next lesson.</p><a href="https://efficientengineer.com/trusses/" target="_blank" rel="noopener noreferrer">Open visual truss lesson ↗</a></article>
+<article class="poe28-panel"><h3>Key vocabulary</h3><p><strong>Axial force:</strong> force along a member's length. <strong>Tension:</strong> member pulled outward. <strong>Compression:</strong> member pushed inward. <strong>Joint equilibrium:</strong> balance of all x and y forces acting on one isolated joint.</p></article>
+</div></section>
+<section class="container lesson-section" id="submit"><div class="poe28-section-header"><div class="poe28-eyebrow">Student submission</div><h2>Exactly what to submit</h2><p>Complete the <strong>POE 2.8 Calculating Truss Forces classwork and homework worksheet</strong> (or an assigned notebook equivalent), including the full method-of-joints analysis. Use the instructional videos and revealed checks as study aids, not a substitute for showing your own calculations.</p></div>
+<div class="poe28-grid"><article class="poe28-panel"><h3>Required evidence</h3><ul class="poe28-checklist"><li>A labeled whole-truss sketch with pin/roller, joint letters, load and dimensions.</li><li>Support reaction calculations using whole-truss equilibrium and correct units.</li><li>At least two individual joint FBDs with member force arrows and known external forces.</li><li>Correct sine/cosine components and ΣFₓ = 0 / ΣFᵧ = 0 equations.</li><li>Numerical member force results with each member marked T (tension) or C (compression).</li><li>At least one independent joint equilibrium check plus the assigned homework.</li></ul></article>
+<article class="poe28-panel"><h3>Before you submit</h3><ul class="poe28-checklist"><li>Every force calculation is labeled in newtons (N).</li><li>Your outward-arrow convention is stated, and negative results interpreted as compression.</li><li>All triangles and support reactions match the dimensions in your sketch.</li><li>Answers are checked at a different joint whenever possible.</li><li>Diagrams and calculations are readable and organized.</li></ul><p><strong>Due date:</strong> Check the <a href="../../../../agenda.html">Daily Agenda</a> for the current deadline and follow the teacher's instructions for submitting the worksheet or notebook pages.</p><a class="btn secondary" href="#start">Review lesson ↑</a></article></div></section>
+<nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-7.html">← Lesson 2.7: Introduction to Truss Systems</a><a class="btn" href="lesson-2-9.html">Next: 2.9 Advanced Truss Analysis →</a></nav>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+<script>
+(function(){
+"use strict";
+const get=id=>document.getElementById(id);
+const inputP=get("trussLoad"),inputH=get("trussRise"),reset=get("trussReset"),stageBtns=Array.from(document.querySelectorAll("button[data-solver-step]"));
+if(!inputP||!inputH||!reset||stageBtns.length!==4)return;
+let stage=0;
+function write(id,value){const el=get(id);if(el)el.textContent=value;}
+function draw(){
+const P=Number(inputP.value),h=Number(inputH.value),half=2;
+const diagonal=Math.hypot(half,h),sin=h/diagonal,cos=half/diagonal,theta=Math.atan2(h,half)*180/Math.PI;
+const diag=P/(2*sin),tie=diag*cos,reaction=P/2;
+const yC=330-h*90;
+get("solverAC").setAttribute("y2",yC.toFixed(1));
+get("solverBC").setAttribute("y1",yC.toFixed(1));
+get("solverApex").setAttribute("cy",yC.toFixed(1));
+get("solverLoad").setAttribute("y1",String(Math.max(15,yC-57)));
+get("solverLoad").setAttribute("y2",String(yC-13));
+get("solverLoadText").setAttribute("y",String(Math.max(19,yC-39)));
+get("solverApexText").setAttribute("y",String(yC-4));
+write("solverLoadText","P = "+P+" N ↓");
+write("solverAy","Aᵧ = "+reaction.toFixed(1)+" N");
+write("solverBy","Bᵧ = "+reaction.toFixed(1)+" N");
+write("trussLoadValue",P+" N");write("trussRiseValue",h.toFixed(2)+" m");
+write("trussAy",reaction.toFixed(2)+" N");write("trussBy",reaction.toFixed(2)+" N");
+write("trussDiag",diag.toFixed(2)+" N (C)");write("trussTie",tie.toFixed(2)+" N (T)");
+write("trussAngle",theta.toFixed(2)+"°");write("trussResidual",(reaction+reaction-P).toFixed(2)+" N");
+const stages=[
+["1 · Whole-truss reactions","The pin and roller react upward. With a centered apex load, static moment and vertical-force equilibrium give two equal support reactions.","Aᵧ = Bᵧ = "+reaction.toFixed(2)+" N = P/2"],
+["2 · Joint C: diagonal compression","Assume both diagonal unknowns pull down and outward from C. Their solved signed forces are negative, so they actually push up on C.","−2F sin("+theta.toFixed(2)+"°) −"+P+" = 0 ⇒ F = −"+diag.toFixed(2)+" N"],
+["3 · Joint A: bottom tie tension","Joint A has a known upward reaction. The compressive AC member pushes down and left on A, so AB must pull right to balance.","F_AB −"+diag.toFixed(2)+" cos("+theta.toFixed(2)+"°) = 0 ⇒ AB = +"+tie.toFixed(2)+" N"],
+["4 · Check joint B","At B, upward reaction balances the downward component of diagonal BC compression. Horizontal bottom tie tension balances BC's rightward component.","ΣFᵧ = "+reaction.toFixed(2)+" −"+(diag*sin).toFixed(2)+" = 0 N; ΣFₓ = −"+tie.toFixed(2)+" +"+(diag*cos).toFixed(2)+" = 0 N"]
+];
+stageBtns.forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.solverStep)===stage)));
+write("solverStageTitle",stages[stage][0]);write("solverStageText",stages[stage][1]);write("solverStageEquation",stages[stage][2]);
+const members=get("trussSolverFigure").querySelectorAll(".poe28-truss-compression,.poe28-truss-tension");
+members.forEach(el=>{
+const isTie=el.classList.contains("poe28-truss-tension");
+const isFocus=stage===0||stage===3||(stage===1?!isTie:true);
+el.style.opacity=isFocus?"1":".30";
+});
+get("trussSolverFigure").setAttribute("aria-label","Symmetric truss span 4 m, rise "+h.toFixed(2)+" m, apex load "+P+" N. Both supports react upward "+reaction.toFixed(2)+" N; diagonal compression "+diag.toFixed(2)+" N each; bottom tie tension "+tie.toFixed(2)+" N. Analysis focus: "+stages[stage][0]+".");
+}
+inputP.addEventListener("input",draw);inputH.addEventListener("input",draw);
+stageBtns.forEach(b=>b.addEventListener("click",()=>{stage=Number(b.dataset.solverStep);draw();}));
+reset.addEventListener("click",()=>{inputP.value=120;inputH.value=1.5;stage=0;draw();});
+draw();
+})();
+</script></body></html>
