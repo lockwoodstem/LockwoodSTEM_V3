@@ -1,1 +1,657 @@
-<!DOCTYPE html><html lang="en"><head><title>POE Unit 2 Lesson 2.12 | Structural Failure | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main"><nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">2.12</li></ol></nav><section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Materials &amp; Testing • Lesson 2.12</div><h1>Structural Failure</h1><p class="focus-question"><strong>Engineering question:</strong> What causes real structures and members to stop working?</p><div class="mission-actions"><a class="btn" href="#learn">Learn</a><a class="btn secondary" href="#practice">Practice</a><a class="btn secondary" href="#apply">Apply</a><a class="btn secondary" href="#submit">Submit</a><a class="btn ghost" href="../unit-2.html">Unit 2</a></div></div><aside class="mission-panel"><span class="tag">Phase 2: Materials knowledge</span><h2>Build evidence through experiments</h2><p>Learn properties and test methods using varied structures before beginning bridge fabrication.</p></aside></div></section><section class="container lesson-section"><article class="card"><h2>Learning Targets</h2><ul><li>Distinguish tension, compression, shear, bending and torsion</li><li>Identify buckling, cracking, yielding and joint failure</li><li>Separate observed evidence from inferred failure cause</li></ul></article></section><section class="container lesson-section" id="learn"><div class="section-header"><h2>Learn the Concept</h2></div><article class="card"><ul><li>An applied action is not the same thing as a failure mechanism</li><li>Slender members can buckle in compression before crushing</li><li>Fracture and joint separation require different redesign strategies</li></ul></article></section><section class="container lesson-section" id="practice"><div class="section-header"><h2>Practice Together</h2></div><article class="card"><p>Diagnose a buckled chair leg, a bending shelf and a separated glued corner using observation/evidence.</p><p>Show your reasoning, annotate diagrams and use correct units.</p></article></section><section class="container lesson-section" id="apply"><div class="section-header"><h2>Apply the Skill</h2></div><article class="card"><p>Analyze three unrelated structural failures and recommend a specific, physically justified improvement.</p><p><strong>Check your understanding:</strong> Why does a broken joint not necessarily mean the member material is weak?</p></article></section><section class="container lesson-section" id="submit"><article class="card"><h2>Student Evidence</h2><p>Failure analysis case study. Provide clearly identified assumptions, measurements and conclusions.</p></article></section><nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-11.html">← 2.11 Structural Materials &amp; Properties</a><a class="btn" href="lesson-2-13.html">2.13 Materials Testing Lab →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer></body></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POE 2.12 | Structural Failure — Learning Studio | LockwoodSTEM</title>
+<meta name="description" content="Learn structural failure mechanisms, buckling, fracture, connection failures and forensic engineering through videos, technical diagrams, an interactive Euler column explorer and evidence-driven case studies."/>
+<link href="../../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/>
+<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/>
+<script defer src="../../../../assets/js/main.js"></script>
+<style id="poe212-learning-studio">
+html{scroll-behavior:smooth}
+.poe212{--ink:#092940;--blue:#0b567e;--aqua:#147f88;--gold:#e2ac37;--edge:#cadbe7}
+.poe212 .poe212-lead{font-size:1.09rem;line-height:1.65;color:#294456}
+.poe212 .poe212-eyebrow{color:#875d0a;font-weight:850;text-transform:uppercase;letter-spacing:.09em;font-size:.82rem}
+.poe212 .poe212-section-header{margin-bottom:1rem}
+.poe212 .poe212-section-header h2{margin:.25rem 0 .3rem}
+.poe212 .poe212-section-header p{margin:.1rem 0;max-width:860px;color:#4b6475}
+.poe212 .poe212-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
+.poe212 .poe212-metric{background:#f1f7fb;border:1px solid #bdd4e4;border-radius:14px;padding:.9rem 1rem}
+.poe212 .poe212-metric strong{display:block;color:#0b4772;font-size:1.05rem}
+.poe212 .poe212-metric span{display:block;font-size:.94rem;color:#40596a;margin-top:.2rem}
+.poe212 .poe212-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe212 .poe212-thirds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.poe212 .poe212-panel{background:#f7fbfd;border:1px solid var(--edge);border-radius:16px;padding:1.1rem 1.15rem}
+.poe212 .poe212-panel h3{color:var(--ink);margin:.15rem 0 .5rem}
+.poe212 .poe212-panel p{margin:.3rem 0 .65rem}
+.poe212 .poe212-panel ul{padding-left:1.2rem;margin:.4rem 0}
+.poe212 .poe212-pill{display:inline-block;border-radius:99px;padding:.2rem .6rem;background:#e3f0f5;color:#0c5672;font-size:.75rem;font-weight:900;letter-spacing:.03em}
+.poe212 .poe212-pill.gold{background:#fbefcf;color:#7d540d}
+.poe212 .poe212-mini{font-size:.9rem;color:#536b79}
+.poe212 .poe212-formula{font-size:clamp(1.05rem,1.6vw,1.28rem);letter-spacing:.01em;font-weight:850;color:#0b4163;background:#edf6fb;border-left:5px solid #147a9e;border-radius:10px;padding:.8rem 1rem;margin:.8rem 0;overflow-wrap:anywhere}
+.poe212 .poe212-graphic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe212 .poe212-large-svg{max-width:870px}
+.poe212 svg .poe212-axis{fill:none;stroke:#455f73;stroke-width:1.8}
+.poe212 svg .poe212-guide{stroke:#4c879e;stroke-dasharray:5 5;stroke-width:1.35;fill:none}
+.poe212 svg .poe212-dim{fill:none;stroke:#2b648b;stroke-width:1.15}
+.poe212 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#17384e}
+.poe212 svg text.poe212-annotation{font-size:13px;font-weight:750}
+.poe212 svg text.poe212-small{font-size:13px}
+.poe212 svg text.poe212-tiny{font-size:11px}
+.poe212 svg text.poe212-strong{font-weight:800}
+.poe212 .poe212-lesson-steps{list-style:none!important;margin:0;padding:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe212 .poe212-lesson-steps li{border-left:4px solid #167a94;padding:.7rem .75rem;border-radius:9px;background:#f2f8fc;font-weight:750;font-size:.92rem}
+.poe212 .poe212-lesson-steps li span{display:block;color:#527283;font-size:.78rem;font-weight:700}
+.poe212 .poe212-video{background:#f7fbff;border:1px solid #cfdfeb;border-radius:16px;overflow:hidden}
+.poe212 .poe212-video-copy{padding:1rem}
+.poe212 .poe212-video-copy h3{margin:.25rem 0}
+.poe212 .poe212-frame{aspect-ratio:16/9;background:#071e35;position:relative}
+.poe212 .poe212-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe212 .poe212-video a{font-weight:800}
+.poe212 .poe212-video p{margin:.4rem 0}
+.poe212 .poe212-tablewrap{overflow-x:auto}
+.poe212 .poe212-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.poe212 .poe212-table td,.poe212 .poe212-table th{border:1px solid #c8dbe8;text-align:left;padding:.55rem .7rem}
+.poe212 .poe212-table th{background:#eaf4fb;color:#0c3554}
+.poe212 .poe212-table .poe212-total{background:#f1f8e8;font-weight:850}
+.poe212 .poe212-steps{padding-left:1.55rem}
+.poe212 .poe212-steps li{padding-bottom:.45rem}
+.poe212 .poe212-caution{background:#fff9e9;border-left:5px solid #d59b22;padding:.8rem 1rem;border-radius:10px}
+.poe212 details.poe212-reveal{border:1px solid #b9d3e4;background:#f7fbff;border-radius:12px;padding:.8rem 1rem;margin:.65rem 0}
+.poe212 details.poe212-reveal summary{color:#0b4c73;cursor:pointer;font-weight:850}
+.poe212 details.poe212-reveal[open]{border-color:#0d8b9a}
+.poe212 details.poe212-reveal p{margin:.7rem 0 .15rem}
+.poe212 .poe212-explorer{background:#f2f9fc;border:1px solid #9dc6db;border-radius:16px;padding:1rem}
+.poe212 .poe212-explorer label{font-weight:800;color:#0b4163;display:block;margin:.5rem 0}
+.poe212 .poe212-explorer input[type=range]{width:min(100%,440px);accent-color:#0a7991;cursor:pointer}
+.poe212 .poe212-output{font-size:1.2rem;font-weight:850;color:#0a506d;background:#fff;border:1px solid #b9d5e5;padding:.7rem;border-radius:10px}
+.poe212 .poe212-resources a{display:block;margin:.4rem 0;font-weight:800;overflow-wrap:anywhere}
+.poe212 .poe212-checklist{list-style:none!important;padding:0!important}
+.poe212 .poe212-checklist li{padding:.45rem 0 .45rem 1.7rem;position:relative}
+.poe212 .poe212-checklist li::before{content:"□";position:absolute;left:0;top:.32rem;font-size:1.3rem;color:#0b567e}
+.poe212 a:focus-visible,.poe212 input:focus-visible,.poe212 summary:focus-visible{outline:3px solid #ca8b20;outline-offset:3px}
+@media(max-width:980px){.poe212 .poe212-thirds{grid-template-columns:1fr 1fr}.poe212 .poe212-lesson-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.poe212 .poe212-grid,.poe212 .poe212-thirds,.poe212 .poe212-overview{grid-template-columns:1fr}}
+@media print{.poe212 .poe212-video,.poe212 #explore,.poe212 .mission-actions{display:none!important}.poe212 details.poe212-reveal:not([open]){display:none}}
+
+.poe212 .poe212-illustration{display:block;width:100%;height:auto;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe212 .poe212-twin{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe212 .poe212-twin>*{min-width:0}
+.poe212 svg .beam{stroke:#1b5a7b;fill:none;stroke-width:8;stroke-linecap:round}
+.poe212 svg .beam-original{stroke:#c6d5df;stroke-width:4;stroke-dasharray:8 6;fill:none}
+.poe212 svg .beam-deflected{stroke:#008d94;stroke-width:6;fill:none;stroke-linecap:round}
+.poe212 svg .poe212-support{fill:#d6e9f5;stroke:#123f5b;stroke-width:1.8}
+.poe212 svg .poe212-force{stroke:#d97726;stroke-width:3;fill:none}
+.poe212 .poe212-param{background:#f6fafc;border-radius:12px;padding:.65rem .8rem;margin:.6rem 0}
+.poe212 .poe212-param label{display:flex;gap:.7rem;align-items:center;justify-content:space-between}
+.poe212 .poe212-param label strong{white-space:nowrap;font-variant-numeric:tabular-nums}
+.poe212 .poe212-param input[type="range"]{width:100%;accent-color:#0a7991}
+.poe212 .poe212-data{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:1rem 0}
+.poe212 .poe212-data div{border:1px solid #cadee8;border-radius:12px;padding:.6rem .8rem;background:#fff}
+.poe212 .poe212-data strong{display:block;font-size:1.15rem;color:#0c4966;font-variant-numeric:tabular-nums}
+.poe212 .poe212-data span{font-size:.82rem;color:#496475}
+.poe212 .poe212-variable{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe212 .poe212-variable div{border:1px solid #cadde8;border-radius:12px;background:#fff;padding:.75rem}
+.poe212 .poe212-variable b{display:block;font-size:1.12rem;color:#0b5779}
+.poe212 .poe212-progress-card{padding:1rem;border:1px solid #bfdae6;border-radius:12px;background:#f5fafc}
+.poe212 .poe212-progress-card strong{color:#0c4966}
+.poe212 .poe212-solution{font-variant-numeric:tabular-nums}
+.poe212 .poe212-resource-link{display:inline-block;margin-top:.3rem;font-weight:800}
+.poe212 .poe212-print{float:right;font-size:.85rem}
+@media(max-width:760px){.poe212 .poe212-twin,.poe212 .poe212-variable{grid-template-columns:1fr}.poe212 .poe212-print{float:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.poe212 .poe212-schematic{width:100%;display:block;max-width:900px;height:auto;background:#fff;border:1px solid #d2e4ec;border-radius:12px;margin:.75rem auto}
+.poe212 svg .poe212-head{font-size:15px;font-weight:850;fill:#113d57}
+.poe212 svg .poe212-note{font-size:13px;font-weight:760;fill:#183d53}
+.poe212 svg .poe212-caption{font-size:11px;fill:#405c6e}
+.poe212 .poe212-force-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-bottom:1rem}
+.poe212 .poe212-force-grid>div{background:#f5fafc;border:1px solid #cfdfeb;border-radius:11px;padding:.85rem}
+.poe212 .poe212-force-grid strong{display:block;color:#0d5472;margin-bottom:.2rem}
+.poe212 .poe212-force-grid span{font-size:.94rem;color:#3a5263}
+.poe212 .poe212-switches{display:flex;gap:.55rem;flex-wrap:wrap;margin:.75rem 0}
+.poe212 .poe212-switches button{border:1px solid #7ba1b9;background:#fff;color:#104c6c;border-radius:10px;padding:.65rem .85rem;font-weight:780;cursor:pointer}
+.poe212 .poe212-switches button[aria-pressed="true"]{background:#105a7b;color:white;border-color:#105a7b}
+.poe212 .poe212-switches button:hover{border-color:#147a9e}
+.poe212 .poe212-builder-note{background:#f2f9fc;border:1px solid #b7d4e5;border-radius:12px;padding:1rem;min-height:100px}
+.poe212 .poe212-builder-note h3{margin:0 0 .25rem}
+.poe212 .poe212-builder-note p{margin:.3rem 0}
+.poe212 .poe212-explorer input[type=range]{width:min(440px,100%);accent-color:#147a9e}
+.poe212 .poe212-checklist{list-style:none!important;margin:.4rem 0;padding:0!important}
+.poe212 .poe212-checklist li{position:relative;padding:.5rem 0 .5rem 1.6rem}
+.poe212 .poe212-checklist li:before{content:"□";position:absolute;left:0;top:.39rem;color:#147a9e;font-size:1.25rem}
+@media(max-width:880px){.poe212 .poe212-force-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.poe212 .poe212-force-grid{grid-template-columns:1fr}}
+
+.poe212 .poe212-schematic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d5e3ec;border-radius:14px;margin:.75rem auto}
+.poe212 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25465e}
+.poe212 svg .poe212-small{font-size:12px}
+.poe212 svg .poe212-label{font-size:14px;font-weight:800}
+.poe212 .poe212-key{display:flex;flex-wrap:wrap;gap:.8rem;font-weight:700;color:#446479;font-size:.9rem}
+.poe212 .poe212-key b{display:inline-block;width:15px;height:4px;vertical-align:middle;margin-right:.35rem}
+.poe212 .poe212-concept{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe212 .poe212-concept>div{border:1px solid #c1d7e4;background:#f5fbfd;border-radius:12px;padding:.85rem 1rem}
+.poe212 .poe212-concept strong{display:block;color:#0a5278;margin-bottom:.35rem}
+.poe212 .poe212-flow-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe212 .poe212-flow-list>div{background:#eef7fa;border-left:4px solid #147a9e;padding:.75rem;border-radius:9px;font-weight:750}
+.poe212 .poe212-flow-list small{display:block;color:#44677a}
+.poe212 .poe212-assumption{background:#fff8e8;border-left:5px solid #c89025;border-radius:10px;padding:.75rem 1rem}
+.poe212 .poe212-notation{background:#f1f8fc;border:1px solid #b8d3e6;border-radius:10px;padding:.75rem 1rem}
+.poe212 .poe212-formula-equation{background:#ecf7fb;border-left:5px solid #0c7994;padding:.8rem 1.1rem;border-radius:10px;font-size:1.22rem;font-weight:850;color:#06466a;margin:.65rem 0;overflow-wrap:anywhere}
+.poe212 .poe212-tablewrap{max-width:100%;overflow-x:auto}
+.poe212 .poe212-table{width:100%;border-collapse:collapse}
+.poe212 .poe212-table th,.poe212 .poe212-table td{border:1px solid #c5d9e6;padding:.55rem .65rem;text-align:left}
+.poe212 .poe212-table th{background:#eaf4fb;color:#0b496d}
+.poe212 .poe212-table td{font-variant-numeric:tabular-nums}
+.poe212 .poe212-control{padding:.8rem;background:#f8fbfd;border:1px solid #c5dce9;border-radius:12px;margin-bottom:.65rem}
+.poe212 .poe212-control label{display:flex;align-items:center;justify-content:space-between;gap:.6rem;font-weight:790;color:#0a5377;margin:0 0 .4rem}
+.poe212 .poe212-control label output{font-variant-numeric:tabular-nums}
+.poe212 .poe212-control input[type=range]{width:100%;accent-color:#0b7897}
+.poe212 .poe212-control-check{display:flex;align-items:center;gap:.6rem;color:#0a4b6a;font-weight:780;margin:.65rem 0}
+.poe212 .poe212-control-check input{width:20px;height:20px;accent-color:#0b7897}
+.poe212 .poe212-answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe212 .poe212-answers>div{background:#fff;border:1px solid #b9d7e4;border-radius:12px;padding:.7rem}
+.poe212 .poe212-answers strong{display:block;color:#0a496c;font-size:1.13rem;font-variant-numeric:tabular-nums}
+.poe212 .poe212-answers span{color:#4c6477;font-size:.88rem}
+.poe212 .poe212-simulator{background:#eef7fa;border:1px solid #9abfd2;border-radius:17px;padding:1.1rem}
+.poe212 .poe212-simulator .poe212-grid>*{min-width:0}
+.poe212 .poe212-teacher-note{color:#466478;font-size:.91rem}
+.poe212 .poe212-checklist{list-style:none!important;padding:0!important}
+.poe212 .poe212-checklist li{padding:.48rem .2rem .48rem 1.6rem;position:relative}
+.poe212 .poe212-checklist li:before{content:"□";position:absolute;left:0;top:.32rem;color:#0b7d95;font-size:1.2rem}
+.poe212 .poe212-resource a{display:block;font-weight:800;margin:.4rem 0}
+.poe212 .poe212-ratio{color:#144b65;font-weight:800}
+@media(max-width:960px){.poe212 .poe212-concept{grid-template-columns:1fr 1fr}.poe212 .poe212-flow-list{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.poe212 .poe212-concept,.poe212 .poe212-answers,.poe212 .poe212-flow-list{grid-template-columns:1fr}}
+
+.poe212 .poe212-schematic{display:block;width:100%;max-width:950px;height:auto;border:1px solid #c9dfec;background:#fff;border-radius:14px;margin:.85rem auto}
+.poe212 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25485e}
+.poe212 svg .poe212-heading{font-weight:850;font-size:15px}
+.poe212 svg .poe212-label{font-weight:760;font-size:14px}
+.poe212 svg .poe212-small{font-size:12px}
+.poe212 .poe212-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe212 .poe212-flow>div{border-left:4px solid #147a9e;background:#f1f8fc;border-radius:10px;padding:.75rem;font-weight:750;color:#13445f}
+.poe212 .poe212-flow small{display:block;font-size:.8rem;color:#587084;font-weight:650}
+.poe212 .poe212-definitions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe212 .poe212-definitions>div{padding:.9rem;background:#f1f8fb;border-radius:12px;border:1px solid #c5dce8}
+.poe212 .poe212-definitions strong{display:block;color:#0a5574}
+.poe212 .poe212-formula-equation{margin:.7rem 0;padding:.8rem 1rem;background:#edf7fb;border-left:5px solid #0f7c91;color:#104969;border-radius:12px;font-weight:850;font-size:1.14rem;overflow-wrap:anywhere}
+.poe212 .poe212-alert{background:#fff7e7;padding:.75rem 1rem;border-left:5px solid #c59022;border-radius:11px}
+.poe212 .poe212-controls{background:#f0f8fb;border:1px solid #abd0dd;border-radius:16px;padding:1rem}
+.poe212 .poe212-control{border:1px solid #c3d9e3;border-radius:10px;padding:.8rem;background:#fff;margin:.65rem 0}
+.poe212 .poe212-control label{display:flex;justify-content:space-between;gap:.7rem;color:#144d6b;font-weight:780}
+.poe212 .poe212-control output{font-variant-numeric:tabular-nums}
+.poe212 .poe212-control input[type="range"]{accent-color:#127894;width:100%}
+.poe212 .poe212-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe212 .poe212-results>div{background:#fff;padding:.75rem;border:1px solid #bfd9e6;border-radius:10px}
+.poe212 .poe212-results strong{font-size:1.15rem;color:#0b506d;display:block;font-variant-numeric:tabular-nums}
+.poe212 .poe212-results span{display:block;font-size:.86rem;color:#4d6676}
+.poe212 .poe212-moment-sign{margin:.55rem 0;font-weight:800;color:#0e5371}
+.poe212 .poe212-checklist{list-style:none!important;padding:0!important}
+.poe212 .poe212-checklist li{position:relative;padding:.4rem .2rem .4rem 1.55rem}
+.poe212 .poe212-checklist li::before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.2rem;color:#167c9a}
+.poe212 .poe212-resource a{font-weight:850;display:block;margin:.6rem 0}
+.poe212 .poe212-tablewrap{overflow-x:auto}
+.poe212 .poe212-table{border-collapse:collapse;width:100%;font-size:.96rem}
+.poe212 .poe212-table td,.poe212 .poe212-table th{border:1px solid #c8dbe8;padding:.6rem;text-align:left;vertical-align:top}
+.poe212 .poe212-table th{background:#e7f2f9;color:#0a4360}
+@media(max-width:940px){.poe212 .poe212-definitions,.poe212 .poe212-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.poe212 .poe212-definitions,.poe212 .poe212-results,.poe212 .poe212-flow{grid-template-columns:1fr}}
+
+.poe212 .poe212-svg{display:block;width:100%;height:auto;background:#fff;border:1px solid #d3e1eb;border-radius:14px;margin:.7rem auto}
+.poe212 .poe212-svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#27485e}
+.poe212 .poe212-svg .poe212-small{font-size:12px}
+.poe212 .poe212-svg .poe212-label{font-size:14px;font-weight:800}
+.poe212 .poe212-svg .poe212-heading{font-size:15px;font-weight:850}
+.poe212 .poe212-svg .poe212-member{stroke:#275773;stroke-width:9;stroke-linecap:round;transition:stroke .12s ease,opacity .12s ease}
+.poe212 .poe212-svg .poe212-accent{stroke:#0f897d}
+.poe212 #memberExplorerGraphic .poe212-member{stroke-width:9}
+.poe212 .poe212-buttons{display:flex;gap:.45rem;flex-wrap:wrap;margin:.75rem 0}
+.poe212 .poe212-buttons button{background:#fff;border:1px solid #9ebccd;border-radius:9px;padding:.6rem .75rem;color:#124c67;font-size:.91rem;font-weight:760;cursor:pointer}
+.poe212 .poe212-buttons button[aria-pressed="true"]{background:#105676;border-color:#105676;color:#fff}
+.poe212 .poe212-buttons button:hover{border-color:#0a7893}
+.poe212 .poe212-interactive{border:1px solid #b2d1df;background:#f2f9fc;padding:1rem;border-radius:16px}
+.poe212 .poe212-interactive h3{margin-top:0}
+.poe212 .poe212-guide-panel{padding:.85rem 1rem;background:#fff;border:1px solid #c8deea;border-radius:12px;min-height:4.5rem}
+.poe212 .poe212-guide-panel strong{display:block;color:#0d5373;margin-bottom:.25rem}
+.poe212 .poe212-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe212 .poe212-flow>div{padding:.75rem;border-radius:10px;background:#eaf5fa;border-left:4px solid #0e829c;font-weight:750}
+.poe212 .poe212-flow small{display:block;font-weight:600;color:#42667b}
+.poe212 .poe212-checklist{list-style:none!important;padding:0!important}
+.poe212 .poe212-checklist li{padding:.42rem .25rem .42rem 1.6rem;position:relative}
+.poe212 .poe212-checklist li:before{content:"□";position:absolute;left:0;top:.34rem;color:#118199;font-size:1.25rem}
+.poe212 .poe212-warning{border-left:5px solid #bc861f;background:#fff8e9;border-radius:11px;padding:.8rem 1rem}
+.poe212 .poe212-two-force{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.poe212 .poe212-two-force>div{background:#f4f9fc;border:1px solid #d0e1ea;border-radius:12px;padding:.9rem}
+.poe212 .poe212-two-force h3{margin:.1rem 0 .4rem}
+.poe212 .poe212-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.poe212 .poe212-stats>div{background:#fff;border:1px solid #c7ddea;padding:.75rem;border-radius:12px}
+.poe212 .poe212-stats strong{font-size:1.12rem;display:block;color:#0b5879}
+.poe212 .poe212-stats span{font-size:.85rem;color:#516779}
+.poe212 .poe212-resource a{display:block;font-weight:800;margin:.35rem 0}
+.poe212 .poe212-mini-note{background:#ecf7fa;border:1px solid #a3ceda;border-radius:12px;padding:.8rem 1rem}
+.poe212 .poe212-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.poe212 .poe212-tags span{font-size:.85rem;font-weight:850;color:#0b577a;background:#dceef5;padding:.25rem .6rem;border-radius:99px}
+.poe212 button:focus-visible,.poe212 a:focus-visible,.poe212 summary:focus-visible{outline:3px solid #c58c26;outline-offset:3px}
+@media(max-width:920px){.poe212 .poe212-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:670px){.poe212 .poe212-flow,.poe212 .poe212-two-force,.poe212 .poe212-stats{grid-template-columns:1fr}.poe212 .poe212-buttons button{flex:1 1 auto}}
+@media(prefers-reduced-motion:reduce){.poe212 .poe212-svg .poe212-member{transition:none}}
+
+.poe212 .poe212-diagram{width:100%;max-width:940px;height:auto;display:block;margin:.8rem auto;border:1px solid #d2e2ec;border-radius:13px;background:#fff}
+.poe212 svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;fill:#24465b}
+.poe212 svg text.poe212-label{font-size:13px;font-weight:800}
+.poe212 svg text.poe212-small{font-size:11px}
+.poe212 .poe212-diagram .poe212-truss-compression{stroke:#bf7a30;stroke-width:10;stroke-linecap:round}
+.poe212 .poe212-diagram .poe212-truss-tension{stroke:#108576;stroke-width:10;stroke-linecap:round}
+.poe212 .poe212-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe212 .poe212-flow>div{background:#edf7fb;border-left:4px solid #147a9e;padding:.8rem;border-radius:10px;color:#124d69;font-weight:760}
+.poe212 .poe212-flow small{font-size:.78rem;font-weight:600;display:block;color:#577083}
+.poe212 .poe212-equation{font-weight:850;color:#0b4869;font-size:1.15rem;padding:.7rem 1rem;background:#eaf6fb;border-left:5px solid #137e9c;border-radius:10px;margin:.65rem 0;overflow-wrap:anywhere}
+.poe212 .poe212-nuance{background:#fff8e7;border-left:5px solid #c28b22;border-radius:10px;padding:.8rem 1rem}
+.poe212 .poe212-concept-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.poe212 .poe212-concept-cards>div{border-radius:12px;background:#f3fafc;border:1px solid #c8deea;padding:.8rem}
+.poe212 .poe212-concept-cards strong{display:block;color:#0d5271;margin-bottom:.25rem}
+.poe212 .poe212-data-table{width:100%;border-collapse:collapse;font-size:.94rem}
+.poe212 .poe212-data-table td,.poe212 .poe212-data-table th{border:1px solid #c7dce7;padding:.6rem;text-align:left;vertical-align:top}
+.poe212 .poe212-data-table th{background:#e7f4fa;color:#134a6a}
+.poe212 .poe212-table-wrap{overflow-x:auto}
+.poe212 .poe212-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}
+.poe212 .poe212-badges span{border-radius:90px;background:#e1eff5;padding:.35rem .65rem;font-size:.85rem;font-weight:820;color:#0c5679}
+.poe212 .poe212-checklist{list-style:none!important;padding:0!important}
+.poe212 .poe212-checklist li{position:relative;padding:.45rem 0 .45rem 1.55rem}
+.poe212 .poe212-checklist li:before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.25rem;color:#087d9b}
+.poe212 .poe212-lab{border:1px solid #a8d2df;border-radius:15px;background:#f1f9fc;padding:1rem}
+.poe212 .poe212-control{padding:.65rem .8rem;border:1px solid #c8dce8;background:#fff;border-radius:10px;margin:.65rem 0}
+.poe212 .poe212-control label{display:flex;justify-content:space-between;gap:.75rem;font-weight:800;color:#0c5274}
+.poe212 .poe212-control output{font-variant-numeric:tabular-nums}
+.poe212 .poe212-control input[type=range]{accent-color:#0b7899;width:100%}
+.poe212 .poe212-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.poe212 .poe212-results>div{background:#fff;border:1px solid #c2dce7;border-radius:10px;padding:.75rem}
+.poe212 .poe212-results strong{display:block;color:#0c506d;font-size:1.12rem;font-variant-numeric:tabular-nums}
+.poe212 .poe212-results span{color:#516d7a;font-size:.84rem}
+.poe212 .poe212-switches{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}
+.poe212 .poe212-switches button{padding:.6rem .8rem;border:1px solid #94b4c9;background:#fff;border-radius:9px;font-size:.9rem;font-weight:780;color:#135273;cursor:pointer}
+.poe212 .poe212-switches button[aria-pressed="true"]{background:#0e5678;color:#fff;border-color:#0e5678}
+.poe212 .poe212-switches button:hover{border-color:#0d7992}
+.poe212 .poe212-step-explanation{padding:.75rem 1rem;background:#fff;border:1px solid #b9d3e2;border-radius:11px;min-height:112px}
+.poe212 .poe212-step-explanation h3{margin:.15rem 0 .5rem}
+.poe212 .poe212-note{font-size:.9rem;color:#4e6573}
+.poe212 .poe212-resource a{display:block;font-weight:800;margin:.55rem 0;overflow-wrap:anywhere}
+.poe212 .poe212-mini-formula{font-size:.92rem;background:#f4fbff;border:1px solid #cddfea;padding:.65rem;border-radius:10px}
+.poe212 #solverStageJoint{stroke:#e8ab30;stroke-width:5;fill:#153d58;display:none}
+@media(max-width:950px){.poe212 .poe212-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.poe212 .poe212-concept-cards,.poe212 .poe212-flow,.poe212 .poe212-results{grid-template-columns:1fr}}
+
+.poe212 .poe212-illustration{display:block;width:100%;max-width:950px;height:auto;background:#fff;border:1px solid #d0e1eb;border-radius:14px;margin:.8rem auto}
+.poe212 svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;fill:#284960}
+.poe212 svg text.poe212-label{font-size:13px;font-weight:750}
+.poe212 svg text.poe212-small{font-size:11px}
+.poe212 .poe212-solid,.poe212 .poe212-member{stroke:#285878;stroke-width:8;stroke-linecap:round;fill:none}
+.poe212 .poe212-member{stroke-width:9}
+.poe212 .poe212-load{stroke:#c37529;stroke-width:3.4;fill:none}
+.poe212 .poe212-react{stroke:#0c8c94;stroke-width:3.4;fill:none}
+.poe212 .poe212-force{stroke:#275b82;stroke-width:3.2;fill:none}
+.poe212 .poe212-dimension{stroke:#7992a6;stroke-width:1.5;fill:none}
+.poe212 .poe212-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe212 .poe212-flow>div{background:#eef8fb;border-left:4px solid #14859b;padding:.72rem .8rem;border-radius:10px;font-weight:770;color:#0a4e6c}
+.poe212 .poe212-flow small{display:block;color:#537385;font-size:.79rem;font-weight:650}
+.poe212 .poe212-equation{font-size:1.1rem;background:#eaf6fb;border-left:5px solid #0f7992;border-radius:10px;padding:.8rem 1rem;color:#0b4e70;font-weight:850;margin:.7rem 0;overflow-wrap:anywhere}
+.poe212 .poe212-note{background:#fff8e8;border-left:5px solid #c48a27;padding:.8rem 1rem;border-radius:11px}
+.poe212 .poe212-learning-card{background:#f3f9fc;border:1px solid #c8dce8;border-radius:12px;padding:.8rem 1rem}
+.poe212 .poe212-learning-card h3{margin:.2rem 0 .5rem}
+.poe212 .poe212-list-compact{margin:.4rem 0;padding-left:1.25rem}
+.poe212 .poe212-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin:.75rem 0}
+.poe212 .poe212-badges span{border-radius:99px;padding:.25rem .7rem;background:#e0eff5;color:#15516f;font-size:.83rem;font-weight:790}
+.poe212 .poe212-tablewrap{overflow-x:auto}
+.poe212 .poe212-table{width:100%;border-collapse:collapse;font-size:.93rem}
+.poe212 .poe212-table th,.poe212 .poe212-table td{border:1px solid #c6dbe7;padding:.55rem .65rem;text-align:left;vertical-align:top}
+.poe212 .poe212-table th{background:#eaf4fa;color:#0e526c}
+.poe212 .poe212-checklist{list-style:none!important;padding:0!important}
+.poe212 .poe212-checklist li{position:relative;padding:.45rem .25rem .45rem 1.5rem}
+.poe212 .poe212-checklist li::before{content:"□";position:absolute;left:0;top:.29rem;font-size:1.25rem;color:#0e8795}
+.poe212 .poe212-interactive{background:#eef8fb;border:1px solid #add1df;border-radius:16px;padding:1.05rem}
+.poe212 .poe212-control{border:1px solid #c4dce7;border-radius:12px;padding:.75rem .85rem;background:#fff;margin:.65rem 0}
+.poe212 .poe212-control label{display:flex;justify-content:space-between;gap:.65rem;color:#0e5271;font-weight:810}
+.poe212 .poe212-control input[type="range"]{width:100%;accent-color:#107f93}
+.poe212 .poe212-control output{font-variant-numeric:tabular-nums}
+.poe212 .poe212-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe212 .poe212-stats>div{border:1px solid #c3dce7;border-radius:10px;padding:.8rem;background:#fff}
+.poe212 .poe212-stats strong{display:block;font-size:1.07rem;color:#0c4f69;font-variant-numeric:tabular-nums}
+.poe212 .poe212-stats span{font-size:.83rem;color:#486b7b}
+.poe212 .poe212-stepbuttons{display:flex;gap:.5rem;flex-wrap:wrap;margin:.75rem 0}
+.poe212 .poe212-stepbuttons button{border:1px solid #93b9c8;border-radius:9px;background:white;color:#165477;font-weight:750;padding:.58rem .76rem;cursor:pointer}
+.poe212 .poe212-stepbuttons button[aria-pressed="true"]{background:#0e5675;border-color:#0e5675;color:#fff}
+.poe212 .poe212-stage-note{background:white;border:1px solid #b5d3df;border-radius:12px;padding:.8rem 1rem;min-height:110px}
+.poe212 .poe212-stage-note h3{margin:.15rem 0 .45rem}
+.poe212 .poe212-resource a{font-weight:820;display:block;margin:.45rem 0}
+.poe212 #cutLine{pointer-events:none}
+.poe212 #liveTruss [data-id]{transition:stroke .15s ease,opacity .15s ease}
+@media(max-width:960px){.poe212 .poe212-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.poe212 .poe212-flow,.poe212 .poe212-stats{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.poe212 #liveTruss [data-id]{transition:none}}
+
+.poe212 .poe212-drawing,.poe212 .poe212-guidegraphic{display:block;width:100%;height:auto;background:#fff;border:1px solid #d1e1eb;border-radius:12px;margin:.65rem auto}
+.poe212 .poe212-drawing .poe212-svgtext,.poe212 .poe212-guidegraphic text{font-family:system-ui,Segoe UI,Arial,sans-serif;font-size:11px;fill:#23465e;font-weight:690}
+.poe212 .poe212-bar{stroke:#2c6886;stroke-width:4.5;stroke-linecap:round}
+.poe212 .poe212-deformed{stroke:#dea72a;stroke-width:3;stroke-dasharray:4 3;stroke-linecap:round}
+.poe212 .poe212-lab{padding:1rem;border:1px solid #abd1dd;border-radius:16px;background:#edf7fb}
+.poe212 .poe212-control{background:#fff;border:1px solid #c4d9e5;border-radius:12px;padding:.75rem;margin:.6rem 0}
+.poe212 .poe212-control label{font-weight:790;color:#0b526f;display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.poe212 .poe212-control output{font-variant-numeric:tabular-nums}
+.poe212 .poe212-control input[type="range"]{width:100%;accent-color:#117f97}
+.poe212 .poe212-statlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe212 .poe212-statlist>div{background:#fff;border:1px solid #c0dbe5;border-radius:11px;padding:.7rem}
+.poe212 .poe212-statlist strong{display:block;color:#0a4b69;font-size:1.09rem;font-variant-numeric:tabular-nums}
+.poe212 .poe212-statlist span{font-size:.83rem;color:#536c7c}
+.poe212 .poe212-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.poe212 .poe212-flow>div{background:#eff7fa;border:1px solid #c8dde7;padding:.8rem;border-radius:11px}
+.poe212 .poe212-flow strong{display:block;color:#0b5272}
+.poe212 .poe212-flow span{font-size:.88rem;color:#536b7a}
+.poe212 .poe212-warning{background:#fff8ea;border-left:5px solid #c39230;padding:.8rem 1rem;border-radius:10px}
+.poe212 .poe212-formula{background:#eaf6fa;border-left:4px solid #11819b;padding:.7rem 1rem;font-size:1.09rem;font-weight:850;color:#0b4c68;border-radius:9px;margin:.7rem 0}
+.poe212 .poe212-tablewrap{overflow-x:auto;margin:.6rem 0}
+.poe212 .poe212-table{border-collapse:collapse;width:100%;font-size:.93rem}
+.poe212 .poe212-table th,.poe212 .poe212-table td{padding:.55rem .65rem;border:1px solid #c6dae7;text-align:left;vertical-align:middle;font-variant-numeric:tabular-nums}
+.poe212 .poe212-table th{background:#e7f2fa;color:#0c496a}
+.poe212 .poe212-checklist{list-style:none!important;padding:0!important}
+.poe212 .poe212-checklist li{padding:.43rem .2rem .43rem 1.55rem;position:relative}
+.poe212 .poe212-checklist li:before{content:"□";position:absolute;left:0;top:.29rem;font-size:1.25rem;color:#0c849b}
+.poe212 .poe212-feedback{border:1px solid #b1d5e1;padding:.85rem 1rem;border-radius:10px;background:#fff;min-height:78px}
+.poe212 .poe212-legend{font-size:.88rem;color:#456474;display:flex;flex-wrap:wrap;gap:.9rem;margin:.65rem 0}
+.poe212 .poe212-legend b{display:inline-block;width:16px;height:4px;vertical-align:middle;margin-right:.3rem}
+.poe212 .poe212-resource a{display:block;font-weight:800;margin:.45rem 0}
+.poe212 .poe212-panel{min-width:0}
+.poe212 input[type="checkbox"]{accent-color:#147e91}
+@media(max-width:940px){.poe212 .poe212-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:690px){.poe212 .poe212-flow,.poe212 .poe212-statlist{grid-template-columns:1fr}}
+
+.poe212 .poe212-diagram{display:block;width:100%;height:auto;background:white;border:1px solid #cadfeb;border-radius:13px;margin:.8rem auto}
+.poe212 .poe212-diagram text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#2a4a60}
+.poe212 .poe212-diagram text.poe212-svghead{font-size:15px;font-weight:840}
+.poe212 .poe212-diagram text.poe212-svglabel{font-size:14px;font-weight:770}
+.poe212 .poe212-diagram text.poe212-svgnote{font-size:11px}
+.poe212 .poe212-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem}
+.poe212 .poe212-flow>div{border-left:4px solid #147f95;background:#eef7fb;border-radius:10px;padding:.8rem;font-weight:800;color:#0c5072}
+.poe212 .poe212-flow small{display:block;font-size:.8rem;color:#546d7a}
+.poe212 .poe212-grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.poe212 .poe212-grid3>div{background:#eff8fb;border:1px solid #c5dce7;border-radius:12px;padding:.85rem}
+.poe212 .poe212-grid3 strong{display:block;font-size:1.03rem;color:#0b5171}
+.poe212 .poe212-grid3 p{font-size:.9rem;margin:.45rem 0}
+.poe212 .poe212-eq{background:#eaf5fb;border-left:5px solid #0e7f95;border-radius:10px;padding:.8rem 1rem;color:#0d506d;font-weight:850;margin:.7rem 0;font-size:1.15rem;overflow-wrap:anywhere}
+.poe212 .poe212-warning{background:#fff8ea;border-left:5px solid #c18b29;border-radius:11px;padding:.8rem 1rem}
+.poe212 .poe212-lab{background:#eff8fb;border:1px solid #a9d0dd;border-radius:15px;padding:1.1rem}
+.poe212 .poe212-control{background:#fff;border:1px solid #c3dae6;border-radius:10px;margin:.6rem 0;padding:.75rem}
+.poe212 .poe212-control label{display:flex;justify-content:space-between;gap:.65rem;font-weight:790;color:#0d5373}
+.poe212 .poe212-control input[type=range]{width:100%;accent-color:#128397}
+.poe212 .poe212-control select{width:100%;padding:.5rem;border:1px solid #abc5d7;border-radius:8px;background:#fff;font:inherit;color:#164b64}
+.poe212 .poe212-control output{font-variant-numeric:tabular-nums}
+.poe212 .poe212-simresults{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe212 .poe212-simresults>div{background:white;border:1px solid #bfd8e5;padding:.8rem;border-radius:11px}
+.poe212 .poe212-simresults strong{display:block;color:#0c5374;font-size:1.1rem;font-variant-numeric:tabular-nums}
+.poe212 .poe212-simresults span{font-size:.83rem;color:#547184}
+.poe212 .poe212-matrix{overflow-x:auto}
+.poe212 .poe212-matrix table{width:100%;min-width:610px;border-collapse:collapse;font-size:.92rem}
+.poe212 .poe212-matrix th,.poe212 .poe212-matrix td{padding:.6rem;border:1px solid #c4dbe7;text-align:left;vertical-align:top}
+.poe212 .poe212-matrix th{background:#e7f2f9;color:#0c4c6b}
+.poe212 .poe212-checklist{list-style:none!important;padding:0!important}
+.poe212 .poe212-checklist li{padding:.42rem .2rem .42rem 1.6rem;position:relative}
+.poe212 .poe212-checklist li:before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.25rem;color:#13839b}
+.poe212 .poe212-resource a{display:block;margin:.55rem 0;font-weight:800;overflow-wrap:anywhere}
+.poe212 .poe212-note{font-size:.89rem;color:#516e7d}
+.poe212 .poe212-equationline{color:#1a536c;font-size:.95rem;font-weight:780}
+.poe212 .poe212-choices{display:flex;flex-wrap:wrap;gap:.6rem}
+.poe212 .poe212-choices>span{background:#e2f1f6;border-radius:99px;padding:.35rem .65rem;color:#0b5472;font-size:.86rem;font-weight:800}
+.poe212 #poe212Graph{max-width:800px}
+@media(max-width:950px){.poe212 .poe212-grid3,.poe212 .poe212-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.poe212 .poe212-grid3,.poe212 .poe212-flow,.poe212 .poe212-simresults{grid-template-columns:1fr}}
+
+.poe212 .poe212-visual,.poe212 .poe212-miniillustration{display:block;width:100%;height:auto;background:#fff;border:1px solid #d4e2ec;border-radius:13px;margin:.7rem auto}
+.poe212 .poe212-miniillustration{max-width:430px}
+.poe212 .poe212-visual text,.poe212 .poe212-miniillustration text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#24445e}
+.poe212 .poe212-visual .poe212-svgtag{font-size:14px;font-weight:850}
+.poe212 .poe212-visual .poe212-svgsmall{font-size:11px}
+.poe212 .poe212-miniillustration .poe212-small{font-size:13px;font-weight:780}
+.poe212 .poe212-banner{border-left:5px solid #0c849a;background:#eff9fc;border-radius:12px;padding:.85rem 1rem}
+.poe212 .poe212-caution{border-left:5px solid #c39330;background:#fff8e8;padding:.85rem 1rem;border-radius:12px}
+.poe212 .poe212-stepset{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem}
+.poe212 .poe212-stepset>div{background:#eff7fa;border:1px solid #c0dbe6;border-radius:11px;padding:.75rem;color:#16506b;font-weight:760}
+.poe212 .poe212-stepset small{display:block;font-size:.8rem;color:#526d7d;font-weight:600}
+.poe212 .poe212-tablewrap{max-width:100%;overflow-x:auto}
+.poe212 .poe212-table{width:100%;border-collapse:collapse}
+.poe212 .poe212-table th,.poe212 .poe212-table td{border:1px solid #c6d9e5;padding:.62rem .7rem;text-align:left;vertical-align:top}
+.poe212 .poe212-table th{background:#e9f4fa;color:#0e5270}
+.poe212 .poe212-equation{background:#eaf6fb;border-left:5px solid #0e8498;border-radius:12px;padding:.75rem 1rem;font-size:1.12rem;color:#0b526e;font-weight:850;margin:.75rem 0;overflow-wrap:anywhere}
+.poe212 .poe212-interactive{border:1px solid #b3d0df;background:#f1f9fc;padding:1rem;border-radius:16px}
+.poe212 .poe212-control{border:1px solid #c9dfeb;background:#fff;padding:.73rem .85rem;border-radius:11px;margin:.7rem 0}
+.poe212 .poe212-control label{display:flex;justify-content:space-between;gap:.5rem;color:#0e5270;font-weight:800}
+.poe212 .poe212-control output{font-variant-numeric:tabular-nums}
+.poe212 .poe212-control input[type=range]{width:100%;accent-color:#0e8497}
+.poe212 .poe212-control select{display:block;width:100%;padding:.58rem;border:1px solid #aac7d7;border-radius:9px;background:#fff;color:#173f56;font:inherit}
+.poe212 .poe212-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe212 .poe212-results>div{background:#fff;border:1px solid #c4dce7;border-radius:11px;padding:.75rem}
+.poe212 .poe212-results strong{display:block;color:#0a526d;font-size:1.1rem;font-variant-numeric:tabular-nums}
+.poe212 .poe212-results span{color:#506978;font-size:.86rem}
+.poe212 .poe212-casebuttons{display:flex;gap:.5rem;flex-wrap:wrap;margin:.75rem 0}
+.poe212 .poe212-casebuttons button{border:1px solid #a3becd;border-radius:10px;color:#0a4d6d;background:#fff;padding:.65rem .85rem;font-weight:780;cursor:pointer}
+.poe212 .poe212-casebuttons button[aria-pressed="true"]{background:#135b7a;color:white;border-color:#135b7a}
+.poe212 .poe212-casepanel{background:#fff;border:1px solid #c4deea;border-radius:12px;padding:1rem}
+.poe212 .poe212-casepanel h3{margin:.2rem 0}
+.poe212 .poe212-threes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.poe212 .poe212-threes>div{border:1px solid #cbdfe9;background:#f4fafc;border-radius:12px;padding:.8rem}
+.poe212 .poe212-threes strong{color:#0b5272;display:block}
+.poe212 .poe212-checklist{list-style:none!important;padding:0!important}
+.poe212 .poe212-checklist li{position:relative;padding:.46rem .2rem .46rem 1.6rem}
+.poe212 .poe212-checklist li::before{content:"□";position:absolute;top:.34rem;left:0;font-size:1.3rem;color:#0c849a}
+.poe212 .poe212-resource a{display:block;font-weight:800;margin:.45rem 0}
+.poe212 .poe212-video-copy h3{line-height:1.24}
+.poe212 .poe212-mini{font-size:.9rem;color:#506a79}
+.poe212 .poe212-progress{height:16px;border-radius:99px;background:#dce9ef;overflow:hidden;margin:.6rem 0}
+.poe212 .poe212-progress span{height:100%;display:block;background:#0d8797;transition:width .2s ease}
+@media(max-width:950px){.poe212 .poe212-stepset{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.poe212 .poe212-stepset,.poe212 .poe212-threes,.poe212 .poe212-results{grid-template-columns:1fr}}
+</style></head>
+<body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container nav"><a class="brand" aria-label="LockwoodSTEM home" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
+<main id="main" class="poe212">
+<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.12</li></ol></nav>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img class="lesson-course-icon" src="../../../../assets/img/course-icons/poe-course-icon.png" alt="POE course icon"/><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.12</div><h1>Structural Failure</h1><p class="focus-question"><strong>Engineering question:</strong> What can failure evidence tell us about how a structure behaved—and how can we redesign it responsibly?</p><div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#modes">Loading Modes</a><a class="btn secondary" href="#watch">Watch Videos</a><a class="btn secondary" href="#buckling">Buckling Explorer</a><a class="btn secondary" href="#investigate">Failure Detective</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
+<aside class="mission-panel"><span class="tag">Observe • Classify • Test • Redesign</span><h2>Failure leaves clues.</h2><p>Apply your knowledge of materials, forces and trusses to diagnose structural problems without confusing assumptions, observations or proven causes.</p><p><strong>Bring:</strong> engineering notebook or 2.12 case-study worksheet and a calculator for the optional column calculations.</p></aside></div></section>
+<section class="container lesson-section" id="start"><div class="poe212-section-header"><div class="poe212-eyebrow">Your learning pathway</div><h2>What you'll learn</h2><p>Complete the resources in sequence. The on-page explanations, technical diagrams and practice are sufficient to complete the assigned case study independently.</p></div>
+<div class="poe212-overview"><div class="poe212-metric"><strong>01 · Classify</strong><span>Separate an applied loading mode from the way a component failed.</span></div><div class="poe212-metric"><strong>02 · Investigate</strong><span>Recognize buckling, fracture, excessive deformation and connection failure using observations.</span></div><div class="poe212-metric"><strong>03 · Justify</strong><span>Recommend redesign actions and explain how to verify them with evidence.</span></div></div>
+<div class="poe212-panel" style="margin-top:1rem"><h3>Suggested 45–50 minute learning sequence</h3><div class="poe212-stepset"><div>Classify the forces<small>8 minutes</small></div><div>Watch and take notes<small>10 minutes</small></div><div>Explore column buckling<small>12 minutes</small></div><div>Diagnose case studies<small>15–20 minutes</small></div></div><p class="poe212-mini">The historical engineering investigation and extended reflection may be assigned as homework.</p></div></section>
+<section class="container lesson-section" id="modes"><div class="poe212-section-header"><div class="poe212-eyebrow">01 / First identify what is acting</div><h2>Five loading modes engineers investigate</h2><p><strong>Loading mode</strong> describes the internal action or applied force effect. <strong>Failure mechanism</strong> describes how a structure stops meeting a requirement or loses its ability to carry load.</p></div>
+<div class="poe212-grid">
+<article class="poe212-panel"><span class="poe212-pill">1 / Loading</span><h3>Axial tension</h3><svg class="poe212-miniillustration" viewBox="0 0 400 180" role="img" aria-label="Axial tension: schematic applied forces and deformation"><path d="M130 88H270" stroke="#33607d" stroke-width="23" stroke-linecap="round"/><path d="M65 88H114 M287 88H335" stroke="#c77a32" stroke-width="5"/><path d="M77 78L62 88L77 98 M323 78L338 88L323 98" stroke="#c77a32" stroke-width="4" fill="none"/><text x="200" y="143" class="poe212-small" text-anchor="middle">Axial pull</text></svg><p>Member pulled along its axis. Look for stretching, necking in ductile material, or tensile rupture, depending on material and loading.</p></article><article class="poe212-panel"><span class="poe212-pill">2 / Loading</span><h3>Axial compression</h3><svg class="poe212-miniillustration" viewBox="0 0 400 180" role="img" aria-label="Axial compression: schematic applied forces and deformation"><path d="M176 26Q260 91 176 150" stroke="#33607d" stroke-width="19" fill="none" stroke-linecap="round"/><path d="M177 7V28 M177 170V149" stroke="#c77a32" stroke-width="5"/><path d="M166 21L177 32L188 21 M166 154L177 143L188 154" stroke="#c77a32" stroke-width="4" fill="none"/><text x="306" y="88" class="poe212-small" text-anchor="middle">Buckling</text></svg><p>Member pushed along its axis. A short member may crush; a slender member may become unstable and buckle first.</p></article><article class="poe212-panel"><span class="poe212-pill">3 / Loading</span><h3>Shear</h3><svg class="poe212-miniillustration" viewBox="0 0 400 180" role="img" aria-label="Shear: schematic applied forces and deformation"><rect x="118" y="34" width="159" height="105" rx="5" fill="#d9e8f0" stroke="#33607d" stroke-width="3"/><path d="M181 34L213 139" stroke="#d17e3c" stroke-width="5" stroke-dasharray="5 4"/><path d="M134 6V27 M263 161V140" stroke="#c77a32" stroke-width="4"/><text x="195" y="169" class="poe212-small" text-anchor="middle">Opposing shear directions</text></svg><p>Opposing parallel forces tend to slide nearby planes relative to one another; see local tearing near a connector or sheared fastener.</p></article><article class="poe212-panel"><span class="poe212-pill">4 / Loading</span><h3>Bending</h3><svg class="poe212-miniillustration" viewBox="0 0 400 180" role="img" aria-label="Bending: schematic applied forces and deformation"><path d="M76 89Q200 153 324 89" stroke="#33607d" stroke-width="19" fill="none" stroke-linecap="round"/><path d="M200 12V68" stroke="#c77a32" stroke-width="4"/><path d="M190 55L200 70L210 55" fill="none" stroke="#c77a32" stroke-width="4"/><text x="200" y="169" class="poe212-small" text-anchor="middle">Center-loaded shelf</text></svg><p>A transverse load creates curvature and bending stress. Excessive deflection can make a beam unusable even without rupture.</p></article><article class="poe212-panel"><span class="poe212-pill">5 / Loading</span><h3>Torsion</h3><svg class="poe212-miniillustration" viewBox="0 0 400 180" role="img" aria-label="Torsion: schematic applied forces and deformation"><rect x="98" y="69" width="206" height="50" rx="22" fill="#d8e9f1" stroke="#33607d" stroke-width="4"/><path d="M111 66A27 32 0 1 0 111 122" stroke="#c77a32" stroke-width="4" fill="none"/><path d="M289 64A27 32 0 1 1 289 125" stroke="#c77a32" stroke-width="4" fill="none"/><path d="M128 60L111 63L122 77 M271 65L288 66L280 80" fill="none" stroke="#c77a32" stroke-width="3"/><text x="200" y="165" class="poe212-small" text-anchor="middle">Twisting couple</text></svg><p>A turning couple twists a shaft; it creates shear stress and can cause twisting deformation or fracture.</p></article>
+</div><div class="poe212-banner" style="margin-top:1rem"><strong>Example:</strong> “Compression” alone is not a failure mechanism. A compressed member might crush from material stress, buckle sideways through instability, or remain completely safe at the applied load. You need geometry, force and physical evidence to distinguish these possibilities.</div></section>
+<section class="container lesson-section" id="mechanisms"><div class="poe212-section-header"><div class="poe212-eyebrow">02 / What does failure look like?</div><h2>Four common structural failure mechanisms</h2><p>Observe the difference between loss of stability, material rupture, permanent/excessive deformation and failure at a connection.</p></div><svg id="failureGallery" class="poe212-visual" viewBox="0 0 780 295" role="img" aria-label="Illustrations of four distinct failure mechanisms: bowed compression member, cracked bar, bent or permanently yielding beam, and separated gusset connection.">
+<text x="92" y="23" class="poe212-svgtag" text-anchor="middle">BUCKLING</text>
+<text x="284" y="23" class="poe212-svgtag" text-anchor="middle">FRACTURE</text>
+<text x="475" y="23" class="poe212-svgtag" text-anchor="middle">EXCESS DEFORMATION</text>
+<text x="670" y="23" class="poe212-svgtag" text-anchor="middle">JOINT SEPARATION</text>
+<path d="M87 70Q146 152 87 240" stroke="#2e627e" stroke-width="17" fill="none" stroke-linecap="round"/><path d="M49 257H128M49 53H128" stroke="#698c9e" stroke-width="4"/>
+<path d="M284 63V121L273 139L294 154L284 169V241" stroke="#2e627e" stroke-width="19" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M283 122L266 141L293 153" stroke="#bd7132" stroke-width="3.5" fill="none"/>
+<path d="M401 103Q475 195 553 103" stroke="#2e627e" stroke-width="15" fill="none" stroke-linecap="round"/><path d="M401 92H553" stroke="#c9d7e0" stroke-width="3" stroke-dasharray="8 5"/>
+<path d="M475 46V88" stroke="#bc7533" stroke-width="4"/><path d="M467 75L475 90L483 75" stroke="#bc7533" stroke-width="3" fill="none"/>
+<path d="M613 235L679 155" stroke="#2e627e" stroke-width="21" stroke-linecap="round"/><path d="M702 129L745 79" stroke="#2e627e" stroke-width="21" stroke-linecap="round"/><path d="M650 185L689 225L726 181L685 145Z" fill="#dcb879" stroke="#aa804a" stroke-width="2" transform="translate(-10 0)"/>
+<path d="M692 143L721 115" stroke="#bb6534" stroke-width="3" stroke-dasharray="6 3"/><text x="670" y="268" text-anchor="middle" class="poe212-svgsmall">Broken connection path</text>
+<text x="390" y="291" text-anchor="middle" class="poe212-svgsmall">Schematic mechanisms; not evidence of a particular material or failure sequence</text>
+</svg>
+<div class="poe212-threes">
+<div><strong>Instability</strong><p>Slender compression member bows sideways. A member can lose stability before its material crushes.</p></div>
+<div><strong>Material failure</strong><p>Crack, split, rupture or permanent yielding appears in the loaded material. The failure mode depends on stress and material behavior.</p></div>
+<div><strong>Connection failure</strong><p>Adhesive separates, a gusset tears, a fastener slips, or wood splits near a joint. The members themselves can be intact.</p></div></div>
+<div class="poe212-grid" style="margin-top:1rem"><article class="poe212-panel"><h3>Serviceability is different from collapse</h3><p>A shelf can sag too far to use, a walkway can vibrate excessively, or a beam can deform beyond its allowable limit <strong>without immediately fracturing</strong>. Structural design includes both strength and serviceability requirements.</p><p>For your bridge challenge, passing the 100 N load is not enough; the deflection must also remain <strong>at or below 10 mm</strong> under that load.</p></article>
+<article class="poe212-panel"><h3>Observed sign ≠ proven root cause</h3><p>A broken gusset could result from undersized adhesive area, poor surface preparation, an off-axis load, a brittle substrate or a combination. A photo of the break does not automatically identify the single cause.</p><p>Good failure analysis compares competing hypotheses to measurements and evidence.</p></article></div></section>
+<section class="container lesson-section" id="watch"><div class="poe212-section-header"><div class="poe212-eyebrow">03 / Video learning library</div><h2>Watch and annotate real engineering explanations</h2><p>Begin with column buckling and beam stresses. The short case-study video is optional for the historical investigation and should be viewed respectfully.</p></div><div class="poe212-grid">
+<article class="poe212-video"><div class="poe212-frame"><iframe src="https://www.youtube-nocookie.com/embed/21G7LA2DcGQ" title="Understanding Buckling" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe212-video-copy"><span class="poe212-pill">The Efficient Engineer</span><h3>Understanding Buckling</h3><p><strong>Pause and explain:</strong> Sketch a straight and a buckled compression member, then explain why doubling unsupported length reduces the ideal Euler load.</p><a href="https://www.youtube.com/watch?v=21G7LA2DcGQ" target="_blank" rel="noopener noreferrer">Watch directly on YouTube ↗</a></div></article>
+<article class="poe212-video"><div class="poe212-frame"><iframe src="https://www.youtube-nocookie.com/embed/f08Y39UiC-o" title="Understanding Stresses in Beams" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe212-video-copy"><span class="poe212-pill">The Efficient Engineer</span><h3>Understanding Stresses in Beams</h3><p><strong>Pause and explain:</strong> Label tension and compression in a bent beam, and explain why shear may also occur.</p><a href="https://www.youtube.com/watch?v=f08Y39UiC-o" target="_blank" rel="noopener noreferrer">Watch directly on YouTube ↗</a></div></article>
+</div><details class="poe212-reveal" style="margin-top:1rem"><summary>Optional case-study video: Hyatt Regency walkway collapse and connection design</summary><div class="poe212-grid" style="margin-top:.8rem"><article class="poe212-video"><div class="poe212-frame"><iframe src="https://www.youtube-nocookie.com/embed/VnvGwFegbC8" title="The Disaster That Changed Engineering: The Hyatt Regency Collapse" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe212-video-copy"><span class="poe212-pill">Tom Scott with Practical Engineering</span><h3>The Disaster That Changed Engineering: The Hyatt Regency Collapse</h3><p><strong>Pause and explain:</strong> Compare the two hanger-rod arrangements and name the connection whose load path changed.</p><a href="https://www.youtube.com/watch?v=VnvGwFegbC8" target="_blank" rel="noopener noreferrer">Watch directly on YouTube ↗</a></div></article>
+<article class="poe212-panel"><h3>Viewing context</h3><p>This video discusses a real fatal engineering disaster without requiring graphic imagery. Study the design and review decisions—not the human loss as entertainment.</p></article></div></details></section>
+<section class="container lesson-section" id="buckling"><div class="poe212-section-header"><div class="poe212-eyebrow">04 / Interactive compression investigation</div><h2>What makes a slender member more likely to buckle?</h2><p>In this illustrative classroom model, apply Euler's elastic buckling equation to a rectangular column. Vary length, thickness, modulus and idealized support condition. The model compares the applied force to the theoretical elastic threshold—not a tested failure load.</p></div>
+<div class="poe212-interactive"><div class="poe212-grid">
+<article class="poe212-panel">
+<div class="poe212-control"><label for="columnLength">Unsupported length L <output id="lengthValue">180 mm</output></label><input id="columnLength" type="range" min="100" max="300" step="10" value="180"/></div>
+<div class="poe212-control"><label for="columnThickness">Weak-axis thickness t <output id="thicknessValue">3.0 mm</output></label><input id="columnThickness" type="range" min="2" max="6" step=".5" value="3"/></div>
+<div class="poe212-control"><label for="columnE">Illustrative modulus E <output id="modulusValue">9,000 N/mm²</output></label><input id="columnE" type="range" min="2000" max="12000" step="500" value="9000"/></div>
+<div class="poe212-control"><label for="columnLoad">Applied axial force P <output id="loadValue">40 N</output></label><input id="columnLoad" type="range" min="10" max="200" step="5" value="40"/></div>
+<div class="poe212-control"><label for="columnSupport">Ideal end condition (effective length factor K)</label><select id="columnSupport"><option value="1" selected="selected">Pinned–pinned · K = 1.0</option><option value="0.7">Fixed–pinned · K ≈ 0.7</option><option value="0.5">Fixed–fixed · K = 0.5</option><option value="2">Fixed–free · K = 2.0</option></select></div>
+<div class="poe212-results">
+<div><strong id="resultI">18.00 mm⁴</strong><span>Weak-axis I = bt³/12</span></div>
+<div><strong id="resultPcr">49.35 N</strong><span>Ideal Euler critical load</span></div>
+<div><strong id="resultRatio">0.81</strong><span>Applied force ÷ Euler load</span></div>
+<div><strong id="resultLe">180 mm</strong><span>Effective length KL</span></div>
+</div>
+<p class="poe212-mini">The strip width b is held at 8 mm. Effective E values are hypothetical—not certified values for classroom wood.</p>
+<button class="btn secondary" type="button" id="resetColumn">Reset investigation</button>
+</article>
+<article class="poe212-panel"><svg class="poe212-visual" id="columnPlot" viewBox="0 0 550 345" role="img" aria-label="Illustrative pinned column between two supports. Applied axial compression is compared against a theoretical Euler elastic critical load. Over-threshold deflected shape is schematic only.">
+<defs><marker id="eulerDown" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#c17731"/></marker><marker id="eulerUp" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#0f8793"/></marker></defs>
+<text x="272" y="25" text-anchor="middle" class="poe212-svgtag">IDEAL COMPRESSION MEMBER</text>
+<path d="M214 66H335M214 289H335" stroke="#8facc0" stroke-width="7" stroke-linecap="round"/>
+<path id="originalColumn" d="M275 73V282" stroke="#bccedc" stroke-width="4" stroke-dasharray="7 5" fill="none"/>
+<path id="loadedColumn" d="M275 73Q275 176 275 282" stroke="#186887" stroke-width="15" stroke-linecap="round" fill="none"/>
+<path d="M275 28V60" stroke="#c17731" stroke-width="4" marker-end="url(#eulerDown)"/>
+<path d="M275 326V293" stroke="#0f8793" stroke-width="4" marker-end="url(#eulerUp)"/>
+<text id="appliedColumnLabel" x="295" y="50" class="poe212-svgsmall">P = 40 N</text>
+<text id="columnLengthLabel" x="346" y="183" class="poe212-svgsmall">L = 180 mm</text>
+<text x="78" y="111" class="poe212-svgsmall">Undeformed</text><text x="78" y="128" class="poe212-svgsmall">reference (dashed)</text>
+<text x="275" y="344" text-anchor="middle" class="poe212-svgsmall">Curvature is cartoon-only; the calculator does not solve post-buckling shape.</text>
+</svg>
+<div class="poe212-equation">P<sub>cr</sub> = π² EI / (KL)²</div>
+<div class="poe212-progress" aria-hidden="true"><span id="loadRatioBar" style="width:81%"></span></div>
+<div id="columnInterpretation" class="poe212-banner" aria-live="polite">Applied load is below the model's theoretical elastic Euler threshold. That does not prove the real column safe.</div>
+</article></div>
+<div class="poe212-caution" style="margin-top:1rem"><strong>Model limitations:</strong> Euler theory describes elastic instability of an ideal straight, slender column. It ignores crookedness, load eccentricity, joints, real boundary stiffness, material defects, inelastic behavior and local buckling. The curved drawing is an exaggerated illustration, not a calculated deformation or a failure animation. Even below P<sub>cr</sub>, real members can fail for other reasons. No student should physically load a column to its predicted failure point without an instructor-managed safety setup.</div></div>
+<div class="poe212-grid" style="margin-top:1rem">
+<article class="poe212-panel"><span class="poe212-pill">Check A</span><h3>Double the unsupported length</h3><p>Hold E, b, t and K constant. What happens to the theoretical elastic buckling force if length doubles?</p><details class="poe212-reveal"><summary>Reveal the explanation</summary><p>Because P<sub>cr</sub> ∝ 1/L², doubling unsupported length reduces the theoretical Euler critical load to <strong>one-quarter</strong>.</p></details></article>
+<article class="poe212-panel"><span class="poe212-pill">Check B</span><h3>Double the thickness</h3><p>For the same bending axis and fixed width b, what happens to I and the theoretical buckling force if thickness doubles?</p><details class="poe212-reveal"><summary>Reveal the explanation</summary><p>I = bt³/12. Doubling thickness multiplies I by <strong>8</strong>, so the ideal elastic buckling load also multiplies by eight if E, L and K remain unchanged.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="investigate"><div class="poe212-section-header"><div class="poe212-eyebrow">05 / Interactive failure detective</div><h2>Diagnose the evidence—not just the shape</h2><p>Select a case, read the observations, and form a hypothesis before revealing the engineering explanation. These are <strong>fictional instructional scenarios</strong>, not proven reconstructions.</p></div>
+<div class="poe212-interactive"><div class="poe212-casebuttons" role="group" aria-label="Select failure evidence case"><button type="button" data-case="0" aria-pressed="true">Case A · Chair leg</button><button type="button" data-case="1" aria-pressed="false">Case B · Shelf</button><button type="button" data-case="2" aria-pressed="false">Case C · Glued joint</button></div>
+<div class="poe212-casepanel">
+<span id="caseType" class="poe212-pill">Compression member</span><h3 id="caseTitle">Case A · Bowed chair leg</h3>
+<p id="caseObservation"><strong>Observed:</strong> A long narrow wooden chair leg develops sideways bowing when vertically loaded. No visible splitting is present near the middle at first.</p>
+<div class="poe212-threes">
+<div><strong>What is known?</strong><p id="caseKnown">The member is slender and loaded in compression; it moves sideways.</p></div>
+<div><strong>What is uncertain?</strong><p id="caseUnknown">End restraint, wood defects, off-center load, and whether crushing also developed.</p></div>
+<div><strong>Evidence to collect</strong><p id="caseEvidence">Length, section dimensions, load location, video of lateral displacement and end connections.</p></div>
+</div>
+<details class="poe212-reveal" id="caseReveal"><summary>Reveal possible mechanism and redesign</summary><p id="caseAnswer"><strong>Likely mechanism:</strong> Compression buckling. Increase the weak-axis section stiffness, shorten unbraced length or brace the leg. Verify by comparing otherwise identical tests and measuring the load at onset of lateral deflection.</p></details>
+</div></div>
+<div class="poe212-banner" style="margin-top:1rem"><strong>Failure analysis sentence frame:</strong> “I observed ___ under ___. This suggests ___, but ___ is still unknown. I would compare ___ using ___ before recommending ___.”</div></section>
+<section class="container lesson-section" id="worked"><div class="poe212-section-header"><div class="poe212-eyebrow">06 / Fully worked forensic example</div><h2>From a symptom to a defensible redesign</h2><p>Scenario: a 200 mm-long, 8 mm-wide, 3 mm-thick ideal wooden compression strip bows sideways at a load where no obvious crack has formed. Use illustrative E = 9,000 N/mm² and pinned–pinned ends.</p></div>
+<div class="poe212-grid"><article class="poe212-panel"><h3>1 · State evidence and assumptions</h3><p><strong>Observation:</strong> lateral bowing during axial compression.</p><p><strong>Hypothesis:</strong> elastic instability could contribute.</p><p><strong>Assumptions:</strong> ideal straight elastic pinned member; 8 × 3 mm uniform rectangle, buckling about the weak axis, E = 9,000 N/mm².</p>
+<div class="poe212-equation">I = 8(3³)/12 = 18 mm⁴</div></article>
+<article class="poe212-panel"><h3>2 · Calculate a theoretical load</h3><div class="poe212-equation">P<sub>cr</sub> = π²(9,000)(18)/(200²)</div><p><strong>P<sub>cr</sub> ≈ 39.97 N</strong> for this simplified model.</p><p>If unsupported length becomes 100 mm with all other inputs unchanged, <strong>P<sub>cr</sub> ≈ 159.89 N</strong>, four times the original theoretical value.</p></article></div>
+<div class="poe212-panel" style="margin-top:1rem"><h3>3 · Interpret and propose a testable change</h3><p>A shorter free column length has a much larger theoretical Euler load. Recommend a <strong>physical lateral brace or shorter unsupported segment</strong> and measure onset of lateral movement under instructor-controlled testing.</p>
+<p class="poe212-caution"><strong>Do not claim a fourfold real-world safety margin.</strong> Brace effectiveness, connection behavior and wood imperfections are not checked by this equation. If a real chair has become unstable or damaged, remove it from service; do not experiment with people sitting on it.</p></div></section>
+<section class="container lesson-section" id="history"><div class="poe212-section-header"><div class="poe212-eyebrow">07 / Historical engineering investigation</div><h2>A change in connections can change the entire load path</h2><p>On July 17, 1981, the second- and fourth-floor suspended walkways at the Hyatt Regency hotel in Kansas City collapsed. The National Bureau of Standards investigation identified insufficient box-beam/hanger-rod connection capacity. An approved change from continuous rods to a two-rod arrangement increased the force carried by the upper connection, approximately doubling that connection demand for the two walkways.</p></div>
+<div class="poe212-panel"><h3>Conceptual load-path comparison</h3><svg class="poe212-visual" viewBox="0 0 790 380" role="img" aria-label="Conceptual connection load-path comparison for the 1981 Hyatt Regency walkway. Original continuous hanger rod supports both walkways through the roof, with independent rod forces passing the upper walkway connection. Modified two-rod arrangement transfers load from the lower walkway into the upper box beam, making the upper connection carry both upper and lower walkway loads. Not construction details.">
+<text x="193" y="28" class="poe212-svgtag" text-anchor="middle">ORIGINAL · CONTINUOUS RODS</text><text x="582" y="28" class="poe212-svgtag" text-anchor="middle">REVISED · TWO-ROD ARRANGEMENT</text>
+<path d="M72 60H324M461 60H717" stroke="#536f86" stroke-width="12" stroke-linecap="round"/>
+<path d="M193 65V338" stroke="#0e8592" stroke-width="9"/>
+<path d="M582 65V162M582 162V188" stroke="#0e8592" stroke-width="9"/>
+<path d="M582 201V338" stroke="#0e8592" stroke-width="9"/>
+<path d="M109 161H279 M109 331H279 M501 161H660 M501 331H660" stroke="#325d7c" stroke-width="17" stroke-linecap="round"/>
+<path d="M170 175H216 M559 174H606 M559 343H606" stroke="#b98a51" stroke-width="10"/>
+<path d="M171 345H215" stroke="#b98a51" stroke-width="10"/>
+<text x="85" y="144" class="poe212-svgsmall">Upper Pᵤ</text><text x="85" y="312" class="poe212-svgsmall">Lower Pₗ</text>
+<text x="462" y="144" class="poe212-svgsmall">Upper Pᵤ</text><text x="463" y="312" class="poe212-svgsmall">Lower Pₗ</text>
+<text x="232" y="220" class="poe212-svgsmall">Long rod</text>
+<text x="614" y="236" class="poe212-svgsmall">Lower load now</text><text x="614" y="252" class="poe212-svgsmall">carried by upper beam</text>
+<text x="193" y="366" text-anchor="middle" class="poe212-svgsmall">Upper connection: mainly Pᵤ</text>
+<text x="582" y="366" text-anchor="middle" class="poe212-svgsmall">Upper connection: Pᵤ + Pₗ</text>
+</svg>
+<p class="poe212-mini"><strong>Not-to-scale teaching schematic.</strong> This represents the principle of the altered support path, not fabrication detail, geometry or the complete structural investigation. Actual connection force changes varied by location and load case.</p>
+<div class="poe212-grid"><article class="poe212-panel"><h3>What the investigation showed</h3><p>The modified rod arrangement placed the lower walkway's load onto the upper walkway box beam connections. Investigators found that those connections had inadequate capacity; the original connection design had weaknesses as well.</p><p><a href="https://www.nist.gov/publications/investigation-kansas-city-hyatt-regency-walkways-collapse-nbs-bss-143?pub_id=908286" target="_blank" rel="noopener noreferrer">Read the official NBS/NIST investigation ↗</a></p></article>
+<article class="poe212-panel"><h3>Engineering responsibility</h3><p>A seemingly small manufacturing change can alter the load path and required connection capacity. Revised drawings must be reviewed and verified by appropriately responsible professionals, rather than assumed equivalent.</p><p><a href="https://www.asce.org/publications-and-news/civil-engineering-source/civil-engineering-magazine/article/2007/01/the-hyatt-regency-walkway-collapse/" target="_blank" rel="noopener noreferrer">Read ASCE's engineering ethics discussion ↗</a></p></article></div></div>
+<div class="poe212-banner" style="margin-top:1rem"><strong>Discussion prompt:</strong> If your bridge joint changes from overlapping glued members to a single printed connector, what new load path, material limits and review steps must be reconsidered? Identify changes you would measure or inspect before declaring the alternate connection suitable.</div></section>
+<section class="container lesson-section" id="apply"><div class="poe212-section-header"><div class="poe212-eyebrow">08 / Independent engineering task</div><h2>Three failure cases and three redesign decisions</h2><p>Analyze the chair leg, bending shelf and separated glued corner described in the Failure Detective. Keep these examples distinct from the later full bridge manufacturing project.</p></div>
+<div class="poe212-stepset"><div>1 · Record<small>Write only observable facts</small></div><div>2 · Diagnose<small>State forces and possible mechanism</small></div><div>3 · Redesign<small>Propose one controlled improvement</small></div><div>4 · Validate<small>Specify a safe comparative test</small></div></div>
+<div class="poe212-tablewrap" style="margin-top:1rem"><table class="poe212-table"><thead><tr><th>Scenario</th><th>Observation to begin with</th><th>What you must decide</th></tr></thead><tbody>
+<tr><td><strong>A · Chair leg</strong></td><td>Long slender member bows sideways under axial compression.</td><td>What evidence distinguishes buckling from crushing? Which geometric change targets instability?</td></tr>
+<tr><td><strong>B · Shelf</strong></td><td>A supported shelf deflects excessively under books but shows no visible crack.</td><td>Is this a serviceability problem, a strength failure, or both? How can you test the redesign?</td></tr>
+<tr><td><strong>C · Glued corner</strong></td><td>Two wooden members separate at a glued corner; neither long member visibly snaps.</td><td>What connection hypotheses remain? How will you distinguish adhesive failure from wood splitting?</td></tr></tbody></table></div>
+<div class="poe212-caution" style="margin-top:1rem"><strong>Practical safety:</strong> Do not deliberately break furniture, climb on bridges, or apply unknown loads to classroom structures. Physical tests in Lesson 2.13 require teacher-selected specimens, safety glasses, shields and approved loading apparatus. Keep hands and faces away from loaded members.</div></section>
+<section class="container lesson-section" id="practice"><div class="poe212-section-header"><div class="poe212-eyebrow">09 / Independent checks</div><h2>Try first; reveal answers second</h2><p>Show the observation, force mode, possible mechanism and remaining uncertainty in your response.</p></div><div class="poe212-grid">
+<article class="poe212-panel"><span class="poe212-pill">Check 1</span><h3>Load mode vs. failure</h3><p>A slender vertical member bends sideways when compressed. Name the loading mode and likely failure mechanism.</p><details class="poe212-reveal"><summary>Reveal the explanation</summary><p><strong>Loading mode:</strong> axial compression. <strong>Possible mechanism:</strong> buckling instability. Sideways bowing is evidence, but the precise cause must be tested.</p></details></article>
+<article class="poe212-panel"><span class="poe212-pill">Check 2</span><h3>What failed on the shelf?</h3><p>A shelf bends 14 mm under books, above a stated 6 mm limit, yet returns to its original shape when unloaded. Is this automatically fracture?</p><details class="poe212-reveal"><summary>Reveal the explanation</summary><p>No. It fails the <strong>serviceability deflection limit</strong> but does not show fracture or permanent yielding from that description.</p></details></article>
+<article class="poe212-panel"><span class="poe212-pill">Check 3</span><h3>Joint failure vs. material failure</h3><p>A glued corner opens under load but both long wooden members remain intact. Does this prove the wood itself was weak?</p><details class="poe212-reveal"><summary>Reveal the explanation</summary><p>No. The evidence points first to the <strong>connection/load transfer</strong>. Surface preparation, glue bond, grain direction, geometry and loading must be investigated.</p></details></article>
+<article class="poe212-panel"><span class="poe212-pill">Check 4</span><h3>Buckling length</h3><p>With unchanged E, I and K, a pinned compression member's unsupported length doubles. How does theoretical Euler load change?</p><details class="poe212-reveal"><summary>Reveal the explanation</summary><p>It becomes <strong>one-quarter</strong> of the original value because P<sub>cr</sub> ∝ 1/L².</p></details></article>
+<article class="poe212-panel"><span class="poe212-pill">Check 5</span><h3>Thickness scaling</h3><p>With fixed 8 mm width and weak-axis rectangular bending, the 3 mm thickness doubles to 6 mm. How does I change?</p><details class="poe212-reveal"><summary>Reveal the explanation</summary><p>I = bt³/12, so I becomes <strong>eight times greater</strong>. This predicts eight times the elastic Euler load only if other model assumptions stay valid.</p></details></article>
+<article class="poe212-panel"><span class="poe212-pill">Check 6</span><h3>Loading direction</h3><p>An M3 bolted plywood gusset has a hole very close to the edge. What potential failure mechanisms should you check?</p><details class="poe212-reveal"><summary>Reveal the explanation</summary><p>Potential risks include <strong>wood splitting, edge tear-out, bearing damage, net-section rupture and bolt/connection shear</strong>. A real connection needs geometry, material and load checks.</p></details></article>
+<article class="poe212-panel"><span class="poe212-pill">Check 7</span><h3>Evidence or inference?</h3><p>You see a crack in a beam and write: “The material was too brittle.” Which part is observation and which is inference?</p><details class="poe212-reveal"><summary>Reveal the explanation</summary><p><strong>Observation:</strong> a crack exists. <strong>Inference:</strong> the material was too brittle. Test competing causes including overload, defect, fabrication damage and load direction.</p></details></article>
+<article class="poe212-panel"><span class="poe212-pill">Check 8</span><h3>Design review</h3><p>Why should a structural connection be rechecked when a shop drawing changes the way two members attach?</p><details class="poe212-reveal"><summary>Reveal the explanation</summary><p>Because the <strong>load path, connection forces and possible failure modes</strong> may change even if the overall member layout looks similar.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="resources"><div class="poe212-section-header"><div class="poe212-eyebrow">Reference library</div><h2>Reliable engineering resources</h2><p>These references support the videos and include deeper explanations, equations and documented investigation findings.</p></div><div class="poe212-grid">
+<article class="poe212-panel poe212-resource"><h3>Understanding Buckling</h3><p>Visual reference explaining why slender compression members become unstable and what effective length represents.</p><a href="https://efficientengineer.com/buckling/" target="_blank" rel="noopener noreferrer">Read the Euler buckling explanation ↗</a></article>
+<article class="poe212-panel poe212-resource"><h3>Strength, Ductility and Toughness</h3><p>Review the difference between yield, fracture, ductility and energy absorption from Lesson 2.11.</p><a href="https://efficientengineer.com/material-strength-ductility-toughness/" target="_blank" rel="noopener noreferrer">Review stress–strain behavior ↗</a></article>
+<article class="poe212-panel poe212-resource"><h3>NIST historical investigation</h3><p>Primary engineering investigation of the 1981 Hyatt Regency suspended-walkway connection failures.</p><a href="https://www.nist.gov/el/walkway-collapse-kansas-city-missouri-1981" target="_blank" rel="noopener noreferrer">Read the NIST investigation summary ↗</a></article>
+<article class="poe212-panel poe212-resource"><h3>Materials Testing Lab — Lesson 2.13</h3><p>Next lesson: observe real controlled load, displacement and specimen behavior, comparing failure evidence to the predicted mechanisms.</p><a href="lesson-2-13.html">Open the next lab ↗</a></article>
+</div></section>
+<section class="container lesson-section" id="submit"><div class="poe212-section-header"><div class="poe212-eyebrow">Student submission</div><h2>Exactly what to submit</h2><p>Submit a <strong>POE 2.12 Structural Failure case-study report</strong> or a teacher-assigned engineering notebook equivalent. The central deliverable is a reasoned analysis of <strong>three separate failure scenarios</strong> supported by observations and proposed tests.</p></div><div class="poe212-grid"><article class="poe212-panel"><h3>Required evidence</h3><ul class="poe212-checklist">
+<li>Three labeled case analyses: chair leg, shelf and glued corner.</li>
+<li>For each case, a small annotated sketch with loads, supports, observed damage/deformation and likely load path.</li>
+<li>For each case, the loading mode, hypothesized failure mechanism and at least one plausible alternative explanation.</li>
+<li>For each case, one targeted redesign recommendation and an instructor-safe test or measurement that would evaluate it.</li>
+<li>At least one numerical Euler buckling comparison with E, I, L and K listed, showing units and why the assumption matters.</li>
+<li>A short historical case response explaining how altered hanger-rod connections changed load transfer and what review should have occurred.</li>
+<li>A conclusion separating what was observed, what was calculated and what remains uncertain.</li></ul></article>
+<article class="poe212-panel"><h3>Check before submitting</h3><ul class="poe212-checklist">
+<li>Loading modes are not confused with failure mechanisms.</li>
+<li>The deflection limit is distinguished from material rupture or collapse.</li>
+<li>The buckling calculation is labeled theoretical and not treated as tested safe capacity.</li>
+<li>Proposed fixes address the diagnosed mechanism instead of automatically adding more material everywhere.</li>
+<li>Connection analyses include joining details and a possible load path.</li>
+<li>All three cases, the historical case and any additional assigned questions are included.</li></ul>
+<p><strong>Due date:</strong> Check the <a href="../../../../agenda.html">Daily Agenda</a> and follow your teacher's submission procedure.</p>
+<a class="btn secondary" href="#start">Review lesson ↑</a></article></div></section>
+<nav class="container lesson-bottom-nav" aria-label="Lesson navigation"><a class="btn secondary" href="lesson-2-11.html">← Lesson 2.11: Structural Materials &amp; Properties</a><a class="btn" href="lesson-2-13.html">Next: 2.13 Materials Testing Lab →</a></nav>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+<script>
+(function(){
+"use strict";
+const g=id=>document.getElementById(id);
+const req=["columnLength","columnThickness","columnE","columnLoad","columnSupport","resetColumn","caseTitle","columnPlot"];
+if(req.some(id=>!g(id)))return;
+function text(id,v){g(id).textContent=v;}
+function calculate(){
+ const L=Number(g("columnLength").value),t=Number(g("columnThickness").value);
+ const E=Number(g("columnE").value),P=Number(g("columnLoad").value),K=Number(g("columnSupport").value);
+ const b=8,I=b*t*t*t/12,Le=K*L,Pcr=Math.PI*Math.PI*E*I/(Le*Le),ratio=P/Pcr;
+ text("lengthValue",L+" mm");text("thicknessValue",t.toFixed(1)+" mm");
+ text("modulusValue",E.toLocaleString("en-US")+" N/mm²");text("loadValue",P+" N");
+ text("resultI",I.toFixed(2)+" mm⁴");text("resultPcr",Pcr.toFixed(2)+" N");
+ text("resultRatio",ratio.toFixed(2));text("resultLe",Le.toFixed(1)+" mm");
+ text("appliedColumnLabel","P = "+P+" N");text("columnLengthLabel","L = "+L+" mm");
+ const deflected=ratio>=1,offset=deflected?Math.min(65,15+(ratio-1)*45):0;
+ g("loadedColumn").setAttribute("d","M275 73Q"+(275+offset).toFixed(1)+" 176 275 282");
+ g("loadedColumn").setAttribute("stroke",deflected?"#c07930":"#186887");
+ g("loadRatioBar").style.width=Math.min(100,ratio*100).toFixed(1)+"%";
+ g("loadRatioBar").style.background=deflected?"#c07930":"#0d8797";
+ text("columnInterpretation",deflected?"The applied load meets or exceeds the theoretical elastic Euler threshold under these assumptions. This indicates an idealized instability concern, not a prediction of the actual post-buckling shape or a measured failure point.":"Applied load is below the theoretical elastic Euler threshold for this assumed E and idealized restraint. This does not prove the real column safe from buckling or other failures.");
+ g("columnPlot").setAttribute("aria-label","Ideal column example: length "+L+" millimeters, weak-axis thickness "+t+" millimeters, modulus "+E+" newtons per square millimeter, end factor "+K+", applied force "+P+" newtons, calculated Euler critical load "+Pcr.toFixed(2)+" newtons. Curved appearance is a teaching illustration.");
+}
+["columnLength","columnThickness","columnE","columnLoad"].forEach(id=>g(id).addEventListener("input",calculate));
+g("columnSupport").addEventListener("change",calculate);
+g("resetColumn").addEventListener("click",()=>{g("columnLength").value=180;g("columnThickness").value=3;g("columnE").value=9000;g("columnLoad").value=40;g("columnSupport").value="1";calculate();});
+const cases=[{"type":"Compression member","title":"Case A · Bowed chair leg","obs":"<strong>Observed:</strong> A long narrow wooden chair leg develops sideways bowing under a vertical load. No obvious midspan split appears at first.","known":"The slender leg is under compression; it bends sideways.","unknown":"End-restraint stiffness, wood defects, off-center loading, and whether crushing also occurred.","evidence":"Measure leg length and cross-section; document how load enters the leg and whether lateral movement begins before cracking.","answer":"<strong>Possible mechanism:</strong> column buckling. Redesign by reducing unbraced length, increasing weak-axis I, or adding a secure brace. Test matching specimens with a controlled load and observe onset of lateral motion."},{"type":"Flexural serviceability","title":"Case B · Bending shelf","obs":"<strong>Observed:</strong> A shelf holding books sags below a specified deflection limit. It returns nearly straight after the books are removed; no crack is visible.","known":"Transverse loading created bending and measurable displacement.","unknown":"Material modulus, shelf span and thickness, whether deformation remains after unloading, and true support restraint.","evidence":"Record applied load and measured midspan deflection; repeat with a shorter span or greater section depth under otherwise controlled conditions.","answer":"<strong>Possible mechanism:</strong> excessive elastic bending / serviceability failure, not necessarily rupture. Reduce unsupported span or increase section bending stiffness EI. Compare load–deflection curves to verify improvement."},{"type":"Connection load transfer","title":"Case C · Separated glued corner","obs":"<strong>Observed:</strong> A corner glue joint opens under diagonal loading. Both long wooden members remain substantially intact, but a small area of adhesive and fibers pulls away.","known":"The connection separated; the connected members did not clearly fracture across their full length.","unknown":"Surface preparation, glue coverage, glue type/cure, grain direction, overlap, joint alignment, and whether the wood or adhesive failed first.","evidence":"Inspect both fracture surfaces, overlap area and grain direction; photograph the load path; compare identical samples with controlled joint geometry and cure.","answer":"<strong>Possible mechanism:</strong> adhesive/bond-line failure or local wood-fiber tear-out. Increase the effective bond area, redesign the gusset/load path, improve surface preparation and test controlled joint specimens. For the class bridge, use only approved adhesives and connection methods."}];
+const buttons=Array.from(document.querySelectorAll("[data-case]"));
+function showCase(index){
+ const item=cases[index];if(!item)return;
+ text("caseType",item.type);text("caseTitle",item.title);
+ g("caseObservation").innerHTML=item.obs;
+ text("caseKnown",item.known);text("caseUnknown",item.unknown);
+ text("caseEvidence",item.evidence);g("caseAnswer").innerHTML=item.answer;
+ g("caseReveal").open=false;
+ buttons.forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.case)===index)));
+}
+buttons.forEach(b=>b.addEventListener("click",()=>showCase(Number(b.dataset.case))));
+calculate();showCase(0);
+})();
+</script></body></html>
