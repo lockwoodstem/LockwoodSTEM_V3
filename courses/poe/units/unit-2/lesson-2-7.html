@@ -1,1 +1,402 @@
-<!DOCTYPE html><html lang="en"><head><title>POE Unit 2 Lesson 2.7 | Introduction to Truss Systems | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main"><nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">2.7</li></ol></nav><section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Mechanics Foundations • Lesson 2.7</div><h1>Introduction to Truss Systems</h1><p class="focus-question"><strong>Engineering question:</strong> Why can a frame of slender members support large loads?</p><div class="mission-actions"><a class="btn" href="#learn">Learn</a><a class="btn secondary" href="#practice">Practice</a><a class="btn secondary" href="#apply">Apply</a><a class="btn secondary" href="#submit">Submit</a><a class="btn ghost" href="../unit-2.html">Unit 2</a></div></div><aside class="mission-panel"><span class="tag">Foundational instruction</span><h2>Learn it before the bridge project</h2><p>Use varied engineering examples to master the mechanics, then apply the technique to your final structural design later in the unit.</p></aside></div></section><section class="container lesson-section"><article class="card"><h2>Learning Targets</h2><ul><li>Identify top and bottom chords, diagonals, verticals and nodes</li><li>Explain triangulation</li><li>Recognize axial force assumptions in ideal planar trusses</li></ul></article></section><section class="container lesson-section" id="learn"><div class="section-header"><h2>Learn the Concept</h2></div><article class="card"><ul><li>An ideal pin-jointed truss transmits primarily axial tension or compression</li><li>A triangular arrangement resists geometric distortion better than an unbraced quadrilateral</li><li>Loads and reactions are ideally applied at joints for a simple truss analysis</li></ul><p><strong>During instruction:</strong> Sketch the forces, geometry, variables or joints discussed and record units for every quantity.</p></article></section><section class="container lesson-section" id="practice"><div class="section-header"><h2>Practice Together</h2></div><article class="card"><p>Compare a rectangular four-member frame with the same frame after adding a diagonal. Predict their behavior under a sideways push.</p><p><strong>Show:</strong> a labeled diagram, a mathematical model when relevant, and a final statement interpreting the result.</p></article></section><section class="container lesson-section" id="apply"><div class="section-header"><h2>Apply the Skill</h2></div><article class="card"><p>Label a simple Pratt and Warren truss; trace a load path and identify a joint where forces must balance.</p><p><strong>Check your understanding:</strong> Why does a model with rigid glue joints not behave exactly like an ideal pin-jointed truss?</p></article></section><section class="container lesson-section" id="submit"><article class="card"><h2>Student Evidence</h2><p>Labeled truss vocabulary diagram and load-path explanation. Use your engineering notebook or teacher-provided guided notes; include dimensions, units and a conclusion.</p><p><strong>Looking ahead:</strong> These mechanics techniques will be revisited when students analyze the bridge design in Lessons 2.15–2.20.</p></article></section><nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-6.html">← 2.6 Calculating Moments</a><a class="btn" href="lesson-2-8.html">2.8 Calculating Truss Forces →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer></body></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POE 2.7 | Introduction to Truss Systems — Learning Studio | LockwoodSTEM</title>
+<meta name="description" content="Learn truss anatomy, triangulation, tension and compression, bridge load paths and Pratt, Howe and Warren designs through diagrams, videos, interactive explorers and practice."/>
+<link href="../../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/>
+<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
+<link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/>
+<script defer src="../../../../assets/js/main.js"></script>
+<style id="poe27-learning-studio">
+html{scroll-behavior:smooth}
+.poe27{--ink:#092940;--blue:#0b567e;--aqua:#147f88;--gold:#e2ac37;--edge:#cadbe7}
+.poe27 .poe27-lead{font-size:1.09rem;line-height:1.65;color:#294456}
+.poe27 .poe27-eyebrow{color:#875d0a;font-weight:850;text-transform:uppercase;letter-spacing:.09em;font-size:.82rem}
+.poe27 .poe27-section-header{margin-bottom:1rem}
+.poe27 .poe27-section-header h2{margin:.25rem 0 .3rem}
+.poe27 .poe27-section-header p{margin:.1rem 0;max-width:860px;color:#4b6475}
+.poe27 .poe27-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
+.poe27 .poe27-metric{background:#f1f7fb;border:1px solid #bdd4e4;border-radius:14px;padding:.9rem 1rem}
+.poe27 .poe27-metric strong{display:block;color:#0b4772;font-size:1.05rem}
+.poe27 .poe27-metric span{display:block;font-size:.94rem;color:#40596a;margin-top:.2rem}
+.poe27 .poe27-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe27 .poe27-thirds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.poe27 .poe27-panel{background:#f7fbfd;border:1px solid var(--edge);border-radius:16px;padding:1.1rem 1.15rem}
+.poe27 .poe27-panel h3{color:var(--ink);margin:.15rem 0 .5rem}
+.poe27 .poe27-panel p{margin:.3rem 0 .65rem}
+.poe27 .poe27-panel ul{padding-left:1.2rem;margin:.4rem 0}
+.poe27 .poe27-pill{display:inline-block;border-radius:99px;padding:.2rem .6rem;background:#e3f0f5;color:#0c5672;font-size:.75rem;font-weight:900;letter-spacing:.03em}
+.poe27 .poe27-pill.gold{background:#fbefcf;color:#7d540d}
+.poe27 .poe27-mini{font-size:.9rem;color:#536b79}
+.poe27 .poe27-formula{font-size:clamp(1.05rem,1.6vw,1.28rem);letter-spacing:.01em;font-weight:850;color:#0b4163;background:#edf6fb;border-left:5px solid #147a9e;border-radius:10px;padding:.8rem 1rem;margin:.8rem 0;overflow-wrap:anywhere}
+.poe27 .poe27-graphic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe27 .poe27-large-svg{max-width:870px}
+.poe27 svg .poe27-axis{fill:none;stroke:#455f73;stroke-width:1.8}
+.poe27 svg .poe27-guide{stroke:#4c879e;stroke-dasharray:5 5;stroke-width:1.35;fill:none}
+.poe27 svg .poe27-dim{fill:none;stroke:#2b648b;stroke-width:1.15}
+.poe27 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#17384e}
+.poe27 svg text.poe27-annotation{font-size:13px;font-weight:750}
+.poe27 svg text.poe27-small{font-size:13px}
+.poe27 svg text.poe27-tiny{font-size:11px}
+.poe27 svg text.poe27-strong{font-weight:800}
+.poe27 .poe27-lesson-steps{list-style:none!important;margin:0;padding:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe27 .poe27-lesson-steps li{border-left:4px solid #167a94;padding:.7rem .75rem;border-radius:9px;background:#f2f8fc;font-weight:750;font-size:.92rem}
+.poe27 .poe27-lesson-steps li span{display:block;color:#527283;font-size:.78rem;font-weight:700}
+.poe27 .poe27-video{background:#f7fbff;border:1px solid #cfdfeb;border-radius:16px;overflow:hidden}
+.poe27 .poe27-video-copy{padding:1rem}
+.poe27 .poe27-video-copy h3{margin:.25rem 0}
+.poe27 .poe27-frame{aspect-ratio:16/9;background:#071e35;position:relative}
+.poe27 .poe27-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe27 .poe27-video a{font-weight:800}
+.poe27 .poe27-video p{margin:.4rem 0}
+.poe27 .poe27-tablewrap{overflow-x:auto}
+.poe27 .poe27-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.poe27 .poe27-table td,.poe27 .poe27-table th{border:1px solid #c8dbe8;text-align:left;padding:.55rem .7rem}
+.poe27 .poe27-table th{background:#eaf4fb;color:#0c3554}
+.poe27 .poe27-table .poe27-total{background:#f1f8e8;font-weight:850}
+.poe27 .poe27-steps{padding-left:1.55rem}
+.poe27 .poe27-steps li{padding-bottom:.45rem}
+.poe27 .poe27-caution{background:#fff9e9;border-left:5px solid #d59b22;padding:.8rem 1rem;border-radius:10px}
+.poe27 details.poe27-reveal{border:1px solid #b9d3e4;background:#f7fbff;border-radius:12px;padding:.8rem 1rem;margin:.65rem 0}
+.poe27 details.poe27-reveal summary{color:#0b4c73;cursor:pointer;font-weight:850}
+.poe27 details.poe27-reveal[open]{border-color:#0d8b9a}
+.poe27 details.poe27-reveal p{margin:.7rem 0 .15rem}
+.poe27 .poe27-explorer{background:#f2f9fc;border:1px solid #9dc6db;border-radius:16px;padding:1rem}
+.poe27 .poe27-explorer label{font-weight:800;color:#0b4163;display:block;margin:.5rem 0}
+.poe27 .poe27-explorer input[type=range]{width:min(100%,440px);accent-color:#0a7991;cursor:pointer}
+.poe27 .poe27-output{font-size:1.2rem;font-weight:850;color:#0a506d;background:#fff;border:1px solid #b9d5e5;padding:.7rem;border-radius:10px}
+.poe27 .poe27-resources a{display:block;margin:.4rem 0;font-weight:800;overflow-wrap:anywhere}
+.poe27 .poe27-checklist{list-style:none!important;padding:0!important}
+.poe27 .poe27-checklist li{padding:.45rem 0 .45rem 1.7rem;position:relative}
+.poe27 .poe27-checklist li::before{content:"□";position:absolute;left:0;top:.32rem;font-size:1.3rem;color:#0b567e}
+.poe27 a:focus-visible,.poe27 input:focus-visible,.poe27 summary:focus-visible{outline:3px solid #ca8b20;outline-offset:3px}
+@media(max-width:980px){.poe27 .poe27-thirds{grid-template-columns:1fr 1fr}.poe27 .poe27-lesson-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.poe27 .poe27-grid,.poe27 .poe27-thirds,.poe27 .poe27-overview{grid-template-columns:1fr}}
+@media print{.poe27 .poe27-video,.poe27 #explore,.poe27 .mission-actions{display:none!important}.poe27 details.poe27-reveal:not([open]){display:none}}
+
+.poe27 .poe27-illustration{display:block;width:100%;height:auto;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe27 .poe27-twin{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe27 .poe27-twin>*{min-width:0}
+.poe27 svg .beam{stroke:#1b5a7b;fill:none;stroke-width:8;stroke-linecap:round}
+.poe27 svg .beam-original{stroke:#c6d5df;stroke-width:4;stroke-dasharray:8 6;fill:none}
+.poe27 svg .beam-deflected{stroke:#008d94;stroke-width:6;fill:none;stroke-linecap:round}
+.poe27 svg .poe27-support{fill:#d6e9f5;stroke:#123f5b;stroke-width:1.8}
+.poe27 svg .poe27-force{stroke:#d97726;stroke-width:3;fill:none}
+.poe27 .poe27-param{background:#f6fafc;border-radius:12px;padding:.65rem .8rem;margin:.6rem 0}
+.poe27 .poe27-param label{display:flex;gap:.7rem;align-items:center;justify-content:space-between}
+.poe27 .poe27-param label strong{white-space:nowrap;font-variant-numeric:tabular-nums}
+.poe27 .poe27-param input[type="range"]{width:100%;accent-color:#0a7991}
+.poe27 .poe27-data{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:1rem 0}
+.poe27 .poe27-data div{border:1px solid #cadee8;border-radius:12px;padding:.6rem .8rem;background:#fff}
+.poe27 .poe27-data strong{display:block;font-size:1.15rem;color:#0c4966;font-variant-numeric:tabular-nums}
+.poe27 .poe27-data span{font-size:.82rem;color:#496475}
+.poe27 .poe27-variable{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe27 .poe27-variable div{border:1px solid #cadde8;border-radius:12px;background:#fff;padding:.75rem}
+.poe27 .poe27-variable b{display:block;font-size:1.12rem;color:#0b5779}
+.poe27 .poe27-progress-card{padding:1rem;border:1px solid #bfdae6;border-radius:12px;background:#f5fafc}
+.poe27 .poe27-progress-card strong{color:#0c4966}
+.poe27 .poe27-solution{font-variant-numeric:tabular-nums}
+.poe27 .poe27-resource-link{display:inline-block;margin-top:.3rem;font-weight:800}
+.poe27 .poe27-print{float:right;font-size:.85rem}
+@media(max-width:760px){.poe27 .poe27-twin,.poe27 .poe27-variable{grid-template-columns:1fr}.poe27 .poe27-print{float:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.poe27 .poe27-schematic{width:100%;display:block;max-width:900px;height:auto;background:#fff;border:1px solid #d2e4ec;border-radius:12px;margin:.75rem auto}
+.poe27 svg .poe27-head{font-size:15px;font-weight:850;fill:#113d57}
+.poe27 svg .poe27-note{font-size:13px;font-weight:760;fill:#183d53}
+.poe27 svg .poe27-caption{font-size:11px;fill:#405c6e}
+.poe27 .poe27-force-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-bottom:1rem}
+.poe27 .poe27-force-grid>div{background:#f5fafc;border:1px solid #cfdfeb;border-radius:11px;padding:.85rem}
+.poe27 .poe27-force-grid strong{display:block;color:#0d5472;margin-bottom:.2rem}
+.poe27 .poe27-force-grid span{font-size:.94rem;color:#3a5263}
+.poe27 .poe27-switches{display:flex;gap:.55rem;flex-wrap:wrap;margin:.75rem 0}
+.poe27 .poe27-switches button{border:1px solid #7ba1b9;background:#fff;color:#104c6c;border-radius:10px;padding:.65rem .85rem;font-weight:780;cursor:pointer}
+.poe27 .poe27-switches button[aria-pressed="true"]{background:#105a7b;color:white;border-color:#105a7b}
+.poe27 .poe27-switches button:hover{border-color:#147a9e}
+.poe27 .poe27-builder-note{background:#f2f9fc;border:1px solid #b7d4e5;border-radius:12px;padding:1rem;min-height:100px}
+.poe27 .poe27-builder-note h3{margin:0 0 .25rem}
+.poe27 .poe27-builder-note p{margin:.3rem 0}
+.poe27 .poe27-explorer input[type=range]{width:min(440px,100%);accent-color:#147a9e}
+.poe27 .poe27-checklist{list-style:none!important;margin:.4rem 0;padding:0!important}
+.poe27 .poe27-checklist li{position:relative;padding:.5rem 0 .5rem 1.6rem}
+.poe27 .poe27-checklist li:before{content:"□";position:absolute;left:0;top:.39rem;color:#147a9e;font-size:1.25rem}
+@media(max-width:880px){.poe27 .poe27-force-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.poe27 .poe27-force-grid{grid-template-columns:1fr}}
+
+.poe27 .poe27-schematic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d5e3ec;border-radius:14px;margin:.75rem auto}
+.poe27 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25465e}
+.poe27 svg .poe27-small{font-size:12px}
+.poe27 svg .poe27-label{font-size:14px;font-weight:800}
+.poe27 .poe27-key{display:flex;flex-wrap:wrap;gap:.8rem;font-weight:700;color:#446479;font-size:.9rem}
+.poe27 .poe27-key b{display:inline-block;width:15px;height:4px;vertical-align:middle;margin-right:.35rem}
+.poe27 .poe27-concept{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe27 .poe27-concept>div{border:1px solid #c1d7e4;background:#f5fbfd;border-radius:12px;padding:.85rem 1rem}
+.poe27 .poe27-concept strong{display:block;color:#0a5278;margin-bottom:.35rem}
+.poe27 .poe27-flow-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe27 .poe27-flow-list>div{background:#eef7fa;border-left:4px solid #147a9e;padding:.75rem;border-radius:9px;font-weight:750}
+.poe27 .poe27-flow-list small{display:block;color:#44677a}
+.poe27 .poe27-assumption{background:#fff8e8;border-left:5px solid #c89025;border-radius:10px;padding:.75rem 1rem}
+.poe27 .poe27-notation{background:#f1f8fc;border:1px solid #b8d3e6;border-radius:10px;padding:.75rem 1rem}
+.poe27 .poe27-formula-equation{background:#ecf7fb;border-left:5px solid #0c7994;padding:.8rem 1.1rem;border-radius:10px;font-size:1.22rem;font-weight:850;color:#06466a;margin:.65rem 0;overflow-wrap:anywhere}
+.poe27 .poe27-tablewrap{max-width:100%;overflow-x:auto}
+.poe27 .poe27-table{width:100%;border-collapse:collapse}
+.poe27 .poe27-table th,.poe27 .poe27-table td{border:1px solid #c5d9e6;padding:.55rem .65rem;text-align:left}
+.poe27 .poe27-table th{background:#eaf4fb;color:#0b496d}
+.poe27 .poe27-table td{font-variant-numeric:tabular-nums}
+.poe27 .poe27-control{padding:.8rem;background:#f8fbfd;border:1px solid #c5dce9;border-radius:12px;margin-bottom:.65rem}
+.poe27 .poe27-control label{display:flex;align-items:center;justify-content:space-between;gap:.6rem;font-weight:790;color:#0a5377;margin:0 0 .4rem}
+.poe27 .poe27-control label output{font-variant-numeric:tabular-nums}
+.poe27 .poe27-control input[type=range]{width:100%;accent-color:#0b7897}
+.poe27 .poe27-control-check{display:flex;align-items:center;gap:.6rem;color:#0a4b6a;font-weight:780;margin:.65rem 0}
+.poe27 .poe27-control-check input{width:20px;height:20px;accent-color:#0b7897}
+.poe27 .poe27-answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe27 .poe27-answers>div{background:#fff;border:1px solid #b9d7e4;border-radius:12px;padding:.7rem}
+.poe27 .poe27-answers strong{display:block;color:#0a496c;font-size:1.13rem;font-variant-numeric:tabular-nums}
+.poe27 .poe27-answers span{color:#4c6477;font-size:.88rem}
+.poe27 .poe27-simulator{background:#eef7fa;border:1px solid #9abfd2;border-radius:17px;padding:1.1rem}
+.poe27 .poe27-simulator .poe27-grid>*{min-width:0}
+.poe27 .poe27-teacher-note{color:#466478;font-size:.91rem}
+.poe27 .poe27-checklist{list-style:none!important;padding:0!important}
+.poe27 .poe27-checklist li{padding:.48rem .2rem .48rem 1.6rem;position:relative}
+.poe27 .poe27-checklist li:before{content:"□";position:absolute;left:0;top:.32rem;color:#0b7d95;font-size:1.2rem}
+.poe27 .poe27-resource a{display:block;font-weight:800;margin:.4rem 0}
+.poe27 .poe27-ratio{color:#144b65;font-weight:800}
+@media(max-width:960px){.poe27 .poe27-concept{grid-template-columns:1fr 1fr}.poe27 .poe27-flow-list{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.poe27 .poe27-concept,.poe27 .poe27-answers,.poe27 .poe27-flow-list{grid-template-columns:1fr}}
+
+.poe27 .poe27-schematic{display:block;width:100%;max-width:950px;height:auto;border:1px solid #c9dfec;background:#fff;border-radius:14px;margin:.85rem auto}
+.poe27 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25485e}
+.poe27 svg .poe27-heading{font-weight:850;font-size:15px}
+.poe27 svg .poe27-label{font-weight:760;font-size:14px}
+.poe27 svg .poe27-small{font-size:12px}
+.poe27 .poe27-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe27 .poe27-flow>div{border-left:4px solid #147a9e;background:#f1f8fc;border-radius:10px;padding:.75rem;font-weight:750;color:#13445f}
+.poe27 .poe27-flow small{display:block;font-size:.8rem;color:#587084;font-weight:650}
+.poe27 .poe27-definitions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe27 .poe27-definitions>div{padding:.9rem;background:#f1f8fb;border-radius:12px;border:1px solid #c5dce8}
+.poe27 .poe27-definitions strong{display:block;color:#0a5574}
+.poe27 .poe27-formula-equation{margin:.7rem 0;padding:.8rem 1rem;background:#edf7fb;border-left:5px solid #0f7c91;color:#104969;border-radius:12px;font-weight:850;font-size:1.14rem;overflow-wrap:anywhere}
+.poe27 .poe27-alert{background:#fff7e7;padding:.75rem 1rem;border-left:5px solid #c59022;border-radius:11px}
+.poe27 .poe27-controls{background:#f0f8fb;border:1px solid #abd0dd;border-radius:16px;padding:1rem}
+.poe27 .poe27-control{border:1px solid #c3d9e3;border-radius:10px;padding:.8rem;background:#fff;margin:.65rem 0}
+.poe27 .poe27-control label{display:flex;justify-content:space-between;gap:.7rem;color:#144d6b;font-weight:780}
+.poe27 .poe27-control output{font-variant-numeric:tabular-nums}
+.poe27 .poe27-control input[type="range"]{accent-color:#127894;width:100%}
+.poe27 .poe27-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe27 .poe27-results>div{background:#fff;padding:.75rem;border:1px solid #bfd9e6;border-radius:10px}
+.poe27 .poe27-results strong{font-size:1.15rem;color:#0b506d;display:block;font-variant-numeric:tabular-nums}
+.poe27 .poe27-results span{display:block;font-size:.86rem;color:#4d6676}
+.poe27 .poe27-moment-sign{margin:.55rem 0;font-weight:800;color:#0e5371}
+.poe27 .poe27-checklist{list-style:none!important;padding:0!important}
+.poe27 .poe27-checklist li{position:relative;padding:.4rem .2rem .4rem 1.55rem}
+.poe27 .poe27-checklist li::before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.2rem;color:#167c9a}
+.poe27 .poe27-resource a{font-weight:850;display:block;margin:.6rem 0}
+.poe27 .poe27-tablewrap{overflow-x:auto}
+.poe27 .poe27-table{border-collapse:collapse;width:100%;font-size:.96rem}
+.poe27 .poe27-table td,.poe27 .poe27-table th{border:1px solid #c8dbe8;padding:.6rem;text-align:left;vertical-align:top}
+.poe27 .poe27-table th{background:#e7f2f9;color:#0a4360}
+@media(max-width:940px){.poe27 .poe27-definitions,.poe27 .poe27-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.poe27 .poe27-definitions,.poe27 .poe27-results,.poe27 .poe27-flow{grid-template-columns:1fr}}
+
+.poe27 .poe27-svg{display:block;width:100%;height:auto;background:#fff;border:1px solid #d3e1eb;border-radius:14px;margin:.7rem auto}
+.poe27 .poe27-svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#27485e}
+.poe27 .poe27-svg .poe27-small{font-size:12px}
+.poe27 .poe27-svg .poe27-label{font-size:14px;font-weight:800}
+.poe27 .poe27-svg .poe27-heading{font-size:15px;font-weight:850}
+.poe27 .poe27-svg .poe27-member{stroke:#275773;stroke-width:9;stroke-linecap:round;transition:stroke .12s ease,opacity .12s ease}
+.poe27 .poe27-svg .poe27-accent{stroke:#0f897d}
+.poe27 #memberExplorerGraphic .poe27-member{stroke-width:9}
+.poe27 .poe27-buttons{display:flex;gap:.45rem;flex-wrap:wrap;margin:.75rem 0}
+.poe27 .poe27-buttons button{background:#fff;border:1px solid #9ebccd;border-radius:9px;padding:.6rem .75rem;color:#124c67;font-size:.91rem;font-weight:760;cursor:pointer}
+.poe27 .poe27-buttons button[aria-pressed="true"]{background:#105676;border-color:#105676;color:#fff}
+.poe27 .poe27-buttons button:hover{border-color:#0a7893}
+.poe27 .poe27-interactive{border:1px solid #b2d1df;background:#f2f9fc;padding:1rem;border-radius:16px}
+.poe27 .poe27-interactive h3{margin-top:0}
+.poe27 .poe27-guide-panel{padding:.85rem 1rem;background:#fff;border:1px solid #c8deea;border-radius:12px;min-height:4.5rem}
+.poe27 .poe27-guide-panel strong{display:block;color:#0d5373;margin-bottom:.25rem}
+.poe27 .poe27-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe27 .poe27-flow>div{padding:.75rem;border-radius:10px;background:#eaf5fa;border-left:4px solid #0e829c;font-weight:750}
+.poe27 .poe27-flow small{display:block;font-weight:600;color:#42667b}
+.poe27 .poe27-checklist{list-style:none!important;padding:0!important}
+.poe27 .poe27-checklist li{padding:.42rem .25rem .42rem 1.6rem;position:relative}
+.poe27 .poe27-checklist li:before{content:"□";position:absolute;left:0;top:.34rem;color:#118199;font-size:1.25rem}
+.poe27 .poe27-warning{border-left:5px solid #bc861f;background:#fff8e9;border-radius:11px;padding:.8rem 1rem}
+.poe27 .poe27-two-force{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.poe27 .poe27-two-force>div{background:#f4f9fc;border:1px solid #d0e1ea;border-radius:12px;padding:.9rem}
+.poe27 .poe27-two-force h3{margin:.1rem 0 .4rem}
+.poe27 .poe27-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.poe27 .poe27-stats>div{background:#fff;border:1px solid #c7ddea;padding:.75rem;border-radius:12px}
+.poe27 .poe27-stats strong{font-size:1.12rem;display:block;color:#0b5879}
+.poe27 .poe27-stats span{font-size:.85rem;color:#516779}
+.poe27 .poe27-resource a{display:block;font-weight:800;margin:.35rem 0}
+.poe27 .poe27-mini-note{background:#ecf7fa;border:1px solid #a3ceda;border-radius:12px;padding:.8rem 1rem}
+.poe27 .poe27-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.poe27 .poe27-tags span{font-size:.85rem;font-weight:850;color:#0b577a;background:#dceef5;padding:.25rem .6rem;border-radius:99px}
+.poe27 button:focus-visible,.poe27 a:focus-visible,.poe27 summary:focus-visible{outline:3px solid #c58c26;outline-offset:3px}
+@media(max-width:920px){.poe27 .poe27-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:670px){.poe27 .poe27-flow,.poe27 .poe27-two-force,.poe27 .poe27-stats{grid-template-columns:1fr}.poe27 .poe27-buttons button{flex:1 1 auto}}
+@media(prefers-reduced-motion:reduce){.poe27 .poe27-svg .poe27-member{transition:none}}
+</style></head>
+<body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container nav"><a class="brand" aria-label="LockwoodSTEM home" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
+<main class="poe27" id="main">
+<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.7</li></ol></nav>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img class="lesson-course-icon" src="../../../../assets/img/course-icons/poe-course-icon.png" alt="POE course icon"/><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.7</div><h1>Introduction to Truss Systems</h1><p class="focus-question"><strong>Engineering question:</strong> How do triangles, joints and member arrangements help a bridge support loads with less material?</p>
+<div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#watch">Watch Videos</a><a class="btn secondary" href="#components">Identify Members</a><a class="btn secondary" href="#trusstypes">Explore Designs</a><a class="btn secondary" href="#practice">Self-Check</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
+<aside class="mission-panel"><span class="tag">Learn • Watch • Explore • Sketch</span><h2>Discover why triangles matter.</h2><p>This lesson focuses on <strong>what trusses are, how they are arranged, and how they carry loads</strong>. Detailed member-force calculations begin in Lesson 2.8.</p><p><strong>Materials:</strong> pencil, ruler, engineering notebook or 2.7 guided practice materials.</p></aside></div></section>
+<section class="container lesson-section" id="start"><div class="poe27-section-header"><div class="poe27-eyebrow">Learning pathway</div><h2>What you'll be able to do</h2><p>Work through the explanation, diagrams, videos, and guided practice in order. Answers are hidden until you choose to reveal them.</p></div>
+<div class="poe27-overview"><div class="poe27-metric"><strong>01 · Identify</strong><span>Find chords, web members, joints and supports in a truss.</span></div><div class="poe27-metric"><strong>02 · Explain</strong><span>Compare triangulated and unbraced frames; describe tension and compression.</span></div><div class="poe27-metric"><strong>03 · Compare</strong><span>Recognize Pratt, Howe and Warren arrangements and trace conceptual load paths.</span></div></div>
+<div class="poe27-panel" style="margin-top:1rem"><h3>Suggested 45–50 minute learning sequence</h3><div class="poe27-flow"><div>Predict &amp; observe<small>5 minutes</small></div><div>Read &amp; watch<small>10–12 minutes</small></div><div>Explore parts &amp; types<small>15 minutes</small></div><div>Sketch &amp; explain<small>15–18 minutes</small></div></div></div></section>
+<section class="container lesson-section" id="learn"><div class="poe27-section-header"><div class="poe27-eyebrow">01 / Understand the engineering system</div><h2>What makes a structure a truss?</h2><p>A <strong>truss</strong> is a connected system of slender members arranged in a rigid framework, often forming triangles. Trusses appear in bridges, rooftops, towers, cranes and aerospace structures.</p></div>
+<div class="poe27-grid"><article class="poe27-panel"><span class="poe27-pill">Ideal analysis model</span><h3>Members meet at joints</h3><p>In a <strong>simple planar truss model</strong>, straight members connect through frictionless pin joints, loads and reactions act at the joints, and each member is a <strong>two-force member</strong>.</p><p>For this model, members transmit axial tension or compression rather than significant bending moments.</p></article>
+<article class="poe27-panel"><span class="poe27-pill gold">Real construction</span><h3>Connections are not perfectly ideal</h3><p>Real bridges often use bolts, gusset plates or welds, and their members also have self-weight. Loads from a deck are transferred through its floor system to the truss joints. Real joints and eccentric forces can also introduce bending.</p><p class="poe27-warning"><strong>Engineering distinction:</strong> An ideal pin-jointed truss is an approximation—not a promise that every real member carries only pure axial force.</p></article></div>
+<div class="poe27-panel" style="margin-top:1rem"><h3>Two important forces inside a member</h3><svg id="triangleDiagram" class="poe27-svg" viewBox="0 0 760 320" role="img" aria-label="Three joint simple truss with pin at A and roller at B, bottom member AB in tension, diagonal members AC and BC in compression under a downward load at apex C. This classification applies to the drawn ideal symmetric triangle under vertical apex load.">
+<defs><marker id="triD" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bf6c2d"/></marker><marker id="triR" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0e8392"/></marker></defs>
+<path d="M122 248L383 64L644 248" stroke="#c57537" stroke-width="12" fill="none" stroke-linecap="round"/>
+<path d="M122 248H644" stroke="#148577" stroke-width="12" stroke-linecap="round"/>
+<path d="M383 10V50" stroke="#bf6c2d" stroke-width="4" marker-end="url(#triD)"/>
+<path d="M122 297V261M644 297V261" stroke="#0e8392" stroke-width="4" marker-end="url(#triR)"/>
+<path d="M122 257L98 291H146Z" fill="#dae9f2" stroke="#274e69" stroke-width="2"/>
+<circle cx="644" cy="278" r="11" fill="#dae9f2" stroke="#274e69" stroke-width="2"/>
+<path d="M619 290H668" stroke="#425d70" stroke-width="2"/>
+<circle cx="122" cy="248" r="9" fill="#112f4a"/><circle cx="383" cy="64" r="9" fill="#112f4a"/><circle cx="644" cy="248" r="9" fill="#112f4a"/>
+<text x="104" y="236" class="poe27-label">A</text><text x="393" y="61" class="poe27-label">C</text><text x="650" y="235" class="poe27-label">B</text>
+<text x="407" y="25" class="poe27-label">Applied load P</text>
+<text x="160" y="312" class="poe27-small">Upward reaction</text><text x="555" y="312" class="poe27-small">Upward reaction</text>
+<text x="183" y="124" class="poe27-label" fill="#9a5925">Compression (AC)</text>
+<text x="464" y="124" class="poe27-label" fill="#9a5925">Compression (BC)</text>
+<text x="327" y="234" class="poe27-label" fill="#127f70">Tension (AB)</text></svg>
+<div class="poe27-two-force"><div><h3>Tension — pulled apart</h3><p>An axial force that <strong>stretches</strong> a member. Picture a rope being pulled from both ends. In the particular symmetric triangle above, the bottom tie <strong>AB</strong> is in tension.</p></div><div><h3>Compression — pushed together</h3><p>An axial force that <strong>shortens</strong> a member. Picture pushing both ends of a straw together. In the drawn ideal triangle under apex load, <strong>AC and BC</strong> are in compression.</p></div></div>
+<p class="poe27-mini"><strong>Important:</strong> You cannot determine whether every diagonal is in tension or compression merely from its angle or the truss's name. The answer depends on the loads, supports and member arrangement. The labels above apply only to this specific example.</p></div></section>
+<section class="container lesson-section" id="triangulation"><div class="poe27-section-header"><div class="poe27-eyebrow">02 / Why triangles?</div><h2>Triangles resist changes in shape</h2><p>With ideal pinned joints and fixed-length bars, an unbraced four-sided frame can change its angles without stretching its bars. A triangle cannot change shape without changing a bar length.</p></div>
+<div class="poe27-interactive"><div class="poe27-buttons" role="group" aria-label="Frame stability modes"><button type="button" data-frame="square" aria-pressed="true">Compare standard frames</button><button type="button" data-frame="shear" aria-pressed="false">Push unbraced frame sideways</button></div>
+<svg id="braceGraphic" class="poe27-svg" viewBox="0 0 760 320" role="img" aria-label="Four hinged bars form a quadrilateral that may shear into a parallelogram. Adding one diagonal subdivides it into triangles and restrains the in-plane mechanism.">
+<text x="183" y="27" text-anchor="middle" class="poe27-heading">FOUR BARS · NO DIAGONAL</text>
+<text x="554" y="27" text-anchor="middle" class="poe27-heading">FOUR BARS + DIAGONAL</text>
+<g id="unbracedShape"><path id="squareOuter" d="M100 82L253 82L253 224L100 224Z" stroke="#1b5472" stroke-width="9" fill="#eaf4fb" fill-opacity=".5" stroke-linejoin="round"/><circle cx="100" cy="82" r="7" fill="#d28a32"/><circle cx="253" cy="82" r="7" fill="#d28a32"/><circle cx="253" cy="224" r="7" fill="#d28a32"/><circle cx="100" cy="224" r="7" fill="#d28a32"/></g>
+<g><path d="M475 82L628 82L628 224L475 224Z" stroke="#1b5472" stroke-width="9" fill="#eaf4fb" fill-opacity=".5" stroke-linejoin="round"/><line x1="475" y1="224" x2="628" y2="82" stroke="#1b8c84" stroke-width="9"/><circle cx="475" cy="82" r="7" fill="#d28a32"/><circle cx="628" cy="82" r="7" fill="#d28a32"/><circle cx="628" cy="224" r="7" fill="#d28a32"/><circle cx="475" cy="224" r="7" fill="#d28a32"/></g>
+<text id="braceCaption" x="177" y="270" class="poe27-small" text-anchor="middle">Can deform by rotating at the pins</text>
+<text x="554" y="270" class="poe27-small" text-anchor="middle">Triangulated · in-plane geometry restrained</text>
+<text x="367" y="302" class="poe27-small" text-anchor="middle">Schematic only: not a numerical deformation or strength simulation.</text></svg>
+<div id="braceExplanation" class="poe27-guide-panel" aria-live="polite"><strong>Unbraced vs. braced</strong>A four-bar quadrilateral can distort through joint rotation. One diagonal divides it into two triangles and eliminates this ideal in-plane mechanism.</div>
+</div>
+<div class="poe27-grid" style="margin-top:1rem"><article class="poe27-panel"><h3>Why diagonals help</h3><p>A diagonal brace gives a rectangular panel two triangles and restricts sideways racking. On an ideal truss, this can maintain the geometry without requiring a joint to resist bending.</p><p><strong>Question:</strong> Would a diagonal be equally effective if it were missing its connection at one endpoint? Why?</p><details class="poe27-reveal"><summary>Reveal answer</summary><p>No. The brace must transfer force through its connections. Without a complete load path to the joints, the diagonal cannot restrain the frame as intended.</p></details></article>
+<article class="poe27-panel"><h3>Important limitation</h3><p>Triangulation is a <strong>geometric stability concept</strong>, not a complete structural safety check. Even a correctly triangulated truss can fail from member buckling, yielding, broken joints, poor lateral bracing or overload.</p><p class="poe27-warning"><strong>Think beyond the drawing:</strong> A flat truss can be rigid in its own plane but still need out-of-plane bracing to prevent sideways buckling.</p></article></div></section>
+<section class="container lesson-section" id="components"><div class="poe27-section-header"><div class="poe27-eyebrow">03 / Interactive truss anatomy</div><h2>Identify every structural component</h2><p>Select a member category to highlight it. This eight-joint example is a simplified <strong>pin-and-roller</strong> truss, not a full bridge design.</p></div>
+<div class="poe27-interactive"><div class="poe27-buttons" role="group" aria-label="Highlight member types"><button data-highlight="all" aria-pressed="true" type="button">All members</button><button data-highlight="top" aria-pressed="false" type="button">Top chord</button><button data-highlight="bottom" aria-pressed="false" type="button">Bottom chord</button><button data-highlight="vertical" aria-pressed="false" type="button">Verticals</button><button data-highlight="diagonal" aria-pressed="false" type="button">Diagonals</button><button data-highlight="joints" aria-pressed="false" type="button">Joints</button></div>
+<svg id="memberExplorerGraphic" class="poe27-svg" viewBox="0 0 760 320" role="img" aria-label="Interactive labelled roof-like truss with eight joints A through H. Four bottom chord members, two top chord members, three vertical members, and four diagonal members. Highlight controls identify each type.">
+<defs><marker id="exLoad" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c07431"/></marker><marker id="exUp" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#15888c"/></marker></defs>
+<text x="332" y="33" class="poe27-heading" text-anchor="middle">SELECT A PART TO HIGHLIGHT</text>
+<line class="poe27-member" data-part="bottom" data-member="AB" x1="88" y1="255" x2="210" y2="255"><title>Member AB, bottom</title></line><line class="poe27-member" data-part="bottom" data-member="BC" x1="210" y1="255" x2="332" y2="255"><title>Member BC, bottom</title></line><line class="poe27-member" data-part="bottom" data-member="CD" x1="332" y1="255" x2="454" y2="255"><title>Member CD, bottom</title></line><line class="poe27-member" data-part="bottom" data-member="DE" x1="454" y1="255" x2="576" y2="255"><title>Member DE, bottom</title></line><line class="poe27-member" data-part="top" data-member="FG" x1="210" y1="102" x2="332" y2="102"><title>Member FG, top</title></line><line class="poe27-member" data-part="top" data-member="GH" x1="332" y1="102" x2="454" y2="102"><title>Member GH, top</title></line><line class="poe27-member" data-part="vertical" data-member="BF" x1="210" y1="255" x2="210" y2="102"><title>Member BF, vertical</title></line><line class="poe27-member" data-part="vertical" data-member="CG" x1="332" y1="255" x2="332" y2="102"><title>Member CG, vertical</title></line><line class="poe27-member" data-part="vertical" data-member="DH" x1="454" y1="255" x2="454" y2="102"><title>Member DH, vertical</title></line><line class="poe27-member" data-part="diagonal" data-member="AF" x1="88" y1="255" x2="210" y2="102"><title>Member AF, diagonal</title></line><line class="poe27-member" data-part="diagonal" data-member="FC" x1="210" y1="102" x2="332" y2="255"><title>Member FC, diagonal</title></line><line class="poe27-member" data-part="diagonal" data-member="CH" x1="332" y1="255" x2="454" y2="102"><title>Member CH, diagonal</title></line><line class="poe27-member" data-part="diagonal" data-member="HE" x1="454" y1="102" x2="576" y2="255"><title>Member HE, diagonal</title></line><g data-joint="A" class="poe27-joint"><circle cx="88" cy="255" r="8" fill="#0e496c" stroke="#fff" stroke-width="2"/><text x="82" y="284" class="poe27-label">A</text></g><g data-joint="B" class="poe27-joint"><circle cx="210" cy="255" r="8" fill="#0e496c" stroke="#fff" stroke-width="2"/><text x="204" y="284" class="poe27-label">B</text></g><g data-joint="C" class="poe27-joint"><circle cx="332" cy="255" r="8" fill="#0e496c" stroke="#fff" stroke-width="2"/><text x="326" y="284" class="poe27-label">C</text></g><g data-joint="D" class="poe27-joint"><circle cx="454" cy="255" r="8" fill="#0e496c" stroke="#fff" stroke-width="2"/><text x="448" y="284" class="poe27-label">D</text></g><g data-joint="E" class="poe27-joint"><circle cx="576" cy="255" r="8" fill="#0e496c" stroke="#fff" stroke-width="2"/><text x="570" y="284" class="poe27-label">E</text></g><g data-joint="F" class="poe27-joint"><circle cx="210" cy="102" r="8" fill="#0e496c" stroke="#fff" stroke-width="2"/><text x="204" y="86" class="poe27-label">F</text></g><g data-joint="G" class="poe27-joint"><circle cx="332" cy="102" r="8" fill="#0e496c" stroke="#fff" stroke-width="2"/><text x="326" y="86" class="poe27-label">G</text></g><g data-joint="H" class="poe27-joint"><circle cx="454" cy="102" r="8" fill="#0e496c" stroke="#fff" stroke-width="2"/><text x="448" y="86" class="poe27-label">H</text></g>
+<g class="poe27-external"><path d="M332 37V86" stroke="#c07431" stroke-width="3" marker-end="url(#exLoad)"/><path d="M88 305V267M576 305V267" stroke="#15888c" stroke-width="3" marker-end="url(#exUp)"/><path d="M88 265L70 293H106Z" fill="#d5e8f2" stroke="#355b75"/><circle cx="576" cy="281" r="8" fill="#d5e8f2" stroke="#355b75"/><path d="M561 291H591" stroke="#355b75" stroke-width="2"/></g>
+<text x="614" y="166" class="poe27-small">8 joints</text><text x="614" y="185" class="poe27-small">13 members</text><text x="614" y="204" class="poe27-small">Ideal pin–roller</text><text x="614" y="220" class="poe27-small">representation</text>
+</svg>
+<div id="trussPartExplanation" class="poe27-guide-panel" aria-live="polite"><strong>Complete truss</strong>Eight joints (A–H), thirteen straight members, pin at A, roller at E. Select a category to inspect it.</div>
+<div class="poe27-stats" style="margin-top:.85rem"><div><strong>Top + bottom chord</strong><span>Main longitudinal members</span></div><div><strong>Web members</strong><span>Vertical and diagonal connections</span></div><div><strong>Nodes / joints</strong><span>Where members meet and forces are transferred</span></div></div></div>
+<div class="poe27-panel" style="margin-top:1rem"><h3>How to name members and joints</h3><p>Joints are named with single letters such as <strong>A</strong> and <strong>F</strong>. A member joining those points is named <strong>AF</strong>. The top chord contains members FG and GH; the bottom chord contains AB, BC, CD and DE.</p>
+<p><strong>Count check:</strong> This example has eight joints and thirteen members, with three external reaction components from the pin-and-roller support model. The ideal planar determinacy count is m + r = 2j → 13 + 3 = 2(8). This is a <em>necessary counting check</em>; by itself, it does not prove every arrangement is stable.</p></div></section>
+<section class="container lesson-section" id="watch"><div class="poe27-section-header"><div class="poe27-eyebrow">04 / Video learning library</div><h2>See real trusses explained</h2><p>Watch the overview before the more technical video. The longer video introduces calculations from future lessons; focus today on the diagrams, physical behavior and member roles.</p></div>
+<div class="poe27-grid">
+<article class="poe27-video"><div class="poe27-frame"><iframe src="https://www.youtube-nocookie.com/embed/MRYCOVO7FEs" title="Introduction to Trusses and Stability Criteria" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe27-video-copy"><span class="poe27-pill">Ekeeda · Structural foundations</span><h3>Introduction to Trusses and Stability Criteria</h3><p class="poe27-mini"><strong>Stop and sketch:</strong> Identify what makes a frame stable and list the three basic truss patterns introduced.</p><a href="https://www.youtube.com/watch?v=MRYCOVO7FEs" rel="noopener noreferrer" target="_blank">Watch on YouTube ↗</a></div></article>
+<article class="poe27-video"><div class="poe27-frame"><iframe src="https://www.youtube-nocookie.com/embed/Hn_iozUo9m4" title="Understanding and Analysing Trusses" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="poe27-video-copy"><span class="poe27-pill">The Efficient Engineer · Detailed structural visuals</span><h3>Understanding and Analysing Trusses</h3><p class="poe27-mini"><strong>Stop and sketch:</strong> Identify which assumptions allow truss members to carry axial forces. Pause to sketch a member in tension and one in compression.</p><a href="https://www.youtube.com/watch?v=Hn_iozUo9m4" rel="noopener noreferrer" target="_blank">Watch on YouTube ↗</a></div></article>
+</div>
+<div class="poe27-mini-note" style="margin-top:1rem"><strong>Optional preview:</strong> In the Efficient Engineer video, the <em>method of joints</em> and <em>method of sections</em> appear later. You do not need to carry out those calculations until Lesson 2.8 and beyond.</div></section>
+<section class="container lesson-section" id="trusstypes"><div class="poe27-section-header"><div class="poe27-eyebrow">05 / Explore real design patterns</div><h2>Pratt, Howe and Warren trusses</h2><p>The shape of the web determines how the framework is divided into triangles. Select a type and study the diagonals before drawing your own example.</p></div>
+<div class="poe27-interactive"><div class="poe27-buttons" role="group" aria-label="Choose truss type"><button type="button" data-type="pratt" aria-pressed="true">Pratt</button><button type="button" data-type="howe" aria-pressed="false">Howe</button><button type="button" data-type="warren" aria-pressed="false">Warren</button></div>
+<svg id="typeExplorerGraphic" class="poe27-svg" viewBox="0 0 760 330" role="img" aria-label="Selectable side truss examples of Pratt, Howe and Warren configurations, shown schematically. Selected structure is labeled beneath.">
+<text id="typeFigureTitle" x="332" y="35" class="poe27-heading" text-anchor="middle">Pratt: inward-downward diagonals</text>
+<g id="type-pratt" data-show-type="pratt"><line x1="88" y1="249" x2="210" y2="249" class="poe27-member "/><line x1="210" y1="249" x2="332" y2="249" class="poe27-member "/><line x1="332" y1="249" x2="454" y2="249" class="poe27-member "/><line x1="454" y1="249" x2="576" y2="249" class="poe27-member "/><line x1="88" y1="102" x2="210" y2="102" class="poe27-member "/><line x1="210" y1="102" x2="332" y2="102" class="poe27-member "/><line x1="332" y1="102" x2="454" y2="102" class="poe27-member "/><line x1="454" y1="102" x2="576" y2="102" class="poe27-member "/><line x1="88" y1="249" x2="88" y2="102" class="poe27-member "/><line x1="210" y1="249" x2="210" y2="102" class="poe27-member "/><line x1="332" y1="249" x2="332" y2="102" class="poe27-member "/><line x1="454" y1="249" x2="454" y2="102" class="poe27-member "/><line x1="576" y1="249" x2="576" y2="102" class="poe27-member "/><line x1="88" y1="102" x2="210" y2="249" class="poe27-member poe27-accent"/><line x1="210" y1="102" x2="332" y2="249" class="poe27-member poe27-accent"/><line x1="454" y1="102" x2="332" y2="249" class="poe27-member poe27-accent"/><line x1="576" y1="102" x2="454" y2="249" class="poe27-member poe27-accent"/></g>
+<g id="type-howe" data-show-type="howe" style="display:none"><line x1="88" y1="249" x2="210" y2="249" class="poe27-member "/><line x1="210" y1="249" x2="332" y2="249" class="poe27-member "/><line x1="332" y1="249" x2="454" y2="249" class="poe27-member "/><line x1="454" y1="249" x2="576" y2="249" class="poe27-member "/><line x1="88" y1="102" x2="210" y2="102" class="poe27-member "/><line x1="210" y1="102" x2="332" y2="102" class="poe27-member "/><line x1="332" y1="102" x2="454" y2="102" class="poe27-member "/><line x1="454" y1="102" x2="576" y2="102" class="poe27-member "/><line x1="88" y1="249" x2="88" y2="102" class="poe27-member "/><line x1="210" y1="249" x2="210" y2="102" class="poe27-member "/><line x1="332" y1="249" x2="332" y2="102" class="poe27-member "/><line x1="454" y1="249" x2="454" y2="102" class="poe27-member "/><line x1="576" y1="249" x2="576" y2="102" class="poe27-member "/><line x1="88" y1="249" x2="210" y2="102" class="poe27-member poe27-accent"/><line x1="210" y1="249" x2="332" y2="102" class="poe27-member poe27-accent"/><line x1="454" y1="249" x2="332" y2="102" class="poe27-member poe27-accent"/><line x1="576" y1="249" x2="454" y2="102" class="poe27-member poe27-accent"/></g>
+<g id="type-warren" data-show-type="warren" style="display:none"><line x1="88" y1="249" x2="210" y2="249" class="poe27-member "/><line x1="210" y1="249" x2="332" y2="249" class="poe27-member "/><line x1="332" y1="249" x2="454" y2="249" class="poe27-member "/><line x1="454" y1="249" x2="576" y2="249" class="poe27-member "/><line x1="149" y1="102" x2="271" y2="102" class="poe27-member "/><line x1="271" y1="102" x2="393" y2="102" class="poe27-member "/><line x1="393" y1="102" x2="515" y2="102" class="poe27-member "/><line x1="88" y1="249" x2="149" y2="102" class="poe27-member poe27-accent"/><line x1="149" y1="102" x2="210" y2="249" class="poe27-member poe27-accent"/><line x1="210" y1="249" x2="271" y2="102" class="poe27-member poe27-accent"/><line x1="271" y1="102" x2="332" y2="249" class="poe27-member poe27-accent"/><line x1="332" y1="249" x2="393" y2="102" class="poe27-member poe27-accent"/><line x1="393" y1="102" x2="454" y2="249" class="poe27-member poe27-accent"/><line x1="454" y1="249" x2="515" y2="102" class="poe27-member poe27-accent"/><line x1="515" y1="102" x2="576" y2="249" class="poe27-member poe27-accent"/></g>
+<path d="M88 261L68 291H108Z" fill="#d5e8f2" stroke="#355b75" stroke-width="2"/>
+<circle cx="576" cy="278" r="9" fill="#d5e8f2" stroke="#355b75"/><path d="M559 290H594" stroke="#355b75" stroke-width="2"/>
+<text id="typeFigureNote" x="340" y="312" text-anchor="middle" class="poe27-small">Observe the web member arrangement; loading controls tension/compression.</text>
+</svg>
+<div id="trussTypeExplanation" class="poe27-guide-panel" aria-live="polite"><strong>Pratt truss</strong>Commonly has vertical web members and diagonals that descend toward the middle in this upright side-view. Under many conventional gravity-loading cases its long diagonals are often in tension, but this is not a universal rule.</div>
+</div>
+<div class="poe27-grid" style="margin-top:1rem"><article class="poe27-panel"><h3>Describe, don't memorize blindly</h3><p>Pratt and Howe arrangements have chords, vertical members and distinct diagonal orientations. Warren patterns use alternating triangular web members and can omit verticals in basic versions.</p><p>Structural behavior depends on where loads are applied, the span, materials, and support constraints—not just the named truss type.</p></article>
+<article class="poe27-panel"><h3>Engineering comparison prompt</h3><p>Sketch <strong>one Pratt</strong> and <strong>one Warren</strong> configuration. Label their chords and diagonals. Which design creates the repeated triangular panels with no verticals in its basic version?</p><details class="poe27-reveal"><summary>Check your answer</summary><p>The basic Warren diagram uses alternating triangles without vertical web members. Additional verticals are sometimes included in real Warren truss variants.</p></details></article></div></section>
+<section class="container lesson-section" id="loadpath"><div class="poe27-section-header"><div class="poe27-eyebrow">06 / Connect forces to structures</div><h2>Follow a bridge load toward the supports</h2><p>Trusses cannot make applied forces disappear. A load travels through the deck/floor system into truss joints, then through connected members and ultimately to the supports and ground.</p></div>
+<div class="poe27-grid"><article class="poe27-panel"><h3>Conceptual load path</h3><ol class="poe27-steps"><li><strong>Applied load:</strong> A vehicle or test mass presses on the bridge deck.</li><li><strong>Deck to joints:</strong> Floor beams and connectors deliver the force to one or more truss joints.</li><li><strong>Through members:</strong> Member axial forces move the effect through the connected truss; many possible paths may share the load.</li><li><strong>Reactions:</strong> End supports transmit the resultant load into the foundations.</li></ol>
+<p class="poe27-warning"><strong>Concept only:</strong> A highlighted path is not proof of actual member force direction or magnitude. You must solve force equilibrium to classify particular members under an assigned load.</p></article>
+<article class="poe27-panel"><h3>What you already know</h3><p>From 2.4, free-body diagrams show external loads and reactions. From 2.5, diagonal member forces have horizontal and vertical components. From 2.6, moments help determine reactions at supports.</p>
+<p><strong>What comes next?</strong> In <strong>2.8 Calculating Truss Forces</strong>, you will isolate joints and use ΣFₓ = 0 and ΣFᵧ = 0 to solve for member forces.</p>
+<div class="poe27-tags"><span>2.4 FBDs</span><span>2.5 Vectors</span><span>2.6 Moments</span><span>2.8 Truss Forces</span></div></article></div></section>
+<section class="container lesson-section" id="apply"><div class="poe27-section-header"><div class="poe27-eyebrow">07 / Applied engineering task</div><h2>Sketch a truss and explain its load path</h2><p>Use the member identification explorer and truss patterns above as references. Your sketch should communicate the engineering structure clearly—not just look like a bridge.</p></div>
+<div class="poe27-grid"><article class="poe27-panel"><h3>Part A · Annotated truss sketch</h3><ol class="poe27-steps"><li>Sketch a <strong>Pratt or Warren</strong> truss spanning two supports.</li><li>Label at least <strong>six joints</strong> with letters and name at least <strong>five members</strong> by endpoints.</li><li>Identify the <strong>top chord, bottom chord, diagonals, verticals</strong> (if present) and pin/roller supports.</li><li>Draw a <strong>downward load at a joint</strong> and the corresponding possible external support reaction arrows.</li></ol></article>
+<article class="poe27-panel"><h3>Part B · Reason about behavior</h3><ol class="poe27-steps"><li>Write 3–5 sentences tracing the conceptual load path toward the supports.</li><li>Compare a four-bar quadrilateral with a diagonally braced version.</li><li>Explain the difference between axial tension and axial compression.</li><li>Identify one limitation of a real bolted, glued or laser-cut truss compared with the ideal pin-jointed model.</li></ol>
+<p class="poe27-mini">Do not label arbitrary truss members T or C as definite without a solved load case. You may label expected behavior as a <strong>prediction</strong> to be tested later.</p></article></div></section>
+<section class="container lesson-section" id="practice"><div class="poe27-section-header"><div class="poe27-eyebrow">08 / Check your understanding</div><h2>Practice first; reveal answers second</h2><p>Sketch and explain on paper before expanding the answer. A correct explanation matters more than guessing from a picture.</p></div>
+<div class="poe27-grid">
+<article class="poe27-panel"><span class="poe27-pill">Check A · Geometry</span><h3>Why not a rectangle?</h3><p>A four-member rectangle has frictionless pin joints. What could happen if it is pushed sideways? What changes if a diagonal is added?</p><details class="poe27-reveal"><summary>Reveal explanation</summary><p>Without the diagonal, the shape can shear into a parallelogram as the pins rotate. A connected diagonal forms triangles and restrains that in-plane motion for ideal rigid bars.</p></details></article>
+<article class="poe27-panel"><span class="poe27-pill">Check B · Vocabulary</span><h3>What is a chord?</h3><p>Identify the main continuous members running along the top and bottom of a typical planar truss. What are the shorter interior members called?</p><details class="poe27-reveal"><summary>Reveal explanation</summary><p>The primary longitudinal members are the <strong>top and bottom chords</strong>. Members connecting them are the <strong>web</strong>, usually diagonals and verticals.</p></details></article>
+<article class="poe27-panel"><span class="poe27-pill">Check C · Force</span><h3>Tension or compression?</h3><p>In the single, symmetric triangular truss shown above with a downward load at the apex and supported at the two bottom corners, which members carry tension and compression?</p><details class="poe27-reveal"><summary>Reveal explanation</summary><p>For this <em>specific idealized triangle and load case</em>, the two diagonal legs are in <strong>compression</strong> and the horizontal bottom tie is in <strong>tension</strong>. This does not label every bridge diagonal for all loads.</p></details></article>
+<article class="poe27-panel"><span class="poe27-pill">Check D · Supports</span><h3>Where does the load go?</h3><p>Describe how a downward load on a bridge deck eventually reaches the ground through an ideal truss and its supports.</p><details class="poe27-reveal"><summary>Reveal explanation</summary><p>The deck/floor system transfers load to joints, members carry axial forces between joints, and the supports provide upward reactions to the structure, transmitting load to the foundation.</p></details></article>
+<article class="poe27-panel"><span class="poe27-pill">Check E · Patterns</span><h3>Pratt or Warren?</h3><p>Which basic truss pattern is recognized by alternating triangular web panels and often has no vertical web members?</p><details class="poe27-reveal"><summary>Reveal explanation</summary><p>The <strong>Warren truss</strong>. A real Warren variation can include added verticals or other members.</p></details></article>
+<article class="poe27-panel"><span class="poe27-pill">Check F · Reality check</span><h3>What does a real connection change?</h3><p>A laser-cut bridge uses glued joints rather than ideal freely rotating pins. Why won't the structure behave exactly like the textbook ideal-truss model?</p><details class="poe27-reveal"><summary>Reveal explanation</summary><p>The glue joints have finite stiffness and can resist some rotation, while eccentric loads and bending can develop in real members. Self-weight, manufacturing imperfections and connection failure also affect behavior.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="resources"><div class="poe27-section-header"><div class="poe27-eyebrow">Reference desk</div><h2>Free engineering resources</h2><p>The lesson content above is complete for today's work. These links offer additional real-world context, photos and explanations.</p></div>
+<div class="poe27-grid">
+<article class="poe27-panel poe27-resource"><h3>Truss structure and ideal assumptions</h3><p>Open statics textbook with examples of member naming, pinned-joint assumptions and truss stability.</p><a href="https://engineeringstatics.org/Chapter_06-trusses.html" target="_blank" rel="noopener noreferrer">Engineering Statics — Trusses ↗</a></article>
+<article class="poe27-panel poe27-resource"><h3>Animated explanations and structural diagrams</h3><p>The Efficient Engineer's illustrated explanation of truss analysis and its assumptions.</p><a href="https://efficientengineer.com/trusses/" target="_blank" rel="noopener noreferrer">Understanding and Analysing Trusses ↗</a></article>
+<article class="poe27-panel poe27-resource"><h3>Real truss bridge vocabulary</h3><p>State transportation resource describing truss chords, web members, tension and compression.</p><a href="https://www.tn.gov/tdot/structures-/historic-bridges/what-is-a-truss-bridge.html" target="_blank" rel="noopener noreferrer">Tennessee DOT — What Is a Truss Bridge? ↗</a></article>
+<article class="poe27-panel poe27-resource"><h3>Preview the method of joints</h3><p>A useful advanced resource for the next lesson: isolates one truss joint at a time and balances member forces.</p><a href="https://engineeringstatics.org/method-of-joints.html" target="_blank" rel="noopener noreferrer">Engineering Statics — Method of Joints ↗</a></article>
+</div></section>
+<section class="container lesson-section" id="submit"><div class="poe27-section-header"><div class="poe27-eyebrow">Student submission</div><h2>Exactly what to submit</h2><p>Submit your <strong>annotated truss sketch and short load-path explanation</strong> as engineering notebook pages or a teacher-assigned worksheet. Use the directions in the applied task above.</p></div>
+<div class="poe27-grid"><article class="poe27-panel"><h3>Required evidence</h3><ul class="poe27-checklist"><li>One clear Pratt or Warren bridge side-view diagram with two supports.</li><li>At least six labeled joints and five named members.</li><li>Top/bottom chord and web-member annotations; verticals labeled when present.</li><li>One external downward joint load and correct support-reaction arrow locations.</li><li>A 3–5 sentence description of how the load reaches the supports.</li><li>Short explanations of triangulation, tension versus compression, and one ideal-model limitation.</li></ul></article>
+<article class="poe27-panel"><h3>Before turning it in</h3><ul class="poe27-checklist"><li>Draw straight members connecting clearly defined nodes.</li><li>Do not apply member forces arbitrarily to the middle of bars in your ideal-truss model.</li><li>Do not treat the truss type as proof that a member is always in tension or compression.</li><li>Keep text, arrows and member labels readable.</li><li>Include all additional classwork or homework assigned by your teacher.</li></ul>
+<p><strong>Due date:</strong> Check the <a href="../../../../agenda.html">Daily Agenda</a> and follow your teacher's submission instructions.</p><p><a class="btn secondary" href="#start">Review Lesson ↑</a></p></article></div></section>
+<nav class="container lesson-bottom-nav" aria-label="Lesson navigation"><a class="btn secondary" href="lesson-2-6.html">← Lesson 2.6: Calculating Moments</a><a class="btn" href="lesson-2-8.html">Next: 2.8 Calculating Truss Forces →</a></nav></main>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id);
+const focusDescription={
+all:["Complete truss","Eight joints, thirteen members, pin at A and roller at E. All member categories are visible."],
+top:["Top chord · FG and GH","Two horizontal upper chord members connect the top joints. These are the upper longitudinal members in the drawing."],
+bottom:["Bottom chord · AB, BC, CD, DE","Four horizontal lower chord members connect the five lower joints and span between the supports."],
+vertical:["Vertical web · BF, CG, DH","Three vertical web members connect upper and lower joints. They may carry tension or compression depending on the load case."],
+diagonal:["Diagonal web / end posts · AF, FC, CH, HE","Diagonal members close the triangular panels. AF and HE are the sloped end posts in this schematic."],
+joints:["Eight joints · A through H","Joints connect members. In an ideal planar truss, loads and reactions are applied at joints and every joint must satisfy force equilibrium."]
+};
+const highlightButtons=Array.from(document.querySelectorAll("button[data-highlight]"));
+const lines=Array.from(document.querySelectorAll("#memberExplorerGraphic .poe27-member"));
+const joints=Array.from(document.querySelectorAll("#memberExplorerGraphic [data-joint]"));
+function highlight(name){
+lines.forEach(el=>{const yes=name==="all"||el.dataset.part===name;el.style.stroke=yes?(name==="all"?"#275773":"#0a8994"):"#bed1dc";el.style.opacity=yes?"1":"0.36";el.style.strokeWidth=yes?"11":"7";});
+joints.forEach(el=>el.style.opacity=name==="all"||name==="joints"?"1":"0.40");
+if(name==="joints")lines.forEach(el=>{el.style.stroke="#bdd2df";el.style.opacity="0.37";el.style.strokeWidth="7";});
+highlightButtons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.highlight===name)));
+const d=focusDescription[name];$("trussPartExplanation").innerHTML="<strong>"+d[0]+"</strong>"+d[1];
+}
+highlightButtons.forEach(b=>b.addEventListener("click",()=>highlight(b.dataset.highlight)));highlight("all");
+const typeButtons=Array.from(document.querySelectorAll("button[data-type]"));
+const typeText={
+pratt:["Pratt truss","The drawn upright Pratt configuration uses verticals and diagonals that descend toward the center. In common gravity loading its diagonals are often in tension, but member force signs must be solved for each case."],
+howe:["Howe truss","The web diagonals in this upright Howe drawing rise toward the center. In many conventional gravity-load cases they are often compressed, although the load case and supports decide the real forces."],
+warren:["Warren truss","Alternating diagonals form a chain of triangles, with no vertical members in this basic example. Warren variants may include vertical members."]
+};
+function showType(name){
+["pratt","howe","warren"].forEach(n=>{const el=$("type-"+n);el.style.display=n===name?"":"none";});
+typeButtons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.type===name)));
+$("typeFigureTitle").textContent=name==="pratt"?"Pratt · inward-downward diagonals":name==="howe"?"Howe · inward-upward diagonals":"Warren · alternating triangles";
+const d=typeText[name];$("trussTypeExplanation").innerHTML="<strong>"+d[0]+"</strong>"+d[1];
+$("typeExplorerGraphic").setAttribute("aria-label",d[0]+". "+d[1]);
+}
+typeButtons.forEach(b=>b.addEventListener("click",()=>showType(b.dataset.type)));showType("pratt");
+const frameButtons=Array.from(document.querySelectorAll("button[data-frame]"));
+function frame(mode){
+$("squareOuter").setAttribute("d",mode==="shear"?"M100 82L253 112L253 254L100 224Z":"M100 82L253 82L253 224L100 224Z");
+const circles=document.querySelectorAll("#unbracedShape circle");
+if(circles.length===4){circles[1].setAttribute("cy",mode==="shear"?"112":"82");circles[2].setAttribute("cy",mode==="shear"?"254":"224");}
+$("braceCaption").textContent=mode==="shear"?"Sideways racking · pins rotate":"Can deform by rotating at the pins";
+$("braceExplanation").innerHTML=mode==="shear"?"<strong>Sideways racking illustrated</strong>The left quadrilateral has shifted at its pinned joints. The diagonal on the right restrains this mechanism. The cartoon movement is illustrative, not a kinematically exact bar-length simulation.":"<strong>Unbraced vs. braced</strong>With ideal pinned joints and fixed-length members, a four-bar quadrilateral has a geometric mechanism. A connected diagonal divides it into triangles.";
+frameButtons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.frame===mode)));
+}
+frameButtons.forEach(b=>b.addEventListener("click",()=>frame(b.dataset.frame)));frame("square");
+})();
+</script></body></html>
