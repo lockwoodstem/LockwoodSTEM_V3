@@ -104,13 +104,13 @@ const deployment='https://script.google.com/a/macros/lockwoodstem.org/s/AKfycby8
 document.getElementById('oldapp').href=deployment;
 const $=id=>document.getElementById(id),storage='lockwoodstem-classroom-seats-photo2026-v1';
 const tables=[
-{id:'A',kind:'trapezoid',capacity:3,x:65,y:90,desc:'Left 1'},
-{id:'B',kind:'trapezoid',capacity:3,x:118,y:225,desc:'Left 2'},
-{id:'C',kind:'trapezoid',capacity:3,x:150,y:374,desc:'Left 3'},
-{id:'D',kind:'trapezoid',capacity:3,x:48,y:568,desc:'Left 4'},
-{id:'E',kind:'group',capacity:8,x:630,y:100,desc:'Right 1'},
-{id:'F',kind:'group',capacity:8,x:630,y:315,desc:'Right 2'},
-{id:'G',kind:'group',capacity:8,x:630,y:530,desc:'Right 3'}
+{id:'A',kind:'trapezoid',capacity:3,x:65,y:90},
+{id:'B',kind:'trapezoid',capacity:3,x:118,y:225},
+{id:'C',kind:'trapezoid',capacity:3,x:150,y:374},
+{id:'D',kind:'trapezoid',capacity:3,x:48,y:568},
+{id:'E',kind:'group',capacity:8,x:630,y:100},
+{id:'F',kind:'group',capacity:8,x:630,y:315},
+{id:'G',kind:'group',capacity:8,x:630,y:530}
 ];
 const all=tables.flatMap(t=>Array.from({length:t.capacity},(_,i)=>t.id+'-'+(i+1))),validSeats=new Set(all),blank=()=>({roster:[],assigned:{},locked:[]});
 const clamp=(n,lo,hi)=>Math.min(hi,Math.max(lo,n));
@@ -219,8 +219,8 @@ for(const t of tables){
  card.classList.toggle('sideways',position.rotation%180!==0);
  if(activeTable===t.id)card.classList.add('active');
  const seat=(id,extra='')=>'<button type="button" class="seat'+(extra?' '+extra:'')+(name(id)?' occupied':'')+(locked(id)?' locked':'')+(disabled(id)?' disabled':'')+(selected===id?' chosen':'')+'" data-seat="'+id+'" title="'+h(idLabel(id)+' '+name(id))+'">'+h(name(id)||id.split('-')[1])+'</button>';
- const tabletop='<div class="desk" role="button" tabindex="0" aria-label="Table '+h(t.id)+' '+h(t.desc)+'. Drag to move; use arrow keys to nudge"></div>';
- const tableLabel='<span class="desk-label" aria-hidden="true"><strong>'+h(t.id)+'</strong><small>'+h(t.desc)+'</small></span>';
+ const tabletop='<div class="desk" role="button" tabindex="0" aria-label="Table '+h(t.id)+'. Drag to move; use arrow keys to nudge"></div>';
+ const tableLabel='<span class="desk-label" aria-hidden="true"><strong>'+h(t.id)+'</strong></span>';
  if(t.kind==='group'){
   card.innerHTML=seat(t.id+'-1','group-seat group-left')+
     [2,3,4].map((i,j)=>seat(t.id+'-'+i,'group-seat group-top group-col-'+(j+1))).join('')+
