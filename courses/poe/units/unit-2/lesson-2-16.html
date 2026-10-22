@@ -1,1 +1,362 @@
-<!DOCTYPE html><html lang="en"><head><title>POE Unit 2 Lesson 2.16 | Bridge Engineering Analysis | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main"><nav aria-label="Breadcrumb" class="site-breadcrumbs container"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">2.16</li></ol></nav><section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Bridge Capstone • Lesson 2.16</div><h1>Bridge Engineering Analysis</h1><p class="focus-question"><strong>Engineering question:</strong> What do calculations predict about competing bridge concepts?</p><div class="mission-actions"><a class="btn" href="#learn">Learn</a><a class="btn secondary" href="#practice">Practice</a><a class="btn secondary" href="#apply">Apply</a><a class="btn secondary" href="#submit">Submit</a><a class="btn ghost" href="../unit-2.html">Unit 2</a></div></div><aside class="mission-panel"><span class="tag">Phase 3: Apply mechanics to the bridge</span><h2>Engineering decisions must be supported by evidence</h2><p>Apply the mechanics and materials knowledge from Lessons 2.2–2.14 to a manufacturable, testable bridge.</p></aside></div></section><section class="container lesson-section"><article class="card"><h2>Learning Targets</h2><ul><li>Draw a bridge-wide FBD</li><li>Estimate axial member forces and deflection risks</li><li>Evaluate mass and likely joint failures</li></ul></article></section><section class="container lesson-section" id="learn"><div class="section-header"><h2>Learn the Concept</h2></div><article class="card"><ul><li>Calculate support reactions under the 100 N midspan load</li><li>Use method-of-joints where a statically determinate simplified model applies</li><li>Estimate mass and note where modeling assumptions differ from actual glue joints</li></ul></article></section><section class="container lesson-section" id="practice"><div class="section-header"><h2>Practice Together</h2></div><article class="card"><p>For a symmetric 100 N central load, determine ideal support reactions and identify the first joints to analyze.</p><p>Show your reasoning, annotate diagrams and use correct units.</p></article></section><section class="container lesson-section" id="apply"><div class="section-header"><h2>Apply the Skill</h2></div><article class="card"><p>Analyze at least one concept using calculations or approved simulation; compare risk locations and mass estimates.</p><p><strong>Check your understanding:</strong> Which failure mode is not captured by an ideal pin-jointed truss model?</p></article></section><section class="container lesson-section" id="submit"><article class="card"><h2>Student Evidence</h2><p>Bridge analysis calculations and risk register. Provide clearly identified assumptions, measurements and conclusions.</p><p><a href="../unit-2.html#bridge-manufacturing-specifications">Review complete challenge and fabrication specifications</a>.</p></article></section><nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-15.html">← 2.15 Bridge Design Research &amp; Concepts</a><a class="btn" href="lesson-2-17.html">2.17 Detailed Bridge Design →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer></body></html>
+<!DOCTYPE html><html lang="en"><head><title>POE 2.16 | Bridge Engineering Analysis — Learning Studio | LockwoodSTEM</title><meta name="description" content="Analyze the bridge capstone with free-body diagrams, support reactions, truss member forces, verified videos, an interactive triangular-truss and buckling explorer, joint risk register, and printable analysis packet."/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script><style id="poe216-learning">.poe216 .p216-intro{max-width:950px;color:#476578}
+.poe216 .p216-eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.81rem;color:#956b2b;font-weight:850}
+.poe216 .p216-headline{margin:.1rem 0 .75rem}
+.poe216 .p216-card{padding:1rem 1.08rem;border:1px solid #c8dce6;border-radius:14px;background:#f7fbfd;min-width:0}
+.poe216 .p216-card h3{color:#104e6b;margin:.12rem 0 .5rem}
+.poe216 .p216-card p{margin:.45rem 0 .75rem}
+.poe216 .p216-card li{margin:.43rem 0}
+.poe216 .p216-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.95rem}
+.poe216 .p216-triple{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.poe216 .p216-quads{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem}
+.poe216 .p216-quads>div{padding:.75rem;border-left:4px solid #13859a;border-radius:10px;background:#ecf6fa}
+.poe216 .p216-quads strong{display:block;color:#0e526c}
+.poe216 .p216-quads small{display:block;color:#557382;font-size:.79rem}
+.poe216 .poe216-figure{width:100%;height:auto;display:block;background:white;border:1px solid #cbdce6;border-radius:13px;margin:.75rem auto}
+.poe216 .poe216-figure text{font-family:system-ui,Arial,sans-serif;fill:#23485e}
+.poe216 .poe216-figure text.p216-head{font-size:15px;font-weight:850}
+.poe216 .poe216-figure text.p216-caption{font-size:13px;font-weight:710}
+.poe216 .p216-warning{background:#fff8e8;border-left:5px solid #bb8a2d;border-radius:10px;padding:.8rem 1rem}
+.poe216 .p216-info{background:#edf8fc;border-left:5px solid #16869a;border-radius:10px;padding:.8rem 1rem}
+.poe216 .p216-formula{padding:.7rem 1rem;background:#e6f4fa;border-left:5px solid #148196;border-radius:10px;font-size:1.08rem;font-weight:850;color:#104f6d;margin:.7rem 0;overflow-wrap:anywhere}
+.poe216 .p216-lab{border:1px solid #a9cedf;background:#edf7fb;border-radius:16px;padding:1rem}
+.poe216 .p216-label{display:block;color:#125170;font-weight:810;font-size:.87rem;margin:.65rem 0 .23rem}
+.poe216 .p216-label.inline{display:flex;justify-content:space-between;gap:.5rem}
+.poe216 .p216-input{font:inherit;color:#153e54;background:#fff;border:1px solid #aac9da;border-radius:8px;width:100%;box-sizing:border-box;padding:.52rem .62rem;font-variant-numeric:tabular-nums}
+.poe216 input[type=range]{width:100%;accent-color:#17819a}
+.poe216 .p216-input:focus-visible,.poe216 button:focus-visible,.poe216 textarea:focus-visible{outline:3px solid #d3a050;outline-offset:2px}
+.poe216 .p216-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe216 .p216-metrics>div{padding:.68rem .8rem;border-radius:11px;background:white;border:1px solid #c9dce8}
+.poe216 .p216-metrics strong{display:block;font-size:1.13rem;color:#0c516e;font-variant-numeric:tabular-nums}
+.poe216 .p216-metrics span{display:block;font-size:.82rem;color:#56717f}
+.poe216 .p216-tablewrap{overflow-x:auto;margin:.7rem 0}
+.poe216 .p216-table{border-collapse:collapse;width:100%;font-size:.91rem}
+.poe216 .p216-table th,.poe216 .p216-table td{border:1px solid #c8dae5;padding:.55rem;text-align:left;vertical-align:middle}
+.poe216 .p216-table th{background:#e4f2f8;color:#104c6b}
+.poe216 .p216-table td:first-child{font-weight:740}
+.poe216 .p216-table select,.poe216 .p216-table input{min-width:82px}
+.poe216 .p216-actions{display:flex;gap:.65rem;flex-wrap:wrap;margin:.75rem 0}
+.poe216 .p216-status{padding:.82rem 1rem;background:#fff;border-radius:12px;border:1px solid #bdd5e1;margin:.8rem 0}
+.poe216 .p216-check{list-style:none!important;padding:0!important}
+.poe216 .p216-check li{position:relative;padding:.42rem .15rem .42rem 1.55rem}
+.poe216 .p216-check li:before{content:"□";color:#16859c;font-size:1.23rem;position:absolute;left:0;top:.31rem}
+.poe216 .p216-prompt{background:#eaf5fa;padding:.75rem;border:1px solid #c7dce7;border-radius:10px;margin:.75rem 0}
+.poe216 .p216-video{padding:0;overflow:hidden}
+.poe216 .p216-frame{aspect-ratio:16/9;background:#1d3543;position:relative}
+.poe216 .p216-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe216 .p216-video-copy{padding:1rem}
+.poe216 .p216-video a,.poe216 .p216-resource a{display:block;font-weight:820;margin:.48rem 0}
+.poe216 details{background:#eff7fa;border:1px solid #cfdee5;border-radius:10px;padding:.7rem .9rem;margin:.7rem 0}
+.poe216 summary{cursor:pointer;color:#125374;font-weight:830}
+.poe216 .p216-small{font-size:.86rem;color:#58727f}
+.poe216 .p216-tag{display:inline-block;border-radius:100px;padding:.24rem .65rem;color:#125772;background:#dff2f6;font-size:.77rem;font-weight:830;margin-bottom:.3rem}
+#poe216Print{display:none}
+@media(max-width:950px){.poe216 .p216-quads,.poe216 .p216-triple{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.poe216 .p216-cols,.poe216 .p216-triple,.poe216 .p216-quads,.poe216 .p216-metrics{grid-template-columns:1fr}}
+@page{size:letter;margin:.48in}
+@media print{
+body.poe216-printmode{background:#fff!important;color:#141414!important}
+body.poe216-printmode header,body.poe216-printmode footer,body.poe216-printmode main,body.poe216-printmode .skip-link{display:none!important}
+body.poe216-printmode #poe216Print{display:block!important;font:9pt Arial,sans-serif;color:#111}
+#poe216Print h1{font-size:14pt;text-align:center;margin:.04in 0}
+#poe216Print h2{font-size:10.5pt;margin:.1in 0 .05in}
+#poe216Print p{margin:.06in 0}
+#poe216Print .p216-print-page{break-after:page;page-break-after:always;break-inside:avoid;page-break-inside:avoid}
+#poe216Print .p216-print-page:last-child{break-after:auto;page-break-after:auto}
+#poe216Print .p216-print-draw{height:2in;border:1px solid #888;padding:.1in;color:#666}
+#poe216Print table{width:100%;border-collapse:collapse}
+#poe216Print td,#poe216Print th{border:1px solid #777;padding:.07in;text-align:left}
+#poe216Print td{height:.27in}
+#poe216Print .p216-print-lines div{height:.27in;border-bottom:1px solid #aaa}
+}
+</style></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main" class="poe216">
+<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">2.16</li></ol></nav>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.16</div><h1>Bridge Engineering Analysis</h1><p class="focus-question"><strong>Engineering question:</strong> Do calculations support our selected bridge concept—and where must it be reinforced, braced or revised?</p>
+<div class="mission-actions"><a class="btn" href="#start">Start Analysis</a><a class="btn secondary" href="#reactions">Free-Body Diagram</a><a class="btn secondary" href="#example">Worked Truss</a><a class="btn secondary" href="#explore">Interactive Explorer</a><a class="btn secondary" href="#risk">Risk Register</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
+<aside class="mission-panel"><span class="tag">Bridge Capstone · Engineering Verification</span><h2>Evidence before manufacturing.</h2><p>Bring your preferred concept from Lesson 2.15. Calculate reactions, estimate member-force demands, document unsupported assumptions, and decide what to improve before detailed Fusion CAD.</p><p><strong>Materials:</strong> chosen concept drawings, 2.13 test results, 2.14 mass budget, notebook and calculator.</p></aside></div></section>
+<section class="container lesson-section" id="start"><div class="p216-eyebrow">Learning mission</div><h2 class="p216-headline">Analyze, diagnose, revise</h2><p>Design selection was a hypothesis. This lesson tests that hypothesis using mechanics and identifies the evidence still needed for the real, three-dimensional bridge.</p>
+<div class="p216-triple">
+<article class="p216-card"><h3>1 · Free-body diagram</h3><p>Show the total 100 N qualification force, supports and external reactions for the <strong>entire bridge</strong>.</p></article>
+<article class="p216-card"><h3>2 · Member-force analysis</h3><p>Analyze a suitable determinate side-truss model using joint equilibrium or an approved solver, marking tension and compression.</p></article>
+<article class="p216-card"><h3>3 · Engineering risk</h3><p>Evaluate compression stability, load-sharing, critical joints and preliminary mass, then propose changes.</p></article></div>
+<div class="p216-quads" style="margin-top:1rem"><div><strong>Review &amp; draw</strong><small>8–10 minutes</small></div><div><strong>Worked mechanics</strong><small>12–15 minutes</small></div><div><strong>Apply to your bridge</strong><small>20–25 minutes</small></div><div><strong>Risk &amp; revisions</strong><small>15 minutes / homework</small></div></div>
+<p class="p216-small">Suggested pacing: two 45–50 minute periods for full individual-team analysis and documented revisions.</p></section>
+<section class="container lesson-section" id="requirements"><div class="p216-eyebrow">01 / Baseline bridge rules</div><h2>Numbers every design must address</h2>
+<div class="p216-triple"><article class="p216-card"><h3>400 mm</h3><p>Clear support-to-support span</p></article><article class="p216-card"><h3>≤ 65 mm</h3><p>Overall width, including hardware</p></article><article class="p216-card"><h3>100 N</h3><p>Centered qualification force</p></article><article class="p216-card"><h3>≤ 10 mm</h3><p>Measured midspan deflection at 100 N</p></article><article class="p216-card"><h3>≤ 150 g</h3><p>Completed structural mass</p></article><article class="p216-card"><h3>Wood-based</h3><p>Approved primary members only</p></article></div>
+<p class="p216-warning" style="margin-top:1rem"><strong>Construction limits still apply:</strong> approved wood and plywood members, permitted local gussets and printed fittings, PVA/CA glue or legal joins, and M3 nut-and-bolt fasteners only. No acrylic, solid plywood plates, screws, hot glue, epoxy, or 3D-printed chords. <a href="../unit-2.html#bridge-manufacturing-specifications">Review the complete manufacturing rules ↗</a></p></section>
+<section class="container lesson-section" id="reactions"><div class="p216-eyebrow">02 / External force equilibrium</div><h2>Start with the entire bridge, not individual bars</h2><p>A correct free-body diagram shows the bridge separated from its surroundings, with only the applied force and reactions. Assume an ideal left pin and right roller, a 400 mm span and a centered 100 N downward load.</p>
+<svg class="poe216-figure" role="img" aria-label="Free body diagram: 400 millimeter support-to-support bridge, pin at A and roller at C, 100 newton downward centered load at 200 millimeters, reactions 50 newtons upward at each support." viewBox="0 0 820 335">
+<defs><marker id="p216down" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#b97932"/></marker><marker id="p216up" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#078898"/></marker></defs>
+<text x="410" y="29" text-anchor="middle" class="p216-head">WHOLE BRIDGE FREE-BODY DIAGRAM</text>
+<path d="M126 158H694" stroke="#245c7b" stroke-width="12" stroke-linecap="round"/>
+<path d="M126 168L105 203H147Z" fill="#e1ebf3" stroke="#245c7b" stroke-width="2"/><circle cx="694" cy="185" r="13" fill="#e1ebf3" stroke="#245c7b" stroke-width="2"/>
+<path d="M672 202H716" stroke="#426b7f" stroke-width="2"/>
+<path d="M410 57V141" stroke="#b97932" stroke-width="4" marker-end="url(#p216down)"/>
+<text x="426" y="70" class="p216-caption">100 N downward</text>
+<path d="M126 280V177M694 280V177" stroke="#078898" stroke-width="4" marker-end="url(#p216up)"/>
+<text x="67" y="272" class="p216-caption">Aᵧ = 50 N</text><text x="704" y="272" class="p216-caption">Cᵧ = 50 N</text>
+<path d="M126 222V239M410 222V239M694 222V239M126 229H694" stroke="#7994a6" stroke-width="1.4"/>
+<text x="268" y="250" text-anchor="middle" class="p216-caption">200 mm</text><text x="552" y="250" text-anchor="middle" class="p216-caption">200 mm</text>
+<text x="410" y="309" text-anchor="middle" class="p216-caption">400 mm clear span (idealized pin/roller model)</text>
+</svg>
+<div class="p216-cols">
+<article class="p216-card"><h3>Step 1 · Moments about left support A</h3><div class="p216-formula">ΣM<sub>A</sub> = Cᵧ(400) − 100(200) = 0</div><p><strong>Cᵧ = 50 N upward.</strong></p><h3>Step 2 · Vertical balance</h3><div class="p216-formula">ΣFᵧ = Aᵧ + Cᵧ − 100 = 0</div><p><strong>Aᵧ = 50 N upward.</strong> For no other horizontal loads, Aₓ = 0.</p></article>
+<article class="p216-card"><h3>Common errors to avoid</h3><ul><li>Dividing 100 N by two <em>before</em> drawing the bridge-wide FBD.</li><li>Placing the entire 100 N independently on each of two side trusses.</li><li>Assuming every side gets exactly 50 N without checking the crossmember and load eccentricity.</li><li>Using centimeters in one equation and millimeters in another.</li></ul><p>Even if the real bridge has two side frames, the <strong>whole bridge carries 100 N total</strong>. Only a symmetric and adequately connected ideal model allows an assumed 50/50 side split.</p></article></div>
+<h3>How the load can reach both trusses</h3><svg class="poe216-figure" role="img" aria-label="3D schematic showing a centered 100 newton load entering a shared crossmember, transferring approximately 50 newtons to each of two side trusses under symmetric rigid load-sharing assumptions. Each side therefore has 25 newtons upward at each support in that simplified model." viewBox="0 0 820 340">
+<defs><marker id="p216load" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c27c34"/></marker></defs>
+<g stroke="#27647e" stroke-width="8" stroke-linejoin="round" stroke-linecap="round" fill="none">
+<path d="M104 211L165 103L363 103L435 211H104M165 103L276 211L363 103"/>
+<path d="M249 292L310 184L508 184L580 292H249M310 184L421 292L508 184"/>
+</g><g stroke="#2b8996" stroke-width="7" stroke-linecap="round" fill="none"><path d="M104 211L249 292M435 211L580 292M276 211L421 292M165 103L310 184M363 103L508 184"/></g>
+<path d="M347 26V163" stroke="#c27c34" stroke-width="4" marker-end="url(#p216load)"/><text x="362" y="40" class="p216-caption">100 N centered load</text>
+<path d="M289 167L437 249" stroke="#be874d" stroke-width="11" stroke-linecap="round"/>
+<text x="615" y="153" class="p216-caption">Load crossmember</text><path d="M596 159L429 232" stroke="#9d7e64" stroke-width="1.8"/>
+<text x="611" y="198" class="p216-caption">Nominal 50 N</text><text x="611" y="215" class="p216-caption">per side only if</text><text x="611" y="232" class="p216-caption">shared evenly</text>
+<text x="403" y="329" text-anchor="middle" class="p216-caption">Simplified perspective — loading and brace geometry require actual design</text>
+</svg>
+<p class="p216-info"><strong>Preliminary side-frame approximation:</strong> Under symmetric load sharing, each side carries 50 N downward, with 25 N upward at each end of that side. This approximation must be identified and reconsidered if the center crossmember, side stiffness, joints, or alignment are not symmetric.</p></section>
+<section class="container lesson-section" id="videos"><div class="p216-eyebrow">03 / Learn from demonstrations</div><h2>Video library: solving, modeling and interpreting failures</h2><div class="p216-cols"><article class="p216-card p216-video"><div class="p216-frame"><iframe src="https://www.youtube-nocookie.com/embed/Hn_iozUo9m4" title="Understanding and Analysing Trusses — The Efficient Engineer" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="p216-video-copy"><h3>Understanding and Analysing Trusses — The Efficient Engineer</h3><p><strong>While watching:</strong> Which joints could be solved with two or fewer unknown member forces? How do negative solutions indicate compression?</p><a href="https://www.youtube.com/watch?v=Hn_iozUo9m4" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article><article class="p216-card p216-video"><div class="p216-frame"><iframe src="https://www.youtube-nocookie.com/embed/6Pqx3zVhuRw" title="Free Online Truss Calculator Tutorial — SkyCiv Engineering" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="p216-video-copy"><h3>Free Online Truss Calculator Tutorial — SkyCiv Engineering</h3><p><strong>While watching:</strong> Identify nodes, members, pin/roller restraints, load locations and the force-result diagram.</p><a href="https://www.youtube.com/watch?v=6Pqx3zVhuRw" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article><article class="p216-card p216-video"><div class="p216-frame"><iframe src="https://www.youtube-nocookie.com/embed/21G7LA2DcGQ" title="Understanding Buckling — The Efficient Engineer" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="p216-video-copy"><h3>Understanding Buckling — The Efficient Engineer</h3><p><strong>While watching:</strong> Why is compression force alone insufficient to declare a long, slender member safe?</p><a href="https://www.youtube.com/watch?v=21G7LA2DcGQ" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article></div>
+<p class="p216-small">The last video extends the buckling concepts from 2.12. Watch the first two before attempting the independent analysis. Direct YouTube links are included if embedded video is blocked.</p></section>
+<section class="container lesson-section" id="method"><div class="p216-eyebrow">04 / From bridge to joint</div><h2>How to solve member forces without guessing</h2><svg class="poe216-figure" viewBox="0 0 730 205" role="img" aria-label="Two member-force diagrams: tension means member ends are pulled outward; compression pushes inward. Compressed slender members may buckle, while connections can transfer forces through gussets or bolts." >
+<text x="180" y="28" text-anchor="middle" class="p216-head">TENSION (+)</text><text x="549" y="28" text-anchor="middle" class="p216-head">COMPRESSION (−)</text>
+<path d="M110 101H260" stroke="#0b8f87" stroke-width="18" stroke-linecap="round"/>
+<path d="M57 101H100M270 101H326" stroke="#0b8f87" stroke-width="4"/>
+<path d="M69 91L55 101L69 111M311 91L326 101L311 111" stroke="#0b8f87" stroke-width="3" fill="none"/>
+<path d="M475 101H624" stroke="#bd7936" stroke-width="18" stroke-linecap="round"/>
+<path d="M421 101H467M632 101H685" stroke="#bd7936" stroke-width="4"/>
+<path d="M456 90L470 101L456 112M648 90L634 101L648 112" stroke="#bd7936" stroke-width="3" fill="none"/>
+<text x="180" y="154" text-anchor="middle" class="p216-caption">Member is pulled</text><text x="549" y="154" text-anchor="middle" class="p216-caption">Member is pushed</text>
+<text x="365" y="192" text-anchor="middle" class="p216-caption">Axial force is a demand, not a tested failure limit</text></svg>
+<div class="p216-quads"><div><strong>1. Label</strong><small>Give joints letters and members endpoints</small></div><div><strong>2. Isolate</strong><small>Draw the complete truss FBD</small></div><div><strong>3. Solve</strong><small>Use moments and joint ΣFₓ = ΣFᵧ = 0</small></div><div><strong>4. Verify</strong><small>Balance a final joint, compare to solver</small></div></div>
+<div class="p216-cols" style="margin-top:1rem">
+<article class="p216-card"><h3>Method of joints</h3><p>Choose a joint with no more than two unknown member forces. Draw unknown forces <strong>away from the joint</strong> (assume tension). Resolve horizontal and vertical components, solve equilibrium, then move to the adjacent joint.</p><p><strong>Positive:</strong> tension. <strong>Negative:</strong> compression for the chosen sign convention.</p><div class="p216-formula">ΣFₓ = 0 &nbsp;·&nbsp; ΣFᵧ = 0</div></article>
+<article class="p216-card"><h3>Know the model assumptions</h3><ul><li>Members are treated as straight two-force axial elements.</li><li>Joints are ideal pins (no moment transfer) and forces act at joints.</li><li>Support restraints are correctly modeled; the truss is stable.</li><li>An ideal 2D truss ignores real wood joints, out-of-plane sway, eccentric load transfer, connector bending and imperfections.</li></ul>
+<p class="p216-warning"><strong>Important:</strong> m + r = 2j is a useful necessary count for a simple determinate planar truss, but not proof of stability or unique solvability. Check connectivity and geometry too.</p></article></div></section>
+<section class="container lesson-section" id="example"><div class="p216-eyebrow">05 / Fully worked example</div><h2>Three-member triangle: a small solvable model</h2><p>Consider <strong>one idealized side truss</strong>, distinct from your Pratt, Warren or Howe concept. Its joints are A = (0,0), B = (200,100) and C = (400,0) mm. It carries its <strong>assumed 50 N share</strong> of the bridge's total 100 N center load at joint B.</p>
+<div class="p216-cols"><article class="p216-card"><h3>Geometry</h3>
+<div class="p216-formula">θ = arctan(100/200) ≈ 26.565°</div><div class="p216-formula">L<sub>AB</sub> = L<sub>BC</sub> = √(200²+100²) ≈ 223.61 mm</div>
+<p><strong>Support forces on this one side:</strong> Aᵧ = Cᵧ = 25 N, Aₓ = 0.</p>
+<h3>At apex joint B</h3><div class="p216-formula">F<sub>AB</sub> = F<sub>BC</sub> = −50/(2 sin θ) ≈ −55.90 N</div><p>Both diagonals are in <strong>compression</strong> because the negative sign reverses the assumed tension arrows.</p>
+</article><article class="p216-card"><h3>At left joint A</h3><div class="p216-formula">F<sub>AC</sub> = (50/2) / tan θ = +50.00 N</div><p>The lower chord AC is in <strong>tension</strong>. Use the opposite side's joint C to verify force balance. Record signs and units.</p>
+<h3>Interpret the real question</h3><p>A −55.90 N axial member demand does <strong>not</strong> tell you whether a wooden bar or connection can carry it. The member may be slender, imperfect, weak in compression, or poorly connected.</p><p class="p216-info">This is a <strong>demonstration of method</strong>, not a force diagram for every Pratt, Howe or Warren bridge. Transfer the method—not the numerical results—to your selected concept.</p></article></div>
+</section>
+<section class="container lesson-section" id="explore"><div class="p216-eyebrow">06 / Interactive mechanics lab</div><h2>Explore geometry, compression and possible instability</h2><p>This calculator is an <strong>exact method-of-joints solution for the idealized three-member side-triangle</strong>, combined with a <strong>separate theoretical Euler buckling check</strong> for each sloping bar. It does not analyze your full two-sided bridge, joints or actual midspan deflection.</p>
+<div class="p216-lab"><div class="p216-cols">
+<article class="p216-card">
+<label class="p216-label inline" for="triRise">Apex rise h <output id="riseOut">100 mm</output></label><input id="triRise" type="range" min="60" max="160" step="10" value="100"/>
+<label class="p216-label inline" for="sideShare">Share of total 100 N on this side <output id="shareOut">50%</output></label><input id="sideShare" type="range" min="30" max="70" step="5" value="50"/>
+<label class="p216-label inline" for="triThickness">Weak-axis thickness t <output id="thicknessOut">5.0 mm</output></label><input id="triThickness" type="range" min="2" max="8" step=".5" value="5"/>
+<label class="p216-label inline" for="triWidth">Rectangular section width b <output id="widthOut">8 mm</output></label><input id="triWidth" type="range" min="4" max="15" step="1" value="8"/>
+<label class="p216-label inline" for="triE">Illustrative modulus E <output id="modulusOut">9,000 N/mm²</output></label><input id="triE" type="range" min="2000" max="12000" step="500" value="9000"/>
+<label class="p216-label inline" for="jointAllowance">Other two-sided mass allowance <output id="allowanceOut">45 g</output></label><input id="jointAllowance" type="range" min="10" max="100" step="5" value="45"/>
+<div class="p216-actions"><button type="button" id="resetTriangle" class="btn secondary">Reset Example</button></div>
+<p class="p216-small">The 50/50 load split is a simplifying assumption. The slider demonstrates how unequal side sharing changes demand; it does <em>not</em> calculate the actual distribution from your bridge geometry.</p></article>
+<article class="p216-card"><h3>Tension and compression color key</h3><p><span style="color:#0c9388;font-weight:800">■ Teal = tension</span> &nbsp; <span style="color:#bd7a34;font-weight:800">■ Orange = compression</span></p><svg class="poe216-figure" id="triDiagram" role="img" aria-label="Interactive three-member pin-jointed triangular side truss. A at 0 0, B at 200 h, C at 400 0, lower chord AC tension and diagonals AB and BC compression, loaded downward at apex B. This is a teaching model, not the student's selected bridge." viewBox="0 0 650 305">
+<defs><marker id="p216triArr" markerWidth="8" markerHeight="8" refX="6.4" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#b97736"/></marker><marker id="p216triUp" markerWidth="8" markerHeight="8" refX="6.4" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0f8c96"/></marker></defs>
+<path id="triAB" d="M65 225L325 140" stroke="#bd7a34" stroke-width="9" stroke-linecap="round"/><path id="triBC" d="M325 140L585 225" stroke="#bd7a34" stroke-width="9" stroke-linecap="round"/><path id="triAC" d="M65 225H585" stroke="#0a9388" stroke-width="8"/>
+<circle id="triA" cx="65" cy="225" r="6" fill="#204d63" stroke="#fff" stroke-width="1.5"/>
+<circle id="triB" cx="325" cy="140" r="6" fill="#204d63" stroke="#fff" stroke-width="1.5"/>
+<circle id="triC" cx="585" cy="225" r="6" fill="#204d63" stroke="#fff" stroke-width="1.5"/>
+<path d="M65 233L51 258H79Z" fill="#d4e7f2" stroke="#215b77"/><circle cx="585" cy="248" r="9" fill="#d4e7f2" stroke="#215b77"/>
+<path id="triLoad" d="M325 22V127" stroke="#b97736" stroke-width="4" marker-end="url(#p216triArr)"/><text id="triLoadText" x="341" y="30" class="p216-caption">50 N ↓</text>
+<path d="M65 289V237M585 289V237" stroke="#0f8c96" stroke-width="3" marker-end="url(#p216triUp)"/>
+<text id="triReactionA" x="70" y="295" class="p216-caption">25 N ↑</text><text id="triReactionC" x="533" y="295" class="p216-caption">25 N ↑</text>
+<text id="triNodeB" x="337" y="122" class="p216-caption">B</text><text x="45" y="216" class="p216-caption">A</text><text x="598" y="216" class="p216-caption">C</text>
+<text id="triRiseText" x="412" y="169" class="p216-caption">h = 100 mm</text>
+<text x="325" y="261" text-anchor="middle" class="p216-caption">AC = 400 mm · side view only</text>
+</svg>
+<p class="p216-small">The geometry updates with the height slider; straight line widths are schematic and do not depict deformation.</p></article></div>
+<h3>Calculated teaching-model outputs</h3><div class="p216-metrics">
+<div><strong id="sideLoadResult">50.00 N</strong><span>Applied load on chosen side</span></div>
+<div><strong id="sideReactionResult">25.00 N</strong><span>Reaction at each end of chosen side</span></div>
+<div><strong id="diagResult">−55.90 N</strong><span>AB and BC axial force (compression)</span></div>
+<div><strong id="chordResult">+50.00 N</strong><span>AC axial force (tension)</span></div>
+<div><strong id="eulerResult">148.04 N</strong><span>Ideal Euler critical load of each diagonal (K = 1)</span></div>
+<div><strong id="ratioResult">0.38</strong><span>Axial compression demand ÷ ideal Euler load</span></div>
+<div><strong id="stressResult">1.40 N/mm²</strong><span>Absolute axial stress, diagonals (F/A)</span></div>
+<div><strong id="massResult">78.89 g</strong><span>Very rough two-side member mass + allowance</span></div>
+</div>
+<div id="triangleMessage" class="p216-status" aria-live="polite">Theoretical model interpretation appears here.</div>
+<div class="p216-warning"><strong>Model caution:</strong> Euler's P<sub>cr</sub> = π²EI/(KL)² is only a theoretical elastic instability estimate, using K = 1 and a hypothetical E. It is not real failure capacity, safety factor or bridge pass/fail evidence. The model omits member defects, imperfect ends, adhesive connections, buckling outside the assumed plane and actual supported-load distribution. The rough mass uses illustrative density 0.50 g/cm³ for ideal wood bars plus a user-adjustable connection/bracing allowance. It does not prove the ≤150 g final mass or ≤10 mm deflection requirements.</div></div>
+<div class="p216-cols" style="margin-top:1rem">
+<article class="p216-card"><h3>What if the truss becomes taller?</h3><p>Hold the total bridge load, side share and material section constant. Increase triangle rise from 100 to 140 mm. Which axial force changes?</p><details><summary>Reveal explanation</summary><p>A taller triangle has a larger diagonal angle θ. For the simplified central-apex load, |F<sub>AB</sub>| = P<sub>side</sub>/(2sinθ) decreases, and the bottom tie tension P<sub>side</sub>/(2tanθ) decreases. However, diagonal length becomes longer, which can reduce Euler buckling capacity: lower axial demand does <em>not</em> automatically mean a safer real member.</p></details></article>
+<article class="p216-card"><h3>What if one side carries more load?</h3><p>Change the side-share slider from 50% to 65%. Are the total bridge reactions still 50 N at each end when the 100 N applied load remains centered?</p><details><summary>Reveal explanation</summary><p>For the ideal complete bridge with a centered 100 N load, <strong>yes</strong>, the bridge-wide end reactions remain 50 N each. But if one side carries 65 N and the other carries 35 N, the assumed reactions on each side differ (32.5 N at each end versus 17.5 N); the actual load split must be evaluated from the 3D connection and stiffness.</p></details></article></div></section>
+<section class="container lesson-section" id="own"><div class="p216-eyebrow">07 / Apply this to your own bridge</div><h2>Analyze the 2.15 concept you selected</h2><p>Copy the chosen concept into the analysis packet. Use a <strong>dimensioned 2D side-truss model</strong> if pin-jointed analysis is appropriate. When a concept has continuous beams, a load between nodes or moment-resisting joints, document the limitation and use a teacher-approved more suitable method instead of pretending the pin-truss method applies.</p>
+<div class="p216-cols"><article class="p216-card"><h3>Set up a valid analysis</h3><ol>
+<li>Label every modeled joint and enter approximate coordinates in <strong>mm</strong>.</li>
+<li>List all connected members and show actual proposed bracing (or separately identify omitted 3D elements).</li>
+<li>Represent one end as a pin and the other as a roller for the <em>idealized support model</em>, if appropriate.</li>
+<li>Show the complete 100 N bridge-wide load first. State and justify any side-frame load-split assumption.</li>
+<li>Check ideal determinacy and connectivity; solve support reactions.</li>
+<li>Find at least <strong>three relevant axial member forces</strong> by hand or with an approved model; mark positive tension and negative compression.</li>
+<li>Check at least one result by an independent equilibrium equation.</li></ol></article>
+<article class="p216-card"><h3>Then evaluate the risks</h3><ul><li>Which compressed member has the longest unsupported length and smallest weak-axis stiffness?</li><li>Where could buckling occur before a member crushes?</li><li>Does the 100 N test force really reach the model's joint locations?</li><li>Could gussets, printed fittings, M3 bolts or adhesive joints become the weak link?</li><li>How will out-of-plane sway or twisting be prevented?</li><li>What model or actual test is needed to evaluate the <strong>10 mm deflection criterion</strong>?</li><li>Does the <strong>full two-sided bridge mass budget</strong> remain below 150 g including glue and hardware?</li></ul></article></div>
+<div class="p216-info" style="margin-top:1rem"><strong>Data from earlier work:</strong> Your 2.13 material testing produced actual bending stiffness and observations—not directly measured fracture or compressive strengths. Use the appropriate data where justified, report measurement limitations and do not treat k (N/mm) as elastic modulus E (N/mm²). Your 2.14 budget provides the initial mass estimate.</div></section>
+<section class="container lesson-section" id="risk"><div class="p216-eyebrow">08 / Critical joint and failure assessment</div><h2>Engineering risk register</h2><p>For each possible failure location, record a qualitative severity and likelihood from 1 (low) to 5 (high). The product provides a <strong>discussion priority score</strong>, not a statistically calibrated failure probability or a safety certification. Explain evidence and proposed mitigation in your submitted analysis.</p>
+<div class="p216-lab"><div class="p216-tablewrap"><table class="p216-table"><thead><tr><th>Potential weakness</th><th>Severity</th><th>Likelihood</th><th>Priority score</th></tr></thead><tbody>
+<tr><td><strong>Long compression diagonal</strong><span class="p216-small" style="display:block">Possible global buckling of a slender member</span></td><td><select id="severity0" class="p216-input" aria-label="Long compression diagonal severity"><option value="">Select</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td><td><select id="likelihood0" class="p216-input" aria-label="Long compression diagonal likelihood"><option value="">Select</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td><td id="priority0">—</td></tr><tr><td><strong>Central load-transfer joint</strong><span class="p216-small" style="display:block">Load distribution, eccentricity and local crushing</span></td><td><select id="severity1" class="p216-input" aria-label="Central load-transfer joint severity"><option value="">Select</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td><td><select id="likelihood1" class="p216-input" aria-label="Central load-transfer joint likelihood"><option value="">Select</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td><td id="priority1">—</td></tr><tr><td><strong>Gusset or adhesive connection</strong><span class="p216-small" style="display:block">Connection shear, splitting or peel</span></td><td><select id="severity2" class="p216-input" aria-label="Gusset or adhesive connection severity"><option value="">Select</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td><td><select id="likelihood2" class="p216-input" aria-label="Gusset or adhesive connection likelihood"><option value="">Select</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td><td id="priority2">—</td></tr><tr><td><strong>Lateral bracing</strong><span class="p216-small" style="display:block">Out-of-plane sway or twist</span></td><td><select id="severity3" class="p216-input" aria-label="Lateral bracing severity"><option value="">Select</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td><td><select id="likelihood3" class="p216-input" aria-label="Lateral bracing likelihood"><option value="">Select</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td><td id="priority3">—</td></tr><tr><td><strong>End support interface</strong><span class="p216-small" style="display:block">Local bearing, sliding or rotation</span></td><td><select id="severity4" class="p216-input" aria-label="End support interface severity"><option value="">Select</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td><td><select id="likelihood4" class="p216-input" aria-label="End support interface likelihood"><option value="">Select</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td><td id="priority4">—</td></tr>
+</tbody></table></div><div id="riskInterpret" class="p216-status" aria-live="polite">Set ratings after reviewing the evidence, then document mitigation.</div>
+<div class="p216-cols"><article class="p216-card"><h3>Critical joint 1 · Center load entry</h3><p>Analyze how the load transfers from the loading contact to the two side frames. Sketch joint interfaces, forces, crossmember geometry and potential slip, bending or peel.</p><label for="jointOneNotes" class="p216-label">Design note</label><textarea id="jointOneNotes" class="p216-input" rows="3" placeholder="Proposed connection, forces, evidence and redesign..."></textarea></article>
+<article class="p216-card"><h3>Critical joint 2 · End support or bracing</h3><p>Analyze how support reactions enter the structure or how a brace holds the two sides together. Identify permitted fittings/fasteners and a method to validate the joint.</p><label for="jointTwoNotes" class="p216-label">Design note</label><textarea id="jointTwoNotes" class="p216-input" rows="3" placeholder="Proposed connection, forces, evidence and redesign..."></textarea></article></div></div></section>
+<section class="container lesson-section" id="decision"><div class="p216-eyebrow">09 / Revise before CAD</div><h2>Document your design decision and what remains unverified</h2>
+<div class="p216-cols"><article class="p216-card"><h3>Selected concept record</h3>
+<label class="p216-label" for="chosenType">Concept or truss-family name</label><input id="chosenType" class="p216-input" placeholder="e.g., Pratt concept A from Lesson 2.15"/>
+<label class="p216-label" for="bridgeMass">Full preliminary bridge mass (g)</label><input id="bridgeMass" type="number" min="0" step=".1" class="p216-input" placeholder="From 2.14 budget"/>
+<label class="p216-label" for="bridgeWidth">Proposed overall width (mm)</label><input id="bridgeWidth" type="number" min="0" step=".1" class="p216-input" placeholder="Include connection protrusions"/>
+<label class="p216-label" for="bridgeSpan">Proposed clear span (mm)</label><input id="bridgeSpan" type="number" min="0" step=".1" class="p216-input" value="400"/>
+<label class="p216-label" for="bridgeDefl">Predicted midspan deflection at 100 N (mm) (optional)</label><input id="bridgeDefl" type="number" min="0" step=".01" class="p216-input" placeholder="Leave blank if not modeled"/>
+</article>
+<article class="p216-card"><h3>Numerical concept check</h3><div id="designScreen" class="p216-status" aria-live="polite">Enter preliminary mass, width and span to screen basic requirements. A blank deflection prediction remains unverified.</div>
+<p><strong>Update recommendation:</strong> If a compression member, joint or bracing layout is concerning, change member geometry or load path and then re-run relevant calculations. Do not simply add unlimited material.</p>
+<label class="p216-label" for="decisionNotes">Engineering revision notes and next verification step</label><textarea id="decisionNotes" class="p216-input" rows="6" placeholder="What will change before Lesson 2.17? Which force/measurement motivated it? What remains unknown?"></textarea>
+<div class="p216-actions"><button id="exportNotes" class="btn" type="button">Export Analysis Notes (.txt)</button><button id="printPacket" type="button" class="btn secondary">Print Analysis Packet (3 pages)</button></div></article></div>
+<p class="p216-warning" style="margin-top:1rem"><strong>Preliminary screening is not fabrication approval.</strong> Passing geometric or estimated mass checks does not demonstrate the actual 100 N capacity or 10 mm deflection limit. Do not claim your bridge meets the load requirement until it has been analyzed appropriately and physically qualified under teacher supervision.</p></section>
+<section class="container lesson-section" id="practice"><div class="p216-eyebrow">10 / Independent checks</div><h2>Answer, then reveal the solution</h2><div class="p216-cols">
+<article class="p216-card"><h3>1 · Whole structure reactions</h3><p>A 100 N force acts at the center of a 400 mm simply supported bridge. Compute Aᵧ and Cᵧ.</p><details><summary>Reveal explanation</summary><p><strong>Aᵧ = Cᵧ = 50 N upward.</strong> Moments about A: Cᵧ(400) = 100(200). Balance vertical forces to obtain Aᵧ.</p></details></article>
+<article class="p216-card"><h3>2 · Side-frame load</h3><p>If symmetry justifies a 50/50 load share, what load is applied to each side truss and what are its two ideal end reactions?</p><details><summary>Reveal explanation</summary><p><strong>50 N per side truss</strong>, with <strong>25 N upward at each end</strong> for each symmetric side model. Adding reactions across both side frames gives 100 N in total.</p></details></article>
+<article class="p216-card"><h3>3 · Triangle axial force</h3><p>A = (0,0), B=(200,100), C=(400,0) mm, 50 N downward at B. Determine the axial force in AC.</p><details><summary>Reveal explanation</summary><p>θ = arctan(100/200). At the left joint A, AC = 25/tanθ = <strong>+50 N tension</strong>.</p></details></article>
+<article class="p216-card"><h3>4 · Interpretation</h3><p>The computed axial force in a diagonal is −55.9 N. Is it in tension or compression, and does the number prove safety?</p><details><summary>Reveal explanation</summary><p>It is <strong>compression</strong> under the tension-positive convention. Force demand alone does not establish allowable stress, buckling capacity, local strength or connection adequacy.</p></details></article>
+<article class="p216-card"><h3>5 · Buckling and geometry</h3><p>For the same E, I and end factor K, what happens to theoretical Euler buckling load if unsupported length doubles?</p><details><summary>Reveal explanation</summary><p>The theoretical Euler critical load becomes <strong>one-quarter</strong> of its previous value because P<sub>cr</sub> ∝ 1/L².</p></details></article>
+<article class="p216-card"><h3>6 · False deflection claim</h3><p>A truss solver returns all axial forces and support reactions but no displacement results. Can a student claim compliance with ≤10 mm deflection?</p><details><summary>Reveal explanation</summary><p><strong>No.</strong> You need an appropriate displacement model with defensible E and member area/connection assumptions, and eventually a physical test; force equilibrium alone cannot establish deformation.</p></details></article>
+<article class="p216-card"><h3>7 · Actual joints</h3><p>Why might glued wooden gussets invalidate the exact behavior of an ideal pin-jointed truss?</p><details><summary>Reveal explanation</summary><p>Real joints can transfer some moments, bend, slip, split or fail in adhesive shear/peel. Loads may also enter a member between joints. These effects are absent from an ideal two-force bar model.</p></details></article>
+<article class="p216-card"><h3>8 · Manufacturing screen</h3><p>Your bridge design is 62 mm wide and 140 g, but uses acrylic gussets and M4 bolts. Can it be approved?</p><details><summary>Reveal explanation</summary><p><strong>No.</strong> Acrylic and M4 bolts violate the manufacturing rules even though the width and mass values are below the numeric caps.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="resources"><div class="p216-eyebrow">Reference desk</div><h2>Engineering resources for your independent analysis</h2>
+<div class="p216-cols">
+<article class="p216-card p216-resource"><h3>Engineering Statics · Method of Joints</h3><p>Free online textbook section with joint FBD examples, tension sign convention and independent checking.</p><a href="https://engineeringstatics.org/method-of-joints.html" rel="noopener noreferrer" target="_blank">Read the Method of Joints ↗</a></article>
+<article class="p216-card p216-resource"><h3>SkyCiv · Truss Hand Calculations</h3><p>Explains supported models, axial force outputs and checks for unstable or indeterminate trusses.</p><a href="https://skyciv.com/docs/structural-3d/post-processing/truss-hand-calculations/" rel="noopener noreferrer" target="_blank">Read annotated calculation steps ↗</a></article>
+<article class="p216-card p216-resource"><h3>SkyCiv · Method of Sections Tutorial</h3><p>How to analyze selected members without calculating every bar, extending the tools from 2.9.</p><a href="https://skyciv.com/docs/tutorials/truss-tutorials/tutorial-to-solve-truss-by-method-of-sections/" rel="noopener noreferrer" target="_blank">Open Method of Sections guide ↗</a></article>
+<article class="p216-card p216-resource"><h3>SkyCiv · Free Truss Calculator</h3><p>Alternative software for joint/member model checking when your selected concept is appropriately simplified.</p><a href="https://skyciv.com/free-truss-calculator/" rel="noopener noreferrer" target="_blank">Try the free truss calculator ↗</a></article>
+</div></section>
+<section class="container lesson-section" id="submit"><div class="p216-eyebrow">Student submission</div><h2>Exactly what to submit for POE 2.16</h2><p>Submit a <strong>Bridge Engineering Analysis and Risk Review</strong> as one organized PDF, worksheet packet, or teacher-approved notebook record. Include the updated selected concept from Lesson 2.15.</p>
+<div class="p216-cols"><article class="p216-card"><h3>Required evidence</h3><ul class="p216-check">
+<li>Selected concept ID/name and a dimensioned side/top drawing showing all modeled joints, the center load and support locations.</li>
+<li>One <strong>bridge-wide FBD</strong> with 100 N at midspan, correct support reaction calculations and units.</li>
+<li>A stated and justified load-share assumption for the two side trusses, if using 2D side models.</li>
+<li>A labeled member-force diagram for the chosen concept: <strong>at least three axial forces</strong> (tension or compression), with equations or approved solver evidence.</li>
+<li>At least one independent equilibrium check and a list of model assumptions/limitations.</li>
+<li>One compression/buckling-risk evaluation with dimensions, assumptions, an equation or clear qualitative rationale.</li>
+<li>A <strong>critical-joint analysis for two different joints</strong>, including load paths, permitted connection details and potential failure modes.</li>
+<li>A preliminary mass/width/span screen, plus an explanation of how the <strong>10 mm deflection limit</strong> will be checked.</li>
+<li>A risk register with severity/likelihood priorities and a written plan for at least <strong>two targeted revisions or verification steps</strong>.</li></ul></article>
+<article class="p216-card"><h3>Submission quality check</h3><ul class="p216-check">
+<li>100 N is the total bridge load, not 100 N applied independently to each side.</li>
+<li>All measurements and calculations use compatible units and clear force signs.</li>
+<li>Simulation screenshots identify the model geometry, members, restraints and loading.</li>
+<li>Buckling/strength predictions are not mislabeled proven load capacity.</li>
+<li>Real 2.13 test readings are not confused with assumed modulus values.</li>
+<li>Full finished-mass estimate includes wood, bracing, glue, gussets, M3 hardware and printed fittings.</li>
+<li>Proposed construction follows Unit 2 fabrication rules.</li>
+<li>The final recommendation identifies what needs correction before Fusion modeling in Lesson 2.17.</li></ul><p><strong>Due date:</strong> See the <a href="../../../../agenda.html">Daily Agenda</a> and teacher submission directions.</p><a class="btn secondary" href="#start">Review Lesson ↑</a></article></div></section>
+<nav class="container lesson-bottom-nav" aria-label="Lesson navigation"><a class="btn secondary" href="lesson-2-15.html">← Lesson 2.15: Research &amp; Concepts</a><a class="btn" href="lesson-2-17.html">Next: 2.17 Detailed Bridge Design →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer><section id="poe216Print" aria-label="Printable bridge engineering analysis worksheet">
+<div class="p216-print-page"><h1>POE 2.16 · BRIDGE ENGINEERING ANALYSIS</h1><p>Page 1 / 3 · Whole-bridge equilibrium and model setup</p><p>Team: ___________________________________ Period: ________ Date: ________</p>
+<p>Concept name / type: _______________________________ Clear span L = _________ mm</p>
+<p><strong>Full bridge FBD:</strong> draw 100 N applied at center and model supports/reactions.</p><div class="p216-print-draw">Sketch whole bridge FBD and label dimensions, reaction directions and force.</div>
+<h2>Support reaction calculation</h2><div class="p216-print-lines"><div></div><div></div><div></div><div></div><div></div></div>
+<h2>Side-frame modeling assumptions</h2><p>Load split: ______ / ______ N per side · Basis: ____________________________________________</p>
+<p>Joints / coordinates / supports: _________________________________________________________</p>
+<h2>Selected truss member connectivity and loading</h2><div class="p216-print-draw">Draw side truss with labels and at least three members selected for analysis.</div></div>
+<div class="p216-print-page"><h1>POE 2.16 · JOINT AND MEMBER FORCES</h1><p>Page 2 / 3 · Show equations, sign and units</p>
+<p>Team: __________________________________ Concept ID: ___________</p>
+<h2>Joint equilibrium / method-of-sections work</h2><div class="p216-print-draw" style="height:2.5in">Include ΣFₓ = 0 / ΣFᵧ = 0, joint components and calculations.</div>
+<table><thead><tr><th>Member</th><th>Axial force (N)</th><th>Tension or compression</th><th>Method / solver source</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table>
+<h2>Independent equilibrium check</h2><div class="p216-print-lines"><div></div><div></div><div></div></div>
+<h2>Compression or buckling risk</h2><p>E or assumed material model: ______________ L: ______ mm  I: ______ mm⁴  K: _______</p>
+<div class="p216-print-lines"><div></div><div></div><div></div></div>
+<p>Model limitations and unverified performance: ____________________________________________________</p></div>
+<div class="p216-print-page"><h1>POE 2.16 · RISK AND REVISION REVIEW</h1><p>Page 3 / 3 · Prepare for Lesson 2.17</p>
+<p>Team: ___________________________________ Concept ID: __________</p>
+<h2>Five risks (1–5 scale)</h2><table><thead><tr><th>Risk</th><th>Severity</th><th>Likelihood</th><th>Priority</th><th>Mitigation / test</th></tr></thead><tbody><tr><td>Long compression diagonal</td><td></td><td></td><td></td><td></td></tr><tr><td>Central load-transfer joint</td><td></td><td></td><td></td><td></td></tr><tr><td>Gusset or adhesive connection</td><td></td><td></td><td></td><td></td></tr><tr><td>Lateral bracing</td><td></td><td></td><td></td><td></td></tr><tr><td>End support interface</td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<h2>Connection 1 · Center load entry</h2><div class="p216-print-lines"><div></div><div></div><div></div></div>
+<h2>Connection 2 · Support or brace joint</h2><div class="p216-print-lines"><div></div><div></div><div></div></div>
+<h2>Preliminary design screening</h2><p>Full mass: ______ g (≤150) &nbsp; Width: ______ mm (≤65) &nbsp; Span: ______ mm (≥400)</p>
+<p>Midspan deflection estimate at 100 N: ______ mm / Not yet verified</p>
+<h2>Two revisions or verification steps for Lesson 2.17</h2><div class="p216-print-lines"><div></div><div></div><div></div><div></div></div></div>
+</section><script>
+(function(){
+"use strict";
+const get=id=>document.getElementById(id);
+if(!get("triRise")||!get("triangleMessage"))return;
+function set(id,v){get(id).textContent=v;}
+function num(id){const v=get(id).value;if(String(v).trim()==="")return null;const n=Number(v);return Number.isFinite(n)?n:null;}
+function render(){
+ const h=num("triRise"),pct=num("sideShare"),t=num("triThickness"),b=num("triWidth"),E=num("triE"),other=num("jointAllowance");
+ const Ps=100*pct/100,half=200,diag=Math.hypot(half,h),theta=Math.atan2(h,half),diagForce=-Ps/(2*Math.sin(theta)),chordForce=Ps/(2*Math.tan(theta));
+ const I=b*Math.pow(t,3)/12,A=b*t,Pcr=Math.PI*Math.PI*E*I/(diag*diag),ratio=(-diagForce)/Pcr;
+ const density=.0005,mass=2*(2*diag+400)*A*density+other;
+ set("riseOut",h+" mm");set("shareOut",pct+"%");set("thicknessOut",t.toFixed(1)+" mm");
+ set("widthOut",b+" mm");set("modulusOut",E.toLocaleString("en-US")+" N/mm²");set("allowanceOut",other+" g");
+ set("sideLoadResult",Ps.toFixed(2)+" N");
+ set("sideReactionResult",(Ps/2).toFixed(2)+" N");
+ set("diagResult",diagForce.toFixed(2)+" N");
+ set("chordResult","+"+chordForce.toFixed(2)+" N");
+ set("eulerResult",Pcr.toFixed(2)+" N");set("ratioResult",ratio.toFixed(2));
+ set("stressResult",((-diagForce)/A).toFixed(3)+" N/mm²");set("massResult",mass.toFixed(1)+" g");
+ const yy=235-h*.95;
+ const a=get("triAB"),c=get("triBC");
+ a.setAttribute("x1","65");a.setAttribute("y1","225");a.setAttribute("x2","325");a.setAttribute("y2",yy);
+ c.setAttribute("x1","325");c.setAttribute("y1",yy);c.setAttribute("x2","585");c.setAttribute("y2","225");
+ get("triB").setAttribute("cy",yy);
+ get("triLoad").setAttribute("d","M325 15 V"+(yy-13));
+ get("triNodeB").setAttribute("y",yy-17);
+ get("triRiseText").setAttribute("y",(yy+225)/2);
+ set("triRiseText","h = "+h+" mm");
+ set("triLoadText",Ps.toFixed(0)+" N ↓");
+ set("triReactionA",(Ps/2).toFixed(1)+" N ↑");set("triReactionC",(Ps/2).toFixed(1)+" N ↑");
+ const statement=ratio>=1?"The compression demand meets or exceeds this ideal Euler elastic buckling estimate. Revise and verify; do not interpret it as an observed failure force.":"The compression demand is below the ideal Euler estimate, but actual member safety and all joint and lateral-buckling behavior remain unverified.";
+ set("triangleMessage","θ = "+(theta*180/Math.PI).toFixed(1)+"°; each diagonal length ≈ "+diag.toFixed(1)+" mm. "+statement+" This example does not calculate the real bridge's 10 mm deflection criterion.");
+ get("triDiagram").setAttribute("aria-label","Triangle side truss, 400 mm span, "+h+" mm rise; side force "+Ps+" newtons at apex; AB and BC compression "+(-diagForce).toFixed(1)+" newtons each; AC tension "+chordForce.toFixed(1)+" newtons; illustrative buckling ratio "+ratio.toFixed(2)+".");
+}
+["triRise","sideShare","triThickness","triWidth","triE","jointAllowance"].forEach(id=>get(id).addEventListener("input",render));
+get("resetTriangle").addEventListener("click",()=>{for(const [id,v] of Object.entries({triRise:100,sideShare:50,triThickness:5,triWidth:8,triE:9000,jointAllowance:45}))get(id).value=v;render();});
+const risks=["Long compression diagonal","Central load-transfer joint","Gusset or adhesive connection","Lateral bracing","End support interface"];
+function risk(){
+ const items=risks.map((name,i)=>{const s=num("severity"+i),l=num("likelihood"+i),score=s!==null&&l!==null?s*l:null;set("priority"+i,score===null?"—":score+" / 25");return {name,s,l,score};});
+ const ranked=items.filter(x=>x.score!==null).sort((a,b)=>b.score-a.score);
+ set("riskInterpret",ranked.length?"Highest entered qualitative priority: "+ranked[0].name+" ("+ranked[0].score+"/25). "+
+ (items.length-ranked.length)+" risk(s) remain unrated. Back the scores with evidence and propose a mitigating design or test.":"No ratings yet. Consider all five locations and explain the evidence behind each 1–5 choice.");
+}
+risks.forEach((_,i)=>["severity","likelihood"].forEach(p=>get(p+i).addEventListener("change",risk)));
+function screen(){
+ const mass=num("bridgeMass"),w=num("bridgeWidth"),span=num("bridgeSpan"),d=num("bridgeDefl");
+ const missing=[];if(mass===null)missing.push("mass");if(w===null)missing.push("width");if(span===null)missing.push("span");
+ const fails=[];if(mass!==null&&(mass<=0||mass>150))fails.push("completed mass should be >0 and ≤150 g");
+ if(w!==null&&(w<=0||w>65))fails.push("overall width should be >0 and ≤65 mm");
+ if(span!==null&&(span<400||span<=0))fails.push("clear span must be ≥400 mm");
+ if(d!==null&&(d<0||d>10))fails.push("estimated deflection is not within the ≤10 mm criterion");
+ let message=missing.length?"Missing preliminary inputs: "+missing.join(", ")+". ":"";
+ message+=fails.length?"Screen flags: "+fails.join("; ")+". ":"";
+ if(!missing.length&&!fails.length)message+="Entered dimensions and mass fall within numerical screening limits. ";
+ message+=d===null?"Midspan deflection at 100 N remains unverified. ":"Entered deflection is a prediction only, not a physical test. ";
+ message+="Capacity at 100 N and complete manufacturing compliance must still be verified.";
+ set("designScreen",message);
+}
+["bridgeMass","bridgeWidth","bridgeSpan","bridgeDefl"].forEach(id=>get(id).addEventListener("input",screen));
+get("exportNotes").addEventListener("click",()=>{
+ const lines=["POE 2.16 · BRIDGE ENGINEERING ANALYSIS NOTES","Class project: 100 N total center load, 400 mm minimum clear span, 65 mm max width, 150 g total mass, 10 mm max deflection at 100 N.","Model calculations are theoretical teaching estimates, not verified load capacity.","",
+ "Concept: "+get("chosenType").value,
+ "Full preliminary mass (g): "+get("bridgeMass").value,
+ "Overall width (mm): "+get("bridgeWidth").value,
+ "Clear span (mm): "+get("bridgeSpan").value,
+ "Modeled deflection at 100 N (mm): "+(get("bridgeDefl").value||"Not modeled"),
+ "","TRIANGLE PRACTICE MODEL (not the selected bridge):",
+ "Apex rise: "+get("triRise").value+" mm",
+ "Side share of total 100 N: "+get("sideShare").value+"%",
+ "Assumed width × thickness (mm): "+get("triWidth").value+" × "+get("triThickness").value,
+ "Assumed E (N/mm2): "+get("triE").value,
+ "Diagonal forces (N): "+get("diagResult").textContent,
+ "Lower chord force (N): "+get("chordResult").textContent,
+ "Euler ideal critical load (N): "+get("eulerResult").textContent,
+ "Euler demand ratio: "+get("ratioResult").textContent,
+ "","RISK PRIORITIES"];
+ risks.forEach((n,i)=>lines.push(n+": severity "+(get("severity"+i).value||"not rated")+", likelihood "+(get("likelihood"+i).value||"not rated")+", score "+get("priority"+i).textContent));
+ lines.push("","Critical joint 1: "+get("jointOneNotes").value,"Critical joint 2: "+get("jointTwoNotes").value,
+ "","Revisions and verification: "+get("decisionNotes").value,
+ "","Attach real concept drawings, member-force calculations, and any approved solver results separately.");
+ const blob=new Blob([lines.join("\n")],{type:"text/plain;charset=utf-8"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="POE_2-16_Bridge_Engineering_Analysis_Notes.txt";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2400);
+});
+get("printPacket").addEventListener("click",()=>{document.body.classList.add("poe216-printmode");window.print();});
+window.addEventListener("afterprint",()=>document.body.classList.remove("poe216-printmode"));
+render();risk();screen();
+})();
+</script></body></html>
