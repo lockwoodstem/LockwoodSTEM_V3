@@ -154,7 +154,7 @@
       </div>
 
       <div class="seating-display-actions">
-        <a class="btn secondary small" href="./classroom-planner.html">Open Classroom Planner</a>
+        <a class="btn secondary small" href="./classroom-planner-updated.html">Open Classroom Planner</a>
         <a class="btn secondary small" id="legacyView" href="?view=legacy">Original Google Display</a>
         <button class="btn secondary small" id="refreshSeating" type="button">Refresh</button>
         <button class="btn secondary small" id="fullscreenSeating" type="button">Full Screen</button>
@@ -210,7 +210,7 @@
       const showingLegacy = pageParams.get('view') === 'legacy' || requestedLayout === 'FabLab';
       const plannerParams = new URLSearchParams();
       if (requestedPeriod) plannerParams.set('period', requestedPeriod);
-      const plannerUrl = './classroom-planner.html' + (plannerParams.toString() ? '?' + plannerParams.toString() : '');
+      const plannerUrl = './classroom-planner-updated.html' + (plannerParams.toString() ? '?' + plannerParams.toString() : '');
       const currentUrl = showingLegacy ? displayUrl : plannerUrl;
 
       const frame = document.getElementById('seatingFrame');
