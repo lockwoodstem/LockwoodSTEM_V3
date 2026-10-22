@@ -451,3 +451,14 @@ html body main#main .light-section .eyebrow {
     text-align: center !important;
   }
 }
+
+/* IED Unit 3 progression: restore light text on dark chips. */
+/* The immersive lesson's generic light-card rule forces dark text on every span.
+   Override only the Unit 3 progression chips, including WebKit text-fill. */
+html body.immersive-lesson-page main#main section.container .u3-progression > span {
+  background: #0b1f3a !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
