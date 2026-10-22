@@ -149,12 +149,12 @@
       </a>
 
       <div class="seating-display-title">
-        <strong>Classroom Seating — 10 Tables, 3 Students Each</strong>
-        <span>30-seat classroom planner. Saves to this browser only; it does not yet sync to the original Google seating editor.</span>
+        <strong>Classroom Seating — 4 Trapezoids + 3 Group Tables</strong>
+        <span>36-seat layout: 4 trapezoid tables with 3 students, plus 3 group tables with 8 students. Saved in this browser; no Google sync yet.</span>
       </div>
 
       <div class="seating-display-actions">
-        <a class="btn secondary small" href="./classroom-planner.html">Open 3-Seat Planner</a>
+        <a class="btn secondary small" href="./classroom-planner.html">Open Classroom Planner</a>
         <a class="btn secondary small" id="legacyView" href="?view=legacy">Original Google Display</a>
         <button class="btn secondary small" id="refreshSeating" type="button">Refresh</button>
         <button class="btn secondary small" id="fullscreenSeating" type="button">Full Screen</button>
@@ -167,8 +167,8 @@
   <main class="seating-frame-shell" id="seating-tool">
     <div class="seating-loading" id="seatingLoading" role="status" aria-live="polite">
       <div class="seating-loading-card">
-        <h1 id="loadingTitle">Loading the 3-seat classroom planner…</h1>
-        <p id="loadingMessage">10 trapezoid tables, 3 student positions per table.</p>
+        <h1 id="loadingTitle">Loading the classroom seating planner…</h1>
+        <p id="loadingMessage">4 three-seat trapezoids and 3 eight-seat tables — 36 seats total.</p>
         <a class="btn" id="loadingOpenDisplay" href="#" rel="noopener" target="_blank">Open Planner in New Tab</a>
         <div class="seating-help" id="seatingHelp">
           If the original Google display asks you to sign in, open it in a separate tab and return to select <strong>Refresh</strong>.
@@ -180,7 +180,7 @@
       class="seating-frame"
       id="seatingFrame"
       name="seatingFrame"
-      title="LockwoodSTEM three-seat classroom planner or original Google seating display"
+      title="LockwoodSTEM 36-seat classroom planner or original Google seating display"
       allow="fullscreen"
       referrerpolicy="strict-origin-when-cross-origin">
     </iframe>
@@ -205,7 +205,7 @@
 
       const displayUrl = deploymentUrl + '?' + displayParams.toString();
       const editorUrl = deploymentUrl;
-      // Show the 3-seat planner by default. The existing FabLab and Google
+      // Show the mixed-capacity classroom planner by default. The existing FabLab and Google
       // editor views stay available through explicit legacy mode.
       const showingLegacy = pageParams.get('view') === 'legacy' || requestedLayout === 'FabLab';
       const plannerParams = new URLSearchParams();
@@ -232,7 +232,7 @@
       if (showingLegacy) {
         sectionTitle.textContent = 'Original Google Seating Display';
         sectionDescription.textContent = 'Original editor data and FabLab view. The Google classroom layout may still show four seats per table.';
-        alternateLink.textContent = 'View 3-Seat Classroom Planner';
+        alternateLink.textContent = 'View Classroom Planner';
         alternateLink.href = './' + (requestedPeriod ? '?period=' + encodeURIComponent(requestedPeriod) : '');
         loadingTitle.textContent = 'Loading original Google seating display…';
         loadingMessage.textContent = 'Google may ask you to sign in.';
@@ -264,8 +264,8 @@
         loadCompleted = false;
         loading.hidden = false;
         help.classList.remove('is-visible');
-        loadingTitle.textContent = showingLegacy ? 'Refreshing the Google display…' : 'Refreshing the 3-seat classroom planner…';
-        loadingMessage.textContent = showingLegacy ? 'Google may ask you to sign in.' : '10 tables and a maximum of 30 student seats.';
+        loadingTitle.textContent = showingLegacy ? 'Refreshing the Google display…' : 'Refreshing the classroom seating planner…';
+        loadingMessage.textContent = showingLegacy ? 'Google may ask you to sign in.' : '4 trapezoids of 3 and 3 tables of 8, for 36 student seats.';
         frame.src = currentUrl + (currentUrl.includes('?') ? '&' : '?') + '_refresh=' + Date.now();
       });
 
