@@ -1,1 +1,312 @@
-<!DOCTYPE html><html lang="en"><head><title>POE Unit 2 Lesson 2.19 | Bridge Load Testing | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main"><nav class="site-breadcrumbs container"><a href="../unit-2.html">← Unit 2 Overview</a></nav><section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Bridge Design Challenge • Lesson 2.19</div><h1>Bridge Load Testing</h1><p class="focus-question"><strong>Engineering question:</strong> What does the physical test show about qualification and structural behavior?</p><div class="mission-actions"><a class="btn" href="#learn">Learn</a><a class="btn secondary" href="#practice">Practice</a><a class="btn secondary" href="#apply">Apply</a><a class="btn ghost" href="../unit-2.html#bridge-manufacturing-specifications">Fabrication Rules</a></div></div><aside class="mission-panel"><span class="tag">Bridge capstone</span><h2>Use the engineering design process</h2><p>Apply mechanics, materials, analysis and evidence from earlier lessons.</p></aside></div></section><section class="container lesson-section"><article class="card"><h2>Learning Targets</h2><ul><li>Controlled test setups</li><li>Load–deflection records</li><li>Evidence-based conclusions</li></ul></article></section><section class="container lesson-section" id="learn"><article class="card"><h2>Learn the Concept</h2><p>Test on a 400 mm clear span with a centered load. Qualification: carry 100 N with no more than 10 mm deflection; total bridge mass ≤ 150 g. Teacher supervises testing.</p></article></section><section class="container lesson-section" id="practice"><article class="card"><h2>Practice Together</h2><p>Sketch the test setup, identify where deflection is read and record load at each stage. Do not repair once official testing begins.</p></article></section><section class="container lesson-section" id="apply"><article class="card"><h2>Apply &amp; Submit</h2><p>Create a measured load-deflection table, record failure evidence and calculate structural efficiency when a maximum supported load is measured.</p><p><a href="../unit-2.html#bridge-manufacturing-specifications">Complete bridge manufacturing and connection specifications</a></p></article></section><nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-18.html">← 2.18 Bridge Fabrication</a><a class="btn" href="lesson-2-20.html">2.20 Redesign &amp; Engineering Review →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer></body></html>
+<!DOCTYPE html><html lang="en"><head><title>POE 2.19 | Bridge Load Testing — Learning Studio | LockwoodSTEM</title><meta name="description" content="Teacher-supervised bridge load test: measure 100 N force and 10 mm deflection, record real data, graph force versus displacement, calculate structural efficiency, export CSV and print four-page laboratory packet."/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script><style id="poe219-learning">.poe219 .p219-eyebrow{font-size:.81rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:#926b29}
+.poe219 .p219-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.95rem}
+.poe219 .p219-triple{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.poe219 .p219-card{background:#f7fbfd;border:1px solid #c8dce6;border-radius:14px;padding:1rem 1.1rem;min-width:0}
+.poe219 .p219-card h3{margin:.1rem 0 .6rem;color:#0f4f6d}
+.poe219 .p219-card p{margin:.46rem 0 .8rem}
+.poe219 .p219-card li{margin:.4rem 0}
+.poe219 .p219-note{border-left:5px solid #11859c;background:#e9f7fb;border-radius:10px;padding:.8rem 1rem}
+.poe219 .p219-warn{border-left:5px solid #c28e34;background:#fff7e8;border-radius:10px;padding:.8rem 1rem}
+.poe219 .p219-pill{background:#e1f1f8;border-radius:40px;padding:.23rem .6rem;color:#105472;font-size:.78rem;font-weight:820;display:inline-block}
+.poe219 .p219-svg{width:100%;height:auto;display:block;border:1px solid #cadee7;border-radius:12px;background:#fff;margin:.75rem auto}
+.poe219 .p219-svg text{font-family:system-ui,Arial,sans-serif;font-size:12px;font-weight:740;fill:#264c61}
+.poe219 .p219-workspace{background:#eaf7fc;border:1px solid #a7cbd9;padding:1rem;border-radius:15px}
+.poe219 .p219-label{display:block;color:#11516d;font-weight:790;font-size:.86rem;margin:.6rem 0 .2rem}
+.poe219 .p219-input{width:100%;box-sizing:border-box;color:#15465e;border:1px solid #abc9d9;background:#fff;border-radius:7px;font:inherit;padding:.5rem .58rem;min-width:0;font-variant-numeric:tabular-nums}
+.poe219 .p219-input:focus-visible,.poe219 button:focus-visible{outline:3px solid #d5a550;outline-offset:2px}
+.poe219 .p219-tablewrap{overflow-x:auto;margin:.75rem 0}
+.poe219 .p219-table{width:100%;border-collapse:collapse;font-size:.91rem}
+.poe219 .p219-table th,.poe219 .p219-table td{border:1px solid #c6dce6;padding:.55rem;text-align:left;vertical-align:middle}
+.poe219 .p219-table th{background:#e0eff6;color:#154c6b}
+.poe219 .p219-table input{min-width:90px}
+.poe219 .p219-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin:.75rem 0}
+.poe219 .p219-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.poe219 .p219-metrics>div{background:#fff;border:1px solid #c8dce7;border-radius:10px;padding:.78rem}
+.poe219 .p219-metrics strong{display:block;color:#10516d;font-size:1.15rem;font-variant-numeric:tabular-nums}
+.poe219 .p219-metrics span{font-size:.82rem;color:#526f7b}
+.poe219 .p219-result{padding:.85rem 1rem;border:1px solid #bfd9e5;background:#fff;border-radius:10px;margin:.7rem 0}
+.poe219 .p219-check{list-style:none!important;padding:0!important}
+.poe219 .p219-check li{padding:.4rem 0 .4rem 1.5rem;position:relative}
+.poe219 .p219-check li:before{content:"□";position:absolute;left:0;top:.29rem;color:#12849b;font-size:1.25rem}
+.poe219 details{border:1px solid #cadee6;border-radius:10px;background:#eaf6fb;padding:.7rem .82rem;margin:.65rem 0}
+.poe219 summary{cursor:pointer;font-weight:820;color:#15516e}
+.poe219 .p219-iframe{aspect-ratio:16/9;position:relative;background:#123b50}
+.poe219 .p219-iframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe219 .p219-video{padding:0;overflow:hidden}.poe219 .p219-video-caption{padding:1rem}
+.poe219 .p219-resource a,.poe219 .p219-video a{font-weight:830;display:block;margin:.5rem 0}
+.poe219 .p219-small{font-size:.85rem;color:#556d7c}
+.poe219 .p219-formula{font-size:1.08rem;font-weight:850;color:#10506b;background:#e5f3f9;border-left:5px solid #0f8ca0;border-radius:9px;padding:.75rem 1rem;margin:.7rem 0}
+#poe219Print{display:none}
+@media(max-width:950px){.poe219 .p219-triple,.poe219 .p219-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.poe219 .p219-cols,.poe219 .p219-triple,.poe219 .p219-metrics{grid-template-columns:1fr}}
+@page{size:letter;margin:.48in}
+@media print{body.p219-print{background:#fff!important;color:#111!important}
+body.p219-print header,body.p219-print footer,body.p219-print main,body.p219-print .skip-link{display:none!important}
+body.p219-print #poe219Print{display:block!important;font:9pt Arial,sans-serif;color:#111}
+#poe219Print .printpage{break-after:page;page-break-after:always;break-inside:avoid;page-break-inside:avoid}
+#poe219Print .printpage:last-child{break-after:auto}
+#poe219Print h1{font-size:14pt;text-align:center;margin:.05in}
+#poe219Print h2{font-size:11pt;margin:.14in 0 .06in}
+#poe219Print p{margin:.07in 0}
+#poe219Print table{width:100%;border-collapse:collapse}
+#poe219Print th,#poe219Print td{border:1px solid #666;text-align:left;padding:.06in}
+#poe219Print td{height:.27in}
+#poe219Print .drawbox{height:2.2in;border:1px solid #999}
+#poe219Print .gridbox{height:3.7in;border:1px solid #aaa;background-image:linear-gradient(#eee 1px,transparent 1px),linear-gradient(90deg,#eee 1px,transparent 1px);background-size:19px 19px}
+#poe219Print .lines>div{border-bottom:1px solid #aaa;height:.28in}}
+</style></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main" class="poe219">
+<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">2.19</li></ol></nav>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE • Unit 2 • Bridge Capstone • Lesson 2.19</div><h1>Bridge Load Testing</h1>
+<p class="focus-question"><strong>Engineering question:</strong> Does the finished bridge carry the required 100 N with no more than 10 mm midspan deflection—and what do the real measurements reveal?</p>
+<div class="mission-actions"><a class="btn" href="#start">Start Lab</a><a class="btn secondary" href="#apparatus">Test Setup</a><a class="btn secondary" href="#procedure">Procedure</a><a class="btn secondary" href="#record">Data Recorder</a><a class="btn secondary" href="#analysis">Graph &amp; Qualification</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
+<aside class="mission-panel"><span class="tag">Official bridge qualification</span><h2>Test only with an instructor.</h2><p>Use your approved bridge from 2.18, the school digital force gauge, a rated mounted fixture, and an independent midspan deflection reference.</p><p><strong>No repairs once official testing begins.</strong></p></aside></div></section>
+<section class="container lesson-section" id="start"><div class="p219-eyebrow">Learning outcomes</div><h2>Replace predictions with evidence</h2><div class="p219-triple">
+<article class="p219-card"><h3>Measure</h3><p>Record real force–deflection pairs from one supervised test, including an observation <strong>at exactly 100 N</strong> if safely reached.</p></article>
+<article class="p219-card"><h3>Evaluate</h3><p>Check bridge mass, span, outside width and the measured ≤10 mm displacement criterion without confusing estimated or actual data.</p></article>
+<article class="p219-card"><h3>Explain</h3><p>Use the plotted response and observed damage to compare the test with the structural model from 2.16 and prepare for redesign in 2.20.</p></article></div>
+<p class="p219-note" style="margin-top:1rem"><strong>Suggested pacing:</strong> Teams rotate through the instructor-run test while others analyze evidence and prepare reports. Only the teacher selects safe test steps, gauge capacity and stopping rules; no force increments are imposed by this webpage.</p></section>
+<section class="container lesson-section" id="criteria"><div class="p219-eyebrow">01 / Qualification requirements</div><h2>Every requirement matters</h2><div class="p219-triple"><article class="p219-card"><h3>100 N</h3><p>Total centered qualification load</p></article><article class="p219-card"><h3>≤10 mm</h3><p>Measured midpoint deflection at exactly 100 N</p></article><article class="p219-card"><h3>400 mm</h3><p>Clear distance between supports</p></article><article class="p219-card"><h3>≤65 mm</h3><p>Outside width including M3 hardware</p></article><article class="p219-card"><h3>≤150 g</h3><p>Completed mass including adhesive and connectors</p></article><article class="p219-card"><h3>Approved only</h3><p>Wood/plywood structure and permitted joints</p></article></div>
+<p class="p219-warn" style="margin-top:1rem">The official 100 N criterion applies to the <strong>whole bridge</strong>, not independently to each side frame. Meeting a mass or load-to-mass target does not override other dimensional, deflection or manufacturing restrictions. <a href="../unit-2.html#bridge-manufacturing-specifications">Check complete rules ↗</a>.</p></section>
+<section class="container lesson-section" id="apparatus"><div class="p219-eyebrow">02 / Understand the apparatus</div><h2>Two separate measurements: force and midpoint deflection</h2>
+<svg class="p219-svg" role="img" aria-label="Teacher-approved bridge load test schematic showing a force gauge applying load at midpoint to an open-web truss on a fixed 400 millimeter clear span. An independent stationary measurement device reads midspan deflection from a reference datum." viewBox="0 0 840 365">
+<defs><marker id="force219" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bd7d3a"/></marker></defs>
+<rect x="325" y="35" width="170" height="64" rx="9" fill="#deedf5" stroke="#31748c" stroke-width="2"/><text x="410" y="60" text-anchor="middle">Digital force gauge</text><text x="410" y="80" text-anchor="middle">rated fixture</text>
+<path d="M410 99V170" stroke="#bd7d3a" stroke-width="4" marker-end="url(#force219)"/><text x="430" y="123">Applied force (N)</text>
+<g stroke="#2b718a" stroke-width="9" stroke-linecap="round" fill="none" stroke-linejoin="round">
+<path d="M143 241H675M143 241L201 154L307 241L410 154L515 241L620 154L675 241M201 154H410L620 154"/>
+</g>
+<path d="M144 248L128 276H159Z" fill="#dce9f1" stroke="#32728b" stroke-width="2"/><circle cx="675" cy="262" r="10" fill="#dce9f1" stroke="#32728b" stroke-width="2"/>
+<path d="M143 288V304M675 288V304M143 296H675" stroke="#809ba8" stroke-width="2"/><text x="410" y="319" text-anchor="middle">400 mm clear supported span</text>
+<rect x="20" y="162" width="108" height="89" rx="6" fill="#e3f5f4" stroke="#268b91" stroke-width="2"/>
+<text x="74" y="187" text-anchor="middle">Fixed-datum</text><text x="74" y="206" text-anchor="middle">displacement</text><text x="74" y="225" text-anchor="middle">reader</text>
+<path d="M127 235H398" stroke="#138e93" stroke-width="3" stroke-dasharray="5 5"/>
+<text x="475" y="270">Deflection δ (mm)</text>
+<rect x="715" y="155" width="107" height="106" rx="7" fill="#fff5e4" stroke="#bd903f" stroke-width="2"/><text x="768" y="181" text-anchor="middle">Guarded</text><text x="768" y="202" text-anchor="middle">safety zone</text><text x="768" y="223" text-anchor="middle">PPE and</text><text x="768" y="244" text-anchor="middle">teacher control</text>
+<text x="410" y="351" text-anchor="middle">Concept only — use an approved mounted rig, never an improvised press</text>
+</svg>
+<div class="p219-cols">
+<article class="p219-card"><h3>Apparatus checklist</h3><ul class="p219-check"><li>Teacher-signed 2.18 pre-test inspection and a labeled finished bridge revision.</li><li>Rigid fixed support fixture with the required clear span; no rocking or slip.</li><li>Mounted calibrated digital force gauge and a teacher-approved rated loading mechanism.</li><li>Independent fixed-datum midpoint displacement gauge, dial indicator or properly calibrated viewing setup.</li><li>Digital scale and calipers for actual mass, clear span and maximum outside width.</li><li>Guarding, eye protection and an exclusion area for failure debris.</li></ul></article>
+<article class="p219-card"><h3>Establish an accurate zero</h3><ol><li>Teacher verifies fixture capacity, alignment and support conditions.</li>
+<li>Locate the intended central loading crossmember and ensure direct vertical loading without eccentricity.</li>
+<li>Set the force gauge zero according to its operating instructions and the approved preload procedure.</li>
+<li>Measure the bridge's unloaded midpoint reference with a <strong>stationary independent datum</strong>.</li>
+<li>Record all subsequent force and midpoint movement from the same baseline; do not confuse actuator travel with actual bridge deflection.</li></ol>
+<p class="p219-warn">Do not improvise a press or push by hand in place of a rated mounting system. Gauge and fixture ratings must be suitable for the load being applied.</p></article></div></section>
+<section class="container lesson-section" id="safety"><div class="p219-eyebrow">03 / Test safety</div><h2>Teacher controls the force; observers stay clear</h2><div class="p219-cols">
+<article class="p219-card"><h3>Before starting</h3><ul class="p219-check"><li>Verify that the finished bridge is approved, has cured, and has no unreconciled defects.</li><li>Check rated capacity of force gauge, attachments, fixture and loading contact.</li><li>Set teacher-defined force steps, ramp/hold time and maximum allowed force.</li><li>Position the bridge securely and establish the fixed 0 mm reference.</li><li>Assign one operator, a load reader, a deflection reader and a recorder.</li></ul></article>
+<article class="p219-card"><h3>Stop immediately for</h3><ul class="p219-check"><li>Unexpected crack, joint separation or progressive splintering.</li><li>Sideways twist, buckling, loss of support contact or sliding fixture.</li><li>Sudden uncontrolled deformation or force drop.</li><li>Force gauge or fixture operating outside its rated range.</li><li>Any unsafe condition or teacher stop command.</li></ul><p><strong>No students touch the loaded bridge.</strong> The instructor directs unloading and evaluates whether the test can safely continue.</p></article></div>
+<p class="p219-warn" style="margin-top:1rem"><strong>Policy:</strong> No repair is permitted after the official test begins. If the bridge cannot be tested safely, record an incomplete or stopped test. Testing beyond 100 N for a greater demonstrated load or failure study is <strong>optional, instructor-approved and requires a suitably rated guarded rig</strong>.</p></section>
+<section class="container lesson-section" id="procedure"><div class="p219-eyebrow">04 / Repeatable procedure</div><h2>Follow these six steps in order</h2><div class="p219-triple"><article class="p219-card"><h3>1 · Record pre-test</h3><p>Bridge ID/revision, team, actual mass, span, overall width, gauge ID and signed inspection.</p></article><article class="p219-card"><h3>2 · Position and zero</h3><p>Set the supports to the real clear span, center the loading nose, zero force and record the fixed midpoint reference.</p></article><article class="p219-card"><h3>3 · Apply approved load</h3><p>Instructor advances to the next authorized increment and allows the reading to stabilize as required.</p></article><article class="p219-card"><h3>4 · Log a paired reading</h3><p>Record actual F (N), actual midspan δ (mm), reading order, visible damage and any measurement uncertainty.</p></article><article class="p219-card"><h3>5 · Document 100 N</h3><p>If safely achieved, enter the actual simultaneous force and deflection values <strong>at 100 N</strong>; record whether deflection is at or below 10 mm.</p></article><article class="p219-card"><h3>6 · Stop, inspect and save</h3><p>Teacher stops for completion, apparatus limit or structural damage. Record why, retain photos and export data without repairing the bridge.</p></article></div></section>
+<section class="container lesson-section" id="videos"><div class="p219-eyebrow">05 / Learning resources</div><h2>Watch a truss test and see how engineers use the data</h2><div class="p219-cols"><article class="p219-card p219-video"><div class="p219-iframe"><iframe title="DiscoverE Truss Bridge Challenge" loading="lazy" src="https://www.youtube-nocookie.com/embed/vHGBisgaCyA" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="p219-video-caption"><h3>DiscoverE: Truss Bridge Challenge</h3><p>Watch the truss change under center loading. Identify the support points, the first visible bending and the differences between classroom demonstrations and our calibrated force-and-deflection test.</p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=vHGBisgaCyA">Open on YouTube ↗</a></div></article>
+<article class="p219-card p219-resource"><h3>Vernier — Measuring load and deflection</h3><p>An engineering educator explains instrumented bridge-testing strategies and why the force and midspan displacement must be recorded together.</p><a href="https://www.vernier.com/video/testing-the-limits-building-engineering-skills-through-bridge-competitions/" target="_blank" rel="noopener noreferrer">Watch the Vernier webinar ↗</a>
+<h3>University of Toronto — Bridge testing day</h3><p>See structural-model loading, inspections and failure mechanisms in an engineering program. Their test capacity and loading positions are different from ours.</p><a href="https://civmin.utoronto.ca/bridge-testing-day-in-civ102-video/" target="_blank" rel="noopener noreferrer">Watch university bridge testing ↗</a></article></div></section>
+<section class="container lesson-section" id="record"><div class="p219-eyebrow">06 / Real experimental data</div><h2>Live force–deflection recorder</h2><p>There are <strong>12 blank measurement rows</strong>; these contain no invented data. Record paired observations from the teacher-operated test. Enter the 100 N observation precisely if obtained. Browser values are temporary: export them before leaving the page.</p>
+<div class="p219-workspace">
+<div class="p219-cols"><article class="p219-card"><h3>Physical bridge and equipment</h3><div class="p219-cols"><div><label class="p219-label" for="team">Team ID</label><input class="p219-input" id="team" type="text"  placeholder="Group / period"/></div><div><label class="p219-label" for="rev">Bridge revision</label><input class="p219-input" id="rev" type="text"  placeholder="As recorded in 2.18"/></div><div><label class="p219-label" for="testDate">Official test date</label><input class="p219-input" id="testDate" type="date"  placeholder=""/></div><div><label class="p219-label" for="mass">Measured bridge mass (g)</label><input class="p219-input" id="mass" type="number" min="0" step=".01" placeholder="≤ 150"/></div><div><label class="p219-label" for="span">Actual clear span (mm)</label><input class="p219-input" id="span" type="number" min="0" step=".01" placeholder="400"/></div><div><label class="p219-label" for="width">Outside width (mm)</label><input class="p219-input" id="width" type="number" min="0" step=".01" placeholder="≤ 65"/></div><div><label class="p219-label" for="gauge">Force gauge / rig ID</label><input class="p219-input" id="gauge" type="text"  placeholder="Approved model / serial"/></div><div><label class="p219-label" for="capacity">Approved capacity (N)</label><input class="p219-input" id="capacity" type="number" min="0" step=".01" placeholder="From equipment rating"/></div><div><label class="p219-label" for="defDevice">Fixed-datum deflection method</label><input class="p219-input" id="defDevice" type="text"  placeholder="Dial indicator, ruler, calibrated video"/></div></div></article>
+<article class="p219-card"><h3>Official test outcome</h3><label for="outcome" class="p219-label">Test stopped because</label>
+<select class="p219-input" id="outcome"><option value="">Select after the test</option><option>Reached 100 N and stopped</option><option>Teacher-authorized test beyond 100 N</option><option>Observed structural damage</option><option>Gauge / fixture limit</option><option>Unsafe instability / instrument error</option><option>Not tested</option></select>
+<label class="p219-label" for="peak">Additional instructor-verified peak gauge reading (N), if measured</label><input id="peak" class="p219-input" type="number" min="0" step=".01" placeholder="Optional; do not invent"/>
+<label class="p219-label" for="firstDamage">First observed damage force (N), if known</label><input id="firstDamage" class="p219-input" type="number" min="0" step=".01"/>
+<label class="p219-label" for="reason">Observed failure mode and reason for stopping</label><textarea id="reason" rows="3" class="p219-input" placeholder="Describe actual damage or equipment limit; leave unobserved failure blank."></textarea>
+<label class="p219-label" for="photos">Photograph / video evidence filenames</label><textarea id="photos" rows="3" class="p219-input" placeholder="Test rig, at 100 N if obtained, and post-test bridge condition."></textarea>
+<p class="p219-small">A test that stops at 100 N proves the maximum <em>demonstrated</em> load is 100 N, but does not reveal ultimate strength or the force that would break the bridge.</p></article></div>
+<h3>Paired experimental observations</h3><div class="p219-tablewrap"><table class="p219-table"><thead><tr><th>Step</th><th>Force F (N)</th><th>Midpoint δ (mm)</th><th>Observed change</th></tr></thead><tbody><tr><td>1</td>
+<td><input id="force0" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 1 force in newtons"/></td>
+<td><input id="delta0" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 1 deflection in millimeters"/></td>
+<td><input id="obs0" class="p219-input" type="text" placeholder="Damage / stabilization" aria-label="Reading 1 observation"/></td></tr><tr><td>2</td>
+<td><input id="force1" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 2 force in newtons"/></td>
+<td><input id="delta1" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 2 deflection in millimeters"/></td>
+<td><input id="obs1" class="p219-input" type="text" placeholder="Damage / stabilization" aria-label="Reading 2 observation"/></td></tr><tr><td>3</td>
+<td><input id="force2" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 3 force in newtons"/></td>
+<td><input id="delta2" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 3 deflection in millimeters"/></td>
+<td><input id="obs2" class="p219-input" type="text" placeholder="Damage / stabilization" aria-label="Reading 3 observation"/></td></tr><tr><td>4</td>
+<td><input id="force3" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 4 force in newtons"/></td>
+<td><input id="delta3" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 4 deflection in millimeters"/></td>
+<td><input id="obs3" class="p219-input" type="text" placeholder="Damage / stabilization" aria-label="Reading 4 observation"/></td></tr><tr><td>5</td>
+<td><input id="force4" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 5 force in newtons"/></td>
+<td><input id="delta4" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 5 deflection in millimeters"/></td>
+<td><input id="obs4" class="p219-input" type="text" placeholder="Damage / stabilization" aria-label="Reading 5 observation"/></td></tr><tr><td>6</td>
+<td><input id="force5" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 6 force in newtons"/></td>
+<td><input id="delta5" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 6 deflection in millimeters"/></td>
+<td><input id="obs5" class="p219-input" type="text" placeholder="Damage / stabilization" aria-label="Reading 6 observation"/></td></tr><tr><td>7</td>
+<td><input id="force6" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 7 force in newtons"/></td>
+<td><input id="delta6" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 7 deflection in millimeters"/></td>
+<td><input id="obs6" class="p219-input" type="text" placeholder="Damage / stabilization" aria-label="Reading 7 observation"/></td></tr><tr><td>8</td>
+<td><input id="force7" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 8 force in newtons"/></td>
+<td><input id="delta7" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 8 deflection in millimeters"/></td>
+<td><input id="obs7" class="p219-input" type="text" placeholder="Damage / stabilization" aria-label="Reading 8 observation"/></td></tr><tr><td>9</td>
+<td><input id="force8" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 9 force in newtons"/></td>
+<td><input id="delta8" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 9 deflection in millimeters"/></td>
+<td><input id="obs8" class="p219-input" type="text" placeholder="Damage / stabilization" aria-label="Reading 9 observation"/></td></tr><tr><td>10</td>
+<td><input id="force9" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 10 force in newtons"/></td>
+<td><input id="delta9" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 10 deflection in millimeters"/></td>
+<td><input id="obs9" class="p219-input" type="text" placeholder="Damage / stabilization" aria-label="Reading 10 observation"/></td></tr><tr><td>11</td>
+<td><input id="force10" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 11 force in newtons"/></td>
+<td><input id="delta10" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 11 deflection in millimeters"/></td>
+<td><input id="obs10" class="p219-input" type="text" placeholder="Damage / stabilization" aria-label="Reading 11 observation"/></td></tr><tr><td>12</td>
+<td><input id="force11" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 12 force in newtons"/></td>
+<td><input id="delta11" class="p219-input" type="number" min="0" step=".01" aria-label="Reading 12 deflection in millimeters"/></td>
+<td><input id="obs11" class="p219-input" type="text" placeholder="Damage / stabilization" aria-label="Reading 12 observation"/></td></tr></tbody></table></div>
+<div id="warnings" class="p219-result" aria-live="polite">Enter measured readings once the instructor has started the official test.</div>
+<div class="p219-actions"><button type="button" id="csv" class="btn">Export Measurement CSV</button><button type="button" id="report" class="btn secondary">Export Test Summary</button><button type="button" id="print" class="btn secondary">Print Four-Page Test Packet</button><button type="button" id="clear" class="btn secondary">Clear Data</button></div></div></section>
+<section class="container lesson-section" id="analysis"><div class="p219-eyebrow">07 / Analyze and qualify</div><h2>Measured graph, qualifying reading, and structural efficiency</h2>
+<div class="p219-cols"><article class="p219-card"><h3>Midpoint deflection vs. force</h3><svg id="liveChart" class="p219-svg" viewBox="0 0 810 456" role="img" aria-label="Live measured graph of force on the horizontal axis and midpoint deflection on vertical axis, with 100 newton and 10 millimeter guides.">
+<rect x="80" y="30" width="670" height="352" fill="#fff"/><g id="graphGrid"></g>
+<path d="M80 30V382H750" fill="none" stroke="#54758b" stroke-width="2.2"/>
+<line id="goalF" x1="620" y1="30" x2="620" y2="382" stroke="#c48a32" stroke-width="2.5" stroke-dasharray="7 5"/>
+<line id="goalD" x1="80" y1="140" x2="750" y2="140" stroke="#bc6050" stroke-width="2.5" stroke-dasharray="7 5"/>
+<polyline id="plotLine" fill="none" stroke="#168da3" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" points=""/>
+<g id="plotPoints"></g><g id="plotTicks"></g>
+<text x="415" y="447" text-anchor="middle">Actual force F (N) →</text><text x="20" y="210" text-anchor="middle" transform="rotate(-90 20 210)">Midpoint deflection δ (mm) →</text>
+<text id="graphTitle" x="415" y="204" text-anchor="middle">No measurements entered</text>
+<text id="chartMaxF" x="750" y="406" text-anchor="end">0 N</text><text id="chartMaxD" x="73" y="23" text-anchor="end">0 mm</text><text id="goalLabelF" x="617" y="45" text-anchor="end">100 N</text><text id="goalLabelD" x="740" y="132" text-anchor="end">10 mm</text>
+</svg>
+<p class="p219-small">Blue line: measured points in recorded order. Orange vertical: 100 N. Red horizontal: 10 mm. These thresholds remain visible even before measurements are entered.</p></article>
+<article class="p219-card"><h3>Live experimental calculations</h3><div class="p219-metrics">
+<div><strong id="metric100">—</strong><span>Deflection at exactly 100 N</span></div><div><strong id="metricPeak">—</strong><span>Highest verified observed load</span></div><div><strong id="metricMass">—</strong><span>Measured finished mass</span></div><div><strong id="metricK">—</strong><span>Approximate initial slope k</span></div><div><strong id="metricEta100">—</strong><span>100 N per gram</span></div><div><strong id="metricEtaPeak">—</strong><span>Observed load per gram</span></div></div>
+<div id="verdict" class="p219-result" aria-live="polite">Qualification not yet verified.</div><div id="interpolation" class="p219-note">An estimated value between readings cannot replace a real measured 100 N observation.</div></article></div>
+<div class="p219-cols" style="margin-top:1rem"><article class="p219-card"><h3>Whole-bridge stiffness</h3><div class="p219-formula">k<sub>bridge</sub> ≈ ΔF / Δδ &nbsp; [N/mm]</div><p>The calculator reports a through-origin approximation based on the first three-to-five positive paired loading readings at or below 100 N. This assumes correctly zeroed instruments and an approximately linear initial region. If that assumption is not reasonable, discuss the graph without using a single stiffness value.</p></article>
+<article class="p219-card"><h3>Performance per mass</h3><div class="p219-formula">η<sub>qualification</sub> = 100 N / finished mass (g)</div>
+<div class="p219-formula">η<sub>observed</sub> = highest verified observed F (N) / mass (g)</div><p>These are <strong>supported load per gram</strong> calculations. Neither is a measured ultimate failure efficiency unless failure was actually observed and its force verified. A heavier or noncompliant bridge can have high N/g and still fail qualification.</p></article></div></section>
+<section class="container lesson-section" id="failure"><div class="p219-eyebrow">08 / Structural behavior</div><h2>Classify visible changes and damage</h2><svg class="p219-svg" role="img" aria-label="Four schematic failure modes: a bowed compression diagonal, a separated gusset, sideways twisting truss and crushed loading contact." viewBox="0 0 820 200">
+<rect x="9" y="12" width="194" height="177" rx="9" fill="#f3f9fc" stroke="#c7dee7"/><text x="106" y="31" text-anchor="middle">Compression buckling</text><path d="M51 150L85 97L136 87L169 43" stroke="#b27b42" stroke-width="11" fill="none"/><rect x="214" y="12" width="194" height="177" rx="9" fill="#f3f9fc" stroke="#c7dee7"/><text x="311" y="31" text-anchor="middle">Joint separation</text><path d="M243 139L311 57L376 142" stroke="#b27b42" stroke-width="11" fill="none"/><path d="M293 75L339 83L345 111L306 105" fill="#edd6a2" stroke="#a77e41" stroke-width="3"/><rect x="419" y="12" width="194" height="177" rx="9" fill="#f3f9fc" stroke="#c7dee7"/><text x="516" y="31" text-anchor="middle">Lateral twisting</text><path d="M452 147L480 57L559 80L589 147H452" stroke="#398198" stroke-width="9" fill="none"/><path d="M480 57L589 147" stroke="#398198" stroke-width="4"/><rect x="624" y="12" width="194" height="177" rx="9" fill="#f3f9fc" stroke="#c7dee7"/><text x="721" y="31" text-anchor="middle">Load-point crushing</text><path d="M652 146H793M652 146L721 68L793 146" stroke="#b27b42" stroke-width="11" fill="none"/><path d="M722 31V66" stroke="#bd6a3c" stroke-width="5"/>
+</svg>
+<div class="p219-cols"><article class="p219-card"><h3>What can fail?</h3><ul class="p219-check"><li>Compression diagonal or top chord bows or buckles.</li><li>Plywood gusset peels or adhesive separates, or M3 bearing zone splits.</li><li>Whole bridge twists due to weak lateral bracing.</li><li>Local center loading surface or end support crushes.</li><li>Bridge remains upright but exceeds the 10 mm displacement limit at 100 N.</li></ul></article><article class="p219-card"><h3>Document for 2.20</h3><p>Mark the actual defect on a photograph or sketch; record the first observed load if known; compare its location to predicted compression forces and weak joints from 2.16; and propose two evidence-driven revisions.</p>
+<p class="p219-warn"><strong>Do not repair during or after the official test.</strong> Lesson 2.20 is a redesign analysis, not permission to invalidate the tested result.</p></article></div></section>
+<section class="container lesson-section" id="practice"><div class="p219-eyebrow">09 / Independent check</div><h2>Test your reasoning</h2><div class="p219-cols">
+<article class="p219-card"><h3>1 · Exact qualification reading</h3><p>You recorded 95 N at 8 mm and 105 N at 11 mm, but nothing at 100 N. Does the software certify a pass?</p><details><summary>Check answer</summary><p>No. An interpolated estimate might be informative, but qualification requires observed data at the test load. Record the missing measurement; do not call it a pass.</p></details></article>
+<article class="p219-card"><h3>2 · Actual bridge mass</h3><p>The Fusion mass estimate was 140 g but the actual completed bridge weighs 153 g. Which value counts?</p><details><summary>Check answer</summary><p><strong>153 g</strong>, the measured finished mass. It exceeds the 150 g maximum regardless of the CAD estimate.</p></details></article>
+<article class="p219-card"><h3>3 · Qualification deflection</h3><p>A bridge carries 100 N with a measured 9.2 mm midpoint deflection. What else must be checked?</p><details><summary>Check answer</summary><p>It meets the numeric deflection criterion. Also verify true supported span, total width, mass, approved construction and actual teacher-controlled test evidence.</p></details></article>
+<article class="p219-card"><h3>4 · Demonstrated vs. ultimate</h3><p>Testing stops without failure at exactly 100 N. Is the bridge's ultimate strength 100 N?</p><details><summary>Check answer</summary><p>No. 100 N is the highest <em>demonstrated</em> force if it was the highest measured. Failure force remains unknown.</p></details></article>
+<article class="p219-card"><h3>5 · Ratio calculation</h3><p>A tested bridge weighing 125 g supports 100 N. Calculate qualification load per mass.</p><details><summary>Check answer</summary><p>100 N / 125 g = <strong>0.800 N/g</strong>. This does not compensate for any failed dimensional or deflection requirement.</p></details></article>
+<article class="p219-card"><h3>6 · Actual stiffness</h3><p>Measured force changes by 60 N while deflection changes by 4 mm in a linear region. What is the approximate slope?</p><details><summary>Check answer</summary><p>ΔF/Δδ = <strong>15 N/mm</strong>, a whole-bridge stiffness under the actual support and load configuration, not the wood's Young modulus.</p></details></article>
+<article class="p219-card"><h3>7 · Safety</h3><p>A joint begins opening and the gauge is close to its rated force. Should students continue until the bridge breaks?</p><details><summary>Check answer</summary><p>No. The teacher stops and documents the safe maximum observed force; deliberate failure testing requires separate approved capacity, guarding and direction.</p></details></article>
+<article class="p219-card"><h3>8 · After the run</h3><p>The bridge's central gusset peels at 80 N during official testing. May the team re-glue and retest immediately?</p><details><summary>Check answer</summary><p>No. No repairs are allowed once the official test begins. Record the failure and plan an evidence-based redesign in 2.20.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="resources"><div class="p219-eyebrow">10 / Further learning</div><h2>Instrumented bridge experiments</h2><div class="p219-cols">
+<article class="p219-card p219-resource"><h3>Vernier: Testing the Limits</h3><p>Educational video on collecting force and displacement data during bridge competitions.</p><a href="https://www.vernier.com/video/testing-the-limits-building-engineering-skills-through-bridge-competitions/" target="_blank" rel="noopener noreferrer">Open Vernier video ↗</a></article>
+<article class="p219-card p219-resource"><h3>University of Toronto: Bridge Testing Day</h3><p>Student design–build–test examples, including measurement and failure, on larger laboratory rigs with different rules.</p><a href="https://civmin.utoronto.ca/bridge-testing-day-in-civ102-video/" target="_blank" rel="noopener noreferrer">View university bridge testing ↗</a></article>
+<article class="p219-card p219-resource"><h3>ASCE Engineering Education (2026)</h3><p>Research discussing a load–deflection bridge laboratory and failure analysis.</p><a href="https://ascelibrary.org/doi/10.1061/JCEECD.EIENG-2550" target="_blank" rel="noopener noreferrer">Read case study ↗</a></article>
+<article class="p219-card p219-resource"><h3>Class bridge rules and test preparation</h3><p>Return to the manufacturing constraints and 2.18 inspection if any qualification issue is unclear.</p><a href="../unit-2.html#bridge-manufacturing-specifications">Open Unit 2 specifications →</a><a href="lesson-2-18.html">Open 2.18 fabrication record →</a></article></div></section>
+<section class="container lesson-section" id="submit"><div class="p219-eyebrow">Assignment deliverable</div><h2>Exactly what students must submit for 2.19</h2><div class="p219-cols">
+<article class="p219-card"><h3>Bridge Load Test &amp; Structural Performance Report</h3><ul class="p219-check"><li>Team ID, revision, test date, approved test setup and instrument information.</li><li>Actual bridge mass, clear span and overall width from physical measurements.</li><li>An annotated diagram or photograph of center loading and the independent deflection reference.</li><li>All genuine paired force–deflection data, including exact 100 N reading if achieved.</li><li>Labeled graph with the 100 N and 10 mm thresholds.</li><li>Clearly documented numeric qualification result and any unverified requirements.</li><li>Highest observed load, test stop reason, photos and the earliest observed damage.</li><li>N/g efficiency calculation where actual force and mass are known.</li><li>Comparison with 2.16 predicted compression/joint risks and two recommendations for 2.20.</li><li>CSV/summary export or printed four-page packet plus at least three labeled photos/stills.</li></ul></article>
+<article class="p219-card"><h3>Scientific integrity check</h3><ul class="p219-check"><li>No fabricated or preset force–deflection data.</li><li>At 100 N, deflection is a genuine simultaneous reading—not an interpolated estimate.</li><li>Highest observed load is not automatically ultimate failure strength.</li><li>Instrument and fixture limits are respected; stopped tests are reported honestly.</li><li>No repairs once official testing starts.</li><li>Units are N, mm, g and N/g; clear span and total width are checked.</li><li>Actual physical results are separated from 2.16 predictions.</li><li>Teacher confirms qualification and manufacturing compliance.</li></ul><p><strong>Due:</strong> See the <a href="../../../../agenda.html">Daily Agenda</a> and your teacher's submission instructions.</p></article></div></section>
+<nav class="container lesson-bottom-nav" aria-label="Lesson navigation"><a class="btn secondary" href="lesson-2-18.html">← 2.18 Bridge Fabrication</a><a class="btn" href="lesson-2-20.html">Next: 2.20 Redesign &amp; Engineering Review →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer><section id="poe219Print" aria-label="Printable bridge load testing packet">
+<div class="printpage"><h1>POE 2.19 · OFFICIAL BRIDGE TEST</h1><p>Page 1 of 4 · Approval and apparatus</p><p>Team: ________________________ Revision: ________ Date: _____________</p>
+<table><thead><tr><th>Measurement / setup</th><th>Actual</th><th>Required</th></tr></thead><tbody><tr><td>Finished bridge mass</td><td></td><td>≤150 g</td></tr><tr><td>Clear supported span</td><td></td><td>400 mm</td></tr><tr><td>Outside width</td><td></td><td>≤65 mm</td></tr><tr><td>Force gauge ID/rated limit</td><td></td><td>Teacher verified</td></tr><tr><td>Independent displacement method</td><td></td><td>Fixed datum</td></tr><tr><td>Instructor and approval</td><td></td><td>Recorded</td></tr></tbody></table>
+<h2>Actual test rig diagram</h2><div class="drawbox">Label gauge, loading nose, supports, clear span, midpoint δ reference and guarding.</div>
+<h2>Test safety and teacher method</h2><p>☐ Signed inspection ☐ Rated fixture ☐ PPE/shield ☐ Centered bridge ☐ Zeroed instruments</p><p>Instructor-defined step/hold/stop procedure: _____________________________________________</p></div>
+<div class="printpage"><h1>POE 2.19 · MEASURED FORCE / DEFLECTION</h1><p>Page 2 of 4 · No simulated values</p>
+<table><thead><tr><th>Step</th><th>Actual force F (N)</th><th>Actual midpoint δ (mm)</th><th>Observed change / damage</th></tr></thead><tbody><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td></tr><tr><td>4</td><td></td><td></td><td></td></tr><tr><td>5</td><td></td><td></td><td></td></tr><tr><td>6</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>8</td><td></td><td></td><td></td></tr><tr><td>9</td><td></td><td></td><td></td></tr><tr><td>10</td><td></td><td></td><td></td></tr><tr><td>11</td><td></td><td></td><td></td></tr><tr><td>12</td><td></td><td></td><td></td></tr></tbody></table>
+<p>Actual observation at exactly 100 N? ☐ Yes (δ = ______ mm) ☐ No / unable to measure</p>
+<p>Highest observed load ______ N &nbsp; First damage ______ N / not observed</p>
+<p>Test stop reason: _____________________________________________________________________</p></div>
+<div class="printpage"><h1>POE 2.19 · LOAD–DEFLECTION GRAPH</h1><p>Page 3 of 4 · Plot real observations only</p>
+<p>Horizontal axis: force (N). Vertical axis: midpoint deflection (mm). Mark 100 N and 10 mm thresholds.</p>
+<div class="gridbox"></div>
+<p>Initial k (if defensible): ______ N/mm &nbsp; 100 N / measured mass: ______ N/g</p><p>Highest demonstrated F / mass: ______ N/g (not necessarily breaking capacity)</p>
+<h2>Graph interpretation</h2><div class="lines"><div></div><div></div><div></div><div></div><div></div></div></div>
+<div class="printpage"><h1>POE 2.19 · TEST RESULT &amp; FAILURE ANALYSIS</h1><p>Page 4 of 4 · Report the actual test outcome</p>
+<table><thead><tr><th>Qualification criterion</th><th>Actual evidence</th><th>Status</th></tr></thead><tbody><tr><td>Clear span 400 mm</td><td></td><td></td></tr><tr><td>Outside width ≤65 mm</td><td></td><td></td></tr><tr><td>Finished mass ≤150 g</td><td></td><td></td></tr><tr><td>Applied load 100 N</td><td></td><td></td></tr><tr><td>Measured δ at 100 N ≤10 mm</td><td></td><td></td></tr><tr><td>Approved construction / teacher review</td><td></td><td></td></tr></tbody></table>
+<h2>Observed damage and annotated photograph</h2><div class="drawbox">Show crack, brace, joint, support, load nose and load at first damage (if known).</div>
+<h2>Compare to 2.16 analysis</h2><div class="lines"><div></div><div></div><div></div></div>
+<h2>Two evidence-based changes proposed for 2.20</h2><div class="lines"><div></div><div></div><div></div></div></div>
+</section><script>
+(function(){
+"use strict";
+const e=id=>document.getElementById(id),svgNS="http://www.w3.org/2000/svg";
+if(!e("force0")||!e("liveChart"))return;
+function n(id){const s=e(id).value.trim();if(s==="")return null;const v=Number(s);return Number.isFinite(v)?v:null;}
+function t(id,s){e(id).textContent=s;}
+function pairs(){return Array.from({length:12},(_,i)=>({step:i+1,f:n("force"+i),d:n("delta"+i),note:e("obs"+i).value.trim()}));}
+function elem(name,attrs,parent){const x=document.createElementNS(svgNS,name);Object.entries(attrs).forEach(([k,v])=>x.setAttribute(k,String(v)));parent.appendChild(x);return x;}
+function plot(rows){
+ const valid=rows.filter(x=>x.f!==null&&x.d!==null&&x.f>=0&&x.d>=0);
+ const fx=Math.max(120,...valid.map(x=>x.f))*1.1,dy=Math.max(12,...valid.map(x=>x.d))*1.12;
+ const X=v=>80+v/fx*670,Y=v=>382-v/dy*337;
+ const grid=e("graphGrid"),points=e("plotPoints"),ticks=e("plotTicks");grid.replaceChildren();points.replaceChildren();ticks.replaceChildren();
+ for(let i=1;i<=5;i++){
+ const gx=80+i*670/5,gy=382-i*337/5;
+ elem("line",{x1:gx,x2:gx,y1:30,y2:382,stroke:"#deebf2","stroke-width":1},grid);
+ elem("line",{x1:80,x2:750,y1:gy,y2:gy,stroke:"#deebf2","stroke-width":1},grid);
+ elem("text",{x:gx,y:403,"text-anchor":"middle"},ticks).textContent=(fx*i/5).toFixed(0);
+ elem("text",{x:72,y:gy+4,"text-anchor":"end"},ticks).textContent=(dy*i/5).toFixed(1);
+ }
+ e("goalF").setAttribute("x1",X(100));e("goalF").setAttribute("x2",X(100));
+ e("goalD").setAttribute("y1",Y(10));e("goalD").setAttribute("y2",Y(10));
+ e("goalLabelF").setAttribute("x",X(100)-3);e("goalLabelD").setAttribute("y",Y(10)-7);
+ e("plotLine").setAttribute("points",valid.map(x=>X(x.f).toFixed(1)+","+Y(x.d).toFixed(1)).join(" "));
+ valid.forEach(p=>{const mark=elem("circle",{cx:X(p.f),cy:Y(p.d),r:5.2,fill:Math.abs(p.f-100)<.00001?"#bd7d36":"#168ba0",stroke:"#fff","stroke-width":1.3},points);elem("title",{},mark).textContent=p.f+" N, "+p.d+" mm (step "+p.step+")";});
+ t("chartMaxF",fx.toFixed(0)+" N");t("chartMaxD",dy.toFixed(1)+" mm");e("graphTitle").style.display=valid.length?"none":"";
+ e("liveChart").setAttribute("aria-label","Actual load-deflection graph with "+valid.length+" pairs. Threshold at 100 newtons and 10 millimeters.");
+}
+function calculate(){
+const r=pairs(),complete=r.filter(p=>p.f!==null&&p.d!==null&&p.f>=0&&p.d>=0);
+const incomplete=r.filter(p=>(p.f===null)!==(p.d===null)),neg=r.filter(p=>(p.f!==null&&p.f<0)||(p.d!==null&&p.d<0));
+const mass=n("mass"),span=n("span"),width=n("width"),capacity=n("capacity"),extra=n("peak");
+const measuredF=complete.length?Math.max(...complete.map(p=>p.f)):null;
+const badPeak=extra!==null&&(extra<0||(measuredF!==null&&extra+1e-6<measuredF));
+const peak=badPeak?null:extra===null?measuredF:Math.max(extra,measuredF||0);
+const exact=complete.filter(p=>Math.abs(p.f-100)<.000001),d100=exact.length?Math.max(...exact.map(p=>p.d)):null;
+const low=complete.filter(p=>p.f>0&&p.f<=100&&p.d>0).sort((a,b)=>a.f-b.f).slice(0,5);
+const k=low.length<3?null:low.reduce((s,p)=>s+p.f*p.d,0)/low.reduce((s,p)=>s+p.d*p.d,0);
+const issues=[];if(incomplete.length)issues.push(incomplete.length+" incomplete force–deflection pair(s)");
+if(neg.length)issues.push(neg.length+" negative value(s)");
+if(badPeak)issues.push("Additional peak cannot be smaller than a recorded force");
+if(capacity!==null&&capacity<=0)issues.push("Invalid instrument capacity");
+if(peak!==null&&capacity>0&&peak>capacity)issues.push("Recorded load exceeds entered instrument capacity");
+t("warnings",issues.length?"Check data: "+issues.join("; ")+".":complete.length?"Recorded "+complete.length+" real paired observation(s). Export before leaving the page.":"No paired measurements entered.");
+t("metric100",d100===null?"Not measured":d100.toFixed(2)+" mm");
+t("metricPeak",peak===null?"—":peak.toFixed(2)+" N");
+t("metricMass",mass===null?"—":mass.toFixed(2)+" g");
+t("metricK",k===null?"Not enough data":k.toFixed(2)+" N/mm");
+t("metricEta100",d100!==null&&mass>0?(100/mass).toFixed(3)+" N/g":"—");
+t("metricEtaPeak",peak!==null&&mass>0?(peak/mass).toFixed(3)+" N/g":"—");
+let verdict="";
+if(issues.length)verdict+="MEASUREMENT REVIEW NEEDED: "+issues.join("; ")+". ";
+if(mass===null)verdict+="Mass not entered. ";else if(mass<=0||mass>150)verdict+="Finished mass fails the 150 g requirement. ";
+if(span===null)verdict+="Clear span not entered. ";else if(span<400)verdict+="Clear span below 400 mm. ";
+if(width===null)verdict+="Outside width not entered. ";else if(width<=0||width>65)verdict+="Outside width exceeds the allowable 65 mm. ";
+if(d100===null)verdict+="No actual paired reading at exactly 100 N; qualification unverified. ";
+else verdict+=d100<=10?"Measured displacement at 100 N is within the 10 mm limit. ":"Measured displacement at 100 N exceeds the 10 mm limit. ";
+if(mass>0&&mass<=150&&span>=400&&width>0&&width<=65&&d100!==null&&d100<=10&&!issues.length)
+verdict="ENTERED NUMERICAL CRITERIA MET. Instructor must confirm complete construction compliance, instrumentation, and the official test result; the page does not certify the bridge. ";
+if(capacity===null)verdict+="Instrument capacity not yet recorded. ";
+else if(capacity<=0)verdict+="Instrument capacity invalid. ";
+if(!e("outcome").value)verdict+="Official test outcome not selected. ";
+verdict+="No repairs after official testing begins.";
+t("verdict",verdict);
+if(d100!==null)t("interpolation",exact.length>1?"Multiple measured 100 N readings exist. The largest measured displacement is reported conservatively.":"Actual 100 N pair recorded: interpolation not needed.");
+else {
+ let estimate=null;for(let i=1;i<complete.length;i++){
+ const a=complete[i-1],b=complete[i];if((a.f<100&&b.f>100)||(b.f<100&&a.f>100)){estimate=a.d+(100-a.f)*(b.d-a.d)/(b.f-a.f);break;}
+ }
+ t("interpolation",estimate===null?"No real 100 N reading. Leave the requirement unverified.":"For discussion only: linear interpolation suggests δ≈"+estimate.toFixed(2)+" mm at 100 N. This is NOT a measured 100 N result or qualification.");
+}
+plot(r);return {r,mass,span,width,capacity,peak,d100,k,issues,verdict};
+}
+function csv(v){return '"'+String(v===null||v===undefined?"":v).replace(/"/g,'""')+'"';}
+function save(contents,filename,type){const blob=new Blob([contents],{type}),url=URL.createObjectURL(blob),link=document.createElement("a");link.href=url;link.download=filename;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),2500);}
+document.querySelectorAll("#record input,#record textarea,#record select").forEach(x=>{x.addEventListener("input",calculate);x.addEventListener("change",calculate);});
+e("csv").addEventListener("click",()=>{
+const x=calculate(),header=["Team","Revision","Date","Mass g","Clear span mm","Width mm","Gauge ID","Approved capacity N","Displacement method","Outcome","Step","Actual force N","Actual midpoint deflection mm","Observation","Peak from gauge N","Damage first observed N","Stop reason","Photo filenames"];
+const data=x.r.filter(r=>r.f!==null||r.d!==null||r.note);if(!data.length){alert("Enter a measurement or observation first.");return;}
+const rows=[header,...data.map(r=>[e("team").value,e("rev").value,e("testDate").value,x.mass,x.span,x.width,e("gauge").value,x.capacity,e("defDevice").value,e("outcome").value,r.step,r.f,r.d,r.note,n("peak"),n("firstDamage"),e("reason").value,e("photos").value])];
+save(rows.map(r=>r.map(csv).join(",")).join("\r\n")+"\r\n","POE_2-19_Bridge_Force_Deflection.csv","text/csv;charset=utf-8");
+});
+e("report").addEventListener("click",()=>{
+const x=calculate(),lines=["POE 2.19 · OFFICIAL BRIDGE LOAD TEST","This report records student observations, not automatic instructor approval.","Team: "+e("team").value,"Bridge revision: "+e("rev").value,"Date: "+e("testDate").value,
+"Measured finished mass: "+x.mass+" g","Clear span: "+x.span+" mm","Overall width: "+x.width+" mm","Gauge ID: "+e("gauge").value,"Approved capacity: "+x.capacity+" N","Displacement reference: "+e("defDevice").value,
+"Official outcome: "+e("outcome").value,"Deflection at actual 100 N: "+(x.d100===null?"NOT MEASURED":x.d100+" mm"),"Highest observed force: "+x.peak+" N","Approx. initial k: "+(x.k===null?"not enough data":x.k+" N/mm"),
+"First observed damage force: "+e("firstDamage").value,"Stop reason: "+e("reason").value,"Photo evidence: "+e("photos").value,"","Qualification screen: "+x.verdict,
+"","RECORDED FORCE–DEFLECTION PAIRS",
+...x.r.filter(r=>r.f!==null||r.d!==null||r.note).map(r=>r.step+". "+r.f+" N | "+r.d+" mm | "+r.note),"","Provide failure evidence, compare to 2.16 calculations, and propose two redesigns for 2.20."];
+save(lines.join("\n"),"POE_2-19_Bridge_Test_Report.txt","text/plain;charset=utf-8");
+});
+e("clear").addEventListener("click",()=>{if(!confirm("Clear ALL entered test measurements and notes? Export before clearing."))return;
+document.querySelectorAll("#record input,#record textarea,#record select").forEach(x=>x.value="");calculate();});
+e("print").addEventListener("click",()=>{document.body.classList.add("p219-print");window.print();});
+window.addEventListener("afterprint",()=>document.body.classList.remove("p219-print"));
+calculate();
+})();
+</script></body></html>
