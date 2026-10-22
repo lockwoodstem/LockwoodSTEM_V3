@@ -343,36 +343,19 @@ function listify(text, forceList = false) {
 }
 
 
+// Render a clear, flat activity list for all agenda courses and both view modes.
+// Older spreadsheet rows may still carry instructional phase labels; these are
+// intentionally removed from display rather than shown as headings.
 function renderPhasedAgenda(text, compact = false) {
   const value = clean(text);
   if (!value) return `<span class="empty">Nothing listed.</span>`;
 
-  const phasePattern = /(?:^|\s*;\s*)(START|BUILD\s*\/\s*ANALYZE|CLOSE)\s*[—–-]\s*/gi;
-  const matches = [...value.matchAll(phasePattern)];
-  if (!matches.length) return listify(value);
+  const simplified = value
+    .replace(/(?:^|[;•\n]\s*)(?:START|BUILD\s*\/\s*ANALYZE|CLOSE|ENGAGE|LEARN|GUIDED|PRACTICE|REVIEW|CHECK|APPLY|REFLECT|DEMONSTRATE|WORK|FINISH)\s*[—–-]\s*/gi, "; ")
+    .replace(/^\s*;\s*/, "")
+    .trim();
 
-  const phaseLabels = {
-    "START": "Start",
-    "BUILD / ANALYZE": "Build / Analyze",
-    "CLOSE": "Close"
-  };
-
-  const sections = matches.map((match, index) => {
-    const normalized = match[1].toUpperCase().replace(/\s+/g, " ").replace(/\s*\/\s*/g, " / ");
-    const start = match.index + match[0].length;
-    const end = index + 1 < matches.length ? matches[index + 1].index : value.length;
-    const body = value.slice(start, end).replace(/^\s*;\s*|\s*;\s*$/g, "").trim();
-    return { label: phaseLabels[normalized] || match[1], body };
-  }).filter(section => section.body);
-
-  if (!sections.length) return listify(value);
-
-  return `<div class="agenda-phases ${compact ? "agenda-phases-compact" : ""}">${sections.map(section => `
-    <section class="agenda-phase">
-      <h4 class="agenda-phase-heading">${escapeHTML(section.label)}</h4>
-      <div class="agenda-phase-content">${listify(section.body, true)}</div>
-    </section>`).join("")}
-  </div>`;
+  return listify(simplified, true);
 }
 
 function safeText(value, fallback = "Nothing listed.") {
