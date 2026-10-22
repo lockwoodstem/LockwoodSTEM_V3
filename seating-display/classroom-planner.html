@@ -19,7 +19,7 @@ select{max-width:100%}label{font-size:13px;font-weight:700;color:#25475d}
 .scroller{overflow:auto;background:#eff5f9;padding:12px;border-radius:0 0 14px 14px}
 .floor{position:relative;width:1120px;height:760px;background:linear-gradient(140deg,#fff,#eaf3f8);border:3px solid #91aebd;border-radius:14px;margin:0 auto}
 .wlabel{position:absolute;top:14px;background:#fff;border:1px dashed #a7b9c7;color:#536f80;border-radius:6px;padding:6px 13px;font-size:12px;font-weight:800}
-.wlabel.shelf{left:20px}.wlabel.board{left:632px}.wlabel.display{right:15px;top:115px}.wlabel.front{left:33px;bottom:10px}
+.wlabel.printers{top:14px;left:420px}.wlabel.tv{top:130px;right:15px}.wlabel.front{left:33px;bottom:10px}
 .table{position:absolute;width:192px;height:122px;display:grid;grid-template-rows:34px 52px 34px;align-items:center;transform-origin:center center}
 .table.active{z-index:3}.table.dragging{z-index:8}
 .table.active .desk{filter:drop-shadow(0 0 3px #b47800)}
@@ -44,14 +44,14 @@ select{max-width:100%}label{font-size:13px;font-weight:700;color:#25475d}
 @media(max-width:1000px){main{grid-template-columns:1fr}.sidebar{grid-template-columns:repeat(auto-fit,minmax(255px,1fr))}}
 @media print{header,.toolbar,.help,.sidebar,#status{display:none!important}main{padding:0;display:block}section{border:0;box-shadow:none}.scroller{overflow:visible;padding:0}.floor{transform:scale(.81);transform-origin:top left;margin:0;print-color-adjust:exact;-webkit-print-color-adjust:exact}@page{size:landscape;margin:0.25in}}
 </style></head>
-<body><header><div><h1>Classroom Seating Planner</h1><p>Photo-based layout · 9 movable trapezoid tables · up to 36 seats · independent of the existing Google seating app</p></div>
+<body><header><div><h1>Classroom Seating Planner</h1><p>Photo-based layout · 10 movable trapezoid tables · up to 40 seats · independent of the existing Google seating app</p></div>
 <nav><a href="./">Existing Seating Display</a> · <a id="oldapp" target="_blank" rel="noopener">Original Editor ↗</a></nav></header>
 <main><section><div class="toolbar">
 <label for="period">Period</label><select id="period"></select>
 <button id="addPeriod">Add Period</button><button id="random" class="primary">Auto-Assign</button>
 <button id="swap">Swap Mode: Off</button><button id="rotateLeft" title="Rotate selected table counterclockwise">↶ Rotate Table</button><button id="rotateRight" title="Rotate selected table clockwise">↷ Rotate Table</button><button id="resetLayout">Reset Layout</button><button id="print">Print</button><span class="count" id="count"></span>
 </div><p class="help">Drag any gold trapezoid tabletop to move the entire table and its four seats (mouse, touch, or stylus). Click a tabletop to select it for rotation, or focus it and use arrow keys to move. Layout changes save automatically and apply to every period. Click a seat to assign a student; Swap Mode exchanges occupants.</p>
-<div class="scroller"><div class="floor" id="floor"><div class="wlabel shelf">SHELVES / PRINTERS</div><div class="wlabel board">WHITEBOARD</div><div class="wlabel display">WALL DISPLAY</div><div class="wlabel front">PHOTO / CLASSROOM FRONT</div></div></div>
+<div class="scroller"><div class="floor" id="floor"><div class="wlabel printers">3D PRINTERS</div><div class="wlabel tv">TV</div><div class="wlabel front">PHOTO / CLASSROOM FRONT</div></div></div>
 <p id="status" aria-live="polite"></p></section>
 <aside class="sidebar">
 <section class="panel"><h2>Selected seat</h2><div id="selected">Select a seat on the map.</div>
@@ -77,11 +77,12 @@ const tables=[
 {id:'B',x:118,y:225,desc:'Middle left'},
 {id:'C',x:150,y:374,desc:'Front left'},
 {id:'D',x:48,y:568,desc:'Near camera'},
-{id:'E',x:444,y:107,desc:'Rear center'},
-{id:'F',x:490,y:339,desc:'Middle center'},
-{id:'G',x:729,y:154,desc:'Rear right'},
-{id:'H',x:774,y:400,desc:'Middle right'},
-{id:'I',x:913,y:269,desc:'Far right'}
+{id:'E',x:470,y:110,desc:'Rear center'},
+{id:'F',x:420,y:410,desc:'Middle center'},
+{id:'J',x:660,y:270,desc:'Center right'},
+{id:'G',x:825,y:100,desc:'Rear right'},
+{id:'H',x:815,y:445,desc:'Middle right'},
+{id:'I',x:910,y:285,desc:'Far right'}
 ];
 const all=tables.flatMap(t=>[1,2,3,4].map(n=>t.id+'-'+n)),blank=()=>({roster:[],assigned:{},locked:[]});
 const clamp=(n,lo,hi)=>Math.min(hi,Math.max(lo,n));
@@ -104,6 +105,17 @@ let state;
 try{state=JSON.parse(localStorage.getItem(storage))}catch(e){}
 if(!state||!state.periods||typeof state.periods!=='object')state={periods:{P1:blank(),P2:blank(),P3:blank(),P4:blank(),P5:blank(),P6:blank(),P7:blank()},current:'P1',disabled:[]};
 if(!Array.isArray(state.disabled))state.disabled=[];
+/* Preserve teacher-moved tables and existing student assignments, while migrating untouched default table positions. */
+if((state.layoutVersion||1)<2 && state.tableLayout){
+ const oldDefaults={E:[444,107],F:[490,339],G:[729,154],H:[774,400],I:[913,269]};
+ for(const t of tables){
+  const p=state.tableLayout[t.id],old=oldDefaults[t.id];
+  if(old && p && Number(p.x)===old[0] && Number(p.y)===old[1] && Number(p.rotation||0)===0){
+   p.x=t.x;p.y=t.y;
+  }
+ }
+}
+state.layoutVersion=2;
 normalizeLayout();
 if(!state.periods[state.current])state.current=Object.keys(state.periods)[0]||'P1';
 let selected=null,swap=false,first=null,activeTable=null,drag=null;
