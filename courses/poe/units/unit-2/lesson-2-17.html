@@ -1,1 +1,403 @@
-<!DOCTYPE html><html lang="en"><head><title>POE Unit 2 Lesson 2.17 | Detailed Bridge Design | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main"><nav class="site-breadcrumbs container"><a href="../unit-2.html">← Unit 2 Overview</a></nav><section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Bridge Design Challenge • Lesson 2.17</div><h1>Detailed Bridge Design</h1><p class="focus-question"><strong>Engineering question:</strong> How can a bridge be documented so it can be manufactured correctly?</p><div class="mission-actions"><a class="btn" href="#learn">Learn</a><a class="btn secondary" href="#practice">Practice</a><a class="btn secondary" href="#apply">Apply</a><a class="btn ghost" href="../unit-2.html#bridge-manufacturing-specifications">Fabrication Rules</a></div></div><aside class="mission-panel"><span class="tag">Bridge capstone</span><h2>Use the engineering design process</h2><p>Apply mechanics, materials, analysis and evidence from earlier lessons.</p></aside></div></section><section class="container lesson-section"><article class="card"><h2>Learning Targets</h2><ul><li>CAD model</li><li>Dimensioned plywood cut files</li><li>Joint detail and mass budget</li></ul></article></section><section class="container lesson-section" id="learn"><article class="card"><h2>Learn the Concept</h2><p>Confirm plywood thickness ≤ 3.2 mm; gussets ≤ 40 × 25 mm, ≤ 800 mm² and 20 mm overlap. PLA/PETG fittings ≤ 50 mm and 15 g each, 40 g total; ≤35% infill, 4 walls, 5 top/bottom, 0.28 mm layer, 0.4 mm nozzle. Mechanical fasteners are M3 nuts and bolts only.</p></article></section><section class="container lesson-section" id="practice"><article class="card"><h2>Practice Together</h2><p>Model two critical joints and verify legal dimensions and 65 mm overall width.</p></article></section><section class="container lesson-section" id="apply"><article class="card"><h2>Apply &amp; Submit</h2><p>Submit CAD, cutting files, print-settings evidence if relevant, BOM and manufacturing sequence.</p><p><a href="../unit-2.html#bridge-manufacturing-specifications">Complete bridge manufacturing and connection specifications</a></p></article></section><nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-16.html">← 2.16 Bridge Engineering Analysis</a><a class="btn" href="lesson-2-18.html">2.18 Bridge Fabrication →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer></body></html>
+<!DOCTYPE html><html lang="en"><head><title>POE 2.17 | Detailed Bridge Design — Learning Studio | LockwoodSTEM</title><meta name="description" content="Detailed bridge design in Autodesk Fusion: full assemblies, manufacturing drawings, DXF cut files, plywood gusset and printed fitting rules, interactive BOM and mass budget, and printable design-review packet."/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script><style id="poe217-learning">
+.poe217 .p217-subhead{color:#936b27;font-size:.82rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.poe217 .p217-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.95rem}
+.poe217 .p217-triple{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe217 .p217-four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe217 .p217-card{background:#f7fbfd;border:1px solid #c8dce7;border-radius:14px;padding:1rem 1.08rem;min-width:0}
+.poe217 .p217-card h3{margin:.15rem 0 .6rem;color:#11506c}
+.poe217 .p217-card p{margin:.5rem 0 .75rem}
+.poe217 .p217-card li{margin:.43rem 0}
+.poe217 .p217-figure{border-radius:14px;background:#fff}
+.poe217 .p217-svg{display:block;width:100%;height:auto;background:#fff;border:1px solid #cbdfe9;border-radius:12px;margin:.7rem auto}
+.poe217 .p217-svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#2a4a5d}
+.poe217 .p217-svg .p217-svg-note{font-size:12px;font-weight:730}
+.poe217 .p217-svg .p217-svg-head{font-size:15px;font-weight:850}
+.poe217 .p217-info{background:#edf8fc;border-left:5px solid #10879c;border-radius:10px;padding:.82rem 1rem}
+.poe217 .p217-warning{background:#fff8e8;border-left:5px solid #c38d2e;border-radius:10px;padding:.82rem 1rem}
+.poe217 .p217-tag{background:#e0f0f7;color:#135775;font-size:.77rem;font-weight:850;border-radius:100px;padding:.25rem .65rem;display:inline-block;margin-bottom:.4rem}
+.poe217 .p217-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem}
+.poe217 .p217-steps>div{background:#edf7fb;border-left:4px solid #16899c;padding:.75rem;border-radius:10px;font-weight:830;color:#104e6b}
+.poe217 .p217-steps small{display:block;color:#526d7c;font-size:.79rem;font-weight:550}
+.poe217 .p217-video{padding:0;overflow:hidden}
+.poe217 .p217-video-frame{position:relative;aspect-ratio:16/9;background:#14384c}
+.poe217 .p217-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe217 .p217-video-copy{padding:1rem}
+.poe217 .p217-video a,.poe217 .p217-resource a{font-weight:820;display:block;margin:.5rem 0;overflow-wrap:anywhere}
+.poe217 .p217-tablewrap{overflow-x:auto;margin:.7rem 0}
+.poe217 .p217-table{width:100%;border-collapse:collapse;font-size:.91rem}
+.poe217 .p217-table td,.poe217 .p217-table th{border:1px solid #c3dae6;padding:.58rem;text-align:left;vertical-align:middle}
+.poe217 .p217-table th{background:#e4f2f7;color:#10516e}
+.poe217 .p217-table input,.poe217 .p217-table select{min-width:82px}
+.poe217 .p217-label{font-size:.85rem;font-weight:820;color:#0e4e6c;display:block;margin:.62rem 0 .22rem}
+.poe217 .p217-input{font:inherit;color:#15415a;background:#fff;border:1px solid #a9c6d8;border-radius:8px;padding:.52rem .6rem;box-sizing:border-box;width:100%;min-width:0;font-variant-numeric:tabular-nums}
+.poe217 .p217-input:focus-visible,.poe217 button:focus-visible{outline:3px solid #d2a155;outline-offset:2px}
+.poe217 .p217-workspace{border-radius:16px;background:#edf8fc;border:1px solid #a5cddd;padding:1rem}
+.poe217 .p217-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.poe217 .p217-metrics>div{padding:.8rem;background:white;border:1px solid #bed8e6;border-radius:11px}
+.poe217 .p217-metrics strong{display:block;color:#0d516d;font-size:1.12rem;font-variant-numeric:tabular-nums}
+.poe217 .p217-metrics span{font-size:.82rem;color:#557080}
+.poe217 .p217-result{border:1px solid #bed8e6;border-radius:11px;padding:.82rem 1rem;background:#fff;margin:.7rem 0}
+.poe217 .p217-actions{display:flex;gap:.65rem;flex-wrap:wrap;margin:.75rem 0}
+.poe217 details{border:1px solid #cbdfe8;background:#f0f8fb;border-radius:9px;padding:.65rem .83rem;margin:.6rem 0}
+.poe217 summary{font-weight:820;color:#0e5273;cursor:pointer}
+.poe217 .p217-small{font-size:.85rem;color:#537181}
+.poe217 .p217-checklist{list-style:none!important;padding:0!important}
+.poe217 .p217-checklist li{padding:.39rem .2rem .39rem 1.6rem;position:relative}
+.poe217 .p217-checklist li:before{content:"□";position:absolute;left:0;top:.32rem;font-size:1.25rem;color:#18879e}
+.poe217 .p217-status-label{color:#335e78;font-size:.87rem;font-weight:750}
+.poe217 .p217-chip{display:inline-block;background:#e5f3f8;padding:.23rem .55rem;border-radius:8px;font-size:.84rem;font-weight:780}
+#poe217Print{display:none}
+@media(max-width:970px){.poe217 .p217-triple,.poe217 .p217-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.poe217 .p217-cols,.poe217 .p217-triple,.poe217 .p217-four,.poe217 .p217-steps,.poe217 .p217-metrics{grid-template-columns:1fr}}
+@page{size:letter;margin:.46in}
+@media print{
+body.poe217-printmode{background:white!important;color:#111!important}
+body.poe217-printmode header,body.poe217-printmode footer,body.poe217-printmode main,body.poe217-printmode .skip-link{display:none!important}
+body.poe217-printmode #poe217Print{display:block!important;font:9pt Arial,sans-serif;color:#111}
+#poe217Print h1{font-size:14pt;text-align:center;margin:.04in 0}
+#poe217Print h2{font-size:10.5pt;margin:.12in 0 .06in}
+#poe217Print p{margin:.05in 0}
+#poe217Print .p217-printpage{break-after:page;page-break-after:always;break-inside:avoid;page-break-inside:avoid}
+#poe217Print .p217-printpage:last-child{break-after:auto;page-break-after:auto}
+#poe217Print table{width:100%;border-collapse:collapse}
+#poe217Print th,#poe217Print td{border:1px solid #666;text-align:left;padding:.05in}
+#poe217Print td{height:.28in}
+#poe217Print .p217-drawbox{height:2.05in;border:1px solid #777;color:#888;padding:.08in}
+#poe217Print .p217-lines div{height:.27in;border-bottom:1px solid #aaa}
+}
+</style></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main" class="poe217"><nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.17</li></ol></nav>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Bridge Capstone • Lesson 2.17</div><h1>Detailed Bridge Design</h1><p class="focus-question"><strong>Engineering question:</strong> Can another engineer manufacture and assemble your bridge correctly using only your CAD files, dimensions, parts list and instructions?</p><div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#workflow">Fusion Workflow</a><a class="btn secondary" href="#connections">Joint Design</a><a class="btn secondary" href="#laser">Laser Cut Files</a><a class="btn secondary" href="#bom">Mass &amp; BOM Tool</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
+<aside class="mission-panel"><span class="tag">Capstone · Detailed design before fabrication</span><h2>Deliver a manufacture-ready package.</h2><p>Refine the bridge analyzed in 2.16, create the complete assembly in Fusion, document dimensions and two critical joints, and produce the correct cutting/printing files.</p><p><strong>Bring:</strong> approved 2.15 concept, 2.16 analysis and risk review, 2.14 mass budget, calipers and supplier material dimensions.</p></aside></div></section>
+<section class="container lesson-section" id="start"><div class="p217-subhead">Project goals</div><h2>Design it. Document it. Check it. Then request approval.</h2>
+<div class="p217-triple"><article class="p217-card"><h3>Model the structure</h3><p>Create individually named components: wood members or open-web plywood side frames, transverse braces, local gussets, fittings and any M3 hardware.</p></article>
+<article class="p217-card"><h3>Communicate the design</h3><p>Deliver an assembly drawing, fully dimensioned manufactured components, joint details, cut profiles and an exploded or annotated assembly view.</p></article>
+<article class="p217-card"><h3>Demonstrate readiness</h3><p>Verify bridge geometry and connections, estimate finished mass, and demonstrate that fabrication methods satisfy the rules before machines are used.</p></article></div>
+<div class="p217-steps" style="margin-top:1rem"><div>Build components<small>Day 1</small></div><div>Assemble &amp; inspect<small>Day 2</small></div><div>Document &amp; export<small>Day 3</small></div><div>Quality gate &amp; submit<small>Day 4</small></div></div>
+<p class="p217-small">Suggested ~4 class periods (45–50 minutes each), not including actual printing or cutting time. Complex joinery may require additional design time.</p></section>
+<section class="container lesson-section" id="criteria"><div class="p217-subhead">01 / The design rules</div><h2>Use the full specification, not just a weight target</h2>
+<div class="p217-triple"><article class="p217-card"><h3>≥ 400 mm</h3><p>Clear span between support contact points</p></article><article class="p217-card"><h3>≤ 65 mm</h3><p>Overall bridge width, including protruding fasteners</p></article><article class="p217-card"><h3>100 N</h3><p>Centered qualification load</p></article><article class="p217-card"><h3>≤ 10 mm</h3><p>Deflection at the 100 N load</p></article><article class="p217-card"><h3>≤ 150 g</h3><p>Finished bridge, including glue and hardware</p></article><article class="p217-card"><h3>Wood-based only</h3><p>Primary structural members: balsa, basswood, craft sticks or plywood</p></article></div>
+<div class="p217-warning" style="margin-top:1rem"><strong>Prohibited:</strong> acrylic, solid plywood side panels, 3D-printed structural chords/diagonals/decks, screws, hot glue, epoxy, wire, staples, nails or bolts other than M3. <strong>Permitted:</strong> approved PVA/CA glue, interlocking wood joints, local plywood gussets, approved PLA/PETG connection fittings, and M3 nuts/bolts (washers permitted). Read <a href="../unit-2.html#bridge-manufacturing-specifications">all bridge rules</a> before committing to a joint.</div></section>
+<section class="container lesson-section" id="design"><div class="p217-subhead">02 / Understand the full assembly</div><h2>Two connected side frames make one bridge</h2><p>Do not stop after drawing one side truss. Your Fusion assembly must represent the <strong>entire structure</strong> and the load path from the center loading contact through transverse members, two side frames, their joints, and finally the supports.</p>
+<svg class="p217-svg" viewBox="0 0 910 355" role="img" aria-label="Exploded CAD illustration of two Warren-like wooden open-web side trusses, connected by crossmembers and local plywood gussets. The underside shows an unobstructed span and center load crossmember, not a solid deck.">
+<defs><marker id="p217arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bd7934"/></marker></defs>
+<g stroke="#236d89" stroke-linecap="round" stroke-width="10" fill="none" stroke-linejoin="round">
+<path d="M82 196H676M82 196L151 75L284 196L417 75L548 196L616 75L676 196M151 75H417L616 75"/>
+<path d="M173 270H767M173 270L242 149L375 270L508 149L639 270L707 149L767 270M242 149H508L707 149"/>
+</g>
+<g stroke="#c18846" stroke-linecap="round" stroke-width="8" fill="none">
+<path d="M82 196L173 270M284 196L375 270M548 196L639 270M676 196L767 270"/>
+<path d="M151 75L242 149M417 75L508 149M616 75L707 149"/>
+<path d="M82 196L375 270M284 196L173 270M375 270L676 196M548 196L767 270" stroke="#5a9ca6" stroke-width="4.2"/>
+</g>
+<path d="M309 211L401 284" stroke="#d6a157" stroke-width="12" stroke-linecap="round"/>
+<path d="M355 31V194" stroke="#bd7934" stroke-width="4" marker-end="url(#p217arrow)"/>
+<text x="371" y="45" class="p217-svg-note">Center load crossmember</text>
+<path d="M171 74L211 62L234 91L199 112Z" fill="#eed7a8" stroke="#a47e45" stroke-width="2"/>
+<circle cx="198" cy="85" r="5" fill="#829aaa"/>
+<text x="27" y="45" class="p217-svg-note">Two distinct</text><text x="27" y="61" class="p217-svg-note">side assemblies</text>
+<text x="648" y="45" class="p217-svg-note">Local gusset</text><path d="M676 51L224 85" stroke="#b18a55" stroke-width="1.4"/>
+<text x="675" y="329" text-anchor="middle" class="p217-svg-note">Connections and cross-bracing count toward total mass</text>
+<text x="134" y="326" class="p217-svg-note">Concept illustration • not a manufacture-ready model</text>
+</svg>
+<div class="p217-cols"><article class="p217-card"><h3>Complete component structure</h3><ul><li>Side frame left: named members or single-piece open-web plywood panel</li><li>Side frame right: independently positioned or mirrored components</li><li>Transverse braces and cross-members to prevent sway/twist</li><li>Center load-transfer component capable of transferring test force to sides</li><li>Local connection details and all planned M3 hardware or fittings</li></ul></article>
+<article class="p217-card"><h3>Critical Fusion modeling habits</h3><ul><li>Set document units to <strong>millimeters</strong> and name parameters (span, width, truss rise, thickness).</li><li>Model manufactured parts as identifiable components rather than one unmanageable body.</li><li>Use patterns/mirrors for repeated geometry and components where appropriate.</li><li>Use rigid joints/rigid groups to represent an assembled structure without adding fictitious motion.</li><li>Inspect for interferences, redundant overlapping parts, incorrect hole alignment and accessible tool/fastener locations.</li></ul></article></div></section>
+<section class="container lesson-section" id="workflow"><div class="p217-subhead">03 / Guided Fusion manufacturing workflow</div><h2>From the selected concept to a controlled CAD assembly</h2>
+<div class="p217-triple">
+<article class="p217-card"><h3>1 · Set user parameters</h3><p>Create span = 400 mm minimum, target total width no more than 65 mm, truss rise, wood thickness, fitting clearances and bracing locations. Distinguish clear span from overall length.</p></article><article class="p217-card"><h3>2 · Model the side truss</h3><p>Sketch the node geometry and consistent member centerlines. Make closed profiles of individual wood members or a single open-web plywood side panel; never use an uncut solid side plate.</p></article><article class="p217-card"><h3>3 · Make named components</h3><p>Separate chords, webs, braces, gussets, loading crossmember and approved connection pieces into components. Use meaningful part IDs, dimensions and materials.</p></article><article class="p217-card"><h3>4 · Build the full assembly</h3><p>Place two side frames; rigidly constrain braces and crossmembers; include holes, connection details and hardware where used. Show the intended load contact.</p></article><article class="p217-card"><h3>5 · Inspect and revise</h3><p>Measure the total outside width across bolt heads/fittings. Verify the clear support span, side symmetry, bracing, interference-free joints and any 2.16 identified risks.</p></article><article class="p217-card"><h3>6 · Prepare manufacturing files</h3><p>Create PDFs for assembly/part drawings; output clean millimeter-scale DXF profiles for laser operations; STL or 3MF for approved printed fittings; and a complete BOM.</p></article>
+</div><div class="p217-info" style="margin-top:1rem"><strong>Fusion workflow refresher:</strong> The Drawing workspace can generate orthographic and isometric views from the modeled assembly. Use <em>Drawing → From Design</em> and select millimeters, views, dimensions and parts lists. A drawing PDF communicates manufacture; it is not itself the correct laser-cut geometry. Autodesk's commands and labeling may vary by version. <a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Drawing/files/DWG-CREATE-FROM-DESIGN.htm" target="_blank" rel="noopener noreferrer">Open official Drawing from Design instructions ↗</a></div></section>
+<section class="container lesson-section" id="videos"><div class="p217-subhead">04 / Instructional video library</div><h2>Learn the skills directly from the tutorials</h2><p>Watch each for the part of your workflow it supports. Stop and practice in your own Fusion file; do not simply copy the demonstration geometry into the bridge.</p>
+<div class="p217-cols"><article class="p217-card p217-video"><div class="p217-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/h2yYkrnMKH0" title="Fusion: Assembling Parts with Rigid Joints" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="p217-video-copy"><span class="p217-pill">MrSeacrist • High-school CAD tutorial</span><h3>Fusion: Assembling Parts with Rigid Joints</h3><p><strong>Watch for:</strong> Create separate components, align them with rigid joints, and check the bridge width after assembly.</p><a href="https://www.youtube.com/watch?v=h2yYkrnMKH0" target="_blank" rel="noopener noreferrer">Watch directly on YouTube ↗</a></div></article><article class="p217-card p217-video"><div class="p217-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/tZT3VAr_wkU" title="Export DXF for Laser Cutter from Fusion Drawing" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="p217-video-copy"><span class="p217-pill">Product Design Online</span><h3>Export DXF for Laser Cutter from Fusion Drawing</h3><p><strong>Watch for:</strong> Explain the difference between a documented drawing sheet and a clean 1:1 cutting profile.</p><a href="https://www.youtube.com/watch?v=tZT3VAr_wkU" target="_blank" rel="noopener noreferrer">Watch directly on YouTube ↗</a></div></article><article class="p217-card p217-video"><div class="p217-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/qD1ih2MjHAQ" title="Fusion Laser Cutting: 2D Profiles and DXF Setups" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="p217-video-copy"><span class="p217-pill">What Make Art • 2026</span><h3>Fusion Laser Cutting: 2D Profiles and DXF Setups</h3><p><strong>Watch for:</strong> Note how separate cutting operations, units, and inside/outside paths are managed.</p><a href="https://www.youtube.com/watch?v=qD1ih2MjHAQ" target="_blank" rel="noopener noreferrer">Watch directly on YouTube ↗</a></div></article></div></section>
+<section class="container lesson-section" id="connections"><div class="p217-subhead">05 / Connection engineering</div><h2>Design and dimension two critical joints</h2><p>The correct joint depends on the force flow identified in 2.16. Your detail views must show geometry, member thickness, orientation, adhesive or M3 hardware, and assembly order—not just an artistic close-up.</p>
+<svg class="p217-svg" viewBox="0 0 880 346" role="img" aria-label="Local plywood gusset measuring 40 by 20 millimeters example, 800 square millimeters plan area, superimposed on two wooden members in an overlapping joint, with one gusset per side. Horizontal overlap onto either member must not exceed 20 millimeters. M3 fastener drawn schematically; actual hole fit must be tested.">
+<text x="440" y="28" text-anchor="middle" class="p217-svg-head">LOCAL PLYWOOD GUSSET · DIMENSIONED EXAMPLE</text>
+<path d="M85 269L405 128" stroke="#caa46e" stroke-width="29" stroke-linecap="round"/>
+<path d="M408 128L736 245" stroke="#caa46e" stroke-width="29" stroke-linecap="round"/>
+<rect x="337" y="93" width="168" height="84" rx="3" fill="#e8ce99" fill-opacity=".84" stroke="#9f7038" stroke-width="3"/>
+<circle cx="421" cy="135" r="13" fill="#abbcc6" stroke="#2d5c78" stroke-width="2"/><circle cx="421" cy="135" r="5" fill="#fff" stroke="#2d5c78"/>
+<path d="M337 78V62M505 78V62M337 71H505M521 93H543M521 177H543M533 93V177" fill="none" stroke="#547f98" stroke-width="1.6"/>
+<text x="421" y="55" text-anchor="middle" class="p217-svg-note">40 mm (max)</text><text x="550" y="130" class="p217-svg-note">20 mm</text>
+<path d="M345 209H425M425 209H500" stroke="#b47734" stroke-width="2.5"/><path d="M345 198V219M425 198V219M500 198V219" stroke="#b47734" stroke-width="2"/>
+<text x="422" y="236" text-anchor="middle" class="p217-svg-note">Overlap on each member: ≤ 20 mm</text>
+<text x="420" y="305" text-anchor="middle" class="p217-svg-note">Example is 40 × 20 = 800 mm²; one gusset layer per side, two maximum at a connection.</text>
+</svg>
+<div class="p217-cols">
+<article class="p217-card"><h3>Joint detail 1 · Center load transfer</h3><ol><li>Identify the point where the 100 N loading nose acts.</li><li>Model the crossmember, support surfaces and connectors carrying that load to the two side frames.</li><li>Dimension the overall width and explain potential compression, bending, shear and connection risks.</li><li>Check that the loading piece is a <strong>permitted structural material</strong>, not a continuous 3D-printed beam.</li></ol></article>
+<article class="p217-card"><h3>Joint detail 2 · Truss node or end support</h3><ol><li>Choose one highly loaded joint or a connection supporting lateral bracing.</li><li>Show the actual overlapping wood surfaces and how adhesive, a gusset, interlocking fit or M3 fastener transfers force.</li><li>Dimension all local gussets and hole locations. Record plywood orientation/thickness.</li><li>Explain risk of splitting, peel, bearing, interference, or buckling at the node.</li></ol></article></div>
+<div class="p217-triple" style="margin-top:1rem">
+<article class="p217-card"><h3>Local plywood gussets</h3><p>Approved plywood ≤3.2 mm thick. Each local gusset must stay <strong>≤40 mm long, ≤25 mm wide, ≤800 mm² plan area</strong>; overlap onto each structural member is ≤20 mm. No more than one gusset layer on each side of the connection (two total).</p></article>
+<article class="p217-card"><h3>Printed PLA/PETG fitting</h3><p>Connection-only: maximum 50 mm length, ≤15 g per individual piece, ≤40 g of all printed pieces combined. No printed beams, chords, diagonals or decks; no printed threads or linked fittings forming prohibited continuous members.</p></article>
+<article class="p217-card"><h3>M3 hardware / adhesive</h3><p>Use M3 bolts with matching nuts; washers permitted. Provide usable holes or captive-nut pockets, appropriate clearance, and space to assemble. Only PVA or CA glue—not epoxy/hot glue. Model intended adhesive contact surfaces.</p></article></div>
+</section>
+<section class="container lesson-section" id="drawings"><div class="p217-subhead">06 / Technical drawings</div><h2>Produce an assembly drawing that can be inspected</h2><p>Include an isometric view and dimensioned orthographic views. Students must dimension the <strong>support contact points for the clear span</strong>, not confuse them with overall printed/cut part length.</p>
+<svg class="p217-svg" viewBox="0 0 860 450" role="img" aria-label="Dimensioned concept drawing sheet with side view, top view and end view. Side shows 400 millimeter clear span and 100 millimeter rise, top shows 56 millimeter illustrative total width. These example design dimensions must be verified for the student's actual bridge, and all other fabrication dimensions added.">
+<text x="430" y="30" text-anchor="middle" class="p217-svg-head">SHEET A · ASSEMBLY / CLEARANCE DRAWING (EXAMPLE)</text>
+<g fill="none" stroke="#26718b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M65 212H496M65 212L119 106L227 212L334 106L442 212L496 212M119 106H334L442 106"/>
+<path d="M65 319H496M65 358H496M65 319L65 358M173 319L173 358M281 319L281 358M389 319L389 358M496 319L496 358"/>
+</g>
+<g fill="#dce8f1" stroke="#3b697f" stroke-width="1.5"><path d="M49 228L65 213L81 228Z"/><circle cx="496" cy="226" r="10"/></g>
+<g stroke="#698699" stroke-width="1.4" fill="none">
+<path d="M65 235V254M496 235V254M65 246H496"/>
+<path d="M39 106H53M39 212H53M47 106V212"/>
+<path d="M526 319H549M526 358H549M541 319V358"/>
+</g>
+<g class="p217-svg-note">
+<text x="280" y="271" text-anchor="middle">400 mm clear span</text>
+<text x="27" y="163" transform="rotate(-90 27 163)" text-anchor="middle">100 mm rise (example)</text>
+<text x="562" y="344">56 mm total width</text>
+<text x="276" y="92" text-anchor="middle">SIDE VIEW</text>
+<text x="276" y="303" text-anchor="middle">TOP VIEW</text>
+</g>
+<g fill="none" stroke="#2e728d" stroke-width="6"><rect x="661" y="321" width="95" height="48" rx="2"/><path d="M662 346H756"/></g>
+<text x="711" y="303" text-anchor="middle" class="p217-svg-note">END VIEW</text>
+<path d="M281 46V94" stroke="#bf7933" stroke-width="3"/><text x="293" y="61" class="p217-svg-note">100 N at midpoint</text>
+<path d="M65 403H755" stroke="#8da6b4" stroke-width="1"/><text x="67" y="422" class="p217-svg-note">Document example only: add actual connection, crossmember, material thickness and hardware dimensions.</text>
+</svg>
+<div class="p217-cols">
+<article class="p217-card"><h3>Assembly drawing sheet</h3><ul><li>Side, top and end view, with appropriate scale, centerline and units</li><li>Clear span ≥400 mm measured at actual supports and overall width ≤65 mm</li><li>Actual height/rise and part spacing</li><li>Position of 100 N load transfer point and two supports</li><li>Two side frames, lateral braces, local fasteners and major assembly dimensions</li><li>Ballooned components linked to a parts list</li></ul></article>
+<article class="p217-card"><h3>Individual manufactured-part sheets</h3><ul><li>Full shape of each unique wooden/plywood component with sizes, angles and holes</li><li>Material, stock thickness, quantities and grain orientation (when relevant)</li><li>Gusset lengths, widths, plan area, overlap and layer count</li><li>Printed fitting length, hole sizes, mass and slicer settings when used</li><li>Revision, name/ID, part number, date and units</li><li>Exploded view or clearly sequenced assembly sketch for joinery</li></ul></article></div>
+<p class="p217-info"><strong>For a part list in Fusion:</strong> Open the Drawing workspace and use a Parts List table associated with an assembly view; then verify quantities and names. Autodesk's official <a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Drawing/files/DWG-CREATE-PARTS-LIST.htm" target="_blank" rel="noopener noreferrer">Parts List instructions ↗</a> show the steps. Your BOM must also include glue and consumables that may not appear as CAD components.</p></section>
+<section class="container lesson-section" id="laser"><div class="p217-subhead">07 / Laser cutting workflow</div><h2>Export manufacturing profiles—not drawing decorations</h2><p>For plywood side frames, local gussets and braces, prepare <strong>1:1 2D closed contours</strong> in millimeters and inspect them in the FabLab's approved laser software before any cut. Keep part IDs and cut groups separate from actual cutting geometry.</p>
+<svg class="p217-svg" viewBox="0 0 870 330" role="img" aria-label="Laser-ready 2D cutting example distinguishes a clean single closed outside contour of an open-web plywood truss from internal triangular openings, with no dimensions, border or title block exported. Internal holes are separate closed contours.">
+<text x="435" y="28" text-anchor="middle" class="p217-svg-head">LASER FILE = CLEAN 1:1 PLANAR PROFILES</text>
+<path d="M60 241L137 89H740L816 241Z" fill="#eaf3f7" stroke="#277e91" stroke-width="5" stroke-linejoin="round"/>
+<g fill="#fff" stroke="#ac783f" stroke-width="4" stroke-linejoin="round">
+<path d="M157 215L208 121L288 215Z"/><path d="M307 215L394 121L480 215Z"/><path d="M499 215L585 121L663 215Z"/><path d="M681 215L740 121L785 215Z"/>
+</g>
+<path d="M86 269H315" stroke="#277e91" stroke-width="4"/><text x="324" y="273" class="p217-svg-note">Outside contour (cut)</text>
+<path d="M501 269H616" stroke="#ac783f" stroke-width="4"/><text x="624" y="273" class="p217-svg-note">Interior openings (cut)</text>
+<text x="434" y="310" text-anchor="middle" class="p217-svg-note">Do not export drawing borders, text, reference dimensions, duplicates, or construction geometry as cuts</text>
+</svg>
+<div class="p217-cols"><article class="p217-card"><h3>Prepare a correct DXF</h3><ol><li>Create or project a <strong>flat sketch</strong> of the intended cut face, not a 3D drawing assembly.</li><li>Include outside contours, interior openings and any holes that actually belong in the cut operation.</li><li>Remove construction lines, dimension text, duplicated edges, drawing borders and other unwanted cuts.</li><li>Confirm units are mm and the file imports at full 1:1 size.</li><li>Inspect all paths for closure and check that narrow webs, corner radii, grain direction, kerf and usable stock are manufacturable.</li><li>Have the instructor check nesting, cut settings and machine safety <strong>before</strong> operation.</li></ol></article>
+<article class="p217-card"><h3>Two valid Fusion approaches</h3><p><strong>Sketch export:</strong> Right-click a clean profile sketch and export it as DXF. For a modeled body, create a sketch on its planar face and project the edges before exporting.</p>
+<p><strong>Manufacture setup:</strong> Where available, a laser Fabrication setup can organize internal and external 2D profiles and export layers. The school's laser software must still validate imported scale, contours and operation order.</p>
+<p class="p217-warning"><strong>Do not assume:</strong> a PDF or a 3D DXF generated from a whole assembly is automatically a laser-ready 2D file. Export a clean planar profile and inspect its actual geometry.</p></article></div></section>
+<section class="container lesson-section" id="print"><div class="p217-subhead">08 / Optional additive fabrication</div><h2>Printed connection fittings: document the slicer settings</h2><p>If you choose approved 3D-printed joints, they must be individual <strong>PLA or PETG connection fittings</strong>, not structural members. Document model geometry, build orientation, slicer preview, and measured mass for each physical printed part before the build.</p>
+<div class="p217-triple"><article class="p217-card"><h3>35% maximum</h3><p>Infill percentage</p></article><article class="p217-card"><h3>4 wall loops</h3><p>Perimeter count</p></article><article class="p217-card"><h3>5 top layers</h3><p>Top solid layers</p></article><article class="p217-card"><h3>5 bottom layers</h3><p>Bottom solid layers</p></article><article class="p217-card"><h3>0.28 mm</h3><p>Layer height</p></article><article class="p217-card"><h3>0.4 mm</h3><p>Nozzle diameter</p></article></div>
+<p class="p217-warning" style="margin-top:.9rem"><strong>Fitting mass is not just an estimate:</strong> use the slicer estimate for planning and measure actual printed part masses for the final record. All printed parts together ≤40 g, each ≤15 g and maximum fitting length ≤50 mm. Settings above reflect the Unit 2 required profile; if your printer cannot use those settings, request instructor direction rather than silently substituting another profile.</p></section>
+<section class="container lesson-section" id="bom"><div class="p217-subhead">09 / Interactive design review</div><h2>Build your BOM, estimate mass, and catch rule violations</h2><p>Enter the real or carefully estimated <strong>quantity and mass per item</strong>. All cells begin blank because your design quantities and materials are not known. When a component category is not used, set quantity to <strong>0</strong>. Repeated printed connector types can be entered separately. Then run dimension and connection checks below.</p>
+<div class="p217-workspace"><div class="p217-tablewrap"><table class="p217-table"><thead><tr><th>Part / category</th><th>Type</th><th>Qty</th><th>Mass each (g)</th><th>Total mass (g)</th></tr></thead><tbody>
+<tr><td><label for="partName0">Wood chords / primary members</label><input class="p217-input" id="partName0" value="Wood chords / primary members" aria-label="Description for BOM row 1"/></td><td>Wood primary</td><td><input id="partQty0" class="p217-input" type="number" min="0" step="1" placeholder="—" aria-label="Wood chords / primary members quantity"/></td><td><input id="partGram0" class="p217-input" type="number" min="0" step=".01" placeholder="—" aria-label="Wood chords / primary members individual mass in grams"/></td><td id="partTotal0">—</td></tr><tr><td><label for="partName1">Wood web / diagonal members</label><input class="p217-input" id="partName1" value="Wood web / diagonal members" aria-label="Description for BOM row 2"/></td><td>Wood primary</td><td><input id="partQty1" class="p217-input" type="number" min="0" step="1" placeholder="—" aria-label="Wood web / diagonal members quantity"/></td><td><input id="partGram1" class="p217-input" type="number" min="0" step=".01" placeholder="—" aria-label="Wood web / diagonal members individual mass in grams"/></td><td id="partTotal1">—</td></tr><tr><td><label for="partName2">Wood transverse / lateral braces</label><input class="p217-input" id="partName2" value="Wood transverse / lateral braces" aria-label="Description for BOM row 3"/></td><td>Wood primary</td><td><input id="partQty2" class="p217-input" type="number" min="0" step="1" placeholder="—" aria-label="Wood transverse / lateral braces quantity"/></td><td><input id="partGram2" class="p217-input" type="number" min="0" step=".01" placeholder="—" aria-label="Wood transverse / lateral braces individual mass in grams"/></td><td id="partTotal2">—</td></tr><tr><td><label for="partName3">Open-web plywood side truss (if used)</label><input class="p217-input" id="partName3" value="Open-web plywood side truss (if used)" aria-label="Description for BOM row 4"/></td><td>Wood primary</td><td><input id="partQty3" class="p217-input" type="number" min="0" step="1" placeholder="—" aria-label="Open-web plywood side truss (if used) quantity"/></td><td><input id="partGram3" class="p217-input" type="number" min="0" step=".01" placeholder="—" aria-label="Open-web plywood side truss (if used) individual mass in grams"/></td><td id="partTotal3">—</td></tr><tr><td><label for="partName4">Plywood local gussets</label><input class="p217-input" id="partName4" value="Plywood local gussets" aria-label="Description for BOM row 5"/></td><td>Plywood gusset</td><td><input id="partQty4" class="p217-input" type="number" min="0" step="1" placeholder="—" aria-label="Plywood local gussets quantity"/></td><td><input id="partGram4" class="p217-input" type="number" min="0" step=".01" placeholder="—" aria-label="Plywood local gussets individual mass in grams"/></td><td id="partTotal4">—</td></tr><tr><td><label for="partName5">Cured adhesive</label><input class="p217-input" id="partName5" value="Cured adhesive" aria-label="Description for BOM row 6"/></td><td>Adhesive</td><td><input id="partQty5" class="p217-input" type="number" min="0" step="1" placeholder="—" aria-label="Cured adhesive quantity"/></td><td><input id="partGram5" class="p217-input" type="number" min="0" step=".01" placeholder="—" aria-label="Cured adhesive individual mass in grams"/></td><td id="partTotal5">—</td></tr><tr><td><label for="partName6">M3 bolts/nuts/washers</label><input class="p217-input" id="partName6" value="M3 bolts/nuts/washers" aria-label="Description for BOM row 7"/></td><td>M3 hardware</td><td><input id="partQty6" class="p217-input" type="number" min="0" step="1" placeholder="—" aria-label="M3 bolts/nuts/washers quantity"/></td><td><input id="partGram6" class="p217-input" type="number" min="0" step=".01" placeholder="—" aria-label="M3 bolts/nuts/washers individual mass in grams"/></td><td id="partTotal6">—</td></tr><tr><td><label for="partName7">PLA/PETG fitting type 1</label><input class="p217-input" id="partName7" value="PLA/PETG fitting type 1" aria-label="Description for BOM row 8"/></td><td>Printed fitting</td><td><input id="partQty7" class="p217-input" type="number" min="0" step="1" placeholder="—" aria-label="PLA/PETG fitting type 1 quantity"/></td><td><input id="partGram7" class="p217-input" type="number" min="0" step=".01" placeholder="—" aria-label="PLA/PETG fitting type 1 individual mass in grams"/></td><td id="partTotal7">—</td></tr><tr><td><label for="partName8">PLA/PETG fitting type 2</label><input class="p217-input" id="partName8" value="PLA/PETG fitting type 2" aria-label="Description for BOM row 9"/></td><td>Printed fitting</td><td><input id="partQty8" class="p217-input" type="number" min="0" step="1" placeholder="—" aria-label="PLA/PETG fitting type 2 quantity"/></td><td><input id="partGram8" class="p217-input" type="number" min="0" step=".01" placeholder="—" aria-label="PLA/PETG fitting type 2 individual mass in grams"/></td><td id="partTotal8">—</td></tr></tbody></table></div>
+<p class="p217-small">For cured adhesive and mixed M3 hardware, quantity 1 may represent the total package mass used in this bridge. Mark unused categories with zero; add costs or specific purchased part IDs to your submitted BOM if your teacher requires them.</p>
+<div class="p217-metrics" style="margin-top:1rem"><div><strong id="bomTotal">—</strong><span>Estimated finished mass</span></div><div><strong id="bomMargin">—</strong><span>Remaining under 150 g</span></div><div><strong id="bomPrinted">—</strong><span>Estimated printed mass total</span></div></div>
+<div id="bomVerdict" class="p217-result" aria-live="polite">Enter quantities and unit masses to calculate a complete estimate.</div>
+<h3>Bridge geometry and connection compliance checks</h3>
+<div class="p217-triple">
+<article class="p217-card"><h3>Assembly envelope</h3>
+<label class="p217-label" for="checkSpan">Clear support span (mm)</label><input id="checkSpan" class="p217-input" type="number" min="0" step=".1" placeholder="Actual CAD span"/>
+<label class="p217-label" for="checkWidth">Overall outside width (mm)</label><input id="checkWidth" class="p217-input" type="number" min="0" step=".1" placeholder="Include hardware"/>
+<label class="p217-label" for="checkPlywood">Plywood stock thickness (mm)</label><input id="checkPlywood" class="p217-input" type="number" min="0" step=".01" placeholder="Measured thickness"/>
+<p class="p217-small">If the design has no plywood, leave stock thickness blank and explain. A value is only relevant when plywood is used.</p></article>
+<article class="p217-card"><h3>Sample local gusset</h3>
+<label class="p217-label" for="gLen">Gusset bounding length (mm)</label><input id="gLen" class="p217-input" type="number" min="0" step=".1" placeholder="≤ 40"/>
+<label class="p217-label" for="gWidth">Gusset bounding width (mm)</label><input id="gWidth" class="p217-input" type="number" min="0" step=".1" placeholder="≤ 25"/>
+<label class="p217-label" for="gArea">Actual gusset plan area (mm²)</label><input id="gArea" class="p217-input" type="number" min="0" step=".1" placeholder="≤ 800"/>
+<label class="p217-label" for="gOverlap">Largest overlap on any member (mm)</label><input id="gOverlap" class="p217-input" type="number" min="0" step=".1" placeholder="≤ 20"/>
+<label class="p217-label" for="gLayers">Max layers on one side of joint</label><input id="gLayers" class="p217-input" type="number" min="0" step="1" placeholder="≤ 1"/>
+<p class="p217-small">The bounding length/width and actual plan area are separate checks; irregular shapes may have smaller area than their bounding rectangle. Apply limits to <em>every</em> local gusset, not just the sample.</p></article>
+<article class="p217-card"><h3>Sample printed fitting</h3>
+<label class="p217-label" for="fLength">Longest dimension (mm)</label><input id="fLength" class="p217-input" type="number" min="0" step=".1" placeholder="≤ 50"/>
+<label class="p217-label" for="fMass">Individual mass (g)</label><input id="fMass" class="p217-input" type="number" min="0" step=".01" placeholder="≤ 15"/>
+<label class="p217-label" for="fMaterial">Printed material</label><select id="fMaterial" class="p217-input"><option value="">Select if used</option><option value="PLA">PLA</option><option value="PETG">PETG</option><option value="Other">Other</option></select>
+<p class="p217-small">A single fitting example only. Check every 3D-printed part's separate mass, max length, and construction purpose.</p></article></div>
+<div class="p217-triple" style="margin-top:.7rem">
+<article class="p217-card"><h3>Slicer profile</h3><div class="p217-cols"><div><label class="p217-label" for="sInfill">Infill (%)</label><input id="sInfill" class="p217-input" type="number" step="1" min="0" value="35"/></div><div><label class="p217-label" for="sWalls">Wall loops</label><input id="sWalls" class="p217-input" type="number" step="1" min="0" value="4"/></div><div><label class="p217-label" for="sTop">Top layers</label><input id="sTop" class="p217-input" type="number" step="1" min="0" value="5"/></div><div><label class="p217-label" for="sBottom">Bottom layers</label><input id="sBottom" class="p217-input" type="number" step="1" min="0" value="5"/></div><div><label class="p217-label" for="sLayer">Layer height (mm)</label><input id="sLayer" class="p217-input" type="number" min="0" step=".01" value=".28"/></div><div><label class="p217-label" for="sNozzle">Nozzle (mm)</label><input id="sNozzle" class="p217-input" type="number" min="0" step=".1" value=".4"/></div></div><p class="p217-small">Only required if printed parts are included in your bridge.</p></article>
+<article class="p217-card"><h3>Allowed construction</h3><label class="p217-label" for="jointFastener">Mechanical fastener (if used)</label><select id="jointFastener" class="p217-input"><option value="">Not selected</option><option value="None">No mechanical fastener</option><option value="M3">M3 bolt + nut</option><option value="Other">Other size or screw</option></select>
+<label class="p217-label" for="jointGlue">Adhesive (if used)</label><select id="jointGlue" class="p217-input"><option value="">Not selected</option><option value="None">No adhesive</option><option value="PVA">PVA wood glue</option><option value="CA">CA glue</option><option value="Other">Other adhesive</option></select>
+<label class="p217-label" for="sideType">Primary side truss type</label><select id="sideType" class="p217-input"><option value="">Select side-frame method</option><option value="wood">Wood member assembly</option><option value="openweb">Open-web plywood truss</option><option value="other">Other / restricted material</option></select></article>
+<article class="p217-card"><h3>Manufacturing readiness result</h3><div id="manufacturingVerdict" class="p217-result" aria-live="polite">Complete your real design's measurements. Blank fields remain unverified.</div>
+<p class="p217-warning">This automated check is <strong>screening, not a permit to fabricate</strong>. It cannot establish real joint load capacity, kerf suitability, side-truss strength, printed purpose or 100 N / 10 mm performance. Instructor approval remains required.</p></article></div>
+<div class="p217-actions"><button type="button" class="btn" id="exportBom">Export BOM CSV</button><button type="button" class="btn secondary" id="exportReadiness">Export Design Readiness Notes</button><button type="button" class="btn secondary" id="printPacket">Print Design Review Packet (4 pages)</button></div>
+</div></section>
+<section class="container lesson-section" id="inspect"><div class="p217-subhead">10 / Final pre-fabrication quality gate</div><h2>Review before anyone operates the laser or printer</h2>
+<div class="p217-triple"><article class="p217-card"><h3>Geometry &amp; structural design</h3><ul class="p217-checklist"><li>Clear span ≥400 mm between true support contacts</li><li>Total outer width ≤65 mm including fittings/bolts</li><li>Center loading contact and load transfer to both sides modeled</li><li>Compression risks and two critical joints from 2.16 addressed</li><li>Lateral bracing and connection accessibility shown</li></ul></article>
+<article class="p217-card"><h3>Manufacturing &amp; safety</h3><ul class="p217-checklist"><li>Laser-ready 1:1 DXF verified in intended tool/software</li><li>Approved wood/plywood stock and material thickness</li><li>Cut paths closed; web widths / kerf checked</li><li>Approved adhesives / M3 only if used</li><li>Approved printing settings / connection-only geometry if used</li></ul></article>
+<article class="p217-card"><h3>Documentation</h3><ul class="p217-checklist"><li>Native editable CAD file exists and is saved</li><li>Assembly drawing + individual part drawings in PDF</li><li>2D DXFs for actual laser-cut profiles, not screenshot</li><li>STL/3MF + slicer screenshots for printed fittings if needed</li><li>BOM with masses, quantities, material and manufacturing process</li><li>Documented build order and instructor approval request</li></ul></article></div>
+<div class="p217-info" style="margin-top:1rem"><strong>Hold point:</strong> Students should not begin bridge fabrication until the teacher has approved drawings, cut files, component limits, material choices and the manufacturing method. Lesson 2.18 is where students actually build and inspect the bridge.</div></section>
+<section class="container lesson-section" id="practice"><div class="p217-subhead">11 / Independent checks</div><h2>Evaluate the mistake before revealing the answer</h2>
+<div class="p217-cols">
+<article class="p217-card"><span class="p217-pill">Check 1</span><h3>DXF file format</h3><p>A student exports the whole 3D assembly as DXF and sends it straight to the laser. What's missing?</p><details><summary>Reveal explanation</summary><p>A <strong>clean planar 1:1 cut profile</strong> for the intended material, inspected for scale, contours, layers, kerf, and duplicate/unwanted geometry. A 3D DXF is not automatically a safe 2D toolpath.</p></details></article>
+<article class="p217-card"><span class="p217-pill">Check 2</span><h3>Gusset area</h3><p>A rectangular gusset is 40 mm × 25 mm. Does it satisfy the plan-area restriction?</p><details><summary>Reveal explanation</summary><p>No. Area = 40×25 = <strong>1,000 mm²</strong>, above the <strong>800 mm²</strong> limit. Both bounding dimensions may pass while plan area fails. A 40×20 mm rectangle equals 800 mm² and can satisfy the geometric size criteria.</p></details></article>
+<article class="p217-card"><span class="p217-pill">Check 3</span><h3>Width includes hardware</h3><p>Two side frames measure 59 mm outside-to-outside, but the fasteners project 4 mm on both sides. Does it pass 65 mm overall?</p><details><summary>Reveal explanation</summary><p>No. Total width is 59 + 4 + 4 = <strong>67 mm</strong>, exceeding 65 mm.</p></details></article>
+<article class="p217-card"><span class="p217-pill">Check 4</span><h3>Printed mass total</h3><p>A design has four printed brackets at 12 g each. Is it acceptable?</p><details><summary>Reveal explanation</summary><p>Each 12 g bracket is below the 15 g individual cap, but together 4×12 = <strong>48 g</strong>, above the 40 g aggregate printed-part cap.</p></details></article>
+<article class="p217-card"><span class="p217-pill">Check 5</span><h3>Fastener choice</h3><p>Can you use an M3 machine screw without a nut or printed threads because the opening is tight?</p><details><summary>Reveal explanation</summary><p>No. The rules allow <strong>M3 nuts and bolts</strong>, with washers allowed. Printed threads and unapproved screw fastening are not permitted. Design access to a genuine nut-and-bolt connection if mechanical fastening is used.</p></details></article>
+<article class="p217-card"><span class="p217-pill">Check 6</span><h3>Full bridge versus side model</h3><p>Why must the Fusion file include a center crossmember rather than just two symmetric truss sides?</p><details><summary>Reveal explanation</summary><p>The load must be applied to the whole bridge and transferred to both side frames. Its crossmember, connections and lateral braces affect load sharing, torsion, total width and mass.</p></details></article>
+<article class="p217-card"><span class="p217-pill">Check 7</span><h3>Stock thickness</h3><p>Your model says 3.2 mm plywood, but calipers measure 3.4 mm. Can the teacher approve using it?</p><details><summary>Reveal explanation</summary><p>Not under the current <strong>≤3.2 mm plywood stock rule</strong>. Model the actually approved material instead; do not treat nominal labels as exact measurements.</p></details></article>
+<article class="p217-card"><span class="p217-pill">Check 8</span><h3>Editable manufacturing package</h3><p>Why isn't a single screenshot of the finished CAD bridge sufficient evidence?</p><details><summary>Reveal explanation</summary><p>It does not provide precise part dimensions, editable geometry, 1:1 tool paths, assembly sequence, mass estimates, material specifications or the fabrication details another maker needs.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="resources"><div class="p217-subhead">Reference library</div><h2>Resources to solve problems without guessing</h2>
+<div class="p217-cols">
+<article class="p217-card p217-resource"><h3>Autodesk · Create drawing from design</h3><p>How to create engineering drawings from the active Fusion assembly, select components, dimensions, views and document units.</p><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Drawing/files/DWG-CREATE-FROM-DESIGN.htm" target="_blank" rel="noopener noreferrer">Read Drawing workflow ↗</a></article>
+<article class="p217-card p217-resource"><h3>Autodesk · Create a parts list</h3><p>Add numbered parts to a drawing table and confirm its quantities and naming, then supplement consumable masses in the BOM.</p><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Drawing/files/DWG-CREATE-PARTS-LIST.htm" target="_blank" rel="noopener noreferrer">Read Parts List workflow ↗</a></article>
+<article class="p217-card p217-resource"><h3>Autodesk · Export a sketch to DXF</h3><p>Export a flat sketch and specify units; for an existing solid, project its planar face into a new sketch first.</p><a href="https://help.autodesk.com/view/fusion360/ENU/?caas=caas%2Fsfdcarticles%2Fsfdcarticles%2FHow-to-Save-Sketch-as-DXF-in-Fusion-360.html" target="_blank" rel="noopener noreferrer">Read DXF export steps ↗</a></article>
+<article class="p217-card p217-resource"><h3>Fusion truss design visual tutorial</h3><p>Photo-based example of using consistent member centerlines and creating a complete bridge model; compare its methods to the class's <strong>different fabrication requirements</strong>.</p><a href="https://www.instructables.com/How-to-Design-a-Basic-Truss-Bridge-With-Fusion-360/" target="_blank" rel="noopener noreferrer">Explore Fusion bridge design example ↗</a></article></div></section>
+<section class="container lesson-section" id="submit"><div class="p217-subhead">Student submission</div><h2>Exactly what to submit for POE 2.17</h2><p>Submit one organized <strong>Bridge Detailed Design &amp; Fabrication Package</strong>. This is a manufacturing approval checkpoint, not the physical build. Label all files with your team and a revision identifier (e.g., <strong>Team03_Bridge_R1</strong>).</p>
+<div class="p217-cols"><article class="p217-card"><h3>Required deliverables</h3><ul class="p217-checklist">
+<li><strong>Fusion editable native design:</strong> all parts and the completed assembly, properly named and constrained/positioned.</li>
+<li><strong>Assembly PDF:</strong> side/top/end/isometric views showing the 400 mm clear span, actual rise, overall width, load point, support contacts and lateral bracing.</li>
+<li><strong>Manufactured-part drawing PDF:</strong> dimensions, materials, thicknesses, hole positions and quantities for every unique custom component.</li>
+<li><strong>Two detailed connection drawings:</strong> center load-transfer joint and another critical node/support, with adhesive and/or M3 fastener information.</li>
+<li><strong>1:1 DXF cutting profiles:</strong> every intended laser-cut component, with safe contours and verified units; include nest/stock plan if assigned.</li>
+<li><strong>Approved printed connector files if used:</strong> STL/3MF and screenshots of slicer settings, per-part mass and aggregate printed mass.</li>
+<li><strong>Itemized bill of materials and mass estimate:</strong> include adhesives, all nuts/bolts/washers, printed fittings and every brace or gusset.</li>
+<li><strong>Assembly sequence and inspection checklist:</strong> brief numbered build steps, critical dimensions and safe machine-approval request.</li>
+<li><strong>Revision note:</strong> identify at least two design decisions or changes that respond to the engineering analysis in Lesson 2.16.</li></ul></article>
+<article class="p217-card"><h3>Quality-control submission check</h3><ul class="p217-checklist">
+<li>The CAD represents the <em>whole bridge</em>, not one floating side-truss sketch.</li>
+<li>Dimension units and DXF scale are explicitly millimeters and 1:1.</li>
+<li>All custom parts can actually be cut, printed or assembled using available tools.</li>
+<li>Local gusset dimensions, overlaps and layers follow their separate rules.</li>
+<li>Printed parts, when used, are only connectors and meet all documented size/mass/settings limits.</li>
+<li>Overall width accounts for hardware protrusion and mass includes cured adhesive.</li>
+<li>All restricted materials and fastening methods are absent.</li>
+<li>No claim of actual 100 N capacity or ≤10 mm deflection is made solely from CAD or a mass budget.</li>
+<li>The package is teacher-reviewed before fabrication begins in 2.18.</li></ul>
+<p><strong>Due date:</strong> Consult the <a href="../../../../agenda.html">Daily Agenda</a> and teacher's submission instructions.</p></article></div></section>
+<nav class="container lesson-bottom-nav" aria-label="Lesson navigation"><a class="btn secondary" href="lesson-2-16.html">← Lesson 2.16 Bridge Engineering Analysis</a><a class="btn" href="lesson-2-18.html">Next: 2.18 Bridge Fabrication →</a></nav>
+</main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer><section id="poe217Print" aria-label="Printable Bridge Detailed Design Review packet">
+<div class="p217-printpage"><h1>POE 2.17 · DETAILED DESIGN REVIEW</h1><p>Page 1 of 4 · CAD assembly &amp; constraints</p>
+<p>Team: ____________________________ Period: _______ Date: __________ Revision: _______</p>
+<p>Bridge concept / frame type: ______________________________________________________________</p>
+<h2>Whole bridge views</h2><div class="p217-drawbox">Sketch or attach top/side/end views. Label load entry, support contacts, lateral bracing and hardware protrusions.</div>
+<table><thead><tr><th>Critical criterion</th><th>Actual CAD dimension / estimate</th><th>Meets rule?</th></tr></thead><tbody>
+<tr><td>Clear span ≥400 mm</td><td></td><td></td></tr><tr><td>Overall width ≤65 mm</td><td></td><td></td></tr><tr><td>Finished mass ≤150 g</td><td></td><td></td></tr><tr><td>100 N / ≤10 mm deflection</td><td>Unverified until proper analysis/testing</td><td></td></tr></tbody></table>
+<h2>Change(s) from Lesson 2.16 analysis</h2><div class="p217-lines"><div></div><div></div><div></div><div></div></div></div>
+<div class="p217-printpage"><h1>POE 2.17 · MANUFACTURING DRAWINGS</h1><p>Page 2 of 4 · Unique parts &amp; DXF quality checks</p>
+<p>Team: ___________________________ Revision: _______</p>
+<h2>Custom part sketch / annotations</h2><div class="p217-drawbox">Draw one critical manufactured part with full dimensions, stock thickness, hole locations and manufacturing method.</div>
+<table><thead><tr><th>File group</th><th>Evidence or check</th><th>Initial</th></tr></thead><tbody>
+<tr><td>Assembly drawing PDF</td><td>All views, dimensions and title block</td><td></td></tr>
+<tr><td>Part drawing PDF</td><td>Unique parts, sizes, materials, quantities</td><td></td></tr>
+<tr><td>DXF profiles</td><td>mm units, 1:1, clean closed contours</td><td></td></tr>
+<tr><td>Laser test</td><td>Stock/kerf/webs/nesting approved</td><td></td></tr>
+<tr><td>Optional printed parts</td><td>STL/3MF and slicer profile evidence</td><td></td></tr></tbody></table>
+<h2>Fabrication file names and part IDs</h2><div class="p217-lines"><div></div><div></div><div></div><div></div><div></div></div></div>
+<div class="p217-printpage"><h1>POE 2.17 · TWO CRITICAL JOINTS</h1><p>Page 3 of 4 · Connection geometry &amp; rules</p>
+<h2>Joint A · Center load transfer</h2><div class="p217-drawbox" style="height:1.65in">Annotate 100 N load contact, crossmember, side attachment, and bolt/glue/fit.</div>
+<h2>Joint B · Truss node / support / brace</h2><div class="p217-drawbox" style="height:1.65in">Dimension gusset, joint overlap and material/fastener arrangement.</div>
+<p>Gusset max: 40 × 25 mm / ≤800 mm² plan area / ≤20 mm overlap / 1 layer per side; plywood ≤3.2 mm.</p>
+<p>Printed connector max: 50 mm length / 15 g each / 40 g total; PLA/PETG fittings only.</p>
+<h2>Predicted joint failure modes and mitigations</h2><div class="p217-lines"><div></div><div></div><div></div><div></div><div></div></div></div>
+<div class="p217-printpage"><h1>POE 2.17 · BOM &amp; FABRICATION READINESS</h1><p>Page 4 of 4 · Quantities, planned mass and approvals</p>
+<table><thead><tr><th>Part category</th><th>Qty</th><th>Mass each (g)</th><th>Extended mass (g)</th></tr></thead><tbody><tr><td>Wood chords / primary members</td><td></td><td></td><td></td></tr><tr><td>Wood web / diagonal members</td><td></td><td></td><td></td></tr><tr><td>Wood transverse / lateral braces</td><td></td><td></td><td></td></tr><tr><td>Open-web plywood side truss (if used)</td><td></td><td></td><td></td></tr><tr><td>Plywood local gussets</td><td></td><td></td><td></td></tr><tr><td>Cured adhesive</td><td></td><td></td><td></td></tr><tr><td>M3 bolts/nuts/washers</td><td></td><td></td><td></td></tr><tr><td>PLA/PETG fitting type 1</td><td></td><td></td><td></td></tr><tr><td>PLA/PETG fitting type 2</td><td></td><td></td><td></td></tr></tbody></table>
+<p>Estimated total: ______ g &nbsp; Mass margin below 150 g: ______ g &nbsp; Total printed: ______ g</p>
+<h2>Fabrication sequence</h2><div class="p217-lines"><div></div><div></div><div></div><div></div></div>
+<h2>Final teacher / lab review</h2><p>☐ CAD saved &nbsp; ☐ Drawings complete &nbsp; ☐ 1:1 DXF checked &nbsp; ☐ Approved joints</p>
+<p>☐ Max width/span verified &nbsp; ☐ Mass budget checked &nbsp; ☐ Slicer verified if applicable</p>
+<p>Teacher approval to begin fabrication: _______________________ Date: __________</p></div>
+</section><script>
+(function(){
+"use strict";
+const el=id=>document.getElementById(id);
+const rows=[{"i":0,"category":"Wood primary"},{"i":1,"category":"Wood primary"},{"i":2,"category":"Wood primary"},{"i":3,"category":"Wood primary"},{"i":4,"category":"Plywood gusset"},{"i":5,"category":"Adhesive"},{"i":6,"category":"M3 hardware"},{"i":7,"category":"Printed fitting"},{"i":8,"category":"Printed fitting"}];
+const flds=["checkSpan","checkWidth","checkPlywood","gLen","gWidth","gArea","gOverlap","gLayers","fLength","fMass","fMaterial","sInfill","sWalls","sTop","sBottom","sLayer","sNozzle","jointFastener","jointGlue","sideType"];
+if(!el("bomTotal")||!el("exportBom"))return;
+function num(id){
+ const v=el(id).value;if(v===null||String(v).trim()==="")return null;
+ const n=Number(v);return Number.isFinite(n)?n:null;
+}
+function printable(v,precision=2){return v===null?"—":v.toFixed(precision);}
+function results(){
+ const data=rows.map(r=>{
+  const qty=num("partQty"+r.i),grams=num("partGram"+r.i);
+  const unused=qty===0,valid=qty!==null&&qty>=0&&Number.isInteger(qty)&&(unused||(grams!==null&&grams>=0));
+  const total=valid?(unused?0:qty*grams):null;
+  el("partTotal"+r.i).textContent=printable(total)+" g".replace(/^— g$/,"—");
+  return {i:r.i,name:el("partName"+r.i).value.trim(),category:r.category,qty,grams,total,valid};
+ });
+ const complete=data.every(r=>r.valid);
+ const total=complete?data.reduce((sum,x)=>sum+x.total,0):null;
+ const printed=data.filter(r=>r.category==="Printed fitting");
+ const printTotal=printed.every(r=>r.valid)?printed.reduce((sum,x)=>sum+x.total,0):null;
+ const issues=[];
+ if(total!==null&&total>150)issues.push("Estimated finished mass exceeds 150 g.");
+ if(printTotal!==null&&printTotal>40)issues.push("Total printed fittings exceed 40 g.");
+ printed.forEach(r=>{if(r.qty>0&&r.grams!==null&&r.grams>15)issues.push(r.name+": each fitting exceeds 15 g.");});
+ const negative=data.filter(r=>r.qty!==null&&(r.qty<0||!Number.isInteger(r.qty))||r.grams!==null&&r.grams<0);
+ if(negative.length)issues.push("Correct invalid quantities or masses.");
+ el("bomTotal").textContent=total===null?"—":total.toFixed(2)+" g";
+ el("bomMargin").textContent=total===null?"—":(150-total).toFixed(2)+" g";
+ el("bomPrinted").textContent=printTotal===null?"—":printTotal.toFixed(2)+" g";
+ el("bomVerdict").textContent=issues.length?issues.join(" "):complete?
+   "Mass estimates satisfy the entered total/printed-weight limits. Verify every actual component and all dimension/fabrication rules before approval.":
+   "Enter quantities for all nine categories; use zero for any unused type. A positive quantity requires a measured or estimated mass per item.";
+ return {data,total,printTotal,issues,complete};
+}
+function checks(bom){
+ const pass=[],fails=[],unknown=[];
+ function judge(name,n,fn,explanation){
+  if(n===null){unknown.push(name);return;}
+  if(fn(n))pass.push(name);
+  else fails.push(name+": "+explanation);
+ }
+ judge("Clear span",num("checkSpan"),n=>n>=400,"must be ≥400 mm");
+ judge("Overall width",num("checkWidth"),n=>n>0&&n<=65,"must be >0 and ≤65 mm");
+ const p=num("checkPlywood");
+ const usingPlywood=bom.data.some(r=>(r.category==="Plywood gusset"||r.name.toLowerCase().includes("plywood"))&&r.qty>0);
+ if(p!==null)judge("Plywood thickness",p,n=>n>0&&n<=3.2,"must be >0 and ≤3.2 mm");
+ else if(usingPlywood)unknown.push("Plywood stock thickness");
+ const gs=["gLen","gWidth","gArea","gOverlap","gLayers"];
+ const gussetUsed=bom.data.some(r=>r.category==="Plywood gusset"&&r.qty>0)||gs.some(id=>num(id)!==null);
+ if(gussetUsed){
+  judge("Gusset bounding length",num("gLen"),n=>n>0&&n<=40,"must be >0 and ≤40 mm");
+  judge("Gusset bounding width",num("gWidth"),n=>n>0&&n<=25,"must be >0 and ≤25 mm");
+  judge("Gusset plan area",num("gArea"),n=>n>0&&n<=800,"must be >0 and ≤800 mm²");
+  judge("Gusset overlap",num("gOverlap"),n=>n>=0&&n<=20,"must be ≤20 mm on each member");
+  judge("Gusset layers on one side",num("gLayers"),n=>Number.isInteger(n)&&n>=1&&n<=1,"one layer per side maximum");
+  const gl=num("gLen"),gw=num("gWidth"),ga=num("gArea");
+  if(gl!==null&&gw!==null&&ga!==null&&ga>gl*gw+0.001)fails.push("Gusset plan area exceeds its bounding rectangle—recheck entries.");
+ }
+ const fittingUsed=bom.data.some(r=>r.category==="Printed fitting"&&r.qty>0)||["fLength","fMass"].some(id=>num(id)!==null)||el("fMaterial").value!=="";
+ if(fittingUsed){
+  judge("Example fitting length",num("fLength"),n=>n>0&&n<=50,"maximum 50 mm");
+  judge("Example fitting mass",num("fMass"),n=>n>0&&n<=15,"maximum 15 g");
+  const mt=el("fMaterial").value;
+  if(!mt)unknown.push("Fitting material");else if(["PLA","PETG"].includes(mt))pass.push("Fitting material");else fails.push("Printed fitting must be PLA or PETG.");
+  judge("Slicer infill",num("sInfill"),n=>n>=0&&n<=35,"maximum 35%");
+  judge("Slicer wall loops",num("sWalls"),n=>n===4,"must be 4");
+  judge("Slicer top layers",num("sTop"),n=>n===5,"must be 5");
+  judge("Slicer bottom layers",num("sBottom"),n=>n===5,"must be 5");
+  judge("Slicer layer height",num("sLayer"),n=>Math.abs(n-.28)<.0001,"must be 0.28 mm");
+  judge("Slicer nozzle",num("sNozzle"),n=>Math.abs(n-.4)<.0001,"must be 0.4 mm");
+ }
+ const fast=el("jointFastener").value,glue=el("jointGlue").value,type=el("sideType").value;
+ if(fast==="Other")fails.push("Screws and non-M3 fasteners are prohibited.");
+ else if(!fast)unknown.push("Fastener choice");else pass.push("Mechanical fastening");
+ if(glue==="Other")fails.push("Adhesive must be PVA, CA or not used.");
+ else if(!glue)unknown.push("Adhesive choice");else pass.push("Adhesive");
+ if(type==="other")fails.push("Primary structure must be approved wood-based members/open-web plywood.");
+ else if(!type)unknown.push("Side-frame material method");else pass.push("Side-frame method");
+ fails.push(...bom.issues);
+ const out="RULES SCREEN: "+(fails.length?fails.length+" issue(s) need correction. ":"No entered rule conflicts detected. ")+
+ (unknown.length?unknown.length+" checks remain unverified: "+unknown.join(", ")+". ":"All displayed input checks have values. ")+
+ "Manual review still required for full load capacity, deflection, gussets, stock/kerf and connection purposes.";
+ el("manufacturingVerdict").textContent=out;
+ return {pass,fails,unknown,out};
+}
+let latest=null;
+function update(){const bom=results(),check=checks(bom);latest={bom,check};}
+document.querySelectorAll("#bom input,#bom select").forEach(x=>{x.addEventListener("input",update);x.addEventListener("change",update);});
+function csv(v){const s=String(v===null||v===undefined?"":v);return '"'+s.replace(/"/g,'""')+'"';}
+function download(data,filename,mime){
+ const blob=new Blob([data],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2500);
+}
+el("exportBom").addEventListener("click",()=>{
+ const d=latest.bom.data,header=["Part description","Category","Quantity","Individual mass (g)","Total mass (g)","Entry valid"];
+ const table=[header,...d.map(r=>[r.name,r.category,r.qty,r.grams,r.total,r.valid])];
+ download(table.map(row=>row.map(csv).join(",")).join("\r\n")+"\r\n","POE_2-17_Bridge_BOM.csv","text/csv;charset=utf-8");
+});
+el("exportReadiness").addEventListener("click",()=>{
+ const ids=["checkSpan","checkWidth","checkPlywood","gLen","gWidth","gArea","gOverlap","gLayers","fLength","fMass","fMaterial","sInfill","sWalls","sTop","sBottom","sLayer","sNozzle","jointFastener","jointGlue","sideType"];
+ const names=["Span (mm)","Overall width (mm)","Plywood stock (mm)","Gusset length (mm)","Gusset width (mm)","Gusset plan area (mm2)","Overlap (mm)","Layers on one side","Example fitting length (mm)","Example fitting mass (g)","Fitting material","Slicer infill (%)","Slicer walls","Slicer top layers","Slicer bottom layers","Slicer layer height (mm)","Slicer nozzle (mm)","Fastener choice","Glue choice","Side frame"];
+ const lines=["POE 2.17 BRIDGE DESIGN READINESS","This report summarizes entered design data only and is not instructor manufacturing approval.","","Estimated finished mass: "+el("bomTotal").textContent,"Estimated printed mass: "+el("bomPrinted").textContent,"","DIMENSION AND PROCESS VALUES"];
+ ids.forEach((id,i)=>lines.push(names[i]+": "+(el(id).value||"not entered")));
+ lines.push("","RULE SCREEN",latest.check.out,"","SUGGESTED FOLLOW-UP");
+ lines.push("Submit CAD, dimensioned drawings, clean DXF profiles, printed connection files/slicer evidence if used, two joint details, BOM and build order.");
+ download(lines.join("\n"),"POE_2-17_Bridge_Design_Readiness.txt","text/plain;charset=utf-8");
+});
+el("printPacket").addEventListener("click",()=>{document.body.classList.add("poe217-printmode");window.print();});
+window.addEventListener("afterprint",()=>document.body.classList.remove("poe217-printmode"));
+update();
+})();
+</script></body></html>
