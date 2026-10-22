@@ -21,7 +21,13 @@ select{max-width:100%}label{font-size:13px;font-weight:700;color:#25475d}
 .wlabel{position:absolute;top:14px;background:#fff;border:1px dashed #a7b9c7;color:#536f80;border-radius:6px;padding:6px 13px;font-size:12px;font-weight:800}
 .wlabel.printers{top:14px;left:420px}.wlabel.tv{top:130px;right:15px}.wlabel.front{left:33px;bottom:10px}
 .table{position:absolute;height:122px;display:grid;grid-template-rows:34px 52px 34px;align-items:center;transform-origin:center center}
-.table.trapezoid{width:192px}
+/* One seat at the short top edge; one at each angled side. */
+.table.trapezoid{width:192px;height:150px;display:block}
+.table.trapezoid .desk{position:absolute;left:0;right:0;top:48px;height:52px}
+.table.trapezoid .trap-seat{position:absolute;width:82px;height:30px}
+.table.trapezoid .trap-top{top:6px;left:50%;transform:translateX(-50%) rotate(var(--counter-rotation,0deg))}
+.table.trapezoid .trap-left{left:-6px;top:102px}
+.table.trapezoid .trap-right{right:-6px;top:102px}
 .table.group{width:420px}
 .table.group .desk{background:linear-gradient(130deg,#bed9e8,#88b4c9);border-color:#4b7894;clip-path:none;border-radius:11px}
 .table.group .desk-label{background:rgba(227,241,249,.97);border-color:#5b8ca8;color:#183b50}
@@ -64,7 +70,7 @@ select{max-width:100%}label{font-size:13px;font-weight:700;color:#25475d}
 <label for="period">Period</label><select id="period"></select>
 <button id="addPeriod">Add Period</button><button id="random" class="primary">Auto-Assign</button>
 <button id="swap">Swap Mode: Off</button><button id="rotateLeft" title="Rotate selected table counterclockwise">↶ Rotate Table</button><button id="rotateRight" title="Rotate selected table clockwise">↷ Rotate Table</button><button id="resetLayout">Reset Layout</button><button id="print">Print</button><span class="count" id="count"></span>
-</div><p class="help">Drag a tabletop to move it and its seats (mouse, touch, or stylus). Left: four gold trapezoids with 3 seats each. Right: three blue rectangular tables with 8 seats each. Rotate a selected table; all student and table labels stay upright. Layout changes save automatically and apply to every period. Click a seat to assign a student; Swap Mode exchanges occupants.</p>
+</div><p class="help">Drag a tabletop to move it and its seats (mouse, touch, or stylus). Left: four gold trapezoids with one seat on the short side and one on each angled side. Right: three blue rectangular tables with 8 seats each. Rotate a selected table; all student and table labels stay upright. Layout changes save automatically and apply to every period. Click a seat to assign a student; Swap Mode exchanges occupants.</p>
 <div class="scroller"><div class="floor" id="floor"><div class="wlabel printers">3D PRINTERS</div><div class="wlabel tv">TV</div><div class="wlabel front">PHOTO / CLASSROOM FRONT</div></div></div>
 <p id="status" aria-live="polite"></p></section>
 <aside class="sidebar">
@@ -100,7 +106,7 @@ const clamp=(n,lo,hi)=>Math.min(hi,Math.max(lo,n));
 function boundedPosition(x,y,angle,tableId){
  const t=tables.find(item=>item.id===tableId);
  if(!t)throw Error('Unknown table: '+tableId);
- const width=t.kind==='group'?420:192,height=122;
+ const width=t.kind==='group'?420:192,height=t.kind==='group'?122:150;
  const sideways=angle%180!==0;
  const boxWidth=sideways?height:width,boxHeight=sideways?width:height;
  const margin=8;
@@ -201,9 +207,14 @@ for(const t of tables){
  card.style.setProperty('--counter-rotation',(-position.rotation)+'deg');
  card.classList.toggle('sideways',position.rotation%180!==0);
  if(activeTable===t.id)card.classList.add('active');
- const seat=id=>'<button type="button" class="seat'+(name(id)?' occupied':'')+(locked(id)?' locked':'')+(disabled(id)?' disabled':'')+(selected===id?' chosen':'')+'" data-seat="'+id+'" title="'+h(idLabel(id)+' '+name(id))+'">'+h(name(id)||id.split('-')[1])+'</button>';
- const upper=t.kind==='group'?[1,2,3,4]:[1,2],lower=t.kind==='group'?[5,6,7,8]:[3];
- card.innerHTML='<div class="seat-row">'+upper.map(i=>seat(t.id+'-'+i)).join('')+'</div><div class="desk" role="button" tabindex="0" aria-label="Table '+h(t.id)+' '+h(t.desc)+'. Drag to move; use arrow keys to nudge"></div><div class="seat-row'+(t.kind==='trapezoid'?' single':'')+'">'+lower.map(i=>seat(t.id+'-'+i)).join('')+'</div><span class="desk-label" aria-hidden="true"><strong>'+h(t.id)+'</strong><small>'+h(t.desc)+'</small></span>';
+ const seat=(id,extra='')=>'<button type="button" class="seat'+(extra?' '+extra:'')+(name(id)?' occupied':'')+(locked(id)?' locked':'')+(disabled(id)?' disabled':'')+(selected===id?' chosen':'')+'" data-seat="'+id+'" title="'+h(idLabel(id)+' '+name(id))+'">'+h(name(id)||id.split('-')[1])+'</button>';
+ const tabletop='<div class="desk" role="button" tabindex="0" aria-label="Table '+h(t.id)+' '+h(t.desc)+'. Drag to move; use arrow keys to nudge"></div>';
+ const tableLabel='<span class="desk-label" aria-hidden="true"><strong>'+h(t.id)+'</strong><small>'+h(t.desc)+'</small></span>';
+ if(t.kind==='group'){
+  card.innerHTML='<div class="seat-row">'+[1,2,3,4].map(i=>seat(t.id+'-'+i)).join('')+'</div>'+tabletop+'<div class="seat-row">'+[5,6,7,8].map(i=>seat(t.id+'-'+i)).join('')+'</div>'+tableLabel;
+ }else{
+  card.innerHTML=seat(t.id+'-1','trap-seat trap-top')+tabletop+seat(t.id+'-2','trap-seat trap-left')+seat(t.id+'-3','trap-seat trap-right')+tableLabel;
+ }
  $('floor').appendChild(card);
 }
 const available=current().roster.filter(n=>!Object.values(current().assigned).includes(n)||n===name(selected));
