@@ -32,8 +32,11 @@ select{max-width:100%}label{font-size:13px;font-weight:700;color:#25475d}
 .seat.locked:before{content:"🔒"}
 .seat.disabled{border-color:#a7b0b9;color:#7a858e;background:#dae1e6}
 .desk{height:50px;border:2px solid #8e5d30;background:linear-gradient(130deg,#f5d59a,#c88e49);clip-path:polygon(13% 0,87% 0,100% 100%,0 100%);display:flex;gap:5px;align-items:center;justify-content:center;color:#41290f;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}
-.desk strong,.desk small{pointer-events:none}
-.desk strong{font-size:14px}.desk small{font-size:11px;font-weight:700}
+/* Table labels are outside the clipped trapezoid and counter-rotate with it. */
+.desk-label{position:absolute;left:50%;top:50%;z-index:2;pointer-events:none;display:flex;align-items:center;justify-content:center;gap:5px;max-width:160px;padding:2px 6px;border:1px solid rgba(142,93,48,.35);border-radius:5px;background:rgba(251,231,190,.95);color:#41290f;line-height:1.1;white-space:nowrap;transform:translate(-50%,-50%) rotate(var(--counter-rotation,0deg));transform-origin:center}
+.desk-label strong{font-size:14px}.desk-label small{font-size:11px;font-weight:700}
+.table.sideways .desk-label{width:47px;max-width:47px;min-height:30px;flex-direction:column;gap:0;white-space:normal;text-align:center;padding:1px 3px}
+.table.sideways .desk-label small{font-size:9px;line-height:1.08;overflow-wrap:normal}
 .sidebar{display:grid;gap:15px}.panel{padding:16px}.panel h2{font-size:16px;margin:0 0 10px}.panel p{font-size:13px;color:#597082;line-height:1.5}
 .panel textarea{width:100%;height:180px;resize:vertical;margin:7px 0}.panel select{width:100%;margin:7px 0}
 .row{display:flex;gap:8px;margin:8px 0;flex-wrap:wrap}.row button{flex:1}
@@ -170,9 +173,11 @@ for(const t of tables){
  const position=state.tableLayout[t.id];
  card.style.left=position.x+'px';card.style.top=position.y+'px';
  card.style.transform='rotate('+position.rotation+'deg)';
+ card.style.setProperty('--counter-rotation',(-position.rotation)+'deg');
+ card.classList.toggle('sideways',position.rotation%180!==0);
  if(activeTable===t.id)card.classList.add('active');
  const seat=id=>'<button type="button" class="seat'+(name(id)?' occupied':'')+(locked(id)?' locked':'')+(disabled(id)?' disabled':'')+(selected===id?' chosen':'')+'" data-seat="'+id+'" title="'+h(idLabel(id)+' '+name(id))+'">'+h(name(id)||id.split('-')[1])+'</button>';
- card.innerHTML='<div class="seat-row">'+seat(t.id+'-1')+seat(t.id+'-2')+'</div><div class="desk" role="button" tabindex="0" aria-label="Drag to move this table; use arrow keys to nudge"><strong>'+t.id+'</strong><small>'+h(t.desc)+'</small></div><div class="seat-row single">'+seat(t.id+'-3')+'</div>';
+ card.innerHTML='<div class="seat-row">'+seat(t.id+'-1')+seat(t.id+'-2')+'</div><div class="desk" role="button" tabindex="0" aria-label="Table '+h(t.id)+' '+h(t.desc)+'. Drag to move; use arrow keys to nudge"></div><div class="seat-row single">'+seat(t.id+'-3')+'</div><span class="desk-label" aria-hidden="true"><strong>'+h(t.id)+'</strong><small>'+h(t.desc)+'</small></span>';
  $('floor').appendChild(card);
 }
 const available=current().roster.filter(n=>!Object.values(current().assigned).includes(n)||n===name(selected));
