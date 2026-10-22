@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
-<title>Movable Trapezoid Classroom Seating Planner | LockwoodSTEM</title>
+<title>Classroom Seating Planner — Trapezoid &amp; Group Tables | LockwoodSTEM</title>
 <style>
 :root{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#173047;background:#eaf1f6}
 *{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}
@@ -20,13 +20,21 @@ select{max-width:100%}label{font-size:13px;font-weight:700;color:#25475d}
 .floor{position:relative;width:1120px;height:760px;background:linear-gradient(140deg,#fff,#eaf3f8);border:3px solid #91aebd;border-radius:14px;margin:0 auto}
 .wlabel{position:absolute;top:14px;background:#fff;border:1px dashed #a7b9c7;color:#536f80;border-radius:6px;padding:6px 13px;font-size:12px;font-weight:800}
 .wlabel.printers{top:14px;left:420px}.wlabel.tv{top:130px;right:15px}.wlabel.front{left:33px;bottom:10px}
-.table{position:absolute;width:192px;height:122px;display:grid;grid-template-rows:34px 52px 34px;align-items:center;transform-origin:center center}
+.table{position:absolute;height:122px;display:grid;grid-template-rows:34px 52px 34px;align-items:center;transform-origin:center center}
+.table.trapezoid{width:192px}
+.table.group{width:420px}
+.table.group .desk{background:linear-gradient(130deg,#bed9e8,#88b4c9);border-color:#4b7894;clip-path:none;border-radius:11px}
+.table.group .desk-label{background:rgba(227,241,249,.97);border-color:#5b8ca8;color:#183b50}
+.table.group .seat-row{gap:3px}
+.table.group .seat{width:98px;min-width:0;font-size:10.5px}
 .table.active{z-index:3}.table.dragging{z-index:8}
 .table.active .desk{filter:drop-shadow(0 0 3px #b47800)}
 .table.dragging .desk{cursor:grabbing;filter:brightness(1.1)}
 .desk:focus-visible{outline:3px solid #134b88;outline-offset:4px}
 .seat-row{display:flex;justify-content:space-around;gap:8px}.seat-row.single{justify-content:center}
-.seat{width:91px;height:30px;border:2px solid #749aaf;background:#fff;border-radius:10px;color:#19445d;font-size:11px;font-weight:650;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:3px}
+.seat{width:91px;height:30px;border:2px solid #749aaf;background:#fff;border-radius:10px;color:#19445d;font-size:11px;font-weight:650;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:3px;position:relative;z-index:1;transform:rotate(var(--counter-rotation,0deg));transform-origin:center center}
+/* Counter-rotate the entire seat button so student names always read left to right,
+   including after 90°, 180° and 270° table turns. */
 .seat.occupied{background:#e1f4e8;border-color:#2a8b60;color:#145237}
 .seat.chosen{outline:3px solid #d79a20;outline-offset:2px}
 .seat.locked:before{content:"🔒"}
@@ -35,8 +43,8 @@ select{max-width:100%}label{font-size:13px;font-weight:700;color:#25475d}
 /* Table labels are outside the clipped trapezoid and counter-rotate with it. */
 .desk-label{position:absolute;left:50%;top:50%;z-index:2;pointer-events:none;display:flex;align-items:center;justify-content:center;gap:5px;max-width:160px;padding:2px 6px;border:1px solid rgba(142,93,48,.35);border-radius:5px;background:rgba(251,231,190,.95);color:#41290f;line-height:1.1;white-space:nowrap;transform:translate(-50%,-50%) rotate(var(--counter-rotation,0deg));transform-origin:center}
 .desk-label strong{font-size:14px}.desk-label small{font-size:11px;font-weight:700}
-.table.sideways .desk-label{width:47px;max-width:47px;min-height:30px;flex-direction:column;gap:0;white-space:normal;text-align:center;padding:1px 3px}
-.table.sideways .desk-label small{font-size:9px;line-height:1.08;overflow-wrap:normal}
+.table.sideways .desk-label{max-width:170px;min-width:80px;min-height:30px;white-space:normal;text-align:center}
+.table.sideways .desk-label small{font-size:10px;line-height:1.1}
 .sidebar{display:grid;gap:15px}.panel{padding:16px}.panel h2{font-size:16px;margin:0 0 10px}.panel p{font-size:13px;color:#597082;line-height:1.5}
 .panel textarea{width:100%;height:180px;resize:vertical;margin:7px 0}.panel select{width:100%;margin:7px 0}
 .row{display:flex;gap:8px;margin:8px 0;flex-wrap:wrap}.row button{flex:1}
@@ -47,13 +55,13 @@ select{max-width:100%}label{font-size:13px;font-weight:700;color:#25475d}
 @media(max-width:1000px){main{grid-template-columns:1fr}.sidebar{grid-template-columns:repeat(auto-fit,minmax(255px,1fr))}}
 @media print{header,.toolbar,.help,.sidebar,#status{display:none!important}main{padding:0;display:block}section{border:0;box-shadow:none}.scroller{overflow:visible;padding:0}.floor{transform:scale(.81);transform-origin:top left;margin:0;print-color-adjust:exact;-webkit-print-color-adjust:exact}@page{size:landscape;margin:0.25in}}
 </style></head>
-<body><header><div><h1>Classroom Seating Planner</h1><p>Photo-based layout · 10 movable trapezoid tables · maximum 3 students per table · 30 seats · independent of the existing Google seating app</p></div>
+<body><header><div><h1>Classroom Seating Planner</h1><p>Photo-based layout · 4 trapezoid tables × 3 + 3 group tables × 8 · 36 total seats · independent of the existing Google seating app</p></div>
 <nav><a href="./">Existing Seating Display</a> · <a id="oldapp" target="_blank" rel="noopener">Original Editor ↗</a></nav></header>
 <main><section><div class="toolbar">
 <label for="period">Period</label><select id="period"></select>
 <button id="addPeriod">Add Period</button><button id="random" class="primary">Auto-Assign</button>
 <button id="swap">Swap Mode: Off</button><button id="rotateLeft" title="Rotate selected table counterclockwise">↶ Rotate Table</button><button id="rotateRight" title="Rotate selected table clockwise">↷ Rotate Table</button><button id="resetLayout">Reset Layout</button><button id="print">Print</button><span class="count" id="count"></span>
-</div><p class="help">Drag any gold trapezoid tabletop to move the entire table and its three seats (mouse, touch, or stylus). Click a tabletop to select it for rotation, or focus it and use arrow keys to move. Layout changes save automatically and apply to every period. Click a seat to assign a student; Swap Mode exchanges occupants.</p>
+</div><p class="help">Drag a tabletop to move it and its seats (mouse, touch, or stylus). Left: four gold trapezoids with 3 seats each. Right: three blue rectangular tables with 8 seats each. Rotate a selected table; all student and table labels stay upright. Layout changes save automatically and apply to every period. Click a seat to assign a student; Swap Mode exchanges occupants.</p>
 <div class="scroller"><div class="floor" id="floor"><div class="wlabel printers">3D PRINTERS</div><div class="wlabel tv">TV</div><div class="wlabel front">PHOTO / CLASSROOM FRONT</div></div></div>
 <p id="status" aria-live="polite"></p></section>
 <aside class="sidebar">
@@ -76,33 +84,39 @@ const deployment='https://script.google.com/a/macros/lockwoodstem.org/s/AKfycby8
 document.getElementById('oldapp').href=deployment;
 const $=id=>document.getElementById(id),storage='lockwoodstem-classroom-seats-photo2026-v1';
 const tables=[
-{id:'A',x:65,y:90,desc:'Rear left'},
-{id:'B',x:118,y:225,desc:'Middle left'},
-{id:'C',x:150,y:374,desc:'Front left'},
-{id:'D',x:48,y:568,desc:'Near camera'},
-{id:'E',x:470,y:110,desc:'Rear center'},
-{id:'F',x:420,y:410,desc:'Middle center'},
-{id:'J',x:660,y:270,desc:'Center right'},
-{id:'G',x:825,y:100,desc:'Rear right'},
-{id:'H',x:815,y:445,desc:'Middle right'},
-{id:'I',x:910,y:285,desc:'Far right'}
+{id:'A',kind:'trapezoid',capacity:3,x:65,y:90,desc:'Left 1'},
+{id:'B',kind:'trapezoid',capacity:3,x:118,y:225,desc:'Left 2'},
+{id:'C',kind:'trapezoid',capacity:3,x:150,y:374,desc:'Left 3'},
+{id:'D',kind:'trapezoid',capacity:3,x:48,y:568,desc:'Left 4'},
+{id:'E',kind:'group',capacity:8,x:630,y:100,desc:'Right 1'},
+{id:'F',kind:'group',capacity:8,x:630,y:315,desc:'Right 2'},
+{id:'G',kind:'group',capacity:8,x:630,y:530,desc:'Right 3'}
 ];
-const all=tables.flatMap(t=>[1,2,3].map(n=>t.id+'-'+n)),validSeats=new Set(all),blank=()=>({roster:[],assigned:{},locked:[]});
+const all=tables.flatMap(t=>Array.from({length:t.capacity},(_,i)=>t.id+'-'+(i+1))),validSeats=new Set(all),blank=()=>({roster:[],assigned:{},locked:[]});
 const clamp=(n,lo,hi)=>Math.min(hi,Math.max(lo,n));
-function boundedPosition(x,y,angle){
- const turn=angle%180!==0;
- return {x:clamp(Math.round(x),turn?-35:0,turn?963:928),
-         y:clamp(Math.round(y),turn?35:0,turn?603:638)};
+function boundedPosition(x,y,angle,tableId){
+ const t=tables.find(item=>item.id===tableId);
+ if(!t)throw Error('Unknown table: '+tableId);
+ const width=t.kind==='group'?420:192,height=122;
+ const sideways=angle%180!==0;
+ const boxWidth=sideways?height:width,boxHeight=sideways?width:height;
+ const margin=8;
+ return {
+  x:clamp(Math.round(x),margin+(boxWidth-width)/2,1120-margin-(boxWidth+width)/2),
+  y:clamp(Math.round(y),margin+(boxHeight-height)/2,760-margin-(boxHeight+height)/2)
+ };
 }
 function normalizeLayout(){
  if(!state.tableLayout||typeof state.tableLayout!=='object')state.tableLayout={};
+ const updated={};
  for(const t of tables){
   const p=state.tableLayout[t.id]||{},angle=Number(p.rotation);
   const rotation=[0,90,180,270].includes(angle)?angle:0;
   const x=Number(p.x),y=Number(p.y);
-  const valid=boundedPosition(Number.isFinite(x)?x:t.x,Number.isFinite(y)?y:t.y,rotation);
-  state.tableLayout[t.id]={...valid,rotation};
+  const valid=boundedPosition(Number.isFinite(x)?x:t.x,Number.isFinite(y)?y:t.y,rotation,t.id);
+  updated[t.id]={...valid,rotation};
  }
+ state.tableLayout=updated;
 }
 let state;
 try{state=JSON.parse(localStorage.getItem(storage))}catch(e){}
@@ -118,11 +132,17 @@ if((state.layoutVersion||1)<2 && state.tableLayout){
   }
  }
 }
-state.layoutVersion=2;
+/* Keep existing left-side placements, but reset transformed right-side tables
+   to the new eight-seat geometry so their new shape remains inside the room. */
+if((state.layoutVersion||1)<3){
+ if(!state.tableLayout)state.tableLayout={};
+ for(const t of tables.filter(t=>t.kind==='group'))state.tableLayout[t.id]={x:t.x,y:t.y,rotation:0};
+}
+state.layoutVersion=3;
 normalizeLayout();
-/* Migrate previously saved fourth-seat assignments without dropping students from rosters.
-   Prefer another free seat on the same table, then another table, and retain
-   unseated names in the roster if all 30 seats are filled. */
+/* Migrate old seats and retired table IDs without deleting roster names.
+   A–D retain 3 seats; E–G expand to 8 seats. H/I/J assignments move into
+   the larger right-side tables when possible. */
 function normalizeSeatingData(){
  const report={moved:0,unseated:0};
  state.disabled=state.disabled.filter(id=>validSeats.has(id));
@@ -140,8 +160,10 @@ function normalizeSeatingData(){
    if(!student)continue;
    if(!period.roster.includes(student))period.roster.push(student);
    const previousTable=id.split('-')[0];
+   const preferredTable=({H:'F',I:'G',J:'E'})[previousTable]||previousTable;
    const free=all.filter(seat=>!state.disabled.includes(seat)&&!period.assigned[seat]&&!period.locked.includes(seat));
-   const target=free.find(seat=>seat.startsWith(previousTable+'-'))||free[0]||null;
+   const target=free.find(seat=>seat.startsWith(preferredTable+'-'))||
+                free.find(seat=>['E','F','G'].includes(seat.split('-')[0]))||free[0]||null;
    if(target){
     period.assigned[target]=student;
     if(oldLocks.has(id))period.locked.push(target);
@@ -169,7 +191,7 @@ $('period').innerHTML=Object.keys(state.periods).map(p=>'<option value="'+h(p)+'
 $('period').value=state.current;
 $('floor').querySelectorAll('.table').forEach(x=>x.remove());
 for(const t of tables){
- const card=document.createElement('div');card.className='table';card.dataset.table=t.id;
+ const card=document.createElement('div');card.className='table '+t.kind;card.dataset.table=t.id;
  const position=state.tableLayout[t.id];
  card.style.left=position.x+'px';card.style.top=position.y+'px';
  card.style.transform='rotate('+position.rotation+'deg)';
@@ -177,7 +199,8 @@ for(const t of tables){
  card.classList.toggle('sideways',position.rotation%180!==0);
  if(activeTable===t.id)card.classList.add('active');
  const seat=id=>'<button type="button" class="seat'+(name(id)?' occupied':'')+(locked(id)?' locked':'')+(disabled(id)?' disabled':'')+(selected===id?' chosen':'')+'" data-seat="'+id+'" title="'+h(idLabel(id)+' '+name(id))+'">'+h(name(id)||id.split('-')[1])+'</button>';
- card.innerHTML='<div class="seat-row">'+seat(t.id+'-1')+seat(t.id+'-2')+'</div><div class="desk" role="button" tabindex="0" aria-label="Table '+h(t.id)+' '+h(t.desc)+'. Drag to move; use arrow keys to nudge"></div><div class="seat-row single">'+seat(t.id+'-3')+'</div><span class="desk-label" aria-hidden="true"><strong>'+h(t.id)+'</strong><small>'+h(t.desc)+'</small></span>';
+ const upper=t.kind==='group'?[1,2,3,4]:[1,2],lower=t.kind==='group'?[5,6,7,8]:[3];
+ card.innerHTML='<div class="seat-row">'+upper.map(i=>seat(t.id+'-'+i)).join('')+'</div><div class="desk" role="button" tabindex="0" aria-label="Table '+h(t.id)+' '+h(t.desc)+'. Drag to move; use arrow keys to nudge"></div><div class="seat-row'+(t.kind==='trapezoid'?' single':'')+'">'+lower.map(i=>seat(t.id+'-'+i)).join('')+'</div><span class="desk-label" aria-hidden="true"><strong>'+h(t.id)+'</strong><small>'+h(t.desc)+'</small></span>';
  $('floor').appendChild(card);
 }
 const available=current().roster.filter(n=>!Object.values(current().assigned).includes(n)||n===name(selected));
@@ -199,7 +222,7 @@ if(swap){
 }
 selected=id;draw();
 });
-// Drag only from the trapezoid tabletop. Its seat buttons remain clickable.
+// Drag only from the tabletop. Its seat buttons remain clickable.
 const floor=$('floor');
 floor.addEventListener('pointerdown',e=>{
  const handle=e.target.closest('.desk');
@@ -219,7 +242,7 @@ floor.addEventListener('pointermove',e=>{
  if(Math.abs(dx)+Math.abs(dy)>4)drag.moved=true;
  if(!drag.moved)return;
  const p=state.tableLayout[drag.id];
- Object.assign(p,boundedPosition(drag.x+dx,drag.y+dy,p.rotation));
+ Object.assign(p,boundedPosition(drag.x+dx,drag.y+dy,p.rotation,drag.id));
  const node=[...floor.querySelectorAll('.table')].find(n=>n.dataset.table===drag.id);
  if(node){node.style.left=p.x+'px';node.style.top=p.y+'px'}
 });
@@ -227,7 +250,7 @@ function finishDrag(e){
  if(!drag||drag.pointerId!==e.pointerId)return;
  const id=drag.id,moved=drag.moved;
  drag=null;draw();
- msg(moved?'Moved table '+id+'. Position saved for all periods.':'Selected table '+id+'. Drag its top or rotate it with the toolbar.');
+ msg(moved?'Moved table '+id+'. Position saved for all periods.':'Selected table '+id+'. Drag or rotate it with the toolbar.');
 }
 floor.addEventListener('pointerup',finishDrag);
 floor.addEventListener('pointercancel',finishDrag);
@@ -238,16 +261,16 @@ floor.addEventListener('keydown',e=>{
  const id=handle.closest('.table').dataset.table,p=state.tableLayout[id],step=e.shiftKey?25:8;
  const dx=e.key==='ArrowRight'?step:e.key==='ArrowLeft'?-step:0;
  const dy=e.key==='ArrowDown'?step:e.key==='ArrowUp'?-step:0;
- Object.assign(p,boundedPosition(p.x+dx,p.y+dy,p.rotation));
+ Object.assign(p,boundedPosition(p.x+dx,p.y+dy,p.rotation,id));
  activeTable=id;draw();
  floor.querySelector('.table[data-table="'+id+'"] .desk')?.focus();
  msg('Moved table '+id+' with keyboard. Position saved.');
 });
 function rotateTable(delta){
- if(!activeTable){msg('Click a trapezoid tabletop first to select a table.');return}
+ if(!activeTable){msg('Click any tabletop first to select a table.');return}
  const p=state.tableLayout[activeTable];
  p.rotation=(p.rotation+delta+360)%360;
- Object.assign(p,boundedPosition(p.x,p.y,p.rotation));
+ Object.assign(p,boundedPosition(p.x,p.y,p.rotation,activeTable));
  draw();msg('Rotated table '+activeTable+' to '+p.rotation+' degrees. Layout saved.');
 }
 $('rotateLeft').onclick=()=>rotateTable(-90);
@@ -287,8 +310,8 @@ $('backup').onclick=()=>download('classroom-seating-backup.json',JSON.stringify(
 $('restore').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const v=JSON.parse(await f.text());if(!v.periods||!v.current||!Array.isArray(v.disabled))throw Error('Wrong format');if(confirm('Replace saved classroom seating data?')){state=v;if(!Array.isArray(state.disabled))state.disabled=[];normalizeLayout();const migrated=normalizeSeatingData();selected=null;activeTable=null;draw();msg('Restored seating backup. '+migrationMessage(migrated))}}catch(error){msg('Backup could not be read: '+error.message)}e.target.value=''};
 function migrationMessage(info){
  if(!info.moved&&!info.unseated)return '';
- return (info.moved?info.moved+' former fourth-seat assignment(s) moved to available seats. ':'')+
-        (info.unseated?info.unseated+' students remain on their period rosters but need a new seat because the 30-seat limit was reached.':'');
+ return (info.moved?info.moved+' previous seat assignment(s) moved to the new layout. ':'')+
+        (info.unseated?info.unseated+' students remain on their rosters but need a new seat because all 36 seats are full.':'');
 }
 draw();
 if(initialSeatMigration.moved||initialSeatMigration.unseated)msg(migrationMessage(initialSeatMigration));
