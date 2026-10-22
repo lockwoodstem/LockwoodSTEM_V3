@@ -19,7 +19,7 @@ select{max-width:100%}label{font-size:13px;font-weight:700;color:#25475d}
 .scroller{overflow:auto;background:#eff5f9;padding:12px;border-radius:0 0 14px 14px}
 .floor{position:relative;width:1120px;height:760px;background:linear-gradient(140deg,#fff,#eaf3f8);border:3px solid #91aebd;border-radius:14px;margin:0 auto}
 .wlabel{position:absolute;top:14px;background:#fff;border:1px dashed #a7b9c7;color:#536f80;border-radius:6px;padding:6px 13px;font-size:12px;font-weight:800}
-.wlabel.printers{top:14px;left:420px}.wlabel.tv{top:130px;right:15px}.wlabel.front{left:33px;bottom:10px}
+.wlabel.front{top:12px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#e9f4fd;border:1px solid #7da5c0;color:#17486b;padding:7px 20px}
 .table{position:absolute;height:122px;display:grid;grid-template-rows:34px 52px 34px;align-items:center;transform-origin:center center}
 /* One seat at the short top edge; one at each angled side. */
 .table.trapezoid{width:192px;height:150px;display:block}
@@ -28,14 +28,25 @@ select{max-width:100%}label{font-size:13px;font-weight:700;color:#25475d}
 .table.trapezoid .trap-top{top:6px;left:50%;transform:translateX(-50%) rotate(var(--counter-rotation,0deg))}
 .table.trapezoid .trap-left{left:-6px;top:102px}
 .table.trapezoid .trap-right{right:-6px;top:102px}
-.table.group{width:420px}
+.table.group{width:420px;height:122px;display:block}
 .table.group .desk{background:linear-gradient(130deg,#bed9e8,#88b4c9);border-color:#4b7894;clip-path:none;border-radius:11px}
 .table.group .desk-label{background:rgba(227,241,249,.97);border-color:#5b8ca8;color:#183b50}
-.table.group .seat-row{gap:3px}
-.table.group .seat{width:98px;min-width:0;font-size:10.5px}
+.table.group .seat{font-size:10.5px}
 /* Rotated rows become opposing columns; narrow seat badges so the two
    columns never overlap while keeping every student name horizontal. */
 .table.sideways .seat{width:82px}
+/* Eight-person tables: seat 1 on the left short end and 8 on the right short end.
+   Seats 2–4 face the upper long edge; seats 5–7 face the lower long edge.
+   All eight fit inside the existing table footprint, including when rotated. */
+.table.group .desk{position:absolute;top:36px;left:72px;right:72px;height:50px}
+.table.group .group-seat{position:absolute;width:86px;height:30px}
+.table.group .group-left{left:0;top:46px;width:72px}
+.table.group .group-right{right:0;top:46px;width:72px}
+.table.group .group-top{top:2px}
+.table.group .group-bottom{top:90px}
+.table.group .group-col-1{left:78px}
+.table.group .group-col-2{left:167px}
+.table.group .group-col-3{left:256px}
 .table.active{z-index:3}.table.dragging{z-index:8}
 .table.active .desk{filter:drop-shadow(0 0 3px #b47800)}
 .table.dragging .desk{cursor:grabbing;filter:brightness(1.1)}
@@ -71,7 +82,7 @@ select{max-width:100%}label{font-size:13px;font-weight:700;color:#25475d}
 <button id="addPeriod">Add Period</button><button id="random" class="primary">Auto-Assign</button>
 <button id="swap">Swap Mode: Off</button><button id="rotateLeft" title="Rotate selected table counterclockwise">↶ Rotate Table</button><button id="rotateRight" title="Rotate selected table clockwise">↷ Rotate Table</button><button id="resetLayout">Reset Layout</button><button id="print">Print</button><span class="count" id="count"></span>
 </div><p class="help">Drag a tabletop to move it and its seats (mouse, touch, or stylus). Left: four gold trapezoids with one seat on the short side and one on each angled side. Right: three blue rectangular tables with 8 seats each. Rotate a selected table; all student and table labels stay upright. Layout changes save automatically and apply to every period. Click a seat to assign a student; Swap Mode exchanges occupants.</p>
-<div class="scroller"><div class="floor" id="floor"><div class="wlabel printers">3D PRINTERS</div><div class="wlabel tv">TV</div><div class="wlabel front">PHOTO / CLASSROOM FRONT</div></div></div>
+<div class="scroller"><div class="floor" id="floor"><div class="wlabel front">FRONT OF CLASSROOM</div></div></div>
 <p id="status" aria-live="polite"></p></section>
 <aside class="sidebar">
 <section class="panel"><h2>Selected seat</h2><div id="selected">Select a seat on the map.</div>
@@ -211,7 +222,11 @@ for(const t of tables){
  const tabletop='<div class="desk" role="button" tabindex="0" aria-label="Table '+h(t.id)+' '+h(t.desc)+'. Drag to move; use arrow keys to nudge"></div>';
  const tableLabel='<span class="desk-label" aria-hidden="true"><strong>'+h(t.id)+'</strong><small>'+h(t.desc)+'</small></span>';
  if(t.kind==='group'){
-  card.innerHTML='<div class="seat-row">'+[1,2,3,4].map(i=>seat(t.id+'-'+i)).join('')+'</div>'+tabletop+'<div class="seat-row">'+[5,6,7,8].map(i=>seat(t.id+'-'+i)).join('')+'</div>'+tableLabel;
+  card.innerHTML=seat(t.id+'-1','group-seat group-left')+
+    [2,3,4].map((i,j)=>seat(t.id+'-'+i,'group-seat group-top group-col-'+(j+1))).join('')+
+    tabletop+
+    [5,6,7].map((i,j)=>seat(t.id+'-'+i,'group-seat group-bottom group-col-'+(j+1))).join('')+
+    seat(t.id+'-8','group-seat group-right')+tableLabel;
  }else{
   card.innerHTML=seat(t.id+'-1','trap-seat trap-top')+tabletop+seat(t.id+'-2','trap-seat trap-left')+seat(t.id+'-3','trap-seat trap-right')+tableLabel;
  }
