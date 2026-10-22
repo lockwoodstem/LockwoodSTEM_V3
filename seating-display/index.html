@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
-  <meta name="description" content="Private LockwoodSTEM classroom and FabLab seating display.">
-  <title>Classroom Seating Display | LockwoodSTEM</title>
+  <meta name="description" content="LockwoodSTEM classroom seating planner and original Google seating display.">
+  <title>Classroom Seating Planner | LockwoodSTEM</title>
   <link href="../assets/css/styles.css" rel="stylesheet">
   <script defer src="../assets/js/main.js"></script>
   <style>
@@ -149,16 +149,17 @@
       </a>
 
       <div class="seating-display-title">
-        <strong>Classroom &amp; FabLab Seating</strong>
-        <span>Read-only display by default. Sign in with an authorized LockwoodSTEM Google account when prompted.</span>
+        <strong>Classroom Seating — 10 Tables, 3 Students Each</strong>
+        <span>30-seat classroom planner. Saves to this browser only; it does not yet sync to the original Google seating editor.</span>
       </div>
 
       <div class="seating-display-actions">
-        <a class="btn secondary small" href="./classroom-planner.html">New Classroom Planner</a>
+        <a class="btn secondary small" href="./classroom-planner.html">Open 3-Seat Planner</a>
+        <a class="btn secondary small" id="legacyView" href="?view=legacy">Original Google Display</a>
         <button class="btn secondary small" id="refreshSeating" type="button">Refresh</button>
         <button class="btn secondary small" id="fullscreenSeating" type="button">Full Screen</button>
-        <a class="btn secondary small" id="openDisplay" href="#" rel="noopener" target="_blank">Open Display</a>
-        <a class="btn small" id="openEditor" href="#" rel="noopener" target="_blank">Open Editor</a>
+        <a class="btn secondary small" id="openDisplay" href="#" rel="noopener" target="_blank">Open Current View</a>
+        <a class="btn small" id="openEditor" href="#" rel="noopener" target="_blank">Original Google Editor</a>
       </div>
     </div>
   </header>
@@ -166,11 +167,11 @@
   <main class="seating-frame-shell" id="seating-tool">
     <div class="seating-loading" id="seatingLoading" role="status" aria-live="polite">
       <div class="seating-loading-card">
-        <h1 id="loadingTitle">Loading the seating chart…</h1>
-        <p id="loadingMessage">The embedded display may take a few seconds while Google confirms your account.</p>
-        <a class="btn" id="loadingOpenDisplay" href="#" rel="noopener" target="_blank">Open Seating Display</a>
+        <h1 id="loadingTitle">Loading the 3-seat classroom planner…</h1>
+        <p id="loadingMessage">10 trapezoid tables, 3 student positions per table.</p>
+        <a class="btn" id="loadingOpenDisplay" href="#" rel="noopener" target="_blank">Open Planner in New Tab</a>
         <div class="seating-help" id="seatingHelp">
-          Google sign-in pages cannot always appear inside an embedded frame. Open the display in a separate tab, sign in or authorize the app, and then return here and select <strong>Refresh</strong>.
+          If the original Google display asks you to sign in, open it in a separate tab and return to select <strong>Refresh</strong>.
         </div>
       </div>
     </div>
@@ -179,7 +180,7 @@
       class="seating-frame"
       id="seatingFrame"
       name="seatingFrame"
-      title="LockwoodSTEM classroom and FabLab seating chart"
+      title="LockwoodSTEM three-seat classroom planner or original Google seating display"
       allow="fullscreen"
       referrerpolicy="strict-origin-when-cross-origin">
     </iframe>
@@ -204,6 +205,13 @@
 
       const displayUrl = deploymentUrl + '?' + displayParams.toString();
       const editorUrl = deploymentUrl;
+      // Show the 3-seat planner by default. The existing FabLab and Google
+      // editor views stay available through explicit legacy mode.
+      const showingLegacy = pageParams.get('view') === 'legacy' || requestedLayout === 'FabLab';
+      const plannerParams = new URLSearchParams();
+      if (requestedPeriod) plannerParams.set('period', requestedPeriod);
+      const plannerUrl = './classroom-planner.html' + (plannerParams.toString() ? '?' + plannerParams.toString() : '');
+      const currentUrl = showingLegacy ? displayUrl : plannerUrl;
 
       const frame = document.getElementById('seatingFrame');
       const loading = document.getElementById('seatingLoading');
@@ -218,14 +226,27 @@
         document.getElementById('loadingOpenDisplay')
       ];
       const openEditorLink = document.getElementById('openEditor');
+      const alternateLink = document.getElementById('legacyView');
+      const sectionTitle = document.querySelector('.seating-display-title strong');
+      const sectionDescription = document.querySelector('.seating-display-title span');
+      if (showingLegacy) {
+        sectionTitle.textContent = 'Original Google Seating Display';
+        sectionDescription.textContent = 'Original editor data and FabLab view. The Google classroom layout may still show four seats per table.';
+        alternateLink.textContent = 'View 3-Seat Classroom Planner';
+        alternateLink.href = './' + (requestedPeriod ? '?period=' + encodeURIComponent(requestedPeriod) : '');
+        loadingTitle.textContent = 'Loading original Google seating display…';
+        loadingMessage.textContent = 'Google may ask you to sign in.';
+      } else {
+        alternateLink.href = '?view=legacy' + (requestedPeriod ? '&period=' + encodeURIComponent(requestedPeriod) : '');
+      }
 
-      openDisplayLinks.forEach(function (link) { link.href = displayUrl; });
+      openDisplayLinks.forEach(function (link) { link.href = currentUrl; });
       openEditorLink.href = editorUrl;
-      frame.src = displayUrl;
+      frame.src = currentUrl;
 
       let loadCompleted = false;
       const supportTimer = window.setTimeout(function () {
-        if (loadCompleted) return;
+        if (loadCompleted || !showingLegacy) return;
         loadingTitle.textContent = 'The embedded seating chart needs attention';
         loadingMessage.textContent = 'The page may be waiting for Google sign-in or authorization.';
         help.classList.add('is-visible');
@@ -243,9 +264,9 @@
         loadCompleted = false;
         loading.hidden = false;
         help.classList.remove('is-visible');
-        loadingTitle.textContent = 'Refreshing the seating chart…';
-        loadingMessage.textContent = 'The embedded display may take a few seconds while Google confirms your account.';
-        frame.src = displayUrl + (displayUrl.includes('?') ? '&' : '?') + '_refresh=' + Date.now();
+        loadingTitle.textContent = showingLegacy ? 'Refreshing the Google display…' : 'Refreshing the 3-seat classroom planner…';
+        loadingMessage.textContent = showingLegacy ? 'Google may ask you to sign in.' : '10 tables and a maximum of 30 student seats.';
+        frame.src = currentUrl + (currentUrl.includes('?') ? '&' : '?') + '_refresh=' + Date.now();
       });
 
       fullscreenButton.addEventListener('click', async function () {
@@ -257,7 +278,7 @@
             await document.exitFullscreen();
           }
         } catch (error) {
-          window.open(displayUrl, '_blank', 'noopener');
+          window.open(currentUrl, '_blank', 'noopener');
         }
       });
 
