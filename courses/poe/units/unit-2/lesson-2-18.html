@@ -1,1 +1,522 @@
-<!DOCTYPE html><html lang="en"><head><title>POE Unit 2 Lesson 2.18 | Bridge Fabrication | LockwoodSTEM</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main"><nav class="site-breadcrumbs container"><a href="../unit-2.html">← Unit 2 Overview</a></nav><section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">POE Unit 2 • Bridge Design Challenge • Lesson 2.18</div><h1>Bridge Fabrication</h1><p class="focus-question"><strong>Engineering question:</strong> How can we manufacture and inspect a bridge safely and accurately?</p><div class="mission-actions"><a class="btn" href="#learn">Learn</a><a class="btn secondary" href="#practice">Practice</a><a class="btn secondary" href="#apply">Apply</a><a class="btn ghost" href="../unit-2.html#bridge-manufacturing-specifications">Fabrication Rules</a></div></div><aside class="mission-panel"><span class="tag">Bridge capstone</span><h2>Use the engineering design process</h2><p>Apply mechanics, materials, analysis and evidence from earlier lessons.</p></aside></div></section><section class="container lesson-section"><article class="card"><h2>Learning Targets</h2><ul><li>Approved fabrication processes</li><li>Assembly quality</li><li>Physical compliance checks</li></ul></article></section><section class="container lesson-section" id="learn"><article class="card"><h2>Learn the Concept</h2><p>Primary members must be wood or plywood. Single-piece open-web plywood trusses allowed; acrylic, solid plywood side panels, fully 3D-printed bridges, screws, epoxy and hot glue prohibited.</p></article></section><section class="container lesson-section" id="practice"><article class="card"><h2>Practice Together</h2><p>Inspect joints, measure the complete bridge's 65 mm overall width and 150 g maximum mass, and confirm the intended 400 mm span.</p></article></section><section class="container lesson-section" id="apply"><article class="card"><h2>Apply &amp; Submit</h2><p>Complete a build log, photographed inspection and dimensional checklist before testing.</p><p><a href="../unit-2.html#bridge-manufacturing-specifications">Complete bridge manufacturing and connection specifications</a></p></article></section><nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-17.html">← 2.17 Detailed Bridge Design</a><a class="btn" href="lesson-2-19.html">2.19 Bridge Load Testing →</a></nav></main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer></body></html>
+<!DOCTYPE html><html lang="en"><head><title>POE 2.18 | Bridge Fabrication — Learning Studio | LockwoodSTEM</title><meta name="description" content="Safely fabricate a POE truss bridge using approved wood, laser-cut plywood and optional 3D-printed fittings. Includes illustrated shop procedures, safety videos, part inventory, chronological build logs, four-page inspection packet and pre-test dimensional checks."/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="../../../../assets/css/styles.css" rel="stylesheet"/><link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/><link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/><link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/><script defer src="../../../../assets/js/main.js"></script><style id="poe218-learning">
+.poe218 .p218-eyebrow{color:#966d2b;text-transform:uppercase;font-size:.81rem;font-weight:850;letter-spacing:.08em}
+.poe218 .p218-card{background:#f7fbfd;border:1px solid #c7dce7;border-radius:14px;padding:1rem 1.1rem;min-width:0}
+.poe218 .p218-card h3{color:#0e506f;margin:.15rem 0 .6rem}
+.poe218 .p218-card p{margin:.48rem 0 .75rem}
+.poe218 .p218-card li{margin:.44rem 0}
+.poe218 .p218-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.95rem}
+.poe218 .p218-triple{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.poe218 .p218-five{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.7rem}
+.poe218 .p218-five article{border-radius:12px;background:#edf7fb;border:1px solid #d0e3eb;padding:.75rem}
+.poe218 .p218-five h3{color:#13516e;font-size:.96rem;margin:.4rem 0}
+.poe218 .p218-five p{font-size:.87rem}
+.poe218 .p218-pill{display:inline-block;padding:.22rem .65rem;border-radius:50px;background:#dfedf5;color:#115675;font-size:.76rem;font-weight:830}
+.poe218 .p218-svg{display:block;width:100%;height:auto;margin:.7rem auto;border:1px solid #cbdde8;border-radius:13px;background:#fff}
+.poe218 .p218-svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#24495e}
+.poe218 .p218-svg .p218-svg-heading{font-size:15px;font-weight:850}
+.poe218 .p218-svg .p218-svg-title{font-size:12px;font-weight:850}
+.poe218 .p218-svg .p218-svg-note{font-size:12px;font-weight:720}
+.poe218 .p218-svg .p218-svg-white{font-size:17px;font-weight:850;fill:#fff}
+.poe218 .p218-blue{border-left:5px solid #16839a;background:#eaf7fb;padding:.8rem 1rem;border-radius:10px}
+.poe218 .p218-alert{border-left:5px solid #c38a2e;background:#fff8e8;padding:.8rem 1rem;border-radius:10px}
+.poe218 .p218-video{padding:0;overflow:hidden}
+.poe218 .p218-frame{position:relative;aspect-ratio:16/9;background:#18354c}
+.poe218 .p218-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe218 .p218-video-body{padding:1rem}
+.poe218 .p218-video-body a,.poe218 .p218-resource a{display:block;font-weight:820;margin:.48rem 0;overflow-wrap:anywhere}
+.poe218 .p218-input{font:inherit;box-sizing:border-box;color:#16405b;background:#fff;border:1px solid #abc9d7;border-radius:8px;padding:.5rem .6rem;width:100%;min-width:0;font-variant-numeric:tabular-nums}
+.poe218 .p218-input:focus-visible,.poe218 button:focus-visible{outline:3px solid #d9a34c;outline-offset:2px}
+.poe218 .p218-label{display:block;font-size:.87rem;font-weight:820;color:#104e6d;margin:.65rem 0 .2rem}
+.poe218 .p218-tablewrap{overflow-x:auto;margin:.65rem 0}
+.poe218 .p218-table{border-collapse:collapse;width:100%;font-size:.9rem}
+.poe218 .p218-table th,.poe218 .p218-table td{padding:.52rem .55rem;border:1px solid #c6dbe6;text-align:left;vertical-align:middle}
+.poe218 .p218-table th{background:#e5f2f8;color:#144b65}
+.poe218 .p218-table input,.poe218 .p218-table select{min-width:75px}
+.poe218 .p218-workspace{background:#edf8fb;border:1px solid #a9d0df;border-radius:15px;padding:1rem}
+.poe218 .p218-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.poe218 .p218-metrics>div{background:#fff;border:1px solid #c4dce7;border-radius:11px;padding:.75rem}
+.poe218 .p218-metrics strong{display:block;font-size:1.15rem;color:#0c4d67;font-variant-numeric:tabular-nums}
+.poe218 .p218-metrics span{color:#557182;font-size:.82rem}
+.poe218 .p218-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin:.8rem 0}
+.poe218 .p218-result{padding:.78rem 1rem;border:1px solid #b9d7e4;border-radius:11px;background:#fff;margin:.75rem 0}
+.poe218 .p218-hint{font-size:.86rem;color:#587383}
+.poe218 .p218-checks{list-style:none!important;padding:0!important}
+.poe218 .p218-checks li{padding:.4rem .1rem .4rem 1.55rem;position:relative}
+.poe218 .p218-checks li::before{content:"□";left:0;top:.3rem;position:absolute;color:#11829b;font-size:1.25rem}
+.poe218 details{border:1px solid #c5dfec;border-radius:10px;padding:.68rem .85rem;background:#edf8fb;margin:.66rem 0}
+.poe218 summary{cursor:pointer;color:#14516e;font-weight:820}
+.poe218 .p218-stagegroup{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem}
+.poe218 .p218-stagegroup>label{display:block;padding:.7rem;background:#fff;border:1px solid #b9d7e5;border-radius:9px;font-size:.89rem;font-weight:760}
+.poe218 .p218-stagegroup input{margin-right:.38rem;accent-color:#137f97}
+.poe218 .p218-medal{color:#10516a;font-weight:800}
+#poe218Print{display:none}
+@media(max-width:1050px){.poe218 .p218-five{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.poe218 .p218-grid,.poe218 .p218-triple,.poe218 .p218-five,.poe218 .p218-metrics,.poe218 .p218-stagegroup{grid-template-columns:1fr}}
+@page{size:letter;margin:.43in}
+@media print{
+body.poe218-printmode{background:white!important;color:#111!important}
+body.poe218-printmode header,body.poe218-printmode footer,body.poe218-printmode main,body.poe218-printmode .skip-link{display:none!important}
+body.poe218-printmode #poe218Print{display:block!important;font:9pt Arial,sans-serif;color:#111}
+#poe218Print h1{text-align:center;font-size:14pt;margin:.05in 0}
+#poe218Print h2{font-size:10pt;margin:.12in 0 .05in}
+#poe218Print p{margin:.07in 0}
+#poe218Print .p218-printpage{break-after:page;page-break-after:always;break-inside:avoid;page-break-inside:avoid}
+#poe218Print .p218-printpage:last-child{break-after:auto;page-break-after:auto}
+#poe218Print table{width:100%;border-collapse:collapse}
+#poe218Print td,#poe218Print th{border:1px solid #666;padding:.06in;text-align:left}
+#poe218Print td{height:.24in}
+#poe218Print .p218-printlines>div{height:.25in;border-bottom:1px solid #aaa}
+#poe218Print .p218-printphoto{border:1px solid #777;height:1.3in;padding:.07in;color:#777}
+}
+</style></head><body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page"><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header><main id="main" class="poe218">
+<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.18</li></ol></nav>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.18</div><h1>Bridge Fabrication</h1><p class="focus-question"><strong>Engineering question:</strong> Can we transform an approved CAD model into a physically accurate, well-documented bridge that is ready for safe qualification testing?</p>
+<div class="mission-actions"><a class="btn" href="#start">Start Fabrication</a><a class="btn secondary" href="#safety">Safety Gate</a><a class="btn secondary" href="#laser">Laser Workflow</a><a class="btn secondary" href="#assembly">Assembly</a><a class="btn secondary" href="#log">Build Log</a><a class="btn ghost" href="#inspection">Pre-Test Inspection</a></div>
+</div><aside class="mission-panel"><span class="tag">Bridge Capstone · Build &amp; Inspection</span><h2>Produce, verify, document.</h2><p>Work from your <strong>teacher-approved 2.17 manufacturing files</strong>, track every part and approved revision, and finish with measured inspection evidence.</p>
+<p><strong>Next lesson:</strong> 2.19 Bridge Load Testing. This lesson does not include the official 100 N load test.</p></aside></div></section>
+<section class="container lesson-section" id="start"><div class="p218-eyebrow">Learning outcomes</div><h2>Five stages from CAD to finished bridge</h2><p>Complete these stages in order, with teacher-approved access to the school's OMTech laser systems and Bambu printers where those tools are needed.</p><svg class="p218-svg" viewBox="0 0 930 290" role="img" aria-label="Five stages in a controlled bridge fabrication process: teacher-approved design files, verified manufacture, dry-fit inspection, squared assembly and cure, and final measurement and teacher release for the later load test.">
+<rect x="20" y="65" width="165" height="170" rx="14" fill="#e5f7f8" stroke="#9ec5d6" stroke-width="2"/><circle cx="102" cy="101" r="22" fill="#136d86"/><text x="102" y="107" text-anchor="middle" class="p218-svg-white">1</text><text x="102" y="150" text-anchor="middle" class="p218-svg-title">FILE APPROVAL</text><text x="102" y="183" text-anchor="middle" class="p218-svg-note">CAD, cut/print files</text><path d="M186 148H202" stroke="#bf813f" stroke-width="3"/><path d="M194 140L203 148L194 156" fill="none" stroke="#bf813f" stroke-width="2.5"/><rect x="203" y="65" width="165" height="170" rx="14" fill="#e7f1f8" stroke="#9ec5d6" stroke-width="2"/><circle cx="285" cy="101" r="22" fill="#136d86"/><text x="285" y="107" text-anchor="middle" class="p218-svg-white">2</text><text x="285" y="150" text-anchor="middle" class="p218-svg-title">MAKE PARTS</text><text x="285" y="183" text-anchor="middle" class="p218-svg-note">Laser / 3D / wood</text><path d="M369 148H385" stroke="#bf813f" stroke-width="3"/><path d="M377 140L386 148L377 156" fill="none" stroke="#bf813f" stroke-width="2.5"/><rect x="386" y="65" width="165" height="170" rx="14" fill="#e5f7f8" stroke="#9ec5d6" stroke-width="2"/><circle cx="468" cy="101" r="22" fill="#136d86"/><text x="468" y="107" text-anchor="middle" class="p218-svg-white">3</text><text x="468" y="150" text-anchor="middle" class="p218-svg-title">DRY FIT</text><text x="468" y="183" text-anchor="middle" class="p218-svg-note">Measure & align</text><path d="M552 148H568" stroke="#bf813f" stroke-width="3"/><path d="M560 140L569 148L560 156" fill="none" stroke="#bf813f" stroke-width="2.5"/><rect x="569" y="65" width="165" height="170" rx="14" fill="#e7f1f8" stroke="#9ec5d6" stroke-width="2"/><circle cx="651" cy="101" r="22" fill="#136d86"/><text x="651" y="107" text-anchor="middle" class="p218-svg-white">4</text><text x="651" y="150" text-anchor="middle" class="p218-svg-title">ASSEMBLE</text><text x="651" y="183" text-anchor="middle" class="p218-svg-note">Clamp & cure</text><path d="M735 148H751" stroke="#bf813f" stroke-width="3"/><path d="M743 140L752 148L743 156" fill="none" stroke="#bf813f" stroke-width="2.5"/><rect x="752" y="65" width="165" height="170" rx="14" fill="#e5f7f8" stroke="#9ec5d6" stroke-width="2"/><circle cx="834" cy="101" r="22" fill="#136d86"/><text x="834" y="107" text-anchor="middle" class="p218-svg-white">5</text><text x="834" y="150" text-anchor="middle" class="p218-svg-title">INSPECT</text><text x="834" y="183" text-anchor="middle" class="p218-svg-note">Mass, span, width</text>
+<text x="465" y="263" text-anchor="middle" class="p218-svg-note">Evidence and version-controlled changes are recorded at every step</text>
+</svg>
+<div class="p218-five"><article><span class="p218-pill">Step 01</span><h3>Approval & setup</h3><p>Confirm instructor-signed design revision, machine certifications, permitted stock and accurate DXF/slicer files.</p></article><article><span class="p218-pill">Step 02</span><h3>Manufacture components</h3><p>Cut wood/plywood and print approved joint fittings under the FabLab's machine procedures; identify every part.</p></article><article><span class="p218-pill">Step 03</span><h3>Dry fit & inspect</h3><p>Count usable parts, verify thickness and hole fit, remove rejected parts, and match the approved assembly drawing.</p></article><article><span class="p218-pill">Step 04</span><h3>Assemble & cure</h3><p>Build two square side frames, connect cross-bracing and center load transfer, use only approved adhesive/hardware.</p></article><article><span class="p218-pill">Step 05</span><h3>Measure & document</h3><p>Check actual span, total outside width, complete mass, gusset and fitting limits, defects, and teacher review.</p></article></div>
+<p class="p218-blue" style="margin-top:1rem"><strong>Suggested pacing:</strong> 3–5 45–50 minute periods, depending on machine queue, adhesive cure and team complexity. Students should alternate between file review, part organization, assembly preparation, documentation and inspection while machine access is scheduled. Teacher-selected curing requirements take precedence over class timing.</p></section>
+<section class="container lesson-section" id="rules"><div class="p218-eyebrow">01 / Fabrication rules</div><h2>What students may and may not build</h2>
+<div class="p218-triple">
+<article class="p218-card"><h3>≥400 mm</h3><p>Clear span measured between real support contact positions</p></article><article class="p218-card"><h3>≤65 mm</h3><p>Overall outside width including bolt heads and fittings</p></article><article class="p218-card"><h3>≤150 g</h3><p>Actual finished bridge mass including glue and hardware</p></article><article class="p218-card"><h3>100 N load</h3><p>Official test in 2.19, not during fabrication</p></article><article class="p218-card"><h3>≤10 mm deflection</h3><p>At the 100 N test load; not proven by visual inspection</p></article><article class="p218-card"><h3>Approved wood</h3><p>Primary structural members only</p></article>
+</div><div class="p218-grid" style="margin-top:1rem"><article class="p218-card"><h3>Approved construction</h3><p>Balsa, basswood, craft sticks or plywood for primary members. One-piece laser-cut <strong>open-web plywood side trusses</strong> are permitted if manufacturing rules are met.</p>
+<p>Connections may use PVA glue, CA glue, interlocking wood joints, local plywood gussets, approved PLA/PETG connectors or M3 nuts with bolts and permitted washers.</p></article>
+<article class="p218-card"><h3>Prohibited during construction</h3><p>No acrylic, solid plywood side plates, printed chords/diagonals/decks, hot glue, epoxy, staples, nails, screws, wire or non-M3 bolt sizes. No unauthorized strengthening after the design package is approved.</p><p>All corrections before the official test must be documented and, if the design changes, resubmitted for teacher approval.</p></article></div>
+<p class="p218-alert" style="margin-top:1rem"><strong>Official rule:</strong> No repairs are allowed after official testing begins. Before the test, controlled revisions are allowed only with documented changes and teacher approval. <a href="../unit-2.html#bridge-manufacturing-specifications">Read the complete Unit 2 rules ↗</a>.</p></section>
+<section class="container lesson-section" id="safety"><div class="p218-eyebrow">02 / Before using any machine</div><h2>FabLab safety and job release checklist</h2><div class="p218-grid">
+<article class="p218-card"><h3>Machine and operator readiness</h3><ul class="p218-checks">
+<li>Teacher-approved revision of CAD, cut profiles and print files is available.</li>
+<li>Current safety agreement and <strong>specific machine certification</strong> are completed by each operator.</li>
+<li>Material type, thickness, orientation and provenance are checked.</li>
+<li>Eye protection and other PPE are used according to classroom and machine SOP.</li>
+<li>Work area is clear, ventilation and machine safety devices are functioning.</li>
+<li>Teacher verifies the machine setup and decides who may run the operation.</li>
+<li>Know the stop procedure and alert the teacher immediately for a defect, flare-up, unusual smell or machine issue.</li></ul></article>
+<article class="p218-card"><h3>Specific hazards to recognize</h3><p><strong>Laser:</strong> fire and smoke, improper material, ventilation failure and cuts/burns after operation. Never operate with defeated interlocks or leave a running laser unattended. Only the trained supervisor handles an abnormal or emergency event.</p>
+<p><strong>3D printer:</strong> hot bed/nozzle, moving parts, unsuitable slicing settings, detached prints and sharp post-processing tools. Wait until the part and plate are cool enough to handle according to the machine SOP.</p>
+<p><strong>Wood/adhesives:</strong> dust, sharp cutters, wood splinters, CA bonding skin/eyes and poor ventilation. Keep fingers away from cutting paths, use teacher-approved clamping and follow each adhesive label and cure requirements.</p></article></div>
+<p class="p218-blue"><strong>Authoritative safety references:</strong> <a href="https://library.georgetown.edu/makerhub/lasercutter/safetychecklists" target="_blank" rel="noopener noreferrer">Georgetown laser pre/during/post-cut checklist ↗</a> and <a href="https://drs.illinois.edu/Page/SafetyLibrary/LaserCutters" target="_blank" rel="noopener noreferrer">Illinois laser cutter safe-use guidance ↗</a>. Classroom equipment SOPs and direct instructor directions govern the actual procedure.</p></section>
+<section class="container lesson-section" id="videos"><div class="p218-eyebrow">03 / Video learning resources</div><h2>Watch, identify the process controls, then build</h2>
+<div class="p218-grid">
+<article class="p218-card p218-video"><div class="p218-frame"><iframe src="https://www.youtube-nocookie.com/embed/qnNsE4J-udc" loading="lazy" title="Why Glue Alone Won't Make Strong Joints" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="p218-video-body"><span class="p218-pill">Workshop Companion</span><h3>Why Glue Alone Won't Make Strong Joints</h3><p><strong>Watch for:</strong> Surface contact, wood grain, force direction, fit and clamp pressure. Do not copy unapproved adhesives or joining methods.</p><a href="https://www.youtube.com/watch?v=qnNsE4J-udc" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article>
+<article class="p218-card p218-video"><div class="p218-frame"><iframe src="https://www.youtube-nocookie.com/embed/1xwXTOfEuQE" loading="lazy" title="How to Use Bambu Studio — Beginner Tutorial" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="p218-video-body"><span class="p218-pill">Planet 3DP</span><h3>How to Use Bambu Studio — Beginner Tutorial</h3><p><strong>Watch for:</strong> Part orientation, slicer settings, preview and final mass estimates. Use this class's required print profile rather than generic presets.</p><a href="https://www.youtube.com/watch?v=1xwXTOfEuQE" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article>
+</div>
+<article class="p218-card" style="margin-top:1rem"><h3>Laser learning module and safety videos</h3><p>The <a href="https://flux3dp.com/flux-curriculum-laser-cutter-101/" target="_blank" rel="noopener noreferrer">FLUX Laser Cutter 101 video curriculum ↗</a> includes laser fundamentals, safety, setup and parameter lessons. Its controls may differ from the classroom's OMTech machines, so use it for transferable concepts and the school certification for actual operating steps.</p></article>
+</section>
+<section class="container lesson-section" id="laser"><div class="p218-eyebrow">04 / Laser-cut plywood and wood pieces</div><h2>Manufacture approved profiles, not unreviewed file exports</h2>
+<div class="p218-grid"><article class="p218-card"><h3>Before the cut</h3><ol><li>Identify the team's approved <strong>revision</strong>, DXF, plywood thickness and part count.</li><li>Confirm all closed exterior and interior profiles import at the correct <strong>1:1 millimeter</strong> scale. Compare at least one physical dimension to the drawing.</li><li>Confirm there is <strong>no unwanted text, duplicate cut, dimension line or construction geometry</strong> in the toolpath.</li><li>Check grain direction, nesting, adequate part/web widths, bed size and kerf suitability against the material and approved design.</li><li>Obtain teacher approval for the material and actual laser parameters. <strong>Do not use unverified power/speed settings from an unrelated machine.</strong></li></ol></article>
+<article class="p218-card"><h3>During and after the cut</h3><ol><li>Only a trained, authorized operator begins the job with functioning interlocks, extraction and any required air assist.</li><li>Maintain direct active attendance for the full cut. Stop and call the instructor if there is persistent flame, unusual smoke or a malfunction.</li><li>Wait for machine clearance and cool-down per the equipment SOP before opening/removing stock.</li><li>Sort parts by ID. Measure a reference dimension and inspect for charring, warped edges, cracks, narrow webs, incomplete cuts and damaged corners.</li><li>Mark faulty pieces <strong>REJECTED</strong> and retain them as evidence if needed. Do not quietly glue damaged parts into the bridge.</li></ol></article></div>
+<div class="p218-alert" style="margin-top:.9rem"><strong>Manufacturing note:</strong> All laser-cut plywood stock must be approved and ≤3.2 mm thick. Local gussets must satisfy separate size, area, overlap and layer rules; these limits do <strong>not</strong> impose a 40 mm cap on primary members or entire open-web side trusses.</div></section>
+<section class="container lesson-section" id="printing"><div class="p218-eyebrow">05 / Optional printed connection fittings</div><h2>3D printing is for joints—not for structural bars</h2>
+<p>Teams using approved PLA/PETG connection fittings should print, cool, remove, measure and weigh each piece, then record quantity and location in the build log.</p>
+<div class="p218-triple"><article class="p218-card"><h3>≤35%</h3><p>Infill</p></article><article class="p218-card"><h3>4</h3><p>Wall loops</p></article><article class="p218-card"><h3>5 / 5</h3><p>Top / bottom layers</p></article><article class="p218-card"><h3>0.28 mm</h3><p>Layer height</p></article><article class="p218-card"><h3>0.4 mm</h3><p>Nozzle diameter</p></article><article class="p218-card"><h3>PLA / PETG</h3><p>Permitted fitting plastics</p></article></div>
+<div class="p218-grid" style="margin-top:.8rem"><article class="p218-card"><h3>Verify the sliced file</h3><ul><li>Confirm P1S/X1C or other teacher-selected Bambu profile and <strong>0.4 mm nozzle</strong>.</li><li>Use the specified printed-connector profile, not the generic default.</li><li>Preview the toolpath, supports, overhangs, layer count, predicted mass and fitting orientation.</li><li>Confirm planned parts are each ≤50 mm in their longest dimension and predicted ≤15 g.</li><li>Check that all printed parts combined are predicted ≤40 g.</li></ul></article>
+<article class="p218-card"><h3>Measure completed fittings</h3><ul><li>Allow safe cooling and remove parts without prying near a hot nozzle.</li><li>Inspect for warped holes, cracks, poor layer adhesion, over/under extrusion and damaged corners.</li><li>Measure <strong>actual</strong> longest dimension and mass per fitting.</li><li>Reject and document any part outside the approved limits; do not modify the design without review.</li><li>Use M3 bolts/nuts where required; printed threads are prohibited.</li></ul></article></div></section>
+<section class="container lesson-section" id="joint"><div class="p218-eyebrow">06 / Joint fabrication and inspection</div><h2>Build connections that match the approved drawing</h2>
+<svg class="p218-svg" viewBox="0 0 840 328" role="img" aria-label="Gusset and joint inspection diagram: two wood members meet with one plywood gusset on each side, approved glue at the interface, no more than 20 millimeters overlap along each member, bounded gusset 40 by 20 millimeters equals 800 square millimeters, and M3 nut and bolt only if included in approved design.">
+<text x="420" y="28" text-anchor="middle" class="p218-svg-heading">VERIFY JOINT DIMENSIONS BEFORE BONDING</text>
+<path d="M75 244L400 116" stroke="#be975f" stroke-width="30" stroke-linecap="round"/><path d="M400 116L760 251" stroke="#be975f" stroke-width="30" stroke-linecap="round"/>
+<rect x="318" y="75" width="170" height="85" rx="2" fill="#f0d8ab" stroke="#997340" stroke-width="2.5" fill-opacity=".85"/><circle cx="402" cy="118" r="12" fill="#9fb3bc" stroke="#476982" stroke-width="2"/><circle cx="402" cy="118" r="4" fill="#fff" stroke="#476982"/>
+<path d="M318 64V49M488 64V49M318 55H488M504 75H526M504 160H526M515 75V160" stroke="#39798f" stroke-width="1.8" fill="none"/>
+<text x="404" y="45" text-anchor="middle" class="p218-svg-title">40 mm</text><text x="536" y="119" class="p218-svg-title">20 mm</text>
+<text x="404" y="196" text-anchor="middle" class="p218-svg-note">40 × 20 = 800 mm² (max plan area)</text>
+<path d="M322 218H482M322 211V225M402 211V225M482 211V225" fill="none" stroke="#bf7e39" stroke-width="2"/><text x="403" y="242" text-anchor="middle" class="p218-svg-note">≤20 mm overlap onto each connected member</text>
+<text x="421" y="297" text-anchor="middle" class="p218-svg-note">One local plywood gusset layer per side; actual bond coverage, grain and fastener clearance must be inspected</text>
+</svg>
+<div class="p218-grid">
+<article class="p218-card"><h3>Local plywood gusset check</h3><ul><li>Plywood stock thickness ≤3.2 mm.</li><li>Bounding size ≤40 × 25 mm; actual plan area ≤800 mm².</li><li>Maximum 20 mm overlap on each connected structural member.</li><li>At most <strong>one layer per side</strong> of a joint (two total).</li><li>Wood surfaces fit and contact the approved design without gaps or accidental off-center force transfer.</li></ul><p class="p218-hint">A 40 × 25 mm rectangle has an area of 1,000 mm² and would violate the plan-area limit. A 40 × 20 mm rectangle is 800 mm²; both dimensions and overlap must still be checked.</p></article>
+<article class="p218-card"><h3>Glue, interlocking and M3 assembly</h3><ol><li>Dry-fit components, orient grain and check each part number before applying adhesive.</li><li>Use only approved PVA or CA glue following label ventilation, handling, assembly/open time and full-cure instructions.</li><li>Use a jig, clamp or temporary fixture if approved. Do not introduce bending or joint gaps by forcing pieces together.</li><li>Where M3 fasteners are planned, check bolt/nut fit, edge clearance, access and even alignment.</li><li>Remove temporary assembly jigs after cure. Weigh the <strong>actual finished object</strong>, not parts with jigs still attached.</li></ol></article></div></section>
+<section class="container lesson-section" id="assembly"><div class="p218-eyebrow">07 / Complete bridge assembly</div><h2>Two flat side frames, then square three-dimensional assembly</h2>
+<svg class="p218-svg" viewBox="0 0 900 365" role="img" aria-label="Annotated axonometric wooden truss bridge being assembled with two side frames, square spacers and diagonal transverse braces, a central load crossmember, and temporary assembly squares. No solid deck.">
+<text x="450" y="28" text-anchor="middle" class="p218-svg-heading">KEEP BOTH SIDE FRAMES PARALLEL, SQUARE AND SUPPORTED DURING CURE</text>
+<g stroke="#246f88" stroke-width="10" stroke-linecap="round" fill="none" stroke-linejoin="round">
+<path d="M97 250H620M97 250L158 110H560L620 250M158 110L268 250L359 110L469 250L560 110M158 110H560"/>
+<path d="M197 315H721M197 315L258 176H660L721 315M258 176L368 315L459 176L569 315L660 176M258 176H660"/>
+</g>
+<g stroke="#b58a53" stroke-width="8" stroke-linecap="round"><path d="M97 250L197 315M620 250L721 315M268 250L368 315M469 250L569 315M158 110L258 176M560 110L660 176"/></g>
+<g stroke="#51a3aa" stroke-width="4" stroke-linecap="round"><path d="M97 250L368 315M268 250L197 315M268 250L569 315M469 250L721 315"/></g>
+<path d="M307 247L411 312" stroke="#bf834b" stroke-width="12" stroke-linecap="round"/>
+<path d="M369 45V227" stroke="#b77837" stroke-width="3"/><path d="M361 214L369 230L377 214" stroke="#b77837" stroke-width="3" fill="none"/>
+<text x="383" y="59" class="p218-svg-note">Future test load at center</text>
+<path d="M65 250H98V286H65Z" fill="#e6f2f5" stroke="#779cab" stroke-width="2"/><path d="M719 314H752V348H719Z" fill="#e6f2f5" stroke="#779cab" stroke-width="2"/>
+<text x="31" y="81" class="p218-svg-note">Side frame 1</text><path d="M96 89L176 132" stroke="#9cb5bd" stroke-width="2"/>
+<text x="727" y="113" class="p218-svg-note">Side frame 2</text><path d="M730 121L655 180" stroke="#9cb5bd" stroke-width="2"/>
+<text x="646" y="255" class="p218-svg-note">Temporary squares /</text><text x="646" y="274" class="p218-svg-note">spacers are not</text><text x="646" y="293" class="p218-svg-note">bridge components</text>
+</svg>
+<div class="p218-triple">
+<article class="p218-card"><h3>Step A · Side frame 1 &amp; 2</h3><p>Place drawings or approved nonbonding templates on the workbench. Assemble the two side frames using identical reference points and consistent joint overlap. Check straightness and dimensions before cure.</p><p>Do not remove the frame from its jig until it meets the adhesive manufacturer's and teacher's minimum handling requirements.</p></article>
+<article class="p218-card"><h3>Step B · Transverse bracing</h3><p>Use approved spacers, squares or temporary assembly fixtures to position the two side frames parallel and square. Attach the cross-bracing and lateral stabilization members shown in the Fusion assembly.</p><p>Check finished width including all protruding hardware before joints are locked in place.</p></article>
+<article class="p218-card"><h3>Step C · Load-transfer crossmember</h3><p>Install the approved central loading member to connect the two side trusses. Verify its position is at the intended midpoint and that it does not introduce an unintended eccentric load.</p><p>Allow approved full cure before any handling that introduces structural load. <strong>Do not perform the official qualification test in this lesson.</strong></p></article></div></section>
+<section class="container lesson-section" id="quality"><div class="p218-eyebrow">08 / Common defects and what they mean</div><h2>Stop, record, and correct only with permission</h2>
+<div class="p218-grid">
+<article class="p218-card"><h3>Incomplete laser cut</h3><p><strong>Evidence:</strong> Part will not separate cleanly, narrow web fractures or edge is burned through.</p><p><strong>Action:</strong> Quarantine the part, identify DXF/material/tool issue and request a corrected cut.</p></article><article class="p218-card"><h3>Poor printed fitting</h3><p><strong>Evidence:</strong> Hole is distorted, layers separate, fitting is oversized or overweight.</p><p><strong>Action:</strong> Record printer/settings evidence, recheck the approved STL/3MF and request a new print.</p></article><article class="p218-card"><h3>Unsquare side frames</h3><p><strong>Evidence:</strong> The second frame is shifted, crooked or twisted relative to the first.</p><p><strong>Action:</strong> Record diagonal/width measurements and return to an approved jig or remake the part before final cure.</p></article><article class="p218-card"><h3>Questionable glue joint</h3><p><strong>Evidence:</strong> An open gap, insufficient contact, wrong adhesive, missed overlap or visible fiber damage.</p><p><strong>Action:</strong> Do not test it. Document the defect and obtain a teacher-approved repair/replacement plan before official testing.</p></article><article class="p218-card"><h3>Misplaced load crossmember</h3><p><strong>Evidence:</strong> The loading contact is offset from bridge midspan or does not transfer to both sides.</p><p><strong>Action:</strong> Record the discrepancy and revise the model/build under instructor approval.</p></article><article class="p218-card"><h3>Unapproved substitution</h3><p><strong>Evidence:</strong> Material or fastener does not match the released CAD/BOM.</p><p><strong>Action:</strong> Stop that assembly step and request an approved revision; do not hide the substitution.</p></article>
+</div>
+<p class="p218-alert" style="margin-top:1rem"><strong>Change control:</strong> Keep the part ID and CAD revision of every replaced or redesigned piece. Photograph the issue before changing it, write what caused the defect, and obtain teacher approval for any change that affects geometry, material, or connections. No repairs once official Lesson 2.19 testing has begun.</p></section>
+<section class="container lesson-section" id="log"><div class="p218-eyebrow">09 / Digital fabrication record</div><h2>Track manufactured parts, waste and build decisions</h2>
+<p>Use actual quantities and observations. The table is intentionally blank: nothing has been manufactured yet. The digital record is temporary, so export your CSV before leaving the page.</p>
+<div class="p218-workspace">
+<div class="p218-grid"><article class="p218-card">
+<label for="teamId" class="p218-label">Team ID</label><input id="teamId" class="p218-input" placeholder="e.g., POE2 Group 4"/>
+<label for="revisionId" class="p218-label">Approved design revision</label><input id="revisionId" class="p218-input" placeholder="e.g., R2"/>
+<label for="supervisor" class="p218-label">Teacher authorization reference (if provided)</label><input id="supervisor" class="p218-input" placeholder="Teacher review/date or checklist reference"/>
+</article><article class="p218-card"><h3>Minimum photo evidence</h3><ul class="p218-checks">
+<li>Parts laid out with identifiers, material and source file/revision.</li>
+<li>Laser-cut/printed quality close-up, including one measured feature.</li>
+<li>Two side frames before cross-bracing.</li>
+<li>Both critical joint assemblies before and after joining.</li>
+<li>Complete bridge with ruler/calipers and scale during final inspection.</li></ul>
+<p class="p218-hint">This webpage records filenames and notes; it does not upload or store images. Submit actual photos through the teacher's normal assignment process.</p></article></div>
+<h3>Part production register</h3><div class="p218-tablewrap"><table class="p218-table"><thead><tr><th>Component category</th><th>Planned quantity</th><th>Usable finished</th><th>Rejected / scrapped</th><th>Inventory check</th></tr></thead><tbody><tr>
+<td><label for="stockName0">Left truss wood/plywood</label></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockNeed0" aria-label="Left truss wood/plywood planned quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockMade0" aria-label="Left truss wood/plywood usable quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockReject0" aria-label="Left truss wood/plywood rejected quantity"/></td>
+<td id="stockState0">—</td></tr><tr>
+<td><label for="stockName1">Right truss wood/plywood</label></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockNeed1" aria-label="Right truss wood/plywood planned quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockMade1" aria-label="Right truss wood/plywood usable quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockReject1" aria-label="Right truss wood/plywood rejected quantity"/></td>
+<td id="stockState1">—</td></tr><tr>
+<td><label for="stockName2">Transverse / lateral braces</label></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockNeed2" aria-label="Transverse / lateral braces planned quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockMade2" aria-label="Transverse / lateral braces usable quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockReject2" aria-label="Transverse / lateral braces rejected quantity"/></td>
+<td id="stockState2">—</td></tr><tr>
+<td><label for="stockName3">Load-transfer crossmember</label></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockNeed3" aria-label="Load-transfer crossmember planned quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockMade3" aria-label="Load-transfer crossmember usable quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockReject3" aria-label="Load-transfer crossmember rejected quantity"/></td>
+<td id="stockState3">—</td></tr><tr>
+<td><label for="stockName4">Local plywood gussets</label></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockNeed4" aria-label="Local plywood gussets planned quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockMade4" aria-label="Local plywood gussets usable quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockReject4" aria-label="Local plywood gussets rejected quantity"/></td>
+<td id="stockState4">—</td></tr><tr>
+<td><label for="stockName5">Printed PLA/PETG fittings</label></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockNeed5" aria-label="Printed PLA/PETG fittings planned quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockMade5" aria-label="Printed PLA/PETG fittings usable quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockReject5" aria-label="Printed PLA/PETG fittings rejected quantity"/></td>
+<td id="stockState5">—</td></tr><tr>
+<td><label for="stockName6">M3 bolt/nut/washer sets</label></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockNeed6" aria-label="M3 bolt/nut/washer sets planned quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockMade6" aria-label="M3 bolt/nut/washer sets usable quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockReject6" aria-label="M3 bolt/nut/washer sets rejected quantity"/></td>
+<td id="stockState6">—</td></tr><tr>
+<td><label for="stockName7">Approved PVA/CA adhesive</label></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockNeed7" aria-label="Approved PVA/CA adhesive planned quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockMade7" aria-label="Approved PVA/CA adhesive usable quantity"/></td>
+<td><input class="p218-input" type="number" min="0" step="1" id="stockReject7" aria-label="Approved PVA/CA adhesive rejected quantity"/></td>
+<td id="stockState7">—</td></tr></tbody></table></div>
+<div class="p218-metrics"><div><strong id="stockPlanned">—</strong><span>Planned individual pieces/units</span></div><div><strong id="stockUsable">—</strong><span>Usable produced total</span></div><div><strong id="stockRejected">—</strong><span>Rejected total</span></div></div>
+<p class="p218-hint">For adhesives, a quantity of 1 can represent one application category; do not mistake its inventory count for adhesive mass. Component quantities are only a progress tool—final bridge weight must be measured on a scale.</p>
+<h3 style="margin-top:1.2rem">Time-stamped build and deviation log</h3>
+<div class="p218-tablewrap"><table class="p218-table"><thead><tr><th>#</th><th>Date</th><th>Stage</th><th>Status</th><th>Observation, revision or decision</th><th>Evidence filename</th></tr></thead><tbody><tr><td>1</td>
+<td><input class="p218-input" type="date" id="logDate0" aria-label="Entry 1 date"/></td>
+<td><select class="p218-input" id="logStage0" aria-label="Entry 1 manufacturing stage"><option value="">Choose</option><option value="Preparation / file check">Preparation / file check</option><option value="Laser cutting">Laser cutting</option><option value="3D printing">3D printing</option><option value="Wood member cutting">Wood member cutting</option><option value="Dry fit">Dry fit</option><option value="Gluing / joinery">Gluing / joinery</option><option value="M3 fastening">M3 fastening</option><option value="Inspection / change">Inspection / change</option></select></td>
+<td><select class="p218-input" id="logState0" aria-label="Entry 1 status"><option value="Not started">Not started</option><option value="In progress">In progress</option><option value="Complete">Complete</option><option value="Stopped / rework">Stopped / rework</option></select></td>
+<td><input class="p218-input" id="logText0" type="text" aria-label="Entry 1 observation or revision" placeholder="What happened? Any deviation?"/></td>
+<td><input class="p218-input" id="logEvidence0" type="text" aria-label="Entry 1 evidence photo filename" placeholder="Image file name"/></td></tr><tr><td>2</td>
+<td><input class="p218-input" type="date" id="logDate1" aria-label="Entry 2 date"/></td>
+<td><select class="p218-input" id="logStage1" aria-label="Entry 2 manufacturing stage"><option value="">Choose</option><option value="Preparation / file check">Preparation / file check</option><option value="Laser cutting">Laser cutting</option><option value="3D printing">3D printing</option><option value="Wood member cutting">Wood member cutting</option><option value="Dry fit">Dry fit</option><option value="Gluing / joinery">Gluing / joinery</option><option value="M3 fastening">M3 fastening</option><option value="Inspection / change">Inspection / change</option></select></td>
+<td><select class="p218-input" id="logState1" aria-label="Entry 2 status"><option value="Not started">Not started</option><option value="In progress">In progress</option><option value="Complete">Complete</option><option value="Stopped / rework">Stopped / rework</option></select></td>
+<td><input class="p218-input" id="logText1" type="text" aria-label="Entry 2 observation or revision" placeholder="What happened? Any deviation?"/></td>
+<td><input class="p218-input" id="logEvidence1" type="text" aria-label="Entry 2 evidence photo filename" placeholder="Image file name"/></td></tr><tr><td>3</td>
+<td><input class="p218-input" type="date" id="logDate2" aria-label="Entry 3 date"/></td>
+<td><select class="p218-input" id="logStage2" aria-label="Entry 3 manufacturing stage"><option value="">Choose</option><option value="Preparation / file check">Preparation / file check</option><option value="Laser cutting">Laser cutting</option><option value="3D printing">3D printing</option><option value="Wood member cutting">Wood member cutting</option><option value="Dry fit">Dry fit</option><option value="Gluing / joinery">Gluing / joinery</option><option value="M3 fastening">M3 fastening</option><option value="Inspection / change">Inspection / change</option></select></td>
+<td><select class="p218-input" id="logState2" aria-label="Entry 3 status"><option value="Not started">Not started</option><option value="In progress">In progress</option><option value="Complete">Complete</option><option value="Stopped / rework">Stopped / rework</option></select></td>
+<td><input class="p218-input" id="logText2" type="text" aria-label="Entry 3 observation or revision" placeholder="What happened? Any deviation?"/></td>
+<td><input class="p218-input" id="logEvidence2" type="text" aria-label="Entry 3 evidence photo filename" placeholder="Image file name"/></td></tr><tr><td>4</td>
+<td><input class="p218-input" type="date" id="logDate3" aria-label="Entry 4 date"/></td>
+<td><select class="p218-input" id="logStage3" aria-label="Entry 4 manufacturing stage"><option value="">Choose</option><option value="Preparation / file check">Preparation / file check</option><option value="Laser cutting">Laser cutting</option><option value="3D printing">3D printing</option><option value="Wood member cutting">Wood member cutting</option><option value="Dry fit">Dry fit</option><option value="Gluing / joinery">Gluing / joinery</option><option value="M3 fastening">M3 fastening</option><option value="Inspection / change">Inspection / change</option></select></td>
+<td><select class="p218-input" id="logState3" aria-label="Entry 4 status"><option value="Not started">Not started</option><option value="In progress">In progress</option><option value="Complete">Complete</option><option value="Stopped / rework">Stopped / rework</option></select></td>
+<td><input class="p218-input" id="logText3" type="text" aria-label="Entry 4 observation or revision" placeholder="What happened? Any deviation?"/></td>
+<td><input class="p218-input" id="logEvidence3" type="text" aria-label="Entry 4 evidence photo filename" placeholder="Image file name"/></td></tr><tr><td>5</td>
+<td><input class="p218-input" type="date" id="logDate4" aria-label="Entry 5 date"/></td>
+<td><select class="p218-input" id="logStage4" aria-label="Entry 5 manufacturing stage"><option value="">Choose</option><option value="Preparation / file check">Preparation / file check</option><option value="Laser cutting">Laser cutting</option><option value="3D printing">3D printing</option><option value="Wood member cutting">Wood member cutting</option><option value="Dry fit">Dry fit</option><option value="Gluing / joinery">Gluing / joinery</option><option value="M3 fastening">M3 fastening</option><option value="Inspection / change">Inspection / change</option></select></td>
+<td><select class="p218-input" id="logState4" aria-label="Entry 5 status"><option value="Not started">Not started</option><option value="In progress">In progress</option><option value="Complete">Complete</option><option value="Stopped / rework">Stopped / rework</option></select></td>
+<td><input class="p218-input" id="logText4" type="text" aria-label="Entry 5 observation or revision" placeholder="What happened? Any deviation?"/></td>
+<td><input class="p218-input" id="logEvidence4" type="text" aria-label="Entry 5 evidence photo filename" placeholder="Image file name"/></td></tr><tr><td>6</td>
+<td><input class="p218-input" type="date" id="logDate5" aria-label="Entry 6 date"/></td>
+<td><select class="p218-input" id="logStage5" aria-label="Entry 6 manufacturing stage"><option value="">Choose</option><option value="Preparation / file check">Preparation / file check</option><option value="Laser cutting">Laser cutting</option><option value="3D printing">3D printing</option><option value="Wood member cutting">Wood member cutting</option><option value="Dry fit">Dry fit</option><option value="Gluing / joinery">Gluing / joinery</option><option value="M3 fastening">M3 fastening</option><option value="Inspection / change">Inspection / change</option></select></td>
+<td><select class="p218-input" id="logState5" aria-label="Entry 6 status"><option value="Not started">Not started</option><option value="In progress">In progress</option><option value="Complete">Complete</option><option value="Stopped / rework">Stopped / rework</option></select></td>
+<td><input class="p218-input" id="logText5" type="text" aria-label="Entry 6 observation or revision" placeholder="What happened? Any deviation?"/></td>
+<td><input class="p218-input" id="logEvidence5" type="text" aria-label="Entry 6 evidence photo filename" placeholder="Image file name"/></td></tr><tr><td>7</td>
+<td><input class="p218-input" type="date" id="logDate6" aria-label="Entry 7 date"/></td>
+<td><select class="p218-input" id="logStage6" aria-label="Entry 7 manufacturing stage"><option value="">Choose</option><option value="Preparation / file check">Preparation / file check</option><option value="Laser cutting">Laser cutting</option><option value="3D printing">3D printing</option><option value="Wood member cutting">Wood member cutting</option><option value="Dry fit">Dry fit</option><option value="Gluing / joinery">Gluing / joinery</option><option value="M3 fastening">M3 fastening</option><option value="Inspection / change">Inspection / change</option></select></td>
+<td><select class="p218-input" id="logState6" aria-label="Entry 7 status"><option value="Not started">Not started</option><option value="In progress">In progress</option><option value="Complete">Complete</option><option value="Stopped / rework">Stopped / rework</option></select></td>
+<td><input class="p218-input" id="logText6" type="text" aria-label="Entry 7 observation or revision" placeholder="What happened? Any deviation?"/></td>
+<td><input class="p218-input" id="logEvidence6" type="text" aria-label="Entry 7 evidence photo filename" placeholder="Image file name"/></td></tr><tr><td>8</td>
+<td><input class="p218-input" type="date" id="logDate7" aria-label="Entry 8 date"/></td>
+<td><select class="p218-input" id="logStage7" aria-label="Entry 8 manufacturing stage"><option value="">Choose</option><option value="Preparation / file check">Preparation / file check</option><option value="Laser cutting">Laser cutting</option><option value="3D printing">3D printing</option><option value="Wood member cutting">Wood member cutting</option><option value="Dry fit">Dry fit</option><option value="Gluing / joinery">Gluing / joinery</option><option value="M3 fastening">M3 fastening</option><option value="Inspection / change">Inspection / change</option></select></td>
+<td><select class="p218-input" id="logState7" aria-label="Entry 8 status"><option value="Not started">Not started</option><option value="In progress">In progress</option><option value="Complete">Complete</option><option value="Stopped / rework">Stopped / rework</option></select></td>
+<td><input class="p218-input" id="logText7" type="text" aria-label="Entry 8 observation or revision" placeholder="What happened? Any deviation?"/></td>
+<td><input class="p218-input" id="logEvidence7" type="text" aria-label="Entry 8 evidence photo filename" placeholder="Image file name"/></td></tr></tbody></table></div>
+<div class="p218-actions"><button type="button" id="downloadLog" class="btn">Export Build Log CSV</button><button type="button" id="downloadStock" class="btn secondary">Export Part Register CSV</button><button type="button" id="printPacket" class="btn secondary">Print Fabrication Packet (4 pages)</button></div>
+<div id="inventoryMessage" class="p218-result" aria-live="polite">Enter the planned and usable part counts to identify any missing components.</div>
+</div></section>
+<section class="container lesson-section" id="inspection"><div class="p218-eyebrow">10 / Physical inspection before load testing</div><h2>Record real dimensions and teacher-review status</h2>
+<p>The inspection below uses actual measurements of the complete, unloaded bridge. A blank result means <strong>not yet inspected</strong>, not “pass.” Meeting these thresholds does not establish structural strength or approve the test.</p>
+<svg class="p218-svg" viewBox="0 0 820 314" role="img" aria-label="Final unloaded inspection measurement schematic: the actual support-to-support clear span of 400 millimeters measured where the two ends rest, maximum bridge outer width including hardware 65 millimeters, and mass from a digital scale including cured glue and all components.">
+<text x="410" y="27" text-anchor="middle" class="p218-svg-heading">UNLOADED PRE-TEST MEASUREMENTS</text>
+<g stroke="#286e85" stroke-width="7" fill="none" stroke-linejoin="round">
+<path d="M64 161H536M64 161L120 79L227 161L353 79L464 161L536 161M120 79H353L464 79"/>
+<path d="M64 200H536M64 235H536M64 200L64 235M536 200L536 235M64 200L536 235M536 200L64 235" stroke-width="3.5"/>
+</g>
+<path d="M65 171L50 189H80Z" fill="#ddebf2" stroke="#49778e" stroke-width="1.8"/><circle cx="535" cy="181" r="8" fill="#ddebf2" stroke="#49778e"/>
+<path d="M65 258V273M535 258V273M65 266H535" stroke="#779aaa" stroke-width="1.6"/>
+<text x="300" y="287" text-anchor="middle" class="p218-svg-note">Clear supported span ≥400 mm at actual contact points</text>
+<path d="M560 200H578M560 235H578M570 200V235" stroke="#779aaa" stroke-width="1.6"/>
+<text x="586" y="219" class="p218-svg-note">Outside width ≤65 mm</text>
+<rect x="608" y="65" width="156" height="75" rx="10" fill="#e7f1f5" stroke="#59889e" stroke-width="2"/>
+<rect x="643" y="80" width="86" height="30" rx="4" fill="#fff" stroke="#59889e"/>
+<text x="686" y="100" text-anchor="middle" class="p218-svg-title">m [g]</text>
+<text x="686" y="159" text-anchor="middle" class="p218-svg-note">Finished mass ≤150 g</text>
+</svg>
+<div class="p218-workspace">
+<div class="p218-grid">
+<article class="p218-card"><h3>Complete bridge measurements</h3>
+<label class="p218-label" for="spanActual">Actual clear span between support contacts (mm)</label><input id="spanActual" type="number" min="0" step=".1" class="p218-input" placeholder="≥ 400"/>
+<label class="p218-label" for="widthActual">Maximum outer width with all hardware (mm)</label><input id="widthActual" type="number" min="0" step=".1" class="p218-input" placeholder="≤ 65"/>
+<label class="p218-label" for="massActual">Actual finished mass incl. cured glue/hardware (g)</label><input id="massActual" type="number" min="0" step=".01" class="p218-input" placeholder="≤ 150"/>
+<label class="p218-label" for="plyActual">Actual plywood stock thickness (mm), if used</label><input id="plyActual" type="number" min="0" step=".01" class="p218-input" placeholder="≤ 3.2"/>
+<label class="p218-label" for="inspectVersion">Physical bridge revision / ID label</label><input id="inspectVersion" class="p218-input" placeholder="Match approved file and bridge label"/>
+</article>
+<article class="p218-card"><h3>Joint and fitting measurements (if used)</h3>
+<label class="p218-label" for="gussetLongest">Largest local gusset length (mm)</label><input id="gussetLongest" type="number" min="0" step=".1" class="p218-input" placeholder="≤ 40"/>
+<label class="p218-label" for="gussetWidest">Largest local gusset width (mm)</label><input id="gussetWidest" type="number" min="0" step=".1" class="p218-input" placeholder="≤ 25"/>
+<label class="p218-label" for="gussetArea">Largest individual gusset plan area (mm²)</label><input id="gussetArea" type="number" min="0" step=".1" class="p218-input" placeholder="≤ 800"/>
+<label class="p218-label" for="gussetOverlap">Maximum overlap onto any connected member (mm)</label><input id="gussetOverlap" type="number" min="0" step=".1" class="p218-input" placeholder="≤ 20"/>
+<label class="p218-label" for="gussetLayers">Maximum local gusset layers on one side</label><input id="gussetLayers" type="number" min="0" step="1" class="p218-input" placeholder="≤ 1"/>
+<label class="p218-label" for="printTotal">Total actual printed fitting mass (g)</label><input id="printTotal" type="number" min="0" step=".01" class="p218-input" placeholder="≤ 40"/>
+<label class="p218-label" for="printMax">Largest individual printed fitting mass (g)</label><input id="printMax" type="number" min="0" step=".01" class="p218-input" placeholder="≤ 15"/>
+<label class="p218-label" for="printLength">Longest individual printed fitting (mm)</label><input id="printLength" type="number" min="0" step=".1" class="p218-input" placeholder="≤ 50"/>
+</article>
+</div>
+<div class="p218-triple" style="margin-top:.8rem">
+<article class="p218-card"><h3>Construction choices</h3>
+<label class="p218-label" for="primaryMaterial">Primary structure</label><select id="primaryMaterial" class="p218-input"><option value="">Select</option><option value="Approved wood">Approved wood / open-web plywood</option><option value="Other">Other or restricted material</option></select>
+<label class="p218-label" for="adhesiveType">Adhesive, if used</label><select id="adhesiveType" class="p218-input"><option value="">Select</option><option value="None">No adhesive</option><option value="PVA">PVA</option><option value="CA">CA</option><option value="Other">Other</option></select>
+<label class="p218-label" for="fastenerType">Mechanical fastening, if used</label><select id="fastenerType" class="p218-input"><option value="">Select</option><option value="None">No bolts used</option><option value="M3">M3 nuts and bolts</option><option value="Other">Other / screws</option></select></article>
+<article class="p218-card"><h3>Witnessed evidence</h3>
+<div class="p218-stagegroup">
+<label><input type="checkbox" id="evFile"/> Approved build revision is documented</label>
+<label><input type="checkbox" id="evPhotos"/> Required photographs are identified</label>
+<label><input type="checkbox" id="evJoints"/> Both critical joints visually inspected</label>
+<label><input type="checkbox" id="evCure"/> Adhesive full-cure condition confirmed</label>
+<label><input type="checkbox" id="evBraces"/> Lateral braces and load crossmember confirmed</label>
+<label><input type="checkbox" id="evDefects"/> Defects and deviations have been disclosed</label>
+</div></article>
+<article class="p218-card"><h3>Inspection interpretation</h3><div class="p218-metrics"><div><strong id="spanResult">—</strong><span>Support span</span></div><div><strong id="widthResult">—</strong><span>Outside width</span></div><div><strong id="massResult">—</strong><span>Finished mass</span></div></div>
+<div id="inspectionVerdict" class="p218-result" aria-live="polite">No physical results entered. The design is not yet ready for teacher review.</div>
+</article></div>
+<div class="p218-actions"><button type="button" class="btn" id="downloadInspection">Export Inspection Report (.txt)</button></div>
+<p class="p218-alert"><strong>Important:</strong> “Ready for teacher review” is not the same as passing the bridge load test. Only the teacher can release the bridge for official testing. Do not apply trial loads or repair after official 2.19 testing begins.</p></div></section>
+<section class="container lesson-section" id="practice"><div class="p218-eyebrow">11 / Independent self-check</div><h2>Before you reveal the answer, justify your decision</h2>
+<div class="p218-grid">
+<article class="p218-card"><span class="p218-pill">Check 1</span><h3>Out-of-tolerance laser part</h3><p>A plywood side truss is cut from a file imported at the wrong scale. Can you stretch the finished side truss by hand and still call it approved?</p><details><summary>Reveal explanation</summary><p>No. Quarantine it, compare the DXF scale and a known dimension, document the failed cut, and recut using a reviewed file. A distorted part is not a substitute for the approved geometry.</p></details></article>
+<article class="p218-card"><span class="p218-pill">Check 2</span><h3>Gusset size</h3><p>A local gusset measures 40 × 25 mm and is rectangular. Is it legal just because neither dimension exceeds its stated maximum?</p><details><summary>Reveal explanation</summary><p>No. Its plan area is 1,000 mm², over the <strong>800 mm²</strong> limit. Both dimensions and plan area must be checked.</p></details></article>
+<article class="p218-card"><span class="p218-pill">Check 3</span><h3>Printed fitting mass</h3><p>Four fittings each weigh 12 g. Do they meet both individual and aggregate printed-mass limits?</p><details><summary>Reveal explanation</summary><p>No. Each is ≤15 g, but four total <strong>48 g</strong>, violating the 40 g aggregate cap.</p></details></article>
+<article class="p218-card"><span class="p218-pill">Check 4</span><h3>Final width with hardware</h3><p>The two trusses measure 60 mm outside-to-outside, and bolt heads protrude 4 mm on each side. What is the total width?</p><details><summary>Reveal explanation</summary><p>60 + 4 + 4 = <strong>68 mm</strong>, exceeding the 65 mm maximum.</p></details></article>
+<article class="p218-card"><span class="p218-pill">Check 5</span><h3>Uncured adhesive</h3><p>The two side trusses look straight, but the glue has not reached the required cure condition. Can the team load it to check if it feels stiff?</p><details><summary>Reveal explanation</summary><p>No. Follow the actual adhesive product's cure requirements and teacher instructions before handling the structure under load. Official testing occurs later.</p></details></article>
+<article class="p218-card"><span class="p218-pill">Check 6</span><h3>Change after fabrication</h3><p>A team discovers an M3 bolt interferes with lateral bracing and wants to relocate the hole. What is the correct process?</p><details><summary>Reveal explanation</summary><p>Document the interference, propose a CAD/manufacturing revision, and obtain teacher approval before altering the physical bridge. Record the new revision and replacement part if applicable.</p></details></article>
+<article class="p218-card"><span class="p218-pill">Check 7</span><h3>Actual versus predicted mass</h3><p>Fusion estimates 145 g, but the fully assembled bridge weighs 153 g on the scale. Which value governs the physical limit?</p><details><summary>Reveal explanation</summary><p>The measured finished mass: <strong>153 g</strong> exceeds the 150 g limit. The design must be revised and approved before official testing.</p></details></article>
+<article class="p218-card"><span class="p218-pill">Check 8</span><h3>After testing begins</h3><p>The bridge has just started the official qualification test and a gusset starts peeling. May the team add CA glue and retry?</p><details><summary>Reveal explanation</summary><p>No. The Unit 2 rules prohibit repairs after official testing begins. Record the failure evidence and follow the teacher's test protocol.</p></details></article>
+</div></section>
+<section class="container lesson-section" id="resources"><div class="p218-eyebrow">12 / Lab resource library</div><h2>When students need more guidance</h2>
+<div class="p218-grid">
+<article class="p218-card p218-resource"><h3>Stanford · Laser cutter setup and safe use</h3><p>Preparation, permitted materials, interlocks, exhaust, air assist, continuous attendance and post-cut housekeeping.</p><a href="https://ehs.stanford.edu/wp-content/uploads/Laser-Cutters-Safety-Guidance.pdf" target="_blank" rel="noopener noreferrer">Open Stanford laser safety guide ↗</a></article>
+<article class="p218-card p218-resource"><h3>University of Illinois · Bambu slicing walkthrough</h3><p>Step-by-step slicer preparation and printer setup. Use the classroom's bridge-specific PLA/PETG profile rather than unrelated generic values.</p><a href="https://art.illinois.edu/about/resources-for-current-students/facilities/digital-labs/tutorials-templates/tutorial-preparing-3d-print-files-for-the-bambu-labs-printers/" target="_blank" rel="noopener noreferrer">Open Bambu preparation tutorial ↗</a></article>
+<article class="p218-card p218-resource"><h3>Woodworkers Journal · PVA glue basics</h3><p>Correct glue selection, surface preparation, assembly time and holding/clamping strategy.</p><a href="https://www.woodworkersjournal.com/video-wood-glue-basics-application-tips/" target="_blank" rel="noopener noreferrer">Read and watch woodworking reference ↗</a></article>
+<article class="p218-card p218-resource"><h3>POE Lesson 2.17 — Detailed Bridge Design</h3><p>Return to dimensioned Fusion files, 1:1 laser profiles, joint details, slicer settings and the approved bill of materials.</p><a href="lesson-2-17.html">Reopen the manufacturing package →</a></article>
+</div></section>
+<section class="container lesson-section" id="submit"><div class="p218-eyebrow">Student assignment and approval gate</div><h2>Exactly what to submit for POE 2.18</h2>
+<p>Submit a single organized <strong>Bridge Fabrication &amp; Pre-Test Inspection Record</strong> with real measurements and evidence. This is not the Lesson 2.19 load-test report.</p>
+<div class="p218-grid"><article class="p218-card"><h3>Required submission evidence</h3><ul class="p218-checks">
+<li>Team and approved revision of the 2.17 manufacturing package (file names, not necessarily re-uploading unchanged CAD).</li>
+<li>Manufacturing job record listing machine/method, materials, usable and rejected part counts.</li>
+<li>Chronological build log with any errors, replacements, reprints, recuts or approved design deviations.</li>
+<li>At least <strong>five labeled photographs</strong>: parts, fabrication detail, side frames, critical joints and completed bridge with measured dimensions/mass.</li>
+<li>Two critical connection inspections documenting permitted joint methods, dimensions and any defects.</li>
+<li>Actual assembled clear span (mm), maximum outside width (mm), and finished mass (g).</li>
+<li>Actual printed fitting masses/dimensions and slicer profile evidence if connectors were printed.</li>
+<li>Local plywood gusset and stock-thickness compliance evidence if gussets were used.</li>
+<li>Short reflection about one fabrication challenge, its root cause, corrective action and an engineering question for the load test.</li>
+<li>Teacher-reviewed inspection form or teacher-directed sign-off before 2.19 testing.</li></ul></article>
+<article class="p218-card"><h3>What a complete record demonstrates</h3><ul class="p218-checks">
+<li>The real finished bridge, not just CAD, has been measured.</li>
+<li>All components match approved wood-based manufacturing and connection rules.</li>
+<li>Every rejected part and design deviation is visible in the record.</li>
+<li>Both side frames, lateral braces and center loading crossmember are complete.</li>
+<li>All adhesive joints have satisfied required cure instructions.</li>
+<li>The bridge is unloaded, undamaged to the extent visible, and submitted for teacher review.</li>
+<li>The official 100 N and 10 mm test results are <strong>not</strong> invented or claimed in advance.</li></ul>
+<p><strong>Due date:</strong> See the <a href="../../../../agenda.html">Daily Agenda</a> and teacher's submission directions.</p></article></div>
+</section>
+<nav class="container lesson-bottom-nav" aria-label="Lesson navigation"><a class="btn secondary" href="lesson-2-17.html">← Lesson 2.17 Detailed Bridge Design</a><a class="btn" href="lesson-2-19.html">Next: 2.19 Bridge Load Testing →</a></nav>
+</main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/></div><div class="footer-links"><a href="../../index.html">POE</a><a href="../unit-2.html">Unit 2</a></div></div></footer><section id="poe218Print" aria-label="Printable bridge fabrication and inspection packet">
+<div class="p218-printpage"><h1>POE 2.18 · FABRICATION AUTHORIZATION</h1><p>Page 1 of 4 · Team / safety / approved design</p>
+<p>Team: _________________________________ Period: __________ Date: ____________</p>
+<p>Approved CAD revision: __________ Job ID: ___________ Teacher authorization: _____________________</p>
+<h2>Before manufacturing — teacher-supervised checks</h2>
+<p>☐ Operator certified on machine &nbsp; ☐ Approved stock &nbsp; ☐ PPE &nbsp; ☐ Proper exhaust / interlocks</p>
+<p>☐ DXF mm + 1:1 / sliced fitting settings checked &nbsp; ☐ Approved teacher machine setup</p>
+<p>☐ Approved wooden structure &nbsp; ☐ Allowed adhesives / M3 hardware only</p>
+<h2>Manufacturing parts register</h2><table><thead><tr><th>Part group</th><th>Planned</th><th>Usable</th><th>Rejected</th></tr></thead><tbody>
+<tr><td>Left truss wood/plywood</td><td></td><td></td><td></td></tr><tr><td>Right truss wood/plywood</td><td></td><td></td><td></td></tr><tr><td>Transverse / lateral braces</td><td></td><td></td><td></td></tr><tr><td>Load-transfer crossmember</td><td></td><td></td><td></td></tr><tr><td>Local plywood gussets</td><td></td><td></td><td></td></tr><tr><td>Printed PLA/PETG fittings</td><td></td><td></td><td></td></tr><tr><td>M3 bolt/nut/washer sets</td><td></td><td></td><td></td></tr><tr><td>Approved PVA/CA adhesive</td><td></td><td></td><td></td></tr></tbody></table>
+<h2>Machine and material authorization notes</h2><div class="p218-printlines"><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+<div class="p218-printpage"><h1>POE 2.18 · MANUFACTURING BUILD LOG</h1><p>Page 2 of 4 · Production and revisions</p>
+<p>Team: _________________________________ Revision: ___________</p>
+<table><thead><tr><th>Date</th><th>Method / step</th><th>Status</th><th>Observation or revision</th><th>Evidence/photo ID</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<h2>Change control</h2><p>Problem observed: __________________________________________________________________</p>
+<p>Root cause / suspected cause: ________________________________________________________</p>
+<p>Replacement or approved revision ID: ___________________ Teacher review: ______________</p>
+<h2>Bridge work-in-progress photos</h2><div class="p218-printphoto">Attach labeled photo 1: manufactured parts / organized workbench.</div>
+<div class="p218-printphoto">Attach labeled photo 2: side frames, joints or bracing before final assembly.</div></div>
+<div class="p218-printpage"><h1>POE 2.18 · JOINT &amp; FABRICATION QUALITY</h1><p>Page 3 of 4 · Structural fit, glue cure and two critical joints</p>
+<h2>Joint A · Center load transfer</h2><div class="p218-printphoto">Attach an annotated close-up. Label contact, load path, permitted adhesive/M3/fitting and defects.</div>
+<p>Measurements / risks / observations: _____________________________________________________</p>
+<div class="p218-printlines"><div></div><div></div><div></div></div>
+<h2>Joint B · Compression node, support or lateral brace</h2><div class="p218-printphoto">Attach an annotated close-up. Label gusset dimensions, overlaps, grain direction and permitted layers.</div>
+<p>Measurements / risks / observations: _____________________________________________________</p>
+<div class="p218-printlines"><div></div><div></div><div></div></div>
+<h2>Construction checklist</h2>
+<p>☐ Both side trusses square &nbsp; ☐ Center crossmember &nbsp; ☐ Transverse bracing</p><p>☐ Glue fully cured (manufacturer / teacher instructions) &nbsp; ☐ Fasteners approved</p>
+<p>☐ Dimensions and CAD revision match &nbsp; ☐ Defects logged, no unauthorized substitution</p></div>
+<div class="p218-printpage"><h1>POE 2.18 · FINAL PRE-TEST INSPECTION</h1><p>Page 4 of 4 · Physical measurements and teacher release</p>
+<p>Team: ___________________________________ Revision: __________ Date: ___________</p>
+<table><thead><tr><th>Measurement</th><th>Actual value</th><th>Required</th><th>Inspector note</th></tr></thead><tbody>
+<tr><td>Clear span</td><td></td><td>≥400 mm</td><td></td></tr><tr><td>Outside width with hardware</td><td></td><td>≤65 mm</td><td></td></tr><tr><td>Actual finished mass</td><td></td><td>≤150 g</td><td></td></tr><tr><td>Plywood stock thickness (if used)</td><td></td><td>≤3.2 mm</td><td></td></tr><tr><td>Local gusset bounding size</td><td></td><td>≤40 × 25 mm</td><td></td></tr><tr><td>Largest local gusset area</td><td></td><td>≤800 mm²</td><td></td></tr><tr><td>Maximum gusset overlap</td><td></td><td>≤20 mm per member</td><td></td></tr><tr><td>Gusset layers</td><td></td><td>≤1 per side</td><td></td></tr><tr><td>Total printed fitting mass</td><td></td><td>≤40 g</td><td></td></tr><tr><td>Largest single printed fitting mass</td><td></td><td>≤15 g</td><td></td></tr><tr><td>Maximum printed fitting length</td><td></td><td>≤50 mm</td><td></td></tr></tbody></table>
+<p><strong>Visible defects or uncertainties:</strong> __________________________________________________</p><div class="p218-printlines"><div></div><div></div><div></div></div>
+<p>☐ Photos recorded &nbsp; ☐ Part counts reconciled &nbsp; ☐ All defects/deviations disclosed</p>
+<p>☐ Teacher reviewed the bridge &nbsp; ☐ Official test has NOT begun</p>
+<p>Teacher's decision: ☐ Return for rework &nbsp; ☐ Approved to proceed to 2.19 testing</p>
+<p>Teacher name/signature: ______________________________ Date: _________________</p></div>
+</section><script>
+(function(){
+"use strict";
+const e=id=>document.getElementById(id);
+const inventoryLabels=["Left truss wood/plywood","Right truss wood/plywood","Transverse / lateral braces","Load-transfer crossmember","Local plywood gussets","Printed PLA/PETG fittings","M3 bolt/nut/washer sets","Approved PVA/CA adhesive"];
+const stages=["Preparation / file check","Laser cutting","3D printing","Wood member cutting","Dry fit","Gluing / joinery","M3 fastening","Inspection / change"];
+const statuses=["Not started","In progress","Complete","Stopped / rework"];
+if(!e("massActual")||!e("downloadInspection"))return;
+function num(id){const value=e(id).value;if(String(value).trim()==="")return null;const n=Number(value);return Number.isFinite(n)?n:null;}
+function text(id,v){e(id).textContent=String(v);}
+function stat(id,n,fn){if(n===null){text(id,"Not measured");return;}text(id,fn(n)?"Within limit":"Outside limit");}
+function getStock(){
+ const vals=inventoryLabels.map((name,i)=>{
+ const need=num("stockNeed"+i),made=num("stockMade"+i),reject=num("stockReject"+i);
+ const issue=[need,made,reject].some(n=>n!==null&&(n<0||!Number.isInteger(n)));
+ const missing=need!==null&&made!==null?Math.max(0,need-made):null;
+ const state=issue?"Invalid count":need===null||made===null?"Incomplete":made<need?"Missing "+missing:made===need?"Quantity met":"Extra parts made";
+ text("stockState"+i,state);
+ return {name,need,made,reject,state,issue};
+ });
+ const sum=k=>vals.every(v=>v[k]!==null)?vals.reduce((n,v)=>n+v[k],0):null;
+ const totalNeed=sum("need"),totalMade=sum("made"),totalReject=sum("reject");
+ text("stockPlanned",totalNeed===null?"—":totalNeed);
+ text("stockUsable",totalMade===null?"—":totalMade);
+ text("stockRejected",totalReject===null?"—":totalReject);
+ const missing=vals.filter(v=>v.need!==null&&v.made!==null&&v.made<v.need);
+ const invalid=vals.filter(v=>v.issue);
+ text("inventoryMessage",invalid.length?"Invalid non-integer or negative inventory counts; correct them before exporting.":missing.length?
+ "Missing usable parts: "+missing.map(v=>v.name+" ("+(v.need-v.made)+")").join("; ")+". Document the recut or replacement before assembly.":
+ totalNeed===null||totalMade===null?"Enter quantities in all rows (use 0 for unused categories) to reconcile your inventory.":
+ "All entered part categories meet planned quantities; independently check quality, part IDs and the actual completed bridge.");
+ return vals;
+}
+const inspectIds=["spanActual","widthActual","massActual","plyActual","gussetLongest","gussetWidest","gussetArea","gussetOverlap","gussetLayers","printTotal","printMax","printLength"];
+const evidence=["evFile","evPhotos","evJoints","evCure","evBraces","evDefects"];
+function inspection(){
+ const fails=[],unknown=[],checked=[];
+ function assess(label,id,fn,note,required=true){
+ const v=num(id);
+ if(v===null){if(required)unknown.push(label);return;}
+ if(fn(v))checked.push(label);else fails.push(label+": "+note);
+ }
+ assess("Clear span","spanActual",n=>n>=400,"must be at least 400 mm");
+ assess("Overall width","widthActual",n=>n>0&&n<=65,"must be >0 and ≤65 mm");
+ assess("Finished mass","massActual",n=>n>0&&n<=150,"must be >0 and ≤150 g");
+ stat("spanResult",num("spanActual"),n=>n>=400);
+ stat("widthResult",num("widthActual"),n=>n>0&&n<=65);
+ stat("massResult",num("massActual"),n=>n>0&&n<=150);
+ const hasPlywood=inventoryLabels.some((n,i)=>(n.includes("plywood")||n.includes("truss"))&&num("stockNeed"+i)>0);
+ const gussetFilled=["gussetLongest","gussetWidest","gussetArea","gussetOverlap","gussetLayers"].some(id=>num(id)!==null);
+ const usesGusset=num("stockNeed4")>0||gussetFilled;
+ const usesPrinted=num("stockNeed5")>0||["printTotal","printMax","printLength"].some(id=>num(id)!==null);
+ assess("Plywood thickness","plyActual",n=>n>0&&n<=3.2,"maximum 3.2 mm",hasPlywood||usesGusset);
+ if(usesGusset){
+ assess("Gusset length","gussetLongest",n=>n>0&&n<=40,"maximum 40 mm");
+ assess("Gusset width","gussetWidest",n=>n>0&&n<=25,"maximum 25 mm");
+ assess("Gusset plan area","gussetArea",n=>n>0&&n<=800,"maximum 800 mm²");
+ assess("Gusset overlap","gussetOverlap",n=>n>=0&&n<=20,"maximum 20 mm per member");
+ assess("Gusset layer per side","gussetLayers",n=>Number.isInteger(n)&&n>=1&&n<=1,"maximum one layer per side");
+ const gL=num("gussetLongest"),gW=num("gussetWidest"),gA=num("gussetArea");
+ if(gL!==null&&gW!==null&&gA!==null&&gA>gL*gW+.01)fails.push("Entered gusset area exceeds its measured bounding rectangle; recheck.");
+ }
+ if(usesPrinted){
+ assess("Printed total mass","printTotal",n=>n>0&&n<=40,"maximum 40 g");
+ assess("Single fitting mass","printMax",n=>n>0&&n<=15,"maximum 15 g");
+ assess("Fitting maximum length","printLength",n=>n>0&&n<=50,"maximum 50 mm");
+ const sum=num("printTotal"),mx=num("printMax");if(sum!==null&&mx!==null&&mx>sum)fails.push("Largest single fitting is heavier than the reported combined printed mass.");
+ }
+ const ruleChoices=[["primaryMaterial","Approved wood","Primary material"],["adhesiveType",["None","PVA","CA"],"Adhesive"],["fastenerType",["None","M3"],"Fastener"]];
+ for(const [id,allowed,label] of ruleChoices){
+ const v=e(id).value;if(!v)unknown.push(label+" selection");
+ else if(Array.isArray(allowed)?allowed.includes(v):v===allowed)checked.push(label);
+ else fails.push(label+" selection is not approved.");
+ }
+ const evIncomplete=evidence.filter(x=>!e(x).checked).length;
+ if(evIncomplete)unknown.push(evIncomplete+" evidence checks");
+ if(!e("inspectVersion").value.trim())unknown.push("Physical revision label");
+ const status=fails.length?"NEEDS REVISION / TEACHER ATTENTION":unknown.length?"INSPECTION INCOMPLETE":"READY FOR TEACHER REVIEW — NOT TEST APPROVED";
+ text("inspectionVerdict",status+". "+(fails.length?fails.join(" "):"No entered limits are outside their thresholds.")+
+ (unknown.length?" Unverified: "+unknown.join(", ")+".":"")+
+ " Full structural capacity and ≤10 mm deflection have NOT been tested. Teacher approval is required before 2.19.");
+ return {fails,unknown,checked,status};
+}
+function buildLog(){
+ return Array.from({length:8},(_,i)=>({
+ index:i+1,date:e("logDate"+i).value,stage:e("logStage"+i).value,status:e("logState"+i).value,notes:e("logText"+i).value,evidence:e("logEvidence"+i).value
+ }));
+}
+document.querySelectorAll("#log input,#log select,#inspection input,#inspection select").forEach(x=>{
+ x.addEventListener("input",()=>{getStock();inspection();});
+ x.addEventListener("change",()=>{getStock();inspection();});
+});
+function csv(v){return '"'+String(v===null||v===undefined?"":v).replace(/"/g,'""')+'"';}
+function download(content,name,type){
+ const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2600);
+}
+e("downloadLog").addEventListener("click",()=>{
+ const rows=[["Team","Approved revision","Authorization reference","Entry","Date","Stage","Status","Build / defect / deviation notes","Evidence photo filename"]];
+ const logs=buildLog().filter(r=>r.date||r.stage||r.notes||r.evidence);
+ logs.forEach(r=>rows.push([e("teamId").value,e("revisionId").value,e("supervisor").value,r.index,r.date,r.stage,r.status,r.notes,r.evidence]));
+ if(!logs.length){window.alert("Add at least one actual build observation before exporting.");return;}
+ download(rows.map(r=>r.map(csv).join(",")).join("\r\n")+"\r\n","POE_2-18_Bridge_Build_Log.csv","text/csv;charset=utf-8");
+});
+e("downloadStock").addEventListener("click",()=>{
+ const items=getStock(),rows=[["Component","Planned qty","Usable produced","Rejected qty","Status"]];
+ items.forEach(r=>rows.push([r.name,r.need,r.made,r.reject,r.state]));
+ download(rows.map(r=>r.map(csv).join(",")).join("\r\n")+"\r\n","POE_2-18_Bridge_Part_Register.csv","text/csv;charset=utf-8");
+});
+e("downloadInspection").addEventListener("click",()=>{
+ const res=inspection(),names=["Clear span (mm)","Overall width (mm)","Actual finished mass (g)","Plywood thickness (mm)","Largest gusset length (mm)","Largest gusset width (mm)","Largest gusset plan area (mm²)","Largest overlap (mm)","Gusset layers on one side","Total printed part mass (g)","Max individual printed mass (g)","Longest printed fitting (mm)"];
+ const lines=["POE 2.18 · BRIDGE FABRICATION PRE-TEST INSPECTION","This text file is a student record, NOT an authorization or official load-test report.","",
+ "Team: "+e("teamId").value,"Approved CAD revision: "+e("revisionId").value,"Physical revision ID: "+e("inspectVersion").value,"",
+ ...inspectIds.map((id,i)=>names[i]+": "+(e(id).value||"not measured")),
+ "","Construction: "+e("primaryMaterial").value,"Adhesive: "+e("adhesiveType").value,"Mechanical fasteners: "+e("fastenerType").value,
+ "","Evidence checklist",...evidence.map(id=>id+": "+(e(id).checked?"observed/recorded":"not checked")),
+ "","Screen status: "+res.status,"Review issues: "+(res.fails.join("; ")||"none found in entered values"),"Not checked: "+(res.unknown.join("; ")||"all displayed checks entered"),
+ "","Official 100 N capacity and ≤10 mm deflection are still unverified. Instructor release is required before Lesson 2.19."];
+ download(lines.join("\n"),"POE_2-18_Pre_Test_Inspection.txt","text/plain;charset=utf-8");
+});
+e("printPacket").addEventListener("click",()=>{document.body.classList.add("poe218-printmode");window.print();});
+window.addEventListener("afterprint",()=>document.body.classList.remove("poe218-printmode"));
+getStock();inspection();
+})();
+</script></body></html>
