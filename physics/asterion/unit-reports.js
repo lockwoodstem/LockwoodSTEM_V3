@@ -41,6 +41,7 @@ function unitReportModel(chapter,state,student,createdAt=new Date().toISOString(
  const questions=UNIT_REFLECTIONS[chapter.id];
  const observations=(state.readings||[]).map(r=>({setting:`Test voltage: ${r.v.toFixed(2)} V`,value:`Measured current: ${r.i.toFixed(3)} A`}));
  for(const [id,rows]of Object.entries(state.labReadings||{})){const lab=(typeof LABS!=='undefined'?LABS[chapter.id]:[])?.find(l=>l.id===id);for(const row of rows)observations.push({setting:(lab?lab.title+' / ':'')+row.label,value:row.value});}
+ for(const [id,trials] of Object.entries(state.missionTrials||{})){for(const [i,trial] of trials.entries())observations.push({setting:`${id} / experiment ${i+1}: ${Object.entries(trial.settings).map(([k,v])=>k+'='+v).join(', ')}${trial.wires?.length?' / wires '+trial.wires.join(', '):''}`,value:trial.result+(trial.working?' · target reached':' · revise configuration')});}
  const solutions=[];
  for(const[id,solution]of Object.entries(state.labSolutions||{})){
   const lab=(typeof LABS!=='undefined'?LABS[chapter.id]:[])?.find(l=>l.id===id);
