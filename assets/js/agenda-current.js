@@ -9,6 +9,7 @@ const legacyCourseAliases = config.legacyCourseAliases || { IED: ["IED"], POE: [
 let rows = [];
 let quoteRows = [];
 let dueDateRows = [];
+let dueDatesLoadState = "unavailable";
 let currentCourse = config.defaultCourse || "IED";
 let currentDate = "";
 let viewMode = "day";
@@ -366,6 +367,9 @@ function parseDueDateRows(text) {
   const parsed = parseCSV(text).filter(r => r.some(cell => clean(cell)));
   if (!parsed.length) return [];
   const headers = parsed[0].map(h => normalizeHeader(h));
+  if (!headers.includes("course") || !headers.some(h => ["duedate", "date", "day"].includes(h))) {
+    throw new Error("Unrecognized due-date CSV headers");
+  }
   return parsed.slice(1).map(row => {
     const obj = {};
     headers.forEach((h, i) => obj[h] = row[i] || "");
@@ -407,8 +411,14 @@ function renderDueDateItem(item, referenceDate) {
 
 function renderUpcomingDueDates(course, referenceDate) {
   const items = upcomingDueDates(course, referenceDate).slice(0, 3);
-  if (!items.length) return `<p class="empty due-date-empty">No assignments are due within the next 14 days.</p>`;
-  return `<div class="due-date-list">${items.map(item => renderDueDateItem(item, referenceDate)).join("")}</div>`;
+  if (dueDatesLoadState === "unavailable") {
+    return `<p class="empty due-date-empty">Due dates could not be loaded. Refresh the page or check Google Classroom.</p>`;
+  }
+  const sourceNote = dueDatesLoadState === "backup"
+    ? '<p class="small due-date-source-note">Saved due dates shown; live Google Sheet updates are temporarily unavailable.</p>'
+    : "";
+  if (!items.length) return `<p class="empty due-date-empty">No assignments are due within the next 14 days.</p>${sourceNote}`;
+  return `<div class="due-date-list">${items.map(item => renderDueDateItem(item, referenceDate)).join("")}</div>${sourceNote}`;
 }
 
 function parseRows(text) {
@@ -566,14 +576,46 @@ function shiftDate(direction) {
   render();
 }
 
+// Attempt both published Google Sheets formats before using the checked-in snapshot.
 async function loadDueDates() {
+  const snapshotUrl = "assets/data/agenda-due-dates-backup.csv";
+  const sources = [...new Set([
+    ...(Array.isArray(config.dueDatesCsvUrls) ? config.dueDatesCsvUrls : []),
+    dueDatesCsvUrl
+  ].filter(Boolean))];
+
+  async function readSource(url) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+    try {
+      const res = await fetch(url, { cache: "no-store", signal: controller.signal });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const parsed = parseDueDateRows(await res.text());
+      if (!parsed.length) throw new Error("No recognizable due date rows");
+      return parsed;
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
+  dueDateRows = [];
+  dueDatesLoadState = "unavailable";
+  // Race Google endpoints so an inaccessible source doesn't delay the agenda.
   try {
-    if (!dueDatesCsvUrl) return;
-    const res = await fetch(dueDatesCsvUrl, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Due dates could not load (${res.status})`);
-    dueDateRows = parseDueDateRows(await res.text());
+    if (sources.length) {
+      dueDateRows = await Promise.any(sources.map(readSource));
+      dueDatesLoadState = "live";
+      return;
+    }
   } catch (err) {
-    console.warn("Due dates could not load", err);
+    console.warn("Live due date feeds unavailable; loading saved snapshot.", err);
+  }
+
+  try {
+    dueDateRows = await readSource(snapshotUrl);
+    dueDatesLoadState = "backup";
+  } catch (err) {
+    console.error("Due dates unavailable from both Google Sheets and local backup.", err);
     dueDateRows = [];
   }
 }
