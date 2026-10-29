@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-02T10:49:25.350Z",
+  "generated": "2026-10-28",
   "lessons": [
     {
       "course": "IED",
@@ -215,7 +215,7 @@
       "lesson": 5,
       "number": "2.5",
       "type": "Lesson",
-      "title": "Creating 3D Parts with Extrude — Bracket 3",
+      "title": "Creating 3D Parts with Extrude \u2014 Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-5.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.5_Dimensioned_CAD_Sketches.pptx"
     },
@@ -225,7 +225,7 @@
       "lesson": 6,
       "number": "2.6",
       "type": "Lesson",
-      "title": "Cut Features and Holes — Bracket 3",
+      "title": "Cut Features and Holes \u2014 Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-6.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.6_Extrude_Basics.pptx"
     },
@@ -235,7 +235,7 @@
       "lesson": 7,
       "number": "2.7",
       "type": "Lesson",
-      "title": "Fillets, Chamfers, and Design Intent — Bracket 3",
+      "title": "Fillets, Chamfers, and Design Intent \u2014 Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-7.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.7_Cut_Features_and_Holes.pptx"
     },
@@ -1013,42 +1013,6 @@
     },
     {
       "course": "POE",
-      "unit": 1,
-      "lesson": 10,
-      "number": "1.10",
-      "type": "Lesson",
-      "title": "VEX Crane Stability and Torque Challenge",
-      "url": "courses/poe/units/unit-1/lesson-1-10.html"
-    },
-    {
-      "course": "POE",
-      "unit": 1,
-      "lesson": 11,
-      "number": "1.11",
-      "type": "Lesson",
-      "title": "Combined Mechanisms Design Challenge",
-      "url": "courses/poe/units/unit-1/lesson-1-11.html"
-    },
-    {
-      "course": "POE",
-      "unit": 1,
-      "lesson": 12,
-      "number": "1.12",
-      "type": "Lesson",
-      "title": "Mechanism Testing, Data Analysis, and Improvement",
-      "url": "courses/poe/units/unit-1/lesson-1-12.html"
-    },
-    {
-      "course": "POE",
-      "unit": 1,
-      "lesson": 13,
-      "number": "1.13",
-      "type": "Lesson",
-      "title": "Final Mechanism Design Review",
-      "url": "courses/poe/units/unit-1/lesson-1-13.html"
-    },
-    {
-      "course": "POE",
       "unit": 2,
       "lesson": 1,
       "number": "2.1",
@@ -1343,7 +1307,7 @@
       "lesson": 12,
       "number": "3.12",
       "type": "Lesson",
-      "title": "Pressure, Force, and Pascal’s Law",
+      "title": "Pressure, Force, and Pascal\u2019s Law",
       "url": "courses/poe/units/unit-3/lesson-3-12.html",
       "presentation": "downloads/presentations/POE_Unit3_Lesson_3.12_Pressure_Force_and_Pascal_s_Law.pptx"
     },
@@ -2037,7 +2001,7 @@
       "unit": 3,
       "number": "3.2.2",
       "type": "Activity",
-      "title": "Don’t Crash!",
+      "title": "Don\u2019t Crash!",
       "url": "courses/adm/units/unit-3/activity-3-2-2.html"
     },
     {

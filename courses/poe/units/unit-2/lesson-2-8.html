@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>POE 2.8 | Calculating Truss Forces — Learning Studio | LockwoodSTEM</title>
-<meta name="description" content="Learn method-of-joints truss calculations with teacher-guided videos, individual joint FBDs, fully worked compression/tension solutions and an interactive truss force explorer."/>
-<link href="../../../../assets/css/styles.css" rel="stylesheet"/>
-<link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/>
-<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
-<link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/>
-<script defer src="../../../../assets/js/main.js"></script>
+<meta name="description" content="Learn method-of-joints truss calculations with teacher-guided videos, individual joint FBDs, fully worked compression/tension solutions and an interactive truss force explorer.">
+<link href="../../../../assets/css/styles.css" rel="stylesheet">
+<link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet">
+<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet">
+<link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet">
+<script defer src="../../../../assets/js/main.js?v=20261028-final"></script>
 <style id="poe28-learning-studio">
 html{scroll-behavior:smooth}
 .poe28{--ink:#092940;--blue:#0b567e;--aqua:#147f88;--gold:#e2ac37;--edge:#cadbe7}
@@ -282,13 +282,13 @@ html{scroll-behavior:smooth}
 .poe28 #solverStageJoint{stroke:#e8ab30;stroke-width:5;fill:#153d58;display:none}
 @media(max-width:950px){.poe28 .poe28-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.poe28 .poe28-concept-cards,.poe28 .poe28-flow,.poe28 .poe28-results{grid-template-columns:1fr}}
-</style></head>
+</style><link rel="stylesheet" href="../../../../assets/css/student-experience.css?v=20261028-final"><script defer src="../../../../assets/js/student-experience.js?v=20261028-final"></script></head>
 <body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
 <a class="skip-link" href="#main">Skip to main content</a>
-<header class="site-header"><div class="container nav"><a class="brand" aria-label="LockwoodSTEM home" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
+<header class="site-header"><div class="container nav"><a class="brand" aria-label="LockwoodSTEM home" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
 <main class="poe28" id="main">
 <nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.8</li></ol></nav>
-<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img src="../../../../assets/img/course-icons/poe-course-icon.png" alt="POE course icon" class="lesson-course-icon"/><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.8</div><h1>Calculating Truss Forces</h1><p class="focus-question"><strong>Engineering question:</strong> How can we calculate the internal force in each truss member using equilibrium at its joints?</p><div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#watch">Watch Videos</a><a class="btn secondary" href="#worked">Solved Example</a><a class="btn secondary" href="#explore">Interactive Truss</a><a class="btn secondary" href="#practice">Practice</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img src="../../../../assets/img/course-icons/poe-course-icon.png" alt="POE course icon" class="lesson-course-icon"><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.8</div><h1>Calculating Truss Forces</h1><p class="focus-question"><strong>Engineering question:</strong> How can we calculate the internal force in each truss member using equilibrium at its joints?</p><div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#watch">Watch Videos</a><a class="btn secondary" href="#worked">Solved Example</a><a class="btn secondary" href="#explore">Interactive Truss</a><a class="btn secondary" href="#practice">Practice</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
 <aside class="mission-panel"><span class="tag">Learn • Calculate • Explore • Check</span><h2>Find the force in every member.</h2><p>Build on Lessons 2.4–2.7 to solve a simple pin-jointed truss using the <strong>method of joints</strong>, including force directions and compression versus tension.</p><p><strong>Materials:</strong> pencil, ruler, calculator in degree mode and the Lesson 2.8 classwork/homework worksheet or notebook.</p></aside></div></section>
 <section class="container lesson-section" id="start"><div class="poe28-section-header"><div class="poe28-eyebrow">Learning pathway</div><h2>What you'll be able to do</h2><p>Complete the modules in order. Read the worked example and sketch force arrows before revealing the practice answers.</p></div>
 <div class="poe28-overview"><div class="poe28-metric"><strong>01 · Find reactions</strong><span>Apply whole-truss equilibrium before calculating internal forces.</span></div><div class="poe28-metric"><strong>02 · Solve joints</strong><span>Isolate a joint and use ΣFₓ = 0 and ΣFᵧ = 0.</span></div><div class="poe28-metric"><strong>03 · Classify members</strong><span>Explain what positive and negative assumed-tension answers mean.</span></div></div>
@@ -309,27 +309,27 @@ html{scroll-behavior:smooth}
 </div>
 <details class="poe28-reveal" style="margin-top:1rem"><summary>Optional extension: a member that carries zero force</summary><p>Some members carry no axial force under a <em>particular</em> idealized load case. The on-page zero-force-member example below introduces the simplest inspection rule; identifying many zero-force members is extended in Lesson 2.9.</p></details></section>
 <section class="container lesson-section" id="worked"><div class="poe28-section-header"><div class="poe28-eyebrow">04 / Fully worked example</div><h2>Analyze an entire triangular truss</h2><p>A triangular truss spans <strong>4.0 m</strong> with supports A (pin) and B (roller). Apex C is centered <strong>1.5 m</strong> above the base. An external <strong>120 N downward</strong> point load acts at C. Neglect the truss's self-weight.</p></div>
-<svg id="wholeTrussDiagram" class="poe28-diagram" viewBox="0 0 760 350" role="img" aria-label="Symmetrical triangular truss with A pin at left, B roller at right, C at 1.5 meter height, 4 meter span and downward 120 newton apex load. Vertical reactions at A and B are 60 newtons each; diagonals AC and BC carry 100 newtons compression and bottom AB carries 80 newtons tension.">
-<defs><marker id="wdn" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bd692c"/></marker><marker id="wup" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#128993"/></marker></defs>
-<path d="M130 250L380 63L630 250" stroke="#c67d37" stroke-width="11" stroke-linecap="round" fill="none"/><path d="M130 250H630" stroke="#118777" stroke-width="11" stroke-linecap="round"/>
-<circle cx="130" cy="250" r="9" fill="#1c405c"/><circle cx="630" cy="250" r="9" fill="#1c405c"/><circle cx="380" cy="63" r="9" fill="#1c405c"/>
-<path d="M130 258L109 290H151Z" fill="#d8e9f3" stroke="#234d69" stroke-width="2"/><circle cx="630" cy="280" r="10" fill="#d8e9f3" stroke="#234d69" stroke-width="2"/><path d="M604 292H658" stroke="#54788b" stroke-width="2"/>
-<path d="M380 11V49" stroke="#bd692c" stroke-width="3.4" marker-end="url(#wdn)"/>
-<path d="M130 330V266 M630 330V266" stroke="#128993" stroke-width="3.5" marker-end="url(#wup)"/>
+<svg id="wholeTrussDiagram" class="poe28-diagram" viewbox="0 0 760 350" role="img" aria-label="Symmetrical triangular truss with A pin at left, B roller at right, C at 1.5 meter height, 4 meter span and downward 120 newton apex load. Vertical reactions at A and B are 60 newtons each; diagonals AC and BC carry 100 newtons compression and bottom AB carries 80 newtons tension.">
+<defs><marker id="wdn" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bd692c"></path></marker><marker id="wup" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#128993"></path></marker></defs>
+<path d="M130 250L380 63L630 250" stroke="#c67d37" stroke-width="11" stroke-linecap="round" fill="none"></path><path d="M130 250H630" stroke="#118777" stroke-width="11" stroke-linecap="round"></path>
+<circle cx="130" cy="250" r="9" fill="#1c405c"></circle><circle cx="630" cy="250" r="9" fill="#1c405c"></circle><circle cx="380" cy="63" r="9" fill="#1c405c"></circle>
+<path d="M130 258L109 290H151Z" fill="#d8e9f3" stroke="#234d69" stroke-width="2"></path><circle cx="630" cy="280" r="10" fill="#d8e9f3" stroke="#234d69" stroke-width="2"></circle><path d="M604 292H658" stroke="#54788b" stroke-width="2"></path>
+<path d="M380 11V49" stroke="#bd692c" stroke-width="3.4" marker-end="url(#wdn)"></path>
+<path d="M130 330V266 M630 330V266" stroke="#128993" stroke-width="3.5" marker-end="url(#wup)"></path>
 <text x="400" y="27" class="poe28-label">P = 120 N</text><text x="138" y="335" class="poe28-label">Aᵧ = +60 N</text><text x="522" y="335" class="poe28-label">Bᵧ = +60 N</text>
 <text x="114" y="240" class="poe28-label">A</text><text x="637" y="240" class="poe28-label">B</text><text x="394" y="58" class="poe28-label">C</text>
 <text x="158" y="116" class="poe28-label">AC: 100 N (C)</text><text x="475" y="116" class="poe28-label">BC: 100 N (C)</text><text x="334" y="238" class="poe28-label">AB: 80 N (T)</text>
 <text x="365" y="306" class="poe28-small" text-anchor="middle">Span: 4.0 m · rise: 1.5 m · half-run: 2.0 m</text></svg>
 <div class="poe28-grid"><article class="poe28-panel"><span class="poe28-pill">Step 1 · Reactions</span><h3>Find Aᵧ and Bᵧ</h3><p>Use the <em>whole truss</em>, with CCW moments positive and coordinates measured from A.</p>
 <div class="poe28-equation">ΣM<sub>A</sub> = Bᵧ(4) −120(2) = 0</div><p><strong>Bᵧ = 60 N upward</strong>.</p><div class="poe28-equation">ΣFᵧ = Aᵧ +60−120 = 0</div><p><strong>Aᵧ = 60 N upward</strong>; Aₓ = 0 because no horizontal external load acts.</p></article>
-<article class="poe28-panel"><span class="poe28-pill gold">Step 2 · Geometry</span><h3>Resolve member directions</h3><p>Each diagonal has a horizontal run of <strong>2.0 m</strong> and vertical rise of <strong>1.5 m</strong>.</p><p>Diagonal length d = √(2² + 1.5²) = <strong>2.5 m</strong>.</p><div class="poe28-equation">sin θ = 1.5/2.5 = 0.6<br/>cos θ = 2.0/2.5 = 0.8</div><p>θ = arctan(1.5/2) ≈ <strong>36.87°</strong> above the horizontal. These two ratios will simplify both joint equations.</p></article></div>
+<article class="poe28-panel"><span class="poe28-pill gold">Step 2 · Geometry</span><h3>Resolve member directions</h3><p>Each diagonal has a horizontal run of <strong>2.0 m</strong> and vertical rise of <strong>1.5 m</strong>.</p><p>Diagonal length d = √(2² + 1.5²) = <strong>2.5 m</strong>.</p><div class="poe28-equation">sin θ = 1.5/2.5 = 0.6<br>cos θ = 2.0/2.5 = 0.8</div><p>θ = arctan(1.5/2) ≈ <strong>36.87°</strong> above the horizontal. These two ratios will simplify both joint equations.</p></article></div>
 <div class="poe28-grid" style="margin-top:1rem"><article class="poe28-panel"><span class="poe28-pill">Step 3 · Joint C</span><h3>Calculate AC and BC (diagonals)</h3>
-<svg id="jointCFigure" class="poe28-diagram" viewBox="0 0 760 350" role="img" aria-label="Isolated apex joint C under 120 N downward load with two 100 N compressive member forces pushing diagonally upward and inward to balance the load. Each diagonal forms angle 36.87 degrees above horizontal.">
-<defs><marker id="jccomp" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bd7a2f"/></marker><marker id="jcload" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#b8602a"/></marker></defs>
-<circle cx="360" cy="175" r="9" fill="#1b425d"/>
-<path d="M360 175L248 91M360 175L472 91" stroke="#bd7a2f" stroke-width="4.3" marker-end="url(#jccomp)"/>
-<path d="M360 175V274" stroke="#b8602a" stroke-width="4" marker-end="url(#jcload)"/>
-<path d="M316 175A44 44 0 0 1 324.8 148.6" fill="none" stroke="#758a9c" stroke-width="1.7"/>
+<svg id="jointCFigure" class="poe28-diagram" viewbox="0 0 760 350" role="img" aria-label="Isolated apex joint C under 120 N downward load with two 100 N compressive member forces pushing diagonally upward and inward to balance the load. Each diagonal forms angle 36.87 degrees above horizontal.">
+<defs><marker id="jccomp" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bd7a2f"></path></marker><marker id="jcload" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#b8602a"></path></marker></defs>
+<circle cx="360" cy="175" r="9" fill="#1b425d"></circle>
+<path d="M360 175L248 91M360 175L472 91" stroke="#bd7a2f" stroke-width="4.3" marker-end="url(#jccomp)"></path>
+<path d="M360 175V274" stroke="#b8602a" stroke-width="4" marker-end="url(#jcload)"></path>
+<path d="M316 175A44 44 0 0 1 324.8 148.6" fill="none" stroke="#758a9c" stroke-width="1.7"></path>
 <text x="255" y="82" class="poe28-label">100 N (AC pushes)</text><text x="443" y="82" class="poe28-label">100 N (BC pushes)</text>
 <text x="375" y="277" class="poe28-label">120 N ↓</text><text x="372" y="175" class="poe28-label">C</text>
 <text x="208" y="231" class="poe28-small">ΣFᵧ: +60 +60 −120 = 0 N</text>
@@ -341,12 +341,12 @@ html{scroll-behavior:smooth}
 <div class="poe28-equation">F<sub>AC</sub> = F<sub>BC</sub> = −100 N (C)</div>
 </article>
 <article class="poe28-panel"><span class="poe28-pill gold">Step 4 · Joint A</span><h3>Calculate AB (bottom tie)</h3>
-<svg id="jointAFigure" class="poe28-diagram" viewBox="0 0 760 350" role="img" aria-label="Isolated joint A with 60 N upward support reaction, 80 N bottom-tie tension to the right, and 100 N diagonal member compression pushing down and left along AC. Equilibrium balances 80 horizontal and 60 vertical component magnitudes.">
-<defs><marker id="jaT" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#148778"/></marker><marker id="jaC" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c37c2d"/></marker><marker id="jaR" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0f8792"/></marker></defs>
-<circle cx="295" cy="176" r="9" fill="#1b425d"/>
-<path d="M295 176V67" stroke="#0f8792" stroke-width="4" marker-end="url(#jaR)"/>
-<path d="M295 176H478" stroke="#148778" stroke-width="4" marker-end="url(#jaT)"/>
-<path d="M295 176L165 274" stroke="#c37c2d" stroke-width="4" marker-end="url(#jaC)"/>
+<svg id="jointAFigure" class="poe28-diagram" viewbox="0 0 760 350" role="img" aria-label="Isolated joint A with 60 N upward support reaction, 80 N bottom-tie tension to the right, and 100 N diagonal member compression pushing down and left along AC. Equilibrium balances 80 horizontal and 60 vertical component magnitudes.">
+<defs><marker id="jaT" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#148778"></path></marker><marker id="jaC" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c37c2d"></path></marker><marker id="jaR" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0f8792"></path></marker></defs>
+<circle cx="295" cy="176" r="9" fill="#1b425d"></circle>
+<path d="M295 176V67" stroke="#0f8792" stroke-width="4" marker-end="url(#jaR)"></path>
+<path d="M295 176H478" stroke="#148778" stroke-width="4" marker-end="url(#jaT)"></path>
+<path d="M295 176L165 274" stroke="#c37c2d" stroke-width="4" marker-end="url(#jaC)"></path>
 <text x="309" y="81" class="poe28-label">Aᵧ = 60 N ↑</text>
 <text x="487" y="181" class="poe28-label">AB = 80 N (T)</text>
 <text x="112" y="302" class="poe28-label">AC = 100 N (C)</text>
@@ -364,8 +364,8 @@ html{scroll-behavior:smooth}
 <p><strong>Joint B check:</strong> ΣFᵧ = +60−100(0.6) = 0; ΣFₓ = −80+100(0.8) = 0. All joint equilibrium conditions are satisfied. The signed member forces are <strong>not</strong> the same as the positive magnitudes you would use for an eventual strength calculation.</p></div></section>
 <section class="container lesson-section" id="explore"><div class="poe28-section-header"><div class="poe28-eyebrow">05 / Interactive engineering lab</div><h2>Change the load or shape of the truss</h2><p>Keep the span at 4.0 m while varying apex load P and rise h. Watch what happens to the diagonal compression and bottom-tie tension. Use the stage buttons to focus on the whole truss or each joint.</p></div>
 <div class="poe28-lab"><div class="poe28-grid">
-<article class="poe28-panel"><div class="poe28-control"><label for="trussLoad">Apex load P <output id="trussLoadValue">120 N</output></label><input id="trussLoad" type="range" min="20" max="200" step="10" value="120"/></div>
-<div class="poe28-control"><label for="trussRise">Truss rise h <output id="trussRiseValue">1.50 m</output></label><input id="trussRise" type="range" min="1" max="3" step=".25" value="1.5"/></div>
+<article class="poe28-panel"><div class="poe28-control"><label for="trussLoad">Apex load P <output id="trussLoadValue">120 N</output></label><input id="trussLoad" type="range" min="20" max="200" step="10" value="120"></div>
+<div class="poe28-control"><label for="trussRise">Truss rise h <output id="trussRiseValue">1.50 m</output></label><input id="trussRise" type="range" min="1" max="3" step=".25" value="1.5"></div>
 <div class="poe28-results"><div><strong id="trussAy">60.00 N</strong><span>Support Aᵧ (up)</span></div><div><strong id="trussBy">60.00 N</strong><span>Support Bᵧ (up)</span></div>
 <div><strong id="trussDiag">100.00 N (C)</strong><span>Each diagonal AC and BC</span></div><div><strong id="trussTie">80.00 N (T)</strong><span>Bottom member AB</span></div>
 <div><strong id="trussAngle">36.87°</strong><span>Diagonal angle θ</span></div><div><strong id="trussResidual">0.00 N</strong><span>Vertical equilibrium residual</span></div></div>
@@ -373,18 +373,18 @@ html{scroll-behavior:smooth}
 <button id="trussReset" class="btn secondary" type="button">Reset to worked example</button>
 </article>
 <article class="poe28-panel"><h3>Interactive truss FBD</h3>
-<svg id="trussSolverFigure" class="poe28-diagram" viewBox="0 0 760 450" role="img" aria-label="Interactive symmetric triangular truss. Change top joint load and height to recompute the support reactions and diagonal compression and bottom tie tension.">
-<defs><marker id="solD" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#b9662e"/></marker><marker id="solU" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0c8392"/></marker></defs>
-<line id="solverAC" x1="200" y1="330" x2="380" y2="195" class="poe28-truss-compression"/>
-<line id="solverBC" x1="380" y1="195" x2="560" y2="330" class="poe28-truss-compression"/>
-<line x1="200" y1="330" x2="560" y2="330" class="poe28-truss-tension"/>
-<circle cx="200" cy="330" r="8" fill="#163c5a"/><circle cx="560" cy="330" r="8" fill="#163c5a"/><circle id="solverApex" cx="380" cy="195" r="9" fill="#163c5a"/>
-<path d="M200 339L181 367H219Z" fill="#daeaf3" stroke="#355d74" stroke-width="2"/>
-<circle cx="560" cy="357" r="10" fill="#daeaf3" stroke="#355d74" stroke-width="2"/>
-<path d="M539 369H581" stroke="#355d74" stroke-width="2"/>
-<line x1="200" y1="413" x2="200" y2="340" stroke="#0c8392" stroke-width="3.2" marker-end="url(#solU)"/>
-<line x1="560" y1="413" x2="560" y2="340" stroke="#0c8392" stroke-width="3.2" marker-end="url(#solU)"/>
-<line id="solverLoad" x1="380" y1="145" x2="380" y2="182" stroke="#b9662e" stroke-width="3.5" marker-end="url(#solD)"/>
+<svg id="trussSolverFigure" class="poe28-diagram" viewbox="0 0 760 450" role="img" aria-label="Interactive symmetric triangular truss. Change top joint load and height to recompute the support reactions and diagonal compression and bottom tie tension.">
+<defs><marker id="solD" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#b9662e"></path></marker><marker id="solU" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0c8392"></path></marker></defs>
+<line id="solverAC" x1="200" y1="330" x2="380" y2="195" class="poe28-truss-compression"></line>
+<line id="solverBC" x1="380" y1="195" x2="560" y2="330" class="poe28-truss-compression"></line>
+<line x1="200" y1="330" x2="560" y2="330" class="poe28-truss-tension"></line>
+<circle cx="200" cy="330" r="8" fill="#163c5a"></circle><circle cx="560" cy="330" r="8" fill="#163c5a"></circle><circle id="solverApex" cx="380" cy="195" r="9" fill="#163c5a"></circle>
+<path d="M200 339L181 367H219Z" fill="#daeaf3" stroke="#355d74" stroke-width="2"></path>
+<circle cx="560" cy="357" r="10" fill="#daeaf3" stroke="#355d74" stroke-width="2"></circle>
+<path d="M539 369H581" stroke="#355d74" stroke-width="2"></path>
+<line x1="200" y1="413" x2="200" y2="340" stroke="#0c8392" stroke-width="3.2" marker-end="url(#solU)"></line>
+<line x1="560" y1="413" x2="560" y2="340" stroke="#0c8392" stroke-width="3.2" marker-end="url(#solU)"></line>
+<line id="solverLoad" x1="380" y1="145" x2="380" y2="182" stroke="#b9662e" stroke-width="3.5" marker-end="url(#solD)"></line>
 <text id="solverLoadText" x="399" y="148" class="poe28-label">P = 120 N ↓</text>
 <text id="solverAy" x="95" y="430" class="poe28-label">Aᵧ = 60 N</text>
 <text id="solverBy" x="569" y="430" class="poe28-label">Bᵧ = 60 N</text>
@@ -405,9 +405,9 @@ html{scroll-behavior:smooth}
 <div class="poe28-equation">70.71(0.7071) ≈ 50.00 N</div>
 <p class="poe28-nuance"><strong>Remember:</strong> Steeper geometry can reduce required axial forces in this particular model, but that does not by itself decide which truss design is strongest or most material-efficient.</p></article></div></section>
 <section class="container lesson-section" id="zero-force"><div class="poe28-section-header"><div class="poe28-eyebrow">07 / Preview a special case</div><h2>What is a zero-force member?</h2><p>An unloaded truss joint with <strong>three connected members, two collinear</strong>, provides a useful shortcut: the third, noncollinear member has zero axial force for that specific load case.</p></div>
-<div class="poe28-grid"><div class="poe28-panel"><svg id="zeroForceDiagram" class="poe28-diagram" viewBox="0 0 760 350" role="img" aria-label="Unloaded joint J with collinear members AJ and JB and one vertical noncollinear member JC. If no external load or support reaction acts at J, vertical member JC is a zero-force member for that loading condition.">
-<path d="M115 186H635" stroke="#386681" stroke-width="9" stroke-linecap="round"/><path d="M375 186V65" stroke="#cc8a38" stroke-width="9" stroke-linecap="round"/>
-<circle cx="375" cy="186" r="10" fill="#174566"/>
+<div class="poe28-grid"><div class="poe28-panel"><svg id="zeroForceDiagram" class="poe28-diagram" viewbox="0 0 760 350" role="img" aria-label="Unloaded joint J with collinear members AJ and JB and one vertical noncollinear member JC. If no external load or support reaction acts at J, vertical member JC is a zero-force member for that loading condition.">
+<path d="M115 186H635" stroke="#386681" stroke-width="9" stroke-linecap="round"></path><path d="M375 186V65" stroke="#cc8a38" stroke-width="9" stroke-linecap="round"></path>
+<circle cx="375" cy="186" r="10" fill="#174566"></circle>
 <text x="92" y="179" class="poe28-label">A</text><text x="639" y="179" class="poe28-label">B</text><text x="386" y="201" class="poe28-label">J</text><text x="390" y="69" class="poe28-label">C</text>
 <text x="154" y="215" class="poe28-small">AJ collinear</text><text x="504" y="215" class="poe28-small">JB collinear</text><text x="399" y="126" class="poe28-label">JC = 0 N</text>
 <text x="375" y="271" class="poe28-small" text-anchor="middle">At J: no external load or support reaction</text>
@@ -435,7 +435,7 @@ html{scroll-behavior:smooth}
 <article class="poe28-panel"><h3>Before you submit</h3><ul class="poe28-checklist"><li>Every force calculation is labeled in newtons (N).</li><li>Your outward-arrow convention is stated, and negative results interpreted as compression.</li><li>All triangles and support reactions match the dimensions in your sketch.</li><li>Answers are checked at a different joint whenever possible.</li><li>Diagrams and calculations are readable and organized.</li></ul><p><strong>Due date:</strong> Check the <a href="../../../../agenda.html">Daily Agenda</a> for the current deadline and follow the teacher's instructions for submitting the worksheet or notebook pages.</p><a class="btn secondary" href="#start">Review lesson ↑</a></article></div></section>
 <nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-7.html">← Lesson 2.7: Introduction to Truss Systems</a><a class="btn" href="lesson-2-9.html">Next: 2.9 Advanced Truss Analysis →</a></nav>
 </main>
-<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer>
 <button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
 <script>
 (function(){

@@ -1,3 +1,0 @@
-Updated IED Lesson 1.2 with a prominent 3D Model + Views jump button and activity banner.
-Corrected reveal/dropdown contrast across lesson pages using a gold header and white answer panel.
-Updated asset version strings to prevent stale browser caches.

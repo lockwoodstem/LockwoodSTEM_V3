@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 from pathlib import Path
 import re, sys, json
+from html.parser import HTMLParser
+class StaticLinks(HTMLParser):
+    def __init__(self): super().__init__(); self.links=[]
+    def handle_starttag(self, tag, attrs):
+        self.links.extend((k,v) for k,v in attrs if k in ("href","src") and v)
+def static_links(source):
+    parser=StaticLinks(); parser.feed(source); return parser.links
+
 ROOT=Path(__file__).resolve().parents[1]
 COURSES=("ied","poe","adm")
 errors=[]; warnings=[]
@@ -12,7 +20,7 @@ for p in html:
     if not re.search(r"<title>.+?</title>",s,re.I|re.S): errors.append(f"{rel}: missing <title>")
     if "/units/unit-" in rel and re.search(r"/(lesson|activity|project|problem)-",rel):
         if not re.search(r"<h1[^>]*>.+?</h1>",s,re.I|re.S): errors.append(f"{rel}: missing H1")
-    for attr,url in re.findall(r'(href|src)=["\']([^"\']+)["\']',s,re.I):
+    for attr,url in static_links(s):
         if not url or url.startswith(("#","http:","https:","mailto:","tel:","javascript:","data:")): continue
         target=(p.parent/url.split("#")[0].split("?")[0]).resolve()
         try: tr=target.relative_to(ROOT).as_posix()

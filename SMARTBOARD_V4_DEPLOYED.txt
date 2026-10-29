@@ -1,4 +1,0 @@
-LockwoodSTEM Smartboard Agenda v4
-Build: 20260812-4
-Expected full-screen layout: 58% Today in Class / 42% right column
-Expected right column: Objectives -> Upcoming Due Dates -> Quote of the Day

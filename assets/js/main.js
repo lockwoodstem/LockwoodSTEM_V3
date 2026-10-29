@@ -215,6 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     trigger.className = 'global-search-trigger';
     trigger.setAttribute('data-global-search-trigger', '');
     trigger.setAttribute('aria-haspopup', 'dialog');
+    trigger.setAttribute('aria-label', 'Search the site');
     trigger.innerHTML = '<span class="global-search-trigger-icon" aria-hidden="true">⌕</span><span class="global-search-trigger-text">Search the site</span><kbd>Ctrl K</kbd>';
     const navToggle = nav.querySelector('.nav-toggle');
     nav.insertBefore(trigger, navToggle || nav.querySelector('.nav-links') || null);
@@ -358,65 +359,6 @@ document.addEventListener('DOMContentLoaded', () => {
   else initGlobalSearch();
 })();
 
-
-// Student dashboard navigation and recent-page history
-(() => {
-  const RECENT_KEY = 'lockwoodstem-recent-pages-v1';
-  function normalizeNavHref(anchor){
-    try{
-      const url=new URL(anchor.getAttribute('href')||'',location.href);
-      let path=url.pathname.replace(/\/+/g,'/');
-      if(path.length>1) path=path.replace(/\/$/,'');
-      return path+(url.search||'');
-    }catch{return (anchor.getAttribute('href')||'').trim();}
-  }
-  function dedupeNavLinks(nav){
-    const seen=new Map();
-    [...nav.querySelectorAll('a[href]')].forEach((a)=>{
-      const key=normalizeNavHref(a).toLowerCase();
-      if(!key) return;
-      if(!seen.has(key)){seen.set(key,a);return;}
-      const duplicate=a.closest('li')||a;
-      duplicate.remove();
-    });
-  }
-  function addDashboardLink(){
-    const nav=document.querySelector('#site-navigation.nav-links, .site-header .nav-links');
-    if(!nav) return;
-
-    // Patch stacking can leave the same navigation item in the HTML more than once.
-    // Keep the first copy of each destination before adding anything dynamically.
-    dedupeNavLinks(nav);
-
-    const existing=[...nav.querySelectorAll('a[href]')].find((a)=>{
-      const path=normalizeNavHref(a).toLowerCase();
-      return path==='/dashboard/index.html' || path==='/dashboard';
-    });
-    if(existing){
-      existing.dataset.navSection='dashboard';
-      if(location.pathname.includes('/dashboard/')) existing.setAttribute('aria-current','page');
-      return;
-    }
-
-    const li=document.createElement('li');
-    const a=document.createElement('a');
-    a.href='/dashboard/index.html'; a.dataset.navSection='dashboard'; a.textContent='Dashboard';
-    if(location.pathname.includes('/dashboard/')) a.setAttribute('aria-current','page');
-    li.appendChild(a); nav.insertBefore(li,nav.firstElementChild);
-  }
-  function trackPage(){
-    const path=location.pathname+location.search;
-    if(/\/(dashboard|certifications\/(login|register|teacher-login))\//.test(location.pathname)) return;
-    const title=(document.querySelector('main h1')?.textContent || document.title.split('|')[0] || 'LockwoodSTEM').trim();
-    const section=(document.querySelector('main .eyebrow')?.textContent || document.querySelector('[aria-current="page"]')?.textContent || 'Page').trim();
-    let items=[]; try{items=JSON.parse(localStorage.getItem(RECENT_KEY)||'[]');if(!Array.isArray(items))items=[];}catch{}
-    items=items.filter(item=>item&&item.path!==path);
-    items.unshift({path,title,section,visitedAt:new Date().toISOString()});
-    try{localStorage.setItem(RECENT_KEY,JSON.stringify(items.slice(0,12)));}catch{}
-  }
-  function init(){addDashboardLink();trackPage();}
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
-})();
 
 // Student-facing lesson copy cleanup v20260823
 // Removes internal/developer placeholder wording from student lesson pages without

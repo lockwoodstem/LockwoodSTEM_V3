@@ -325,54 +325,7 @@
 
     renderQuiz(form, finalQuestions, false);
 
-    button.addEventListener("click", async () => {
-      const auth = window.LockwoodCertAuth;
-      const session = auth && auth.getSession ? auth.getSession() : null;
-      if (!session || !session.token) {
-        window.location.href = "login.html?next=engineering-safety-final.html";
-        return;
-      }
-
-      const { answers, missing } = getAnswers(form, finalQuestions);
-      if (missing.length) {
-        resultBox.hidden = false;
-        resultBox.className = "cert-result-box warning";
-        resultBox.innerHTML = `<h3>Answer every question</h3><p>You still have ${missing.length} unanswered question(s).</p>`;
-        return;
-      }
-
-      button.disabled = true;
-      button.textContent = "Submitting...";
-      resultBox.hidden = false;
-      resultBox.className = "cert-result-box";
-      resultBox.innerHTML = `<h3>Submitting final test...</h3><p>Please wait while your score is recorded.</p>`;
-
-      try {
-        const response = await auth.request("submitCertification", {
-          token: session.token,
-          certId: "engineering-safety",
-          certName: "Engineering Safety",
-          answers
-        });
-
-        const passed = response.onlinePassed || response.passed;
-        resultBox.className = "cert-result-box " + (passed ? "passed" : "failed");
-        resultBox.innerHTML = `
-          <h3>${passed ? (response.badgeEarned ? "Badge earned" : "Online test passed") : "Certification not passed yet"}</h3>
-          <p><strong>Score:</strong> ${response.percent}% (${response.correct} / ${response.total})</p>
-          <p>${passed ? (response.badgeEarned ? "Your Engineering Safety badge has been earned." : "Your online test is passed. Your teacher still needs to mark the hands-on portion complete before the badge unlocks.") : "Review the study guide and try again when ready."}</p>
-          <div class="hero-actions">
-            <a class="btn dark" href="engineering-safety.html">Return to Certification Home</a>
-            ${passed ? `<a class="btn secondary" href="account.html">View Account</a>` : `<a class="btn secondary" href="engineering-safety-study.html">Review Study Guide</a>`}
-          </div>
-        `;
-      } catch (err) {
-        resultBox.className = "cert-result-box failed";
-        resultBox.innerHTML = `<h3>Submission failed</h3><p>${escapeHtml(err.message)}</p>`;
-        button.disabled = false;
-        button.textContent = "Submit Final Test";
-      }
-    });
+    window.LockwoodAssessmentReports.attach({form,button,resultBox,questions:finalQuestions,getAnswers});
   }
 
   function escapeHtml(value) {

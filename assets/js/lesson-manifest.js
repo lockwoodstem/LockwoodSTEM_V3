@@ -1,19 +1,1195 @@
 window.LOCKWOODSTEM_LESSONS = {
-  "ied": {"0":[["0.1","Course Launch & Engineering Mindset","lesson-0-1.html"],["0.2","Engineering Notebook Setup & Course Resources","lesson-0-2.html"],["0.3","Safety Acknowledgment, PPE & FabLab Orientation","lesson-0-3.html"],["0.4","Launch Pad Challenge: Define & Imagine","lesson-0-4.html"],["0.5","Evaluate & Select","lesson-0-5.html"],["0.6","Develop the Design","lesson-0-6.html"],["0.7","Fabrication Readiness","lesson-0-7.html"],["0.8","Prototype Build","lesson-0-8.html"],["0.9","Test & Improve","lesson-0-9.html"],["0.10","Final Launch Pad Challenge & Design Review","lesson-0-10.html"]],"1":[["1.1","Engineering Sketching & Line Conventions","lesson-1-1.html"],["1.2","Centerlines & Symmetry","lesson-1-2.html"],["1.3","Isometric Sketching & Curved Features","lesson-1-3.html"],["1.4","Orthographic Projection & Multiview Sketching","lesson-1-4.html"],["1.5","Dimensioning & Technical Sketching","lesson-1-5.html"],["1.6","Measurement, Precision & Tolerances","lesson-1-6.html"],["1.7","Joining Methods & Assembly Systems","lesson-1-7.html"],["1.8","Engineering Documentation Challenge","lesson-1-8.html"]],"2":[["2.1","Getting Started with Fusion","lesson-2-1.html"],["2.2","Sketch Planes and 2D Sketching","lesson-2-2.html"],["2.3","Sketch Constraints","lesson-2-3.html"],["2.4","Dimensioned CAD Sketches","lesson-2-4.html"],["2.5","Creating 3D Parts with Extrude — Bracket 3","lesson-2-5.html"],["2.6","Cut Features and Holes — Bracket 3","lesson-2-6.html"],["2.7","Fillets, Chamfers, and Design Intent — Bracket 3","lesson-2-7.html"],["2.8","Creating Rotational Parts with Revolve","lesson-2-8.html"],["2.9","Mirror and Pattern Tools","lesson-2-9.html"],["2.10","Puzzle Cube Concept Design & Sketching","lesson-2-10.html"],["2.11","Puzzle Cube CAD Modeling","lesson-2-11.html"],["2.12","Puzzle Cube Technical Drawing & Exploded View","lesson-2-12.html"],["2.13","Puzzle Cube Manufacturing & Final Verification","lesson-2-13.html"],["2.14","FabLab 3D Printer Certification","lesson-2-14.html"]],"3":[["3.1","Revolute Joints & Rotational Motion","lesson-3-1.html"],["3.2","Slider Joints & Linear Motion","lesson-3-2.html"],["3.3","Joint Limits & Motion Relationships","lesson-3-3.html"],["3.4","Multi-Component Mechanical Assemblies","lesson-3-4.html"],["3.5","Interference, Clearance & Motion Verification","lesson-3-5.html"],["3.6","Rocket Design Challenge & Concept Development","lesson-3-6.html"],["3.7","Rocket Component Design & CAD Assembly","lesson-3-7.html"],["3.8","Digital Assembly Design Review","lesson-3-8.html"],["3.9","Manufacturing & Fabrication Preparation","lesson-3-9.html"],["3.10","Physical Rocket Assembly & Fit Testing","lesson-3-10.html"],["3.11","Engineering Change & Final Revision","lesson-3-11.html"],["3.12","Assembly Drawing, Exploded View & BOM","lesson-3-12.html"],["3.13","Flight Readiness Review & Final Design Package","lesson-3-13.html"],["3.14","Compressed-Air Rocket Flight Test & Post-Flight Review","lesson-3-14.html"]],"4":[["4.1","Unit 4 Challenge Launch: Aerospace Mechanisms, Materials & Electromechanical Systems","lesson-4-1.html"],["4.2","Aerospace Materials and Material Properties","lesson-4-2.html"],["4.3","Material Testing Lab","lesson-4-3.html"],["4.4","Statistics and Measurement Error","lesson-4-4.html"],["4.5","Mechanisms and Types of Motion","lesson-4-5.html"],["4.6","Mechanism Exploration: Linkages, Hinges, Cams, Gears, and Pulleys","lesson-4-6.html"],["4.7","Friction, Force, and Mechanism Performance","lesson-4-7.html"],["4.8","Motion Graphs and System Behavior","lesson-4-8.html"],["4.9","Electrical Safety and Simple Circuits","lesson-4-9.html"],["4.10","Motors and Electromechanical Motion","lesson-4-10.html"],["4.11","Concept Generation and Decision Matrix","lesson-4-11.html"],["4.12","System Architecture and Subsystem Planning","lesson-4-12.html"],["4.13","CAD Planning and Assembly Layout","lesson-4-13.html"],["4.14","CAD Modeling Workday: Components, Motion, and Fit","lesson-4-14.html"],["4.15","Prototype Build Day 1: Structure and Mechanism","lesson-4-15.html"],["4.16","Prototype Build Day 2: Electrical or Electromechanical Integration","lesson-4-16.html"],["4.17","Testing Protocol Development","lesson-4-17.html"],["4.18","Prototype Testing and Data Collection","lesson-4-18.html"],["4.19","Data Analysis, Graphing, and Design Conclusions","lesson-4-19.html"],["4.20","Iteration and Prototype Revision","lesson-4-20.html"],["4.21","Final Technical Documentation: Mechanism, Circuit, Data, and Revision","lesson-4-21.html"],["4.22","Unit 4 Technical Demonstration and Reflection","lesson-4-22.html"]],"5":[["5.1","Human-Centered Aerospace Design Capstone Launch","lesson-5-1.html"],["5.2","Stakeholder Research and User Needs","lesson-5-2.html"],["5.3","Problem Statement, Criteria, Constraints, and Design Brief","lesson-5-3.html"],["5.4","Team Norms and Project Management","lesson-5-4.html"],["5.5","Concept Generation and Human-Centered Ideation","lesson-5-5.html"],["5.6","Decision Matrix and Final Concept Selection","lesson-5-6.html"],["5.7","CAD, Fabrication, and Prototype Planning","lesson-5-7.html"],["5.8","CAD Modeling and Prototype Part Development","lesson-5-8.html"],["5.9","Prototype Build Day 1: Structure and Core Function","lesson-5-9.html"],["5.10","Prototype Build Day 2: Integration and Refinement","lesson-5-10.html"],["5.11","Testing Protocol and User Feedback Plan","lesson-5-11.html"],["5.12","Prototype Testing and User Feedback","lesson-5-12.html"],["5.13","Data Analysis and Stakeholder Feedback Review","lesson-5-13.html"],["5.14","Ethics, Safety, Sustainability, and Life-Cycle Analysis","lesson-5-14.html"],["5.15","Final Prototype Revision and Refinement","lesson-5-15.html"],["5.16","Final Engineering Portfolio Workday","lesson-5-16.html"],["5.17","Final Presentation Preparation and Rehearsal","lesson-5-17.html"],["5.18","Final Capstone Presentations","lesson-5-18.html"]]},
-  "poe": {"0":[["0.1","Engineering for the Mission","lesson-0-1.html"],["0.2","Engineering Notebook & Documentation Refresher","lesson-0-2.html"],["0.3","PPE and FabLab Safety","lesson-0-3.html"],["0.4","CubeSat Challenge: Define & Design","lesson-0-4.html"],["0.5","Evaluate & Develop","lesson-0-5.html"],["0.6","CAD & Assembly Design","lesson-0-6.html"],["0.7","Additive Manufacturing","lesson-0-7.html"],["0.8","Laser Manufacturing","lesson-0-8.html"],["0.9","Fabrication & Assembly","lesson-0-9.html"],["0.10","CubeSat Lightweight Structure Competition","lesson-0-10.html"]],"1":[["1.1","Unit Launch: Mechanisms for Space Missions","lesson-1-1.html"],["1.2","Simple Machines in Aerospace Systems","lesson-1-2.html"],["1.3","Force, Distance, Work, and Mechanical Advantage","lesson-1-3.html"],["1.4","Gears and Drive Ratios","lesson-1-4.html"],["1.5","Pulley Systems and Lifting Mechanisms","lesson-1-5.html"],["1.6","Sprockets, Chain Drives, and Direction of Motion","lesson-1-6.html"],["1.7","VEX Build Skills and Mechanism Construction","lesson-1-7.html"],["1.8","Work, Power, and Efficiency in Mechanical Systems","lesson-1-8.html"],["1.9","Unit 1 Final Project: VEX Cargo Lift Engineering Challenge","lesson-1-9.html"]],"2":[["2.1","Unit Challenge Launch: Build a Better Bridge","lesson-2-1.html"],["2.2","Centroids & Center of Gravity","lesson-2-2.html"],["2.3","Beam Deflection","lesson-2-3.html"],["2.4","Free-Body Diagrams","lesson-2-4.html"],["2.5","Calculating Force Vectors","lesson-2-5.html"],["2.6","Calculating Moments","lesson-2-6.html"],["2.7","Introduction to Truss Systems","lesson-2-7.html"],["2.8","Calculating Truss Forces","lesson-2-8.html"],["2.9","Advanced Truss Analysis","lesson-2-9.html"],["2.10","Truss Design & Simulation","lesson-2-10.html"],["2.11","Structural Materials & Properties","lesson-2-11.html"],["2.12","Structural Failure","lesson-2-12.html"],["2.13","Materials Testing Lab","lesson-2-13.html"],["2.14","Structural Efficiency","lesson-2-14.html"],["2.15","Bridge Design Research & Concepts","lesson-2-15.html"],["2.16","Bridge Engineering Analysis","lesson-2-16.html"],["2.17","Detailed Bridge Design","lesson-2-17.html"],["2.18","Bridge Fabrication","lesson-2-18.html"],["2.19","Bridge Load Testing","lesson-2-19.html"],["2.20","Redesign & Engineering Review","lesson-2-20.html"]],"3":[["3.1","Unit Launch: Autonomous Aerospace Systems","lesson-3-1.html"],["3.2","Control Systems and Mission Logic","lesson-3-2.html"],["3.3","Flowcharts and Algorithms","lesson-3-3.html"],["3.4","Inputs, Outputs, and Sensors","lesson-3-4.html"],["3.5","Open-Loop Rover Control","lesson-3-5.html"],["3.6","Rover Testing and Debugging","lesson-3-6.html"],["3.7","Closed-Loop Control and Feedback","lesson-3-7.html"],["3.8","Sensor Thresholds and Decision Logic","lesson-3-8.html"],["3.9","VEX Ground Support Systems","lesson-3-9.html"],["3.10","Motors, Servos, and Actuators","lesson-3-10.html"],["3.11","Fluid Power in Aerospace Systems","lesson-3-11.html"],["3.12","Pressure, Force, and Pascal’s Law","lesson-3-12.html"],["3.13","Fluid Power Design Lab","lesson-3-13.html"],["3.14","Design Brief: Rover Mission + VEX Ground Support System","lesson-3-14.html"],["3.15","Mission Planning and System Architecture","lesson-3-15.html"],["3.16","Build and Program Workday","lesson-3-16.html"],["3.17","Mission Testing, Data Collection, and Iteration","lesson-3-17.html"],["3.18","Final Mission Demonstration and Design Review","lesson-3-18.html"]]},
-  "adm": {
+  "ied": {
+    "0": [
+      [
+        "0.1",
+        "Course Launch & Engineering Mindset",
+        "lesson-0-1.html"
+      ],
+      [
+        "0.2",
+        "Engineering Notebook Setup & Course Resources",
+        "lesson-0-2.html"
+      ],
+      [
+        "0.3",
+        "Safety Acknowledgment, PPE & FabLab Orientation",
+        "lesson-0-3.html"
+      ],
+      [
+        "0.4",
+        "Launch Pad Challenge: Define & Imagine",
+        "lesson-0-4.html"
+      ],
+      [
+        "0.5",
+        "Evaluate & Select",
+        "lesson-0-5.html"
+      ],
+      [
+        "0.6",
+        "Develop the Design",
+        "lesson-0-6.html"
+      ],
+      [
+        "0.7",
+        "Fabrication Readiness",
+        "lesson-0-7.html"
+      ],
+      [
+        "0.8",
+        "Prototype Build",
+        "lesson-0-8.html"
+      ],
+      [
+        "0.9",
+        "Test & Improve",
+        "lesson-0-9.html"
+      ],
+      [
+        "0.10",
+        "Final Launch Pad Challenge & Design Review",
+        "lesson-0-10.html"
+      ]
+    ],
     "1": [
-      ["Activity 1.1.1","Assembly Line","activity-1-1-1.html"],["Activity 1.1.2","6-Axis Arm","activity-1-1-2.html"],["Activity 1.1.3","Pick and Place","activity-1-1-3.html"],["Activity 1.1.4","Coding Movement","activity-1-1-4.html"],["Activity 1.1.5","Controlled Path","activity-1-1-5.html"],["Activity 1.1.6","Shapes","activity-1-1-6.html"],["Activity 1.1.7","Absolute and Relative Movement","activity-1-1-7.html"],["Project 1.1.8","Decreasing Spirals","project-1-1-8.html"],["Activity 1.2.1","Career Exploration","activity-1-2-1.html"],["Activity 1.2.2","Transporting and Palletizing Objects","activity-1-2-2.html"],["Project 1.2.3","Stacking Objects","project-1-2-3.html"],["Problem 1.3.1","Flexible Pick-and-Pallet Automation","problem-1-3-1.html"]
+      [
+        "1.1",
+        "Engineering Sketching & Line Conventions",
+        "lesson-1-1.html"
+      ],
+      [
+        "1.2",
+        "Centerlines & Symmetry",
+        "lesson-1-2.html"
+      ],
+      [
+        "1.3",
+        "Isometric Sketching & Curved Features",
+        "lesson-1-3.html"
+      ],
+      [
+        "1.4",
+        "Orthographic Projection & Multiview Sketching",
+        "lesson-1-4.html"
+      ],
+      [
+        "1.5",
+        "Dimensioning & Technical Sketching",
+        "lesson-1-5.html"
+      ],
+      [
+        "1.6",
+        "Measurement, Precision & Tolerances",
+        "lesson-1-6.html"
+      ],
+      [
+        "1.7",
+        "Joining Methods & Assembly Systems",
+        "lesson-1-7.html"
+      ],
+      [
+        "1.8",
+        "Engineering Documentation Challenge",
+        "lesson-1-8.html"
+      ]
     ],
     "2": [
-      ["Activity 2.1.1","Anatomy of an Automated Workcell","activity-2-1-1.html"],["Activity 2.1.2","Workcell Safety & Operating States","activity-2-1-2.html"],["Activity 2.1.3","Optical Sensing & Color Detection","activity-2-1-3.html"],["Activity 2.1.4","Sensor-Based Decision Logic","activity-2-1-4.html"],["Activity 2.1.5","Conveyor Systems & Feedback Control","activity-2-1-5.html"],["Activity 2.1.6","Pneumatics & Automated Actuation","activity-2-1-6.html"],["Project 2.1.7","Automated Sorting Challenge","project-2-1-7.html"],["Activity 2.2.1","Machine Vision & AI Vision Sensor","activity-2-2-1.html"],["Activity 2.2.2","External Sensors: Analog & Digital","activity-2-2-2.html"],["Activity 2.2.3","Sensor Monitoring & Automated Response","activity-2-2-3.html"],["Project 2.2.4","Workcell Handshaking & Verified Movement","project-2-2-4.html"],["Activity 2.3.1","Predictive Maintenance & Motor Health","activity-2-3-1.html"],["Activity 2.3.2","Design of Experiments & Workcell Optimization","activity-2-3-2.html"],["Project 2.3.3","Optimization Impact Study","project-2-3-3.html"],["Problem 2.4.1","Coordinated Workcell System Challenge","problem-2-4-1.html"]
+      [
+        "2.1",
+        "Getting Started with Fusion",
+        "lesson-2-1.html"
+      ],
+      [
+        "2.2",
+        "Sketch Planes and 2D Sketching",
+        "lesson-2-2.html"
+      ],
+      [
+        "2.3",
+        "Sketch Constraints",
+        "lesson-2-3.html"
+      ],
+      [
+        "2.4",
+        "Dimensioned CAD Sketches",
+        "lesson-2-4.html"
+      ],
+      [
+        "2.5",
+        "Creating 3D Parts with Extrude \u2014 Bracket 3",
+        "lesson-2-5.html"
+      ],
+      [
+        "2.6",
+        "Cut Features and Holes \u2014 Bracket 3",
+        "lesson-2-6.html"
+      ],
+      [
+        "2.7",
+        "Fillets, Chamfers, and Design Intent \u2014 Bracket 3",
+        "lesson-2-7.html"
+      ],
+      [
+        "2.8",
+        "Creating Rotational Parts with Revolve",
+        "lesson-2-8.html"
+      ],
+      [
+        "2.9",
+        "Mirror and Pattern Tools",
+        "lesson-2-9.html"
+      ],
+      [
+        "2.10",
+        "Puzzle Cube Concept Design & Sketching",
+        "lesson-2-10.html"
+      ],
+      [
+        "2.11",
+        "Puzzle Cube CAD Modeling",
+        "lesson-2-11.html"
+      ],
+      [
+        "2.12",
+        "Puzzle Cube Technical Drawing & Exploded View",
+        "lesson-2-12.html"
+      ],
+      [
+        "2.13",
+        "Puzzle Cube Manufacturing & Final Verification",
+        "lesson-2-13.html"
+      ],
+      [
+        "2.14",
+        "FabLab 3D Printer Certification",
+        "lesson-2-14.html"
+      ]
     ],
     "3": [
-      ["Activity 3.1.1","Digital Twin Development","activity-3-1-1.html"],["Activity 3.1.2","Virtual World","activity-3-1-2.html"],["Activity 3.1.3","Modeling Kinematics","activity-3-1-3.html"],["Activity 3.1.4","The Right Robot for the Job","activity-3-1-4.html"],["Project 3.1.5","An Incomplete Facility","project-3-1-5.html"],["Activity 3.2.1","Simulation Kinematics","activity-3-2-1.html"],["Activity 3.2.2","Don’t Crash!","activity-3-2-2.html"],["Activity 3.2.3","Conveyor Flow and Motion Control","activity-3-2-3.html"],["Activity 3.2.4","Offline Programming","activity-3-2-4.html"],["Activity 3.2.5","Sorting Silicon Boules","activity-3-2-5.html"],["Activity 3.2.6","Digital Twin Analysis","activity-3-2-6.html"],["Project 3.2.7","Circuit Assembly Challenge","project-3-2-7.html"],["Problem 3.3.1","Factory in Motion","problem-3-3-1.html"]
+      [
+        "3.1",
+        "Revolute Joints & Rotational Motion",
+        "lesson-3-1.html"
+      ],
+      [
+        "3.2",
+        "Slider Joints & Linear Motion",
+        "lesson-3-2.html"
+      ],
+      [
+        "3.3",
+        "Joint Limits & Motion Relationships",
+        "lesson-3-3.html"
+      ],
+      [
+        "3.4",
+        "Multi-Component Mechanical Assemblies",
+        "lesson-3-4.html"
+      ],
+      [
+        "3.5",
+        "Interference, Clearance & Motion Verification",
+        "lesson-3-5.html"
+      ],
+      [
+        "3.6",
+        "Rocket Design Challenge & Concept Development",
+        "lesson-3-6.html"
+      ],
+      [
+        "3.7",
+        "Rocket Component Design & CAD Assembly",
+        "lesson-3-7.html"
+      ],
+      [
+        "3.8",
+        "Digital Assembly Design Review",
+        "lesson-3-8.html"
+      ],
+      [
+        "3.9",
+        "Manufacturing & Fabrication Preparation",
+        "lesson-3-9.html"
+      ],
+      [
+        "3.10",
+        "Physical Rocket Assembly & Fit Testing",
+        "lesson-3-10.html"
+      ],
+      [
+        "3.11",
+        "Engineering Change & Final Revision",
+        "lesson-3-11.html"
+      ],
+      [
+        "3.12",
+        "Assembly Drawing, Exploded View & BOM",
+        "lesson-3-12.html"
+      ],
+      [
+        "3.13",
+        "Flight Readiness Review & Final Design Package",
+        "lesson-3-13.html"
+      ],
+      [
+        "3.14",
+        "Compressed-Air Rocket Flight Test & Post-Flight Review",
+        "lesson-3-14.html"
+      ]
     ],
     "4": [
-      ["Activity 4.1.1","Aerospace Components as Manufactured Systems","activity-4-1-1.html"],["Activity 4.1.2","Aerospace Component Analysis","activity-4-1-2.html"],["Activity 4.1.3","Design for Aerospace Manufacturability","activity-4-1-3.html"],["Activity 4.1.4","Aerospace Manufacturing Calculations","activity-4-1-4.html"],["Project 4.1.5","Aerospace Component Requirements Review","project-4-1-5.html"],["Activity 4.2.1","CNC Mill Anatomy, Safety, and Coordinate Systems","activity-4-2-1.html"],["Activity 4.2.2","G&M Code for Aerospace Manufacturing","activity-4-2-2.html"],["Activity 4.2.3","Manual Toolpath Programming","activity-4-2-3.html"],["Project 4.2.4","Aerospace Toolpath Coding Challenge","project-4-2-4.html"],["Activity 4.3.1","CAD Design of the Aerospace Component","activity-4-3-1.html"],["Activity 4.3.2","Aerospace Component Technical Drawing","activity-4-3-2.html"],["Activity 4.3.3","CAM Setup and Machining Strategy","activity-4-3-3.html"],["Activity 4.3.4","Simulation, Post-Processing, and Production Approval","activity-4-3-4.html"],["Problem 4.3.5","Aerospace Component CNC Manufacturing Challenge","problem-4-3-5.html"]
+      [
+        "4.1",
+        "Unit 4 Challenge Launch: Aerospace Mechanisms, Materials & Electromechanical Systems",
+        "lesson-4-1.html"
+      ],
+      [
+        "4.2",
+        "Aerospace Materials and Material Properties",
+        "lesson-4-2.html"
+      ],
+      [
+        "4.3",
+        "Material Testing Lab",
+        "lesson-4-3.html"
+      ],
+      [
+        "4.4",
+        "Statistics and Measurement Error",
+        "lesson-4-4.html"
+      ],
+      [
+        "4.5",
+        "Mechanisms and Types of Motion",
+        "lesson-4-5.html"
+      ],
+      [
+        "4.6",
+        "Mechanism Exploration: Linkages, Hinges, Cams, Gears, and Pulleys",
+        "lesson-4-6.html"
+      ],
+      [
+        "4.7",
+        "Friction, Force, and Mechanism Performance",
+        "lesson-4-7.html"
+      ],
+      [
+        "4.8",
+        "Motion Graphs and System Behavior",
+        "lesson-4-8.html"
+      ],
+      [
+        "4.9",
+        "Electrical Safety and Simple Circuits",
+        "lesson-4-9.html"
+      ],
+      [
+        "4.10",
+        "Motors and Electromechanical Motion",
+        "lesson-4-10.html"
+      ],
+      [
+        "4.11",
+        "Concept Generation and Decision Matrix",
+        "lesson-4-11.html"
+      ],
+      [
+        "4.12",
+        "System Architecture and Subsystem Planning",
+        "lesson-4-12.html"
+      ],
+      [
+        "4.13",
+        "CAD Planning and Assembly Layout",
+        "lesson-4-13.html"
+      ],
+      [
+        "4.14",
+        "CAD Modeling Workday: Components, Motion, and Fit",
+        "lesson-4-14.html"
+      ],
+      [
+        "4.15",
+        "Prototype Build Day 1: Structure and Mechanism",
+        "lesson-4-15.html"
+      ],
+      [
+        "4.16",
+        "Prototype Build Day 2: Electrical or Electromechanical Integration",
+        "lesson-4-16.html"
+      ],
+      [
+        "4.17",
+        "Testing Protocol Development",
+        "lesson-4-17.html"
+      ],
+      [
+        "4.18",
+        "Prototype Testing and Data Collection",
+        "lesson-4-18.html"
+      ],
+      [
+        "4.19",
+        "Data Analysis, Graphing, and Design Conclusions",
+        "lesson-4-19.html"
+      ],
+      [
+        "4.20",
+        "Iteration and Prototype Revision",
+        "lesson-4-20.html"
+      ],
+      [
+        "4.21",
+        "Final Technical Documentation: Mechanism, Circuit, Data, and Revision",
+        "lesson-4-21.html"
+      ],
+      [
+        "4.22",
+        "Unit 4 Technical Demonstration and Reflection",
+        "lesson-4-22.html"
+      ]
+    ],
+    "5": [
+      [
+        "5.1",
+        "Human-Centered Aerospace Design Capstone Launch",
+        "lesson-5-1.html"
+      ],
+      [
+        "5.2",
+        "Stakeholder Research and User Needs",
+        "lesson-5-2.html"
+      ],
+      [
+        "5.3",
+        "Problem Statement, Criteria, Constraints, and Design Brief",
+        "lesson-5-3.html"
+      ],
+      [
+        "5.4",
+        "Team Norms and Project Management",
+        "lesson-5-4.html"
+      ],
+      [
+        "5.5",
+        "Concept Generation and Human-Centered Ideation",
+        "lesson-5-5.html"
+      ],
+      [
+        "5.6",
+        "Decision Matrix and Final Concept Selection",
+        "lesson-5-6.html"
+      ],
+      [
+        "5.7",
+        "CAD, Fabrication, and Prototype Planning",
+        "lesson-5-7.html"
+      ],
+      [
+        "5.8",
+        "CAD Modeling and Prototype Part Development",
+        "lesson-5-8.html"
+      ],
+      [
+        "5.9",
+        "Prototype Build Day 1: Structure and Core Function",
+        "lesson-5-9.html"
+      ],
+      [
+        "5.10",
+        "Prototype Build Day 2: Integration and Refinement",
+        "lesson-5-10.html"
+      ],
+      [
+        "5.11",
+        "Testing Protocol and User Feedback Plan",
+        "lesson-5-11.html"
+      ],
+      [
+        "5.12",
+        "Prototype Testing and User Feedback",
+        "lesson-5-12.html"
+      ],
+      [
+        "5.13",
+        "Data Analysis and Stakeholder Feedback Review",
+        "lesson-5-13.html"
+      ],
+      [
+        "5.14",
+        "Ethics, Safety, Sustainability, and Life-Cycle Analysis",
+        "lesson-5-14.html"
+      ],
+      [
+        "5.15",
+        "Final Prototype Revision and Refinement",
+        "lesson-5-15.html"
+      ],
+      [
+        "5.16",
+        "Final Engineering Portfolio Workday",
+        "lesson-5-16.html"
+      ],
+      [
+        "5.17",
+        "Final Presentation Preparation and Rehearsal",
+        "lesson-5-17.html"
+      ],
+      [
+        "5.18",
+        "Final Capstone Presentations",
+        "lesson-5-18.html"
+      ]
+    ]
+  },
+  "poe": {
+    "0": [
+      [
+        "0.1",
+        "Engineering for the Mission",
+        "lesson-0-1.html"
+      ],
+      [
+        "0.2",
+        "Engineering Notebook & Documentation Refresher",
+        "lesson-0-2.html"
+      ],
+      [
+        "0.3",
+        "PPE and FabLab Safety",
+        "lesson-0-3.html"
+      ],
+      [
+        "0.4",
+        "CubeSat Challenge: Define & Design",
+        "lesson-0-4.html"
+      ],
+      [
+        "0.5",
+        "Evaluate & Develop",
+        "lesson-0-5.html"
+      ],
+      [
+        "0.6",
+        "CAD & Assembly Design",
+        "lesson-0-6.html"
+      ],
+      [
+        "0.7",
+        "Additive Manufacturing",
+        "lesson-0-7.html"
+      ],
+      [
+        "0.8",
+        "Laser Manufacturing",
+        "lesson-0-8.html"
+      ],
+      [
+        "0.9",
+        "Fabrication & Assembly",
+        "lesson-0-9.html"
+      ],
+      [
+        "0.10",
+        "CubeSat Lightweight Structure Competition",
+        "lesson-0-10.html"
+      ]
+    ],
+    "1": [
+      [
+        "1.1",
+        "Unit Launch: Mechanisms for Space Missions",
+        "lesson-1-1.html"
+      ],
+      [
+        "1.2",
+        "Simple Machines in Aerospace Systems",
+        "lesson-1-2.html"
+      ],
+      [
+        "1.3",
+        "Force, Distance, Work, and Mechanical Advantage",
+        "lesson-1-3.html"
+      ],
+      [
+        "1.4",
+        "Gears and Drive Ratios",
+        "lesson-1-4.html"
+      ],
+      [
+        "1.5",
+        "Pulley Systems and Lifting Mechanisms",
+        "lesson-1-5.html"
+      ],
+      [
+        "1.6",
+        "Sprockets, Chain Drives, and Direction of Motion",
+        "lesson-1-6.html"
+      ],
+      [
+        "1.7",
+        "VEX Build Skills and Mechanism Construction",
+        "lesson-1-7.html"
+      ],
+      [
+        "1.8",
+        "Work, Power, and Efficiency in Mechanical Systems",
+        "lesson-1-8.html"
+      ],
+      [
+        "1.9",
+        "VEX Cargo Lift Engineering Challenge",
+        "lesson-1-9.html"
+      ]
+    ],
+    "2": [
+      [
+        "2.1",
+        "Unit Launch: Built to Survive",
+        "lesson-2-1.html"
+      ],
+      [
+        "2.2",
+        "Forces, Loads, and Aerospace Structures",
+        "lesson-2-2.html"
+      ],
+      [
+        "2.3",
+        "Free Body Diagrams",
+        "lesson-2-3.html"
+      ],
+      [
+        "2.4",
+        "Vectors, Components, and Resultant Forces",
+        "lesson-2-4.html"
+      ],
+      [
+        "2.5",
+        "Moments, Torque, and Structural Rotation",
+        "lesson-2-5.html"
+      ],
+      [
+        "2.6",
+        "Static Equilibrium",
+        "lesson-2-6.html"
+      ],
+      [
+        "2.7",
+        "Trusses and Member Forces",
+        "lesson-2-7.html"
+      ],
+      [
+        "2.8",
+        "Centroids and Structural Cross-Sections",
+        "lesson-2-8.html"
+      ],
+      [
+        "2.9",
+        "Moment of Inertia and Stiffness",
+        "lesson-2-9.html"
+      ],
+      [
+        "2.10",
+        "Aerospace Material Families and Selection",
+        "lesson-2-10.html"
+      ],
+      [
+        "2.11",
+        "Density, Mass, Volume, and Structural Efficiency",
+        "lesson-2-11.html"
+      ],
+      [
+        "2.12",
+        "Non-Destructive Material Testing",
+        "lesson-2-12.html"
+      ],
+      [
+        "2.13",
+        "Destructive Testing and Stress-Strain Behavior",
+        "lesson-2-13.html"
+      ],
+      [
+        "2.14",
+        "Materials Test Lab and Data Collection",
+        "lesson-2-14.html"
+      ],
+      [
+        "2.15",
+        "Design Brief: Aerospace Payload Support Structure",
+        "lesson-2-15.html"
+      ],
+      [
+        "2.16",
+        "Concept Development, Decision Matrix, and Build Plan",
+        "lesson-2-16.html"
+      ],
+      [
+        "2.17",
+        "Prototype Build and Load Testing",
+        "lesson-2-17.html"
+      ],
+      [
+        "2.18",
+        "Data Analysis, Iteration, and Final Design Review",
+        "lesson-2-18.html"
+      ]
+    ],
+    "3": [
+      [
+        "3.1",
+        "Unit Launch: Autonomous Aerospace Systems",
+        "lesson-3-1.html"
+      ],
+      [
+        "3.2",
+        "Control Systems and Mission Logic",
+        "lesson-3-2.html"
+      ],
+      [
+        "3.3",
+        "Flowcharts and Algorithms",
+        "lesson-3-3.html"
+      ],
+      [
+        "3.4",
+        "Inputs, Outputs, and Sensors",
+        "lesson-3-4.html"
+      ],
+      [
+        "3.5",
+        "Open-Loop Rover Control",
+        "lesson-3-5.html"
+      ],
+      [
+        "3.6",
+        "Rover Testing and Debugging",
+        "lesson-3-6.html"
+      ],
+      [
+        "3.7",
+        "Closed-Loop Control and Feedback",
+        "lesson-3-7.html"
+      ],
+      [
+        "3.8",
+        "Sensor Thresholds and Decision Logic",
+        "lesson-3-8.html"
+      ],
+      [
+        "3.9",
+        "VEX Ground Support Systems",
+        "lesson-3-9.html"
+      ],
+      [
+        "3.10",
+        "Motors, Servos, and Actuators",
+        "lesson-3-10.html"
+      ],
+      [
+        "3.11",
+        "Fluid Power in Aerospace Systems",
+        "lesson-3-11.html"
+      ],
+      [
+        "3.12",
+        "Pressure, Force, and Pascal\u2019s Law",
+        "lesson-3-12.html"
+      ],
+      [
+        "3.13",
+        "Fluid Power Design Lab",
+        "lesson-3-13.html"
+      ],
+      [
+        "3.14",
+        "Design Brief: Rover Mission + VEX Ground Support System",
+        "lesson-3-14.html"
+      ],
+      [
+        "3.15",
+        "Mission Planning and System Architecture",
+        "lesson-3-15.html"
+      ],
+      [
+        "3.16",
+        "Build and Program Workday",
+        "lesson-3-16.html"
+      ],
+      [
+        "3.17",
+        "Mission Testing, Data Collection, and Iteration",
+        "lesson-3-17.html"
+      ],
+      [
+        "3.18",
+        "Final Mission Demonstration and Design Review",
+        "lesson-3-18.html"
+      ]
+    ],
+    "4": [
+      [
+        "4.1",
+        "Unit Launch: Mission Performance and Test Data",
+        "lesson-4-1.html"
+      ],
+      [
+        "4.2",
+        "Variables, Measurement, and Trial Design",
+        "lesson-4-2.html"
+      ],
+      [
+        "4.3",
+        "Probability and Reliability in Aerospace Testing",
+        "lesson-4-3.html"
+      ],
+      [
+        "4.4",
+        "Frequency Distributions and Histograms",
+        "lesson-4-4.html"
+      ],
+      [
+        "4.5",
+        "Mean, Median, Mode, and Range",
+        "lesson-4-5.html"
+      ],
+      [
+        "4.6",
+        "Standard Deviation and Design Consistency",
+        "lesson-4-6.html"
+      ],
+      [
+        "4.7",
+        "Data Displays and Engineering Claims",
+        "lesson-4-7.html"
+      ],
+      [
+        "4.8",
+        "Distance, Displacement, Speed, and Velocity",
+        "lesson-4-8.html"
+      ],
+      [
+        "4.9",
+        "Acceleration and Motion Graphs",
+        "lesson-4-9.html"
+      ],
+      [
+        "4.10",
+        "Free Fall and Gravity Drop Testing",
+        "lesson-4-10.html"
+      ],
+      [
+        "4.11",
+        "Projectile Motion: Horizontal and Vertical Components",
+        "lesson-4-11.html"
+      ],
+      [
+        "4.12",
+        "Launch Angle, Range, and Mission Requirements",
+        "lesson-4-12.html"
+      ],
+      [
+        "4.13",
+        "Energy Transfer in Launch and Mission Systems",
+        "lesson-4-13.html"
+      ],
+      [
+        "4.14",
+        "Design Brief: Mission Data Investigation",
+        "lesson-4-14.html"
+      ],
+      [
+        "4.15",
+        "Test Plan and Prediction Development",
+        "lesson-4-15.html"
+      ],
+      [
+        "4.16",
+        "Build, Setup, and Calibration Workday",
+        "lesson-4-16.html"
+      ],
+      [
+        "4.17",
+        "Mission Testing, Data Collection, and Iteration",
+        "lesson-4-17.html"
+      ],
+      [
+        "4.18",
+        "Final Data Analysis and Performance Review",
+        "lesson-4-18.html"
+      ]
+    ],
+    "5": [
+      [
+        "5.1",
+        "Capstone Launch: Aerospace Systems Challenge",
+        "lesson-5-1.html"
+      ],
+      [
+        "5.2",
+        "Mission Problem Selection and Stakeholders",
+        "lesson-5-2.html"
+      ],
+      [
+        "5.3",
+        "Requirements, Criteria, and Constraints",
+        "lesson-5-3.html"
+      ],
+      [
+        "5.4",
+        "Prior Learning Audit: Mechanisms, Structures, Controls, and Data",
+        "lesson-5-4.html"
+      ],
+      [
+        "5.5",
+        "Research and Benchmarking",
+        "lesson-5-5.html"
+      ],
+      [
+        "5.6",
+        "Concept Generation and System Architecture",
+        "lesson-5-6.html"
+      ],
+      [
+        "5.7",
+        "Decision Matrix and Concept Selection",
+        "lesson-5-7.html"
+      ],
+      [
+        "5.8",
+        "Subsystem Planning and Team Roles",
+        "lesson-5-8.html"
+      ],
+      [
+        "5.9",
+        "CAD, Build Plan, and Fabrication Review",
+        "lesson-5-9.html"
+      ],
+      [
+        "5.10",
+        "Prototype Build Day 1: Structure and Mechanism",
+        "lesson-5-10.html"
+      ],
+      [
+        "5.11",
+        "Prototype Build Day 2: Controls, Rover, or Electromechanical Integration",
+        "lesson-5-11.html"
+      ],
+      [
+        "5.12",
+        "Testing Protocol and Risk Review",
+        "lesson-5-12.html"
+      ],
+      [
+        "5.13",
+        "Prototype Testing and Data Collection",
+        "lesson-5-13.html"
+      ],
+      [
+        "5.14",
+        "Data Analysis and Failure Modes",
+        "lesson-5-14.html"
+      ],
+      [
+        "5.15",
+        "Iteration and Design Freeze",
+        "lesson-5-15.html"
+      ],
+      [
+        "5.16",
+        "Final Documentation Package",
+        "lesson-5-16.html"
+      ],
+      [
+        "5.17",
+        "Final Presentation and Demonstration Prep",
+        "lesson-5-17.html"
+      ],
+      [
+        "5.18",
+        "Capstone Design Review and Portfolio Reflection",
+        "lesson-5-18.html"
+      ]
+    ]
+  },
+  "adm": {
+    "1": [
+      [
+        "1.1.1",
+        "Assembly Line",
+        "activity-1-1-1.html"
+      ],
+      [
+        "1.1.2",
+        "6-Axis Arm",
+        "activity-1-1-2.html"
+      ],
+      [
+        "1.1.3",
+        "Pick and Place",
+        "activity-1-1-3.html"
+      ],
+      [
+        "1.1.4",
+        "Coding Movement",
+        "activity-1-1-4.html"
+      ],
+      [
+        "1.1.5",
+        "Controlled Path",
+        "activity-1-1-5.html"
+      ],
+      [
+        "1.1.6",
+        "Shapes",
+        "activity-1-1-6.html"
+      ],
+      [
+        "1.1.7",
+        "Absolute and Relative Movement",
+        "activity-1-1-7.html"
+      ],
+      [
+        "1.1.8",
+        "Decreasing Spirals",
+        "project-1-1-8.html"
+      ],
+      [
+        "1.2.1",
+        "Career Exploration",
+        "activity-1-2-1.html"
+      ],
+      [
+        "1.2.2",
+        "Transporting and Palletizing Objects",
+        "activity-1-2-2.html"
+      ],
+      [
+        "1.2.3",
+        "Stacking Objects",
+        "project-1-2-3.html"
+      ],
+      [
+        "1.3.1",
+        "Flexible Pick-and-Pallet Automation",
+        "problem-1-3-1.html"
+      ]
+    ],
+    "2": [
+      [
+        "2.1.1",
+        "Anatomy of an Automated Workcell",
+        "activity-2-1-1.html"
+      ],
+      [
+        "2.1.2",
+        "Workcell Safety & Operating States",
+        "activity-2-1-2.html"
+      ],
+      [
+        "2.1.3",
+        "Optical Sensing & Color Detection",
+        "activity-2-1-3.html"
+      ],
+      [
+        "2.1.4",
+        "Sensor-Based Decision Logic",
+        "activity-2-1-4.html"
+      ],
+      [
+        "2.1.5",
+        "Conveyor Systems & Feedback Control",
+        "activity-2-1-5.html"
+      ],
+      [
+        "2.1.6",
+        "Pneumatics & Automated Actuation",
+        "activity-2-1-6.html"
+      ],
+      [
+        "2.1.7",
+        "Automated Sorting Challenge",
+        "project-2-1-7.html"
+      ],
+      [
+        "2.2.1",
+        "Machine Vision & AI Vision Sensor",
+        "activity-2-2-1.html"
+      ],
+      [
+        "2.2.2",
+        "External Sensors: Analog & Digital",
+        "activity-2-2-2.html"
+      ],
+      [
+        "2.2.3",
+        "Sensor Monitoring & Automated Response",
+        "activity-2-2-3.html"
+      ],
+      [
+        "2.2.4",
+        "Workcell Handshaking & Verified Movement",
+        "project-2-2-4.html"
+      ],
+      [
+        "2.3.1",
+        "Predictive Maintenance & Motor Health",
+        "activity-2-3-1.html"
+      ],
+      [
+        "2.3.2",
+        "Design of Experiments & Workcell Optimization",
+        "activity-2-3-2.html"
+      ],
+      [
+        "2.3.3",
+        "Optimization Impact Study",
+        "project-2-3-3.html"
+      ],
+      [
+        "2.4.1",
+        "Coordinated Workcell System Challenge",
+        "problem-2-4-1.html"
+      ]
+    ],
+    "3": [
+      [
+        "3.1.1",
+        "Digital Twin Development",
+        "activity-3-1-1.html"
+      ],
+      [
+        "3.1.2",
+        "Virtual World",
+        "activity-3-1-2.html"
+      ],
+      [
+        "3.1.3",
+        "Modeling Kinematics",
+        "activity-3-1-3.html"
+      ],
+      [
+        "3.1.4",
+        "The Right Robot for the Job",
+        "activity-3-1-4.html"
+      ],
+      [
+        "3.1.5",
+        "An Incomplete Facility",
+        "project-3-1-5.html"
+      ],
+      [
+        "3.2.1",
+        "Simulation Kinematics",
+        "activity-3-2-1.html"
+      ],
+      [
+        "3.2.2",
+        "Don\u2019t Crash!",
+        "activity-3-2-2.html"
+      ],
+      [
+        "3.2.3",
+        "Conveyor Flow and Motion Control",
+        "activity-3-2-3.html"
+      ],
+      [
+        "3.2.4",
+        "Offline Programming",
+        "activity-3-2-4.html"
+      ],
+      [
+        "3.2.5",
+        "Sorting Silicon Boules",
+        "activity-3-2-5.html"
+      ],
+      [
+        "3.2.6",
+        "Digital Twin Analysis",
+        "activity-3-2-6.html"
+      ],
+      [
+        "3.2.7",
+        "Circuit Assembly Challenge",
+        "project-3-2-7.html"
+      ],
+      [
+        "3.3.1",
+        "Factory in Motion",
+        "problem-3-3-1.html"
+      ]
+    ],
+    "4": [
+      [
+        "4.1.1",
+        "Aerospace Components as Manufactured Systems",
+        "activity-4-1-1.html"
+      ],
+      [
+        "4.1.2",
+        "Aerospace Component Analysis",
+        "activity-4-1-2.html"
+      ],
+      [
+        "4.1.3",
+        "Design for Aerospace Manufacturability",
+        "activity-4-1-3.html"
+      ],
+      [
+        "4.1.4",
+        "Aerospace Manufacturing Calculations",
+        "activity-4-1-4.html"
+      ],
+      [
+        "4.1.5",
+        "Aerospace Component Requirements Review",
+        "project-4-1-5.html"
+      ],
+      [
+        "4.2.1",
+        "CNC Mill Anatomy, Safety, and Coordinate Systems",
+        "activity-4-2-1.html"
+      ],
+      [
+        "4.2.2",
+        "G&M Code for Aerospace Manufacturing",
+        "activity-4-2-2.html"
+      ],
+      [
+        "4.2.3",
+        "Manual Toolpath Programming",
+        "activity-4-2-3.html"
+      ],
+      [
+        "4.2.4",
+        "Aerospace Toolpath Coding Challenge",
+        "project-4-2-4.html"
+      ],
+      [
+        "4.3.1",
+        "CAD Design of the Aerospace Component",
+        "activity-4-3-1.html"
+      ],
+      [
+        "4.3.2",
+        "Aerospace Component Technical Drawing",
+        "activity-4-3-2.html"
+      ],
+      [
+        "4.3.3",
+        "CAM Setup and Machining Strategy",
+        "activity-4-3-3.html"
+      ],
+      [
+        "4.3.4",
+        "Simulation, Post-Processing, and Production Approval",
+        "activity-4-3-4.html"
+      ],
+      [
+        "4.3.5",
+        "Aerospace Component CNC Manufacturing Challenge",
+        "problem-4-3-5.html"
+      ]
     ]
   }
 };
-/* Central lesson metadata used by automatic lesson navigation. */

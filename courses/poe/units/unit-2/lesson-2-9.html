@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>POE 2.9 | Advanced Truss Analysis — Learning Studio | LockwoodSTEM</title>
-<meta name="description" content="Master zero-force members and the method of sections using engineering diagrams, Jeff Hanson video tutorials, a complete five-joint worked example and an interactive truss analysis model."/>
-<link href="../../../../assets/css/styles.css" rel="stylesheet"/>
-<link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet"/>
-<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet"/>
-<link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet"/>
-<script defer src="../../../../assets/js/main.js"></script>
+<meta name="description" content="Master zero-force members and the method of sections using engineering diagrams, Jeff Hanson video tutorials, a complete five-joint worked example and an interactive truss analysis model.">
+<link href="../../../../assets/css/styles.css" rel="stylesheet">
+<link href="../../../../assets/css/unit-lesson-immersive.css?v=20260720-readability-v2" rel="stylesheet">
+<link href="../../../../assets/css/content-alignment.css?v=20260727-v1" rel="stylesheet">
+<link href="../../../../assets/css/poe-unit2-bridge.css?v=20261014-v1" rel="stylesheet">
+<script defer src="../../../../assets/js/main.js?v=20261028-final"></script>
 <style id="poe29-learning-studio">
 html{scroll-behavior:smooth}
 .poe29{--ink:#092940;--blue:#0b567e;--aqua:#147f88;--gold:#e2ac37;--edge:#cadbe7}
@@ -330,13 +330,13 @@ html{scroll-behavior:smooth}
 @media(max-width:960px){.poe29 .poe29-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.poe29 .poe29-flow,.poe29 .poe29-stats{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.poe29 #liveTruss [data-id]{transition:none}}
-</style></head>
+</style><link rel="stylesheet" href="../../../../assets/css/student-experience.css?v=20261028-final"><script defer src="../../../../assets/js/student-experience.js?v=20261028-final"></script></head>
 <body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
 <a class="skip-link" href="#main">Skip to main content</a>
-<header class="site-header"><div class="container nav"><a class="brand" aria-label="LockwoodSTEM home" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
+<header class="site-header"><div class="container nav"><a class="brand" aria-label="LockwoodSTEM home" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
 <main class="poe29" id="main">
 <nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.9</li></ol></nav>
-<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img src="../../../../assets/img/course-icons/poe-course-icon.png" alt="POE course icon" class="lesson-course-icon"/><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.9</div><h1>Advanced Truss Analysis</h1><p class="focus-question"><strong>Engineering question:</strong> How can we find forces in selected members of a larger truss without calculating every joint first?</p>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img src="../../../../assets/img/course-icons/poe-course-icon.png" alt="POE course icon" class="lesson-course-icon"><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.9</div><h1>Advanced Truss Analysis</h1><p class="focus-question"><strong>Engineering question:</strong> How can we find forces in selected members of a larger truss without calculating every joint first?</p>
 <div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#watch">Watch Videos</a><a class="btn secondary" href="#worked">Worked Section Cut</a><a class="btn secondary" href="#explore">Interactive Truss</a><a class="btn secondary" href="#practice">Practice</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
 <aside class="mission-panel"><span class="tag">Inspect • Cut • Calculate • Verify</span><h2>Solve smarter, not just longer.</h2><p>Build on the method of joints from 2.8. First spot zero-force members, then use the <strong>method of sections</strong> to find important forces efficiently.</p><p><strong>Bring:</strong> calculator in degree mode, ruler, engineering notebook or the 2.9 classwork/homework worksheet.</p></aside></div></section>
 <section class="container lesson-section" id="start"><div class="poe29-section-header"><div class="poe29-eyebrow">Your learning pathway</div><h2>What you'll be able to do</h2><p>Follow the learning modules in order. This lesson adds strategy and larger structures—not a new set of physical fabrication requirements.</p></div>
@@ -348,20 +348,20 @@ html{scroll-behavior:smooth}
 <div class="poe29-badges"><span>Whole truss: 3 equilibrium equations</span><span>One 2D joint: 2 equations</span><span>One 2D cut: 3 equations</span></div>
 <p class="poe29-note"><strong>Important nuance:</strong> A section cut crossing three unknown member forces is the standard starting point, but <em>three equations do not guarantee a solution</em>. If the unknown lines of action are arranged so that the equations are dependent, choose another cut or combine methods.</p></section>
 <section class="container lesson-section" id="zero"><div class="poe29-section-header"><div class="poe29-eyebrow">02 / Inspect before calculating</div><h2>Two zero-force-member rules</h2><p>These rules apply to ideal pin-jointed trusses with <strong>no applied external load or support reaction at the examined joint</strong>. The result is specific to that loading arrangement.</p></div>
-<div class="poe29-grid"><article class="poe29-panel"><span class="poe29-pill">Rule 1</span><h3>Two noncollinear members at an unloaded joint</h3><svg class="poe29-illustration" id="ruleOneDiagram" viewBox="0 0 760 350" role="img" aria-label="Unloaded joint J attached to exactly two noncollinear members JA and JB. Both have zero axial force for this ideal truss joint because x and y equilibrium require them both zero.">
-<circle cx="346" cy="100" r="9" fill="#174363"/>
-<path d="M346 100L180 284 M346 100L512 284" class="poe29-solid"/>
-<circle cx="180" cy="284" r="7" fill="#204865"/><circle cx="512" cy="284" r="7" fill="#204865"/>
+<div class="poe29-grid"><article class="poe29-panel"><span class="poe29-pill">Rule 1</span><h3>Two noncollinear members at an unloaded joint</h3><svg class="poe29-illustration" id="ruleOneDiagram" viewbox="0 0 760 350" role="img" aria-label="Unloaded joint J attached to exactly two noncollinear members JA and JB. Both have zero axial force for this ideal truss joint because x and y equilibrium require them both zero.">
+<circle cx="346" cy="100" r="9" fill="#174363"></circle>
+<path d="M346 100L180 284 M346 100L512 284" class="poe29-solid"></path>
+<circle cx="180" cy="284" r="7" fill="#204865"></circle><circle cx="512" cy="284" r="7" fill="#204865"></circle>
 <text x="357" y="92" class="poe29-label">J · no external force</text><text x="151" y="306" class="poe29-label">A</text><text x="522" y="306" class="poe29-label">B</text>
 <text x="95" y="163" class="poe29-label">JA = 0 N</text><text x="496" y="163" class="poe29-label">JB = 0 N</text>
 <text x="347" y="331" text-anchor="middle" class="poe29-small">Exactly two noncollinear members at unloaded, unsupported joint J</text>
 </svg>
 <p>If a joint connects only two noncollinear members and has no external load or reaction, their forces must both be <strong>0 N</strong>. Otherwise, they could not balance in two perpendicular directions.</p>
 <div class="poe29-equation">F<sub>JA</sub> = F<sub>JB</sub> = 0 N</div></article>
-<article class="poe29-panel"><span class="poe29-pill gold">Rule 2</span><h3>Three members; two lie on one line</h3><svg class="poe29-illustration" id="ruleTwoDiagram" viewBox="0 0 760 350" role="img" aria-label="Unloaded joint J with horizontal collinear members AJ and JB and third vertical noncollinear member JC. Member JC is zero force for this loading condition.">
-<path d="M115 230H605M360 230V65" class="poe29-solid"/>
-<circle cx="360" cy="230" r="9" fill="#174363"/>
-<circle cx="115" cy="230" r="7" fill="#174363"/><circle cx="605" cy="230" r="7" fill="#174363"/><circle cx="360" cy="65" r="7" fill="#174363"/>
+<article class="poe29-panel"><span class="poe29-pill gold">Rule 2</span><h3>Three members; two lie on one line</h3><svg class="poe29-illustration" id="ruleTwoDiagram" viewbox="0 0 760 350" role="img" aria-label="Unloaded joint J with horizontal collinear members AJ and JB and third vertical noncollinear member JC. Member JC is zero force for this loading condition.">
+<path d="M115 230H605M360 230V65" class="poe29-solid"></path>
+<circle cx="360" cy="230" r="9" fill="#174363"></circle>
+<circle cx="115" cy="230" r="7" fill="#174363"></circle><circle cx="605" cy="230" r="7" fill="#174363"></circle><circle cx="360" cy="65" r="7" fill="#174363"></circle>
 <text x="90" y="256" class="poe29-label">A</text><text x="610" y="256" class="poe29-label">B</text><text x="375" y="244" class="poe29-label">J</text><text x="370" y="61" class="poe29-label">C</text>
 <text x="412" y="131" class="poe29-label">JC = 0 N</text>
 <text x="346" y="318" text-anchor="middle" class="poe29-small">AJ and JB are collinear; no external force or reaction at J</text>
@@ -380,12 +380,12 @@ html{scroll-behavior:smooth}
 </div>
 <p class="poe29-mini">Videos contain longer university-level examples. You can complete this POE lesson using the simpler worked truss below.</p></section>
 <section class="container lesson-section" id="worked"><div class="poe29-section-header"><div class="poe29-eyebrow">05 / Full worked example</div><h2>Find forces in three selected members</h2><p>Analyze an ideal five-joint, seven-member truss. The bottom joints A–B–C are at (0,0), (2,0) and (4,0) m. Top joints D and E are at (1,2) and (3,2) m. Pin A, roller C; downward loads <strong>120 N at D</strong> and <strong>80 N at E</strong>. Neglect member weight.</p></div>
-<svg class="poe29-illustration" id="trussOverview" viewBox="0 0 760 390" role="img" aria-label="Five-joint planar truss. Pin A at x=0, joint B x=2 and roller C at x=4 on a bottom line. Upper D at x=1 y=2 and E at x=3 y=2. Members AB BC AD DB BE EC DE. Loads D=120 N and E=80 N downward, reactions A=110 N and C=90 N upward. Dashed section cut at x=2.5 crosses DE, BE and BC.">
-<defs><marker id="ovdown" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c37529"/></marker><marker id="ovup" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0c8c94"/></marker><marker id="ovmember" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#275b82"/></marker></defs><line x1="90" y1="280" x2="310" y2="280" class="poe29-member" data-id="AB"/><line x1="310" y1="280" x2="530" y2="280" class="poe29-member" data-id="BC"/><line x1="90" y1="280" x2="200" y2="100" class="poe29-member" data-id="AD"/><line x1="200" y1="100" x2="310" y2="280" class="poe29-member" data-id="DB"/><line x1="310" y1="280" x2="420" y2="100" class="poe29-member" data-id="BE"/><line x1="420" y1="100" x2="530" y2="280" class="poe29-member" data-id="EC"/><line x1="200" y1="100" x2="420" y2="100" class="poe29-member" data-id="DE"/><circle cx="90" cy="280" r="8" fill="#173c5d"/><text x="98" y="302" class="poe29-label">A</text><circle cx="310" cy="280" r="8" fill="#173c5d"/><text x="318" y="302" class="poe29-label">B</text><circle cx="530" cy="280" r="8" fill="#173c5d"/><text x="538" y="302" class="poe29-label">C</text><circle cx="200" cy="100" r="8" fill="#173c5d"/><text x="208" y="86" class="poe29-label">D</text><circle cx="420" cy="100" r="8" fill="#173c5d"/><text x="428" y="86" class="poe29-label">E</text>
-<path d="M200 24V84 M420 24V84" class="poe29-load" marker-end="url(#ovdown)"/>
-<path d="M90 367V295M530 367V295" class="poe29-react" marker-end="url(#ovup)"/>
-<path d="M90 287L68 323H112Z" fill="#d8e9f4" stroke="#2b5575" stroke-width="2"/><circle cx="530" cy="311" r="10" fill="#d8e9f4" stroke="#2b5575" stroke-width="2"/><path d="M506 323H554" stroke="#55788b" stroke-width="2"/>
-<path d="M365 72V310" stroke="#d5a42c" stroke-width="2.6" stroke-dasharray="8 6"/>
+<svg class="poe29-illustration" id="trussOverview" viewbox="0 0 760 390" role="img" aria-label="Five-joint planar truss. Pin A at x=0, joint B x=2 and roller C at x=4 on a bottom line. Upper D at x=1 y=2 and E at x=3 y=2. Members AB BC AD DB BE EC DE. Loads D=120 N and E=80 N downward, reactions A=110 N and C=90 N upward. Dashed section cut at x=2.5 crosses DE, BE and BC.">
+<defs><marker id="ovdown" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c37529"></path></marker><marker id="ovup" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0c8c94"></path></marker><marker id="ovmember" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#275b82"></path></marker></defs><line x1="90" y1="280" x2="310" y2="280" class="poe29-member" data-id="AB"></line><line x1="310" y1="280" x2="530" y2="280" class="poe29-member" data-id="BC"></line><line x1="90" y1="280" x2="200" y2="100" class="poe29-member" data-id="AD"></line><line x1="200" y1="100" x2="310" y2="280" class="poe29-member" data-id="DB"></line><line x1="310" y1="280" x2="420" y2="100" class="poe29-member" data-id="BE"></line><line x1="420" y1="100" x2="530" y2="280" class="poe29-member" data-id="EC"></line><line x1="200" y1="100" x2="420" y2="100" class="poe29-member" data-id="DE"></line><circle cx="90" cy="280" r="8" fill="#173c5d"></circle><text x="98" y="302" class="poe29-label">A</text><circle cx="310" cy="280" r="8" fill="#173c5d"></circle><text x="318" y="302" class="poe29-label">B</text><circle cx="530" cy="280" r="8" fill="#173c5d"></circle><text x="538" y="302" class="poe29-label">C</text><circle cx="200" cy="100" r="8" fill="#173c5d"></circle><text x="208" y="86" class="poe29-label">D</text><circle cx="420" cy="100" r="8" fill="#173c5d"></circle><text x="428" y="86" class="poe29-label">E</text>
+<path d="M200 24V84 M420 24V84" class="poe29-load" marker-end="url(#ovdown)"></path>
+<path d="M90 367V295M530 367V295" class="poe29-react" marker-end="url(#ovup)"></path>
+<path d="M90 287L68 323H112Z" fill="#d8e9f4" stroke="#2b5575" stroke-width="2"></path><circle cx="530" cy="311" r="10" fill="#d8e9f4" stroke="#2b5575" stroke-width="2"></circle><path d="M506 323H554" stroke="#55788b" stroke-width="2"></path>
+<path d="M365 72V310" stroke="#d5a42c" stroke-width="2.6" stroke-dasharray="8 6"></path>
 <text x="180" y="18" class="poe29-label">120 N</text><text x="404" y="18" class="poe29-label">80 N</text><text x="26" y="377" class="poe29-label">Aᵧ 110 N</text><text x="541" y="377" class="poe29-label">Cᵧ 90 N</text>
 <text x="375" y="92" class="poe29-small">Cut S–S</text><text x="375" y="212" class="poe29-small">3 members</text>
 <text x="310" y="343" text-anchor="middle" class="poe29-small">A–B = 2 m · B–C = 2 m · D/E = 2 m above base</text>
@@ -399,19 +399,19 @@ html{scroll-behavior:smooth}
 <p>Both reactions add to 200 N, the total downward load.</p></article>
 <article class="poe29-panel"><span class="poe29-pill gold">Step 2 · Choose a useful cut</span><h3>Cut DE, BE and BC</h3><p>The vertical yellow line crosses <strong>DE, BE and BC</strong>—three members. Keep the <strong>right side</strong>, with joints E and C, because it contains only one applied load (80 N) and one known reaction (90 N).</p>
 <p>Assume unknown axial forces are tensile, pulling away from the right-hand section and toward the removed left-hand material.</p><p class="poe29-mini">Coordinates: E = (3,2), C = (4,0), B = (2,0). For member BE, the vector from E toward B is (−1, −2), of length √5 m.</p></article></div>
-<div class="poe29-panel" style="margin-top:1rem"><h3>Step 3 · Draw the right-hand section FBD</h3><svg class="poe29-illustration" id="cutFbd" viewBox="0 0 760 395" role="img" aria-label="Method of sections free-body diagram of right-hand piece containing joints E and C, with E 2 m above and 1 m left of C. E carries an 80 N downward load, C has 90 N upward reaction. Cut members DE and BC have assumed tensile forces leftwards, and BE has assumed tensile force diagonally down-left from E.">
-<defs><marker id="rdown" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c37529"/></marker><marker id="rup" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0c8c94"/></marker><marker id="rmember" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#275b82"/></marker></defs>
-<line x1="268" y1="100" x2="416" y2="282" class="poe29-solid"/>
-<circle cx="268" cy="100" r="8" fill="#164268"/><circle cx="416" cy="282" r="8" fill="#164268"/>
-<path d="M268 20V84" class="poe29-load" marker-end="url(#rdown)"/>
-<path d="M416 353V297" class="poe29-react" marker-end="url(#rup)"/>
-<path d="M268 100H125" class="poe29-force" marker-end="url(#rmember)"/>
-<path d="M268 100L196 244" class="poe29-force" marker-end="url(#rmember)"/>
-<path d="M416 282H300" class="poe29-force" marker-end="url(#rmember)"/>
+<div class="poe29-panel" style="margin-top:1rem"><h3>Step 3 · Draw the right-hand section FBD</h3><svg class="poe29-illustration" id="cutFbd" viewbox="0 0 760 395" role="img" aria-label="Method of sections free-body diagram of right-hand piece containing joints E and C, with E 2 m above and 1 m left of C. E carries an 80 N downward load, C has 90 N upward reaction. Cut members DE and BC have assumed tensile forces leftwards, and BE has assumed tensile force diagonally down-left from E.">
+<defs><marker id="rdown" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c37529"></path></marker><marker id="rup" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0c8c94"></path></marker><marker id="rmember" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#275b82"></path></marker></defs>
+<line x1="268" y1="100" x2="416" y2="282" class="poe29-solid"></line>
+<circle cx="268" cy="100" r="8" fill="#164268"></circle><circle cx="416" cy="282" r="8" fill="#164268"></circle>
+<path d="M268 20V84" class="poe29-load" marker-end="url(#rdown)"></path>
+<path d="M416 353V297" class="poe29-react" marker-end="url(#rup)"></path>
+<path d="M268 100H125" class="poe29-force" marker-end="url(#rmember)"></path>
+<path d="M268 100L196 244" class="poe29-force" marker-end="url(#rmember)"></path>
+<path d="M416 282H300" class="poe29-force" marker-end="url(#rmember)"></path>
 <text x="280" y="28" class="poe29-label">P_E = 80 N</text><text x="424" y="355" class="poe29-label">Cᵧ = 90 N</text>
 <text x="82" y="88" class="poe29-label">F_DE ←</text><text x="112" y="242" class="poe29-label">F_BE (down-left)</text><text x="276" y="275" class="poe29-label">F_BC ←</text>
 <text x="284" y="100" class="poe29-label">E</text><text x="431" y="282" class="poe29-label">C</text>
-<path d="M268 122V143M416 287V322M268 134H416" class="poe29-dimension"/>
+<path d="M268 122V143M416 287V322M268 134H416" class="poe29-dimension"></path>
 <text x="343" y="151" text-anchor="middle" class="poe29-small">1.0 m horizontal</text>
 <text x="580" y="169" class="poe29-label">BE slope:</text><text x="580" y="193" class="poe29-small">1 m horizontal</text><text x="580" y="209" class="poe29-small">2 m vertical</text><text x="580" y="235" class="poe29-small">cosθ = 1/√5</text><text x="580" y="252" class="poe29-small">sinθ = 2/√5</text>
 <text x="20" y="375" class="poe29-small">Blue arrows are assumed tension forces on the isolated right-hand piece.</text>
@@ -435,13 +435,13 @@ html{scroll-behavior:smooth}
 <p>Thus F<sub>AD</sub> = <strong>−55√5 ≈ −122.98 N</strong> compression.</p>
 <div class="poe29-equation">ΣFₓ = F<sub>AB</sub> +(1/√5)F<sub>AD</sub> = 0</div>
 <p>Thus F<sub>AB</sub> = <strong>+55.00 N</strong> tension.</p><p>Continue at joint B to verify the section results.</p></article>
-<article class="poe29-panel"><h3>Joint B: a consistency check</h3><svg class="poe29-illustration" id="jointBCheck" viewBox="0 0 760 355" role="img" aria-label="Joint B of five-joint truss showing AB 55 N left, BC 45 N right, DB compression of 11.18 N acting down-right, and BE tension of 11.18 N acting up-right; horizontal and vertical components cancel.">
-<defs><marker id="bjdown" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c37529"/></marker><marker id="bjup" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0c8c94"/></marker><marker id="bjmember" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#275b82"/></marker></defs>
-<circle cx="338" cy="165" r="10" fill="#164268"/>
-<path d="M338 165H153" stroke="#128b77" stroke-width="4.5" marker-end="url(#bjup)"/>
-<path d="M338 165H488" stroke="#128b77" stroke-width="4.5"/>
-<path d="M338 165L402 269" class="poe29-load" marker-end="url(#bjdown)"/>
-<path d="M338 165L402 60" class="poe29-react" marker-end="url(#bjup)"/>
+<article class="poe29-panel"><h3>Joint B: a consistency check</h3><svg class="poe29-illustration" id="jointBCheck" viewbox="0 0 760 355" role="img" aria-label="Joint B of five-joint truss showing AB 55 N left, BC 45 N right, DB compression of 11.18 N acting down-right, and BE tension of 11.18 N acting up-right; horizontal and vertical components cancel.">
+<defs><marker id="bjdown" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c37529"></path></marker><marker id="bjup" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0c8c94"></path></marker><marker id="bjmember" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#275b82"></path></marker></defs>
+<circle cx="338" cy="165" r="10" fill="#164268"></circle>
+<path d="M338 165H153" stroke="#128b77" stroke-width="4.5" marker-end="url(#bjup)"></path>
+<path d="M338 165H488" stroke="#128b77" stroke-width="4.5"></path>
+<path d="M338 165L402 269" class="poe29-load" marker-end="url(#bjdown)"></path>
+<path d="M338 165L402 60" class="poe29-react" marker-end="url(#bjup)"></path>
 <text x="83" y="140" class="poe29-label">AB: 55 N ←</text><text x="493" y="170" class="poe29-label">BC: 45 N →</text>
 <text x="414" y="66" class="poe29-label">BE: 11.18 N (T)</text>
 <text x="415" y="278" class="poe29-label">BD: 11.18 N (C)</text>
@@ -453,21 +453,21 @@ html{scroll-behavior:smooth}
 <div class="poe29-note" style="margin-top:1rem"><strong>Determinacy check:</strong> j = 5 joints, m = 7 members, r = 3 external reaction components, so m + r = 7 + 3 = 10 = 2j. This is a <em>necessary</em> count for an ordinary determinate planar truss; it does not alone prove stability or detect every geometric mechanism.</div></section>
 <section class="container lesson-section" id="explore"><div class="poe29-section-header"><div class="poe29-eyebrow">07 / Interactive truss investigation</div><h2>Move the loads. Watch the members change.</h2><p>Keep geometry fixed and change either downward joint load. Select stages to see the section cut and examine the selected member-force calculation. Pay special attention to <strong>BE</strong>, which can change from tension to compression as the load distribution changes.</p></div>
 <div class="poe29-interactive"><div class="poe29-grid"><article class="poe29-panel">
-<div class="poe29-control"><label for="loadD">Load at D <output id="loadDText">120 N</output></label><input id="loadD" type="range" min="20" max="180" step="10" value="120"/></div>
-<div class="poe29-control"><label for="loadE">Load at E <output id="loadEText">80 N</output></label><input id="loadE" type="range" min="20" max="180" step="10" value="80"/></div>
+<div class="poe29-control"><label for="loadD">Load at D <output id="loadDText">120 N</output></label><input id="loadD" type="range" min="20" max="180" step="10" value="120"></div>
+<div class="poe29-control"><label for="loadE">Load at E <output id="loadEText">80 N</output></label><input id="loadE" type="range" min="20" max="180" step="10" value="80"></div>
 <div class="poe29-stats"><div><strong id="outAy">110.00 N</strong><span>Left reaction Aᵧ (up)</span></div><div><strong id="outCy">90.00 N</strong><span>Right reaction Cᵧ (up)</span></div><div><strong id="outBC">+45.00 N (T)</strong><span>Member BC</span></div><div><strong id="outBE">+11.18 N (T)</strong><span>Member BE</span></div><div><strong id="outDE">−50.00 N (C)</strong><span>Member DE</span></div><div><strong id="outBalance">0.00 N</strong><span>Vertical force residual</span></div></div>
 <p id="interactiveHint" class="poe29-learning-card" aria-live="polite">Load at D is larger, so BE is in tension.</p>
 <button id="resetLoads" type="button" class="btn secondary">Reset to worked example</button></article>
-<article class="poe29-panel"><h3>Live truss and section cut</h3><svg class="poe29-illustration" id="liveTruss" viewBox="0 0 760 390" role="img" aria-label="Interactive five-joint truss with joint loads at D and E, reactions at A and C and highlighted section cut passing through DE BE and BC.">
-<defs><marker id="lidown" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c37529"/></marker><marker id="liup" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0c8c94"/></marker><marker id="limember" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#275b82"/></marker></defs>
-<g id="liveMembers"><line x1="90" y1="280" x2="310" y2="280" class="poe29-member" data-id="AB"/><line x1="310" y1="280" x2="530" y2="280" class="poe29-member" data-id="BC"/><line x1="90" y1="280" x2="200" y2="100" class="poe29-member" data-id="AD"/><line x1="200" y1="100" x2="310" y2="280" class="poe29-member" data-id="DB"/><line x1="310" y1="280" x2="420" y2="100" class="poe29-member" data-id="BE"/><line x1="420" y1="100" x2="530" y2="280" class="poe29-member" data-id="EC"/><line x1="200" y1="100" x2="420" y2="100" class="poe29-member" data-id="DE"/><circle cx="90" cy="280" r="8" fill="#173c5d"/><text x="98" y="302" class="poe29-label">A</text><circle cx="310" cy="280" r="8" fill="#173c5d"/><text x="318" y="302" class="poe29-label">B</text><circle cx="530" cy="280" r="8" fill="#173c5d"/><text x="538" y="302" class="poe29-label">C</text><circle cx="200" cy="100" r="8" fill="#173c5d"/><text x="208" y="86" class="poe29-label">D</text><circle cx="420" cy="100" r="8" fill="#173c5d"/><text x="428" y="86" class="poe29-label">E</text></g>
+<article class="poe29-panel"><h3>Live truss and section cut</h3><svg class="poe29-illustration" id="liveTruss" viewbox="0 0 760 390" role="img" aria-label="Interactive five-joint truss with joint loads at D and E, reactions at A and C and highlighted section cut passing through DE BE and BC.">
+<defs><marker id="lidown" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c37529"></path></marker><marker id="liup" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0c8c94"></path></marker><marker id="limember" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#275b82"></path></marker></defs>
+<g id="liveMembers"><line x1="90" y1="280" x2="310" y2="280" class="poe29-member" data-id="AB"></line><line x1="310" y1="280" x2="530" y2="280" class="poe29-member" data-id="BC"></line><line x1="90" y1="280" x2="200" y2="100" class="poe29-member" data-id="AD"></line><line x1="200" y1="100" x2="310" y2="280" class="poe29-member" data-id="DB"></line><line x1="310" y1="280" x2="420" y2="100" class="poe29-member" data-id="BE"></line><line x1="420" y1="100" x2="530" y2="280" class="poe29-member" data-id="EC"></line><line x1="200" y1="100" x2="420" y2="100" class="poe29-member" data-id="DE"></line><circle cx="90" cy="280" r="8" fill="#173c5d"></circle><text x="98" y="302" class="poe29-label">A</text><circle cx="310" cy="280" r="8" fill="#173c5d"></circle><text x="318" y="302" class="poe29-label">B</text><circle cx="530" cy="280" r="8" fill="#173c5d"></circle><text x="538" y="302" class="poe29-label">C</text><circle cx="200" cy="100" r="8" fill="#173c5d"></circle><text x="208" y="86" class="poe29-label">D</text><circle cx="420" cy="100" r="8" fill="#173c5d"></circle><text x="428" y="86" class="poe29-label">E</text></g>
 <g id="liveExternal">
-<path d="M200 24V85 M420 24V85" class="poe29-load" marker-end="url(#lidown)"/>
-<path d="M90 370V297 M530 370V297" class="poe29-react" marker-end="url(#liup)"/>
-<path d="M90 287L68 323H112Z" fill="#d8e9f4" stroke="#2b5575" stroke-width="2"/>
-<circle cx="530" cy="311" r="10" fill="#d8e9f4" stroke="#2b5575" stroke-width="2"/><path d="M506 323H554" stroke="#55788b" stroke-width="2"/>
+<path d="M200 24V85 M420 24V85" class="poe29-load" marker-end="url(#lidown)"></path>
+<path d="M90 370V297 M530 370V297" class="poe29-react" marker-end="url(#liup)"></path>
+<path d="M90 287L68 323H112Z" fill="#d8e9f4" stroke="#2b5575" stroke-width="2"></path>
+<circle cx="530" cy="311" r="10" fill="#d8e9f4" stroke="#2b5575" stroke-width="2"></circle><path d="M506 323H554" stroke="#55788b" stroke-width="2"></path>
 </g>
-<path id="cutLine" d="M365 66V317" stroke="#cd9d25" stroke-width="3.5" stroke-dasharray="8 5" style="display:none"/>
+<path id="cutLine" d="M365 66V317" stroke="#cd9d25" stroke-width="3.5" stroke-dasharray="8 5" style="display:none"></path>
 <text id="liveD" x="151" y="18" class="poe29-label">D: 120 N ↓</text><text id="liveE" x="388" y="18" class="poe29-label">E: 80 N ↓</text>
 <text id="liveA" x="5" y="380" class="poe29-label">Aᵧ = 110 N</text>
 <text id="liveC" x="541" y="380" class="poe29-label">Cᵧ = 90 N</text>
@@ -499,7 +499,7 @@ html{scroll-behavior:smooth}
 <div class="poe29-grid"><article class="poe29-panel"><h3>Required evidence</h3><ul class="poe29-checklist"><li>Two small joint FBD sketches illustrating zero-force-member rules and a sentence explaining when each applies.</li><li>A complete whole-truss FBD with A, B, C, D, E labels; geometry; both applied joint loads and support reactions.</li><li>Support-reaction calculations using ΣM = 0 and ΣFᵧ = 0 with N and m units.</li><li>One section line crossing exactly three members and a separate, clearly labeled FBD of the chosen section.</li><li>Section equations leading to at least three signed member forces, each classified as tension or compression.</li><li>A force-equilibrium check at another joint or an equivalent independent equation.</li><li>Short reflection on why a zero-force member may still matter in a real bridge.</li></ul></article>
 <article class="poe29-panel"><h3>Before turning it in</h3><ul class="poe29-checklist"><li>The cut matches the three members you identified.</li><li>Your isolated FBD includes all loads and reactions on the retained side.</li><li>Every moment uses a perpendicular distance.</li><li>Assumed force directions and negative compression results are interpreted consistently.</li><li>Numerical force values include N and moments include N·m.</li><li>All assigned independent and homework questions are included.</li></ul><p><strong>Due date:</strong> Check the <a href="../../../../agenda.html">Daily Agenda</a> and your instructor's submission instructions.</p><a class="btn secondary" href="#start">Review lesson ↑</a></article></div></section>
 <nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-8.html">← Lesson 2.8: Calculating Truss Forces</a><a class="btn" href="lesson-2-10.html">Next: 2.10 Truss Design &amp; Simulation →</a></nav></main>
-<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"/><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer>
+<footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png"><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer>
 <button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
 <script>
 (function(){
