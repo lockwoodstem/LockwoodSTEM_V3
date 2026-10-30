@@ -1,0 +1,20 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert'),path=require('path');
+const root=path.resolve(__dirname,'..');
+const context={window:{},document:{addEventListener(){}}};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(root,'assets/js/investigations.js'),'utf8'),context);
+const m=context.window.LockwoodInvestigationModels;
+assert.equal(m.circuit({mode:'series',r1:20,r2:40,voltage:12}).current,.2);
+assert(Math.abs(m.circuit({mode:'parallel',r1:20,r2:40,voltage:12}).current-.9)<1e-12);
+assert.equal(m.gears({driver:12,driven:36,rpm:120,torque:1,idler:'yes'}).rpm,40);
+assert.equal(m.gears({driver:12,driven:36,rpm:120,torque:1,idler:'yes'}).direction,'same');
+assert.equal(m.measurement({actual:25.37,resolution:.1,nominal:25.4,tolerance:.2}).pass,true);
+assert.equal(m.measurement({actual:25.37,resolution:1,nominal:25.4,tolerance:.2}).pass,false);
+const base={target:80,gain:.5,efficiency:.8,fault:'working'};
+const closed=m.control({...base,mode:'closed'}),open=m.control({...base,mode:'open'});
+assert(Math.abs(closed.error)<Math.abs(open.error));assert.equal(closed.rows.length,12);
+assert(m.control({...base,mode:'closed',fault:'stuck'}).position>base.target);
+// Drafts store answer values rather than shuffled option positions.
+const c={window:{},URL,document:{currentScript:{src:'https://lockwoodstem.org/assets/js/learning-core.js'}},location:{pathname:'/test'}};vm.createContext(c);vm.runInContext(fs.readFileSync(path.join(root,'assets/js/learning-core.js'),'utf8'),c);
+const field=(value,checked)=>({dataset:{},id:'',name:'q1',type:'radio',value,checked,disabled:false,closest(){return null;}});
+const original=[field('correct answer',true),field('other answer',false)];const saved=c.window.LockwoodLearning.collect({querySelectorAll:()=>original});
+const shuffled=[field('other answer',false),field('correct answer',false)];c.window.LockwoodLearning.restore({querySelectorAll:()=>shuffled},saved);assert.equal(shuffled[0].checked,false);assert.equal(shuffled[1].checked,true);
+console.log('PASS: physics models, feedback fault behavior, rounding boundary, and shuffled-answer draft restoration.');

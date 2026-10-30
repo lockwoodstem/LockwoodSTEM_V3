@@ -496,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const main=document.querySelector('main'); if(!main||!item) return;
 
     // Standard student workflow panel. It supplements existing lesson content without deleting teacher-authored material.
-    if(!document.querySelector('.lesson-standard-tools')){
+    if(!document.querySelector('.lesson-standard-tools,.learning-guide')){
       const panel=document.createElement('section');panel.className='container lesson-standard-tools lesson-section';
       panel.innerHTML='<div class="section-header"><div><div class="eyebrow">Lesson Workflow</div><h2>'+item[0]+': '+item[1]+'</h2><p class="section-subtitle">Use the lesson sections in order. Check the required evidence before you submit.</p></div></div><div class="lesson-standard-grid"><article class="lesson-standard-card"><h3>1. Learn</h3><p>Review the lesson target, examples, and directions before beginning the task.</p></article><article class="lesson-standard-card"><h3>2. Build / Practice</h3><p>Complete the investigation, design, calculation, fabrication, or programming work described below.</p></article><article class="lesson-standard-card"><h3>3. Check</h3><p>Test your work against the lesson requirements and correct problems before submitting.</p></article></div>';
       const firstContent=main.querySelector('.lesson-section, .lesson-web-section');
@@ -504,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Standard submission reminder; specific assignment requirements remain authoritative in Google Classroom.
-    if(!document.querySelector('.lesson-submission-box')){
+    if(!document.querySelector('.lesson-submission-box,.learning-workspace')){
       const submit=document.createElement('section');submit.className='container lesson-section';
       submit.innerHTML='<article class="card lesson-submission-box"><span class="tag">Submission</span><h2>What do I submit?</h2><p>Submit the evidence identified in this lesson and in the associated Google Classroom assignment. Before submitting, confirm that your name/team information is complete, required files or photos are included, and your final work has been tested or checked.</p></article>';
       const nav=main.querySelector('.lesson-bottom-nav'); if(nav) nav.before(submit); else main.appendChild(submit);
