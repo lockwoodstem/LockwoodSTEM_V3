@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0a1321">
+  <title>Punkin Chunkin | LockwoodSTEM</title>
+  <style>
+    :root {color-scheme:dark;--bg:#091321;--panel:#152638;--edge:#3b5063;--white:#f4f7f8;--muted:#b9cad5;--orange:#ffb563;--mint:#aee6d1}
+    *{box-sizing:border-box}
+    html{height:100%;background:var(--bg)}
+    body{margin:0;min-height:100%;color:var(--white);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.005em;background:radial-gradient(ellipse at 80% -10%,#26475a 0,transparent 42%),radial-gradient(ellipse at 0% 100%,#342c2b 0,transparent 42%),var(--bg)}
+    .page{max-width:1660px;min-height:100vh;margin:auto;padding:clamp(20px,2.2vw,38px) clamp(20px,3vw,54px) clamp(18px,2vw,35px);display:flex;flex-direction:column;gap:clamp(14px,1.25vw,25px)}
+    .eyebrow{display:flex;align-items:center;gap:14px;color:var(--mint);font-size:clamp(12px,1.1vw,17px);font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .eyebrow img{display:block;width:clamp(120px,12vw,210px);height:auto;max-height:36px;object-fit:contain;object-position:left center}
+    .eyebrow .separator{width:1px;height:25px;background:#617281}
+    .hero{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+    h1{font-size:clamp(52px,7.2vw,126px);line-height:.93;letter-spacing:-.057em;margin:0;font-weight:950}
+    h1 span{color:var(--orange)}
+    .subtitle{margin:13px 0 0;font-size:clamp(19px,2vw,33px);font-weight:650;color:var(--muted)}
+    .tag{align-self:center;border:2px solid #e9ae63;color:var(--orange);border-radius:100px;padding:12px 21px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;white-space:nowrap;font-size:clamp(12px,1.25vw,18px)}
+    .cards{display:grid;grid-template-columns:minmax(250px,.72fr) minmax(0,1.35fr);gap:clamp(13px,1.35vw,24px);flex:1}
+    .card{border:1px solid var(--edge);border-radius:20px;background:linear-gradient(135deg,rgba(29,51,67,.93),rgba(17,32,48,.97));padding:clamp(22px,2.2vw,38px);box-shadow:0 12px 30px #0002}
+    .card h2{display:flex;align-items:center;gap:12px;margin:0 0 clamp(14px,1.3vw,24px);font-size:clamp(18px,1.6vw,27px);line-height:1.15;letter-spacing:.065em;color:var(--orange);text-transform:uppercase}
+    .card h2 .num{border:1px solid #bf8d56;border-radius:100px;display:inline-grid;place-items:center;width:32px;height:32px;flex-shrink:0;font-size:15px}
+    .group .big{font-size:clamp(66px,7vw,118px);line-height:.9;font-weight:900;letter-spacing:-.065em}
+    .group .big small{font-size:.31em;letter-spacing:0;font-weight:750;vertical-align:middle}
+    .group p,.goal p{font-size:clamp(18px,1.6vw,26px);line-height:1.44;margin:16px 0 0;color:var(--white)}
+    .goal strong{color:var(--mint)}
+    ul{padding-left:1.3em;margin:0;display:grid;gap:clamp(7px,.55vw,12px)}
+    li{padding-left:.14em;font-size:clamp(17px,1.42vw,24px);line-height:1.36}
+    li::marker{color:var(--mint)}
+    .foot{display:flex;align-items:center;justify-content:space-between;gap:18px;border:1px solid #876946;border-radius:15px;padding:clamp(12px,1.3vw,20px) clamp(16px,1.7vw,27px);background:#392b26}
+    .foot strong{color:var(--orange);font-size:clamp(17px,1.55vw,25px);text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
+    .foot span{color:#f8e9d8;font-size:clamp(16px,1.35vw,23px);line-height:1.32;font-weight:600}
+    .smallnote{display:flex;align-items:center;justify-content:space-between;gap:16px;color:#a6b9c7;font-size:13px}
+    .screen{appearance:none;border:1px solid #738b9b;background:#1f3748;color:white;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:700;font-size:13px}
+    .screen:hover,.screen:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+    @media (min-width:1000px) and (min-height:650px){.cards{grid-template-rows:minmax(0,1fr) minmax(0,1.15fr)}}
+    @media (max-width:850px){.page{min-height:100vh}.hero{align-items:flex-start;flex-direction:column}.tag{align-self:flex-start}.cards{grid-template-columns:1fr}.group .big{font-size:72px}.foot{flex-direction:column;align-items:flex-start}.smallnote{flex-wrap:wrap}}
+    @media (max-height:790px) and (min-width:900px){.page{gap:12px;padding-top:19px;padding-bottom:12px}h1{font-size:clamp(54px,6.2vw,100px)}.card{padding:18px 24px}.card h2{margin-bottom:12px}.group .big{font-size:72px}.group p,.goal p{margin-top:8px}li{font-size:clamp(15px,1.15vw,20px)}ul{gap:4px}.foot{padding:10px 16px}.subtitle{margin-top:6px}}
+    @media print{body{background:white;color:#152638}.page{min-height:auto}.card{background:white;color:#152638;box-shadow:none}.card h2,h1 span{color:#aa4f00}.group p,.goal p,.foot span{color:#152638}.tag,.foot{color:#152638;background:#fff;border-color:#777}.screen{display:none}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="eyebrow">
+      <img src="../../physics/asterion/lockwoodstem-logo.png" alt="LockwoodSTEM">
+      <span class="separator" aria-hidden="true"></span>
+      <span>One-day engineering challenge</span>
+    </div>
+    <div class="hero">
+      <div>
+        <h1>PUNKIN <span>CHUNKIN</span></h1>
+        <p class="subtitle">Design it. Build it. Launch it. Improve it.</p>
+      </div>
+      <div class="tag">Just for fun 🎃</div>
+    </div>
+    <section class="cards" aria-label="Challenge directions">
+      <article class="card group">
+        <h2><span class="num">01</span> Group size</h2>
+        <div class="big">2–3 <small>students</small></div>
+        <p>Work together to build and test one pumpkin launcher.</p>
+      </article>
+      <article class="card goal">
+        <h2><span class="num">02</span> The goal</h2>
+        <p>Build a <strong>working PVC catapult</strong> that launches a small <strong>3D-printed pumpkin</strong> toward the target using <strong>stored elastic energy</strong> — not a hand throw.</p>
+      </article>
+      <article class="card">
+        <h2><span class="num">03</span> Building materials</h2>
+        <ul>
+          <li>1/2-inch PVC pipe in assorted lengths</li>
+          <li>PVC elbows, tees and connectors</li>
+          <li>Rubber bands and elastic cord</li>
+          <li>Small cloth pieces for a sling or cradle</li>
+          <li>Tape and a 3D-printed pumpkin</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2><span class="num">04</span> Success criteria</h2>
+        <ul>
+          <li>The launcher is <strong>stable</strong> and holds the pumpkin before launch.</li>
+          <li>Elastic energy — not a hand throw — launches the pumpkin.</li>
+          <li>The pumpkin lands inside the <strong>designated testing area</strong>.</li>
+          <li>Your team tests the design and makes <strong>at least one improvement</strong>.</li>
+        </ul>
+      </article>
+    </section>
+    <aside class="foot" aria-label="Launch safety rules">
+      <strong>⚠ Launch safety</strong>
+      <span>Safety glasses on · Teacher checks launcher · Nobody in the launch area · Fire only on the signal</span>
+    </aside>
+    <div class="smallnote">
+      <span>No grades. No points. Just engineering and flying pumpkins.</span>
+      <button class="screen" type="button" id="fullscreen">⛶ Full screen</button>
+    </div>
+  </main>
+  <script>
+    document.getElementById("fullscreen").addEventListener("click", function () {
+      if (document.fullscreenElement) document.exitFullscreen?.();
+      else document.documentElement.requestFullscreen?.();
+    });
+  </script>
+</body>
+</html>
