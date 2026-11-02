@@ -19,6 +19,7 @@ jobs:
       - name: Verify JavaScript syntax
         run: |
           node --check lab/lab.js
+          node --check lab/lab-ui.js
           node --check lab/worker-v2.js
       - name: Verify required pages and cross-links
         run: |
@@ -33,5 +34,8 @@ jobs:
           assert 'EMERGENCY STOP' in html and 'const allow=new Set' in js
           assert 'def serial_send' in worker and 'def get_detections' in worker
           assert 'getUserMedia' in js and 'cocoSsd.load' in js
+          assert 'lab.css' in html and 'lab-ui.js' in html
+          assert 'site-header' in html and 'brand-logo' in html
+          assert Path('lab/lab.css').exists() and Path('lab/lab-ui.js').exists()
           print("Unified lab static integration checks passed")
           PY
