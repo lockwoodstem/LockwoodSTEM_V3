@@ -1012,6 +1012,11 @@ window.LOCKWOODSTEM_LESSONS = {
         "project-2-1-7.html"
       ],
       [
+        "2.1.8",
+        "AI-Powered Sorting Machine",
+        "project-2-1-8.html"
+      ],
+      [
         "2.2.1",
         "Machine Vision & AI Vision Sensor",
         "activity-2-2-1.html"
