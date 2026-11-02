@@ -215,7 +215,7 @@
       "lesson": 5,
       "number": "2.5",
       "type": "Lesson",
-      "title": "Creating 3D Parts with Extrude \u2014 Bracket 3",
+      "title": "Creating 3D Parts with Extrude — Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-5.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.5_Dimensioned_CAD_Sketches.pptx"
     },
@@ -225,7 +225,7 @@
       "lesson": 6,
       "number": "2.6",
       "type": "Lesson",
-      "title": "Cut Features and Holes \u2014 Bracket 3",
+      "title": "Cut Features and Holes — Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-6.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.6_Extrude_Basics.pptx"
     },
@@ -235,7 +235,7 @@
       "lesson": 7,
       "number": "2.7",
       "type": "Lesson",
-      "title": "Fillets, Chamfers, and Design Intent \u2014 Bracket 3",
+      "title": "Fillets, Chamfers, and Design Intent — Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-7.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.7_Cut_Features_and_Holes.pptx"
     },
@@ -1307,7 +1307,7 @@
       "lesson": 12,
       "number": "3.12",
       "type": "Lesson",
-      "title": "Pressure, Force, and Pascal\u2019s Law",
+      "title": "Pressure, Force, and Pascal’s Law",
       "url": "courses/poe/units/unit-3/lesson-3-12.html",
       "presentation": "downloads/presentations/POE_Unit3_Lesson_3.12_Pressure_Force_and_Pascal_s_Law.pptx"
     },
@@ -1887,6 +1887,14 @@
     {
       "course": "ADM",
       "unit": 2,
+      "number": "2.1.8",
+      "type": "Project",
+      "title": "AI-Powered Sorting Machine",
+      "url": "courses/adm/units/unit-2/project-2-1-8.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
       "number": "2.2.1",
       "type": "Activity",
       "title": "Machine Vision & AI Vision Sensor",
@@ -2001,7 +2009,7 @@
       "unit": 3,
       "number": "3.2.2",
       "type": "Activity",
-      "title": "Don\u2019t Crash!",
+      "title": "Don’t Crash!",
       "url": "courses/adm/units/unit-3/activity-3-2-2.html"
     },
     {
