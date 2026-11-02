@@ -36,6 +36,7 @@ async function loop(){
  try{
  const result=predict(features());
  status.textContent=result.slice(0,3).map(x=>x.name+" "+(x.score*100).toFixed(1)+"%").join(" · ");
+ window.dispatchEvent(new CustomEvent("lockwoodstem:custom-prediction",{detail:result.slice(0,5).map(x=>({label:x.name,score:x.score}))}));
  }catch(err){status.textContent="Classifier error: "+err;halt()}
  finally{busy=false}
  if(active)timer=setTimeout(loop,650);
