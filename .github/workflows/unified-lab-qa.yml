@@ -1,0 +1,37 @@
+name: Unified Lab QA
+on:
+  pull_request:
+    paths: ['lab/**', '.github/workflows/unified-lab-qa.yml', 'resources/index.html']
+  push:
+    branches: [main]
+    paths: ['lab/**', '.github/workflows/unified-lab-qa.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify JavaScript syntax
+        run: |
+          node --check lab/lab.js
+          node --check lab/worker-v2.js
+      - name: Verify required pages and cross-links
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          html=Path("lab/index.html").read_text()
+          js=Path("lab/lab.js").read_text()
+          worker=Path("lab/worker-v2.js").read_text()
+          resources=Path("resources/index.html").read_text()
+          assert 'src="./lab.js"' in html and 'new Worker("./worker-v2.js")' in js
+          assert 'href="../lab/"' in resources
+          assert 'EMERGENCY STOP' in html and 'const allow=new Set' in js
+          assert 'def serial_send' in worker and 'def get_detections' in worker
+          assert 'getUserMedia' in js and 'cocoSsd.load' in js
+          print("Unified lab static integration checks passed")
+          PY
