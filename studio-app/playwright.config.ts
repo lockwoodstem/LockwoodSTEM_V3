@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'./tests',timeout:90000,expect:{timeout:10000},workers:1,use:{baseURL:'http://127.0.0.1:4173',headless:true,channel:'chromium',launchOptions:{args:['--use-fake-device-for-media-stream','--use-fake-ui-for-media-stream']},screenshot:'only-on-failure'},webServer:{command:'node scripts/serve.mjs',url:'http://127.0.0.1:4173/studio/',reuseExistingServer:!process.env.CI}});
