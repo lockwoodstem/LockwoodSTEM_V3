@@ -1,0 +1,37 @@
+name: Programming Studio QA
+on:
+  push:
+    branches: [main]
+    paths: ['studio-app/**', 'studio/**', '.github/workflows/studio-qa.yml']
+  pull_request:
+    paths: ['studio-app/**', 'studio/**', '.github/workflows/studio-qa.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  studio:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: studio-app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: pnpm
+          cache-dependency-path: studio-app/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - name: Verify checked-in static output
+        run: git diff --exit-code -- ../studio
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: studio-test-results
+          path: studio-app/test-results/

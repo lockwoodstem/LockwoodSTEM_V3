@@ -17,7 +17,7 @@ def check(url,base,label):
  if not p.exists() and not p.with_suffix('.html').exists():errors.append(f'{label}: missing {url}')
 for p in ROOT.rglob('*.html'):
  # Apps Script HTML templates are deployed separately and may contain template syntax.
- if 'integrations' in p.parts:continue
+ if any(part in p.parts for part in ('integrations', 'studio-app', 'node_modules')):continue  # Studio source is built into /studio/.
  parser=Links();s=p.read_text(errors='replace');parser.feed(s);count+=1
  for u in parser.urls:check(u,p.parent,str(p.relative_to(ROOT)))
  if p.parent.name=='certifications' and p.name.endswith(('-final.html','-practice.html','-study.html')) and 'auth-guard.js' in s:errors.append(f'{p.name}: student guard remains')

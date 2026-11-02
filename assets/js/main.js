@@ -830,3 +830,16 @@ document.addEventListener('DOMContentLoaded', () => {
     initCourseShell();
   }
 })();
+
+// The studio is an additive static app; derive the site base for custom domains and project hosting.
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('#site-navigation');
+  if (!nav || nav.querySelector('[data-nav-section="studio"]')) return;
+  const courses = [...nav.querySelectorAll('a[href]')].find(a => /courses\.html(?:$|[?#])/.test(a.getAttribute('href') || ''));
+  if (!courses) return;
+  const link = document.createElement('a');
+  link.href = courses.getAttribute('href').replace(/courses\.html(?:[?#].*)?$/, 'studio/index.html');
+  link.textContent = 'Studio'; link.dataset.navSection = 'studio';
+  if (/\/studio\//.test(location.pathname)) link.setAttribute('aria-current', 'page');
+  const item = document.createElement('li'); item.appendChild(link); nav.appendChild(item);
+});

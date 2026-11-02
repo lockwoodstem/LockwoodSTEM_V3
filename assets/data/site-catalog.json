@@ -11743,6 +11743,14 @@
       "section": "Resources",
       "description": "Engineering investigations Predict, change one variable, test the model, and record evidence in your lesson report. These simulations are learning models, not equipment authorizati",
       "searchText": "Engineering investigations Predict, change one variable, test the model, and record evidence in your lesson report. These simulations are learning models, not equipment authorizations. Circuits Compare series and parallel networks with a real circuit schematic. Open circuits investigation Gears and drive ratios Investigate output speed, ideal torque, and the effect of an idler. Open gears and drive ratios investigation Measurement and tolerances Explore resolution, rounding uncertainty, and borderline inspection decisions. Open measurement and tolerances investigation Feedback and sensor faults Compare open-loop and closed-loop behavior using a numerical rover trace. Open feedback and sensor faults investigation"
+    },
+    {
+      "title": "AI Programming Studio",
+      "section": "Resources",
+      "description": "Write and run Python in your browser with Monaco, autosave, webcam snapshots, and an Arduino connection preview.",
+      "url": "studio/index.html",
+      "type": "Resource",
+      "searchText": "AI Programming Studio Python coding editor OpenCV webcam Arduino browser"
     }
   ]
 }

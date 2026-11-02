@@ -1,0 +1,5 @@
+export const examples = [
+  {name:'mission.py',label:'01 · Mission countdown',code:`# LockwoodSTEM • Your first mission\n# Change the destination, then press Run.\n\ndestination = "Mars"\nprint(f"Mission control: destination {destination}")\n\nfor seconds in range(5, 0, -1):\n    print(f"T-minus {seconds}")\n\nprint("Liftoff! 🚀")\n`,input:''},
+  {name:'flight.py',label:'02 · Flight calculator',code:`# Enter a speed and time in Program input (one per line).\nspeed = float(input("Speed in meters per second: "))\ntime = float(input("Flight time in seconds: "))\nprint(f"Distance traveled: {speed * time:.1f} meters")\n`,input:'12\n5'},
+  {name:'vision.py',label:'03 · Camera + OpenCV',code:`# Start the camera and capture a frame first.\n# OpenCV loads on first run; this may take a moment.\nimport cv2\n\nframe = get_frame()  # Snapshot, not a live video stream\ngray = cv2.cvtColor(frame, cv2.COLOR_RGBA2GRAY)\nedges = cv2.Canny(gray, 80, 160)\nprint(f"Frame: {frame.shape[1]} × {frame.shape[0]} pixels")\nprint(f"Mean brightness: {gray.mean():.1f} / 255")\nprint(f"Edge pixels: {(edges > 0).sum()}")\n`,input:''}
+];
