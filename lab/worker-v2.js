@@ -8,6 +8,7 @@ function output(message) { if(logCount++ < LIMIT) emit("output", {message:String
 self._robot_send = line => emit("serial", {command:String(line)});
 self._serial_last_sensor = "";
 self._detections_json = "[]";
+self._custom_prediction_json = "[]";
 self._frame_data = null;
 self._frame_width = 0;
 self._frame_height = 0;
@@ -25,6 +26,11 @@ def get_detections():
     import json
     from js import _detections_json
     return json.loads(str(_detections_json))
+def get_custom_prediction():
+    """Return trained classifier predictions with labels and scores."""
+    import json
+    from js import _custom_prediction_json
+    return json.loads(str(_custom_prediction_json))
 def get_frame():
     """Return the current webcam snapshot as an RGBA NumPy array."""
     from js import _frame_data, _frame_width, _frame_height
@@ -129,6 +135,7 @@ async function frame(data) {
 }
 self.onmessage=async({data})=>{
   if(data.type==="sensor"){self._serial_last_sensor=String(data.value).slice(0,256);return;}
+  if(data.type==="custom_prediction"){self._custom_prediction_json=JSON.stringify(data.value||[]).slice(0,2000);return;}
   if(!pyodide||fatal)return;
   if(data.type==="configure")await configure(data.code);
   else if(data.type==="run")await run(data.code,data.input,data.frame);
