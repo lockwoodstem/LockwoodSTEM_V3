@@ -1,73 +1,39 @@
-import {useEffect, useRef, useState} from 'react';
-export type Frame = {data:Uint8ClampedArray; width:number; height:number};
-type Port = {open:(options:{baudRate:number})=>Promise<void>; close:()=>Promise<void>};
-type Serial = {requestPort:()=>Promise<Port>; addEventListener:(event:string,callback:EventListener)=>void; removeEventListener:(event:string,callback:EventListener)=>void};
-export function Devices({onFrame}:{onFrame:(frame:Frame|null)=>void}) {
-  const video = useRef<HTMLVideoElement>(null), canvas = useRef<HTMLCanvasElement>(null);
-  const stream = useRef<MediaStream|null>(null), port = useRef<Port|null>(null);
-  const mounted = useRef(true), cameraGeneration = useRef(0);
-  const [camera,setCamera] = useState('Camera off'), [cameraBusy,setCameraBusy] = useState(false), [active,setActive] = useState(false);
-  const [serialStatus,setSerialStatus] = useState('Not connected'), [serialBusy,setSerialBusy] = useState(false), [connected,setConnected] = useState(false);
-  const [snapshot,setSnapshot] = useState(false);
-  const serial = (navigator as Navigator & {serial?:Serial}).serial;
-  function stopCamera() {
-    cameraGeneration.current++;
-    stream.current?.getTracks().forEach(track=>track.stop()); stream.current=null;
-    if(video.current) video.current.srcObject=null;
-    setActive(false); setCameraBusy(false); setCamera('Camera off');
-  }
-  useEffect(()=>{
-    mounted.current=true;
-    const disconnected:EventListener = event => {
-      if (event.target === port.current) { port.current=null; setConnected(false); setSerialStatus('Board disconnected'); }
-    };
-    serial?.addEventListener('disconnect',disconnected);
-    const hide = () => { if(document.hidden) stopCamera(); };
-    document.addEventListener('visibilitychange',hide);
-    return ()=>{ mounted.current=false; cameraGeneration.current++; stream.current?.getTracks().forEach(t=>t.stop()); void port.current?.close().catch(()=>{}); serial?.removeEventListener('disconnect',disconnected); document.removeEventListener('visibilitychange',hide); };
-  },[]);
-  async function startCamera() {
-    const generation = ++cameraGeneration.current;
-    setCameraBusy(true);setCamera('Waiting for camera permission…');
-    try {
-      const media = await navigator.mediaDevices.getUserMedia({video:{width:{ideal:640},height:{ideal:480}},audio:false});
-      if(!mounted.current || generation!==cameraGeneration.current || document.hidden) {media.getTracks().forEach(t=>t.stop());return;}
-      stream.current=media;
-      video.current!.srcObject=media;
-      await video.current!.play();
-      media.getVideoTracks()[0].addEventListener('ended',stopCamera,{once:true});
-      setActive(true);setCamera('Camera on · preview stays in this browser');
-    } catch(error) { if(generation===cameraGeneration.current) {stopCamera();setCamera('Camera unavailable or permission denied. Check browser permissions.');} }
-    finally {if(mounted.current && generation===cameraGeneration.current)setCameraBusy(false);}
-  }
-  function capture() {
-    const v=video.current!, c=canvas.current!;
-    if(!v.videoWidth || v.readyState<2) {setCamera('Camera is warming up. Try capturing again.');return;}
-    c.width=640; c.height=Math.round(v.videoHeight/v.videoWidth*640);
-    const context=c.getContext('2d')!;context.drawImage(v,0,0,c.width,c.height);
-    onFrame({data:context.getImageData(0,0,c.width,c.height).data,width:c.width,height:c.height});setSnapshot(true);
-    setCamera('Frame captured · available to your next run');
-  }
-  async function toggleSerial() {
-    setSerialBusy(true);
-    try {
-      if(port.current) {await port.current.close();port.current=null;setConnected(false);setSerialStatus('Not connected');}
-      else {
-        const chosen=await serial!.requestPort();await chosen.open({baudRate:115200});
-        if(!mounted.current) {await chosen.close();return;}
-        port.current=chosen;setConnected(true);setSerialStatus('Connected at 115200 baud · connection test only');
-      }
-    } catch {setSerialStatus('Connection canceled or unavailable. Close other apps using the board, then retry.');}
-    finally {if(mounted.current)setSerialBusy(false);}
-  }
-  return <>
-    <section className="studio-panel device-panel" aria-labelledby="camera-title"><div className="panel-heading"><h2 id="camera-title">Vision lab</h2><span className="badge">Prototype</span></div>
-      <div className="video-wrap"><video ref={video} muted playsInline aria-label="Live webcam preview" />{!active && <div className="video-placeholder"><span aria-hidden="true">◎</span><strong>Your camera, your browser</strong><span>Start a preview to explore computer vision.</span></div>}</div>
-      <p className="device-status" role="status">{camera}</p><div className="button-row"><button onClick={active?stopCamera:startCamera} disabled={cameraBusy || !navigator.mediaDevices?.getUserMedia}>{active?'Stop camera':'Start camera'}</button><button disabled={!active} onClick={capture}>Capture frame</button></div>
-      <canvas ref={canvas} hidden={!snapshot} className="snapshot" aria-label="Captured frame" />
-      {snapshot && <button className="text-button" onClick={()=>{onFrame(null);setSnapshot(false);}}>Clear captured frame</button>}
-      <p className="hint">Use <code>get_frame()</code> in Python for an RGBA snapshot. The camera stops when you leave this tab. Frames are not autosaved.</p>
-    </section>
-    <section className="studio-panel device-panel" aria-labelledby="serial-title"><div className="panel-heading"><h2 id="serial-title">Arduino connection</h2><span className="badge">Preview</span></div><p>Check the USB connection to a board with firmware already loaded.</p><button disabled={!serial || serialBusy} onClick={toggleSerial}>{connected?'Disconnect board':'Connect board'}</button><p className="device-status" role="status">{serial ? serialStatus : 'Web Serial is unavailable here. Try desktop Chrome or Edge over HTTPS.'}</p><p className="hint">Connection test only. Python commands, serial messages, and firmware upload are planned for a later phase. Opening a port may reset your board.</p></section>
-  </>;
+import {useEffect,useRef,useState,type RefObject} from 'react';
+import {Hardware,type HardwareState} from './hardware';
+import {VisionAI} from './ai';
+export type Frame={data:Uint8ClampedArray;width:number;height:number};
+export type VisionControl={capture:()=>Frame|null;predict:(frame:Frame)=>Promise<{detections:unknown[];predictions:unknown[]}>;fps:()=>number;stop:()=>void};
+export function Devices({onFrame,onCamera,control,processed,hardware,running}:{onFrame:(f:Frame|null)=>void;onCamera:(active:boolean)=>void;control:RefObject<VisionControl|null>;processed:Frame|null;hardware:Hardware;running:boolean}){
+ const video=useRef<HTMLVideoElement>(null),canvas=useRef<HTMLCanvasElement>(null),preview=useRef<HTMLCanvasElement>(null),scratch=useRef(document.createElement('canvas'));
+ const stream=useRef<MediaStream|null>(null),generation=useRef(0),mounted=useRef(true),activeRef=useRef(false),ai=useRef(new VisionAI());
+ const [active,setActive]=useState(false),[busy,setBusy]=useState(false),[message,setMessage]=useState('Camera off'),[snapshot,setSnapshot]=useState(false);
+ const [width,setWidth]=useState(640),[fps,setFps]=useState(7),[aiMode,setAI]=useState('off'),[aiBusy,setAIBusy]=useState(false),[aiMessage,setAIMessage]=useState('AI is optional'),[boardBusy,setBoardBusy]=useState(false),[hw,setHw]=useState<HardwareState>(hardware.state);
+ const settings=useRef({width,fps});settings.current={width,fps};
+ const callbacks=useRef({onFrame,onCamera});callbacks.current={onFrame,onCamera};
+ function stopCamera(){generation.current++;stream.current?.getTracks().forEach(t=>t.stop());stream.current=null;if(video.current)video.current.srcObject=null;activeRef.current=false;setActive(false);setBusy(false);setMessage('Camera off');callbacks.current.onFrame(null);callbacks.current.onCamera(false);ai.current.mode='off';setAI('off');}
+ function capture():Frame|null{const v=video.current,c=scratch.current;if(!activeRef.current||!v||v.readyState<2)return null;c.width=settings.current.width;c.height=Math.min(1080,Math.max(1,Math.round(v.videoHeight/v.videoWidth*c.width)));const ctx=c.getContext('2d',{willReadFrequently:true})!;ctx.drawImage(v,0,0,c.width,c.height);const image=ctx.getImageData(0,0,c.width,c.height);return {data:image.data,width:c.width,height:c.height};}
+ useEffect(()=>{mounted.current=true;hardware.onChange=setHw;control.current={capture,predict:f=>ai.current.predict(new ImageData(new Uint8ClampedArray(f.data),f.width,f.height)),fps:()=>settings.current.fps,stop:stopCamera};const hide=()=>{if(document.hidden)stopCamera();};const leave=()=>{stopCamera();hardware.stop();};document.addEventListener('visibilitychange',hide);window.addEventListener('pagehide',leave);return()=>{mounted.current=false;generation.current++;stream.current?.getTracks().forEach(t=>t.stop());control.current=null;hardware.onChange=()=>{};void hardware.disconnect();document.removeEventListener('visibilitychange',hide);window.removeEventListener('pagehide',leave);};},[]);
+ useEffect(()=>{if(processed&&preview.current){preview.current.width=processed.width;preview.current.height=processed.height;preview.current.getContext('2d')!.putImageData(new ImageData(new Uint8ClampedArray(processed.data),processed.width,processed.height),0,0);}},[processed]);
+ async function startCamera(){const id=++generation.current;setBusy(true);setMessage('Waiting for camera permission…');try{const media=await navigator.mediaDevices.getUserMedia({video:{width:{ideal:640},height:{ideal:480}},audio:false});if(!mounted.current||id!==generation.current||document.hidden){media.getTracks().forEach(t=>t.stop());return;}stream.current=media;video.current!.srcObject=media;await video.current!.play();if(id!==generation.current)return;activeRef.current=true;setActive(true);callbacks.current.onCamera(true);setMessage('Camera on · preview stays in this browser');media.getVideoTracks()[0].addEventListener('ended',stopCamera,{once:true});}catch{if(id===generation.current){stopCamera();setMessage('Camera unavailable or permission denied. Check browser permissions.');}}finally{if(id===generation.current)setBusy(false);}}
+ function snapshotFrame(){const f=capture();if(!f)return;onFrame(f);const c=canvas.current!;c.width=f.width;c.height=f.height;c.getContext('2d')!.putImageData(new ImageData(new Uint8ClampedArray(f.data),f.width,f.height),0,0);setSnapshot(true);setMessage('Frame captured · available to your next run');}
+ async function loadAI(mode:'objects'|'custom'){setAIBusy(true);const id=generation.current;try{await ai.current.load(mode);if(id!==generation.current||!mounted.current){ai.current.mode='off';return;}setAI(mode);setAIMessage('Model ready · predictions update during Run live');}catch(e){setAIMessage(String(e));}finally{setAIBusy(false);}}
+ async function connect(){setBoardBusy(true);try{if(hw.connected)await hardware.disconnect();else await hardware.connect();}catch(e){hardware.update({message:String(e)});}finally{setBoardBusy(false);}}
+ return <>
+ <section className="studio-panel device-panel"><div className="panel-heading"><h2>Vision lab</h2></div>
+ <div className="video-wrap"><video ref={video} muted playsInline aria-label="Live webcam preview"/>{!active&&<div className="video-placeholder">Start your camera to explore vision.</div>}</div>
+ <p role="status">{message}</p><div className="button-row"><button onClick={active?stopCamera:startCamera} disabled={busy||!navigator.mediaDevices?.getUserMedia}>{active?'Stop camera':'Start camera'}</button><button disabled={!active||running} onClick={snapshotFrame}>Capture frame</button></div>
+ <div className="button-row"><label>Resolution <select value={width} disabled={running} onChange={e=>setWidth(Number(e.target.value))}>{[320,480,640].map(n=><option key={n} value={n}>{n} px</option>)}</select></label><label>Target FPS <select value={fps} onChange={e=>setFps(Number(e.target.value))}>{[3,7,12].map(n=><option key={n}>{n}</option>)}</select></label></div>
+ <h3>Processed image</h3><canvas ref={preview} hidden={!processed} className="snapshot" aria-label="Processed image"/>{!processed&&<p className="hint">Run live with process_frame(frame), or call show_image(image) in a program.</p>}
+ <canvas ref={canvas} hidden={!snapshot} className="snapshot" aria-label="Captured frame"/>{snapshot&&<button onClick={()=>{onFrame(null);setSnapshot(false);}}>Clear captured frame</button>}
+ <p className="hint">Frames are RGBA. Return gray, RGB or RGBA pixels. Stop ends Python and switches off the camera. Leaving this tab stops devices.</p>
+ <details><summary>AI models &amp; custom classifier</summary><p><a href="../lab/train/" target="_blank" rel="noreferrer">Open Model Builder</a> to train or import your classifier on this browser.</p><div className="button-row"><button disabled={aiBusy||running||!active} onClick={()=>void loadAI('objects')}>Load object detector</button><button disabled={aiBusy||running||!active} onClick={()=>void loadAI('custom')}>Load saved classifier</button><button onClick={()=>{ai.current.mode='off';setAI('off');}}>Disable AI</button></div><p role="status">{aiBusy?'Loading model…':aiMessage} · {aiMode}</p></details>
+ </section>
+ <section className="studio-panel device-panel"><div className="panel-heading"><h2>Hardware lab</h2></div>
+ <label>Hardware mode <select value={hw.mode} disabled={running||hw.connected||boardBusy} onChange={e=>{hardware.stop();hardware.update({mode:e.target.value as HardwareState['mode']});}}><option value="simulation">Simulator</option><option value="board">USB Arduino</option></select></label>
+ {hw.mode==='board'&&<><p>Teacher loads <a href="./firmware/LockwoodStudio/LockwoodStudio.ino" download>standard firmware</a> once. Students connect here without installing Python or drivers supplied by this app.</p><button disabled={boardBusy||running} onClick={()=>void connect()}>{hw.connected?'Disconnect board':'Connect board'}</button><a href="./HARDWARE.md" target="_blank" rel="noreferrer"> Wiring &amp; protocol</a></>}
+ <div className="button-row"><button disabled={boardBusy||running||(hw.mode==='board'&&!hw.connected)} onClick={()=>{if(hw.armed)hardware.stop();else void hardware.arm().catch(e=>hardware.update({message:String(e)}));}}>{hw.armed?'Disarm hardware':'Arm hardware'}</button><button onClick={()=>{control.current?.stop();hardware.stop();}}>Stop hardware</button></div>
+ <p role="status">{hw.message}</p><div className="simulation" aria-label="Hardware state"><span className={hw.led?'led on':'led'} aria-label={hw.led?'LED on':'LED off'}/><span>LED {hw.led?'on':'off'} · Servo {hw.servo===null?'detached':hw.servo+'°'}</span></div>
+ <label>Sensor A0: {hw.sensor}<input aria-label="Simulated sensor" type="range" min="0" max="1023" value={hw.sensor} disabled={hw.mode!=='simulation'} onChange={e=>hardware.update({sensor:Number(e.target.value)})}/></label>
+ <p className="hint">Use await arduino.led(True), await arduino.servo(90), and await arduino.sensor(). Commands require arming. Run completion disarms outputs; use an async loop to hold outputs during a program.</p>
+ </section></>;
 }
