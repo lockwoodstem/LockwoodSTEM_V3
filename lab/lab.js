@@ -43,6 +43,7 @@ function schedule(){if(!running||pending||!stream)return;tick=setTimeout(()=>voi
 async function process(){if(!running||pending||!stream)return;const img=capture();if(!img){schedule();return;}pending=true;if(ai&&model&&!detecting){detecting=true;const source=scratch;model.detect(source,12,.4).then(items=>{lastDetections=items.map(p=>({label:p.class,score:p.score,bbox:p.bbox}));}).catch(e=>log("AI: "+e)).finally(()=>detecting=false);}worker.postMessage({type:"frame",data:img.data,width:img.width,height:img.height,detections:lastDetections});}
 $("ai-enable").onclick=async()=>{try{$("ai-enable").disabled=true;setStatus("Downloading AI object detection model…");if(!window.cocoSsd)throw new Error("COCO-SSD model library blocked; check school network");model=await window.cocoSsd.load({base:"lite_mobilenet_v2"});ai=true;$("ai-disable").disabled=false;setStatus("AI detection ready");}catch(e){log(String(e));$("ai-enable").disabled=false;}};
 $("ai-disable").onclick=()=>{ai=false;lastDetections=[];$("ai-enable").disabled=false;$("ai-disable").disabled=true;};
+window.addEventListener("lockwoodstem:custom-prediction",event=>{if(worker)worker.postMessage({type:"custom_prediction",value:event.detail});});
 const serial=navigator.serial;
 function statusRobot(t){$("robot-status").textContent=t;}
 function disarm(){armed=false;$("arm").textContent="Arm commands";$("send").disabled=true;statusRobot(port?"Connected · disarmed":"Disconnected");}
