@@ -206,7 +206,8 @@ $("export-coco").onclick=async()=>{
   const result=await zip.generateAsync({type:"blob"});download(result,"lockwoodstem-annotated-dataset.zip");status("COCO dataset ZIP exported.");
  }catch(err){status(String(err))}
 };
+async function restoreSavedModel(){try{const m=await new Promise((resolve,reject)=>{const req=indexedDB.open("lockwoodstem-classifier-model",1);req.onupgradeneeded=()=>req.result.createObjectStore("models");req.onerror=()=>reject(req.error);req.onsuccess=()=>{const db=req.result;const tx=db.transaction("models","readonly");const get=tx.objectStore("models").get("current");get.onsuccess=()=>resolve(get.result);get.onerror=()=>reject(get.error);tx.oncomplete=()=>db.close();}});if(validateModel(m)){trained=m;$("export-model").disabled=$("predict").disabled=false;$("training-result").textContent="Saved model ready: "+m.classes.map(c=>c.name).join(", ");}}catch(err){status("Saved-model restore unavailable: "+err)}}
 document.addEventListener("visibilitychange",()=>{if(document.hidden)stopCamera()});
 window.addEventListener("pagehide",stopCamera);
-refresh().catch(err=>status("Browser storage unavailable: "+err));
+Promise.all([refresh(),restoreSavedModel()]).catch(err=>status("Browser storage unavailable: "+err));
 })();
