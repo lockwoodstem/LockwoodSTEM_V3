@@ -20,6 +20,9 @@ jobs:
         run: |
           node --check lab/lab.js
           node --check lab/lab-ui.js
+          node --check lab/lab-classifier.js
+          node --check lab/train/store.js
+          node --check lab/train/train.js
           node --check lab/worker-v2.js
       - name: Verify required pages and cross-links
         run: |
@@ -37,5 +40,10 @@ jobs:
           assert 'lab.css' in html and 'lab-ui.js' in html
           assert 'site-header' in html and 'brand-logo' in html
           assert Path('lab/lab.css').exists() and Path('lab/lab-ui.js').exists()
+          assert 'href="./train/"' in html
+          assert Path('lab/train/index.html').exists() and Path('lab/train/train.js').exists()
+          assert 'lockwoodstem-classifier-v1' in Path('lab/train/train.js').read_text()
+          assert 'getUserMedia' in Path('lab/train/train.js').read_text()
+          assert 'annotations.json' in Path('lab/train/train.js').read_text()
           print("Unified lab static integration checks passed")
           PY
