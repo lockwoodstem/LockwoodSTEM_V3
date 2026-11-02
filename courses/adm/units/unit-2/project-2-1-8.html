@@ -21,7 +21,7 @@
 <ul>
 <li><strong>Camera:</strong> external USB webcam (available from the instructor).</li>
 <li><strong>Computer:</strong> classroom Windows computer running Python with OpenCV through a browser-based interface. <strong>Locally hosted JupyterLab</strong> is the recommended environment.</li>
-<li><strong>Vision:</strong> independently researched and trained machine-learning image classifier. Students write their own Python data collection, training, prediction, and control code. There is <strong>no starter notebook or premade sorting program</strong>.</li>
+<li><strong>Vision and programming:</strong> Each team is responsible for researching, training, testing, and explaining its machine-learning classifier and the Python/OpenCV and Arduino programs. <strong>AI coding assistance is permitted</strong> for generating, improving, explaining, and debugging code. Students must review, test, adapt, and understand all code they use. The instructor does not provide a completed starter program or finished sorting solution.</li>
 <li><strong>Required hardware controller:</strong> every team must use the instructor-provided <strong>Arduino</strong> to operate its sorting mechanism. A starter servo is provided; teams may propose additional approved motors, sensors, and electronics. Python communicates classification decisions to the Arduino, which controls the actuators.</li>
 <li><strong>Fabrication:</strong> student-selected, teacher-approved methods (3D printing, laser cutting, hand tools, or other techniques). No fixed additional materials budget, but <strong>all purchases require approval</strong>.</li>
 
@@ -29,7 +29,26 @@
 <div class="note"><strong>How it works:</strong> USB webcam → Python/OpenCV image capture → trained model class prediction → Python serial command → Arduino → servo/motor-driven sorter → three class bins or reject bin.</div>
 <div class="note warning"><strong>First approval gate:</strong> Before fabricating the powered system, demonstrate live webcam capture from Python/OpenCV and successful Python-to-Arduino communication on the actual Windows computer. A cloud-hosted notebook is acceptable only if the instructor verifies that it can reliably connect to both devices. The Arduino must be programmed separately to accept and validate the commands it receives.</div>
 </article></section>
-<section class="container" id="specifications"><article class="card">
+<section class="container" id="ai-code-policy"><article class="card">
+<div class="eyebrow">Project programming expectations</div><h2>Using AI to Help Write Code</h2>
+<p><strong>You may use AI tools to help write and improve code for this project.</strong> AI can assist with Python/OpenCV image capture, machine-learning model training and inference, Arduino programming, serial communication, actuator control, debugging, and explaining error messages.</p>
+<div class="grid2">
+<div class="panel"><h3>Permitted AI assistance</h3><ul>
+<li>Generate or revise Python and Arduino code, including functions and example implementations.</li>
+<li>Explain code, libraries, algorithms, or errors and suggest debugging steps.</li>
+<li>Help plan software structure, analyze test failures, or improve reliability.</li>
+<li>Suggest alternative approaches when your first implementation does not work.</li>
+</ul></div>
+<div class="panel"><h3>Your responsibility</h3><ul>
+<li>Understand and be able to explain the code that your team submits and demonstrates.</li>
+<li>Test AI-generated suggestions with your <strong>actual USB webcam, Python/OpenCV environment, and Arduino</strong>; correct anything that does not work.</li>
+<li>Make your own engineering decisions about the classes, training data, mechanism, safety, and revisions.</li>
+<li>Briefly document which AI tools assisted with your code and what you changed or verified.</li>
+<li>Report real model performance and physical trial results. Never invent training images, validation results, or successful sorting trials.</li>
+</ul></div>
+</div>
+<div class="note"><strong>How this affects grading:</strong> Using AI to help code does <strong>not</strong> reduce your grade. Your grade depends on your documented engineering work, your ability to explain and troubleshoot the programs, and the performance of the sorting device. A copied or AI-generated program that your team cannot explain, test, or safely operate does not meet the project requirements.</div>
+</article></section><section class="container" id="specifications"><article class="card">
 <div class="eyebrow">Minimum Requirements</div><h2>Mechanical, AI, and Testing Specifications</h2>
 <div class="grid2">
 <div class="panel"><h3>Custom machine</h3><ul>
@@ -72,7 +91,7 @@
 <li><strong>Checkpoint 5 — Readiness:</strong> safety/preflight checklist, debugging records, evidence of one improvement, and organized submission files.</li>
 <li><strong>Final assessment:</strong> 30 known-object and five unknown-object trial results, calculated known-object accuracy and throughput, failure/reset record, final demo, and short reflection.</li>
 </ol>
-<p>Each checkpoint is graded separately. Keep all CAD, training data, model, Python/Arduino code, and build documentation together in a clearly organized team folder. Everyone must be able to explain their contribution. If a checkpoint is incomplete, revise and request reapproval before moving to the next safety-critical stage.</p>
+<p>Each checkpoint is graded separately. Keep all CAD, training data, model, Python/Arduino code, and build documentation together in a clearly organized team folder. Include a brief note describing any <strong>AI tools used to assist with coding</strong> and the changes or tests your team performed. Everyone must be able to explain their contribution and code. If a checkpoint is incomplete, revise and request reapproval before moving to the next safety-critical stage.</p>
 </article></section>
 <section class="container" id="checkpoints"><article class="card">
 <div class="eyebrow">Engineering process · 60 points</div><h2>Five Graded Approval Checkpoints</h2>
