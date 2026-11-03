@@ -113,3 +113,23 @@ No CNAME, account service or server change is needed.
 
 References: [Pyodide workers](https://pyodide.org/en/0.27.7/usage/webworker.html),
 [Web Serial lifecycle](https://developer.chrome.com/docs/capabilities/serial).
+
+## Classroom build
+
+The Classroom launchpad adds guided first-run setup and three complete lessons:
+sensor-controlled outputs, color detection and a vision-controlled sorter. Lessons
+open new named projects, preserving the current project before switching. Run
+preflight checks the lesson's mode and required hardware arming; camera readiness
+uses the existing live-run check. Self-check evidence and reflection are stored in
+optional project metadata, compatible with existing IndexedDB v2 records and JSON
+submissions. Imported lesson metadata is validated before replacement.
+
+The simulator adds an animated servo diagram, sensor meter and boundary presets,
+and manual LED/servo tests through the same arming gate. Manual commands are
+simulation-only and disabled during Python runs. USB arming waits for the firmware
+handshake. Connection help and specific camera errors guide recovery.
+
+See [the classroom guide](public/CLASSROOM.md) for lesson timing, assessment and the
+physical-device validation record. No AI coding assistant will be added to this
+build. Existing optional vision classifiers remain separate and are not needed for
+these lessons. No backend, API key or account service was introduced.
