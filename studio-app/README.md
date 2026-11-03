@@ -1,65 +1,115 @@
-# LockwoodSTEM AI Programming Studio — Phase 1
+# LockwoodSTEM AI Programming Studio
 
-A browser-only Python lab integrated into the existing static LockwoodSTEM site at `studio/index.html`. Students need no installation, account, API key, local Python, or local Arduino tools.
+The browser-only React/TypeScript Studio at `/studio/` combines Python, live vision,
+optional AI predictions, simulated hardware, and a standardized Arduino bridge.
+Students do not install Python, an agent, or a local server. No keys or credentials
+are bundled. Existing site routes and the older `/vision/` and `/lab/` remain intact;
+they link to Studio. `/lab/train/` remains the shared Model Builder.
 
-## What ships
+## Student workflow
 
-- React + TypeScript application; bundled Monaco Python editor, font controls, keyboard Run shortcut, and plain-text alternative.
-- Pyodide 0.27.7 in a dedicated classic Web Worker. Run captures stdout/stderr and Python tracebacks. Stop terminates the worker, including tight infinite loops. Restart creates a fresh runtime. Programs have fresh global variables on each run; imported modules remain cached until restart.
-- Bounded output (60,000 characters / 500 output messages per run) keeps printing loops from overwhelming the page.
-- IndexedDB autosaves filename, code and input after each edit, with commit-based save status and explicit storage-error messaging. Restore finishes before editing is enabled. No account sync or multi-device storage; export on shared devices. Multiple tabs share the same current-project slot: use one studio tab at a time.
-- UTF-8 `.py` import/export, a 1 MB import limit, safe export filenames, and a replacement confirmation before examples/imports overwrite the editor.
-- Program input supplied before Run, one answer per line. Exhausting the queue gives EOFError. This is not an interactive terminal or a REPL.
-- Opt-in webcam preview and snapshot bridge: `get_frame()` returns a copied NumPy RGBA array. Python `cv2` imports load the bundled OpenCV package. Camera access stops on tab hiding and unmount. Captures are memory-only; there is no automatic camera upload or saved photo.
-- Web Serial capability detection and optional connect/disconnect at 115200 baud. This is a connection prototype, not a Python-to-board bridge, serial monitor, compiler or firmware uploader. Opening a serial port can reset a board. Test real boards before classroom use.
+1. Open a saved named project, create/duplicate one, or load a starter.
+2. Choose Program for one-shot Python, or Live vision for `process_frame(frame)`.
+3. For vision, start the camera. Optionally load object detection or a saved classifier.
+4. For hardware, select Simulator or USB Arduino and explicitly Arm hardware.
+5. Run. Stop terminates the Python worker, stops the camera and disarms hardware.
+6. Export `.py` or Export submission (JSON with code, input, mode, console and timestamp).
+   Upload that file to the teacher's LMS. Studio does not send submissions itself.
 
-No AI assistant or model API is connected yet. Live OpenCV video, rendered image output, Arduino messaging/firmware upload, teacher-managed lessons, and project libraries remain future phases.
+## Vision and AI
 
-## Architecture
+Each live run evaluates the script once, then calls `process_frame(frame)` for each
+camera frame. Callback globals persist for motion tracking. The input is copied
+RGBA uint8 NumPy data. Return gray, RGB or RGBA; `None` uses the input. Use RGB,
+not OpenCV BGR, for three-channel output. Async callbacks are supported. A program
+can also call `show_image(image)`; at most one image is emitted per run/frame.
 
-`src/main.tsx` owns program, runtime and console state. `Editor.tsx` bundles Monaco and its worker locally. `public/python-worker.js` loads pinned Pyodide assets from jsDelivr and executes user code away from the UI thread. `storage.ts` wraps IndexedDB transactions. `Devices.tsx` owns browser permission requests and device cleanup. Each Run copies the latest captured frame to the Python worker; no SharedArrayBuffer or cross-origin isolation headers are required.
+Only one capture/inference/Python frame cycle is active at a time. Resolution is
+320/480/640 px; target rate is 3/7/12 FPS, an upper bound rather than guaranteed
+throughput. Frames are not queued. The processed preview is separate from the
+camera view, with a processed-frame counter. Images are memory-only and excluded
+from autosave/submission. Stop remains responsive even to infinite Python loops.
 
-Worker termination is the cancellation boundary. It drops Python memory, imported packages and pending work while preserving the editor and captured snapshot. Runtime loading errors and a 60-second startup timeout expose a restart action. Output is rendered as text, never HTML.
+Starters carry forward face detection, edges, green tracking, motion, ArUco markers,
+COCO-SSD boxes and custom classifier overlays. `get_detections()` returns
+`[{label, score, bbox:[x,y,w,h]}]`; `get_custom_prediction()` returns
+`[{label, score}]`. These reflect the current live frame. AI downloads are opt-in;
+model errors appear in the UI/console. `get_frame()` still supports captured snapshots.
 
-The studio is a coding environment, not a security sandbox for untrusted programs: Python can access worker JavaScript and make browser-permitted network requests. There are no secrets bundled with the application. Avoid adding credentials or privileged APIs to this origin.
+The existing Model Builder supports browser datasets, training/import/export,
+validation and bounding-box annotation. It shares the saved
+`lockwoodstem-classifier-model` database with React Studio. React consumes the
+MobileNet v2 alpha 0.5 centroid classifier format without modifying its datasets.
+Custom bounding-box model training and a chat/code assistant are not implemented.
 
-## Maintainer development (not student setup)
+## Hardware
 
-Use Node 24 and pnpm 11.25.0:
+See [wiring, protocol, safety behavior and physical validation](public/HARDWARE.md).
+`await arduino.led(bool)`, `await arduino.servo(0..180)`, `await arduino.sensor()`
+and `await arduino.stop()` work in both modes. Simulation displays LED/servo state
+and a 0–1023 sensor slider. USB uses acknowledged, ID-correlated text commands,
+bounded parsing, a single outstanding request, timeout handling and a version handshake.
+
+Run completion/error disarms hardware. Browser heartbeats maintain the board's
+1500 ms firmware watchdog only while armed. Standard firmware targets Uno R3 /
+classic Nano, D13 LED, D9 servo, A0 sensor. Teacher flashing is a one-time prerequisite;
+there is no in-browser firmware uploader. Servo detach does not brake a load.
+
+## Projects and migration
+
+IndexedDB `lockwoodstem-studio` version 2 adds a project library with stable IDs.
+Upgrade copies the version-1 `current` draft; the current slot remains compatible.
+The old `lockwood_unified_studio` localStorage draft is copied once to a separate
+recovered project without deleting the source. Invalid legacy data is ignored;
+invalid current data shows an export/storage warning instead of overwriting it.
+The original Live Vision Lab has no persisted draft to migrate.
+
+Autosave confirms transaction completion. JSON import validates the format and
+project fields and creates a new ID after confirmation. Export contains no webcam
+images or hardware permissions. Browser storage is per origin/profile, not account
+sync; export on shared school devices. Use one editing tab at a time: the last
+writer wins if two tabs edit the same project ID.
+
+## Architecture and build
+
+- `src/main.tsx`: runtime generation guards, bounded live scheduling, projects/console.
+- `src/Devices.tsx`: camera lifecycle, previews, opt-in AI and hardware controls.
+- `src/hardware.ts`: simulation and Web Serial state machine.
+- `src/ai.ts`: COCO-SSD and existing custom classifier integration.
+- `public/python-worker.js`: pinned Pyodide 0.27.7; Python API, image and hardware RPC.
+- `src/storage.ts`: IndexedDB v1→v2 migration, named library and current project.
+
+Maintainers use Node 24, pnpm 11.25.0:
 
 ```sh
 cd studio-app
 pnpm install --frozen-lockfile
 pnpm build
-node scripts/serve.mjs
-# Open http://127.0.0.1:4173/studio/
-```
-
-Builds write only to `../studio/`. Commit the source, lockfile and generated `studio/` directory together. The site continues to work as static files; its other pages do not require React or a build step. The preview server serves the repository root, allowing the site's existing navigation, branding and search assets to work.
-
-```sh
 pnpm exec playwright install chromium
 pnpm test
 ```
 
-Browser tests exercise real Pyodide, input/errors, infinite-loop cancellation and restart, bounded console output, IndexedDB reload persistence, import confirmation and exact UTF-8 export, real OpenCV with a simulated camera, unavailable storage/network errors, and mobile layout. Physical camera/USB behavior needs a classroom hardware check.
+Build writes only `../studio/`. Commit source and generated output together.
+`node scripts/serve.mjs` serves the repository at localhost:4173. The existing
+Studio QA workflow builds, checks generated assets and runs Playwright. Other site
+pages retain their original static navigation and do not depend on React.
 
-The `Programming Studio QA` workflow builds and tests the app and checks that committed static assets match source. Existing site QA continues to validate `/studio/` links; it ignores maintainer source and dependency directories.
+Internet access is needed for Pyodide/packages and optional models. Allow jsDelivr
+and the model-host download URLs permitted by school policy. Offline availability
+is not guaranteed. HTTPS (or localhost) is required for media/serial. Desktop
+Chrome/Edge are the initial USB targets; simulation remains available elsewhere.
+Python is a coding environment, not a security sandbox: student code can make
+browser-permitted network requests. No camera/code uploads are performed by Studio.
 
-## Deployment
+## Validation and release
 
-1. Review and merge this feature branch into the repository's existing publishing branch (`main`). No hosting-provider migration is required.
-2. Publish the repository root using the site's existing static hosting process, including the committed `studio/` assets and `python-worker.js`. The existing CNAME is unchanged.
-3. Open `https://lockwoodstem.org/studio/`. Check the Run/Stop flow, reload persistence, import/export and mobile navigation on a student browser.
-4. Use HTTPS. Permit `https://cdn.jsdelivr.net/pyodide/v0.27.7/full/` through the school filter for Python/WASM/packages. First load and OpenCV package load require internet; offline operation is not guaranteed. Monaco, React and their worker are served from the site itself.
-5. If hosting adds a Content Security Policy, allow same-origin scripts/workers plus the pinned Pyodide CDN for worker imports and fetches, and WebAssembly compilation (`wasm-unsafe-eval`). Verify the policy in the actual target browser. No extra server endpoints, database service or environment secrets are required.
-6. Pilot webcam permission and USB serial on school-managed devices. Desktop Chrome/Edge are the initial Web Serial targets; unsupported browsers retain the core Python studio. Already-flashed Arduino firmware is needed for the connection prototype.
+Tests use real Pyodide/OpenCV with browser fake camera input, plus mocked serial
+streams. They cover existing Python behavior, live output/errors/Stop, simulator,
+project migration and submission round trip, fragmented replies and serial timeout.
+Physical camera, managed browser permissions, USB reset/unplug behavior, servo
+wiring and firmware watchdog behavior still require the hardware checklist.
+Review/merge the feature PR and publish via the existing static hosting process.
+No CNAME, account service or server change is needed.
 
-Rollback: revert this feature's commit and republish; existing course content and hosting configuration are unaffected. Browser-local work persists until the browser profile is cleared.
-
-## References
-
-- https://pyodide.org/en/0.27.7/usage/webworker.html
-- https://pyodide.org/en/0.27.7/usage/streams.html
-- https://pyodide.org/en/0.27.7/usage/packages-in-pyodide.html
-- https://developer.mozilla.org/en-US/docs/Web/API/Serial
+References: [Pyodide workers](https://pyodide.org/en/0.27.7/usage/webworker.html),
+[Web Serial lifecycle](https://developer.chrome.com/docs/capabilities/serial).

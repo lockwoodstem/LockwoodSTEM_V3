@@ -35,3 +35,13 @@ jobs:
         with:
           name: studio-test-results
           path: studio-app/test-results/
+  firmware:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-arduino-cli@v2
+      - run: arduino-cli core update-index
+      - run: arduino-cli core install arduino:avr@1.8.8
+      - run: arduino-cli lib install Servo@1.3.0
+      - run: arduino-cli compile --fqbn arduino:avr:uno studio-app/public/firmware/LockwoodStudio
+      - run: arduino-cli compile --fqbn arduino:avr:nano studio-app/public/firmware/LockwoodStudio
