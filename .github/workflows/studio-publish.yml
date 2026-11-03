@@ -1,0 +1,50 @@
+name: Publish AI Studio compiled app
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'studio-app/src/**'
+      - 'studio-app/public/**'
+      - 'studio-app/index.html'
+      - 'studio-app/package.json'
+      - 'studio-app/pnpm-lock.yaml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-ai-studio-main
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: pnpm
+          cache-dependency-path: studio-app/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+        working-directory: studio-app
+      - run: pnpm build
+        working-directory: studio-app
+      - name: Commit compiled static Studio assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A studio/
+          if git diff --cached --quiet; then
+            echo "Compiled output already current"
+          else
+            git commit -m "Build current AI Programming Studio"
+            git push
+          fi
