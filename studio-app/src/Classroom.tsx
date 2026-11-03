@@ -12,7 +12,7 @@ export function Classroom({disabled,onLaunch}:Props) {
   return <section className="studio-panel classroom classroom-compact" aria-labelledby="classroom-title">
     <div className="panel-heading"><h2 id="classroom-title">ADM lesson code</h2></div>
     <div className="classroom-body">
-      <label htmlFor="studio-lesson-code">Load lesson starter code</label>
+      <label className="studio-lesson-picker" htmlFor="studio-lesson-code">Load lesson starter code</label>
       <select id="studio-lesson-code" aria-label="Classroom lesson" value="" disabled={disabled}
         onChange={e=>{const next=lessons.find(l=>l.id===e.target.value);if(next)onLaunch(next);}}>
         <option value="">Choose an ADM lesson…</option>
