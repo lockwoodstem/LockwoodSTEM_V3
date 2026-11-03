@@ -96,3 +96,16 @@ body:has(.studio-shell) #root{width:100%;min-height:100dvh}
 .studio-grid .classroom.classroom-compact .classroom-body{padding:14px 16px 16px}
 .studio-grid .classroom.classroom-compact .studio-lesson-picker{display:block;margin:0;color:#dbe8f5;font-size:13px;font-weight:650}
 .studio-grid .classroom.classroom-compact .studio-lesson-picker select{display:block;width:100%;margin-top:8px}
+
+
+/* The small code picker spans the top; the editor gets the main work area. */
+@media(min-width:851px){
+ .studio-grid{grid-template-columns:minmax(0,2.1fr) minmax(300px,1fr)!important;align-items:start}
+ .studio-grid>.classroom.classroom-compact{grid-column:1/-1;grid-row:1;max-height:none!important}
+ .studio-grid>.workspace-column{grid-column:1;grid-row:2}
+ .studio-grid>.studio-sidebar{grid-column:2;grid-row:2;display:grid!important;grid-template-columns:minmax(0,1fr)!important;max-height:none!important}
+ .studio-grid>.studio-sidebar>.starter-panel{grid-column:auto!important}
+ .studio-grid .classroom.classroom-compact .classroom-body{padding:10px 14px}
+ .studio-grid .classroom.classroom-compact .studio-lesson-picker{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+ .studio-grid .classroom.classroom-compact .studio-lesson-picker select{width:min(520px,100%);margin:0}
+}
