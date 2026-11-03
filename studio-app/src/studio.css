@@ -81,3 +81,12 @@ body:has(.studio-shell) #root{width:100%;min-height:100dvh}
  .studio-editor,.plain-editor{height:60dvh!important;min-height:360px}
  .studio-shell .button-row{gap:6px}
 }
+
+
+/* Persistent minimize / expand controls */
+.studio-grid .studio-panel.studio-collapsed{overflow:hidden!important;align-self:start}
+.studio-grid .studio-panel.studio-collapsed > :not(.panel-heading){display:none!important}
+.studio-grid .studio-panel.studio-collapsed > .panel-heading{border-bottom:0}
+.studio-grid .studio-panel .panel-heading .studio-collapse-toggle{margin-left:auto;flex-shrink:0;padding:5px 10px;font-size:12px;line-height:1.5;min-height:30px;white-space:nowrap;border:1px solid #56748d;background:#183653;color:#e8f0fb}
+.studio-grid .studio-panel .panel-heading .studio-collapse-toggle:hover{border-color:#e6d39a;background:#2b4a68}
+.studio-grid .editor-heading .studio-collapse-toggle{order:10}
