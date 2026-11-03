@@ -24,4 +24,29 @@
  .studio-grid .classroom.classroom-compact .studio-lesson-picker{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
  .studio-grid .classroom.classroom-compact .studio-lesson-picker select{width:min(520px,100%);margin:0}
 }
+</style><style id="studio-editor-boundary-fix">
+/* Fix Monaco and ADM lesson panels crossing their grid boundaries. */
+.studio-grid{min-width:0;width:100%;max-width:100%;box-sizing:border-box}
+.studio-grid>.workspace-column{min-width:0;max-width:100%;width:100%;overflow:clip;align-self:start}
+.studio-grid>.workspace-column>.studio-panel{min-width:0;max-width:100%;width:100%;box-sizing:border-box;overflow:hidden}
+.studio-grid .studio-editor,.studio-grid .plain-editor{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+.studio-grid .studio-editor .monaco-editor,
+.studio-grid .studio-editor .overflow-guard{max-width:100%}
+.studio-grid>.studio-sidebar,
+.studio-grid>.studio-sidebar.hardware-first{min-width:0;max-width:100%;width:100%;box-sizing:border-box;overflow:visible}
+.studio-grid>.studio-sidebar>.studio-panel{min-width:0;max-width:100%;width:100%;box-sizing:border-box;overflow:hidden}
+.studio-grid>.classroom.classroom-compact{min-width:0;max-width:100%;box-sizing:border-box}
+@media(min-width:851px){
+ .studio-grid{grid-template-columns:minmax(0,2fr) minmax(0,1fr)!important;grid-auto-flow:row;grid-auto-rows:auto}
+ .studio-grid>.classroom.classroom-compact{grid-column:1 / -1!important;grid-row:1!important}
+ .studio-grid>.workspace-column{grid-column:1!important;grid-row:2!important}
+ .studio-grid>.studio-sidebar,
+ .studio-grid>.studio-sidebar.hardware-first{grid-column:2!important;grid-row:2!important;display:flex!important;flex-direction:column!important;align-self:start;gap:12px}
+ .studio-grid>.studio-sidebar>.studio-panel{flex:0 0 auto}
+}
+@media(max-width:850px){
+ .studio-grid{display:flex!important;flex-direction:column;align-items:stretch;gap:12px}
+ .studio-grid>.classroom,.studio-grid>.workspace-column,.studio-grid>.studio-sidebar{width:100%!important;max-width:100%!important;min-width:0!important;grid-column:auto!important;grid-row:auto!important}
+ .studio-grid>.studio-sidebar,.studio-grid>.studio-sidebar.hardware-first{display:flex!important;flex-direction:column!important;gap:12px}
+}
 </style></head><body><a class="skip-link" href="#main">Skip to studio</a><header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="LockwoodSTEM home"><img class="brand-logo" src="../assets/img/lockwoodstem-concept-a1-black-transparent.png" alt="LockwoodSTEM logo" width="335" height="100"><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a href="../courses.html">Courses</a></li><li><a href="../agenda.html">Daily Agenda</a></li><li><a href="../resources/index.html">Resources</a></li><li><a href="../certifications/index.html">Certifications</a></li><li><a href="../fablab/index.html">FabLab</a></li><li><a href="../academy/index.html">Academy</a></li><li><a href="../about/index.html">About</a></li><li><a href="../challenge-library/index.html">Challenges</a></li></ul></div></header><main id="main"><div id="root"></div></main><noscript>This studio requires JavaScript enabled in your browser.</noscript><script type="module" src="/src/main.tsx"></script><script defer src="./collapse-panels.js"></script><script defer src="./adm-lesson-picker.js"></script></body></html>
