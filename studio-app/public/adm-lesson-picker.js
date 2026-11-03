@@ -28,14 +28,30 @@
       if (!option.value && option.textContent !== 'Choose an ADM lesson…') option.textContent = 'Choose an ADM lesson…';
     }
   }
+  // Reveal the editor if it was minimized during a previous session.
+  function revealEditor() {
+    const editor = document.querySelector('.studio-grid .workspace-column .studio-panel');
+    if (!editor || !editor.classList.contains('studio-collapsed')) return;
+    const toggle = editor.querySelector('.studio-collapse-toggle');
+    if (toggle) toggle.click();
+    else editor.classList.remove('studio-collapsed');
+  }
+  function bindLoad() {
+    const select = document.querySelector('select[aria-label="Classroom lesson"]');
+    if (!select || select.dataset.studioLoadReveal === 'yes') return;
+    select.dataset.studioLoadReveal = 'yes';
+    select.addEventListener('change', () => {
+      if (select.value) revealEditor();
+    });
+  }
   let pending = false;
   function schedule() {
     if (pending) return;
     pending = true;
-    queueMicrotask(() => { pending = false; apply(); });
+    queueMicrotask(() => { pending = false; apply(); bindLoad(); });
   }
   function ready() {
-    apply();
+    apply(); bindLoad();
     const root = document.getElementById('root');
     if (root) new MutationObserver(schedule).observe(root, {subtree:true,childList:true,characterData:true});
   }
