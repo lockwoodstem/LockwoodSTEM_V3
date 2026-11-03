@@ -44,7 +44,7 @@ Custom bounding-box model training and a chat/code assistant are not implemented
 
 ## Hardware
 
-See [wiring, protocol, safety behavior and physical validation](public/HARDWARE.md).
+See [wiring, protocol, safety behavior and physical validation](docs/HARDWARE.md).
 `await arduino.led(bool)`, `await arduino.servo(0..180)`, `await arduino.sensor()`
 and `await arduino.stop()` work in both modes. Simulation displays LED/servo state
 and a 0–1023 sensor slider. USB uses acknowledged, ID-correlated text commands,
@@ -129,7 +129,7 @@ and manual LED/servo tests through the same arming gate. Manual commands are
 simulation-only and disabled during Python runs. USB arming waits for the firmware
 handshake. Connection help and specific camera errors guide recovery.
 
-See [the classroom guide](public/CLASSROOM.md) for lesson timing, assessment and the
+See [the classroom guide](docs/CLASSROOM.md) for lesson timing, assessment and the
 physical-device validation record. No AI coding assistant will be added to this
 build. Existing optional vision classifiers remain separate and are not needed for
 these lessons. No backend, API key or account service was introduced.

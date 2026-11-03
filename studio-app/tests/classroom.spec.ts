@@ -51,3 +51,21 @@ test('sorter lesson drives both gate positions from webcam colors and stops',asy
 test('camera denial offers recovery guidance and lessons fit a phone',async({page})=>{
  await page.addInitScript(()=>Object.defineProperty(navigator.mediaDevices,'getUserMedia',{value:async()=>{throw new DOMException('denied','NotAllowedError');}}));await ready(page);await lesson(page,'color-detection');await page.getByRole('button',{name:'Start camera',exact:true}).click();await expect(page.getByText('Camera permission was denied. Allow camera access in the browser site settings, then select Start camera.',{exact:true})).toBeVisible();await expect(page.getByRole('button',{name:'Start camera',exact:true})).toBeEnabled();await page.setViewportSize({width:390,height:844});expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(391);
 });
+
+test('lesson controls run, stop and restart without the top toolbar',async({page})=>{
+ await ready(page);await lesson(page,'sensor-control');
+ const controls=page.getByRole('region',{name:'Lesson program controls'});
+ await expect(controls.getByRole('button',{name:'▶ Run lesson',exact:true})).toBeVisible();
+ await expect(controls).toContainText('choose Simulator and Arm hardware');
+ await page.getByRole('button',{name:'Arm hardware',exact:true}).click();
+ await controls.getByRole('button',{name:'▶ Run lesson',exact:true}).click();
+ await expect(output(page)).toContainText('A0=');
+ await expect(controls.getByRole('button',{name:'▶ Run lesson',exact:true})).toBeDisabled();
+ await controls.getByRole('button',{name:'Stop lesson',exact:true}).click();
+ await expect(page.getByLabel('LED off',{exact:true})).toBeVisible();
+ await controls.getByRole('button',{name:'Restart lesson Python',exact:true}).click();
+ await expect(controls.getByRole('button',{name:'▶ Run lesson',exact:true})).toBeEnabled({timeout:65000});
+ await lesson(page,'color-detection');await expect(controls.getByRole('button',{name:'▶ Run lesson live',exact:true})).toBeVisible();
+ await expect(controls).toContainText('start the camera');
+ await expect(page.locator('a[href*="CLASSROOM.md"],a[href*="HARDWARE.md"]')).toHaveCount(0);
+});
