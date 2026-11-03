@@ -13,7 +13,7 @@ for (const entry of cases) {
     await expect(page.getByRole('textbox',{name:'Python filename'})).toHaveValue(entry.id+'.py');
     // The simple editor is an ordinary textbox, allowing us to check actual code.
     await page.getByRole('button',{name:'Simple editor',exact:true}).click();
-    await expect(page.getByRole('textbox',{name:'Python code',exact:true})).toContainText(entry.snippet);
+    await expect.poll(async()=> (await page.getByRole('textbox',{name:'Python code',exact:true}).inputValue()).includes(entry.snippet)).toBe(true);
     await expect(page.getByLabel('Run mode',{exact:true})).toHaveValue(entry.mode==='Program'?'once':'live');
   });
 }
