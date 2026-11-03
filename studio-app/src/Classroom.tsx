@@ -16,7 +16,7 @@ export function Classroom({disabled,onLaunch}:Props) {
       <select id="studio-lesson-code" aria-label="Classroom lesson" value="" disabled={disabled}
         onChange={e=>{const next=lessons.find(l=>l.id===e.target.value);if(next)onLaunch(next);}}>
         <option value="">Choose an ADM lesson…</option>
-        {lessons.map((lesson,i)=><option key={lesson.id} value={lesson.id}>{['2.1.8','2.1.9','2.1.10'][i] || ''} · {lesson.title.replace(/^\\d+ · /,'')}</option>)}
+        {lessons.map((lesson,i)=><option key={lesson.id} value={lesson.id}>{['2.1.8','2.1.9','2.1.10'][i] || ''} · {lesson.title.replace(/^[0-9]+ · /,'')}</option>)}
       </select>
     </div>
   </section>;
