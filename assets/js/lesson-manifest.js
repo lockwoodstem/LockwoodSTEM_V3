@@ -1013,48 +1013,23 @@ window.LOCKWOODSTEM_LESSONS = {
       ],
       [
         "2.1.8",
+        "Sensor-controlled LED & servo",
+        "activity-2-1-8.html"
+      ],
+      [
+        "2.1.9",
+        "Detect a colored object",
+        "activity-2-1-9.html"
+      ],
+      [
+        "2.1.10",
+        "Build a vision-controlled sorter",
+        "project-2-1-10.html"
+      ],
+      [
+        "2.1.11",
         "AI-Powered Sorting Machine",
-        "project-2-1-8.html"
-      ],
-      [
-        "2.2.1",
-        "Machine Vision & AI Vision Sensor",
-        "activity-2-2-1.html"
-      ],
-      [
-        "2.2.2",
-        "External Sensors: Analog & Digital",
-        "activity-2-2-2.html"
-      ],
-      [
-        "2.2.3",
-        "Sensor Monitoring & Automated Response",
-        "activity-2-2-3.html"
-      ],
-      [
-        "2.2.4",
-        "Workcell Handshaking & Verified Movement",
-        "project-2-2-4.html"
-      ],
-      [
-        "2.3.1",
-        "Predictive Maintenance & Motor Health",
-        "activity-2-3-1.html"
-      ],
-      [
-        "2.3.2",
-        "Design of Experiments & Workcell Optimization",
-        "activity-2-3-2.html"
-      ],
-      [
-        "2.3.3",
-        "Optimization Impact Study",
-        "project-2-3-3.html"
-      ],
-      [
-        "2.4.1",
-        "Coordinated Workcell System Challenge",
-        "problem-2-4-1.html"
+        "project-2-1-11.html"
       ]
     ],
     "3": [
