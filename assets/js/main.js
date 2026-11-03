@@ -447,7 +447,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   if (window.LOCKWOODSTEM_LESSONS) return run(window.LOCKWOODSTEM_LESSONS);
   const script = document.createElement('script');
-  script.src = '/assets/js/lesson-manifest.js?v=2';
+  script.src = '/assets/js/lesson-manifest.js?v=adm-studio-20261103';
   script.onload = () => run(window.LOCKWOODSTEM_LESSONS);
   document.head.appendChild(script);
 });
@@ -465,7 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.LOCKWOODSTEM_LESSONS) return done(window.LOCKWOODSTEM_LESSONS);
     const existing=document.querySelector('script[src*="lesson-manifest.js"]');
     if(existing){existing.addEventListener('load',()=>done(window.LOCKWOODSTEM_LESSONS),{once:true});return;}
-    const s=document.createElement('script');s.src='/assets/js/lesson-manifest.js?v=3';s.onload=()=>done(window.LOCKWOODSTEM_LESSONS);document.head.appendChild(s);
+    const s=document.createElement('script');s.src='/assets/js/lesson-manifest.js?v=adm-studio-20261103';s.onload=()=>done(window.LOCKWOODSTEM_LESSONS);document.head.appendChild(s);
   };
 
   loadManifest((manifest) => {
@@ -474,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const unitMatch=path.match(/\/courses\/(ied|poe|adm)\/units\/unit-(\d+)\.html$/i);
     if(unitMatch){
       const course=unitMatch[1].toLowerCase(), unit=unitMatch[2], list=manifest[course]?.[unit];
-      if(list){
+      if(list && !document.querySelector('[data-static-lessons]')){
         const rows=[...document.querySelectorAll('table tbody tr')];
         list.forEach((item,i)=>{
           const row=rows.find(r=>r.textContent.trim().startsWith(item[0])) || rows[i];
