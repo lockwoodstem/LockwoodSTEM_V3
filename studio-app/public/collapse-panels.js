@@ -26,7 +26,8 @@
   function update(panel, button, id) {
     const collapsed = preferences[id] === true;
     panel.classList.toggle('studio-collapsed', collapsed);
-    button.textContent = collapsed ? '＋ Expand' : '− Minimize';
+    const label = collapsed ? '＋ Expand' : '− Minimize';
+    if (button.textContent !== label) button.textContent = label;
     button.setAttribute('aria-expanded', String(!collapsed));
     button.setAttribute('aria-label', (collapsed ? 'Expand ' : 'Minimize ') + (labels[id] || 'starter programs'));
     button.title = collapsed ? 'Expand section' : 'Minimize section';
