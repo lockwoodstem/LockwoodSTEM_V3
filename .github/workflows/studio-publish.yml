@@ -8,6 +8,7 @@ on:
       - 'studio-app/index.html'
       - 'studio-app/package.json'
       - 'studio-app/pnpm-lock.yaml'
+      - '.github/workflows/studio-publish.yml'
   workflow_dispatch:
 
 permissions:
