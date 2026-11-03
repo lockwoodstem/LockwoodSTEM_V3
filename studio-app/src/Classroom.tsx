@@ -34,7 +34,7 @@ export function Classroom({project,runtime,camera,hardware,disabled,onLaunch,onE
         {lesson.camera&&!camera&&<p>Before Run: <a href="#camera-title">start the camera in the Vision lab</a>.</p>}
         {lesson.hardware&&!hardware.armed&&<p>Before Run: <a href="#hardware-title">choose Simulator and Arm hardware in the Hardware lab</a>.</p>}
       </section>}
-      {lesson&&project.lesson&&<details className="lesson-content" open={runtime!=='running'}><summary>{lesson.title} · guide &amp; evidence</summary>
+      {lesson&&project.lesson&&<details className="lesson-content" open><summary>{lesson.title} · guide &amp; evidence</summary>
         <h3>{lesson.title}</h3><p className="lesson-duration">{lesson.duration} · {lesson.needs}</p><p><strong>Goal:</strong> {lesson.goal}</p>
         <details open><summary>Build &amp; test</summary><ol>{lesson.steps.map(step=><li key={step}>{step}</li>)}</ol></details>
         <fieldset><legend>Evidence checklist · student self-check</legend>{lesson.checks.map((text,i)=><label key={text}><input type="checkbox" checked={project.lesson!.checks.includes(i)} onChange={e=>onEdit({...project.lesson!,checks:e.target.checked?[...project.lesson!.checks,i]:project.lesson!.checks.filter(n=>n!==i)})}/>{text}</label>)}</fieldset>
