@@ -1,6 +1,6 @@
-export type Project = {id?:string; name:string;code:string;input:string;mode?:'once'|'live'};
+export type Project = {id?:string; name:string;code:string;input:string;mode?:'once'|'live';lesson?:{id:string;checks:number[];reflection:string}};
 let database:Promise<IDBDatabase>|undefined;
-export function validProject(p:unknown):p is Project {const v=p as Project;return !!v&&typeof v.name==='string'&&typeof v.code==='string'&&v.code.length<=1048576&&typeof v.input==='string'&&(!v.mode||['once','live'].includes(v.mode));}
+export function validProject(p:unknown):p is Project {const v=p as Project;return !!v&&typeof v.name==='string'&&typeof v.code==='string'&&v.code.length<=1048576&&typeof v.input==='string'&&(!v.mode||['once','live'].includes(v.mode))&&(v.lesson===undefined||(!!v.lesson&&['sensor-control','color-detection','vision-sorter'].includes(v.lesson.id)&&Array.isArray(v.lesson.checks)&&v.lesson.checks.length<=3&&new Set(v.lesson.checks).size===v.lesson.checks.length&&v.lesson.checks.every(n=>Number.isInteger(n)&&n>=0&&n<3)&&typeof v.lesson.reflection==='string'&&v.lesson.reflection.length<=12000));}
 function open(){return database??=new Promise((resolve,reject)=>{
  const r=indexedDB.open('lockwoodstem-studio',2);
  r.onupgradeneeded=()=>{const db=r.result;if(!db.objectStoreNames.contains('projects'))db.createObjectStore('projects');const library=db.createObjectStore('library');const old=r.transaction!.objectStore('projects').get('current');old.onsuccess=()=>{if(validProject(old.result))library.put({...old.result,id:'migrated-current'},'migrated-current');};};

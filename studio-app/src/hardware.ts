@@ -1,8 +1,8 @@
 export type Port = {open:(options:{baudRate:number})=>Promise<void>;close:()=>Promise<void>;readable:ReadableStream<Uint8Array>;writable:WritableStream<Uint8Array>};
 export type Serial = {requestPort:()=>Promise<Port>};
-export type HardwareState = {mode:'simulation'|'board'; connected:boolean; armed:boolean;led:number;servo:number|null;sensor:number;message:string};
+export type HardwareState = {mode:'simulation'|'board'; connected:boolean;ready:boolean; armed:boolean;led:number;servo:number|null;sensor:number;message:string};
 export class Hardware {
-  state:HardwareState={mode:'simulation',connected:false,armed:false,led:0,servo:null,sensor:512,message:'Simulator ready'};
+  state:HardwareState={mode:'simulation',connected:false,ready:false,armed:false,led:0,servo:null,sensor:512,message:'Simulator ready'};
   onChange=(_:HardwareState)=>{};
   private port:Port|null=null;
   private reader:ReadableStreamDefaultReader<Uint8Array>|null=null;
@@ -18,14 +18,14 @@ export class Hardware {
     const port=await serial.requestPort();await port.open({baudRate:115200});
     if(epoch!==this.epoch){await port.close();return;}
     this.port=port;this.reader=port.readable.getReader();this.writer=port.writable.getWriter();
-    this.update({mode:'board',connected:true,armed:false,message:'Checking firmware…'});
+    this.update({mode:'board',connected:true,ready:false,armed:false,message:'Checking firmware…'});
     void this.read(this.reader);
     try{
       // Uno resets when its port opens. Wait for the bootloader before the handshake.
       await new Promise(r=>setTimeout(r,1800));
       if(epoch!==this.epoch)return;
       if(await this.request('HELLO',0)!==1)throw Error('Firmware protocol version mismatch');
-      this.update({message:'Firmware v1 ready · disarmed'});
+      this.update({ready:true,message:'Firmware v1 ready · disarmed'});
     }catch(e){await this.disconnect();throw e;}
   }
   private async read(reader:ReadableStreamDefaultReader<Uint8Array>){
@@ -52,7 +52,7 @@ export class Hardware {
     });
   }
   async arm(){
-    if(this.state.mode==='board'){await this.request('ARM',1);}
+    if(this.state.mode==='board'){if(!this.state.ready)throw Error('Wait for firmware v1 confirmation before arming');await this.request('ARM',1);}
     this.update({armed:true,message:'Armed · commands enabled'});
     clearInterval(this.heartbeat);
     if(this.state.mode==='board')this.heartbeat=setInterval(()=>{if(!this.pending){this.pulse=this.request('PING',0).catch(()=>this.stop()).finally(()=>{this.pulse=null;});}},400);
@@ -76,10 +76,10 @@ export class Hardware {
   async disconnect(){
     ++this.epoch;this.stop();
     const reader=this.reader,writer=this.writer,port=this.port;
-    this.reader=null;this.writer=null;this.port=null;
+    this.reader=null;this.writer=null;this.port=null;this.update({ready:false,connected:false});
     if(this.pending){clearTimeout(this.pending.timer);this.pending.reject(Error('Disconnected'));this.pending=null;}
     try{await reader?.cancel();}catch{}try{reader?.releaseLock();}catch{}
     try{await writer?.close();}catch{}try{writer?.releaseLock();}catch{}try{await port?.close();}catch{}
-    this.update({connected:false,armed:false,message:'Disconnected · choose simulator or reconnect'});
+    this.update({connected:false,ready:false,armed:false,message:'Disconnected · choose simulator or reconnect'});
   }
 }
