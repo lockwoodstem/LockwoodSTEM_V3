@@ -215,7 +215,7 @@
       "lesson": 5,
       "number": "2.5",
       "type": "Lesson",
-      "title": "Creating 3D Parts with Extrude — Bracket 3",
+      "title": "Creating 3D Parts with Extrude \u2014 Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-5.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.5_Dimensioned_CAD_Sketches.pptx"
     },
@@ -225,7 +225,7 @@
       "lesson": 6,
       "number": "2.6",
       "type": "Lesson",
-      "title": "Cut Features and Holes — Bracket 3",
+      "title": "Cut Features and Holes \u2014 Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-6.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.6_Extrude_Basics.pptx"
     },
@@ -235,7 +235,7 @@
       "lesson": 7,
       "number": "2.7",
       "type": "Lesson",
-      "title": "Fillets, Chamfers, and Design Intent — Bracket 3",
+      "title": "Fillets, Chamfers, and Design Intent \u2014 Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-7.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.7_Cut_Features_and_Holes.pptx"
     },
@@ -1307,7 +1307,7 @@
       "lesson": 12,
       "number": "3.12",
       "type": "Lesson",
-      "title": "Pressure, Force, and Pascal’s Law",
+      "title": "Pressure, Force, and Pascal\u2019s Law",
       "url": "courses/poe/units/unit-3/lesson-3-12.html",
       "presentation": "downloads/presentations/POE_Unit3_Lesson_3.12_Pressure_Force_and_Pascal_s_Law.pptx"
     },
@@ -1888,73 +1888,33 @@
       "course": "ADM",
       "unit": 2,
       "number": "2.1.8",
+      "type": "Activity",
+      "title": "Sensor-controlled LED & servo",
+      "url": "courses/adm/units/unit-2/activity-2-1-8.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.9",
+      "type": "Activity",
+      "title": "Detect a colored object",
+      "url": "courses/adm/units/unit-2/activity-2-1-9.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.10",
+      "type": "Project",
+      "title": "Build a vision-controlled sorter",
+      "url": "courses/adm/units/unit-2/project-2-1-10.html"
+    },
+    {
+      "course": "ADM",
+      "unit": 2,
+      "number": "2.1.11",
       "type": "Project",
       "title": "AI-Powered Sorting Machine",
-      "url": "courses/adm/units/unit-2/project-2-1-8.html"
-    },
-    {
-      "course": "ADM",
-      "unit": 2,
-      "number": "2.2.1",
-      "type": "Activity",
-      "title": "Machine Vision & AI Vision Sensor",
-      "url": "courses/adm/units/unit-2/activity-2-2-1.html"
-    },
-    {
-      "course": "ADM",
-      "unit": 2,
-      "number": "2.2.2",
-      "type": "Activity",
-      "title": "External Sensors: Analog & Digital",
-      "url": "courses/adm/units/unit-2/activity-2-2-2.html"
-    },
-    {
-      "course": "ADM",
-      "unit": 2,
-      "number": "2.2.3",
-      "type": "Activity",
-      "title": "Sensor Monitoring & Automated Response",
-      "url": "courses/adm/units/unit-2/activity-2-2-3.html"
-    },
-    {
-      "course": "ADM",
-      "unit": 2,
-      "number": "2.2.4",
-      "type": "Project",
-      "title": "Workcell Handshaking & Verified Movement",
-      "url": "courses/adm/units/unit-2/project-2-2-4.html"
-    },
-    {
-      "course": "ADM",
-      "unit": 2,
-      "number": "2.3.1",
-      "type": "Activity",
-      "title": "Predictive Maintenance & Motor Health",
-      "url": "courses/adm/units/unit-2/activity-2-3-1.html"
-    },
-    {
-      "course": "ADM",
-      "unit": 2,
-      "number": "2.3.2",
-      "type": "Activity",
-      "title": "Design of Experiments & Workcell Optimization",
-      "url": "courses/adm/units/unit-2/activity-2-3-2.html"
-    },
-    {
-      "course": "ADM",
-      "unit": 2,
-      "number": "2.3.3",
-      "type": "Project",
-      "title": "Optimization Impact Study",
-      "url": "courses/adm/units/unit-2/project-2-3-3.html"
-    },
-    {
-      "course": "ADM",
-      "unit": 2,
-      "number": "2.4.1",
-      "type": "Problem",
-      "title": "Coordinated Workcell System Challenge",
-      "url": "courses/adm/units/unit-2/problem-2-4-1.html"
+      "url": "courses/adm/units/unit-2/project-2-1-11.html"
     },
     {
       "course": "ADM",
@@ -2009,7 +1969,7 @@
       "unit": 3,
       "number": "3.2.2",
       "type": "Activity",
-      "title": "Don’t Crash!",
+      "title": "Don\u2019t Crash!",
       "url": "courses/adm/units/unit-3/activity-3-2-2.html"
     },
     {

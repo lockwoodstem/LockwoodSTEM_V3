@@ -1,0 +1,125 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADM Project 2.1.11 | AI-Powered Sorting Machine | LockwoodSTEM</title>
+<meta name="description" content="Custom AI sorting machine project: design, build, program and test a LEGO or hardware sorter.">
+<link href="../../../../assets/css/styles.css?v=learning-20261029" rel="stylesheet"><link href="../../../../assets/css/content-alignment.css?v=learning-20261029" rel="stylesheet"><link href="../../../../assets/css/student-experience.css?v=learning-20261029" rel="stylesheet">
+<script defer src="../../../../assets/js/main.js?v=learning-20261029"></script><script defer src="../../../../assets/js/student-experience.js?v=learning-20261029"></script>
+<style>
+.sort-project .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem;margin:1.2rem 0}.sort-project .panel{padding:1.2rem;border:1px solid rgba(99,155,168,.4);border-radius:16px;background:rgba(65,137,153,.07)}.sort-project .panel h3{margin:.2rem 0 .6rem}.sort-project .panel p,.sort-project li{line-height:1.6}.sort-project .pill{display:inline-block;border:1px solid #31898d;border-radius:24px;padding:.35rem .7rem;margin:.2rem .3rem .2rem 0;font-size:.91rem;font-weight:750}.sort-project .note{padding:1rem 1.15rem;border-left:4px solid #338d99;background:rgba(50,125,145,.10);margin:1.1rem 0;line-height:1.55}.sort-project .warning{border-color:#d99946;background:rgba(217,153,70,.1)}.sort-project table{border-collapse:collapse;width:100%;min-width:560px}.sort-project th,.sort-project td{border:1px solid rgba(107,152,165,.42);padding:.7rem;text-align:left;vertical-align:top}.sort-project thead{background:rgba(80,140,160,.16)}.sort-project .scroll-table{overflow-x:auto;margin:1rem 0}.sort-project .milestone{border:1px solid rgba(107,152,165,.4);border-radius:14px;padding:1rem}.sort-project .milestone strong{font-size:1.07rem}.sort-project .milestone p{line-height:1.55;margin:.6rem 0}.sort-project ol,.sort-project ul{padding-left:1.4rem;line-height:1.6}.sort-project li{margin:.32rem 0}@media(max-width:800px){.sort-project .grid2{grid-template-columns:1fr}}@media print{.sort-project .milestone,.sort-project .panel{break-inside:avoid}}
+</style></head><body class="adm-unit-page site-consistency-v4 lesson-detail-page sort-project">
+<a href="#main" class="skip-link">Skip to main content</a><header class="site-header"><div class="container nav"><a aria-label="LockwoodSTEM home" class="brand" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" width="335" height="100"><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" onclick="toggleNav()">Menu</button><ul id="site-navigation" class="nav-links"><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../certifications/index.html">Certifications</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
+<main id="main"><nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../../../courses.html">Courses</a></li><li><a href="../../index.html">ADM</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Project 2.1.11</li></ol></nav>
+<section class="page-hero adm-hero"><div class="container hero-grid"><div><div class="eyebrow">ADM Unit 2 • Project 2.1.11</div><h1>AI-Powered Sorting Machine</h1><p>Engineer a custom automated sorting machine that recognizes parts with AI vision and physically routes them into the correct collection bins.</p><div class="hero-actions"><a class="btn" href="#brief">Project Brief</a><a class="btn secondary" href="#checkpoints">Graded Checkpoints</a><a class="btn secondary" href="#rubric">100-Point Rubric</a><a class="btn secondary" href="#timeline">Schedule</a><a class="btn secondary" href="../unit-2.html">Unit 2</a></div></div><aside class="card dark"><span class="tag">New Design Challenge</span><h3>See → Classify → Actuate → Verify</h3><p>LEGO or hardware • Custom fabrication • USB webcam + Python/OpenCV + Arduino-controlled automation</p><p>Teams of 2–3 • approximately 40 class periods • 100 points</p></aside></div></section>
+<section class="container" id="brief"><article class="card">
+<div class="eyebrow">Engineering Design Challenge</div><h2>Your Mission</h2>
+<p>Working in a team of <strong>2–3 students</strong>, design, fabricate, program, and test a standalone, AI-powered sorting machine that uses a trained model to identify parts and automatically move them to the correct destinations. Choose either LEGO components or nuts and bolts. Each team defines <strong>three visually distinguishable sorting classes</strong> and builds <strong>three product bins plus a fourth reject bin</strong> for unknown or uncertain items.</p>
+<div><span class="pill">100 points</span><span class="pill">60 engineering + 40 performance</span><span class="pill">Manual loading allowed</span><span class="pill">Fully custom construction</span></div>
+<div class="grid2">
+<div class="panel"><h3>Option A: LEGO Components</h3><p>Choose three different part types or shapes, such as 2×2 bricks, 2×4 bricks, and plates. The classifier must recognize <strong>part identity or shape</strong>; simply sorting by color is insufficient.</p></div>
+<div class="panel"><h3>Option B: Nuts &amp; Bolts</h3><p>Choose three distinct hardware categories—for example, nuts, short bolts, and longer bolts. Use clean, instructor-approved, blunt hardware. Your camera and feeder must handle glare and variable object positions.</p></div>
+</div>
+<p><strong>Preparation:</strong> Complete ADM 2.1.8–2.1.10 in <a href="../../../../studio/index.html">Programming Studio</a> before this final project. Those guided lessons prepare the sensor, vision and actuator skills; the final project still requires your own trained classifier, design and supervised physical validation.</p><h3>Required equipment and programming</h3>
+<ul>
+<li><strong>Camera:</strong> external USB webcam (available from the instructor).</li>
+<li><strong>Computer:</strong> classroom Windows computer running Python with OpenCV through a browser-based interface. <strong>Locally hosted JupyterLab</strong> is the recommended environment.</li>
+<li><strong>Vision and programming:</strong> Each team is responsible for researching, training, testing, and explaining its machine-learning classifier and the Python/OpenCV and Arduino programs. <strong>AI coding assistance is permitted</strong> for generating, improving, explaining, and debugging code. Students must review, test, adapt, and understand all code they use. The instructor does not provide a completed starter program or finished sorting solution.</li>
+<li><strong>Required hardware controller:</strong> every team must use the instructor-provided <strong>Arduino</strong> to operate its sorting mechanism. A starter servo is provided; teams may propose additional approved motors, sensors, and electronics. Python communicates classification decisions to the Arduino, which controls the actuators.</li>
+<li><strong>Fabrication:</strong> student-selected, teacher-approved methods (3D printing, laser cutting, hand tools, or other techniques). No fixed additional materials budget, but <strong>all purchases require approval</strong>.</li>
+
+</ul>
+<div class="note"><strong>How it works:</strong> USB webcam → Python/OpenCV image capture → trained model class prediction → Python serial command → Arduino → servo/motor-driven sorter → three class bins or reject bin.</div>
+<div class="note warning"><strong>First approval gate:</strong> Before fabricating the powered system, demonstrate live webcam capture from Python/OpenCV and successful Python-to-Arduino communication on the actual Windows computer. A cloud-hosted notebook is acceptable only if the instructor verifies that it can reliably connect to both devices. The Arduino must be programmed separately to accept and validate the commands it receives.</div>
+</article></section>
+<section class="container" id="ai-code-policy"><article class="card">
+<div class="eyebrow">Project programming expectations</div><h2>Using AI to Help Write Code</h2>
+<p><strong>You may use AI tools to help write and improve code for this project.</strong> AI can assist with Python/OpenCV image capture, machine-learning model training and inference, Arduino programming, serial communication, actuator control, debugging, and explaining error messages.</p>
+<div class="grid2">
+<div class="panel"><h3>Permitted AI assistance</h3><ul>
+<li>Generate or revise Python and Arduino code, including functions and example implementations.</li>
+<li>Explain code, libraries, algorithms, or errors and suggest debugging steps.</li>
+<li>Help plan software structure, analyze test failures, or improve reliability.</li>
+<li>Suggest alternative approaches when your first implementation does not work.</li>
+</ul></div>
+<div class="panel"><h3>Your responsibility</h3><ul>
+<li>Understand and be able to explain the code that your team submits and demonstrates.</li>
+<li>Test AI-generated suggestions with your <strong>actual USB webcam, Python/OpenCV environment, and Arduino</strong>; correct anything that does not work.</li>
+<li>Make your own engineering decisions about the classes, training data, mechanism, safety, and revisions.</li>
+<li>Briefly document which AI tools assisted with your code and what you changed or verified.</li>
+<li>Report real model performance and physical trial results. Never invent training images, validation results, or successful sorting trials.</li>
+</ul></div>
+</div>
+<div class="note"><strong>How this affects grading:</strong> Using AI to help code does <strong>not</strong> reduce your grade. Your grade depends on your documented engineering work, your ability to explain and troubleshoot the programs, and the performance of the sorting device. A copied or AI-generated program that your team cannot explain, test, or safely operate does not meet the project requirements.</div>
+</article></section><section class="container" id="specifications"><article class="card">
+<div class="eyebrow">Minimum Requirements</div><h2>Mechanical, AI, and Testing Specifications</h2>
+<div class="grid2">
+<div class="panel"><h3>Custom machine</h3><ul>
+<li>Three student-selected part classes, three collection bins, and one unknown/reject bin.</li>
+<li>Custom frame, object presentation area, fixed webcam mount, powered sorting mechanism, and secure collection bins.</li>
+<li><strong>Manual loading</strong> of one object at a time is allowed. Classification and routing after insertion must be automatic.</li>
+<li>Servo gates, rotating chutes, pushers, and other suitable mechanisms are permitted.</li>
+<li>Automatic hopper feeding, additional categories, or higher sorting speed are optional extensions without bonus points.</li></ul></div>
+<div class="panel"><h3>AI training</h3><ul>
+<li>Collect <strong>50 labeled training images for each of three classes</strong>: 150 training images total.</li>
+<li>Keep <strong>15 separate, previously unseen validation images for each class</strong>: 45 validation images total.</li>
+<li>Submit the student-trained model or reproducible training procedure, <strong>sample predictions</strong>, and <strong>overall validation accuracy</strong>.</li>
+<li>Use actual model predictions to drive the sorter. OpenCV can capture, crop, and preprocess images, but color thresholds, fixed timers, or hand-picked classes alone do not qualify.</li>
+<li>Uncertain or unfamiliar parts must route to reject or trigger an approved safe handling procedure.</li></ul></div>
+</div>
+<div class="note"><strong>Final demonstration:</strong> 30 randomized trials (10 from each known class) <strong>plus 5 separate unknown/reject trials</strong>—35 trials altogether. The target is <strong>80% known-part accuracy</strong> (at least 24/30 correct), with advanced recognition for 28–30 correct. Track throughput, resets, jams, and one evidence-based improvement. The instructor chooses the random presentation order.</div>
+<h3>Safety</h3><p>Use approved low-voltage power supplies and secure wiring. Verify the Arduino-to-servo electrical design before activation: a servo may need its own properly rated power source and a shared ground. Guard pinch points, keep hands clear when powered, wear safety glasses while fabricating, and stop if parts jam. Do not use unapproved mains wiring, sharp or hazardous objects, or unsupervised powered testing.</p>
+<h3>What counts as success?</h3><p>The machine recognizes a previously unseen physical object using the trained classifier, automatically commands the Arduino, and routes the object to the correct bin. A screen-only demonstration, manually controlled servo, or fixed sorting sequence is not an integrated AI sorting machine.</p>
+</article></section>
+<section class="container" id="timeline"><article class="card">
+<div class="eyebrow">Extended engineering project · Approximately 40 × 45-minute classes</div>
+<h2>Project Timeline &amp; Graded Milestones</h2>
+<p>Plan for <strong>approximately 40 class periods (30 instructional hours)</strong> for independent AI development, custom fabrication, Arduino integration and iterative testing. The <strong>proposed</strong> project window is <strong>November 11, 2026 through January 28, 2027</strong>, excluding November 23–27, winter break and January 18. Teams can work on multiple parts of the project in parallel, but must receive approval before moving past safety-critical checkpoints.</p>
+<div class="grid2">
+<div class="milestone"><strong>Phase 1 · 5 classes · Nov 11–17</strong><p><strong>Research, environment setup &amp; system proposal.</strong> Choose LEGO or hardware and three distinct sorting categories; investigate Python/OpenCV and independently research an AI method. Confirm USB webcam capture and Python-to-Arduino serial communication, draw two viable concepts and assign team responsibilities.</p><p><strong>Checkpoint 1 · Nov 17 · 10 points:</strong> Feasibility and design proposal.</p></div>
+<div class="milestone"><strong>Phase 2 · 8 classes · Nov 18–Dec 4</strong><p><strong>Training data &amp; AI development.</strong> Gather 150 training images and 45 separate validation images, independently train a classifier, verify predictions and calculate accuracy. Refine lighting, camera placement and decision/reject rules. Sketch preliminary machine layouts in parallel.</p><p><strong>Checkpoint 2 · Dec 4 · 15 points:</strong> Trained classification model and evidence.</p></div>
+<div class="milestone"><strong>Phase 3 · 7 classes · Dec 7–15</strong><p><strong>Mechanical design &amp; manufacturing preparation.</strong> Create assembly CAD or dimensioned drawings of the feeder, camera mount, sorter and four bins. Select materials, prepare fabrication files, evaluate required servo motion and create a safe wiring/power plan. Begin approved fabrication when ready.</p><p><strong>Intermediate progress review:</strong> Manufacturing-ready design and approved bill of materials; incorporated into Checkpoint 3.</p></div>
+<div class="milestone"><strong>Phase 4 · 10 classes · Dec 16–Jan 13</strong><p><strong>Fabrication, assembly &amp; mechanism iteration.</strong> Build, fit and revise parts; secure the webcam and sorting components; wire Arduino and drive the actuator under controlled tests. Account for printer queues, failed fits and rebuilding. Resume physical testing after winter break.</p><p><strong>Checkpoint 3 · Jan 13 · 15 points:</strong> Completed safe custom assembly and electronics demonstration.</p></div>
+<div class="milestone"><strong>Phase 5 · 7 classes · Jan 14–25</strong><p><strong>AI-to-Arduino integration &amp; debugging.</strong> Link live OpenCV/model results to Arduino motor/servo commands. Route objects into all three class bins and reject; record misclassifications, delays and jams. Run mixed trial batches, revise the code or mechanism, and retest.</p><p><strong>Checkpoint 4 · Jan 25 · 15 points:</strong> Live autonomous sorting through every destination.</p></div>
+<div class="milestone"><strong>Phase 6 · 3 classes · Jan 26–28</strong><p><strong>Test readiness, final demonstration &amp; analysis.</strong> Complete preflight checks, document a measured improvement and organize technical files. Demonstrate 30 randomized known parts (10 from each class) plus five separate unknown/reject items, then review accuracy, throughput and reliability.</p><p><strong>Checkpoint 5 · Jan 27 · 5 points:</strong> Final test readiness.</p><p><strong>Final performance · Jan 28 · 40 points:</strong> Supervised assessment.</p></div>
+</div>
+<div class="note warning"><strong>Proposed dates only:</strong> This expanded project overlaps the existing January Unit 3 start and follows the three Studio preparation lessons and requires a teacher-approved schedule. The live Daily Agenda and Google Classroom deadlines have not yet been moved. Do not treat these dates as official until the course schedule is revised.</div>
+</article></section>
+<section class="container" id="submit"><article class="card submit-card"><div class="eyebrow">Evidence submitted throughout the project</div><h2>What to Submit</h2>
+<ol>
+<li><strong>Checkpoint 1 — Proposal:</strong> two concepts, chosen class definitions, system architecture, team roles, hardware/material plan, safety plan, and live webcam/Arduino communications evidence.</li>
+<li><strong>Checkpoint 2 — AI model:</strong> labeled 150-image training set, 45 unseen validation images, model or reproducible training code, sample predictions, and overall validation accuracy.</li>
+<li><strong>Checkpoint 3 — Build:</strong> CAD or fully dimensioned technical drawings, fabrication files, parts list, photographs, Arduino wiring, and physical mechanism approval.</li>
+<li><strong>Checkpoint 4 — Integration:</strong> commented Python/OpenCV and Arduino programs, model files, and physical demonstration of all three routes plus reject.</li>
+<li><strong>Checkpoint 5 — Readiness:</strong> safety/preflight checklist, debugging records, evidence of one improvement, and organized submission files.</li>
+<li><strong>Final assessment:</strong> 30 known-object and five unknown-object trial results, calculated known-object accuracy and throughput, failure/reset record, final demo, and short reflection.</li>
+</ol>
+<p>Each checkpoint is graded separately. Keep all CAD, training data, model, Python/Arduino code, and build documentation together in a clearly organized team folder. Include a brief note describing any <strong>AI tools used to assist with coding</strong> and the changes or tests your team performed. Everyone must be able to explain their contribution and code. If a checkpoint is incomplete, revise and request reapproval before moving to the next safety-critical stage.</p>
+</article></section>
+<section class="container" id="checkpoints"><article class="card">
+<div class="eyebrow">Engineering process · 60 points</div><h2>Five Graded Approval Checkpoints</h2>
+<p>Each checkpoint receives a separate grade. <strong>Points earned and instructor approval are separate decisions:</strong> partial engineering credit does not authorize unsafe or unverified fabrication, electronics, or testing. Teams may correct deficiencies and request approval again.</p>
+<div class="scroll-table"><table><thead><tr><th>Checkpoint</th><th>Grading criteria</th><th>Points</th></tr></thead><tbody>
+<tr><td><strong>1. Proposal &amp; Technical Feasibility</strong><p>Target: Nov 17</p></td><td>Two sketches and selection (3); webcam/OpenCV and Arduino communication demo (3); three classes and architecture (2); materials, safety and responsibilities (2).</td><td><strong>10</strong></td></tr>
+<tr><td><strong>2. AI Development &amp; Validation</strong><p>Target: Dec 4</p></td><td>150 labeled training images (5); functional student-trained model (5); 45 unseen validation images and overall accuracy (3); sample predictions and explanation of errors (2).</td><td><strong>15</strong></td></tr>
+<tr><td><strong>3. Mechanical &amp; Electronics Build</strong><p>Target: Jan 13</p></td><td>CAD or dimensioned drawings (5); custom assembled and manufactured mechanism (5); safe Arduino wiring and working actuator (3); build documentation and instructor inspection (2).</td><td><strong>15</strong></td></tr>
+<tr><td><strong>4. Integrated AI Sorting System</strong><p>Target: Jan 25</p></td><td>Live trained classifier in Python/OpenCV (5); successful Python-to-Arduino control (5); automatic sorting to three categories plus reject (3); organized, commented programs (2).</td><td><strong>15</strong></td></tr>
+<tr><td><strong>5. Final Testing Readiness &amp; Improvement</strong><p>Target: Jan 27</p></td><td>Completed test plan and safety check (2); documented troubleshooting and at least one improvement (2); organized final files (1).</td><td><strong>5</strong></td></tr>
+<tr><th>Checkpoint subtotal</th><th>60% of the project grade</th><th>60</th></tr>
+</tbody></table></div>
+<div class="note"><strong>Required approvals:</strong> Gate 1 before full fabrication; Gate 2 before relying on AI classifications for autonomous sorting; Gate 3 before powered integration; Gate 4 before final performance runs; Gate 5 before the instructor's randomized assessment. The instructor may request corrective work and resubmission.</div>
+</article></section><section class="container" id="rubric"><article class="card">
+<div class="eyebrow">Final performance · 40 points</div><h2>Final Demonstration Rubric</h2>
+<div class="scroll-table"><table><thead><tr><th>Category</th><th>Points</th><th>Full-credit evidence</th></tr></thead><tbody>
+<tr><td>Autonomous machine functionality</td><td>10</td><td>Live webcam → trained Python classifier → Arduino actuator → correct physical routing without manual class selection.</td></tr>
+<tr><td>Known-object accuracy</td><td>20</td><td>30 randomized known-object trials (10 per class), graded using accuracy tiers below.</td></tr>
+<tr><td>Unknown/reject handling</td><td>5</td><td>Five additional unfamiliar-item tests, one point per correctly rejected or safely handled item.</td></tr>
+<tr><td>Reliability, measured improvement &amp; explanation</td><td>5</td><td>Trial logs, throughput, failures/resets, documented revision and engineering explanation.</td></tr>
+<tr><th>Final performance subtotal</th><th>40</th><th>40% of project grade</th></tr>
+</tbody></table></div>
+<h3>Known-object accuracy tiers (20 points)</h3>
+<div class="scroll-table"><table><thead><tr><th>Correct out of 30</th><th>Accuracy</th><th>Rubric points</th></tr></thead><tbody>
+<tr><td>24–30</td><td>80–100%</td><td>20</td></tr><tr><td>21–23</td><td>70–79%</td><td>16</td></tr><tr><td>18–20</td><td>60–69%</td><td>12</td></tr><tr><td>15–17</td><td>50–59%</td><td>8</td></tr><tr><td>1–14</td><td>Below 50%</td><td>4</td></tr><tr><td>0</td><td>0%</td><td>0</td></tr>
+</tbody></table></div>
+<p><strong>Advanced recognition:</strong> 28–30 correct (above 90%) receives recognition, not points above the project maximum. Hopper feeding, added categories, speed enhancements, and other extensions are optional and do not earn bonus points.</p>
+<div class="note"><strong>Project total = 60 graded checkpoint points + 40 final performance points = 100 points.</strong> A prototype may earn strong engineering-process credit even if it falls short of the 80% target. Never claim that simulated data or screen-only classifications are actual physical sorting trials.</div>
+</article></section>
+<section class="container lesson-bottom-nav"><div class="lesson-bottom-nav-card"><div class="lesson-bottom-nav-links"><a class="btn" href="../unit-2.html">Unit 2 Overview</a><a class="btn secondary" href="project-2-1-10.html">Previous: 2.1.10</a><a class="btn secondary" href="../../index.html">Course Overview</a></div></div></section>
+</main><footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" width="335" height="100"><div class="footer-note">Design · Build · Test · Improve</div></div></footer></body></html>
