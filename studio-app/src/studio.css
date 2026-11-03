@@ -31,3 +31,53 @@ body{background:#07172b}.studio-shell{max-width:1700px;margin:auto;padding:32px 
  .studio-toolbar{gap:8px;padding:8px}.studio-toolbar button{padding:7px 9px;font-size:12px}.studio-toolbar label{font-size:12px}.workspace-shortcuts{width:100%;gap:16px}.studio-shell :is(#classroom-title,#code-workspace,#hardware-title,#camera-title){scroll-margin-top:calc(var(--studio-header-height,88px) + 220px)}
  .studio-editor,.plain-editor{height:360px}.classroom-body{padding:0 12px 12px}
 }
+
+
+/* Full-screen classroom workspace — November 2026 */
+/* One browser-page scroll instead of independently scrolling columns. */
+html:has(.studio-shell){scroll-behavior:smooth}
+body:has(.studio-shell){margin:0;background:#07172b}
+body:has(.studio-shell) .site-header,
+body:has(.studio-shell) > .site-footer,
+body:has(.studio-shell) .site-footer{display:none!important}
+body:has(.studio-shell) main#main{width:100%;max-width:none;margin:0;padding:0;min-height:100dvh}
+body:has(.studio-shell) #root{width:100%;min-height:100dvh}
+.studio-shell{max-width:none;width:100%;min-height:100dvh;margin:0;padding:12px clamp(12px,1.25vw,24px) 20px;box-sizing:border-box}
+.studio-intro{margin-bottom:10px}
+.studio-intro h1{font-size:clamp(20px,2vw,29px)}
+.studio-intro p{margin:3px 0 0}
+.studio-toolbar{top:0;margin-bottom:10px;position:sticky;z-index:80;padding:9px 12px}
+.project-bar{margin-bottom:10px!important;padding:10px 14px}
+.studio-grid{display:grid;grid-template-columns:minmax(240px,0.85fr) minmax(480px,2.35fr) minmax(260px,1.05fr);gap:12px;align-items:start}
+.studio-grid>.classroom,
+.studio-grid>.studio-sidebar,
+.studio-sidebar.hardware-first{max-height:none!important;min-height:0!important;height:auto!important;overflow:visible!important;scrollbar-gutter:auto!important;overscroll-behavior:auto}
+.studio-sidebar,.studio-sidebar.hardware-first{gap:12px;align-content:start}
+.workspace-column{gap:12px;min-width:0}
+.studio-editor,.plain-editor{height:clamp(520px,68dvh,1100px)!important}
+.loading-work{height:clamp(520px,68dvh,1100px)}
+.plain-editor{resize:vertical}
+.console-output{height:auto!important;min-height:130px;max-height:none!important;overflow:visible!important;word-break:break-word}
+.console-panel{overflow:visible}
+.console-output pre{overflow-wrap:anywhere;white-space:pre-wrap}
+.video-wrap{aspect-ratio:16/10}
+.studio-footer{margin-top:14px}
+.studio-shell :is(#classroom-title,#code-workspace,#hardware-title,#camera-title){scroll-margin-top:110px}
+@media(max-width:1320px){
+ .studio-grid{grid-template-columns:minmax(230px,0.9fr) minmax(420px,2fr)}
+ .studio-grid>.studio-sidebar,.studio-grid>.studio-sidebar.hardware-first{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;max-height:none!important;overflow:visible!important}
+ .studio-sidebar>.starter-panel{grid-column:1/-1}
+}
+@media(max-width:850px){
+ .studio-grid{grid-template-columns:minmax(0,1fr)}
+ .studio-grid>.studio-sidebar,.studio-grid>.studio-sidebar.hardware-first{display:grid;grid-template-columns:1fr}
+ .studio-sidebar>.starter-panel{grid-column:auto}
+ .studio-intro{flex-wrap:wrap}
+ .studio-editor,.plain-editor{height:clamp(420px,62dvh,800px)!important}
+ .studio-toolbar{position:static}
+ .studio-shell{padding:10px}
+}
+@media(max-width:500px){
+ .studio-editor,.plain-editor{height:60dvh!important;min-height:360px}
+ .studio-shell .button-row{gap:6px}
+}
