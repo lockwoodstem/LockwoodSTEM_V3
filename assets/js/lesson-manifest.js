@@ -545,94 +545,59 @@ window.LOCKWOODSTEM_LESSONS = {
     ],
     "2": [
       [
-        "2.1",
-        "Unit Launch: Built to Survive",
-        "lesson-2-1.html"
-      ],
-      [
-        "2.2",
-        "Forces, Loads, and Aerospace Structures",
-        "lesson-2-2.html"
-      ],
-      [
-        "2.3",
-        "Free Body Diagrams",
-        "lesson-2-3.html"
-      ],
-      [
-        "2.4",
-        "Vectors, Components, and Resultant Forces",
-        "lesson-2-4.html"
-      ],
-      [
-        "2.5",
-        "Moments, Torque, and Structural Rotation",
-        "lesson-2-5.html"
-      ],
-      [
-        "2.6",
-        "Static Equilibrium",
-        "lesson-2-6.html"
-      ],
-      [
         "2.7",
-        "Trusses and Member Forces",
+        "Truss Systems & Member Force Analysis",
         "lesson-2-7.html"
       ],
       [
         "2.8",
-        "Centroids and Structural Cross-Sections",
+        "Structural Materials & Properties",
         "lesson-2-8.html"
       ],
       [
         "2.9",
-        "Moment of Inertia and Stiffness",
+        "Structural Failure",
         "lesson-2-9.html"
       ],
       [
         "2.10",
-        "Aerospace Material Families and Selection",
+        "Materials Testing Lab",
         "lesson-2-10.html"
       ],
       [
         "2.11",
-        "Density, Mass, Volume, and Structural Efficiency",
+        "Structural Efficiency",
         "lesson-2-11.html"
       ],
       [
         "2.12",
-        "Non-Destructive Material Testing",
+        "Bridge Design Research & Concepts",
         "lesson-2-12.html"
       ],
       [
         "2.13",
-        "Destructive Testing and Stress-Strain Behavior",
+        "Bridge Engineering Analysis",
         "lesson-2-13.html"
       ],
       [
         "2.14",
-        "Materials Test Lab and Data Collection",
+        "Detailed Bridge Design",
         "lesson-2-14.html"
       ],
       [
         "2.15",
-        "Design Brief: Aerospace Payload Support Structure",
+        "Bridge Fabrication",
         "lesson-2-15.html"
       ],
       [
         "2.16",
-        "Concept Development, Decision Matrix, and Build Plan",
+        "Bridge Load Testing",
         "lesson-2-16.html"
       ],
       [
         "2.17",
-        "Prototype Build and Load Testing",
+        "Bridge Design & Testing Presentation",
         "lesson-2-17.html"
-      ],
-      [
-        "2.18",
-        "Data Analysis, Iteration, and Final Design Review",
-        "lesson-2-18.html"
       ]
     ],
     "3": [
