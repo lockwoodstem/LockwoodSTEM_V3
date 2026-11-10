@@ -215,7 +215,7 @@
       "lesson": 5,
       "number": "2.5",
       "type": "Lesson",
-      "title": "Creating 3D Parts with Extrude \u2014 Bracket 3",
+      "title": "Creating 3D Parts with Extrude — Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-5.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.5_Dimensioned_CAD_Sketches.pptx"
     },
@@ -225,7 +225,7 @@
       "lesson": 6,
       "number": "2.6",
       "type": "Lesson",
-      "title": "Cut Features and Holes \u2014 Bracket 3",
+      "title": "Cut Features and Holes — Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-6.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.6_Extrude_Basics.pptx"
     },
@@ -235,7 +235,7 @@
       "lesson": 7,
       "number": "2.7",
       "type": "Lesson",
-      "title": "Fillets, Chamfers, and Design Intent \u2014 Bracket 3",
+      "title": "Fillets, Chamfers, and Design Intent — Bracket 3",
       "url": "courses/ied/units/unit-2/lesson-2-7.html",
       "presentation": "downloads/presentations/IED_Unit2_Lesson_2.7_Cut_Features_and_Holes.pptx"
     },
@@ -1017,9 +1017,8 @@
       "lesson": 1,
       "number": "2.1",
       "type": "Lesson",
-      "title": "Unit Launch: Built to Survive",
-      "url": "courses/poe/units/unit-2/lesson-2-1.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.1_Unit_Launch_Built_to_Survive.pptx"
+      "title": "Unit Challenge Launch: Build a Better Bridge",
+      "url": "courses/poe/units/unit-2/lesson-2-1.html"
     },
     {
       "course": "POE",
@@ -1027,9 +1026,8 @@
       "lesson": 2,
       "number": "2.2",
       "type": "Lesson",
-      "title": "Forces, Loads, and Aerospace Structures",
-      "url": "courses/poe/units/unit-2/lesson-2-2.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.2_Forces_Loads_and_Aerospace_Structures.pptx"
+      "title": "Centroids & Center of Gravity",
+      "url": "courses/poe/units/unit-2/lesson-2-2.html"
     },
     {
       "course": "POE",
@@ -1037,9 +1035,8 @@
       "lesson": 3,
       "number": "2.3",
       "type": "Lesson",
-      "title": "Free Body Diagrams",
-      "url": "courses/poe/units/unit-2/lesson-2-3.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.3_Free_Body_Diagrams.pptx"
+      "title": "Beam Deflection",
+      "url": "courses/poe/units/unit-2/lesson-2-3.html"
     },
     {
       "course": "POE",
@@ -1047,9 +1044,8 @@
       "lesson": 4,
       "number": "2.4",
       "type": "Lesson",
-      "title": "Vectors, Components, and Resultant Forces",
-      "url": "courses/poe/units/unit-2/lesson-2-4.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.4_Vectors_Components_and_Resultant_Forces.pptx"
+      "title": "Free-Body Diagrams",
+      "url": "courses/poe/units/unit-2/lesson-2-4.html"
     },
     {
       "course": "POE",
@@ -1057,9 +1053,8 @@
       "lesson": 5,
       "number": "2.5",
       "type": "Lesson",
-      "title": "Moments, Torque, and Structural Rotation",
-      "url": "courses/poe/units/unit-2/lesson-2-5.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.5_Moments_Torque_and_Structural_Rotation.pptx"
+      "title": "Calculating Force Vectors",
+      "url": "courses/poe/units/unit-2/lesson-2-5.html"
     },
     {
       "course": "POE",
@@ -1067,9 +1062,8 @@
       "lesson": 6,
       "number": "2.6",
       "type": "Lesson",
-      "title": "Static Equilibrium",
-      "url": "courses/poe/units/unit-2/lesson-2-6.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.6_Static_Equilibrium.pptx"
+      "title": "Calculating Moments",
+      "url": "courses/poe/units/unit-2/lesson-2-6.html"
     },
     {
       "course": "POE",
@@ -1077,9 +1071,8 @@
       "lesson": 7,
       "number": "2.7",
       "type": "Lesson",
-      "title": "Trusses and Member Forces",
-      "url": "courses/poe/units/unit-2/lesson-2-7.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.7_Trusses_and_Member_Forces.pptx"
+      "title": "Truss Systems & Member Force Analysis",
+      "url": "courses/poe/units/unit-2/lesson-2-7.html"
     },
     {
       "course": "POE",
@@ -1087,9 +1080,8 @@
       "lesson": 8,
       "number": "2.8",
       "type": "Lesson",
-      "title": "Centroids and Structural Cross-Sections",
-      "url": "courses/poe/units/unit-2/lesson-2-8.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.8_Centroids_and_Structural_Cross_Sections.pptx"
+      "title": "Structural Materials & Properties",
+      "url": "courses/poe/units/unit-2/lesson-2-8.html"
     },
     {
       "course": "POE",
@@ -1097,9 +1089,8 @@
       "lesson": 9,
       "number": "2.9",
       "type": "Lesson",
-      "title": "Moment of Inertia and Stiffness",
-      "url": "courses/poe/units/unit-2/lesson-2-9.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.9_Moment_of_Inertia_and_Stiffness.pptx"
+      "title": "Structural Failure",
+      "url": "courses/poe/units/unit-2/lesson-2-9.html"
     },
     {
       "course": "POE",
@@ -1107,9 +1098,8 @@
       "lesson": 10,
       "number": "2.10",
       "type": "Lesson",
-      "title": "Aerospace Material Families and Selection",
-      "url": "courses/poe/units/unit-2/lesson-2-10.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.10_Aerospace_Material_Families_and_Selection.pptx"
+      "title": "Materials Testing Lab",
+      "url": "courses/poe/units/unit-2/lesson-2-10.html"
     },
     {
       "course": "POE",
@@ -1117,9 +1107,8 @@
       "lesson": 11,
       "number": "2.11",
       "type": "Lesson",
-      "title": "Density, Mass, Volume, and Structural Efficiency",
-      "url": "courses/poe/units/unit-2/lesson-2-11.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.11_Density_Mass_Volume_and_Structural_Efficiency.pptx"
+      "title": "Structural Efficiency",
+      "url": "courses/poe/units/unit-2/lesson-2-11.html"
     },
     {
       "course": "POE",
@@ -1127,9 +1116,8 @@
       "lesson": 12,
       "number": "2.12",
       "type": "Lesson",
-      "title": "Non-Destructive Material Testing",
-      "url": "courses/poe/units/unit-2/lesson-2-12.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.12_Non_Destructive_Material_Testing.pptx"
+      "title": "Bridge Design Research & Concepts",
+      "url": "courses/poe/units/unit-2/lesson-2-12.html"
     },
     {
       "course": "POE",
@@ -1137,9 +1125,8 @@
       "lesson": 13,
       "number": "2.13",
       "type": "Lesson",
-      "title": "Destructive Testing and Stress-Strain Behavior",
-      "url": "courses/poe/units/unit-2/lesson-2-13.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.13_Destructive_Testing_and_Stress_Strain_Behavior.pptx"
+      "title": "Bridge Engineering Analysis",
+      "url": "courses/poe/units/unit-2/lesson-2-13.html"
     },
     {
       "course": "POE",
@@ -1147,9 +1134,8 @@
       "lesson": 14,
       "number": "2.14",
       "type": "Lesson",
-      "title": "Materials Test Lab and Data Collection",
-      "url": "courses/poe/units/unit-2/lesson-2-14.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.14_Materials_Test_Lab_and_Data_Collection.pptx"
+      "title": "Detailed Bridge Design",
+      "url": "courses/poe/units/unit-2/lesson-2-14.html"
     },
     {
       "course": "POE",
@@ -1157,9 +1143,8 @@
       "lesson": 15,
       "number": "2.15",
       "type": "Lesson",
-      "title": "Design Brief: Aerospace Payload Support Structure",
-      "url": "courses/poe/units/unit-2/lesson-2-15.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.15_Design_Brief_Aerospace_Payload_Support_Structure.pptx"
+      "title": "Bridge Fabrication",
+      "url": "courses/poe/units/unit-2/lesson-2-15.html"
     },
     {
       "course": "POE",
@@ -1167,9 +1152,8 @@
       "lesson": 16,
       "number": "2.16",
       "type": "Lesson",
-      "title": "Concept Development, Decision Matrix, and Build Plan",
-      "url": "courses/poe/units/unit-2/lesson-2-16.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.16_Concept_Development_Decision_Matrix_and_Build_Plan.pptx"
+      "title": "Bridge Load Testing",
+      "url": "courses/poe/units/unit-2/lesson-2-16.html"
     },
     {
       "course": "POE",
@@ -1177,19 +1161,8 @@
       "lesson": 17,
       "number": "2.17",
       "type": "Lesson",
-      "title": "Prototype Build and Load Testing",
-      "url": "courses/poe/units/unit-2/lesson-2-17.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.17_Prototype_Build_and_Load_Testing.pptx"
-    },
-    {
-      "course": "POE",
-      "unit": 2,
-      "lesson": 18,
-      "number": "2.18",
-      "type": "Lesson",
-      "title": "Data Analysis, Iteration, and Final Design Review",
-      "url": "courses/poe/units/unit-2/lesson-2-18.html",
-      "presentation": "downloads/presentations/POE_Unit2_Lesson_2.18_Data_Analysis_Iteration_and_Final_Design_Review.pptx"
+      "title": "Bridge Design & Testing Presentation",
+      "url": "courses/poe/units/unit-2/lesson-2-17.html"
     },
     {
       "course": "POE",
@@ -1307,7 +1280,7 @@
       "lesson": 12,
       "number": "3.12",
       "type": "Lesson",
-      "title": "Pressure, Force, and Pascal\u2019s Law",
+      "title": "Pressure, Force, and Pascal’s Law",
       "url": "courses/poe/units/unit-3/lesson-3-12.html",
       "presentation": "downloads/presentations/POE_Unit3_Lesson_3.12_Pressure_Force_and_Pascal_s_Law.pptx"
     },
@@ -1969,7 +1942,7 @@
       "unit": 3,
       "number": "3.2.2",
       "type": "Activity",
-      "title": "Don\u2019t Crash!",
+      "title": "Don’t Crash!",
       "url": "courses/adm/units/unit-3/activity-3-2-2.html"
     },
     {
