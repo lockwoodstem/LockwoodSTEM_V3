@@ -1,488 +1,639 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>POE 2.8 | Calculating Truss Forces — Learning Studio | LockwoodSTEM</title>
-<meta name="description" content="Learn method-of-joints truss calculations with teacher-guided videos, individual joint FBDs, fully worked compression/tension solutions and an interactive truss force explorer.">
+<title>POE 2.8 | Structural Materials &amp; Properties — Learning Studio | LockwoodSTEM</title>
+<meta name="description" content="Explore material stiffness, strength, toughness, density, wood grain and plywood layers through technical diagrams, video lessons, a live bending comparison and a material selection matrix.">
 <link href="../../../../assets/css/styles.css?v=learning-20261029" rel="stylesheet">
 <link href="../../../../assets/css/unit-lesson-immersive.css?v=learning-20261029" rel="stylesheet">
 <link href="../../../../assets/css/content-alignment.css?v=learning-20261029" rel="stylesheet">
 <link href="../../../../assets/css/poe-unit2-bridge.css?v=learning-20261029" rel="stylesheet">
 <script defer src="../../../../assets/js/main.js?v=learning-20261029"></script>
-<style id="poe28-learning-studio">
+<style id="poe211-learning-studio">
 html{scroll-behavior:smooth}
-.poe28{--ink:#092940;--blue:#0b567e;--aqua:#147f88;--gold:#e2ac37;--edge:#cadbe7}
-.poe28 .poe28-lead{font-size:1.09rem;line-height:1.65;color:#294456}
-.poe28 .poe28-eyebrow{color:#875d0a;font-weight:850;text-transform:uppercase;letter-spacing:.09em;font-size:.82rem}
-.poe28 .poe28-section-header{margin-bottom:1rem}
-.poe28 .poe28-section-header h2{margin:.25rem 0 .3rem}
-.poe28 .poe28-section-header p{margin:.1rem 0;max-width:860px;color:#4b6475}
-.poe28 .poe28-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
-.poe28 .poe28-metric{background:#f1f7fb;border:1px solid #bdd4e4;border-radius:14px;padding:.9rem 1rem}
-.poe28 .poe28-metric strong{display:block;color:#0b4772;font-size:1.05rem}
-.poe28 .poe28-metric span{display:block;font-size:.94rem;color:#40596a;margin-top:.2rem}
-.poe28 .poe28-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-.poe28 .poe28-thirds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
-.poe28 .poe28-panel{background:#f7fbfd;border:1px solid var(--edge);border-radius:16px;padding:1.1rem 1.15rem}
-.poe28 .poe28-panel h3{color:var(--ink);margin:.15rem 0 .5rem}
-.poe28 .poe28-panel p{margin:.3rem 0 .65rem}
-.poe28 .poe28-panel ul{padding-left:1.2rem;margin:.4rem 0}
-.poe28 .poe28-pill{display:inline-block;border-radius:99px;padding:.2rem .6rem;background:#e3f0f5;color:#0c5672;font-size:.75rem;font-weight:900;letter-spacing:.03em}
-.poe28 .poe28-pill.gold{background:#fbefcf;color:#7d540d}
-.poe28 .poe28-mini{font-size:.9rem;color:#536b79}
-.poe28 .poe28-formula{font-size:clamp(1.05rem,1.6vw,1.28rem);letter-spacing:.01em;font-weight:850;color:#0b4163;background:#edf6fb;border-left:5px solid #147a9e;border-radius:10px;padding:.8rem 1rem;margin:.8rem 0;overflow-wrap:anywhere}
-.poe28 .poe28-graphic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
-.poe28 .poe28-large-svg{max-width:870px}
-.poe28 svg .poe28-axis{fill:none;stroke:#455f73;stroke-width:1.8}
-.poe28 svg .poe28-guide{stroke:#4c879e;stroke-dasharray:5 5;stroke-width:1.35;fill:none}
-.poe28 svg .poe28-dim{fill:none;stroke:#2b648b;stroke-width:1.15}
-.poe28 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#17384e}
-.poe28 svg text.poe28-annotation{font-size:13px;font-weight:750}
-.poe28 svg text.poe28-small{font-size:13px}
-.poe28 svg text.poe28-tiny{font-size:11px}
-.poe28 svg text.poe28-strong{font-weight:800}
-.poe28 .poe28-lesson-steps{list-style:none!important;margin:0;padding:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
-.poe28 .poe28-lesson-steps li{border-left:4px solid #167a94;padding:.7rem .75rem;border-radius:9px;background:#f2f8fc;font-weight:750;font-size:.92rem}
-.poe28 .poe28-lesson-steps li span{display:block;color:#527283;font-size:.78rem;font-weight:700}
-.poe28 .poe28-video{background:#f7fbff;border:1px solid #cfdfeb;border-radius:16px;overflow:hidden}
-.poe28 .poe28-video-copy{padding:1rem}
-.poe28 .poe28-video-copy h3{margin:.25rem 0}
-.poe28 .poe28-frame{aspect-ratio:16/9;background:#071e35;position:relative}
-.poe28 .poe28-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.poe28 .poe28-video a{font-weight:800}
-.poe28 .poe28-video p{margin:.4rem 0}
-.poe28 .poe28-tablewrap{overflow-x:auto}
-.poe28 .poe28-table{width:100%;border-collapse:collapse;font-size:.95rem}
-.poe28 .poe28-table td,.poe28 .poe28-table th{border:1px solid #c8dbe8;text-align:left;padding:.55rem .7rem}
-.poe28 .poe28-table th{background:#eaf4fb;color:#0c3554}
-.poe28 .poe28-table .poe28-total{background:#f1f8e8;font-weight:850}
-.poe28 .poe28-steps{padding-left:1.55rem}
-.poe28 .poe28-steps li{padding-bottom:.45rem}
-.poe28 .poe28-caution{background:#fff9e9;border-left:5px solid #d59b22;padding:.8rem 1rem;border-radius:10px}
-.poe28 details.poe28-reveal{border:1px solid #b9d3e4;background:#f7fbff;border-radius:12px;padding:.8rem 1rem;margin:.65rem 0}
-.poe28 details.poe28-reveal summary{color:#0b4c73;cursor:pointer;font-weight:850}
-.poe28 details.poe28-reveal[open]{border-color:#0d8b9a}
-.poe28 details.poe28-reveal p{margin:.7rem 0 .15rem}
-.poe28 .poe28-explorer{background:#f2f9fc;border:1px solid #9dc6db;border-radius:16px;padding:1rem}
-.poe28 .poe28-explorer label{font-weight:800;color:#0b4163;display:block;margin:.5rem 0}
-.poe28 .poe28-explorer input[type=range]{width:min(100%,440px);accent-color:#0a7991;cursor:pointer}
-.poe28 .poe28-output{font-size:1.2rem;font-weight:850;color:#0a506d;background:#fff;border:1px solid #b9d5e5;padding:.7rem;border-radius:10px}
-.poe28 .poe28-resources a{display:block;margin:.4rem 0;font-weight:800;overflow-wrap:anywhere}
-.poe28 .poe28-checklist{list-style:none!important;padding:0!important}
-.poe28 .poe28-checklist li{padding:.45rem 0 .45rem 1.7rem;position:relative}
-.poe28 .poe28-checklist li::before{content:"□";position:absolute;left:0;top:.32rem;font-size:1.3rem;color:#0b567e}
-.poe28 a:focus-visible,.poe28 input:focus-visible,.poe28 summary:focus-visible{outline:3px solid #ca8b20;outline-offset:3px}
-@media(max-width:980px){.poe28 .poe28-thirds{grid-template-columns:1fr 1fr}.poe28 .poe28-lesson-steps{grid-template-columns:1fr 1fr}}
-@media(max-width:720px){.poe28 .poe28-grid,.poe28 .poe28-thirds,.poe28 .poe28-overview{grid-template-columns:1fr}}
-@media print{.poe28 .poe28-video,.poe28 #explore,.poe28 .mission-actions{display:none!important}.poe28 details.poe28-reveal:not([open]){display:none}}
+.poe211{--ink:#092940;--blue:#0b567e;--aqua:#147f88;--gold:#e2ac37;--edge:#cadbe7}
+.poe211 .poe211-lead{font-size:1.09rem;line-height:1.65;color:#294456}
+.poe211 .poe211-eyebrow{color:#875d0a;font-weight:850;text-transform:uppercase;letter-spacing:.09em;font-size:.82rem}
+.poe211 .poe211-section-header{margin-bottom:1rem}
+.poe211 .poe211-section-header h2{margin:.25rem 0 .3rem}
+.poe211 .poe211-section-header p{margin:.1rem 0;max-width:860px;color:#4b6475}
+.poe211 .poe211-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
+.poe211 .poe211-metric{background:#f1f7fb;border:1px solid #bdd4e4;border-radius:14px;padding:.9rem 1rem}
+.poe211 .poe211-metric strong{display:block;color:#0b4772;font-size:1.05rem}
+.poe211 .poe211-metric span{display:block;font-size:.94rem;color:#40596a;margin-top:.2rem}
+.poe211 .poe211-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe211 .poe211-thirds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.poe211 .poe211-panel{background:#f7fbfd;border:1px solid var(--edge);border-radius:16px;padding:1.1rem 1.15rem}
+.poe211 .poe211-panel h3{color:var(--ink);margin:.15rem 0 .5rem}
+.poe211 .poe211-panel p{margin:.3rem 0 .65rem}
+.poe211 .poe211-panel ul{padding-left:1.2rem;margin:.4rem 0}
+.poe211 .poe211-pill{display:inline-block;border-radius:99px;padding:.2rem .6rem;background:#e3f0f5;color:#0c5672;font-size:.75rem;font-weight:900;letter-spacing:.03em}
+.poe211 .poe211-pill.gold{background:#fbefcf;color:#7d540d}
+.poe211 .poe211-mini{font-size:.9rem;color:#536b79}
+.poe211 .poe211-formula{font-size:clamp(1.05rem,1.6vw,1.28rem);letter-spacing:.01em;font-weight:850;color:#0b4163;background:#edf6fb;border-left:5px solid #147a9e;border-radius:10px;padding:.8rem 1rem;margin:.8rem 0;overflow-wrap:anywhere}
+.poe211 .poe211-graphic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe211 .poe211-large-svg{max-width:870px}
+.poe211 svg .poe211-axis{fill:none;stroke:#455f73;stroke-width:1.8}
+.poe211 svg .poe211-guide{stroke:#4c879e;stroke-dasharray:5 5;stroke-width:1.35;fill:none}
+.poe211 svg .poe211-dim{fill:none;stroke:#2b648b;stroke-width:1.15}
+.poe211 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#17384e}
+.poe211 svg text.poe211-annotation{font-size:13px;font-weight:750}
+.poe211 svg text.poe211-small{font-size:13px}
+.poe211 svg text.poe211-tiny{font-size:11px}
+.poe211 svg text.poe211-strong{font-weight:800}
+.poe211 .poe211-lesson-steps{list-style:none!important;margin:0;padding:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe211 .poe211-lesson-steps li{border-left:4px solid #167a94;padding:.7rem .75rem;border-radius:9px;background:#f2f8fc;font-weight:750;font-size:.92rem}
+.poe211 .poe211-lesson-steps li span{display:block;color:#527283;font-size:.78rem;font-weight:700}
+.poe211 .poe211-video{background:#f7fbff;border:1px solid #cfdfeb;border-radius:16px;overflow:hidden}
+.poe211 .poe211-video-copy{padding:1rem}
+.poe211 .poe211-video-copy h3{margin:.25rem 0}
+.poe211 .poe211-frame{aspect-ratio:16/9;background:#071e35;position:relative}
+.poe211 .poe211-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poe211 .poe211-video a{font-weight:800}
+.poe211 .poe211-video p{margin:.4rem 0}
+.poe211 .poe211-tablewrap{overflow-x:auto}
+.poe211 .poe211-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.poe211 .poe211-table td,.poe211 .poe211-table th{border:1px solid #c8dbe8;text-align:left;padding:.55rem .7rem}
+.poe211 .poe211-table th{background:#eaf4fb;color:#0c3554}
+.poe211 .poe211-table .poe211-total{background:#f1f8e8;font-weight:850}
+.poe211 .poe211-steps{padding-left:1.55rem}
+.poe211 .poe211-steps li{padding-bottom:.45rem}
+.poe211 .poe211-caution{background:#fff9e9;border-left:5px solid #d59b22;padding:.8rem 1rem;border-radius:10px}
+.poe211 details.poe211-reveal{border:1px solid #b9d3e4;background:#f7fbff;border-radius:12px;padding:.8rem 1rem;margin:.65rem 0}
+.poe211 details.poe211-reveal summary{color:#0b4c73;cursor:pointer;font-weight:850}
+.poe211 details.poe211-reveal[open]{border-color:#0d8b9a}
+.poe211 details.poe211-reveal p{margin:.7rem 0 .15rem}
+.poe211 .poe211-explorer{background:#f2f9fc;border:1px solid #9dc6db;border-radius:16px;padding:1rem}
+.poe211 .poe211-explorer label{font-weight:800;color:#0b4163;display:block;margin:.5rem 0}
+.poe211 .poe211-explorer input[type=range]{width:min(100%,440px);accent-color:#0a7991;cursor:pointer}
+.poe211 .poe211-output{font-size:1.2rem;font-weight:850;color:#0a506d;background:#fff;border:1px solid #b9d5e5;padding:.7rem;border-radius:10px}
+.poe211 .poe211-resources a{display:block;margin:.4rem 0;font-weight:800;overflow-wrap:anywhere}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{padding:.45rem 0 .45rem 1.7rem;position:relative}
+.poe211 .poe211-checklist li::before{content:"□";position:absolute;left:0;top:.32rem;font-size:1.3rem;color:#0b567e}
+.poe211 a:focus-visible,.poe211 input:focus-visible,.poe211 summary:focus-visible{outline:3px solid #ca8b20;outline-offset:3px}
+@media(max-width:980px){.poe211 .poe211-thirds{grid-template-columns:1fr 1fr}.poe211 .poe211-lesson-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.poe211 .poe211-grid,.poe211 .poe211-thirds,.poe211 .poe211-overview{grid-template-columns:1fr}}
+@media print{.poe211 .poe211-video,.poe211 #explore,.poe211 .mission-actions{display:none!important}.poe211 details.poe211-reveal:not([open]){display:none}}
 
-.poe28 .poe28-illustration{display:block;width:100%;height:auto;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
-.poe28 .poe28-twin{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-.poe28 .poe28-twin>*{min-width:0}
-.poe28 svg .beam{stroke:#1b5a7b;fill:none;stroke-width:8;stroke-linecap:round}
-.poe28 svg .beam-original{stroke:#c6d5df;stroke-width:4;stroke-dasharray:8 6;fill:none}
-.poe28 svg .beam-deflected{stroke:#008d94;stroke-width:6;fill:none;stroke-linecap:round}
-.poe28 svg .poe28-support{fill:#d6e9f5;stroke:#123f5b;stroke-width:1.8}
-.poe28 svg .poe28-force{stroke:#d97726;stroke-width:3;fill:none}
-.poe28 .poe28-param{background:#f6fafc;border-radius:12px;padding:.65rem .8rem;margin:.6rem 0}
-.poe28 .poe28-param label{display:flex;gap:.7rem;align-items:center;justify-content:space-between}
-.poe28 .poe28-param label strong{white-space:nowrap;font-variant-numeric:tabular-nums}
-.poe28 .poe28-param input[type="range"]{width:100%;accent-color:#0a7991}
-.poe28 .poe28-data{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:1rem 0}
-.poe28 .poe28-data div{border:1px solid #cadee8;border-radius:12px;padding:.6rem .8rem;background:#fff}
-.poe28 .poe28-data strong{display:block;font-size:1.15rem;color:#0c4966;font-variant-numeric:tabular-nums}
-.poe28 .poe28-data span{font-size:.82rem;color:#496475}
-.poe28 .poe28-variable{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
-.poe28 .poe28-variable div{border:1px solid #cadde8;border-radius:12px;background:#fff;padding:.75rem}
-.poe28 .poe28-variable b{display:block;font-size:1.12rem;color:#0b5779}
-.poe28 .poe28-progress-card{padding:1rem;border:1px solid #bfdae6;border-radius:12px;background:#f5fafc}
-.poe28 .poe28-progress-card strong{color:#0c4966}
-.poe28 .poe28-solution{font-variant-numeric:tabular-nums}
-.poe28 .poe28-resource-link{display:inline-block;margin-top:.3rem;font-weight:800}
-.poe28 .poe28-print{float:right;font-size:.85rem}
-@media(max-width:760px){.poe28 .poe28-twin,.poe28 .poe28-variable{grid-template-columns:1fr}.poe28 .poe28-print{float:none}}
+.poe211 .poe211-illustration{display:block;width:100%;height:auto;background:#fff;border:1px solid #d6e4ed;border-radius:12px;margin:.65rem auto}
+.poe211 .poe211-twin{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.poe211 .poe211-twin>*{min-width:0}
+.poe211 svg .beam{stroke:#1b5a7b;fill:none;stroke-width:8;stroke-linecap:round}
+.poe211 svg .beam-original{stroke:#c6d5df;stroke-width:4;stroke-dasharray:8 6;fill:none}
+.poe211 svg .beam-deflected{stroke:#008d94;stroke-width:6;fill:none;stroke-linecap:round}
+.poe211 svg .poe211-support{fill:#d6e9f5;stroke:#123f5b;stroke-width:1.8}
+.poe211 svg .poe211-force{stroke:#d97726;stroke-width:3;fill:none}
+.poe211 .poe211-param{background:#f6fafc;border-radius:12px;padding:.65rem .8rem;margin:.6rem 0}
+.poe211 .poe211-param label{display:flex;gap:.7rem;align-items:center;justify-content:space-between}
+.poe211 .poe211-param label strong{white-space:nowrap;font-variant-numeric:tabular-nums}
+.poe211 .poe211-param input[type="range"]{width:100%;accent-color:#0a7991}
+.poe211 .poe211-data{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:1rem 0}
+.poe211 .poe211-data div{border:1px solid #cadee8;border-radius:12px;padding:.6rem .8rem;background:#fff}
+.poe211 .poe211-data strong{display:block;font-size:1.15rem;color:#0c4966;font-variant-numeric:tabular-nums}
+.poe211 .poe211-data span{font-size:.82rem;color:#496475}
+.poe211 .poe211-variable{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe211 .poe211-variable div{border:1px solid #cadde8;border-radius:12px;background:#fff;padding:.75rem}
+.poe211 .poe211-variable b{display:block;font-size:1.12rem;color:#0b5779}
+.poe211 .poe211-progress-card{padding:1rem;border:1px solid #bfdae6;border-radius:12px;background:#f5fafc}
+.poe211 .poe211-progress-card strong{color:#0c4966}
+.poe211 .poe211-solution{font-variant-numeric:tabular-nums}
+.poe211 .poe211-resource-link{display:inline-block;margin-top:.3rem;font-weight:800}
+.poe211 .poe211-print{float:right;font-size:.85rem}
+@media(max-width:760px){.poe211 .poe211-twin,.poe211 .poe211-variable{grid-template-columns:1fr}.poe211 .poe211-print{float:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-.poe28 .poe28-schematic{width:100%;display:block;max-width:900px;height:auto;background:#fff;border:1px solid #d2e4ec;border-radius:12px;margin:.75rem auto}
-.poe28 svg .poe28-head{font-size:15px;font-weight:850;fill:#113d57}
-.poe28 svg .poe28-note{font-size:13px;font-weight:760;fill:#183d53}
-.poe28 svg .poe28-caption{font-size:11px;fill:#405c6e}
-.poe28 .poe28-force-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-bottom:1rem}
-.poe28 .poe28-force-grid>div{background:#f5fafc;border:1px solid #cfdfeb;border-radius:11px;padding:.85rem}
-.poe28 .poe28-force-grid strong{display:block;color:#0d5472;margin-bottom:.2rem}
-.poe28 .poe28-force-grid span{font-size:.94rem;color:#3a5263}
-.poe28 .poe28-switches{display:flex;gap:.55rem;flex-wrap:wrap;margin:.75rem 0}
-.poe28 .poe28-switches button{border:1px solid #7ba1b9;background:#fff;color:#104c6c;border-radius:10px;padding:.65rem .85rem;font-weight:780;cursor:pointer}
-.poe28 .poe28-switches button[aria-pressed="true"]{background:#105a7b;color:white;border-color:#105a7b}
-.poe28 .poe28-switches button:hover{border-color:#147a9e}
-.poe28 .poe28-builder-note{background:#f2f9fc;border:1px solid #b7d4e5;border-radius:12px;padding:1rem;min-height:100px}
-.poe28 .poe28-builder-note h3{margin:0 0 .25rem}
-.poe28 .poe28-builder-note p{margin:.3rem 0}
-.poe28 .poe28-explorer input[type=range]{width:min(440px,100%);accent-color:#147a9e}
-.poe28 .poe28-checklist{list-style:none!important;margin:.4rem 0;padding:0!important}
-.poe28 .poe28-checklist li{position:relative;padding:.5rem 0 .5rem 1.6rem}
-.poe28 .poe28-checklist li:before{content:"□";position:absolute;left:0;top:.39rem;color:#147a9e;font-size:1.25rem}
-@media(max-width:880px){.poe28 .poe28-force-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:560px){.poe28 .poe28-force-grid{grid-template-columns:1fr}}
+.poe211 .poe211-schematic{width:100%;display:block;max-width:900px;height:auto;background:#fff;border:1px solid #d2e4ec;border-radius:12px;margin:.75rem auto}
+.poe211 svg .poe211-head{font-size:15px;font-weight:850;fill:#113d57}
+.poe211 svg .poe211-note{font-size:13px;font-weight:760;fill:#183d53}
+.poe211 svg .poe211-caption{font-size:11px;fill:#405c6e}
+.poe211 .poe211-force-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-bottom:1rem}
+.poe211 .poe211-force-grid>div{background:#f5fafc;border:1px solid #cfdfeb;border-radius:11px;padding:.85rem}
+.poe211 .poe211-force-grid strong{display:block;color:#0d5472;margin-bottom:.2rem}
+.poe211 .poe211-force-grid span{font-size:.94rem;color:#3a5263}
+.poe211 .poe211-switches{display:flex;gap:.55rem;flex-wrap:wrap;margin:.75rem 0}
+.poe211 .poe211-switches button{border:1px solid #7ba1b9;background:#fff;color:#104c6c;border-radius:10px;padding:.65rem .85rem;font-weight:780;cursor:pointer}
+.poe211 .poe211-switches button[aria-pressed="true"]{background:#105a7b;color:white;border-color:#105a7b}
+.poe211 .poe211-switches button:hover{border-color:#147a9e}
+.poe211 .poe211-builder-note{background:#f2f9fc;border:1px solid #b7d4e5;border-radius:12px;padding:1rem;min-height:100px}
+.poe211 .poe211-builder-note h3{margin:0 0 .25rem}
+.poe211 .poe211-builder-note p{margin:.3rem 0}
+.poe211 .poe211-explorer input[type=range]{width:min(440px,100%);accent-color:#147a9e}
+.poe211 .poe211-checklist{list-style:none!important;margin:.4rem 0;padding:0!important}
+.poe211 .poe211-checklist li{position:relative;padding:.5rem 0 .5rem 1.6rem}
+.poe211 .poe211-checklist li:before{content:"□";position:absolute;left:0;top:.39rem;color:#147a9e;font-size:1.25rem}
+@media(max-width:880px){.poe211 .poe211-force-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.poe211 .poe211-force-grid{grid-template-columns:1fr}}
 
-.poe28 .poe28-schematic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d5e3ec;border-radius:14px;margin:.75rem auto}
-.poe28 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25465e}
-.poe28 svg .poe28-small{font-size:12px}
-.poe28 svg .poe28-label{font-size:14px;font-weight:800}
-.poe28 .poe28-key{display:flex;flex-wrap:wrap;gap:.8rem;font-weight:700;color:#446479;font-size:.9rem}
-.poe28 .poe28-key b{display:inline-block;width:15px;height:4px;vertical-align:middle;margin-right:.35rem}
-.poe28 .poe28-concept{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
-.poe28 .poe28-concept>div{border:1px solid #c1d7e4;background:#f5fbfd;border-radius:12px;padding:.85rem 1rem}
-.poe28 .poe28-concept strong{display:block;color:#0a5278;margin-bottom:.35rem}
-.poe28 .poe28-flow-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
-.poe28 .poe28-flow-list>div{background:#eef7fa;border-left:4px solid #147a9e;padding:.75rem;border-radius:9px;font-weight:750}
-.poe28 .poe28-flow-list small{display:block;color:#44677a}
-.poe28 .poe28-assumption{background:#fff8e8;border-left:5px solid #c89025;border-radius:10px;padding:.75rem 1rem}
-.poe28 .poe28-notation{background:#f1f8fc;border:1px solid #b8d3e6;border-radius:10px;padding:.75rem 1rem}
-.poe28 .poe28-formula-equation{background:#ecf7fb;border-left:5px solid #0c7994;padding:.8rem 1.1rem;border-radius:10px;font-size:1.22rem;font-weight:850;color:#06466a;margin:.65rem 0;overflow-wrap:anywhere}
-.poe28 .poe28-tablewrap{max-width:100%;overflow-x:auto}
-.poe28 .poe28-table{width:100%;border-collapse:collapse}
-.poe28 .poe28-table th,.poe28 .poe28-table td{border:1px solid #c5d9e6;padding:.55rem .65rem;text-align:left}
-.poe28 .poe28-table th{background:#eaf4fb;color:#0b496d}
-.poe28 .poe28-table td{font-variant-numeric:tabular-nums}
-.poe28 .poe28-control{padding:.8rem;background:#f8fbfd;border:1px solid #c5dce9;border-radius:12px;margin-bottom:.65rem}
-.poe28 .poe28-control label{display:flex;align-items:center;justify-content:space-between;gap:.6rem;font-weight:790;color:#0a5377;margin:0 0 .4rem}
-.poe28 .poe28-control label output{font-variant-numeric:tabular-nums}
-.poe28 .poe28-control input[type=range]{width:100%;accent-color:#0b7897}
-.poe28 .poe28-control-check{display:flex;align-items:center;gap:.6rem;color:#0a4b6a;font-weight:780;margin:.65rem 0}
-.poe28 .poe28-control-check input{width:20px;height:20px;accent-color:#0b7897}
-.poe28 .poe28-answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
-.poe28 .poe28-answers>div{background:#fff;border:1px solid #b9d7e4;border-radius:12px;padding:.7rem}
-.poe28 .poe28-answers strong{display:block;color:#0a496c;font-size:1.13rem;font-variant-numeric:tabular-nums}
-.poe28 .poe28-answers span{color:#4c6477;font-size:.88rem}
-.poe28 .poe28-simulator{background:#eef7fa;border:1px solid #9abfd2;border-radius:17px;padding:1.1rem}
-.poe28 .poe28-simulator .poe28-grid>*{min-width:0}
-.poe28 .poe28-teacher-note{color:#466478;font-size:.91rem}
-.poe28 .poe28-checklist{list-style:none!important;padding:0!important}
-.poe28 .poe28-checklist li{padding:.48rem .2rem .48rem 1.6rem;position:relative}
-.poe28 .poe28-checklist li:before{content:"□";position:absolute;left:0;top:.32rem;color:#0b7d95;font-size:1.2rem}
-.poe28 .poe28-resource a{display:block;font-weight:800;margin:.4rem 0}
-.poe28 .poe28-ratio{color:#144b65;font-weight:800}
-@media(max-width:960px){.poe28 .poe28-concept{grid-template-columns:1fr 1fr}.poe28 .poe28-flow-list{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){.poe28 .poe28-concept,.poe28 .poe28-answers,.poe28 .poe28-flow-list{grid-template-columns:1fr}}
+.poe211 .poe211-schematic{width:100%;height:auto;display:block;background:#fff;border:1px solid #d5e3ec;border-radius:14px;margin:.75rem auto}
+.poe211 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25465e}
+.poe211 svg .poe211-small{font-size:12px}
+.poe211 svg .poe211-label{font-size:14px;font-weight:800}
+.poe211 .poe211-key{display:flex;flex-wrap:wrap;gap:.8rem;font-weight:700;color:#446479;font-size:.9rem}
+.poe211 .poe211-key b{display:inline-block;width:15px;height:4px;vertical-align:middle;margin-right:.35rem}
+.poe211 .poe211-concept{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe211 .poe211-concept>div{border:1px solid #c1d7e4;background:#f5fbfd;border-radius:12px;padding:.85rem 1rem}
+.poe211 .poe211-concept strong{display:block;color:#0a5278;margin-bottom:.35rem}
+.poe211 .poe211-flow-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe211 .poe211-flow-list>div{background:#eef7fa;border-left:4px solid #147a9e;padding:.75rem;border-radius:9px;font-weight:750}
+.poe211 .poe211-flow-list small{display:block;color:#44677a}
+.poe211 .poe211-assumption{background:#fff8e8;border-left:5px solid #c89025;border-radius:10px;padding:.75rem 1rem}
+.poe211 .poe211-notation{background:#f1f8fc;border:1px solid #b8d3e6;border-radius:10px;padding:.75rem 1rem}
+.poe211 .poe211-formula-equation{background:#ecf7fb;border-left:5px solid #0c7994;padding:.8rem 1.1rem;border-radius:10px;font-size:1.22rem;font-weight:850;color:#06466a;margin:.65rem 0;overflow-wrap:anywhere}
+.poe211 .poe211-tablewrap{max-width:100%;overflow-x:auto}
+.poe211 .poe211-table{width:100%;border-collapse:collapse}
+.poe211 .poe211-table th,.poe211 .poe211-table td{border:1px solid #c5d9e6;padding:.55rem .65rem;text-align:left}
+.poe211 .poe211-table th{background:#eaf4fb;color:#0b496d}
+.poe211 .poe211-table td{font-variant-numeric:tabular-nums}
+.poe211 .poe211-control{padding:.8rem;background:#f8fbfd;border:1px solid #c5dce9;border-radius:12px;margin-bottom:.65rem}
+.poe211 .poe211-control label{display:flex;align-items:center;justify-content:space-between;gap:.6rem;font-weight:790;color:#0a5377;margin:0 0 .4rem}
+.poe211 .poe211-control label output{font-variant-numeric:tabular-nums}
+.poe211 .poe211-control input[type=range]{width:100%;accent-color:#0b7897}
+.poe211 .poe211-control-check{display:flex;align-items:center;gap:.6rem;color:#0a4b6a;font-weight:780;margin:.65rem 0}
+.poe211 .poe211-control-check input{width:20px;height:20px;accent-color:#0b7897}
+.poe211 .poe211-answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe211 .poe211-answers>div{background:#fff;border:1px solid #b9d7e4;border-radius:12px;padding:.7rem}
+.poe211 .poe211-answers strong{display:block;color:#0a496c;font-size:1.13rem;font-variant-numeric:tabular-nums}
+.poe211 .poe211-answers span{color:#4c6477;font-size:.88rem}
+.poe211 .poe211-simulator{background:#eef7fa;border:1px solid #9abfd2;border-radius:17px;padding:1.1rem}
+.poe211 .poe211-simulator .poe211-grid>*{min-width:0}
+.poe211 .poe211-teacher-note{color:#466478;font-size:.91rem}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{padding:.48rem .2rem .48rem 1.6rem;position:relative}
+.poe211 .poe211-checklist li:before{content:"□";position:absolute;left:0;top:.32rem;color:#0b7d95;font-size:1.2rem}
+.poe211 .poe211-resource a{display:block;font-weight:800;margin:.4rem 0}
+.poe211 .poe211-ratio{color:#144b65;font-weight:800}
+@media(max-width:960px){.poe211 .poe211-concept{grid-template-columns:1fr 1fr}.poe211 .poe211-flow-list{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.poe211 .poe211-concept,.poe211 .poe211-answers,.poe211 .poe211-flow-list{grid-template-columns:1fr}}
 
-.poe28 .poe28-schematic{display:block;width:100%;max-width:950px;height:auto;border:1px solid #c9dfec;background:#fff;border-radius:14px;margin:.85rem auto}
-.poe28 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25485e}
-.poe28 svg .poe28-heading{font-weight:850;font-size:15px}
-.poe28 svg .poe28-label{font-weight:760;font-size:14px}
-.poe28 svg .poe28-small{font-size:12px}
-.poe28 .poe28-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
-.poe28 .poe28-flow>div{border-left:4px solid #147a9e;background:#f1f8fc;border-radius:10px;padding:.75rem;font-weight:750;color:#13445f}
-.poe28 .poe28-flow small{display:block;font-size:.8rem;color:#587084;font-weight:650}
-.poe28 .poe28-definitions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
-.poe28 .poe28-definitions>div{padding:.9rem;background:#f1f8fb;border-radius:12px;border:1px solid #c5dce8}
-.poe28 .poe28-definitions strong{display:block;color:#0a5574}
-.poe28 .poe28-formula-equation{margin:.7rem 0;padding:.8rem 1rem;background:#edf7fb;border-left:5px solid #0f7c91;color:#104969;border-radius:12px;font-weight:850;font-size:1.14rem;overflow-wrap:anywhere}
-.poe28 .poe28-alert{background:#fff7e7;padding:.75rem 1rem;border-left:5px solid #c59022;border-radius:11px}
-.poe28 .poe28-controls{background:#f0f8fb;border:1px solid #abd0dd;border-radius:16px;padding:1rem}
-.poe28 .poe28-control{border:1px solid #c3d9e3;border-radius:10px;padding:.8rem;background:#fff;margin:.65rem 0}
-.poe28 .poe28-control label{display:flex;justify-content:space-between;gap:.7rem;color:#144d6b;font-weight:780}
-.poe28 .poe28-control output{font-variant-numeric:tabular-nums}
-.poe28 .poe28-control input[type="range"]{accent-color:#127894;width:100%}
-.poe28 .poe28-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
-.poe28 .poe28-results>div{background:#fff;padding:.75rem;border:1px solid #bfd9e6;border-radius:10px}
-.poe28 .poe28-results strong{font-size:1.15rem;color:#0b506d;display:block;font-variant-numeric:tabular-nums}
-.poe28 .poe28-results span{display:block;font-size:.86rem;color:#4d6676}
-.poe28 .poe28-moment-sign{margin:.55rem 0;font-weight:800;color:#0e5371}
-.poe28 .poe28-checklist{list-style:none!important;padding:0!important}
-.poe28 .poe28-checklist li{position:relative;padding:.4rem .2rem .4rem 1.55rem}
-.poe28 .poe28-checklist li::before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.2rem;color:#167c9a}
-.poe28 .poe28-resource a{font-weight:850;display:block;margin:.6rem 0}
-.poe28 .poe28-tablewrap{overflow-x:auto}
-.poe28 .poe28-table{border-collapse:collapse;width:100%;font-size:.96rem}
-.poe28 .poe28-table td,.poe28 .poe28-table th{border:1px solid #c8dbe8;padding:.6rem;text-align:left;vertical-align:top}
-.poe28 .poe28-table th{background:#e7f2f9;color:#0a4360}
-@media(max-width:940px){.poe28 .poe28-definitions,.poe28 .poe28-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:700px){.poe28 .poe28-definitions,.poe28 .poe28-results,.poe28 .poe28-flow{grid-template-columns:1fr}}
+.poe211 .poe211-schematic{display:block;width:100%;max-width:950px;height:auto;border:1px solid #c9dfec;background:#fff;border-radius:14px;margin:.85rem auto}
+.poe211 svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#25485e}
+.poe211 svg .poe211-heading{font-weight:850;font-size:15px}
+.poe211 svg .poe211-label{font-weight:760;font-size:14px}
+.poe211 svg .poe211-small{font-size:12px}
+.poe211 .poe211-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.poe211 .poe211-flow>div{border-left:4px solid #147a9e;background:#f1f8fc;border-radius:10px;padding:.75rem;font-weight:750;color:#13445f}
+.poe211 .poe211-flow small{display:block;font-size:.8rem;color:#587084;font-weight:650}
+.poe211 .poe211-definitions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.poe211 .poe211-definitions>div{padding:.9rem;background:#f1f8fb;border-radius:12px;border:1px solid #c5dce8}
+.poe211 .poe211-definitions strong{display:block;color:#0a5574}
+.poe211 .poe211-formula-equation{margin:.7rem 0;padding:.8rem 1rem;background:#edf7fb;border-left:5px solid #0f7c91;color:#104969;border-radius:12px;font-weight:850;font-size:1.14rem;overflow-wrap:anywhere}
+.poe211 .poe211-alert{background:#fff7e7;padding:.75rem 1rem;border-left:5px solid #c59022;border-radius:11px}
+.poe211 .poe211-controls{background:#f0f8fb;border:1px solid #abd0dd;border-radius:16px;padding:1rem}
+.poe211 .poe211-control{border:1px solid #c3d9e3;border-radius:10px;padding:.8rem;background:#fff;margin:.65rem 0}
+.poe211 .poe211-control label{display:flex;justify-content:space-between;gap:.7rem;color:#144d6b;font-weight:780}
+.poe211 .poe211-control output{font-variant-numeric:tabular-nums}
+.poe211 .poe211-control input[type="range"]{accent-color:#127894;width:100%}
+.poe211 .poe211-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe211 .poe211-results>div{background:#fff;padding:.75rem;border:1px solid #bfd9e6;border-radius:10px}
+.poe211 .poe211-results strong{font-size:1.15rem;color:#0b506d;display:block;font-variant-numeric:tabular-nums}
+.poe211 .poe211-results span{display:block;font-size:.86rem;color:#4d6676}
+.poe211 .poe211-moment-sign{margin:.55rem 0;font-weight:800;color:#0e5371}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{position:relative;padding:.4rem .2rem .4rem 1.55rem}
+.poe211 .poe211-checklist li::before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.2rem;color:#167c9a}
+.poe211 .poe211-resource a{font-weight:850;display:block;margin:.6rem 0}
+.poe211 .poe211-tablewrap{overflow-x:auto}
+.poe211 .poe211-table{border-collapse:collapse;width:100%;font-size:.96rem}
+.poe211 .poe211-table td,.poe211 .poe211-table th{border:1px solid #c8dbe8;padding:.6rem;text-align:left;vertical-align:top}
+.poe211 .poe211-table th{background:#e7f2f9;color:#0a4360}
+@media(max-width:940px){.poe211 .poe211-definitions,.poe211 .poe211-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.poe211 .poe211-definitions,.poe211 .poe211-results,.poe211 .poe211-flow{grid-template-columns:1fr}}
 
-.poe28 .poe28-svg{display:block;width:100%;height:auto;background:#fff;border:1px solid #d3e1eb;border-radius:14px;margin:.7rem auto}
-.poe28 .poe28-svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#27485e}
-.poe28 .poe28-svg .poe28-small{font-size:12px}
-.poe28 .poe28-svg .poe28-label{font-size:14px;font-weight:800}
-.poe28 .poe28-svg .poe28-heading{font-size:15px;font-weight:850}
-.poe28 .poe28-svg .poe28-member{stroke:#275773;stroke-width:9;stroke-linecap:round;transition:stroke .12s ease,opacity .12s ease}
-.poe28 .poe28-svg .poe28-accent{stroke:#0f897d}
-.poe28 #memberExplorerGraphic .poe28-member{stroke-width:9}
-.poe28 .poe28-buttons{display:flex;gap:.45rem;flex-wrap:wrap;margin:.75rem 0}
-.poe28 .poe28-buttons button{background:#fff;border:1px solid #9ebccd;border-radius:9px;padding:.6rem .75rem;color:#124c67;font-size:.91rem;font-weight:760;cursor:pointer}
-.poe28 .poe28-buttons button[aria-pressed="true"]{background:#105676;border-color:#105676;color:#fff}
-.poe28 .poe28-buttons button:hover{border-color:#0a7893}
-.poe28 .poe28-interactive{border:1px solid #b2d1df;background:#f2f9fc;padding:1rem;border-radius:16px}
-.poe28 .poe28-interactive h3{margin-top:0}
-.poe28 .poe28-guide-panel{padding:.85rem 1rem;background:#fff;border:1px solid #c8deea;border-radius:12px;min-height:4.5rem}
-.poe28 .poe28-guide-panel strong{display:block;color:#0d5373;margin-bottom:.25rem}
-.poe28 .poe28-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
-.poe28 .poe28-flow>div{padding:.75rem;border-radius:10px;background:#eaf5fa;border-left:4px solid #0e829c;font-weight:750}
-.poe28 .poe28-flow small{display:block;font-weight:600;color:#42667b}
-.poe28 .poe28-checklist{list-style:none!important;padding:0!important}
-.poe28 .poe28-checklist li{padding:.42rem .25rem .42rem 1.6rem;position:relative}
-.poe28 .poe28-checklist li:before{content:"□";position:absolute;left:0;top:.34rem;color:#118199;font-size:1.25rem}
-.poe28 .poe28-warning{border-left:5px solid #bc861f;background:#fff8e9;border-radius:11px;padding:.8rem 1rem}
-.poe28 .poe28-two-force{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
-.poe28 .poe28-two-force>div{background:#f4f9fc;border:1px solid #d0e1ea;border-radius:12px;padding:.9rem}
-.poe28 .poe28-two-force h3{margin:.1rem 0 .4rem}
-.poe28 .poe28-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
-.poe28 .poe28-stats>div{background:#fff;border:1px solid #c7ddea;padding:.75rem;border-radius:12px}
-.poe28 .poe28-stats strong{font-size:1.12rem;display:block;color:#0b5879}
-.poe28 .poe28-stats span{font-size:.85rem;color:#516779}
-.poe28 .poe28-resource a{display:block;font-weight:800;margin:.35rem 0}
-.poe28 .poe28-mini-note{background:#ecf7fa;border:1px solid #a3ceda;border-radius:12px;padding:.8rem 1rem}
-.poe28 .poe28-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
-.poe28 .poe28-tags span{font-size:.85rem;font-weight:850;color:#0b577a;background:#dceef5;padding:.25rem .6rem;border-radius:99px}
-.poe28 button:focus-visible,.poe28 a:focus-visible,.poe28 summary:focus-visible{outline:3px solid #c58c26;outline-offset:3px}
-@media(max-width:920px){.poe28 .poe28-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:670px){.poe28 .poe28-flow,.poe28 .poe28-two-force,.poe28 .poe28-stats{grid-template-columns:1fr}.poe28 .poe28-buttons button{flex:1 1 auto}}
-@media(prefers-reduced-motion:reduce){.poe28 .poe28-svg .poe28-member{transition:none}}
+.poe211 .poe211-svg{display:block;width:100%;height:auto;background:#fff;border:1px solid #d3e1eb;border-radius:14px;margin:.7rem auto}
+.poe211 .poe211-svg text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#27485e}
+.poe211 .poe211-svg .poe211-small{font-size:12px}
+.poe211 .poe211-svg .poe211-label{font-size:14px;font-weight:800}
+.poe211 .poe211-svg .poe211-heading{font-size:15px;font-weight:850}
+.poe211 .poe211-svg .poe211-member{stroke:#275773;stroke-width:9;stroke-linecap:round;transition:stroke .12s ease,opacity .12s ease}
+.poe211 .poe211-svg .poe211-accent{stroke:#0f897d}
+.poe211 #memberExplorerGraphic .poe211-member{stroke-width:9}
+.poe211 .poe211-buttons{display:flex;gap:.45rem;flex-wrap:wrap;margin:.75rem 0}
+.poe211 .poe211-buttons button{background:#fff;border:1px solid #9ebccd;border-radius:9px;padding:.6rem .75rem;color:#124c67;font-size:.91rem;font-weight:760;cursor:pointer}
+.poe211 .poe211-buttons button[aria-pressed="true"]{background:#105676;border-color:#105676;color:#fff}
+.poe211 .poe211-buttons button:hover{border-color:#0a7893}
+.poe211 .poe211-interactive{border:1px solid #b2d1df;background:#f2f9fc;padding:1rem;border-radius:16px}
+.poe211 .poe211-interactive h3{margin-top:0}
+.poe211 .poe211-guide-panel{padding:.85rem 1rem;background:#fff;border:1px solid #c8deea;border-radius:12px;min-height:4.5rem}
+.poe211 .poe211-guide-panel strong{display:block;color:#0d5373;margin-bottom:.25rem}
+.poe211 .poe211-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe211 .poe211-flow>div{padding:.75rem;border-radius:10px;background:#eaf5fa;border-left:4px solid #0e829c;font-weight:750}
+.poe211 .poe211-flow small{display:block;font-weight:600;color:#42667b}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{padding:.42rem .25rem .42rem 1.6rem;position:relative}
+.poe211 .poe211-checklist li:before{content:"□";position:absolute;left:0;top:.34rem;color:#118199;font-size:1.25rem}
+.poe211 .poe211-warning{border-left:5px solid #bc861f;background:#fff8e9;border-radius:11px;padding:.8rem 1rem}
+.poe211 .poe211-two-force{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.poe211 .poe211-two-force>div{background:#f4f9fc;border:1px solid #d0e1ea;border-radius:12px;padding:.9rem}
+.poe211 .poe211-two-force h3{margin:.1rem 0 .4rem}
+.poe211 .poe211-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.poe211 .poe211-stats>div{background:#fff;border:1px solid #c7ddea;padding:.75rem;border-radius:12px}
+.poe211 .poe211-stats strong{font-size:1.12rem;display:block;color:#0b5879}
+.poe211 .poe211-stats span{font-size:.85rem;color:#516779}
+.poe211 .poe211-resource a{display:block;font-weight:800;margin:.35rem 0}
+.poe211 .poe211-mini-note{background:#ecf7fa;border:1px solid #a3ceda;border-radius:12px;padding:.8rem 1rem}
+.poe211 .poe211-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.poe211 .poe211-tags span{font-size:.85rem;font-weight:850;color:#0b577a;background:#dceef5;padding:.25rem .6rem;border-radius:99px}
+.poe211 button:focus-visible,.poe211 a:focus-visible,.poe211 summary:focus-visible{outline:3px solid #c58c26;outline-offset:3px}
+@media(max-width:920px){.poe211 .poe211-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:670px){.poe211 .poe211-flow,.poe211 .poe211-two-force,.poe211 .poe211-stats{grid-template-columns:1fr}.poe211 .poe211-buttons button{flex:1 1 auto}}
+@media(prefers-reduced-motion:reduce){.poe211 .poe211-svg .poe211-member{transition:none}}
 
-.poe28 .poe28-diagram{width:100%;max-width:940px;height:auto;display:block;margin:.8rem auto;border:1px solid #d2e2ec;border-radius:13px;background:#fff}
-.poe28 svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;fill:#24465b}
-.poe28 svg text.poe28-label{font-size:13px;font-weight:800}
-.poe28 svg text.poe28-small{font-size:11px}
-.poe28 .poe28-diagram .poe28-truss-compression{stroke:#bf7a30;stroke-width:10;stroke-linecap:round}
-.poe28 .poe28-diagram .poe28-truss-tension{stroke:#108576;stroke-width:10;stroke-linecap:round}
-.poe28 .poe28-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
-.poe28 .poe28-flow>div{background:#edf7fb;border-left:4px solid #147a9e;padding:.8rem;border-radius:10px;color:#124d69;font-weight:760}
-.poe28 .poe28-flow small{font-size:.78rem;font-weight:600;display:block;color:#577083}
-.poe28 .poe28-equation{font-weight:850;color:#0b4869;font-size:1.15rem;padding:.7rem 1rem;background:#eaf6fb;border-left:5px solid #137e9c;border-radius:10px;margin:.65rem 0;overflow-wrap:anywhere}
-.poe28 .poe28-nuance{background:#fff8e7;border-left:5px solid #c28b22;border-radius:10px;padding:.8rem 1rem}
-.poe28 .poe28-concept-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
-.poe28 .poe28-concept-cards>div{border-radius:12px;background:#f3fafc;border:1px solid #c8deea;padding:.8rem}
-.poe28 .poe28-concept-cards strong{display:block;color:#0d5271;margin-bottom:.25rem}
-.poe28 .poe28-data-table{width:100%;border-collapse:collapse;font-size:.94rem}
-.poe28 .poe28-data-table td,.poe28 .poe28-data-table th{border:1px solid #c7dce7;padding:.6rem;text-align:left;vertical-align:top}
-.poe28 .poe28-data-table th{background:#e7f4fa;color:#134a6a}
-.poe28 .poe28-table-wrap{overflow-x:auto}
-.poe28 .poe28-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}
-.poe28 .poe28-badges span{border-radius:90px;background:#e1eff5;padding:.35rem .65rem;font-size:.85rem;font-weight:820;color:#0c5679}
-.poe28 .poe28-checklist{list-style:none!important;padding:0!important}
-.poe28 .poe28-checklist li{position:relative;padding:.45rem 0 .45rem 1.55rem}
-.poe28 .poe28-checklist li:before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.25rem;color:#087d9b}
-.poe28 .poe28-lab{border:1px solid #a8d2df;border-radius:15px;background:#f1f9fc;padding:1rem}
-.poe28 .poe28-control{padding:.65rem .8rem;border:1px solid #c8dce8;background:#fff;border-radius:10px;margin:.65rem 0}
-.poe28 .poe28-control label{display:flex;justify-content:space-between;gap:.75rem;font-weight:800;color:#0c5274}
-.poe28 .poe28-control output{font-variant-numeric:tabular-nums}
-.poe28 .poe28-control input[type=range]{accent-color:#0b7899;width:100%}
-.poe28 .poe28-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
-.poe28 .poe28-results>div{background:#fff;border:1px solid #c2dce7;border-radius:10px;padding:.75rem}
-.poe28 .poe28-results strong{display:block;color:#0c506d;font-size:1.12rem;font-variant-numeric:tabular-nums}
-.poe28 .poe28-results span{color:#516d7a;font-size:.84rem}
-.poe28 .poe28-switches{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}
-.poe28 .poe28-switches button{padding:.6rem .8rem;border:1px solid #94b4c9;background:#fff;border-radius:9px;font-size:.9rem;font-weight:780;color:#135273;cursor:pointer}
-.poe28 .poe28-switches button[aria-pressed="true"]{background:#0e5678;color:#fff;border-color:#0e5678}
-.poe28 .poe28-switches button:hover{border-color:#0d7992}
-.poe28 .poe28-step-explanation{padding:.75rem 1rem;background:#fff;border:1px solid #b9d3e2;border-radius:11px;min-height:112px}
-.poe28 .poe28-step-explanation h3{margin:.15rem 0 .5rem}
-.poe28 .poe28-note{font-size:.9rem;color:#4e6573}
-.poe28 .poe28-resource a{display:block;font-weight:800;margin:.55rem 0;overflow-wrap:anywhere}
-.poe28 .poe28-mini-formula{font-size:.92rem;background:#f4fbff;border:1px solid #cddfea;padding:.65rem;border-radius:10px}
-.poe28 #solverStageJoint{stroke:#e8ab30;stroke-width:5;fill:#153d58;display:none}
-@media(max-width:950px){.poe28 .poe28-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:700px){.poe28 .poe28-concept-cards,.poe28 .poe28-flow,.poe28 .poe28-results{grid-template-columns:1fr}}
+.poe211 .poe211-diagram{width:100%;max-width:940px;height:auto;display:block;margin:.8rem auto;border:1px solid #d2e2ec;border-radius:13px;background:#fff}
+.poe211 svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;fill:#24465b}
+.poe211 svg text.poe211-label{font-size:13px;font-weight:800}
+.poe211 svg text.poe211-small{font-size:11px}
+.poe211 .poe211-diagram .poe211-truss-compression{stroke:#bf7a30;stroke-width:10;stroke-linecap:round}
+.poe211 .poe211-diagram .poe211-truss-tension{stroke:#108576;stroke-width:10;stroke-linecap:round}
+.poe211 .poe211-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe211 .poe211-flow>div{background:#edf7fb;border-left:4px solid #147a9e;padding:.8rem;border-radius:10px;color:#124d69;font-weight:760}
+.poe211 .poe211-flow small{font-size:.78rem;font-weight:600;display:block;color:#577083}
+.poe211 .poe211-equation{font-weight:850;color:#0b4869;font-size:1.15rem;padding:.7rem 1rem;background:#eaf6fb;border-left:5px solid #137e9c;border-radius:10px;margin:.65rem 0;overflow-wrap:anywhere}
+.poe211 .poe211-nuance{background:#fff8e7;border-left:5px solid #c28b22;border-radius:10px;padding:.8rem 1rem}
+.poe211 .poe211-concept-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.poe211 .poe211-concept-cards>div{border-radius:12px;background:#f3fafc;border:1px solid #c8deea;padding:.8rem}
+.poe211 .poe211-concept-cards strong{display:block;color:#0d5271;margin-bottom:.25rem}
+.poe211 .poe211-data-table{width:100%;border-collapse:collapse;font-size:.94rem}
+.poe211 .poe211-data-table td,.poe211 .poe211-data-table th{border:1px solid #c7dce7;padding:.6rem;text-align:left;vertical-align:top}
+.poe211 .poe211-data-table th{background:#e7f4fa;color:#134a6a}
+.poe211 .poe211-table-wrap{overflow-x:auto}
+.poe211 .poe211-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}
+.poe211 .poe211-badges span{border-radius:90px;background:#e1eff5;padding:.35rem .65rem;font-size:.85rem;font-weight:820;color:#0c5679}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{position:relative;padding:.45rem 0 .45rem 1.55rem}
+.poe211 .poe211-checklist li:before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.25rem;color:#087d9b}
+.poe211 .poe211-lab{border:1px solid #a8d2df;border-radius:15px;background:#f1f9fc;padding:1rem}
+.poe211 .poe211-control{padding:.65rem .8rem;border:1px solid #c8dce8;background:#fff;border-radius:10px;margin:.65rem 0}
+.poe211 .poe211-control label{display:flex;justify-content:space-between;gap:.75rem;font-weight:800;color:#0c5274}
+.poe211 .poe211-control output{font-variant-numeric:tabular-nums}
+.poe211 .poe211-control input[type=range]{accent-color:#0b7899;width:100%}
+.poe211 .poe211-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.poe211 .poe211-results>div{background:#fff;border:1px solid #c2dce7;border-radius:10px;padding:.75rem}
+.poe211 .poe211-results strong{display:block;color:#0c506d;font-size:1.12rem;font-variant-numeric:tabular-nums}
+.poe211 .poe211-results span{color:#516d7a;font-size:.84rem}
+.poe211 .poe211-switches{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}
+.poe211 .poe211-switches button{padding:.6rem .8rem;border:1px solid #94b4c9;background:#fff;border-radius:9px;font-size:.9rem;font-weight:780;color:#135273;cursor:pointer}
+.poe211 .poe211-switches button[aria-pressed="true"]{background:#0e5678;color:#fff;border-color:#0e5678}
+.poe211 .poe211-switches button:hover{border-color:#0d7992}
+.poe211 .poe211-step-explanation{padding:.75rem 1rem;background:#fff;border:1px solid #b9d3e2;border-radius:11px;min-height:112px}
+.poe211 .poe211-step-explanation h3{margin:.15rem 0 .5rem}
+.poe211 .poe211-note{font-size:.9rem;color:#4e6573}
+.poe211 .poe211-resource a{display:block;font-weight:800;margin:.55rem 0;overflow-wrap:anywhere}
+.poe211 .poe211-mini-formula{font-size:.92rem;background:#f4fbff;border:1px solid #cddfea;padding:.65rem;border-radius:10px}
+.poe211 #solverStageJoint{stroke:#e8ab30;stroke-width:5;fill:#153d58;display:none}
+@media(max-width:950px){.poe211 .poe211-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.poe211 .poe211-concept-cards,.poe211 .poe211-flow,.poe211 .poe211-results{grid-template-columns:1fr}}
+
+.poe211 .poe211-illustration{display:block;width:100%;max-width:950px;height:auto;background:#fff;border:1px solid #d0e1eb;border-radius:14px;margin:.8rem auto}
+.poe211 svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;fill:#284960}
+.poe211 svg text.poe211-label{font-size:13px;font-weight:750}
+.poe211 svg text.poe211-small{font-size:11px}
+.poe211 .poe211-solid,.poe211 .poe211-member{stroke:#285878;stroke-width:8;stroke-linecap:round;fill:none}
+.poe211 .poe211-member{stroke-width:9}
+.poe211 .poe211-load{stroke:#c37529;stroke-width:3.4;fill:none}
+.poe211 .poe211-react{stroke:#0c8c94;stroke-width:3.4;fill:none}
+.poe211 .poe211-force{stroke:#275b82;stroke-width:3.2;fill:none}
+.poe211 .poe211-dimension{stroke:#7992a6;stroke-width:1.5;fill:none}
+.poe211 .poe211-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
+.poe211 .poe211-flow>div{background:#eef8fb;border-left:4px solid #14859b;padding:.72rem .8rem;border-radius:10px;font-weight:770;color:#0a4e6c}
+.poe211 .poe211-flow small{display:block;color:#537385;font-size:.79rem;font-weight:650}
+.poe211 .poe211-equation{font-size:1.1rem;background:#eaf6fb;border-left:5px solid #0f7992;border-radius:10px;padding:.8rem 1rem;color:#0b4e70;font-weight:850;margin:.7rem 0;overflow-wrap:anywhere}
+.poe211 .poe211-note{background:#fff8e8;border-left:5px solid #c48a27;padding:.8rem 1rem;border-radius:11px}
+.poe211 .poe211-learning-card{background:#f3f9fc;border:1px solid #c8dce8;border-radius:12px;padding:.8rem 1rem}
+.poe211 .poe211-learning-card h3{margin:.2rem 0 .5rem}
+.poe211 .poe211-list-compact{margin:.4rem 0;padding-left:1.25rem}
+.poe211 .poe211-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin:.75rem 0}
+.poe211 .poe211-badges span{border-radius:99px;padding:.25rem .7rem;background:#e0eff5;color:#15516f;font-size:.83rem;font-weight:790}
+.poe211 .poe211-tablewrap{overflow-x:auto}
+.poe211 .poe211-table{width:100%;border-collapse:collapse;font-size:.93rem}
+.poe211 .poe211-table th,.poe211 .poe211-table td{border:1px solid #c6dbe7;padding:.55rem .65rem;text-align:left;vertical-align:top}
+.poe211 .poe211-table th{background:#eaf4fa;color:#0e526c}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{position:relative;padding:.45rem .25rem .45rem 1.5rem}
+.poe211 .poe211-checklist li::before{content:"□";position:absolute;left:0;top:.29rem;font-size:1.25rem;color:#0e8795}
+.poe211 .poe211-interactive{background:#eef8fb;border:1px solid #add1df;border-radius:16px;padding:1.05rem}
+.poe211 .poe211-control{border:1px solid #c4dce7;border-radius:12px;padding:.75rem .85rem;background:#fff;margin:.65rem 0}
+.poe211 .poe211-control label{display:flex;justify-content:space-between;gap:.65rem;color:#0e5271;font-weight:810}
+.poe211 .poe211-control input[type="range"]{width:100%;accent-color:#107f93}
+.poe211 .poe211-control output{font-variant-numeric:tabular-nums}
+.poe211 .poe211-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.poe211 .poe211-stats>div{border:1px solid #c3dce7;border-radius:10px;padding:.8rem;background:#fff}
+.poe211 .poe211-stats strong{display:block;font-size:1.07rem;color:#0c4f69;font-variant-numeric:tabular-nums}
+.poe211 .poe211-stats span{font-size:.83rem;color:#486b7b}
+.poe211 .poe211-stepbuttons{display:flex;gap:.5rem;flex-wrap:wrap;margin:.75rem 0}
+.poe211 .poe211-stepbuttons button{border:1px solid #93b9c8;border-radius:9px;background:white;color:#165477;font-weight:750;padding:.58rem .76rem;cursor:pointer}
+.poe211 .poe211-stepbuttons button[aria-pressed="true"]{background:#0e5675;border-color:#0e5675;color:#fff}
+.poe211 .poe211-stage-note{background:white;border:1px solid #b5d3df;border-radius:12px;padding:.8rem 1rem;min-height:110px}
+.poe211 .poe211-stage-note h3{margin:.15rem 0 .45rem}
+.poe211 .poe211-resource a{font-weight:820;display:block;margin:.45rem 0}
+.poe211 #cutLine{pointer-events:none}
+.poe211 #liveTruss [data-id]{transition:stroke .15s ease,opacity .15s ease}
+@media(max-width:960px){.poe211 .poe211-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.poe211 .poe211-flow,.poe211 .poe211-stats{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.poe211 #liveTruss [data-id]{transition:none}}
+
+.poe211 .poe211-drawing,.poe211 .poe211-guidegraphic{display:block;width:100%;height:auto;background:#fff;border:1px solid #d1e1eb;border-radius:12px;margin:.65rem auto}
+.poe211 .poe211-drawing .poe211-svgtext,.poe211 .poe211-guidegraphic text{font-family:system-ui,Segoe UI,Arial,sans-serif;font-size:11px;fill:#23465e;font-weight:690}
+.poe211 .poe211-bar{stroke:#2c6886;stroke-width:4.5;stroke-linecap:round}
+.poe211 .poe211-deformed{stroke:#dea72a;stroke-width:3;stroke-dasharray:4 3;stroke-linecap:round}
+.poe211 .poe211-lab{padding:1rem;border:1px solid #abd1dd;border-radius:16px;background:#edf7fb}
+.poe211 .poe211-control{background:#fff;border:1px solid #c4d9e5;border-radius:12px;padding:.75rem;margin:.6rem 0}
+.poe211 .poe211-control label{font-weight:790;color:#0b526f;display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.poe211 .poe211-control output{font-variant-numeric:tabular-nums}
+.poe211 .poe211-control input[type="range"]{width:100%;accent-color:#117f97}
+.poe211 .poe211-statlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe211 .poe211-statlist>div{background:#fff;border:1px solid #c0dbe5;border-radius:11px;padding:.7rem}
+.poe211 .poe211-statlist strong{display:block;color:#0a4b69;font-size:1.09rem;font-variant-numeric:tabular-nums}
+.poe211 .poe211-statlist span{font-size:.83rem;color:#536c7c}
+.poe211 .poe211-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.poe211 .poe211-flow>div{background:#eff7fa;border:1px solid #c8dde7;padding:.8rem;border-radius:11px}
+.poe211 .poe211-flow strong{display:block;color:#0b5272}
+.poe211 .poe211-flow span{font-size:.88rem;color:#536b7a}
+.poe211 .poe211-warning{background:#fff8ea;border-left:5px solid #c39230;padding:.8rem 1rem;border-radius:10px}
+.poe211 .poe211-formula{background:#eaf6fa;border-left:4px solid #11819b;padding:.7rem 1rem;font-size:1.09rem;font-weight:850;color:#0b4c68;border-radius:9px;margin:.7rem 0}
+.poe211 .poe211-tablewrap{overflow-x:auto;margin:.6rem 0}
+.poe211 .poe211-table{border-collapse:collapse;width:100%;font-size:.93rem}
+.poe211 .poe211-table th,.poe211 .poe211-table td{padding:.55rem .65rem;border:1px solid #c6dae7;text-align:left;vertical-align:middle;font-variant-numeric:tabular-nums}
+.poe211 .poe211-table th{background:#e7f2fa;color:#0c496a}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{padding:.43rem .2rem .43rem 1.55rem;position:relative}
+.poe211 .poe211-checklist li:before{content:"□";position:absolute;left:0;top:.29rem;font-size:1.25rem;color:#0c849b}
+.poe211 .poe211-feedback{border:1px solid #b1d5e1;padding:.85rem 1rem;border-radius:10px;background:#fff;min-height:78px}
+.poe211 .poe211-legend{font-size:.88rem;color:#456474;display:flex;flex-wrap:wrap;gap:.9rem;margin:.65rem 0}
+.poe211 .poe211-legend b{display:inline-block;width:16px;height:4px;vertical-align:middle;margin-right:.3rem}
+.poe211 .poe211-resource a{display:block;font-weight:800;margin:.45rem 0}
+.poe211 .poe211-panel{min-width:0}
+.poe211 input[type="checkbox"]{accent-color:#147e91}
+@media(max-width:940px){.poe211 .poe211-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:690px){.poe211 .poe211-flow,.poe211 .poe211-statlist{grid-template-columns:1fr}}
+
+.poe211 .poe211-diagram{display:block;width:100%;height:auto;background:white;border:1px solid #cadfeb;border-radius:13px;margin:.8rem auto}
+.poe211 .poe211-diagram text{font-family:system-ui,Segoe UI,Arial,sans-serif;fill:#2a4a60}
+.poe211 .poe211-diagram text.poe211-svghead{font-size:15px;font-weight:840}
+.poe211 .poe211-diagram text.poe211-svglabel{font-size:14px;font-weight:770}
+.poe211 .poe211-diagram text.poe211-svgnote{font-size:11px}
+.poe211 .poe211-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem}
+.poe211 .poe211-flow>div{border-left:4px solid #147f95;background:#eef7fb;border-radius:10px;padding:.8rem;font-weight:800;color:#0c5072}
+.poe211 .poe211-flow small{display:block;font-size:.8rem;color:#546d7a}
+.poe211 .poe211-grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.poe211 .poe211-grid3>div{background:#eff8fb;border:1px solid #c5dce7;border-radius:12px;padding:.85rem}
+.poe211 .poe211-grid3 strong{display:block;font-size:1.03rem;color:#0b5171}
+.poe211 .poe211-grid3 p{font-size:.9rem;margin:.45rem 0}
+.poe211 .poe211-eq{background:#eaf5fb;border-left:5px solid #0e7f95;border-radius:10px;padding:.8rem 1rem;color:#0d506d;font-weight:850;margin:.7rem 0;font-size:1.15rem;overflow-wrap:anywhere}
+.poe211 .poe211-warning{background:#fff8ea;border-left:5px solid #c18b29;border-radius:11px;padding:.8rem 1rem}
+.poe211 .poe211-lab{background:#eff8fb;border:1px solid #a9d0dd;border-radius:15px;padding:1.1rem}
+.poe211 .poe211-control{background:#fff;border:1px solid #c3dae6;border-radius:10px;margin:.6rem 0;padding:.75rem}
+.poe211 .poe211-control label{display:flex;justify-content:space-between;gap:.65rem;font-weight:790;color:#0d5373}
+.poe211 .poe211-control input[type=range]{width:100%;accent-color:#128397}
+.poe211 .poe211-control select{width:100%;padding:.5rem;border:1px solid #abc5d7;border-radius:8px;background:#fff;font:inherit;color:#164b64}
+.poe211 .poe211-control output{font-variant-numeric:tabular-nums}
+.poe211 .poe211-simresults{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.poe211 .poe211-simresults>div{background:white;border:1px solid #bfd8e5;padding:.8rem;border-radius:11px}
+.poe211 .poe211-simresults strong{display:block;color:#0c5374;font-size:1.1rem;font-variant-numeric:tabular-nums}
+.poe211 .poe211-simresults span{font-size:.83rem;color:#547184}
+.poe211 .poe211-matrix{overflow-x:auto}
+.poe211 .poe211-matrix table{width:100%;min-width:610px;border-collapse:collapse;font-size:.92rem}
+.poe211 .poe211-matrix th,.poe211 .poe211-matrix td{padding:.6rem;border:1px solid #c4dbe7;text-align:left;vertical-align:top}
+.poe211 .poe211-matrix th{background:#e7f2f9;color:#0c4c6b}
+.poe211 .poe211-checklist{list-style:none!important;padding:0!important}
+.poe211 .poe211-checklist li{padding:.42rem .2rem .42rem 1.6rem;position:relative}
+.poe211 .poe211-checklist li:before{content:"□";position:absolute;left:0;top:.3rem;font-size:1.25rem;color:#13839b}
+.poe211 .poe211-resource a{display:block;margin:.55rem 0;font-weight:800;overflow-wrap:anywhere}
+.poe211 .poe211-note{font-size:.89rem;color:#516e7d}
+.poe211 .poe211-equationline{color:#1a536c;font-size:.95rem;font-weight:780}
+.poe211 .poe211-choices{display:flex;flex-wrap:wrap;gap:.6rem}
+.poe211 .poe211-choices>span{background:#e2f1f6;border-radius:99px;padding:.35rem .65rem;color:#0b5472;font-size:.86rem;font-weight:800}
+.poe211 #poe211Graph{max-width:800px}
+@media(max-width:950px){.poe211 .poe211-grid3,.poe211 .poe211-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.poe211 .poe211-grid3,.poe211 .poe211-flow,.poe211 .poe211-simresults{grid-template-columns:1fr}}
 </style><link rel="stylesheet" href="../../../../assets/css/student-experience.css?v=learning-20261029"><script defer src="../../../../assets/js/student-experience.js?v=learning-20261029"></script><script src="../../../../assets/js/learning-core.js?v=learning-20261029" defer></script><script src="../../../../assets/js/lesson-workspace.js?v=learning-20261029" defer></script><link rel="stylesheet" href="../../../../assets/css/learning-tools.css?v=learning-20261029b"></head>
 <body class="safe-unit-page site-consistency-v4 lesson-detail-page lesson-immersive-page immersive-lesson-page">
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header"><div class="container nav"><a class="brand" aria-label="LockwoodSTEM home" href="../../../../index.html"><img alt="LockwoodSTEM logo" class="brand-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" width="335" height="100" decoding="async"><span class="brand-text"><span class="brand-title">LockwoodSTEM</span><span class="brand-sub">Student Engineering Hub</span></span></a><button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button><ul class="nav-links" id="site-navigation"><li><a aria-current="page" href="../../../../courses.html">Courses</a></li><li><a href="../../../../agenda.html">Daily Agenda</a></li><li><a href="../../../../resources/index.html">Resources</a></li><li><a href="../../../../fablab/index.html">FabLab</a></li></ul></div></header>
-<main class="poe28" id="main">
+<main id="main" class="poe211">
 <nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol><li><a href="../../../../index.html">Home</a></li><li><a href="../../index.html">POE</a></li><li><a href="../unit-2.html">Unit 2</a></li><li aria-current="page">Lesson 2.8</li></ol></nav>
-<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img src="../../../../assets/img/course-icons/poe-course-icon.webp" alt="POE course icon" class="lesson-course-icon" width="1254" height="1254" decoding="async" loading="eager"><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.8</div><h1>Calculating Truss Forces</h1><p class="focus-question"><strong>Engineering question:</strong> How can we calculate the internal force in each truss member using equilibrium at its joints?</p><div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#watch">Watch Videos</a><a class="btn secondary" href="#worked">Solved Example</a><a class="btn secondary" href="#explore">Interactive Truss</a><a class="btn secondary" href="#practice">Practice</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
-<aside class="mission-panel"><span class="tag">Learn • Calculate • Explore • Check</span><h2>Find the force in every member.</h2><p>Build on Lessons 2.4–2.7 to solve a simple pin-jointed truss using the <strong>method of joints</strong>, including force directions and compression versus tension.</p><p><strong>Materials:</strong> pencil, ruler, calculator in degree mode and the Lesson 2.8 classwork/homework worksheet or notebook.</p></aside></div></section>
-<section class="container learning-guide" aria-labelledby="lesson-guide-heading"><h2 id="lesson-guide-heading">Your lesson guide</h2><nav class="lesson-step-nav" aria-label="Lesson steps"><a href="#lesson-goal">1. Goal &amp; materials</a><a data-activity-link href="#apply">2. Activity</a><a href="#lesson-checkpoint">3. Check your work</a><a href="#lesson-report">4. Report</a></nav><div class="learning-guide-grid" id="lesson-goal"><div><h3>Objective</h3><p data-lesson-objective>Work toward the lesson goal: Calculating Truss Forces. Use the directions and success criteria in the activity below.</p></div><div><h3>Materials</h3><p data-lesson-materials>For the online work: a browser and your engineering notebook. Follow the activity’s materials list for any physical build, and get teacher approval before using equipment.</p></div><div><h3>Plan your time</h3><p>Suggested work block: 45–60 minutes. Physical builds and projects may span several classes; follow your teacher’s schedule.</p></div></div></section><section class="container lesson-section" id="start"><div class="poe28-section-header"><div class="poe28-eyebrow">Learning pathway</div><h2>What you'll be able to do</h2><p>Complete the modules in order. Read the worked example and sketch force arrows before revealing the practice answers.</p></div>
-<div class="poe28-overview"><div class="poe28-metric"><strong>01 · Find reactions</strong><span>Apply whole-truss equilibrium before calculating internal forces.</span></div><div class="poe28-metric"><strong>02 · Solve joints</strong><span>Isolate a joint and use ΣFₓ = 0 and ΣFᵧ = 0.</span></div><div class="poe28-metric"><strong>03 · Classify members</strong><span>Explain what positive and negative assumed-tension answers mean.</span></div></div>
-<div class="poe28-panel" style="margin-top:1rem"><h3>Suggested 45–50 minute sequence</h3><div class="poe28-flow"><div>Concept &amp; conventions<small>5 minutes</small></div><div>Instructional video<small>10–12 minutes</small></div><div>Follow full solution<small>15 minutes</small></div><div>Explorer &amp; practice<small>15–18 minutes</small></div></div><p class="poe28-note">Finish the remaining practice and worksheet outside class as assigned.</p></div></section>
-<section class="container lesson-section" id="learn"><div class="poe28-section-header"><div class="poe28-eyebrow">01 / Fundamentals</div><h2>How does the method of joints work?</h2><p>Every joint of an ideal truss is in equilibrium. If you isolate one joint, all connected members exert forces along their own axes, and those forces must balance the applied loads and support reactions at that joint. <a href="https://engineeringstatics.org/method-of-joints.html" target="_blank" rel="noopener noreferrer">Read the reference method ↗</a></p></div>
-<div class="poe28-concept-cards"><div><strong>Whole-truss FBD</strong>Start with supports and external forces. Reactions usually come from ΣM = 0, ΣFₓ = 0 and ΣFᵧ = 0.</div><div><strong>Joint FBD</strong>Isolate a single pin as a dot. Draw connected member forces along member directions plus any external loads at that joint.</div><div><strong>At most two unknowns</strong>A 2D joint gives two independent force equations: ΣFₓ = 0 and ΣFᵧ = 0. Start with a joint containing no more than two unknowns.</div></div>
-<div class="poe28-grid" style="margin-top:1rem"><article class="poe28-panel"><h3>Assume unknown members are in tension</h3><p>Initially draw an unknown member force <strong>away</strong> from the isolated joint. After solving, a <strong>positive</strong> force means tension (a pull). A <strong>negative</strong> force means compression (a push); the real force acts in the direction opposite the assumed arrow.</p><p class="poe28-mini-formula"><strong>Rule:</strong> +F = tension under the outward-arrow convention; −F = compression.</p></article>
-<article class="poe28-panel"><h3>Ideal-model assumptions</h3><p>Members are straight, weightless two-force members; ideal joints are frictionless pins; loads act at joints; and the structure is in static equilibrium. Actual manufactured bridges have connection stiffness, self-weight, imperfections and bending effects.</p><p class="poe28-nuance"><strong>Critical:</strong> A calculated axial force is not a load limit or proof that a bridge will withstand that force. Real designs also require member strength, buckling, connection and stability checks.</p></article></div>
-<div class="poe28-badges"><span>Whole structure: ΣM = 0</span><span>Individual joint: ΣFₓ = 0</span><span>Individual joint: ΣFᵧ = 0</span></div></section>
-<section class="container lesson-section" id="method"><div class="poe28-section-header"><div class="poe28-eyebrow">02 / Your repeatable process</div><h2>A five-step method students can follow</h2></div>
-<div class="poe28-flow"><div>1 · Draw the truss<small>Mark all loads, supports, geometry and joint labels.</small></div><div>2 · Find reactions<small>Use whole-truss moment and force equilibrium.</small></div><div>3 · Choose a joint<small>Start where at most two member forces are unknown.</small></div><div>4 · Resolve &amp; solve<small>Draw outward assumed-tension arrows; use x/y components.</small></div></div>
-<div class="poe28-panel" style="margin-top:.8rem"><h3>5 · Transfer member forces and check</h3><p>When a member force is found, transfer its correct direction to the joint at the other end. For tension, the member pulls both joints toward itself along its axis (away from each isolated joint); for compression, it pushes outward on each joint. Check force equilibrium at a remaining joint to catch sign errors.</p>
-<p><strong>Geometry shortcut:</strong> For a right triangle with rise <em>h</em>, horizontal run <em>r</em> and diagonal length <em>d</em>, sin θ = h/d and cos θ = r/d. Units cancel in these ratios.</p></div></section>
-<section class="container lesson-section" id="watch"><div class="poe28-section-header"><div class="poe28-eyebrow">03 / Video learning library</div><h2>Learn from fully worked examples</h2><p>Start with the step-by-step Jeff Hanson lesson, then use the second explanation to reinforce how negative values identify compression. Both are linked directly if embeds are blocked by the school network.</p></div>
-<div class="poe28-grid">
-<article class="poe28-video"><div class="poe28-frame"><iframe src="https://www.youtube-nocookie.com/embed/BVCIQfFzguk" title="Statics Lesson 48: Trusses, Method of Joints" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="poe28-video-copy"><span class="poe28-pill">Jeff Hanson · Worked statics lesson</span><h3>Statics Lesson 48: Trusses, Method of Joints</h3><p class="poe28-mini"><strong>Pause and practice:</strong> At 01:46 find support reactions; at 04:19 note how the first joint is selected; at 06:53 sketch assumed-tension member arrows.</p><a href="https://www.youtube.com/watch?v=BVCIQfFzguk" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article>
-<article class="poe28-video"><div class="poe28-frame"><iframe src="https://www.youtube-nocookie.com/embed/08ChRvOt9iI" title="Truss Analysis by Method of Joints Explained" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="poe28-video-copy"><span class="poe28-pill">Engineer4Free · Second explanation</span><h3>Truss Analysis by Method of Joints Explained</h3><p class="poe28-mini"><strong>Pause and practice:</strong> Try drawing the joint FBD yourself. Decide whether a negative answer is a mistake or a compression force.</p><a href="https://www.youtube.com/watch?v=08ChRvOt9iI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article>
+<section class="lesson-mission-hero"><div class="container lesson-hero-grid"><div class="lesson-hero-copy"><img alt="POE course icon" class="lesson-course-icon" src="../../../../assets/img/course-icons/poe-course-icon.webp" width="1254" height="1254" decoding="async" loading="eager"><div class="mission-eyebrow">Principles of Engineering • Unit 2 • Lesson 2.8</div><h1>Structural Materials &amp; Properties</h1>
+<p class="focus-question"><strong>Engineering question:</strong> How do engineers choose a material that is stiff enough, strong enough and light enough for a particular job?</p>
+<div class="mission-actions"><a class="btn" href="#start">Start Learning</a><a class="btn secondary" href="#watch">Watch Videos</a><a class="btn secondary" href="#grain">See Grain &amp; Layers</a><a class="btn secondary" href="#lab">Interactive Bending Lab</a><a class="btn secondary" href="#apply">Selection Matrix</a><a class="btn ghost" href="#submit">What to Submit</a></div></div>
+<aside class="mission-panel"><span class="tag">Observe • Calculate • Evaluate • Select</span><h2>Materials are engineering decisions.</h2><p>Connect stress–strain behavior, density, grain orientation and fabrication choices to the bridge project—then defend a selection using evidence.</p><p><strong>Bring:</strong> calculator, engineering notebook or Lesson 2.8 materials comparison worksheet.</p></aside></div></section>
+<section class="container learning-guide" aria-labelledby="lesson-guide-heading"><h2 id="lesson-guide-heading">Your lesson guide</h2><nav class="lesson-step-nav" aria-label="Lesson steps"><a href="#lesson-goal">1. Goal &amp; materials</a><a data-activity-link href="#apply">2. Activity</a><a href="#lesson-checkpoint">3. Check your work</a><a href="#lesson-report">4. Report</a></nav><div class="learning-guide-grid" id="lesson-goal"><div><h3>Objective</h3><p data-lesson-objective>Work toward the lesson goal: Structural Materials &amp; Properties. Use the directions and success criteria in the activity below.</p></div><div><h3>Materials</h3><p data-lesson-materials>Connect stress–strain behavior, density, grain orientation and fabrication choices to the bridge project—then defend a selection using evidence. Bring: calculator, engineering notebook or Lesson 2.8 materials comparison worksheet.</p></div><div><h3>Plan your time</h3><p>Suggested work block: 45–60 minutes. Physical builds and projects may span several classes; follow your teacher’s schedule.</p></div></div></section><section class="container lesson-section" id="start"><div class="poe211-section-header"><div class="poe211-eyebrow">Learning pathway</div><h2>What you'll learn</h2><p>Use the reading, short videos and diagrams to learn each concept. Then compare two specimens in an interactive three-point bending model. The later materials lab will replace illustrative properties with measurements.</p></div>
+<div class="poe211-overview"><div class="poe211-metric"><strong>01 · Describe</strong><span>Distinguish stiffness, strength, density, ductility and toughness.</span></div><div class="poe211-metric"><strong>02 · Investigate</strong><span>Predict the effects of grain, material choice and specimen thickness on deflection.</span></div><div class="poe211-metric"><strong>03 · Select</strong><span>Use an evidence-based matrix for a beam, post and bridge connection.</span></div></div>
+<div class="poe211-panel" style="margin-top:1rem"><h3>Suggested 45–50 minute pathway</h3><div class="poe211-flow"><div>Observe<small>5 minutes</small></div><div>Read and watch<small>10–12 minutes</small></div><div>Run virtual tests<small>15 minutes</small></div><div>Compare and explain<small>15–18 minutes</small></div></div></div></section>
+<section class="container lesson-section" id="properties"><div class="poe211-section-header"><div class="poe211-eyebrow">01 / What does “better” mean?</div><h2>Five important material properties</h2><p>Different materials may perform best for different engineering requirements. A material that is very stiff may not be the lightest or the toughest.</p></div>
+<div class="poe211-grid3">
+<div><strong>Stiffness</strong><p>How strongly a material resists <em>elastic deformation</em>. Material stiffness is commonly measured by elastic modulus <strong>E</strong>. Structural bending stiffness depends on <strong>EI</strong>, so geometry also matters.</p></div>
+<div><strong>Strength</strong><p>Resistance to failure or permanent deformation under a specified loading mode. Tensile, compressive and bending strengths are not interchangeable.</p></div>
+<div><strong>Density</strong><p>Mass per unit volume, <strong>ρ = m/V</strong>. Low density can help meet a mass limit, but density alone does not establish load capacity.</p></div>
+<div><strong>Ductility</strong><p>Ability to undergo plastic deformation before fracture. Not every material yields in the same way; brittle materials may fracture with little plastic deformation.</p></div>
+<div><strong>Toughness</strong><p>Energy absorbed per unit volume before fracture, represented qualitatively by total area under a stress–strain curve.</p></div>
+<div><strong>Directional behavior</strong><p>Properties may depend on orientation: wood grain, plywood plies and 3D-print layers can all make a material behave differently in different directions.</p></div>
 </div>
-<details class="poe28-reveal" style="margin-top:1rem"><summary>Optional extension: a member that carries zero force</summary><p>Some members carry no axial force under a <em>particular</em> idealized load case. The on-page zero-force-member example below introduces the simplest inspection rule; identifying many zero-force members is extended in Lesson 2.9.</p></details></section>
-<section class="container lesson-section" id="worked"><div class="poe28-section-header"><div class="poe28-eyebrow">04 / Fully worked example</div><h2>Analyze an entire triangular truss</h2><p>A triangular truss spans <strong>4.0 m</strong> with supports A (pin) and B (roller). Apex C is centered <strong>1.5 m</strong> above the base. An external <strong>120 N downward</strong> point load acts at C. Neglect the truss's self-weight.</p></div>
-<svg id="wholeTrussDiagram" class="poe28-diagram" viewbox="0 0 760 350" role="img" aria-label="Symmetrical triangular truss with A pin at left, B roller at right, C at 1.5 meter height, 4 meter span and downward 120 newton apex load. Vertical reactions at A and B are 60 newtons each; diagonals AC and BC carry 100 newtons compression and bottom AB carries 80 newtons tension.">
-<defs><marker id="wdn" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bd692c"></path></marker><marker id="wup" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#128993"></path></marker></defs>
-<path d="M130 250L380 63L630 250" stroke="#c67d37" stroke-width="11" stroke-linecap="round" fill="none"></path><path d="M130 250H630" stroke="#118777" stroke-width="11" stroke-linecap="round"></path>
-<circle cx="130" cy="250" r="9" fill="#1c405c"></circle><circle cx="630" cy="250" r="9" fill="#1c405c"></circle><circle cx="380" cy="63" r="9" fill="#1c405c"></circle>
-<path d="M130 258L109 290H151Z" fill="#d8e9f3" stroke="#234d69" stroke-width="2"></path><circle cx="630" cy="280" r="10" fill="#d8e9f3" stroke="#234d69" stroke-width="2"></circle><path d="M604 292H658" stroke="#54788b" stroke-width="2"></path>
-<path d="M380 11V49" stroke="#bd692c" stroke-width="3.4" marker-end="url(#wdn)"></path>
-<path d="M130 330V266 M630 330V266" stroke="#128993" stroke-width="3.5" marker-end="url(#wup)"></path>
-<text x="400" y="27" class="poe28-label">P = 120 N</text><text x="138" y="335" class="poe28-label">Aᵧ = +60 N</text><text x="522" y="335" class="poe28-label">Bᵧ = +60 N</text>
-<text x="114" y="240" class="poe28-label">A</text><text x="637" y="240" class="poe28-label">B</text><text x="394" y="58" class="poe28-label">C</text>
-<text x="158" y="116" class="poe28-label">AC: 100 N (C)</text><text x="475" y="116" class="poe28-label">BC: 100 N (C)</text><text x="334" y="238" class="poe28-label">AB: 80 N (T)</text>
-<text x="365" y="306" class="poe28-small" text-anchor="middle">Span: 4.0 m · rise: 1.5 m · half-run: 2.0 m</text></svg>
-<div class="poe28-grid"><article class="poe28-panel"><span class="poe28-pill">Step 1 · Reactions</span><h3>Find Aᵧ and Bᵧ</h3><p>Use the <em>whole truss</em>, with CCW moments positive and coordinates measured from A.</p>
-<div class="poe28-equation">ΣM<sub>A</sub> = Bᵧ(4) −120(2) = 0</div><p><strong>Bᵧ = 60 N upward</strong>.</p><div class="poe28-equation">ΣFᵧ = Aᵧ +60−120 = 0</div><p><strong>Aᵧ = 60 N upward</strong>; Aₓ = 0 because no horizontal external load acts.</p></article>
-<article class="poe28-panel"><span class="poe28-pill gold">Step 2 · Geometry</span><h3>Resolve member directions</h3><p>Each diagonal has a horizontal run of <strong>2.0 m</strong> and vertical rise of <strong>1.5 m</strong>.</p><p>Diagonal length d = √(2² + 1.5²) = <strong>2.5 m</strong>.</p><div class="poe28-equation">sin θ = 1.5/2.5 = 0.6<br>cos θ = 2.0/2.5 = 0.8</div><p>θ = arctan(1.5/2) ≈ <strong>36.87°</strong> above the horizontal. These two ratios will simplify both joint equations.</p></article></div>
-<div class="poe28-grid" style="margin-top:1rem"><article class="poe28-panel"><span class="poe28-pill">Step 3 · Joint C</span><h3>Calculate AC and BC (diagonals)</h3>
-<svg id="jointCFigure" class="poe28-diagram" viewbox="0 0 760 350" role="img" aria-label="Isolated apex joint C under 120 N downward load with two 100 N compressive member forces pushing diagonally upward and inward to balance the load. Each diagonal forms angle 36.87 degrees above horizontal.">
-<defs><marker id="jccomp" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#bd7a2f"></path></marker><marker id="jcload" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#b8602a"></path></marker></defs>
-<circle cx="360" cy="175" r="9" fill="#1b425d"></circle>
-<path d="M360 175L248 91M360 175L472 91" stroke="#bd7a2f" stroke-width="4.3" marker-end="url(#jccomp)"></path>
-<path d="M360 175V274" stroke="#b8602a" stroke-width="4" marker-end="url(#jcload)"></path>
-<path d="M316 175A44 44 0 0 1 324.8 148.6" fill="none" stroke="#758a9c" stroke-width="1.7"></path>
-<text x="255" y="82" class="poe28-label">100 N (AC pushes)</text><text x="443" y="82" class="poe28-label">100 N (BC pushes)</text>
-<text x="375" y="277" class="poe28-label">120 N ↓</text><text x="372" y="175" class="poe28-label">C</text>
-<text x="208" y="231" class="poe28-small">ΣFᵧ: +60 +60 −120 = 0 N</text>
-<text x="208" y="252" class="poe28-small">ΣFₓ: −80 +80 = 0 N</text>
-<text x="208" y="324" class="poe28-small">Actual compression arrows PUSH on the isolated joint.</text></svg>
-<p><strong>Start with both unknown member forces assumed in tension:</strong> at joint C, draw arrows along CA and CB pointing down-left and down-right. Symmetry gives F<sub>AC</sub> = F<sub>BC</sub> = F.</p>
-<div class="poe28-equation">ΣFᵧ = −0.6F−0.6F−120 = 0</div>
-<p>Solve: −1.2F = 120 ⇒ <strong>F = −100 N</strong>.</p><p>A negative force under the assumed-tension convention means each member is actually in <strong>compression, magnitude 100 N</strong>. The diagram shows the corrected <em>actual</em> forces pushing upward on C.</p>
-<div class="poe28-equation">F<sub>AC</sub> = F<sub>BC</sub> = −100 N (C)</div>
-</article>
-<article class="poe28-panel"><span class="poe28-pill gold">Step 4 · Joint A</span><h3>Calculate AB (bottom tie)</h3>
-<svg id="jointAFigure" class="poe28-diagram" viewbox="0 0 760 350" role="img" aria-label="Isolated joint A with 60 N upward support reaction, 80 N bottom-tie tension to the right, and 100 N diagonal member compression pushing down and left along AC. Equilibrium balances 80 horizontal and 60 vertical component magnitudes.">
-<defs><marker id="jaT" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#148778"></path></marker><marker id="jaC" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c37c2d"></path></marker><marker id="jaR" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0f8792"></path></marker></defs>
-<circle cx="295" cy="176" r="9" fill="#1b425d"></circle>
-<path d="M295 176V67" stroke="#0f8792" stroke-width="4" marker-end="url(#jaR)"></path>
-<path d="M295 176H478" stroke="#148778" stroke-width="4" marker-end="url(#jaT)"></path>
-<path d="M295 176L165 274" stroke="#c37c2d" stroke-width="4" marker-end="url(#jaC)"></path>
-<text x="309" y="81" class="poe28-label">Aᵧ = 60 N ↑</text>
-<text x="487" y="181" class="poe28-label">AB = 80 N (T)</text>
-<text x="112" y="302" class="poe28-label">AC = 100 N (C)</text>
-<text x="306" y="194" class="poe28-label">A</text>
-<text x="336" y="255" class="poe28-small">Compression AC gives −80 N (x) and −60 N (y).</text>
-<text x="336" y="275" class="poe28-small">ΣFₓ = 80 − 80 = 0 N</text>
-<text x="336" y="294" class="poe28-small">ΣFᵧ = 60 − 60 = 0 N</text></svg>
-<p>The 60 N upward reaction is known. AC is now known to be 100 N in compression, so at joint A it acts down-left.</p>
-<div class="poe28-equation">ΣFₓ = F<sub>AB</sub> −100(0.8) = 0</div>
-<p><strong>F<sub>AB</sub> = +80 N</strong>, so member AB is in <strong>tension</strong>.</p>
-<div class="poe28-equation">ΣFᵧ = 60−100(0.6) = 0</div>
-<p>The vertical force check at A is satisfied. The positive 80 N value is consistent with the bottom member pulling joint A to the right.</p></article></div>
-<div class="poe28-panel" style="margin-top:1rem"><h3>Step 5 · Final check and results</h3>
-<div class="poe28-table-wrap"><table class="poe28-data-table"><thead><tr><th>Quantity</th><th>Signed (tension-positive)</th><th>Physical interpretation</th></tr></thead><tbody><tr><td>Aᵧ</td><td>+60 N</td><td>Upward external reaction at A</td></tr><tr><td>Bᵧ</td><td>+60 N</td><td>Upward external reaction at B</td></tr><tr><td>AC</td><td>−100 N</td><td>Compression</td></tr><tr><td>BC</td><td>−100 N</td><td>Compression</td></tr><tr><td>AB</td><td>+80 N</td><td>Tension</td></tr></tbody></table></div>
-<p><strong>Joint B check:</strong> ΣFᵧ = +60−100(0.6) = 0; ΣFₓ = −80+100(0.8) = 0. All joint equilibrium conditions are satisfied. The signed member forces are <strong>not</strong> the same as the positive magnitudes you would use for an eventual strength calculation.</p></div></section>
-<section class="container lesson-section" id="explore"><div class="poe28-section-header"><div class="poe28-eyebrow">05 / Interactive engineering lab</div><h2>Change the load or shape of the truss</h2><p>Keep the span at 4.0 m while varying apex load P and rise h. Watch what happens to the diagonal compression and bottom-tie tension. Use the stage buttons to focus on the whole truss or each joint.</p></div>
-<div class="poe28-lab"><div class="poe28-grid">
-<article class="poe28-panel"><div class="poe28-control"><label for="trussLoad">Apex load P <output id="trussLoadValue">120 N</output></label><input id="trussLoad" type="range" min="20" max="200" step="10" value="120"></div>
-<div class="poe28-control"><label for="trussRise">Truss rise h <output id="trussRiseValue">1.50 m</output></label><input id="trussRise" type="range" min="1" max="3" step=".25" value="1.5"></div>
-<div class="poe28-results"><div><strong id="trussAy">60.00 N</strong><span>Support Aᵧ (up)</span></div><div><strong id="trussBy">60.00 N</strong><span>Support Bᵧ (up)</span></div>
-<div><strong id="trussDiag">100.00 N (C)</strong><span>Each diagonal AC and BC</span></div><div><strong id="trussTie">80.00 N (T)</strong><span>Bottom member AB</span></div>
-<div><strong id="trussAngle">36.87°</strong><span>Diagonal angle θ</span></div><div><strong id="trussResidual">0.00 N</strong><span>Vertical equilibrium residual</span></div></div>
-<p class="poe28-mini-formula"><strong>What the model calculates:</strong> Aᵧ = Bᵧ = P/2; |F<sub>AC</sub>| = |F<sub>BC</sub>| = P/(2sinθ) compression; F<sub>AB</sub> = [P/(2tanθ)] tension.</p>
-<button id="trussReset" class="btn secondary" type="button">Reset to worked example</button>
-</article>
-<article class="poe28-panel"><h3>Interactive truss FBD</h3>
-<svg id="trussSolverFigure" class="poe28-diagram" viewbox="0 0 760 450" role="img" aria-label="Interactive symmetric triangular truss. Change top joint load and height to recompute the support reactions and diagonal compression and bottom tie tension.">
-<defs><marker id="solD" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#b9662e"></path></marker><marker id="solU" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#0c8392"></path></marker></defs>
-<line id="solverAC" x1="200" y1="330" x2="380" y2="195" class="poe28-truss-compression"></line>
-<line id="solverBC" x1="380" y1="195" x2="560" y2="330" class="poe28-truss-compression"></line>
-<line x1="200" y1="330" x2="560" y2="330" class="poe28-truss-tension"></line>
-<circle cx="200" cy="330" r="8" fill="#163c5a"></circle><circle cx="560" cy="330" r="8" fill="#163c5a"></circle><circle id="solverApex" cx="380" cy="195" r="9" fill="#163c5a"></circle>
-<path d="M200 339L181 367H219Z" fill="#daeaf3" stroke="#355d74" stroke-width="2"></path>
-<circle cx="560" cy="357" r="10" fill="#daeaf3" stroke="#355d74" stroke-width="2"></circle>
-<path d="M539 369H581" stroke="#355d74" stroke-width="2"></path>
-<line x1="200" y1="413" x2="200" y2="340" stroke="#0c8392" stroke-width="3.2" marker-end="url(#solU)"></line>
-<line x1="560" y1="413" x2="560" y2="340" stroke="#0c8392" stroke-width="3.2" marker-end="url(#solU)"></line>
-<line id="solverLoad" x1="380" y1="145" x2="380" y2="182" stroke="#b9662e" stroke-width="3.5" marker-end="url(#solD)"></line>
-<text id="solverLoadText" x="399" y="148" class="poe28-label">P = 120 N ↓</text>
-<text id="solverAy" x="95" y="430" class="poe28-label">Aᵧ = 60 N</text>
-<text id="solverBy" x="569" y="430" class="poe28-label">Bᵧ = 60 N</text>
-<text x="185" y="322" class="poe28-label">A</text><text x="568" y="322" class="poe28-label">B</text>
-<text id="solverApexText" x="394" y="187" class="poe28-label">C</text>
-<text x="380" y="319" text-anchor="middle" class="poe28-label">AB (T)</text>
-<text x="96" y="82" class="poe28-small">Span A–B fixed at 4.0 m</text>
-<text x="96" y="102" class="poe28-small">Rise of apex C is adjustable</text>
-<text x="380" y="385" text-anchor="middle" class="poe28-small">Sloping members: compression · base: tension</text>
+<div class="poe211-grid" style="margin-top:1rem"><article class="poe211-panel"><h3>Material behavior vs. structure behavior</h3><p>The <strong>elastic modulus E</strong> describes material stiffness. A beam's <strong>bending stiffness EI</strong> also includes its area moment of inertia I, which depends on the cross-section shape and orientation.</p><p class="poe211-warning"><strong>Critical distinction:</strong> A thicker strip can bend less even if made from the same material. Lower deflection alone does <em>not</em> mean the material has a larger E or higher strength.</p></article>
+<article class="poe211-panel"><h3>Stress and strain</h3><div class="poe211-eq">σ = F/A  ·  ε = ΔL/L₀  ·  E = σ/ε (linear elastic range)</div><p>Axial stress σ is measured in N/mm², strain ε has no units, and E is the initial elastic slope of the stress–strain curve.</p><p><strong>1 N/mm² = 1 MPa.</strong> Always state the loading mode when comparing material strengths.</p></article></div></section>
+<section class="container lesson-section" id="curve"><div class="poe211-section-header"><div class="poe211-eyebrow">02 / Learn to read evidence</div><h2>What does a stress–strain graph reveal?</h2><p>The initial slope identifies the elastic modulus. The curve's later behavior helps describe yielding, ductility and fracture—but you must not assume all materials have the same shaped curve.</p></div>
+<svg class="poe211-diagram" viewbox="0 0 700 320" role="img" aria-label="Qualitative stress versus strain diagram with a steeper initial elastic slope, yield point, ductile extended deformation curve and an illustrative brittle failure curve that fractures at low strain. No numerical scales.">
+<path d="M72 263H654M72 263V26" stroke="#587d91" stroke-width="2.2" fill="none"></path>
+<path d="M644 257L657 263L644 269 M66 38L72 26L78 38" stroke="#587d91" fill="none" stroke-width="2"></path>
+<text x="362" y="302" text-anchor="middle" class="poe211-svglabel">Strain (deformation ÷ initial length) →</text>
+<text transform="translate(23 165) rotate(-90)" text-anchor="middle" class="poe211-svglabel">Stress (force ÷ area) →</text>
+<path d="M72 263L235 117C269 91 289 126 335 104S448 94 483 141" fill="none" stroke="#148c82" stroke-width="5" stroke-linecap="round"></path>
+<circle cx="235" cy="117" r="5" fill="#148c82"></circle>
+<path d="M72 263L185 56" fill="none" stroke="#c47b32" stroke-width="4.4" stroke-linecap="round"></path>
+<path d="M72 263L265 78" fill="none" stroke="#497fba" stroke-width="2.3" stroke-dasharray="7 5"></path>
+<text x="342" y="73" class="poe211-svglabel">Ductile (qualitative)</text><text x="192" y="42" class="poe211-svglabel">Brittle</text>
+<text x="242" y="121" class="poe211-svgnote">Yield region</text>
+<text x="489" y="144" class="poe211-svgnote">Fracture</text>
+<text x="186" y="281" class="poe211-svgnote">Initial slope = E</text>
+<text x="390" y="219" class="poe211-svgnote">Toughness relates to the area</text>
+<text x="390" y="237" class="poe211-svgnote">under the stress–strain curve</text>
+<text x="365" y="316" text-anchor="middle" class="poe211-svgnote">Illustrative curves only, not data for basswood, plywood or PLA</text>
 </svg>
-<div class="poe28-switches" role="group" aria-label="Examine stages of truss analysis"><button type="button" data-solver-step="0" aria-pressed="true">Whole truss</button><button type="button" data-solver-step="1" aria-pressed="false">Joint C</button><button type="button" data-solver-step="2" aria-pressed="false">Joint A</button><button type="button" data-solver-step="3" aria-pressed="false">Check Joint B</button></div>
-<div class="poe28-step-explanation" aria-live="polite"><h3 id="solverStageTitle">1 · Whole-truss reactions</h3><p id="solverStageText">Begin with the applied load and the supports. The load is centered, so each vertical reaction equals half the total downward load.</p><p class="poe28-mini-formula" id="solverStageEquation">ΣFᵧ = Aᵧ + Bᵧ − P = 0</p></div>
-</article></div><p class="poe28-note"><strong>Assumptions:</strong> ideal symmetric pin-jointed triangle, load applied downward only at C, weightless members and no other loads. Display shows internal <em>force demand</em>, not allowable capacity or a failure prediction.</p></div>
-<div class="poe28-grid" style="margin-top:1rem"><article class="poe28-panel"><h3>Prediction A: Double the load</h3><p>Keep h = 1.50 m. Change P from 60 to 120 N. What happens to all calculated reactions and member forces?</p><details class="poe28-reveal"><summary>Check</summary><p>Every calculated force doubles. This ideal static analysis is linear in P while geometry is unchanged.</p></details></article><article class="poe28-panel"><h3>Prediction B: Make the triangle taller</h3><p>Keep P constant and increase h from 1.00 m to 3.00 m. How do the diagonal compression and bottom-tie tension magnitudes change?</p><details class="poe28-reveal"><summary>Check</summary><p>Both decrease. The diagonals become steeper, so each supplies more upward force per unit axial force; the bottom tie also needs less tension to balance the horizontal components. External support reactions remain P/2 each.</p></details></article></div></section>
-<section class="container lesson-section" id="second-example"><div class="poe28-section-header"><div class="poe28-eyebrow">06 / Quick second example</div><h2>100 N load on a 45° triangular truss</h2><p>Use a span of 4 m, a rise of 2 m and a centered downward 100 N apex load. The two diagonals make 45° angles with the horizontal.</p></div>
-<div class="poe28-grid"><article class="poe28-panel"><h3>Apply the same method</h3><ol class="poe28-steps"><li>External reactions: Aᵧ = Bᵧ = 100/2 = <strong>50 N up</strong>.</li><li>Joint C: −2F sin45° −100 = 0 ⇒ F = <strong>−70.71 N</strong>.</li><li>Thus each diagonal has <strong>70.71 N compression</strong>.</li><li>Joint A: F<sub>AB</sub> −70.71 cos45° = 0 ⇒ <strong>AB = +50.00 N tension</strong>.</li></ol></article>
-<article class="poe28-panel"><h3>Why 45° is useful</h3><p>sin45° = cos45° ≈ 0.7071. The equal diagonal component fractions simplify the calculations.</p>
-<div class="poe28-equation">70.71(0.7071) ≈ 50.00 N</div>
-<p class="poe28-nuance"><strong>Remember:</strong> Steeper geometry can reduce required axial forces in this particular model, but that does not by itself decide which truss design is strongest or most material-efficient.</p></article></div></section>
-<section class="container lesson-section" id="zero-force"><div class="poe28-section-header"><div class="poe28-eyebrow">07 / Preview a special case</div><h2>What is a zero-force member?</h2><p>An unloaded truss joint with <strong>three connected members, two collinear</strong>, provides a useful shortcut: the third, noncollinear member has zero axial force for that specific load case.</p></div>
-<div class="poe28-grid"><div class="poe28-panel"><svg id="zeroForceDiagram" class="poe28-diagram" viewbox="0 0 760 350" role="img" aria-label="Unloaded joint J with collinear members AJ and JB and one vertical noncollinear member JC. If no external load or support reaction acts at J, vertical member JC is a zero-force member for that loading condition.">
-<path d="M115 186H635" stroke="#386681" stroke-width="9" stroke-linecap="round"></path><path d="M375 186V65" stroke="#cc8a38" stroke-width="9" stroke-linecap="round"></path>
-<circle cx="375" cy="186" r="10" fill="#174566"></circle>
-<text x="92" y="179" class="poe28-label">A</text><text x="639" y="179" class="poe28-label">B</text><text x="386" y="201" class="poe28-label">J</text><text x="390" y="69" class="poe28-label">C</text>
-<text x="154" y="215" class="poe28-small">AJ collinear</text><text x="504" y="215" class="poe28-small">JB collinear</text><text x="399" y="126" class="poe28-label">JC = 0 N</text>
-<text x="375" y="271" class="poe28-small" text-anchor="middle">At J: no external load or support reaction</text>
-<text x="375" y="293" class="poe28-small" text-anchor="middle">Only vertical contribution comes from JC → ΣFᵧ = 0 ⇒ JC = 0 N</text></svg></div><article class="poe28-panel"><h3>Why member JC is zero</h3><p>At joint J, member AJ and JB lie on the same horizontal line. There is no external load or support reaction applied at J.</p><div class="poe28-equation">ΣFᵧ = F<sub>JC</sub> = 0</div><p>Because JC is the only vertical force on the isolated joint, its axial force must equal <strong>0 N</strong>.</p><p class="poe28-nuance"><strong>Not a reason to remove JC from a real bridge.</strong> It may be important for bracing, buckling resistance or a different future load case.</p></article></div></section>
-<section class="container lesson-section" id="apply"><div class="poe28-section-header"><div class="poe28-eyebrow">08 / Your engineering task</div><h2>Analyze, annotate and interpret a simple truss</h2><p>Complete the assigned 2.8 worksheet or notebook pages. The default practice case is the 4.0 m span, 1.5 m rise triangle shown above; your teacher may assign a different force or geometry.</p></div>
-<div class="poe28-grid"><article class="poe28-panel"><h3>Part A · Draw and organize</h3><ol class="poe28-steps"><li>Draw the entire truss with joint letters, dimensions, applied load and supports.</li><li>Sketch its whole-structure FBD and find all support reactions.</li><li>Draw separate FBDs of joints C and A, with <em>assumed-tension</em> arrows on unknown members.</li><li>Mark horizontal/vertical component ratios for each diagonal.</li></ol></article>
-<article class="poe28-panel"><h3>Part B · Calculate and explain</h3><ol class="poe28-steps"><li>Solve at C using ΣFₓ = 0 and ΣFᵧ = 0 (symmetry may simplify).</li><li>Carry the now-known AC force to joint A and solve AB.</li><li>Check equilibrium at B.</li><li>Report every force magnitude in N and mark each member <strong>T</strong> or <strong>C</strong>.</li><li>Explain why a negative result under your assumed sign convention indicates compression.</li></ol></article></div></section>
-<section class="container lesson-section" id="practice"><div class="poe28-section-header"><div class="poe28-eyebrow">09 / Independent checks</div><h2>Try each problem before viewing its solution</h2><p>Use paper for free-body diagrams, equations and final results. Write force signs and whether members are in tension or compression.</p></div>
-<div class="poe28-grid">
-<article class="poe28-panel"><span class="poe28-pill">Check A · Symmetric joint</span><h3>100 N load and 45° diagonals</h3><p>Joint C has a 100 N downward load and two identical 45° members. Assume tension for both unknowns. Determine their axial force and classify them.</p><details class="poe28-reveal"><summary>Reveal worked reasoning</summary><p>Symmetry gives F<sub>1</sub> = F<sub>2</sub> = F. From ΣFᵧ = −2F sin45°−100=0, <strong>F = −70.71 N</strong>. Both members are in <strong>compression</strong>; magnitudes are 70.71 N each.</p></details></article>
-<article class="poe28-panel"><span class="poe28-pill">Check B · Joint selection</span><h3>Where should you start?</h3><p>A truss joint has three completely unknown member forces and no other information. Can you solve all three forces using the two independent equations at this single planar joint?</p><details class="poe28-reveal"><summary>Reveal worked reasoning</summary><p><strong>No.</strong> A planar joint supplies ΣFₓ = 0 and ΣFᵧ = 0: two independent scalar equations. Start at another joint with at most two unknown member forces, or solve known reactions first.</p></details></article>
-<article class="poe28-panel"><span class="poe28-pill">Check C · 3–4–5 geometry</span><h3>Resolve a 50 N diagonal</h3><p>A member force of 50 N acts upward and right, along a diagonal with horizontal run 4 and rise 3. What are its signed x and y components?</p><details class="poe28-reveal"><summary>Reveal worked reasoning</summary><p>Diagonal length is 5, so Fₓ = +50(4/5) = <strong>+40 N</strong>, Fᵧ = +50(3/5) = <strong>+30 N</strong>. This resolves a force, not a complete truss solution.</p></details></article>
-<article class="poe28-panel"><span class="poe28-pill">Check D · Compression convention</span><h3>What does −85 N mean?</h3><p>You drew a member force arrow away from an isolated joint and calculated −85 N. Is your answer automatically wrong? What force does the member actually exert on that joint?</p><details class="poe28-reveal"><summary>Reveal worked reasoning</summary><p>The negative sign means the assumed outward tension direction was incorrect. The member has <strong>85 N compression</strong> and pushes on the joint opposite the outward assumed arrow.</p></details></article>
-<article class="poe28-panel"><span class="poe28-pill">Check E · Change the height</span><h3>100 N apex load, 4 m span, 1 m rise</h3><p>For a symmetric triangle with halfspan 2 m, determine the magnitude of compression in each diagonal and the bottom tie tension.</p><details class="poe28-reveal"><summary>Reveal worked reasoning</summary><p>sinθ = 1/√5 = 0.44721, cosθ = 2/√5 = 0.89443. Each diagonal magnitude = 100/[2(0.44721)] = <strong>111.80 N compression</strong>. Tie = 111.80(0.89443) = <strong>100.00 N tension</strong>. Reactions are 50 N each.</p></details></article>
-<article class="poe28-panel"><span class="poe28-pill">Check F · Zero-force member</span><h3>A three-member joint with no external load</h3><p>At joint J, JA and JB are collinear and JC is noncollinear. No external load or support reaction is applied at J. Determine the member force JC.</p><details class="poe28-reveal"><summary>Reveal worked reasoning</summary><p>Member <strong>JC = 0 N</strong> for this idealized loading case. The perpendicular component of the other two collinear forces is zero; equilibrium forces the noncollinear member force to be zero.</p></details></article>
+<div class="poe211-grid"><article class="poe211-panel"><h3>Understand the slope</h3><p>In a simple tensile test, <strong>stress ÷ strain in the initial linear region</strong> gives E. A steeper initial slope means greater material axial stiffness for the specific loading direction being measured.</p><details class="poe211-reveal"><summary>Why isn't a high E the same as high strength?</summary><p>Elastic modulus describes <em>how much the material stretches</em> under a stress in the elastic region, not the stress at which it yields, cracks or breaks. Strong and stiff are separate properties.</p></details></article>
+<article class="poe211-panel"><h3>Why toughness matters</h3><p>Two materials can reach similar maximum stress yet absorb very different amounts of energy before fracture. One can fail suddenly; another may deform substantially.</p><details class="poe211-reveal"><summary>Where is toughness on the graph?</summary><p>It is associated with <strong>total area under the stress–strain curve</strong> through fracture, expressed as energy per unit volume. The graphic is qualitative and contains no material-specific data.</p></details></article></div></section>
+<section class="container lesson-section" id="grain"><div class="poe211-section-header"><div class="poe211-eyebrow">03 / Natural and manufactured materials</div><h2>Wood grain, plywood plies and print orientation</h2><p>Structure inside a material can change its behavior. For wood, grain, moisture, knots and fiber alignment matter; plywood uses bonded cross-oriented veneer layers.</p></div>
+<svg class="poe211-diagram" viewbox="0 0 710 305" role="img" aria-label="Wood fibers in an along-grain strip and across-grain strip. Simplified alternating plywood plies with orientations 0, 90, 0. The stiffness and failure behavior depend on grain, defects, layers and loading orientation.">
+<text x="132" y="28" text-anchor="middle" class="poe211-svghead">SOLID WOOD · ALONG</text><text x="366" y="28" text-anchor="middle" class="poe211-svghead">SOLID WOOD · ACROSS</text><text x="608" y="28" text-anchor="middle" class="poe211-svghead">PLYWOOD · PLIES</text>
+<rect x="24" y="59" width="216" height="125" fill="#f2d8ab" stroke="#b78f55" stroke-width="2" rx="9"></rect>
+<rect x="255" y="59" width="216" height="125" fill="#f2d8ab" stroke="#b78f55" stroke-width="2" rx="9"></rect>
+<path d="M37 74H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M37 89H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M37 104H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M37 119H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M37 134H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M37 149H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M37 164H227" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path>
+<path d="M272 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M294 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M316 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M338 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M360 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M382 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M404 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M426 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path><path d="M448 70V173" stroke="#c5904e" stroke-width="2.1" stroke-linecap="round"></path>
+<g stroke="#b88748" stroke-width="1.8" fill="none"><path d="M501 65H692"></path><path d="M501 89H692"></path><path d="M501 113H692"></path><path d="M501 137H692"></path><path d="M501 161H692"></path></g>
+<rect x="502" y="63" width="190" height="21" rx="3" fill="#f5dda8" stroke="#b48b4c"></rect><text x="594" y="78" text-anchor="middle" class="poe211-svgnote">→ long ply</text><rect x="502" y="87" width="190" height="21" rx="3" fill="#dfc394" stroke="#b48b4c"></rect><text x="594" y="102" text-anchor="middle" class="poe211-svgnote">⊥ cross ply</text><rect x="502" y="111" width="190" height="21" rx="3" fill="#f5dda8" stroke="#b48b4c"></rect><text x="594" y="126" text-anchor="middle" class="poe211-svgnote">→ long ply</text><rect x="502" y="135" width="190" height="21" rx="3" fill="#dfc394" stroke="#b48b4c"></rect><text x="594" y="150" text-anchor="middle" class="poe211-svgnote">⊥ cross ply</text><rect x="502" y="159" width="190" height="21" rx="3" fill="#f5dda8" stroke="#b48b4c"></rect><text x="594" y="174" text-anchor="middle" class="poe211-svgnote">→ long ply</text>
+<path d="M40 209H217 M278 209H456" stroke="#217a9b" stroke-width="3.6"></path>
+<path d="M204 201L217 209L204 217 M443 201L456 209L443 217" stroke="#217a9b" fill="none" stroke-width="2.5"></path>
+<text x="132" y="234" text-anchor="middle" class="poe211-svgnote">Load along fibers</text>
+<text x="366" y="234" text-anchor="middle" class="poe211-svgnote">Load across fibers</text>
+<text x="597" y="248" text-anchor="middle" class="poe211-svgnote">Alternating veneer directions</text>
+<text x="355" y="285" text-anchor="middle" class="poe211-svgnote">These are schematic orientations—not guaranteed strength rankings for every species or panel.</text>
+</svg>
+<div class="poe211-grid"><article class="poe211-panel"><h3>Wood strips and craft sticks</h3><p>Balsa and basswood strips are natural wood. A property measured <em>along the fibers</em> may differ greatly from a property measured <em>across the fibers</em>. Defects, moisture, species and sample variability complicate simple comparisons.</p><p><strong>For bridge members:</strong> record grain direction and avoid assuming each wooden strip has identical stiffness or strength.</p></article>
+<article class="poe211-panel"><h3>Plywood and layered fabrication</h3><p>Plywood bonds multiple veneer plies, usually with successive grain directions crossed. This improves directional balance and dimensional stability, but bending properties still depend on layup, thickness and panel orientation.</p><p><strong>For bridge gussets:</strong> document thickness, grain/face direction and joint layout. Cutting defects and glue quality affect real performance.</p></article></div>
+<div class="poe211-panel" style="margin-top:1rem"><h3>Printed polymer orientation is another useful comparison</h3><p>A 3D-printed coupon can behave differently when loaded along deposited roads versus across layer bonds. Results depend on the filament, processing temperature, voids, perimeter count and build orientation.</p>
+<p class="poe211-warning"><strong>Unit 2 manufacturing rule:</strong> PLA/PETG printed parts are permitted only as approved <strong>joint fittings, brackets, gussets or mounts</strong>. No 3D-printed bridge chords, beams, diagonals or decks. Acrylic is not an approved bridge material. See the <a href="../unit-2.html#challenge">Unit 2 construction requirements</a> before planning fabrication.</p></div></section>
+<section class="container lesson-section" id="watch"><div class="poe211-section-header"><div class="poe211-eyebrow">04 / Instructional video library</div><h2>Watch and take notes</h2><p>Start with Young's modulus. Then study strength, ductility and toughness; the third video surveys other important mechanical properties.</p></div>
+<div class="poe211-grid">
+<article class="poe211-video"><div class="poe211-frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DLE-ieOVFjI" title="Understanding Young’s Modulus" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="poe211-video-copy"><span class="poe211-pill">The Efficient Engineer · Elasticity</span><h3>Understanding Young’s Modulus</h3><p><strong>Pause and try:</strong> Explain how the initial stress–strain slope relates to E. Identify why geometry still matters to bending stiffness.</p><a href="https://www.youtube.com/watch?v=DLE-ieOVFjI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article>
+<article class="poe211-video"><div class="poe211-frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/WSRqJdT2COE" title="Understanding Material Strength, Ductility and Toughness" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="poe211-video-copy"><span class="poe211-pill">The Efficient Engineer · Failure properties</span><h3>Understanding Material Strength, Ductility and Toughness</h3><p><strong>Pause and try:</strong> Distinguish the slope of the curve from the yield/ultimate stress and from toughness.</p><a href="https://www.youtube.com/watch?v=WSRqJdT2COE" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article>
+</div>
+<details class="poe211-reveal" style="margin-top:1rem"><summary>Optional comprehensive video: Mechanical Properties of Materials</summary><div class="poe211-grid" style="margin-top:.8rem"><article class="poe211-video"><div class="poe211-frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/uW5v1qQaXRA" title="Mechanical Properties of Materials" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div><div class="poe211-video-copy"><span class="poe211-pill">Welding and NDT · Extended survey</span><h3>Mechanical Properties of Materials</h3><p><strong>Pause and try:</strong> Focus on 04:28 strength, 06:55 ductility, 10:33 stiffness, and 10:56 toughness.</p><a href="https://www.youtube.com/watch?v=uW5v1qQaXRA" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div></article><article class="poe211-panel"><h3>Why this video is optional</h3><p>It introduces thirteen properties, including fatigue, hardness and creep. For 2.8, focus on the five named learning targets; detailed structural failure analysis comes in 2.9.</p></article></div></details></section>
+<section class="container lesson-section" id="test"><div class="poe211-section-header"><div class="poe211-eyebrow">05 / How engineers test stiffness</div><h2>Three-point bending: control the specimen dimensions</h2><p>A rectangular strip supported at both ends is pushed downward at its midpoint. Under simple linear-elastic beam assumptions, smaller center displacement at a fixed load suggests greater <em>flexural stiffness</em> of that specific specimen.</p></div>
+<svg class="poe211-diagram" viewbox="0 0 720 300" role="img" aria-label="Three point bending test setup: narrow rectangular specimen 150 millimeter support span, two supports, centered 5-newton downward load, and measured downward center displacement delta. Rectangular specimen width b 12 millimeters and thickness t 3 millimeters.">
+<defs><marker id="b211down" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#c3762c"></path></marker><marker id="b211up" markerwidth="8" markerheight="8" refx="6.5" refy="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#078a96"></path></marker></defs>
+<text x="350" y="25" text-anchor="middle" class="poe211-svghead">THREE-POINT BENDING · CLASSROOM MODEL</text>
+<path d="M101 119H619" stroke="#caa26b" stroke-width="14" stroke-linecap="round"></path>
+<path d="M135 127L115 159H155Z" fill="#dbe8f1" stroke="#245575" stroke-width="2"></path>
+<circle cx="585" cy="145" r="12" fill="#dbe8f1" stroke="#245575" stroke-width="2"></circle><path d="M562 161H608" stroke="#547789" stroke-width="2"></path>
+<path d="M360 51V105" stroke="#c3762c" stroke-width="3.5" marker-end="url(#b211down)"></path>
+<path d="M135 217V136M585 217V136" stroke="#078a96" stroke-width="3.5" marker-end="url(#b211up)"></path>
+<text x="378" y="63" class="poe211-svglabel">P = 5 N down</text>
+<text x="67" y="236" class="poe211-svgnote">P/2 up</text><text x="579" y="236" class="poe211-svgnote">P/2 up</text>
+<path d="M135 184V203 M585 184V203 M135 195H585" stroke="#658194" stroke-width="1.4"></path>
+<text x="360" y="215" text-anchor="middle" class="poe211-svglabel">L = 150 mm (span)</text>
+<path d="M360 132V155" stroke="#835d16" stroke-width="1.7" stroke-dasharray="4 3"></path>
+<text x="375" y="158" class="poe211-svgnote">δ at center</text>
+<text x="356" y="284" text-anchor="middle" class="poe211-svgnote">Specimen: width b = 12 mm, thickness t = 3 mm; measure load and center displacement</text>
+</svg>
+<div class="poe211-grid"><article class="poe211-panel"><h3>Use the beam equation</h3><div class="poe211-eq">I = bt³ / 12</div><div class="poe211-eq">δ = PL³ / (48EI)</div><p>For a slender simply supported rectangular beam under a centered force P, I is the second moment of area and δ is predicted center displacement. E is an effective elastic bending modulus for the tested orientation.</p></article>
+<article class="poe211-panel"><h3>What must stay constant?</h3><p>Use the same span <strong>L</strong>, specimen width <strong>b</strong>, specimen thickness <strong>t</strong>, and applied <strong>P</strong> to isolate differences due to E. All measurements need units. Repeat tests with multiple samples to account for variability.</p><p class="poe211-warning"><strong>Limit:</strong> This model assumes small elastic deflection and shear/bending behavior adequately described by simple Euler–Bernoulli beam theory. It does not predict when a material will fracture, delaminate or buckle.</p></article></div></section>
+<section class="container lesson-section" id="lab"><div class="poe211-section-header"><div class="poe211-eyebrow">06 / Interactive material bending lab</div><h2>Compare two specimens using the same load</h2><p>Choose two illustrative material presets and orientation conditions. The calculation keeps <strong>force, span, width and thickness equal</strong>, so you can isolate the effect of <em>assumed effective modulus</em>—or change a shared variable to investigate geometry.</p></div>
+<div class="poe211-lab"><div class="poe211-grid">
+<article class="poe211-panel">
+<div class="poe211-control"><label for="sampleA">Specimen A material</label><select id="sampleA"><option value="basswood" selected>Basswood strip · illustrative</option><option value="balsa">Balsa strip · illustrative</option><option value="plywood">Plywood coupon · illustrative</option><option value="pla">3D-printed PLA coupon · illustrative</option></select></div>
+<div class="poe211-control"><label for="orientationA">Specimen A orientation</label><select id="orientationA"><option value="along" selected>Along main fiber / print-road direction</option><option value="across">Across main fiber / through print layers</option></select></div>
+<div class="poe211-control"><label for="sampleB">Specimen B material</label><select id="sampleB"><option value="basswood">Basswood strip · illustrative</option><option value="balsa">Balsa strip · illustrative</option><option value="plywood" selected>Plywood coupon · illustrative</option><option value="pla">3D-printed PLA coupon · illustrative</option></select></div>
+<div class="poe211-control"><label for="orientationB">Specimen B orientation</label><select id="orientationB"><option value="along" selected>Along main fiber / print-road direction</option><option value="across">Across main fiber / through print layers</option></select></div>
+<div class="poe211-control"><label for="appliedP">Shared applied force <output id="appliedPText">5 N</output></label><input id="appliedP" type="range" min="1" max="12" step="1" value="5"></div>
+<div class="poe211-control"><label for="spanL">Shared support span <output id="spanLText">150 mm</output></label><input id="spanL" type="range" min="100" max="200" step="10" value="150"></div>
+<div class="poe211-control"><label for="widthB">Shared width b <output id="widthBText">12 mm</output></label><input id="widthB" type="range" min="8" max="20" step="2" value="12"></div>
+<div class="poe211-control"><label for="thicknessT">Shared thickness t <output id="thicknessTText">3.0 mm</output></label><input id="thicknessT" type="range" min="2" max="6" step=".5" value="3"></div>
+<button class="btn secondary" type="button" id="resetBending">Reset to baseline</button>
+</article>
+<article class="poe211-panel"><h3>Calculated load–displacement curves</h3><svg id="poe211Graph" class="poe211-diagram" viewbox="0 0 710 310" role="img" aria-label="Interactive predicted linear load versus displacement chart for two hypothetical uniform simply supported specimens with different elastic moduli.">
+<path d="M74 35V255H670" stroke="#59788d" stroke-width="2.2" fill="none"></path>
+<path d="M68 47L74 32L80 47 M656 249L672 255L656 261" stroke="#59788d" fill="none" stroke-width="2"></path>
+<text x="340" y="298" text-anchor="middle" class="poe211-svglabel">Center displacement δ (mm)</text>
+<text x="24" y="150" text-anchor="middle" transform="rotate(-90 24 150)" class="poe211-svglabel">Applied load (N)</text>
+<g id="graphGrid" stroke="#d9e4eb" stroke-width="1.1"></g>
+<path id="plotA" d="M74 255" fill="none" stroke="#0a8c92" stroke-width="4.2" stroke-linecap="round"></path>
+<path id="plotB" d="M74 255" fill="none" stroke="#c57f32" stroke-width="4.2" stroke-linecap="round"></path>
+<circle id="pointA" r="6" cx="74" cy="255" fill="#0a8c92" stroke="#fff" stroke-width="2"></circle>
+<circle id="pointB" r="6" cx="74" cy="255" fill="#c57f32" stroke="#fff" stroke-width="2"></circle>
+<text id="graphXmax" x="659" y="277" text-anchor="end" class="poe211-svgnote">0 mm</text>
+<text id="graphYmax" x="68" y="25" text-anchor="end" class="poe211-svgnote">0 N</text>
+<text x="500" y="60" class="poe211-svgnote">A · teal</text><text x="500" y="78" class="poe211-svgnote">B · orange</text>
+</svg>
+<div class="poe211-simresults">
+<div><strong id="eA">9,000 N/mm²</strong><span>A · effective E assumption</span></div>
+<div><strong id="eB">6,000 N/mm²</strong><span>B · effective E assumption</span></div>
+<div><strong id="deltaA">1.447 mm</strong><span>A · predicted center displacement</span></div>
+<div><strong id="deltaB">2.170 mm</strong><span>B · predicted center displacement</span></div>
+<div><strong id="massA">2.27 g</strong><span>A · specimen mass estimate</span></div>
+<div><strong id="massB">3.51 g</strong><span>B · specimen mass estimate</span></div>
+</div><p class="poe211-equationline" id="stressLine">Geometric section I = 27.00 mm⁴</p><p id="modelInterpretation" class="poe211-warning" aria-live="polite">Preset moduli and densities are hypothetical for classroom exploration—not measured values for your actual samples.</p>
+</article></div>
+<div class="poe211-warning" style="margin-top:1rem"><strong>Important modeling assumptions:</strong> Illustrative effective moduli and orientation multipliers are deliberately simplified teaching numbers, <em>not</em> verified data for any species, plywood grade or printed part. All virtual specimens have identical geometry in each run. Specimen mass is a density × volume estimate for the test strip only. Linear elastic bending, no slip at supports, no joint effects or material failure assumed. This simulation cannot certify load capacity or test a finished bridge.</div></div>
+<div class="poe211-grid" style="margin-top:1rem">
+<article class="poe211-panel"><span class="poe211-pill">Check Investigation A</span><h3>Vary the thickness</h3><p>Keep materials and load unchanged. Increase t from 3 to 6 mm. What happens to I and δ?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>Since I ∝ t³, doubling thickness multiplies I by <strong>8</strong> and the predicted deflection becomes <strong>1/8</strong> as large at the same E, load, span and width. Specimen material volume and mass double.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check Investigation B</span><h3>Vary the span</h3><p>Keep E, b, t and P unchanged. Increase span L from 100 mm to 200 mm. What happens to the predicted center deflection?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>δ ∝ L³ for this simply supported center-loaded beam. Doubling the span multiplies predicted center deflection by <strong>8</strong>. The physical specimen must still be long enough to reach both supports.</p></details></article>
 </div></section>
-<section class="container lesson-section" id="resources"><div class="poe28-section-header"><div class="poe28-eyebrow">Resource library</div><h2>Reference explanations and extra examples</h2><p>The diagrams and solved examples on this page are enough for the core lesson. These openly available engineering resources provide additional practice and deeper explanations.</p></div>
-<div class="poe28-grid"><article class="poe28-panel poe28-resource"><h3>Engineering Statics · Method of Joints</h3><p>Free, illustrated textbook explanation of joint free-body diagrams, tension assumptions, reactions and member force transfer. Includes its own truss interactive.</p><a href="https://engineeringstatics.org/method-of-joints.html" target="_blank" rel="noopener noreferrer">Open Method of Joints ↗</a></article>
-<article class="poe28-panel poe28-resource"><h3>Engineering Statics · Simple Trusses</h3><p>Explains ideal-truss assumptions, counting stable arrangements and zero-force members.</p><a href="https://engineeringstatics.org/Chapter_06-trusses.html" target="_blank" rel="noopener noreferrer">Open truss introduction ↗</a></article>
-<article class="poe28-panel poe28-resource"><h3>Efficient Engineer · Truss Analysis</h3><p>Illustrated explanation of the method of joints and method of sections; advanced portions preview the next lesson.</p><a href="https://efficientengineer.com/trusses/" target="_blank" rel="noopener noreferrer">Open visual truss lesson ↗</a></article>
-<article class="poe28-panel"><h3>Key vocabulary</h3><p><strong>Axial force:</strong> force along a member's length. <strong>Tension:</strong> member pulled outward. <strong>Compression:</strong> member pushed inward. <strong>Joint equilibrium:</strong> balance of all x and y forces acting on one isolated joint.</p></article>
+<section class="container lesson-section" id="examples"><div class="poe211-section-header"><div class="poe211-eyebrow">07 / Fully worked example</div><h2>Two equal-sized coupons, different elastic moduli</h2><p>Compare illustrative basswood E = 9,000 N/mm² against illustrative plywood E = 6,000 N/mm² using the same 150 mm span, 12 mm width, 3 mm thickness and centered 5 N force.</p></div>
+<div class="poe211-grid"><article class="poe211-panel"><h3>Step 1 · Cross-section geometry</h3><div class="poe211-eq">I = 12(3³)/12 = 27 mm⁴</div><p>Both samples use the same I, which isolates the assumed material-property difference.</p><h3>Step 2 · Specimen A</h3><div class="poe211-eq">δ<sub>A</sub> = 5(150³)/[48(9,000)(27)]</div><p><strong>δ<sub>A</sub> ≈ 1.447 mm</strong> (model result).</p></article>
+<article class="poe211-panel"><h3>Step 3 · Specimen B</h3><div class="poe211-eq">δ<sub>B</sub> = 5(150³)/[48(6,000)(27)]</div><p><strong>δ<sub>B</sub> ≈ 2.170 mm</strong> (model result).</p>
+<h3>Step 4 · Interpret carefully</h3><p>A predicts less deflection because its assumed modulus is larger. This says nothing about which sample fails first, which has better joints, or the properties of actual classroom stock.</p></article></div>
+<div class="poe211-panel" style="margin-top:1rem"><h3>What about specimen mass?</h3><p>Test-strip volume = (150)(12)(3) = 5,400 mm³ = <strong>5.40 cm³</strong>. With illustrative densities 0.42 g/cm³ and 0.65 g/cm³, A is <strong>2.27 g</strong> and B is <strong>3.51 g</strong>. These are nominal estimates for this test strip, not full bridge mass or supplier specifications.</p>
+<p class="poe211-warning"><strong>Evidence vs. assumptions:</strong> Use measured sample mass and load/displacement in Lesson 2.10 to replace these theoretical estimates and compare multiple specimens.</p></div></section>
+<section class="container lesson-section" id="apply"><div class="poe211-section-header"><div class="poe211-eyebrow">08 / Materials selection matrix</div><h2>Choose materials for three structural jobs</h2><p>Evaluate alternatives by function rather than declaring one universally “best.” Consider a shelf in bending, a support post in compression, and a bridge connection/gusset that transfers load.</p></div>
+<div class="poe211-matrix"><table><thead><tr><th>Application</th><th>Essential priorities</th><th>Options to compare</th><th>Questions to justify your choice</th></tr></thead><tbody>
+<tr><td><strong>Shelf / horizontal strip</strong></td><td>Bending stiffness, strength, span, mass</td><td>Plywood panel; basswood strip; balsa strip</td><td>What E and section I resist bending? Is thickness changed? What about fiber orientation?</td></tr>
+<tr><td><strong>Support post / truss strut</strong></td><td>Compression resistance, buckling, straightness, mass</td><td>Basswood; balsa; craft-stick laminate</td><td>How long and slender is the member? Which specimen defects or joint misalignment matter?</td></tr>
+<tr><td><strong>Bridge gusset / connection</strong></td><td>Load transfer, connection integrity, manufacturability, mass</td><td>Plywood gusset; interlocking wood joint; approved printed fitting</td><td>Is the connection within the unit's size, material and fastener rules? Can forces transfer without splitting or slip?</td></tr>
+</tbody></table></div>
+<div class="poe211-grid" style="margin-top:1rem"><article class="poe211-panel"><h3>A defensible scoring method</h3><p>Rank each option on a <strong>1–5 scale</strong> for stiffness, strength/failure resistance, density/mass efficiency, fabrication/connection fit and rule compliance. Support each score with a measured value, cited reference, or explicitly labeled hypothesis.</p><p>Do not award high scores just because a material feels rigid when held in your hand. Use the same geometry and testing conditions.</p></article>
+<article class="poe211-panel"><h3>Unit 2 bridge reminders</h3><p>Approved primary bridge materials include balsa, basswood, craft sticks and plywood. Local plywood gussets, printed connection fittings and M3 nuts/bolts have specific dimensional/manufacturing limits. Acrylic and printed continuous structural members are prohibited.</p><p>Review the <a href="../unit-2.html">Unit 2 specification</a> before proposing a physical construction choice.</p></article></div></section>
+<section class="container lesson-section" id="practice"><div class="poe211-section-header"><div class="poe211-eyebrow">09 / Independent checks</div><h2>Test your understanding before opening each answer</h2><p>Answer in complete sentences or calculations, using correct units and stating assumptions.</p></div>
+<div class="poe211-grid">
+<article class="poe211-panel"><span class="poe211-pill">Check A</span><h3>Strength or stiffness?</h3><p>Two samples deflect the same amount at 5 N but one breaks at a lower load. Are they equally strong?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>Not necessarily. Similar displacement at 5 N suggests comparable <em>specimen stiffness</em> under those conditions, but the one that fails earlier has lower observed capacity in that test.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check B</span><h3>Density calculation</h3><p>A specimen has volume 8.0 cm³ and mass 4.0 g. Find density.</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>ρ = m/V = 4.0/8.0 = <strong>0.50 g/cm³</strong>.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check C</span><h3>Thickness matters</h3><p>For a constant E and beam width, what happens to bending stiffness EI when rectangular beam thickness doubles?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>I = bt³/12, so I becomes <strong>8 times larger</strong>, and EI becomes eight times larger if E is unchanged.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check D</span><h3>Grain orientation</h3><p>Why should grain orientation be recorded on a basswood sample's test report?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>Wood is anisotropic/orthotropic; properties along fibers can differ from those across fibers. The observed stiffness/strength can therefore depend on how the specimen was cut and loaded.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check E</span><h3>Toughness and stiffness</h3><p>A material has a steep initial stress–strain slope, but fractures at low strain. Is high stiffness evidence that it is tough?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>No. Stiffness refers to the initial elastic slope E; toughness relates to <strong>total energy absorbed up to fracture</strong>. A brittle material can be stiff but not particularly tough.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check F</span><h3>Fair comparison</h3><p>You test a 3 mm plywood strip and a 6 mm basswood strip of equal span. Can the smaller deflection prove the winning material has the higher E?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>No. Thickness alters I with the <strong>cube</strong> of thickness. To compare material E, control width, thickness, span and load and use an appropriate material model.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check G</span><h3>Mass versus safety</h3><p>Why might the lightest material be a poor choice for a long compression member?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>It could lack sufficient stiffness, column stability or compressive strength. Slender members may buckle, while connections and fabrication defects can limit real capacity.</p></details></article>
+<article class="poe211-panel"><span class="poe211-pill">Check H</span><h3>Printed parts</h3><p>Can you design the entire bridge chord as a 3D-printed PLA beam because PLA coupons seem stiff?</p><details class="poe211-reveal"><summary>Reveal explanation</summary><p>No. The Unit 2 manufacturing rules permit approved printed <strong>connectors/fittings only</strong>, not fully printed chords or beams. A coupon stiffness comparison does not override the assignment constraints.</p></details></article>
 </div></section>
-<section class="container lesson-section" id="submit"><div class="poe28-section-header"><div class="poe28-eyebrow">Student submission</div><h2>Exactly what to submit</h2><p>Complete the <strong>POE 2.8 Calculating Truss Forces classwork and homework worksheet</strong> (or an assigned notebook equivalent), including the full method-of-joints analysis. Use the instructional videos and revealed checks as study aids, not a substitute for showing your own calculations.</p></div>
-<div class="poe28-grid"><article class="poe28-panel"><h3>Required evidence</h3><ul class="poe28-checklist"><li>A labeled whole-truss sketch with pin/roller, joint letters, load and dimensions.</li><li>Support reaction calculations using whole-truss equilibrium and correct units.</li><li>At least two individual joint FBDs with member force arrows and known external forces.</li><li>Correct sine/cosine components and ΣFₓ = 0 / ΣFᵧ = 0 equations.</li><li>Numerical member force results with each member marked T (tension) or C (compression).</li><li>At least one independent joint equilibrium check plus the assigned homework.</li></ul></article>
-<article class="poe28-panel"><h3>Before you submit</h3><ul class="poe28-checklist"><li>Every force calculation is labeled in newtons (N).</li><li>Your outward-arrow convention is stated, and negative results interpreted as compression.</li><li>All triangles and support reactions match the dimensions in your sketch.</li><li>Answers are checked at a different joint whenever possible.</li><li>Diagrams and calculations are readable and organized.</li></ul><p><strong>Due date:</strong> Check the <a href="../../../../agenda.html">Daily Agenda</a> for the current deadline and follow the teacher's instructions for submitting the worksheet or notebook pages.</p><a class="btn secondary" href="#start">Review lesson ↑</a></article></div></section>
-<nav aria-label="Lesson navigation" class="container lesson-bottom-nav"><a class="btn secondary" href="lesson-2-7.html">← Lesson 2.7: Introduction to Truss Systems</a><a class="btn" href="lesson-2-9.html">Next: 2.9 Advanced Truss Analysis →</a></nav>
-<section class="container learning-workspace" id="lesson-report" data-lesson-workspace aria-labelledby="lesson-report-heading"><h2 id="lesson-report-heading">Build your lesson report</h2><details id="lesson-checkpoint"><summary>Checkpoint: is your evidence ready?</summary><ul><li>Check calculations, units, labels, and measurements against the activity requirements.</li><li>Record what actually happened, including unexpected results.</li><li>Explain what you changed and why; attach required drawings, photos, CAD, or code in your classroom assignment.</li></ul></details><p data-submission-copy>Complete the POE 2.8 Calculating Truss Forces classwork and homework worksheet (or an assigned notebook equivalent), including the full method-of-joints analysis. Use the instructional videos and revealed checks as study aids, not a substitute for showing your own calculations.</p><div class="learning-fields"><div><label for="learning-name">Your name</label><input id="learning-name" autocomplete="name" maxlength="120" data-report-required></div><div><label for="learning-course">Course / period</label><input id="learning-course" maxlength="120" data-report-required></div><div class="wide"><label for="learning-notes">Activity notes and decisions</label><textarea id="learning-notes" maxlength="12000" placeholder="What did you do? Explain the decisions you made."></textarea></div><div class="wide"><label for="learning-calculations">Calculations, measurements, and units</label><textarea id="learning-calculations" maxlength="12000" placeholder="Show your method, substitutions, units, and result."></textarea></div><div class="wide"><label for="learning-evidence">Evidence and observations</label><textarea id="learning-evidence" maxlength="12000" placeholder="Record results. List filenames for any photos, drawings, CAD, or code you will attach separately." data-report-required></textarea></div><div class="wide"><label for="learning-trials">Investigation trial log</label><textarea id="learning-trials" maxlength="16000" data-trial-log placeholder="Use Record trial in an investigation, or enter measurements from the lesson activity."></textarea></div><div class="wide"><label for="learning-reflection">Reflection: what does your evidence show?</label><textarea id="learning-reflection" maxlength="12000" placeholder="Explain how your evidence supports or challenges your prediction. Include a limitation or source of uncertainty." data-report-required></textarea></div><div class="wide"><label for="learning-revision">What would you change or test next, and why?</label><textarea id="learning-revision" maxlength="12000"></textarea></div></div><div class="learning-actions"><button type="button" data-preview-lesson>Preview report &amp; export PDF</button></div><p>A PDF download is not a submission. Review it, then upload it and any required attachments through your classroom assignment system.</p></section></main>
+<section class="container lesson-section" id="resources"><div class="poe211-section-header"><div class="poe211-eyebrow">Reference desk</div><h2>Trusted learning resources</h2><p>Use these sources when you need additional material-property background, examples or information on plywood construction.</p></div>
+<div class="poe211-grid">
+<article class="poe211-panel poe211-resource"><h3>OpenStax · Stress, Strain and Elastic Modulus</h3><p>Free university physics chapter with definitions and example calculations of elastic deformation.</p><a href="https://openstax.org/books/university-physics-volume-1/pages/12-3-stress-strain-and-elastic-modulus" target="_blank" rel="noopener noreferrer">Read elastic modulus concepts ↗</a></article>
+<article class="poe211-panel poe211-resource"><h3>US Forest Service · Wood Handbook</h3><p>Engineering resource on wood anisotropy, mechanical properties, moisture and wood-based composites.</p><a href="https://research.fs.usda.gov/fpl/wood-handbook" target="_blank" rel="noopener noreferrer">Explore the Wood Handbook ↗</a></article>
+<article class="poe211-panel poe211-resource"><h3>APA · The Engineered Wood Association</h3><p>Photographs and explanations of plywood veneers, cross-lamination and directional properties.</p><a href="https://www.apawood.org/engineered-wood-products/plywood-osb/plywood/" target="_blank" rel="noopener noreferrer">Explore plywood structure ↗</a></article>
+<article class="poe211-panel poe211-resource" id="lesson-activity"><h3>Looking ahead · Materials Testing Lab</h3><p>Lesson 2.10 will use actual sample masses, dimensions and bending results so your material decisions are supported by classroom measurements.</p><a href="lesson-2-10.html">Preview Lesson 2.10 ↗</a></article></div></section>
+<section class="container lesson-section" id="submit"><div class="poe211-section-header"><div class="poe211-eyebrow">Student submission</div><h2>Exactly what to submit</h2><p>Complete the <strong>POE 2.8 Structural Materials &amp; Properties comparison worksheet</strong> or a teacher-approved engineering notebook equivalent. The main deliverable is a <strong>materials selection matrix</strong> supported by material-property evidence.</p></div>
+<div class="poe211-grid"><article class="poe211-panel"><h3>Required evidence</h3><ul class="poe211-checklist">
+<li>A five-property vocabulary comparison distinguishing stiffness, strength, density, ductility and toughness.</li>
+<li>One annotated sketch showing grain alignment or plywood cross-oriented plies and its relevance to the loading direction.</li>
+<li>A fully labeled two-material bending comparison with sample dimensions, force and assumed/recorded E values.</li>
+<li>Predicted deflections (or teacher-approved test observations), estimated/measured masses and units.</li>
+<li>A materials selection matrix evaluating at least three candidate materials across shelf, post and gusset applications.</li>
+<li>Justification for your choices with at least two specific quantitative observations and one limitation/uncertainty.</li>
+</ul></article>
+<article class="poe211-panel"><h3>Quality check</h3><ul class="poe211-checklist">
+<li>Do not label hypothetical E or density numbers as real measured properties.</li><li>State all controlled variables for the material comparison.</li>
+<li>Use mm for specimen dimensions, N for load, N/mm² for E and mm for deflection.</li>
+<li>Keep claims about strength and failure separate from elastic bending predictions.</li>
+<li>Ensure bridge-related choices follow the approved construction rules.</li>
+<li>Include any additional assigned worksheet or homework questions.</li></ul>
+<p><strong>Due date:</strong> Check the <a href="../../../../agenda.html">Daily Agenda</a> and follow your teacher's submission instructions.</p>
+<a class="btn secondary" href="#start">Review lesson ↑</a></article></div></section>
+<nav class="container lesson-bottom-nav" aria-label="Lesson navigation"><a class="btn secondary" href="lesson-2-7.html">← Lesson 2.10: Truss Design &amp; Simulation</a><a class="btn" href="lesson-2-9.html">Next: 2.9 Structural Failure →</a></nav>
+<section class="container learning-workspace" id="lesson-report" data-lesson-workspace aria-labelledby="lesson-report-heading"><h2 id="lesson-report-heading">Build your lesson report</h2><details id="lesson-checkpoint"><summary>Checkpoint: is your evidence ready?</summary><ul><li>Check calculations, units, labels, and measurements against the activity requirements.</li><li>Record what actually happened, including unexpected results.</li><li>Explain what you changed and why; attach required drawings, photos, CAD, or code in your classroom assignment.</li></ul></details><p data-submission-copy>Complete the POE 2.8 Structural Materials &amp; Properties comparison worksheet or a teacher-approved engineering notebook equivalent. The main deliverable is a materials selection matrix supported by material-property evidence.</p><div class="learning-fields"><div><label for="learning-name">Your name</label><input id="learning-name" autocomplete="name" maxlength="120" data-report-required></div><div><label for="learning-course">Course / period</label><input id="learning-course" maxlength="120" data-report-required></div><div class="wide"><label for="learning-notes">Activity notes and decisions</label><textarea id="learning-notes" maxlength="12000" placeholder="What did you do? Explain the decisions you made."></textarea></div><div class="wide"><label for="learning-calculations">Calculations, measurements, and units</label><textarea id="learning-calculations" maxlength="12000" placeholder="Show your method, substitutions, units, and result."></textarea></div><div class="wide"><label for="learning-evidence">Evidence and observations</label><textarea id="learning-evidence" maxlength="12000" placeholder="Record results. List filenames for any photos, drawings, CAD, or code you will attach separately." data-report-required></textarea></div><div class="wide"><label for="learning-trials">Investigation trial log</label><textarea id="learning-trials" maxlength="16000" data-trial-log placeholder="Use Record trial in an investigation, or enter measurements from the lesson activity."></textarea></div><div class="wide"><label for="learning-reflection">Reflection: what does your evidence show?</label><textarea id="learning-reflection" maxlength="12000" placeholder="Explain how your evidence supports or challenges your prediction. Include a limitation or source of uncertainty." data-report-required></textarea></div><div class="wide"><label for="learning-revision">What would you change or test next, and why?</label><textarea id="learning-revision" maxlength="12000"></textarea></div></div><div class="learning-actions"><button type="button" data-preview-lesson>Preview report &amp; export PDF</button></div><p>A PDF download is not a submission. Review it, then upload it and any required attachments through your classroom assignment system.</p></section></main>
 <footer class="footer"><div class="container footer-grid"><div><img alt="LockwoodSTEM logo" class="footer-logo" src="../../../../assets/img/lockwoodstem-concept-a1-black-transparent.png" width="335" height="100" decoding="async" loading="lazy"><div class="footer-note">A student engineering hub for design, fabrication, and aerospace innovation.</div></div><div class="footer-links"><a href="../../../../courses.html">Courses</a><a href="../../../../agenda.html">Daily Agenda</a><a href="../../../../resources/index.html">Resources</a><a href="../../../../fablab/index.html">FabLab</a><a href="../../index.html">POE</a></div></div></footer>
 <button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button>
 <script>
 (function(){
 "use strict";
-const get=id=>document.getElementById(id);
-const inputP=get("trussLoad"),inputH=get("trussRise"),reset=get("trussReset"),stageBtns=Array.from(document.querySelectorAll("button[data-solver-step]"));
-if(!inputP||!inputH||!reset||stageBtns.length!==4)return;
-let stage=0;
-function write(id,value){const el=get(id);if(el)el.textContent=value;}
-function draw(){
-const P=Number(inputP.value),h=Number(inputH.value),half=2;
-const diagonal=Math.hypot(half,h),sin=h/diagonal,cos=half/diagonal,theta=Math.atan2(h,half)*180/Math.PI;
-const diag=P/(2*sin),tie=diag*cos,reaction=P/2;
-const yC=330-h*90;
-get("solverAC").setAttribute("y2",yC.toFixed(1));
-get("solverBC").setAttribute("y1",yC.toFixed(1));
-get("solverApex").setAttribute("cy",yC.toFixed(1));
-get("solverLoad").setAttribute("y1",String(Math.max(15,yC-57)));
-get("solverLoad").setAttribute("y2",String(yC-13));
-get("solverLoadText").setAttribute("y",String(Math.max(19,yC-39)));
-get("solverApexText").setAttribute("y",String(yC-4));
-write("solverLoadText","P = "+P+" N ↓");
-write("solverAy","Aᵧ = "+reaction.toFixed(1)+" N");
-write("solverBy","Bᵧ = "+reaction.toFixed(1)+" N");
-write("trussLoadValue",P+" N");write("trussRiseValue",h.toFixed(2)+" m");
-write("trussAy",reaction.toFixed(2)+" N");write("trussBy",reaction.toFixed(2)+" N");
-write("trussDiag",diag.toFixed(2)+" N (C)");write("trussTie",tie.toFixed(2)+" N (T)");
-write("trussAngle",theta.toFixed(2)+"°");write("trussResidual",(reaction+reaction-P).toFixed(2)+" N");
-const stages=[
-["1 · Whole-truss reactions","The pin and roller react upward. With a centered apex load, static moment and vertical-force equilibrium give two equal support reactions.","Aᵧ = Bᵧ = "+reaction.toFixed(2)+" N = P/2"],
-["2 · Joint C: diagonal compression","Assume both diagonal unknowns pull down and outward from C. Their solved signed forces are negative, so they actually push up on C.","−2F sin("+theta.toFixed(2)+"°) −"+P+" = 0 ⇒ F = −"+diag.toFixed(2)+" N"],
-["3 · Joint A: bottom tie tension","Joint A has a known upward reaction. The compressive AC member pushes down and left on A, so AB must pull right to balance.","F_AB −"+diag.toFixed(2)+" cos("+theta.toFixed(2)+"°) = 0 ⇒ AB = +"+tie.toFixed(2)+" N"],
-["4 · Check joint B","At B, upward reaction balances the downward component of diagonal BC compression. Horizontal bottom tie tension balances BC's rightward component.","ΣFᵧ = "+reaction.toFixed(2)+" −"+(diag*sin).toFixed(2)+" = 0 N; ΣFₓ = −"+tie.toFixed(2)+" +"+(diag*cos).toFixed(2)+" = 0 N"]
-];
-stageBtns.forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.solverStep)===stage)));
-write("solverStageTitle",stages[stage][0]);write("solverStageText",stages[stage][1]);write("solverStageEquation",stages[stage][2]);
-const members=get("trussSolverFigure").querySelectorAll(".poe28-truss-compression,.poe28-truss-tension");
-members.forEach(el=>{
-const isTie=el.classList.contains("poe28-truss-tension");
-const isFocus=stage===0||stage===3||(stage===1?!isTie:true);
-el.style.opacity=isFocus?"1":".30";
-});
-get("trussSolverFigure").setAttribute("aria-label","Symmetric truss span 4 m, rise "+h.toFixed(2)+" m, apex load "+P+" N. Both supports react upward "+reaction.toFixed(2)+" N; diagonal compression "+diag.toFixed(2)+" N each; bottom tie tension "+tie.toFixed(2)+" N. Analysis focus: "+stages[stage][0]+".");
+const g=id=>document.getElementById(id);
+const field=["sampleA","sampleB","orientationA","orientationB","appliedP","spanL","widthB","thicknessT","resetBending"];
+if(field.some(id=>!g(id)))return;
+const assumptions={
+ basswood:{name:"Basswood strip",E:9000,rho:.42,factor:.18},
+ balsa:{name:"Balsa strip",E:3000,rho:.16,factor:.22},
+ plywood:{name:"Plywood coupon",E:6000,rho:.65,factor:.65},
+ pla:{name:"Printed PLA coupon",E:2500,rho:1.22,factor:.60}
+};
+function write(id,t){g(id).textContent=t;}
+function values(id,orient,P,L,b,t){
+ const item=assumptions[g(id).value],isCross=g(orient).value==="across";
+ const eff=item.E*(isCross?item.factor:1),I=b*Math.pow(t,3)/12;
+ const d=P*Math.pow(L,3)/(48*eff*I);
+ return {name:item.name,E:eff,rho:item.rho,delta:d,mass:L*b*t/1000*item.rho,orient:isCross?"across":"along",factor:item.factor};
 }
-inputP.addEventListener("input",draw);inputH.addEventListener("input",draw);
-stageBtns.forEach(b=>b.addEventListener("click",()=>{stage=Number(b.dataset.solverStep);draw();}));
-reset.addEventListener("click",()=>{inputP.value=120;inputH.value=1.5;stage=0;draw();});
-draw();
+function linePath(result,load,limitX,limitY){
+ let out="";for(let i=0;i<=18;i++){const force=load*i/18;const def=result.delta*force/load;const x=74+def/limitX*574,y=255-force/limitY*205;out+=(i?"L":"M")+x.toFixed(2)+","+y.toFixed(2);}
+ return out;
+}
+function render(){
+ const P=Number(g("appliedP").value),L=Number(g("spanL").value),b=Number(g("widthB").value),t=Number(g("thicknessT").value);
+ const a=values("sampleA","orientationA",P,L,b,t),c=values("sampleB","orientationB",P,L,b,t);
+ write("appliedPText",P+" N");write("spanLText",L+" mm");write("widthBText",b+" mm");write("thicknessTText",t.toFixed(1)+" mm");
+ write("eA",a.E.toLocaleString("en-US")+" N/mm²");write("eB",c.E.toLocaleString("en-US")+" N/mm²");
+ write("deltaA",a.delta.toFixed(3)+" mm");write("deltaB",c.delta.toFixed(3)+" mm");
+ write("massA",a.mass.toFixed(2)+" g");write("massB",c.mass.toFixed(2)+" g");
+ const I=b*t*t*t/12,maxY=P*1.35,maxX=Math.max(a.delta,c.delta)*1.55;
+ write("stressLine","I = "+I.toFixed(2)+" mm⁴ · estimated surface bending stress magnitude at the current load = "+(3*P*L/(2*b*t*t)).toFixed(2)+" N/mm² (same geometry, no failure prediction).");
+ g("plotA").setAttribute("d",linePath(a,P,maxX,maxY));g("plotB").setAttribute("d",linePath(c,P,maxX,maxY));
+ for(const [name,res] of [["pointA",a],["pointB",c]]){g(name).setAttribute("cx",(74+res.delta/maxX*574).toFixed(2));g(name).setAttribute("cy",(255-P/maxY*205).toFixed(2));}
+ write("graphXmax",maxX.toFixed(2)+" mm");
+ write("graphYmax",maxY.toFixed(1)+" N");
+ const grid=g("graphGrid");while(grid.firstChild)grid.removeChild(grid.firstChild);
+ for(let i=1;i<5;i++){
+  const v=document.createElementNS("http://www.w3.org/2000/svg","line");v.setAttribute("x1",74+i*574/5);v.setAttribute("x2",74+i*574/5);v.setAttribute("y1","35");v.setAttribute("y2","255");grid.appendChild(v);
+  const h=document.createElementNS("http://www.w3.org/2000/svg","line");h.setAttribute("x1","74");h.setAttribute("x2","670");h.setAttribute("y1",255-i*205/5);h.setAttribute("y2",255-i*205/5);grid.appendChild(h);
+ }
+ write("modelInterpretation",Math.abs(a.delta-c.delta)<.0001?"Both illustrative specimens have the same predicted displacement under these inputs. This does not imply identical strength.":(a.delta<c.delta?"Specimen A":"Specimen B")+" has the smaller predicted displacement with the shared geometry and force. The mass estimates reflect separate illustrative densities. Neither result predicts failure or validates real material properties.");
+ g("poe211Graph").setAttribute("aria-label","Predicted linear applied-load versus center-displacement curves; A effective modulus "+a.E+" N/mm squared with "+a.delta.toFixed(3)+" millimeter displacement at "+P+" newtons; B modulus "+c.E+" with "+c.delta.toFixed(3)+" millimeter displacement. These are hypothetical values.");
+}
+["sampleA","sampleB","orientationA","orientationB"].forEach(id=>g(id).addEventListener("change",render));
+["appliedP","spanL","widthB","thicknessT"].forEach(id=>g(id).addEventListener("input",render));
+g("resetBending").addEventListener("click",()=>{g("sampleA").value="basswood";g("sampleB").value="plywood";g("orientationA").value="along";g("orientationB").value="along";g("appliedP").value=5;g("spanL").value=150;g("widthB").value=12;g("thicknessT").value=3;render();});
+render();
 })();
 </script></body></html>
