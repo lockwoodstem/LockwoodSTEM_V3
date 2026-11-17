@@ -601,96 +601,24 @@ window.LOCKWOODSTEM_LESSONS = {
       ]
     ],
     "3": [
-      [
-        "3.1",
-        "Unit Launch: Autonomous Aerospace Systems",
-        "lesson-3-1.html"
-      ],
-      [
-        "3.2",
-        "Control Systems and Mission Logic",
-        "lesson-3-2.html"
-      ],
-      [
-        "3.3",
-        "Flowcharts and Algorithms",
-        "lesson-3-3.html"
-      ],
-      [
-        "3.4",
-        "Inputs, Outputs, and Sensors",
-        "lesson-3-4.html"
-      ],
-      [
-        "3.5",
-        "Open-Loop Rover Control",
-        "lesson-3-5.html"
-      ],
-      [
-        "3.6",
-        "Rover Testing and Debugging",
-        "lesson-3-6.html"
-      ],
-      [
-        "3.7",
-        "Closed-Loop Control and Feedback",
-        "lesson-3-7.html"
-      ],
-      [
-        "3.8",
-        "Sensor Thresholds and Decision Logic",
-        "lesson-3-8.html"
-      ],
-      [
-        "3.9",
-        "VEX Ground Support Systems",
-        "lesson-3-9.html"
-      ],
-      [
-        "3.10",
-        "Motors, Servos, and Actuators",
-        "lesson-3-10.html"
-      ],
-      [
-        "3.11",
-        "Fluid Power in Aerospace Systems",
-        "lesson-3-11.html"
-      ],
-      [
-        "3.12",
-        "Pressure, Force, and Pascal\u2019s Law",
-        "lesson-3-12.html"
-      ],
-      [
-        "3.13",
-        "Fluid Power Design Lab",
-        "lesson-3-13.html"
-      ],
-      [
-        "3.14",
-        "Design Brief: Rover Mission + VEX Ground Support System",
-        "lesson-3-14.html"
-      ],
-      [
-        "3.15",
-        "Mission Planning and System Architecture",
-        "lesson-3-15.html"
-      ],
-      [
-        "3.16",
-        "Build and Program Workday",
-        "lesson-3-16.html"
-      ],
-      [
-        "3.17",
-        "Mission Testing, Data Collection, and Iteration",
-        "lesson-3-17.html"
-      ],
-      [
-        "3.18",
-        "Final Mission Demonstration and Design Review",
-        "lesson-3-18.html"
-      ]
+      ["3.1","Introduction to Rover Robotics","lesson-3-1.html"],
+      ["3.2","VEX V5 Components & Mechanical Systems","lesson-3-2.html"],
+      ["3.3","Building the Clawbot Chassis","lesson-3-3.html"],
+      ["3.4","Completing the Drivetrain","lesson-3-4.html"],
+      ["3.5","Gear Ratios, Torque & Wheel Selection","lesson-3-5.html"],
+      ["3.6","Programming the Drivetrain","lesson-3-6.html"],
+      ["3.7","Robot Tug-of-War Challenge","lesson-3-7.html"],
+      ["3.8","Controller Programming & Driver Control","lesson-3-8.html"],
+      ["3.9","Functions, Loops & Program Organization","lesson-3-9.html"],
+      ["3.10","Qualification 1: Precision Driving","lesson-3-10.html"],
+      ["3.11","Introduction to Robotic Manipulators","lesson-3-11.html"],
+      ["3.12","Clawbot Arm & Claw Assembly","lesson-3-12.html"],
+      ["3.13","Programming Arm & Claw Controls","lesson-3-13.html"],
+      ["3.14","Qualification 2: Sample Retrieval","lesson-3-14.html"],
+      ["3.15","Autonomous Movement & Turning","lesson-3-15.html"],
+      ["3.16","Qualification 3: Autonomous Navigation","lesson-3-16.html"],
+      ["3.17","Rover Testing & Engineering Improvements","lesson-3-17.html"],
+      ["3.18","Final Rover Qualification Challenge","lesson-3-18.html"]
     ],
     "4": [
       [
