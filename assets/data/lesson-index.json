@@ -1170,9 +1170,8 @@
       "lesson": 1,
       "number": "3.1",
       "type": "Lesson",
-      "title": "Unit Launch: Autonomous Aerospace Systems",
-      "url": "courses/poe/units/unit-3/lesson-3-1.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.1_Unit_Launch_Autonomous_Aerospace_Systems.pptx"
+      "title": "Introduction to Rover Robotics",
+      "url": "courses/poe/units/unit-3/lesson-3-1.html"
     },
     {
       "course": "POE",
@@ -1180,9 +1179,8 @@
       "lesson": 2,
       "number": "3.2",
       "type": "Lesson",
-      "title": "Control Systems and Mission Logic",
-      "url": "courses/poe/units/unit-3/lesson-3-2.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.2_Control_Systems_and_Mission_Logic.pptx"
+      "title": "VEX V5 Components & Mechanical Systems",
+      "url": "courses/poe/units/unit-3/lesson-3-2.html"
     },
     {
       "course": "POE",
@@ -1190,9 +1188,8 @@
       "lesson": 3,
       "number": "3.3",
       "type": "Lesson",
-      "title": "Flowcharts and Algorithms",
-      "url": "courses/poe/units/unit-3/lesson-3-3.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.3_Flowcharts_and_Algorithms.pptx"
+      "title": "Building the Clawbot Chassis",
+      "url": "courses/poe/units/unit-3/lesson-3-3.html"
     },
     {
       "course": "POE",
@@ -1200,9 +1197,8 @@
       "lesson": 4,
       "number": "3.4",
       "type": "Lesson",
-      "title": "Inputs, Outputs, and Sensors",
-      "url": "courses/poe/units/unit-3/lesson-3-4.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.4_Inputs_Outputs_and_Sensors.pptx"
+      "title": "Completing the Drivetrain",
+      "url": "courses/poe/units/unit-3/lesson-3-4.html"
     },
     {
       "course": "POE",
@@ -1210,9 +1206,8 @@
       "lesson": 5,
       "number": "3.5",
       "type": "Lesson",
-      "title": "Open-Loop Rover Control",
-      "url": "courses/poe/units/unit-3/lesson-3-5.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.5_Open_Loop_Rover_Control.pptx"
+      "title": "Gear Ratios, Torque & Wheel Selection",
+      "url": "courses/poe/units/unit-3/lesson-3-5.html"
     },
     {
       "course": "POE",
@@ -1220,9 +1215,8 @@
       "lesson": 6,
       "number": "3.6",
       "type": "Lesson",
-      "title": "Rover Testing and Debugging",
-      "url": "courses/poe/units/unit-3/lesson-3-6.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.6_Rover_Testing_and_Debugging.pptx"
+      "title": "Programming the Drivetrain",
+      "url": "courses/poe/units/unit-3/lesson-3-6.html"
     },
     {
       "course": "POE",
@@ -1230,9 +1224,8 @@
       "lesson": 7,
       "number": "3.7",
       "type": "Lesson",
-      "title": "Closed-Loop Control and Feedback",
-      "url": "courses/poe/units/unit-3/lesson-3-7.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.7_Closed_Loop_Control_and_Feedback.pptx"
+      "title": "Robot Tug-of-War Challenge",
+      "url": "courses/poe/units/unit-3/lesson-3-7.html"
     },
     {
       "course": "POE",
@@ -1240,9 +1233,8 @@
       "lesson": 8,
       "number": "3.8",
       "type": "Lesson",
-      "title": "Sensor Thresholds and Decision Logic",
-      "url": "courses/poe/units/unit-3/lesson-3-8.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.8_Sensor_Thresholds_and_Decision_Logic.pptx"
+      "title": "Controller Programming & Driver Control",
+      "url": "courses/poe/units/unit-3/lesson-3-8.html"
     },
     {
       "course": "POE",
@@ -1250,9 +1242,8 @@
       "lesson": 9,
       "number": "3.9",
       "type": "Lesson",
-      "title": "VEX Ground Support Systems",
-      "url": "courses/poe/units/unit-3/lesson-3-9.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.9_VEX_Ground_Support_Systems.pptx"
+      "title": "Functions, Loops & Program Organization",
+      "url": "courses/poe/units/unit-3/lesson-3-9.html"
     },
     {
       "course": "POE",
@@ -1260,9 +1251,8 @@
       "lesson": 10,
       "number": "3.10",
       "type": "Lesson",
-      "title": "Motors, Servos, and Actuators",
-      "url": "courses/poe/units/unit-3/lesson-3-10.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.10_Motors_Servos_and_Actuators.pptx"
+      "title": "Qualification 1: Precision Driving",
+      "url": "courses/poe/units/unit-3/lesson-3-10.html"
     },
     {
       "course": "POE",
@@ -1270,9 +1260,8 @@
       "lesson": 11,
       "number": "3.11",
       "type": "Lesson",
-      "title": "Fluid Power in Aerospace Systems",
-      "url": "courses/poe/units/unit-3/lesson-3-11.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.11_Fluid_Power_in_Aerospace_Systems.pptx"
+      "title": "Introduction to Robotic Manipulators",
+      "url": "courses/poe/units/unit-3/lesson-3-11.html"
     },
     {
       "course": "POE",
@@ -1280,9 +1269,8 @@
       "lesson": 12,
       "number": "3.12",
       "type": "Lesson",
-      "title": "Pressure, Force, and Pascal’s Law",
-      "url": "courses/poe/units/unit-3/lesson-3-12.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.12_Pressure_Force_and_Pascal_s_Law.pptx"
+      "title": "Clawbot Arm & Claw Assembly",
+      "url": "courses/poe/units/unit-3/lesson-3-12.html"
     },
     {
       "course": "POE",
@@ -1290,9 +1278,8 @@
       "lesson": 13,
       "number": "3.13",
       "type": "Lesson",
-      "title": "Fluid Power Design Lab",
-      "url": "courses/poe/units/unit-3/lesson-3-13.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.13_Fluid_Power_Design_Lab.pptx"
+      "title": "Programming Arm & Claw Controls",
+      "url": "courses/poe/units/unit-3/lesson-3-13.html"
     },
     {
       "course": "POE",
@@ -1300,9 +1287,8 @@
       "lesson": 14,
       "number": "3.14",
       "type": "Lesson",
-      "title": "Design Brief: Rover Mission + VEX Ground Support System",
-      "url": "courses/poe/units/unit-3/lesson-3-14.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.14_Design_Brief_Rover_Mission_VEX_Ground_Support_System.pptx"
+      "title": "Qualification 2: Sample Retrieval",
+      "url": "courses/poe/units/unit-3/lesson-3-14.html"
     },
     {
       "course": "POE",
@@ -1310,9 +1296,8 @@
       "lesson": 15,
       "number": "3.15",
       "type": "Lesson",
-      "title": "Mission Planning and System Architecture",
-      "url": "courses/poe/units/unit-3/lesson-3-15.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.15_Mission_Planning_and_System_Architecture.pptx"
+      "title": "Autonomous Movement & Turning",
+      "url": "courses/poe/units/unit-3/lesson-3-15.html"
     },
     {
       "course": "POE",
@@ -1320,9 +1305,8 @@
       "lesson": 16,
       "number": "3.16",
       "type": "Lesson",
-      "title": "Build and Program Workday",
-      "url": "courses/poe/units/unit-3/lesson-3-16.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.16_Build_and_Program_Workday.pptx"
+      "title": "Qualification 3: Autonomous Navigation",
+      "url": "courses/poe/units/unit-3/lesson-3-16.html"
     },
     {
       "course": "POE",
@@ -1330,9 +1314,8 @@
       "lesson": 17,
       "number": "3.17",
       "type": "Lesson",
-      "title": "Mission Testing, Data Collection, and Iteration",
-      "url": "courses/poe/units/unit-3/lesson-3-17.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.17_Mission_Testing_Data_Collection_and_Iteration.pptx"
+      "title": "Rover Testing & Engineering Improvements",
+      "url": "courses/poe/units/unit-3/lesson-3-17.html"
     },
     {
       "course": "POE",
@@ -1340,9 +1323,8 @@
       "lesson": 18,
       "number": "3.18",
       "type": "Lesson",
-      "title": "Final Mission Demonstration and Design Review",
-      "url": "courses/poe/units/unit-3/lesson-3-18.html",
-      "presentation": "downloads/presentations/POE_Unit3_Lesson_3.18_Final_Mission_Demonstration_and_Design_Review.pptx"
+      "title": "Final Rover Qualification Challenge",
+      "url": "courses/poe/units/unit-3/lesson-3-18.html"
     },
     {
       "course": "POE",
