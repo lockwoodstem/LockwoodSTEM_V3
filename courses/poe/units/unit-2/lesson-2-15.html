@@ -349,7 +349,7 @@ body.poe218-printmode #poe218Print{display:block!important;font:9pt Arial,sans-s
 <li>Teacher-reviewed inspection form or teacher-directed sign-off before 2.16 testing.</li></ul></article>
 <article class="p218-card"><h3>What a complete record demonstrates</h3><ul class="p218-checks">
 <li>The real finished bridge, not just CAD, has been measured.</li>
-<li>All components match approved wood-based manufacturing and connection rules.</li>
+<li>All primary members are laser-cut nominal 3 mm plywood and the joints follow permitted M3 hardware or printed-fitting rules.</li>
 <li>Every rejected part and design deviation is visible in the record.</li>
 <li>Both side frames, lateral braces and center loading crossmember are complete.</li>
 <li>All adhesive joints have satisfied required cure instructions.</li>
@@ -365,7 +365,7 @@ body.poe218-printmode #poe218Print{display:block!important;font:9pt Arial,sans-s
 <h2>Before manufacturing — teacher-supervised checks</h2>
 <p>☐ Operator certified on machine   ☐ Approved stock   ☐ PPE   ☐ Proper exhaust / interlocks</p>
 <p>☐ DXF mm + 1:1 / sliced fitting settings checked   ☐ Approved teacher machine setup</p>
-<p>☐ Approved wooden structure   ☐ Allowed adhesives / M3 hardware only</p>
+<p>☐ Laser-cut nominal 3 mm plywood structure   ☐ Allowed adhesives / M3 hardware only</p>
 <h2>Manufacturing parts register</h2><table><thead><tr><th>Part group</th><th>Planned</th><th>Usable</th><th>Rejected</th></tr></thead><tbody>
 <tr><td>Left truss laser-cut plywood</td><td></td><td></td><td></td></tr><tr><td>Right truss laser-cut plywood</td><td></td><td></td><td></td></tr><tr><td>Transverse / lateral braces</td><td></td><td></td><td></td></tr><tr><td>Load-transfer crossmember</td><td></td><td></td><td></td></tr><tr><td>Local plywood gussets</td><td></td><td></td><td></td></tr><tr><td>Printed PLA/PETG fittings</td><td></td><td></td><td></td></tr><tr><td>M3 bolt/nut/washer sets</td><td></td><td></td><td></td></tr><tr><td>Approved PVA/CA adhesive</td><td></td><td></td><td></td></tr></tbody></table>
 <h2>Machine and material authorization notes</h2><div class="p218-printlines"><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
@@ -390,7 +390,7 @@ body.poe218-printmode #poe218Print{display:block!important;font:9pt Arial,sans-s
 <div class="p218-printpage"><h1>POE 2.15 · FINAL PRE-TEST INSPECTION</h1><p>Page 4 of 4 · Physical measurements and teacher release</p>
 <p>Team: ___________________________________ Revision: __________ Date: ___________</p>
 <table><thead><tr><th>Measurement</th><th>Actual value</th><th>Required</th><th>Inspector note</th></tr></thead><tbody>
-<tr><td>Clear span</td><td></td><td>≥400 mm</td><td></td></tr><tr><td>Outside width with hardware</td><td></td><td>≤65 mm</td><td></td></tr><tr><td>Actual finished mass</td><td></td><td>≤150 g</td><td></td></tr><tr><td>Plywood stock thickness (if used)</td><td></td><td>≤3.2 mm</td><td></td></tr><tr><td>Local gusset bounding size</td><td></td><td>≤40 × 25 mm</td><td></td></tr><tr><td>Largest local gusset area</td><td></td><td>≤800 mm²</td><td></td></tr><tr><td>Maximum gusset overlap</td><td></td><td>≤20 mm per member</td><td></td></tr><tr><td>Gusset layers</td><td></td><td>≤1 per side</td><td></td></tr><tr><td>Total printed fitting mass</td><td></td><td>≤40 g</td><td></td></tr><tr><td>Largest single printed fitting mass</td><td></td><td>≤15 g</td><td></td></tr><tr><td>Maximum printed fitting length</td><td></td><td>≤50 mm</td><td></td></tr></tbody></table>
+<tr><td>Clear span</td><td></td><td>≥400 mm</td><td></td></tr><tr><td>Outside width with hardware</td><td></td><td>≤65 mm</td><td></td></tr><tr><td>Actual finished mass</td><td></td><td>≤150 g</td><td></td></tr><tr><td>Nominal 3 mm plywood thickness (required)</td><td></td><td>≤3.2 mm</td><td></td></tr><tr><td>Local gusset bounding size</td><td></td><td>≤40 × 25 mm</td><td></td></tr><tr><td>Largest local gusset area</td><td></td><td>≤800 mm²</td><td></td></tr><tr><td>Maximum gusset overlap</td><td></td><td>≤20 mm per member</td><td></td></tr><tr><td>Gusset layers</td><td></td><td>≤1 per side</td><td></td></tr><tr><td>Total printed fitting mass</td><td></td><td>≤40 g</td><td></td></tr><tr><td>Largest single printed fitting mass</td><td></td><td>≤15 g</td><td></td></tr><tr><td>Maximum printed fitting length</td><td></td><td>≤50 mm</td><td></td></tr></tbody></table>
 <p><strong>Visible defects or uncertainties:</strong> __________________________________________________</p><div class="p218-printlines"><div></div><div></div><div></div></div>
 <p>☐ Photos recorded   ☐ Part counts reconciled   ☐ All defects/deviations disclosed</p>
 <p>☐ Teacher reviewed the bridge   ☐ Official test has NOT begun</p>
@@ -448,7 +448,7 @@ function inspection(){
  const gussetFilled=["gussetLongest","gussetWidest","gussetArea","gussetOverlap","gussetLayers"].some(id=>num(id)!==null);
  const usesGusset=num("stockNeed4")>0||gussetFilled;
  const usesPrinted=num("stockNeed5")>0||["printTotal","printMax","printLength"].some(id=>num(id)!==null);
- assess("Plywood thickness","plyActual",n=>n>=2.8&&n<=3.2,"nominal 3 mm plywood (2.8–3.2 mm measured)",hasPlywood||usesGusset);
+ assess("Plywood thickness","plyActual",n=>n>=2.8&&n<=3.2,"nominal 3 mm plywood (2.8–3.2 mm measured)",true);
  if(usesGusset){
  assess("Gusset length","gussetLongest",n=>n>0&&n<=40,"maximum 40 mm");
  assess("Gusset width","gussetWidest",n=>n>0&&n<=25,"maximum 25 mm");
