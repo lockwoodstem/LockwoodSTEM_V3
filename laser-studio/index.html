@@ -10,12 +10,12 @@
 <div class="workflow-hint"><span class="workflow-num">1</span>Design your project<br><span class="workflow-num">2</span>Choose an approved material<br><span class="workflow-num">3</span>Review and export</div><h3>Project</h3><label for="project">Project name</label><input id="project" value="My Laser Project" maxlength="70"><label for="student">Student name</label><input id="student" placeholder="First Last" maxlength="70">
 <h3>Material dimensions</h3><div class="pair"><div><label for="width">Width (mm)</label><input id="width" type="number" min="20" max="1000" step="1" value="300"></div><div><label for="height">Height (mm)</label><input id="height" type="number" min="20" max="700" step="1" value="200"></div></div><select id="material" hidden aria-hidden="true"><option>Birch plywood — instructor approved</option><option>Uncoated plywood — instructor approved</option><option>Cast acrylic — instructor approved</option><option>Cardboard — instructor approved</option><option>Other — instructor approval required</option></select>
 <div class="note">Canvas size must match your real stock. Dimensions are in millimeters. Use the blue layer for cut outlines and black for engraving artwork.</div>
-<h3>Published material presets</h3>
-<div class="note">Choose a material and thickness approved for this OMTech 80W. The instructor manages available settings; students cannot change speed or power here.</div>
-<label for="presetChoose">Material / thickness profile</label><select id="presetChoose"><option value="">Loading published presets...</option></select>
+<h3>Material presets</h3>
+<div class="note">Choose a material and thickness. DEMO presets provide example values for learning and software testing only; they are not approved for cutting.</div>
+<label for="presetChoose">Material / thickness</label><select id="presetChoose"><option value="">Loading published presets...</option></select>
 <div id="presetSummary" class="note" role="status" aria-live="polite">Loading published settings…</div>
 <div class="row"><button type="button" id="presetReload">Refresh Presets</button></div>
-<div class="footer">Presets are published in the school's controlled repository. A selection is for job preparation only, not permission to run the laser.</div>
+<div class="footer">Demo presets are unverified examples. Only separately calibrated and instructor-approved profiles may be used in future machine jobs.</div>
 <details class="development-only"><summary><strong>File utilities</strong></summary><h3>Files</h3><div class="row"><button id="import" type="button">Import SVG</button><button id="exportProject" type="button">Export Project</button></div><input id="importSvg" type="file" accept=".svg,image/svg+xml,.json,application/json"><div class="footer">Imported SVG supports simple rectangles, circles, lines and text; unsupported elements are ignored.</div></details>
 </aside><main class="workspace"><div class="workspace-head"><div><b>Design canvas</b> <span id="dimensions" class="muted"></span></div><div class="swatches"><span><i class="dot cut"></i>Cut</span><span><i class="dot engrave"></i>Engrave</span></div></div><div class="canvas-wrap"><div class="canvas-paper"><svg id="design" role="img" aria-label="Editable laser project canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><defs><pattern id="grid" patternUnits="userSpaceOnUse" width="10" height="10"><path d="M10 0H0V10" fill="none" stroke="#bdd7e4" stroke-width=".22"/></pattern></defs><rect id="gridbg" width="300" height="200" fill="url(#grid)"/><g id="objects"></g></svg></div></div><section class="validation" aria-labelledby="validationTitle"><div class="workflow-hint"><span class="workflow-num">3</span>Review your design before export.</div>
 <h3 id="validationTitle">Job preparation &amp; validation</h3>
@@ -42,7 +42,7 @@
 <button id="cardIdTest" type="button" disabled>Query Controller Card ID (one request)</button>
 <p id="cardIdStatus" role="status" class="muted">Select FTDI 0403:6001 above, confirm the diagnostic conditions, then run the query.</p>
 </details>
-<p id="usbListenStatus" role="status" class="muted">No receive-only test performed.</p><p id="usbTestStatus" role="status" class="muted">Choose the FTDI port first. This test opens the port and closes it without reading or writing application data or sending laser commands. Opening a port can change control signals through the OS/driver.</p><p id="usbStatus" role="status" class="muted">No controller selected.</p><div class="row"><button id="usbClear" type="button">Clear Selection</button></div><h3>Before submitting</h3><div class="warning">Instructor review required. Confirm dimensions, material, approved source artwork, engraving/cut layers, machine focus, exhaust, air assist, cooling, enclosure and supervision. Never leave a laser running unattended.</div><div class="note">Material profiles are read-only in student mode and published through the instructor-controlled site repository. The browser still cannot command laser cutting or firing.</div></aside></div>
+<p id="usbListenStatus" role="status" class="muted">No receive-only test performed.</p><p id="usbTestStatus" role="status" class="muted">Choose the FTDI port first. This test opens the port and closes it without reading or writing application data or sending laser commands. Opening a port can change control signals through the OS/driver.</p><p id="usbStatus" role="status" class="muted">No controller selected.</p><div class="row"><button id="usbClear" type="button">Clear Selection</button></div><h3>Before submitting</h3><div class="warning">Instructor review required. Confirm dimensions, material, approved source artwork, engraving/cut layers, machine focus, exhaust, air assist, cooling, enclosure and supervision. Never leave a laser running unattended.</div><div class="note">Material profiles are read-only in student mode. DEMO values are unverified, and no cutting or firing is possible from this studio.</div></aside></div>
 <script>
 (()=>{
 'use strict';
@@ -141,7 +141,7 @@ function offlineRDCompile(){
  if(a.errors.length)throw Error('Resolve project validation errors first');
  if(!window.LockwoodRuidaRD)throw Error('Experimental RD encoder is unavailable');
  const profile=a.profile;
- if(!profile)throw Error('An instructor-published profile is required');
+ if(!profile||profile.verified!==true)throw Error('Experimental machine-file compilation requires an independently tested instructor-approved preset. DEMO values are blocked.');
  const rd=window.LockwoodRuidaRD.compileRectangle({
   geometry:items,profile,canvas:{w:a.material.widthMm,h:a.material.heightMm}
  });
@@ -174,8 +174,9 @@ function jobAudit(){
  else ok.push('Material dimensions valid: '+w+' × '+h+' mm.');
  if(items.length===0)errors.push('Add at least one design object.');
  else ok.push(items.length+' design object(s) found.');
- if(!p)errors.push('Select an approved material profile from the published registry.');
- else ok.push('Published preset selected: '+p.label+'.');
+ if(!p)errors.push('Select a published material profile to preview settings.');
+ else if(p.verified!==true)warnings.push('DEMO PROFILE: These speed and power values are untested and MUST NOT be sent to the laser.');
+ else ok.push('Instructor-verified preset selected: '+p.label+'.');
 
  for(const o of items){
   if(!allowed.includes(o.type)||!['cut','engrave'].includes(o.layer)){errors.push('Unsupported object or layer detected.');continue;}
@@ -187,7 +188,7 @@ function jobAudit(){
  }
  if(items.some(o=>o.type==='text'))warnings.push('Text remains font-dependent; outline fonts in a verified vector-conversion stage before controller compilation.');
  if(cut.length)ok.push(cut.length+' cut object(s) categorized.');if(eng.length)ok.push(eng.length+' engraving object(s) categorized.');
- if(p)warnings.push('Speed/power data are planning parameters only; no KT332N encoder or controller validation is connected.');
+ if(p)warnings.push('This is an offline project preview. The KT332N machine-file encoder and physical machine operation are not approved.');
  const validBounds=items.length&&!errors.some(x=>x.includes('boundary')||x.includes('dimensions'));
  const xs=items.flatMap(o=>[bounds(o).x,bounds(o).x+bounds(o).w]),ys=items.flatMap(o=>[bounds(o).y,bounds(o).y+bounds(o).h]);
  const bb=validBounds&&xs.every(Number.isFinite)&&ys.every(Number.isFinite)?{minX:Math.min(...xs),maxX:Math.max(...xs),minY:Math.min(...ys),maxY:Math.max(...ys)}:null;
@@ -212,6 +213,8 @@ function manifest(){
   transport:'none',
   executable:false,
   approval:'required before physical operation',
+  demoOnly:a.profile.verified!==true,
+  requiresCalibration:a.profile.verified!==true,
   project:{name:$('project').value.trim(),student:$('student').value.trim()},
   canvas:a.material,
   preset:{id:a.profile.id,label:a.profile.label,material:a.profile.material,thicknessMm:a.profile.thickness},
@@ -223,7 +226,7 @@ function manifest(){
 }
 $('reviewJob').addEventListener('click',()=>{const a=displayAudit();msg(a.errors.length?'Job review found '+a.errors.length+' issue(s).':'Job checks passed; package is for offline review only, not a laser control file.')});
 $('packageJob').addEventListener('click',()=>{
- try{const data=manifest();download(filename()+'.job.json',JSON.stringify(data,null,2),'application/json');msg('Design job package exported. Machine encoding and instructor authorization are NOT implemented.')}
+ try{const data=manifest();download(filename()+'.job.json',JSON.stringify(data,null,2),'application/json');msg('Design job package exported for review. DEMO settings are NOT approved for machine use.')}
  catch(err){msg('Cannot package: '+err.message);displayAudit();}
 });
 
@@ -378,17 +381,17 @@ $('cardIdTest').addEventListener('click',async()=>{
 let presets=[],chosenPreset='',libraryStatus='not loaded';
 function approved(p){
  const positive=n=>typeof n==='number'&&Number.isFinite(n)&&n>0;
- return !!p&&typeof p.id==='string'&&p.id.length>0&&p.id.length<=90&&typeof p.label==='string'&&p.label.trim().length>0&&p.label.length<=100&&typeof p.material==='string'&&p.material.length>0&&p.material.length<=100&&positive(p.thickness)&&p.thickness<=100&&p.verified===true&&['cut','engrave'].every(k=>{const x=p[k];return x&&positive(x.speed)&&x.speed<=1000&&typeof x.power==='number'&&Number.isFinite(x.power)&&x.power>=0&&x.power<=100&&Number.isInteger(x.passes)&&x.passes>=1&&x.passes<=20;});
+ return !!p&&typeof p.id==='string'&&p.id.length>0&&p.id.length<=90&&typeof p.label==='string'&&p.label.trim().length>0&&p.label.length<=100&&typeof p.material==='string'&&p.material.length>0&&p.material.length<=100&&positive(p.thickness)&&p.thickness<=100&&typeof p.verified==='boolean'&&['cut','engrave'].every(k=>{const x=p[k];return x&&positive(x.speed)&&x.speed<=1000&&typeof x.power==='number'&&Number.isFinite(x.power)&&x.power>=0&&x.power<=100&&Number.isInteger(x.passes)&&x.passes>=1&&x.passes<=20;});
 }
 function selectedPreset(){return presets.find(p=>p.id===chosenPreset)||null}
 function displayPresets(){
  const select=$('presetChoose');select.replaceChildren();select.add(new Option('Select an approved preset',''));
- for(const p of presets)select.add(new Option(p.label+' · '+p.thickness+' mm',p.id));
+ for(const p of presets)select.add(new Option(p.label+' · '+p.thickness+' mm'+(p.verified?' · Approved':' · DEMO ONLY'),p.id));
  if(!selectedPreset())chosenPreset='';
  select.value=chosenPreset;
  const p=selectedPreset();
- if(p){$('presetSummary').textContent=p.material+' · '+p.thickness+' mm | CUT: '+p.cut.speed+' mm/s · '+p.cut.power+'% · '+p.cut.passes+' pass(es) | ENGRAVE: '+p.engrave.speed+' mm/s · '+p.engrave.power+'%';}
- else{$('presetSummary').textContent=libraryStatus==='loaded'?'Choose a published profile to prepare a job.':libraryStatus==='empty'?'No instructor-approved profiles have been published yet.':'Unable to load verified published profiles; project export for production is disabled.';}
+ if(p){$('presetSummary').textContent=(p.verified?'INSTRUCTOR VERIFIED · ':'UNVERIFIED DEMO — NOT FOR MACHINE USE · ')+p.material+' · '+p.thickness+' mm | CUT: '+p.cut.speed+' mm/s · '+p.cut.power+'% · '+p.cut.passes+' pass(es) | ENGRAVE: '+p.engrave.speed+' mm/s · '+p.engrave.power+'%';}
+ else{$('presetSummary').textContent=libraryStatus==='loaded'?'Choose a published material profile to preview the settings.':libraryStatus==='empty'?'No material profiles have been published yet.':'Unable to load published profiles; check the connection or refresh.';}
  $('export').disabled=false;if(typeof displayAudit==='function')displayAudit();
 }
 async function loadPublishedProfiles(){
