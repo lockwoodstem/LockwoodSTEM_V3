@@ -3,7 +3,7 @@
 <style>
 :root{--navy:#112b44;--blue:#226b90;--mint:#c9edf0;--text:#18384f;--line:#ccdce7;--bg:#edf3f6}
 *{box-sizing:border-box}body{margin:0;font:15px/1.45 system-ui,Arial,sans-serif;background:var(--bg);color:var(--text)}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid #bdd1dc;background:white;border-radius:8px;padding:.57rem .82rem;color:var(--text);font-weight:650}button:hover{filter:brightness(.96)}button.primary{background:#17617f;color:white;border-color:#17617f}button.active{background:#d8eef6;color:#064c71;border-color:#4891ac}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #7ad6e5;outline-offset:2px}header{background:var(--navy);color:white;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}header h1{margin:0;font-size:1.3rem;letter-spacing:.01em}header small{color:#c9dce8}header .right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.mode{font-size:.77rem;padding:.35rem .65rem;border:1px solid #62839a;border-radius:18px;color:#d5eaf6}.shell{display:grid;grid-template-columns:255px minmax(400px,1fr) 270px;min-height:calc(100vh - 74px)}aside{background:white;padding:16px;border-right:1px solid var(--line)}aside:last-child{border-right:0;border-left:1px solid var(--line)}h2{font-size:1rem;margin:0 0 12px}h3{font-size:.89rem;margin:18px 0 9px;color:#285574}label{display:block;margin:9px 0 4px;font-size:.85rem;font-weight:650}input:not([type=file]),select{width:100%;padding:.55rem;border:1px solid #b8cdd9;border-radius:7px;background:white;color:var(--text)}.pair{display:grid;grid-template-columns:1fr 1fr;gap:9px}.tools{display:grid;grid-template-columns:1fr 1fr;gap:7px}.tools button{font-size:.9rem}.note{background:#eaf4f8;border-left:4px solid #3c8ca7;padding:9px 10px;border-radius:5px;font-size:.81rem;margin:14px 0}.warning{background:#fff4df;border-left:4px solid #c58a36;padding:10px;font-size:.82rem;border-radius:4px}.workspace{min-width:0;padding:15px;display:flex;flex-direction:column;gap:10px}.workspace-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.canvas-wrap{overflow:auto;flex:1;display:flex;align-items:flex-start;justify-content:center;background:#d8e3ea;border:1px solid #bbd0db;border-radius:14px;padding:23px;min-height:410px}.canvas-paper{background:#fff;box-shadow:0 5px 20px #223a5126;border:1px solid #b6cbd7;max-width:100%}#design{display:block;width:min(100%,760px);height:auto;touch-action:none;user-select:none}.object.selected{filter:drop-shadow(0 0 2px #18accd)}.object{cursor:move}.muted{color:#657d8d;font-size:.81rem}.row{display:flex;gap:8px;flex-wrap:wrap}.row button{flex:1}.swatches{display:flex;gap:10px;font-size:.85rem;margin:8px 0}.dot{height:11px;width:11px;border-radius:50%;display:inline-block;margin-right:4px}.dot.cut{background:#287bb1}.dot.engrave{background:#1b2937}.footer{font-size:.8rem;color:#48687d;padding:8px 0}#status{min-height:35px;font-size:.84rem;font-weight:650}#list{display:grid;gap:6px;max-height:170px;overflow:auto;margin-top:8px}#list button{text-align:left;font-weight:500;font-size:.82rem;overflow-wrap:anywhere}#importSvg{display:none}input[type=checkbox]{width:auto}button:disabled{opacity:.5;cursor:not-allowed}@media(max-width:1000px){.shell{grid-template-columns:210px 1fr}.shell aside:last-child{grid-column:1/-1;border-left:0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:16px}.shell aside:last-child h2{grid-column:1/-1}}@media(max-width:650px){.shell{display:flex;flex-direction:column}.workspace{order:0}.shell aside{order:1;border-right:0;border-top:1px solid var(--line)}.shell aside:last-child{display:block}.canvas-wrap{min-height:300px}}
-.validation{background:#fff;border:1px solid #c8dbe5;border-radius:12px;padding:13px;margin-top:10px}.validation h3{margin:0 0 8px}.checks{padding-left:19px;font-size:.85rem;line-height:1.65;margin:8px 0}.checks li.pass{color:#17604c}.checks li.fail{color:#9a5022}.checks li.warn{color:#765e21}.job-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.job-summary div{background:#eaf3f8;border:1px solid #c4d9e6;border-radius:7px;padding:8px}.job-summary strong{display:block;font-size:1.05rem;color:#155775}@media(max-width:650px){.job-summary{grid-template-columns:1fr}}.compiler-preview{width:100%;max-height:310px;display:block;background:#fff;border:1px solid #bdd1df;border-radius:9px}.compiler-summary{font-size:.82rem;color:#345c71;margin:.55rem 0} </style><script defer src="./geometry-compiler.js?v=1"></script></head><body>
+.validation{background:#fff;border:1px solid #c8dbe5;border-radius:12px;padding:13px;margin-top:10px}.validation h3{margin:0 0 8px}.checks{padding-left:19px;font-size:.85rem;line-height:1.65;margin:8px 0}.checks li.pass{color:#17604c}.checks li.fail{color:#9a5022}.checks li.warn{color:#765e21}.job-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.job-summary div{background:#eaf3f8;border:1px solid #c4d9e6;border-radius:7px;padding:8px}.job-summary strong{display:block;font-size:1.05rem;color:#155775}@media(max-width:650px){.job-summary{grid-template-columns:1fr}}.compiler-preview{width:100%;max-height:310px;display:block;background:#fff;border:1px solid #bdd1df;border-radius:9px}.compiler-summary{font-size:.82rem;color:#345c71;margin:.55rem 0} </style><script defer src="./geometry-compiler.js?v=1"></script><script defer src="./ruida-card-id.js?v=1"></script></head><body>
 <header><div><h1>LOCKWOODSTEM <span style="color:#9fe4ee">LASER STUDIO</span></h1><small>Student design workspace · OMTech CO₂</small></div><div class="right"><span class="mode" id="machineBadge">USB NOT CONFIGURED · NO LASER CONTROL</span><button id="new" type="button">New</button><button id="save" type="button">Save Project</button><button id="export" class="primary" type="button">Export SVG</button></div></header>
 <div class="shell"><aside aria-label="Design tools"><h2>Design tools</h2><div class="tools"><button type="button" id="tool-select" class="active">↖ Select</button><button type="button" id="tool-rect">▭ Rectangle</button><button type="button" id="tool-circle">◯ Circle</button><button type="button" id="tool-text">T Text</button><button type="button" id="tool-line">╱ Line</button></div>
 <h3>Project</h3><label for="project">Project name</label><input id="project" value="My Laser Project" maxlength="70"><label for="student">Student name</label><input id="student" placeholder="First Last" maxlength="70">
@@ -30,7 +30,14 @@
 <aside aria-label="Selected object properties"><h2>Object properties</h2><div id="empty">Select an object on the canvas or add a new one to edit its dimensions.</div><div id="properties" hidden><label for="layer">Operation</label><select id="layer"><option value="engrave">Engrave</option><option value="cut">Cut</option></select><div class="pair"><div><label for="x">X (mm)</label><input id="x" type="number" step="0.5"></div><div><label for="y">Y (mm)</label><input id="y" type="number" step="0.5"></div></div><div class="pair"><div><label for="ow">Width (mm)</label><input id="ow" type="number" min="1" step="0.5"></div><div><label for="oh">Height (mm)</label><input id="oh" type="number" min="1" step="0.5"></div></div><div id="textEditor" hidden><label for="textValue">Text</label><input id="textValue" maxlength="100"><label for="fontSize">Text height (mm)</label><input id="fontSize" type="number" min="2" max="100" step="1"></div><div class="row" style="margin-top:12px"><button id="duplicate" type="button">Duplicate</button><button id="remove" type="button">Delete</button></div></div><h3>Objects</h3><div id="list"></div><h3>USB controller compatibility</h3><div class="note">KT332N / USB. On a student Windows laptop, use Chrome or Edge on HTTPS. Close LightBurn before checking the port. This diagnostic only requests access; it does not transmit data or run the machine.</div><button id="usbCheck" type="button">Identify USB Controller</button><div class="note">Confirmed device: FTDI VID <code>0403</code> / PID <code>6001</code>, Windows COM3, LightBurn Serial/USB. Select that same port below. Browser port names may not show COM3.</div>
 <label for="testBaud">Open-test baud rate</label><select id="testBaud"><option value="115200">115200 (test candidate; not verified for KT332N)</option><option value="57600">57600 (only if documented for your machine)</option><option value="38400">38400 (only if documented for your machine)</option><option value="9600">9600 (only if documented for your machine)</option></select>
 <div class="row"><button id="usbOpenTest" type="button" disabled>Open / Close Port (No Data)</button></div>
-<div class="row"><button id="usbListen" type="button" disabled>Listen for Data (3 sec)</button><button id="usbDiagExport" type="button" disabled>Export Diagnostic</button></div><p id="usbListenStatus" role="status" class="muted">No receive-only test performed.</p><p id="usbTestStatus" role="status" class="muted">Choose the FTDI port first. This test opens the port and closes it without reading or writing application data or sending laser commands. Opening a port can change control signals through the OS/driver.</p><p id="usbStatus" role="status" class="muted">No controller selected.</p><div class="row"><button id="usbClear" type="button">Clear Selection</button></div><h3>Before submitting</h3><div class="warning">Instructor review required. Confirm dimensions, material, approved source artwork, engraving/cut layers, machine focus, exhaust, air assist, cooling, enclosure and supervision. Never leave a laser running unattended.</div><div class="note">Material profiles are read-only in student mode and published through the instructor-controlled site repository. The browser still cannot command laser cutting or firing.</div></aside></div>
+<div class="row"><button id="usbListen" type="button" disabled>Listen for Data (3 sec)</button><button id="usbDiagExport" type="button" disabled>Export Diagnostic</button></div><details style="margin:10px 0"><summary><strong>Advanced: KT332N Card ID query (one read-only request)</strong></summary>
+<div class="warning">Instructor diagnostic, not student operation. This sends exactly one fixed Ruida read-setting request. It cannot start a job, but controller compatibility is not proven. Only perform the test while the laser is supervised and in a safe state. Close LightBurn.</div>
+<div class="note">Source-derived test settings: 19200 baud, 8N1, hardware flow control; Ruida 0x88 byte encoding is an initial candidate, not a KT332N guarantee. This is separate from the earlier 115200 port-open test.</div>
+<label><input id="cardIdAcknowledge" type="checkbox"> I am the supervising instructor, the machine is in a safe state, and I approve this single read-only request.</label>
+<button id="cardIdTest" type="button" disabled>Query Controller Card ID (one request)</button>
+<p id="cardIdStatus" role="status" class="muted">Select FTDI 0403:6001 above, confirm the diagnostic conditions, then run the query.</p>
+</details>
+<p id="usbListenStatus" role="status" class="muted">No receive-only test performed.</p><p id="usbTestStatus" role="status" class="muted">Choose the FTDI port first. This test opens the port and closes it without reading or writing application data or sending laser commands. Opening a port can change control signals through the OS/driver.</p><p id="usbStatus" role="status" class="muted">No controller selected.</p><div class="row"><button id="usbClear" type="button">Clear Selection</button></div><h3>Before submitting</h3><div class="warning">Instructor review required. Confirm dimensions, material, approved source artwork, engraving/cut layers, machine focus, exhaust, air assist, cooling, enclosure and supervision. Never leave a laser running unattended.</div><div class="note">Material profiles are read-only in student mode and published through the instructor-controlled site repository. The browser still cannot command laser cutting or firing.</div></aside></div>
 <script>
 (()=>{
 'use strict';
@@ -182,7 +189,7 @@ $('packageJob').addEventListener('click',()=>{
 });
 
 let usbPort=null,portTestBusy=false,lastUsbDiagnostic=null;
-function resetTestSelection(){ $('usbOpenTest').disabled=!usbPort||portTestBusy; $('usbListen').disabled=!usbPort||portTestBusy; }
+function resetTestSelection(){ $('usbOpenTest').disabled=!usbPort||portTestBusy; $('usbListen').disabled=!usbPort||portTestBusy; if(typeof enableCardIdTest==='function')enableCardIdTest(); }
 
 $('usbCheck').addEventListener('click',async()=>{
  if(!('serial' in navigator)){
@@ -273,6 +280,59 @@ $('usbListen').addEventListener('click',async()=>{
 $('usbDiagExport').addEventListener('click',()=>{
  if(!lastUsbDiagnostic)return;
  download('kt332n_usb_diagnostic.json',JSON.stringify(lastUsbDiagnostic,null,2),'application/json');
+});
+
+
+function enableCardIdTest(){
+ $('cardIdTest').disabled=!usbPort||portTestBusy||!$('cardIdAcknowledge').checked;
+}
+$('cardIdAcknowledge').addEventListener('change',enableCardIdTest);
+$('cardIdTest').addEventListener('click',async()=>{
+ if(!usbPort||portTestBusy||!$('cardIdAcknowledge').checked)return;
+ const info=usbPort.getInfo();
+ if(info.usbVendorId!==0x0403||info.usbProductId!==0x6001){
+  $('cardIdStatus').textContent='Blocked: select the verified FTDI interface (0403:6001).';return;
+ }
+ const codec=window.LockwoodRuidaCardId;
+ if(!codec||typeof codec.request!=='function'||typeof codec.decode!=='function'){
+  $('cardIdStatus').textContent='Diagnostic protocol module unavailable. Refresh the page.';return;
+ }
+ portTestBusy=true;resetTestSelection();enableCardIdTest();
+ let opened=false,reader=null,writer=null,timer=null,bytes=[],sent=0,error=null,closeIssue=null;
+ $('cardIdStatus').textContent='Opening FTDI interface at 19200 baud with hardware flow control. Sending one fixed Card ID read request...';
+ try{
+  await usbPort.open({...codec.settings,bufferSize:1024});opened=true;
+  if(!usbPort.readable||!usbPort.writable)throw Error('Selected port has no readable/writable stream');
+  reader=usbPort.readable.getReader();
+  writer=usbPort.writable.getWriter();
+  const request=codec.request();
+  if(request.byteLength!==4)throw Error('Unexpected request length');
+  await writer.write(request);sent=request.byteLength;
+  writer.releaseLock();writer=null;
+  // Bounded 3-second response window. No retries or additional commands.
+  timer=setTimeout(()=>{try{reader.cancel('3-second reply window elapsed').catch(()=>{})}catch{}},3000);
+  while(bytes.length<512){
+   const {value,done}=await reader.read();
+   if(done)break;
+   if(value&&value.length){
+    bytes.push(...Array.from(value.slice(0,512-bytes.length)));
+    if(codec.decode(bytes).matched)break;
+   }
+  }
+ }catch(e){error=String(e?.message||e);}
+ finally{
+  if(timer!==null)clearTimeout(timer);
+  if(writer){try{writer.releaseLock()}catch{}}
+  if(reader){try{await reader.cancel()}catch{}try{reader.releaseLock()}catch{}}
+  if(opened){try{await usbPort.close()}catch(e){closeIssue=String(e?.message||e)}}
+  portTestBusy=false;$('cardIdAcknowledge').checked=false;resetTestSelection();enableCardIdTest();
+  const parsed=codec.decode(bytes);
+  const result=parsed.matched?'Card ID reply identified: '+parsed.cardId+' ('+parsed.encoding+' bytes).':(bytes.length?'Received '+bytes.length+' bytes, but no valid Card ID reply identified.':'No response detected within three seconds.');
+  $('cardIdStatus').textContent=(sent?'Single read query sent ('+sent+' encoded bytes). ':'No request sent. ')+result+(error?' Error: '+error:'')+(closeIssue?' PORT CLOSE FAILED: '+closeIssue:'');
+  $('machineBadge').textContent=parsed.matched&&!closeIssue?'CARD ID REPLY DETECTED · CUTTING DISABLED':'KT332N QUERY UNVERIFIED · CUTTING DISABLED';
+  lastUsbDiagnostic={version:2,type:'fixed-card-id-read',target:'Ruida KT332N (unverified)',vendorId:'0x0403',productId:'0x6001',reportedWindowsPort:'COM3',baudRate:19200,flowControl:'hardware',transmittedBytes:sent,transmittedHex:sent?codec.bytesToHex(codec.request()):'',responseBytes:bytes.length,responseHex:codec.bytesToHex(bytes),reply:parsed,error,closeIssue,noLaserCommands:true,noJobCommands:true,source:'MeerK40t Ruida GET_SETTING 05 7E; EduTech Ruida USB / swizzling'};
+  $('usbDiagExport').disabled=false;
+ }
 });
 
 let presets=[],chosenPreset='',libraryStatus='not loaded';
