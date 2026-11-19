@@ -328,7 +328,8 @@ $('cardIdTest').addEventListener('click',async()=>{
   portTestBusy=false;$('cardIdAcknowledge').checked=false;resetTestSelection();enableCardIdTest();
   const parsed=codec.decode(bytes);
   const result=parsed.matched?'Card ID reply identified: '+parsed.cardId+' ('+parsed.encoding+' bytes).':(bytes.length?'Received '+bytes.length+' bytes, but no valid Card ID reply identified.':'No response detected within three seconds.');
-  $('cardIdStatus').textContent=(sent?'Single read query sent ('+sent+' encoded bytes). ':'No request sent. ')+result+(error?' Error: '+error:'')+(closeIssue?' PORT CLOSE FAILED: '+closeIssue:'');
+  const capture=' Received '+bytes.length+' raw bytes'+(bytes.length?': '+codec.bytesToHex(bytes):'.')+(parsed.decodedHex?' Decoded: '+parsed.decodedHex+'.':'');
+  $('cardIdStatus').textContent=(sent?'Single read query sent ('+sent+' encoded bytes). ':'No request sent. ')+result + capture+(error?' Error: '+error:'')+(closeIssue?' PORT CLOSE FAILED: '+closeIssue:'');
   $('machineBadge').textContent=parsed.matched&&!closeIssue?'CARD ID REPLY DETECTED · CUTTING DISABLED':'KT332N QUERY UNVERIFIED · CUTTING DISABLED';
   lastUsbDiagnostic={version:2,type:'fixed-card-id-read',target:'Ruida KT332N (unverified)',vendorId:'0x0403',productId:'0x6001',reportedWindowsPort:'COM3',baudRate:19200,flowControl:'hardware',transmittedBytes:sent,transmittedHex:sent?codec.bytesToHex(codec.request()):'',responseBytes:bytes.length,responseHex:codec.bytesToHex(bytes),reply:parsed,error,closeIssue,noLaserCommands:true,noJobCommands:true,source:'MeerK40t Ruida GET_SETTING 05 7E; EduTech Ruida USB / swizzling'};
   $('usbDiagExport').disabled=false;
