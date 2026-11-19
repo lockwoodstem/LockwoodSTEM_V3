@@ -31,3 +31,9 @@ The default page is intentionally simple: design, select a material preset, revi
 ## Important distinction
 
 A downloaded `.experimental.rd` file contains machine commands; even though this site **never transmits** the bytes, it must not be considered safe or ready to execute. Keep it in a controlled instructor testing folder. No direct software-only procedure substitutes for physical laser safety.
+
+## LightBurn screenshot reference — 19 November 2026
+
+The user supplied a LightBurn workspace screenshot showing the selected rectangle at **XPos 25.000, YPos 15.000, Width 40.000, Height 20.000 mm**, with the **center anchor** selected in LightBurn's nine-point position selector. Converting center position into axis-aligned extents yields **X 5–45 mm and Y 5–25 mm**, matching the bounds read from the user's saved reference RD file. This removes the apparent 20 mm X and 10 mm Y discrepancy; do not add an arbitrary offset in the compiler to compensate.
+
+The screenshot also shows **Absolute Coords**, **Ruida KT332N**, a **700 × 500 mm displayed workspace**, and upper-right-side zero on the LightBurn canvas. These are screenshot observations and **do not independently prove controller-specific motion direction or homing behavior**. The layer shows **Line**, **15.00 mm/s**, **20.00% min power**, **35.00% max power**, **1 pass**. The experimental offline RD compiler now accepts an optional separate `profile.cut.minPower`, defaulting to `profile.cut.power` for older profiles. This change has not been validated against the laser; **live machine commands remain disabled**.
