@@ -31,7 +31,9 @@ function detectCardId(raw){
    let card=0;
    for(const b of value)card=card*128+b;
    if(!Number.isSafeInteger(card))continue;
-   return {matched:true,encoding:c.kind,cardId:"0x"+card.toString(16).toUpperCase().padStart(8,"0"),decodedHex:bytesToHex(a),offset:i,ackSeen:a.includes(0xcc)};
+   const upper=(card>>>16)&0xffff,lower=card&0xffff;
+   const repeatedHalves=upper===lower;
+   return {matched:true,encoding:c.kind,cardId:"0x"+card.toString(16).toUpperCase().padStart(8,"0"),repeatedHalves,cardId16:"0x"+lower.toString(16).toUpperCase().padStart(4,"0"),responseBytes:raw.length,rawHex:bytesToHex(raw),decodedHex:bytesToHex(a),offset:i,ackSeen:a.includes(0xcc),note:repeatedHalves?"Ruida Card ID value has two matching 16-bit halves; consistent with documented replies.":"Card ID value does not have matching halves; verify against a second capture."};
   }
  }
  return {matched:false,decodedHex:bytesToHex(decoded),rawHex:bytesToHex(raw),ackSeen:decoded.includes(0xcc),reason:"No complete DA 01 05 7E card-ID reply matched."};
