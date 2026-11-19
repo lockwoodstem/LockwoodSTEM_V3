@@ -30,7 +30,7 @@
 <aside aria-label="Selected object properties"><h2>Object properties</h2><div id="empty">Select an object on the canvas or add a new one to edit its dimensions.</div><div id="properties" hidden><label for="layer">Operation</label><select id="layer"><option value="engrave">Engrave</option><option value="cut">Cut</option></select><div class="pair"><div><label for="x">X (mm)</label><input id="x" type="number" step="0.5"></div><div><label for="y">Y (mm)</label><input id="y" type="number" step="0.5"></div></div><div class="pair"><div><label for="ow">Width (mm)</label><input id="ow" type="number" min="1" step="0.5"></div><div><label for="oh">Height (mm)</label><input id="oh" type="number" min="1" step="0.5"></div></div><div id="textEditor" hidden><label for="textValue">Text</label><input id="textValue" maxlength="100"><label for="fontSize">Text height (mm)</label><input id="fontSize" type="number" min="2" max="100" step="1"></div><div class="row" style="margin-top:12px"><button id="duplicate" type="button">Duplicate</button><button id="remove" type="button">Delete</button></div></div><h3>Objects</h3><div id="list"></div><h3>USB controller compatibility</h3><div class="note">KT332N / USB. On a student Windows laptop, use Chrome or Edge on HTTPS. Close LightBurn before checking the port. This diagnostic only requests access; it does not transmit data or run the machine.</div><button id="usbCheck" type="button">Identify USB Controller</button><div class="note">Confirmed device: FTDI VID <code>0403</code> / PID <code>6001</code>, Windows COM3, LightBurn Serial/USB. Select that same port below. Browser port names may not show COM3.</div>
 <label for="testBaud">Open-test baud rate</label><select id="testBaud"><option value="115200">115200 (test candidate; not verified for KT332N)</option><option value="57600">57600 (only if documented for your machine)</option><option value="38400">38400 (only if documented for your machine)</option><option value="9600">9600 (only if documented for your machine)</option></select>
 <div class="row"><button id="usbOpenTest" type="button" disabled>Open / Close Port (No Data)</button></div>
-<p id="usbTestStatus" role="status" class="muted">Choose the FTDI port first. This test opens the port and closes it without reading or writing application data or sending laser commands. Opening a port can change control signals through the OS/driver.</p><p id="usbStatus" role="status" class="muted">No controller selected.</p><div class="row"><button id="usbClear" type="button">Clear Selection</button></div><h3>Before submitting</h3><div class="warning">Instructor review required. Confirm dimensions, material, approved source artwork, engraving/cut layers, machine focus, exhaust, air assist, cooling, enclosure and supervision. Never leave a laser running unattended.</div><div class="note">Material profiles are read-only in student mode and published through the instructor-controlled site repository. The browser still cannot command laser cutting or firing.</div></aside></div>
+<div class="row"><button id="usbListen" type="button" disabled>Listen for Data (3 sec)</button><button id="usbDiagExport" type="button" disabled>Export Diagnostic</button></div><p id="usbListenStatus" role="status" class="muted">No receive-only test performed.</p><p id="usbTestStatus" role="status" class="muted">Choose the FTDI port first. This test opens the port and closes it without reading or writing application data or sending laser commands. Opening a port can change control signals through the OS/driver.</p><p id="usbStatus" role="status" class="muted">No controller selected.</p><div class="row"><button id="usbClear" type="button">Clear Selection</button></div><h3>Before submitting</h3><div class="warning">Instructor review required. Confirm dimensions, material, approved source artwork, engraving/cut layers, machine focus, exhaust, air assist, cooling, enclosure and supervision. Never leave a laser running unattended.</div><div class="note">Material profiles are read-only in student mode and published through the instructor-controlled site repository. The browser still cannot command laser cutting or firing.</div></aside></div>
 <script>
 (()=>{
 'use strict';
@@ -181,8 +181,8 @@ $('packageJob').addEventListener('click',()=>{
  catch(err){msg('Cannot package: '+err.message);displayAudit();}
 });
 
-let usbPort=null,portTestBusy=false;
-function resetTestSelection(){ $('usbOpenTest').disabled=!usbPort||portTestBusy; }
+let usbPort=null,portTestBusy=false,lastUsbDiagnostic=null;
+function resetTestSelection(){ $('usbOpenTest').disabled=!usbPort||portTestBusy; $('usbListen').disabled=!usbPort||portTestBusy; }
 
 $('usbCheck').addEventListener('click',async()=>{
  if(!('serial' in navigator)){
@@ -237,6 +237,42 @@ $('usbOpenTest').addEventListener('click',async()=>{
    $('usbTestStatus').textContent=status;
    $('machineBadge').textContent=opened&&!closeError?'SERIAL OPEN/CLOSE PASSED · NO TRANSMISSION':'USB SELECTED · NO LASER CONTROL';
  }
+});
+
+
+$('usbListen').addEventListener('click',async()=>{
+ if(!usbPort||portTestBusy){$('usbListenStatus').textContent='Select the FTDI interface before listening.';return;}
+ const info=usbPort.getInfo();
+ if(info.usbVendorId!==0x0403||info.usbProductId!==0x6001){$('usbListenStatus').textContent='Blocked: selected serial interface is not the confirmed FTDI device.';return;}
+ portTestBusy=true;resetTestSelection();$('usbListenStatus').textContent='Listening for unsolicited serial bytes for three seconds. No commands are sent.';
+ let opened=false,reader=null,receive=[],errorText='',closeError='',timer=null;
+ const baud=Number($('testBaud').value);
+ try{
+  await usbPort.open({baudRate:baud,dataBits:8,stopBits:1,parity:'none',flowControl:'none',bufferSize:1024});opened=true;
+  if(!usbPort.readable)throw Error('No readable serial stream available');
+  reader=usbPort.readable.getReader();
+  // This is receive-only. No read query is sent.
+  timer=setTimeout(()=>{try{reader.cancel('three-second receive window ended').catch(()=>{})}catch{}},3000);
+  while(true){
+   const {value,done}=await reader.read();
+   if(done)break;
+   if(value&&value.length){const room=Math.max(0,512-receive.length);receive.push(...Array.from(value.slice(0,room)));if(receive.length>=512)break;}
+  }
+ }catch(err){errorText=String(err?.message||err)}
+ finally{
+  if(timer!==null)clearTimeout(timer);
+  if(reader){try{reader.releaseLock()}catch{}}
+  if(opened){try{await usbPort.close()}catch(e){closeError=String(e?.message||e)}}
+  portTestBusy=false;resetTestSelection();
+  const hex=receive.map(n=>n.toString(16).padStart(2,'0')).join(' ');
+  lastUsbDiagnostic={version:1,type:'passive-serial-observation',controllerClaim:'Ruida KT332N',vendorId:'0x0403',productId:'0x6001',reportedWindowsPort:'COM3',baudRate:baud,bytesReceived:receive.length,hex,transmittedBytes:0,openSucceeded:opened,error:errorText||null,closeError:closeError||null,observation:'No active Ruida request or machine command was sent. Receiving zero bytes is inconclusive.'};
+  $('usbDiagExport').disabled=false;
+  $('usbListenStatus').textContent=closeError?'Receive test could not close the port: '+closeError:(errorText?'Receive test: '+errorText+'. ':'')+(receive.length?('Received '+receive.length+' unsolicited bytes (hex): '+hex.slice(0,220)+(hex.length>220?'…':'')):'Received zero bytes in three seconds (inconclusive; typical without a query).')+' No bytes transmitted.';
+ }
+});
+$('usbDiagExport').addEventListener('click',()=>{
+ if(!lastUsbDiagnostic)return;
+ download('kt332n_usb_diagnostic.json',JSON.stringify(lastUsbDiagnostic,null,2),'application/json');
 });
 
 let presets=[],chosenPreset='',libraryStatus='not loaded';
