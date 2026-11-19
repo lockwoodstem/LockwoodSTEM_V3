@@ -3,7 +3,7 @@
 <style>
 :root{--navy:#112b44;--blue:#226b90;--mint:#c9edf0;--text:#18384f;--line:#ccdce7;--bg:#edf3f6}
 *{box-sizing:border-box}body{margin:0;font:15px/1.45 system-ui,Arial,sans-serif;background:var(--bg);color:var(--text)}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid #bdd1dc;background:white;border-radius:8px;padding:.57rem .82rem;color:var(--text);font-weight:650}button:hover{filter:brightness(.96)}button.primary{background:#17617f;color:white;border-color:#17617f}button.active{background:#d8eef6;color:#064c71;border-color:#4891ac}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #7ad6e5;outline-offset:2px}header{background:var(--navy);color:white;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}header h1{margin:0;font-size:1.3rem;letter-spacing:.01em}header small{color:#c9dce8}header .right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.mode{font-size:.77rem;padding:.35rem .65rem;border:1px solid #62839a;border-radius:18px;color:#d5eaf6}.shell{display:grid;grid-template-columns:255px minmax(400px,1fr) 270px;min-height:calc(100vh - 74px)}aside{background:white;padding:16px;border-right:1px solid var(--line)}aside:last-child{border-right:0;border-left:1px solid var(--line)}h2{font-size:1rem;margin:0 0 12px}h3{font-size:.89rem;margin:18px 0 9px;color:#285574}label{display:block;margin:9px 0 4px;font-size:.85rem;font-weight:650}input:not([type=file]),select{width:100%;padding:.55rem;border:1px solid #b8cdd9;border-radius:7px;background:white;color:var(--text)}.pair{display:grid;grid-template-columns:1fr 1fr;gap:9px}.tools{display:grid;grid-template-columns:1fr 1fr;gap:7px}.tools button{font-size:.9rem}.note{background:#eaf4f8;border-left:4px solid #3c8ca7;padding:9px 10px;border-radius:5px;font-size:.81rem;margin:14px 0}.warning{background:#fff4df;border-left:4px solid #c58a36;padding:10px;font-size:.82rem;border-radius:4px}.workspace{min-width:0;padding:15px;display:flex;flex-direction:column;gap:10px}.workspace-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.canvas-wrap{overflow:auto;flex:1;display:flex;align-items:flex-start;justify-content:center;background:#d8e3ea;border:1px solid #bbd0db;border-radius:14px;padding:23px;min-height:410px}.canvas-paper{background:#fff;box-shadow:0 5px 20px #223a5126;border:1px solid #b6cbd7;max-width:100%}#design{display:block;width:min(100%,760px);height:auto;touch-action:none;user-select:none}.object.selected{filter:drop-shadow(0 0 2px #18accd)}.object{cursor:move}.muted{color:#657d8d;font-size:.81rem}.row{display:flex;gap:8px;flex-wrap:wrap}.row button{flex:1}.swatches{display:flex;gap:10px;font-size:.85rem;margin:8px 0}.dot{height:11px;width:11px;border-radius:50%;display:inline-block;margin-right:4px}.dot.cut{background:#287bb1}.dot.engrave{background:#1b2937}.footer{font-size:.8rem;color:#48687d;padding:8px 0}#status{min-height:35px;font-size:.84rem;font-weight:650}#list{display:grid;gap:6px;max-height:170px;overflow:auto;margin-top:8px}#list button{text-align:left;font-weight:500;font-size:.82rem;overflow-wrap:anywhere}#importSvg{display:none}input[type=checkbox]{width:auto}button:disabled{opacity:.5;cursor:not-allowed}@media(max-width:1000px){.shell{grid-template-columns:210px 1fr}.shell aside:last-child{grid-column:1/-1;border-left:0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:16px}.shell aside:last-child h2{grid-column:1/-1}}@media(max-width:650px){.shell{display:flex;flex-direction:column}.workspace{order:0}.shell aside{order:1;border-right:0;border-top:1px solid var(--line)}.shell aside:last-child{display:block}.canvas-wrap{min-height:300px}}
-</style></head><body>
+.validation{background:#fff;border:1px solid #c8dbe5;border-radius:12px;padding:13px;margin-top:10px}.validation h3{margin:0 0 8px}.checks{padding-left:19px;font-size:.85rem;line-height:1.65;margin:8px 0}.checks li.pass{color:#17604c}.checks li.fail{color:#9a5022}.checks li.warn{color:#765e21}.job-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.job-summary div{background:#eaf3f8;border:1px solid #c4d9e6;border-radius:7px;padding:8px}.job-summary strong{display:block;font-size:1.05rem;color:#155775}@media(max-width:650px){.job-summary{grid-template-columns:1fr}}</style></head><body>
 <header><div><h1>LOCKWOODSTEM <span style="color:#9fe4ee">LASER STUDIO</span></h1><small>Student design workspace · OMTech CO₂</small></div><div class="right"><span class="mode" id="machineBadge">USB NOT CONFIGURED · NO LASER CONTROL</span><button id="new" type="button">New</button><button id="save" type="button">Save Project</button><button id="export" class="primary" type="button">Export SVG</button></div></header>
 <div class="shell"><aside aria-label="Design tools"><h2>Design tools</h2><div class="tools"><button type="button" id="tool-select" class="active">↖ Select</button><button type="button" id="tool-rect">▭ Rectangle</button><button type="button" id="tool-circle">◯ Circle</button><button type="button" id="tool-text">T Text</button><button type="button" id="tool-line">╱ Line</button></div>
 <h3>Project</h3><label for="project">Project name</label><input id="project" value="My Laser Project" maxlength="70"><label for="student">Student name</label><input id="student" placeholder="First Last" maxlength="70">
@@ -16,7 +16,14 @@
 <div class="row"><button type="button" id="presetReload">Refresh Presets</button></div>
 <div class="footer">Presets are published in the school's controlled repository. A selection is for job preparation only, not permission to run the laser.</div>
 <h3>Files</h3><div class="row"><button id="import" type="button">Import SVG</button><button id="exportProject" type="button">Export Project</button></div><input id="importSvg" type="file" accept=".svg,image/svg+xml,.json,application/json"><div class="footer">Imported SVG supports simple rectangles, circles, lines and text; unsupported elements are ignored.</div>
-</aside><main class="workspace"><div class="workspace-head"><div><b>Design canvas</b> <span id="dimensions" class="muted"></span></div><div class="swatches"><span><i class="dot cut"></i>Cut</span><span><i class="dot engrave"></i>Engrave</span></div></div><div class="canvas-wrap"><div class="canvas-paper"><svg id="design" role="img" aria-label="Editable laser project canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><defs><pattern id="grid" patternUnits="userSpaceOnUse" width="10" height="10"><path d="M10 0H0V10" fill="none" stroke="#bdd7e4" stroke-width=".22"/></pattern></defs><rect id="gridbg" width="300" height="200" fill="url(#grid)"/><g id="objects"></g></svg></div></div><div id="status" role="status" aria-live="polite">Select a tool. Click the canvas to add a shape; drag selected objects to move them.</div><div class="footer">This build contains a read-only USB compatibility check. No machine motion, framing, cutting, or laser-firing commands are implemented yet. A verified KT332N job encoder and safety-gated transfer are required for real cutting.</div></main>
+</aside><main class="workspace"><div class="workspace-head"><div><b>Design canvas</b> <span id="dimensions" class="muted"></span></div><div class="swatches"><span><i class="dot cut"></i>Cut</span><span><i class="dot engrave"></i>Engrave</span></div></div><div class="canvas-wrap"><div class="canvas-paper"><svg id="design" role="img" aria-label="Editable laser project canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><defs><pattern id="grid" patternUnits="userSpaceOnUse" width="10" height="10"><path d="M10 0H0V10" fill="none" stroke="#bdd7e4" stroke-width=".22"/></pattern></defs><rect id="gridbg" width="300" height="200" fill="url(#grid)"/><g id="objects"></g></svg></div></div><section class="validation" aria-labelledby="validationTitle">
+<h3 id="validationTitle">Job preparation &amp; validation</h3>
+<p class="muted">Preview the planned job before any machine conversion. The package is a design and settings manifest, <strong>not a Ruida .rd machine file</strong>.</p>
+<div class="job-summary"><div><span class="muted">Cut objects</span><strong id="countCut">0</strong></div><div><span class="muted">Engrave objects</span><strong id="countEngrave">0</strong></div><div><span class="muted">Estimated extents</span><strong id="jobExtents">—</strong></div></div>
+<ul id="jobChecks" class="checks" aria-live="polite"><li>Checking project…</li></ul>
+<div class="row"><button id="reviewJob" type="button">Review Job</button><button id="packageJob" type="button" class="primary" disabled>Export Job Package</button></div>
+<div class="footer">The job package records the original artwork, selected instructor-published preset identity, geometry and validation results for future KT332N compilation. It cannot move axes or activate the laser.</div>
+</section><div id="status" role="status" aria-live="polite">Select a tool. Click the canvas to add a shape; drag selected objects to move them.</div><div class="footer">This build contains a read-only USB compatibility check. No machine motion, framing, cutting, or laser-firing commands are implemented yet. A verified KT332N job encoder and safety-gated transfer are required for real cutting.</div></main>
 <aside aria-label="Selected object properties"><h2>Object properties</h2><div id="empty">Select an object on the canvas or add a new one to edit its dimensions.</div><div id="properties" hidden><label for="layer">Operation</label><select id="layer"><option value="engrave">Engrave</option><option value="cut">Cut</option></select><div class="pair"><div><label for="x">X (mm)</label><input id="x" type="number" step="0.5"></div><div><label for="y">Y (mm)</label><input id="y" type="number" step="0.5"></div></div><div class="pair"><div><label for="ow">Width (mm)</label><input id="ow" type="number" min="1" step="0.5"></div><div><label for="oh">Height (mm)</label><input id="oh" type="number" min="1" step="0.5"></div></div><div id="textEditor" hidden><label for="textValue">Text</label><input id="textValue" maxlength="100"><label for="fontSize">Text height (mm)</label><input id="fontSize" type="number" min="2" max="100" step="1"></div><div class="row" style="margin-top:12px"><button id="duplicate" type="button">Duplicate</button><button id="remove" type="button">Delete</button></div></div><h3>Objects</h3><div id="list"></div><h3>USB controller compatibility</h3><div class="note">KT332N / USB. On a student Windows laptop, use Chrome or Edge on HTTPS. Close LightBurn before checking the port. This diagnostic only requests access; it does not transmit data or run the machine.</div><button id="usbCheck" type="button">Identify USB Controller</button><p id="usbStatus" role="status" class="muted">No controller selected.</p><div class="row"><button id="usbClear" type="button">Clear Selection</button></div><h3>Before submitting</h3><div class="warning">Instructor review required. Confirm dimensions, material, approved source artwork, engraving/cut layers, machine focus, exhaust, air assist, cooling, enclosure and supervision. Never leave a laser running unattended.</div><div class="note">Material profiles are read-only in student mode and published through the instructor-controlled site repository. The browser still cannot command laser cutting or firing.</div></aside></div>
 <script>
 (()=>{
@@ -39,7 +46,7 @@ $('design').setAttribute('viewBox',`0 0 ${w} ${h}`);$('gridbg').setAttribute('wi
 const g=$('objects');g.replaceChildren();for(const o of items)g.append(asSvg(o));const item=active();$('empty').hidden=!!item;$('properties').hidden=!item;
 if(item){['x','y','ow','oh'].forEach((k,i)=>set(k,[item.x,item.y,item.w,item.h][i]));set('layer',item.layer);$('textEditor').hidden=item.type!=='text';set('textValue',item.text);set('fontSize',item.fontSize)}
 $('list').replaceChildren();items.forEach(o=>{let b=document.createElement('button');b.type='button';b.className=o.id===selected?'active':'';b.textContent=`${o.type.toUpperCase()} · ${o.layer} · #${o.id}`;b.onclick=()=>{selected=o.id;render()};$('list').append(b)});
-const outside=items.filter(o=>{const b=bounds(o);return b.x<0||b.y<0||b.x+b.w>w||b.y+b.h>h});if(outside.length)msg(`Warning: ${outside.length} object(s) extend beyond the material boundary.`)}
+const outside=items.filter(o=>{const b=bounds(o);return b.x<0||b.y<0||b.x+b.w>w||b.y+b.h>h});if(outside.length)msg(`Warning: ${outside.length} object(s) extend beyond the material boundary.`);if(typeof displayAudit==='function')displayAudit();}
 function point(evt){const svg=$('design'),p=svg.createSVGPoint();p.x=evt.clientX;p.y=evt.clientY;const matrix=svg.getScreenCTM();if(!matrix)return {x:0,y:0};const z=p.matrixTransform(matrix.inverse());return {x:z.x,y:z.y}}
 $('design').addEventListener('pointerdown',e=>{const hit=e.target.closest('[data-object-id]'),p=point(e);if(hit){selected=Number(hit.getAttribute('data-object-id'));drag={id:selected,px:p.x,py:p.y,ox:active().x,oy:active().y};$('design').setPointerCapture(e.pointerId);render();return}if(tool!=='select'){make(tool,Math.max(0,round(p.x)),Math.max(0,round(p.y)));setTool('select')}else{selected=null;render()}});
 $('design').addEventListener('pointermove',e=>{if(!drag)return;const p=point(e),o=active();if(!o||o.id!==drag.id)return;o.x=round(drag.ox+p.x-drag.px);o.y=round(drag.oy+p.y-drag.py);render()});
@@ -61,6 +68,71 @@ $('import').onclick=()=>$('importSvg').click();
 $('importSvg').onchange=async e=>{const file=e.target.files?.[0];if(!file)return;try{let contents=await file.text();if(file.name.toLowerCase().endsWith('.json')){const obj=JSON.parse(contents);if(!Array.isArray(obj.items)||obj.items.length>500)throw Error('Invalid or oversized project');items=obj.items.filter(x=>allowed.includes(x.type)).map(o=>({id:nextId++,type:o.type,layer:o.layer==='cut'?'cut':'engrave',x:num(o.x),y:num(o.y),w:num(o.w),h:num(o.h),text:String(o.text||'').slice(0,100),fontSize:num(o.fontSize,12)}));set('project',String(obj.project||file.name).slice(0,70));set('student',String(obj.student||'').slice(0,70));set('width',num(obj.w,300));set('height',num(obj.h,200));chosenPreset=typeof obj.presetId==='string'?obj.presetId:'';displayPresets();}
 else{const doc=new DOMParser().parseFromString(contents,'image/svg+xml');if(doc.querySelector('parsererror'))throw Error('Invalid SVG');const original=doc.documentElement;const vb=(original.getAttribute('viewBox')||'').trim().split(/[ ,]+/).map(Number),scaleX=1,scaleY=1;const raw=[...original.querySelectorAll('rect,circle,ellipse,line,text')].slice(0,250);let incoming=[];for(const el of raw){if(el.closest('defs,clipPath,mask,pattern,symbol'))continue;if(el.closest('[transform]')||el.hasAttribute('transform'))continue;let t=el.localName,o={id:nextId++,layer:'engrave',type:t==='ellipse'?'circle':t,x:0,y:0,w:0,h:0,text:'',fontSize:12};const a=k=>num(el.getAttribute(k));if(t==='rect'){o.x=a('x');o.y=a('y');o.w=a('width');o.h=a('height')}else if(t==='circle'){o.x=a('cx')-a('r');o.y=a('cy')-a('r');o.w=o.h=2*a('r')}else if(t==='ellipse'){o.x=a('cx')-a('rx');o.y=a('cy')-a('ry');o.w=2*a('rx');o.h=2*a('ry')}else if(t==='line'){o.x=a('x1');o.y=a('y1');o.w=a('x2')-o.x;o.h=a('y2')-o.y}else{o.x=a('x');o.fontSize=a('font-size')||12;o.y=a('y')-o.fontSize;o.text=el.textContent.slice(0,100);o.w=Math.max(10,o.text.length*o.fontSize*.65);o.h=o.fontSize}const stroke=(el.getAttribute('stroke')||'').toLowerCase();if(['#287bb1','#0000ff','blue'].includes(stroke))o.layer='cut';if(o.w||o.h)incoming.push(o)}if(!incoming.length)throw Error('No supported untransformed vector objects were found');items=incoming;set('project',file.name.replace(/\.svg$/i,''));if(vb.length===4&&vb.every(Number.isFinite)){set('width',vb[2]);set('height',vb[3])}}
 selected=null;render();persist();msg('Imported supported objects. Carefully inspect scale, shapes, text and operations before export.')}catch(err){msg('Import failed: '+err.message)}e.target.value=''};
+
+function jobAudit(){
+ const {w,h}=bed(),p=libraryStatus==='loaded'?selectedPreset():null;
+ const cut=items.filter(o=>o.layer==='cut'),eng=items.filter(o=>o.layer==='engrave');
+ const errors=[],warnings=[],ok=[];
+ if(!Number.isFinite(w)||!Number.isFinite(h)||w<20||h<20||w>1000||h>700)errors.push('Material dimensions are outside allowed design limits.');
+ else ok.push('Material dimensions valid: '+w+' × '+h+' mm.');
+ if(items.length===0)errors.push('Add at least one design object.');
+ else ok.push(items.length+' design object(s) found.');
+ if(!p)errors.push('Select an approved material profile from the published registry.');
+ else ok.push('Published preset selected: '+p.label+'.');
+ const materialChosen=$('material').value.toLowerCase();
+ if(p&&!(materialChosen.includes(p.material.toLowerCase())||p.material.toLowerCase().includes(materialChosen.split(' —')[0].toLowerCase()))){
+  warnings.push('Material menu and selected profile may not match. Confirm actual stock.');
+ }
+ for(const o of items){
+  if(!allowed.includes(o.type)||!['cut','engrave'].includes(o.layer)){errors.push('Unsupported object or layer detected.');continue;}
+  const b=bounds(o);
+  if(![b.x,b.y,b.w,b.h].every(Number.isFinite)||b.x<0||b.y<0||b.x+b.w>w||b.y+b.h>h)errors.push('Object #'+o.id+' extends outside the material boundary.');
+  if(o.type!=='line'&&(o.w<=0||o.h<=0))errors.push('Object #'+o.id+' needs positive dimensions.');
+  if(o.type==='line'&&Math.hypot(o.w,o.h)<0.1)errors.push('Line #'+o.id+' has effectively zero length.');
+  if(o.type==='text'&&o.layer==='cut')errors.push('Text #'+o.id+' cannot be classified as a cut path until converted to vector outlines.');
+ }
+ if(items.some(o=>o.type==='text'))warnings.push('Text remains font-dependent; outline fonts in a verified vector-conversion stage before controller compilation.');
+ if(cut.length)ok.push(cut.length+' cut object(s) categorized.');if(eng.length)ok.push(eng.length+' engraving object(s) categorized.');
+ if(p)warnings.push('Speed/power data are planning parameters only; no KT332N encoder or controller validation is connected.');
+ const validBounds=items.length&&!errors.some(x=>x.includes('boundary')||x.includes('dimensions'));
+ const xs=items.flatMap(o=>[bounds(o).x,bounds(o).x+bounds(o).w]),ys=items.flatMap(o=>[bounds(o).y,bounds(o).y+bounds(o).h]);
+ const bb=validBounds&&xs.every(Number.isFinite)&&ys.every(Number.isFinite)?{minX:Math.min(...xs),maxX:Math.max(...xs),minY:Math.min(...ys),maxY:Math.max(...ys)}:null;
+ return {errors:[...new Set(errors)],warnings,ok,cut:cut.length,engrave:eng.length,bounds:bb,material:{widthMm:w,heightMm:h},profile:p};
+}
+function displayAudit(){
+ const a=jobAudit();$('countCut').textContent=a.cut;$('countEngrave').textContent=a.engrave;
+ $('jobExtents').textContent=a.bounds?(a.bounds.maxX-a.bounds.minX).toFixed(1)+' × '+(a.bounds.maxY-a.bounds.minY).toFixed(1)+' mm':'—';
+ const list=$('jobChecks');list.replaceChildren();
+ const entries=[...a.errors.map(x=>['fail','Fix: '+x]),...a.warnings.map(x=>['warn','Review: '+x]),...a.ok.map(x=>['pass','✓ '+x])];
+ for(const [cl,text] of entries){const li=document.createElement('li');li.className=cl;li.textContent=text;list.append(li);}
+ $('packageJob').disabled=a.errors.length!==0;
+ return a;
+}
+function manifest(){
+ const a=jobAudit();
+ if(a.errors.length)throw Error('Resolve validation errors before packaging.');
+ return {
+  format:'lockwood-laser-job',
+  version:1,
+  target:'Ruida KT332N',
+  transport:'none',
+  executable:false,
+  approval:'required before physical operation',
+  project:{name:$('project').value.trim(),student:$('student').value.trim()},
+  canvas:a.material,
+  preset:{id:a.profile.id,label:a.profile.label,material:a.profile.material,thicknessMm:a.profile.thickness},
+  operations:{cut:{count:a.cut},engrave:{count:a.engrave}},
+  boundsMm:a.bounds,
+  geometry:items.map(o=>({id:o.id,type:o.type,layer:o.layer,x:o.x,y:o.y,width:o.w,height:o.h,text:o.type==='text'?o.text:undefined,fontSize:o.type==='text'?o.fontSize:undefined})),
+  warnings:a.warnings
+ };
+}
+$('reviewJob').addEventListener('click',()=>{const a=displayAudit();msg(a.errors.length?'Job review found '+a.errors.length+' issue(s).':'Job checks passed; package is for offline review only, not a laser control file.')});
+$('packageJob').addEventListener('click',()=>{
+ try{const data=manifest();download(filename()+'.job.json',JSON.stringify(data,null,2),'application/json');msg('Design job package exported. Machine encoding and instructor authorization are NOT implemented.')}
+ catch(err){msg('Cannot package: '+err.message);displayAudit();}
+});
+
 let usbPort=null;
 $('usbCheck').addEventListener('click',async()=>{
  if(!('serial' in navigator)){
@@ -99,7 +171,7 @@ function displayPresets(){
  const p=selectedPreset();
  if(p){$('presetSummary').textContent=p.material+' · '+p.thickness+' mm | CUT: '+p.cut.speed+' mm/s · '+p.cut.power+'% · '+p.cut.passes+' pass(es) | ENGRAVE: '+p.engrave.speed+' mm/s · '+p.engrave.power+'%';}
  else{$('presetSummary').textContent=libraryStatus==='loaded'?'Choose a published profile to prepare a job.':libraryStatus==='empty'?'No instructor-approved profiles have been published yet.':'Unable to load verified published profiles; project export for production is disabled.';}
- $('export').disabled=!(p&&libraryStatus==='loaded');
+ $('export').disabled=!(p&&libraryStatus==='loaded');if(typeof displayAudit==='function')displayAudit();
 }
 async function loadPublishedProfiles(){
  libraryStatus='loading';$('presetSummary').textContent='Loading published material settings…';$('export').disabled=true;
