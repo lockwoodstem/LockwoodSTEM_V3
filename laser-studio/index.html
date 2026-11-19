@@ -27,7 +27,10 @@
 <p id="compilerSummary" class="compiler-summary" role="status">The geometry compiler is offline and does not generate Ruida files.</p>
 <div class="footer">The job package records the original artwork, selected instructor-published preset identity, geometry and validation results for future KT332N compilation. It cannot move axes or activate the laser.</div>
 </section><div id="status" role="status" aria-live="polite">Select a tool. Click the canvas to add a shape; drag selected objects to move them.</div><div class="footer">This build contains a read-only USB compatibility check. No machine motion, framing, cutting, or laser-firing commands are implemented yet. A verified KT332N job encoder and safety-gated transfer are required for real cutting.</div></main>
-<aside aria-label="Selected object properties"><h2>Object properties</h2><div id="empty">Select an object on the canvas or add a new one to edit its dimensions.</div><div id="properties" hidden><label for="layer">Operation</label><select id="layer"><option value="engrave">Engrave</option><option value="cut">Cut</option></select><div class="pair"><div><label for="x">X (mm)</label><input id="x" type="number" step="0.5"></div><div><label for="y">Y (mm)</label><input id="y" type="number" step="0.5"></div></div><div class="pair"><div><label for="ow">Width (mm)</label><input id="ow" type="number" min="1" step="0.5"></div><div><label for="oh">Height (mm)</label><input id="oh" type="number" min="1" step="0.5"></div></div><div id="textEditor" hidden><label for="textValue">Text</label><input id="textValue" maxlength="100"><label for="fontSize">Text height (mm)</label><input id="fontSize" type="number" min="2" max="100" step="1"></div><div class="row" style="margin-top:12px"><button id="duplicate" type="button">Duplicate</button><button id="remove" type="button">Delete</button></div></div><h3>Objects</h3><div id="list"></div><h3>USB controller compatibility</h3><div class="note">KT332N / USB. On a student Windows laptop, use Chrome or Edge on HTTPS. Close LightBurn before checking the port. This diagnostic only requests access; it does not transmit data or run the machine.</div><button id="usbCheck" type="button">Identify USB Controller</button><p id="usbStatus" role="status" class="muted">No controller selected.</p><div class="row"><button id="usbClear" type="button">Clear Selection</button></div><h3>Before submitting</h3><div class="warning">Instructor review required. Confirm dimensions, material, approved source artwork, engraving/cut layers, machine focus, exhaust, air assist, cooling, enclosure and supervision. Never leave a laser running unattended.</div><div class="note">Material profiles are read-only in student mode and published through the instructor-controlled site repository. The browser still cannot command laser cutting or firing.</div></aside></div>
+<aside aria-label="Selected object properties"><h2>Object properties</h2><div id="empty">Select an object on the canvas or add a new one to edit its dimensions.</div><div id="properties" hidden><label for="layer">Operation</label><select id="layer"><option value="engrave">Engrave</option><option value="cut">Cut</option></select><div class="pair"><div><label for="x">X (mm)</label><input id="x" type="number" step="0.5"></div><div><label for="y">Y (mm)</label><input id="y" type="number" step="0.5"></div></div><div class="pair"><div><label for="ow">Width (mm)</label><input id="ow" type="number" min="1" step="0.5"></div><div><label for="oh">Height (mm)</label><input id="oh" type="number" min="1" step="0.5"></div></div><div id="textEditor" hidden><label for="textValue">Text</label><input id="textValue" maxlength="100"><label for="fontSize">Text height (mm)</label><input id="fontSize" type="number" min="2" max="100" step="1"></div><div class="row" style="margin-top:12px"><button id="duplicate" type="button">Duplicate</button><button id="remove" type="button">Delete</button></div></div><h3>Objects</h3><div id="list"></div><h3>USB controller compatibility</h3><div class="note">KT332N / USB. On a student Windows laptop, use Chrome or Edge on HTTPS. Close LightBurn before checking the port. This diagnostic only requests access; it does not transmit data or run the machine.</div><button id="usbCheck" type="button">Identify USB Controller</button><div class="note">Confirmed device: FTDI VID <code>0403</code> / PID <code>6001</code>, Windows COM3, LightBurn Serial/USB. Select that same port below. Browser port names may not show COM3.</div>
+<label for="testBaud">Open-test baud rate</label><select id="testBaud"><option value="115200">115200 (test candidate; not verified for KT332N)</option><option value="57600">57600 (only if documented for your machine)</option><option value="38400">38400 (only if documented for your machine)</option><option value="9600">9600 (only if documented for your machine)</option></select>
+<div class="row"><button id="usbOpenTest" type="button" disabled>Open / Close Port (No Data)</button></div>
+<p id="usbTestStatus" role="status" class="muted">Choose the FTDI port first. This test opens the port and closes it without reading or writing bytes, toggling DTR/RTS, or sending any machine commands.</p><p id="usbStatus" role="status" class="muted">No controller selected.</p><div class="row"><button id="usbClear" type="button">Clear Selection</button></div><h3>Before submitting</h3><div class="warning">Instructor review required. Confirm dimensions, material, approved source artwork, engraving/cut layers, machine focus, exhaust, air assist, cooling, enclosure and supervision. Never leave a laser running unattended.</div><div class="note">Material profiles are read-only in student mode and published through the instructor-controlled site repository. The browser still cannot command laser cutting or firing.</div></aside></div>
 <script>
 (()=>{
 'use strict';
@@ -178,7 +181,9 @@ $('packageJob').addEventListener('click',()=>{
  catch(err){msg('Cannot package: '+err.message);displayAudit();}
 });
 
-let usbPort=null;
+let usbPort=null,portTestBusy=false;
+function resetTestSelection(){ $('usbOpenTest').disabled=!usbPort||portTestBusy; }
+
 $('usbCheck').addEventListener('click',async()=>{
  if(!('serial' in navigator)){
    $('usbStatus').textContent='Web Serial is unavailable in this browser. Use current Chrome or Edge on a secure HTTPS page.';
@@ -188,7 +193,7 @@ $('usbCheck').addEventListener('click',async()=>{
  try{
    const port=await navigator.serial.requestPort();
    if(!port){$('usbStatus').textContent='No serial controller was selected.';return;}
-   usbPort=port;
+   usbPort=port;resetTestSelection();
    const info=port.getInfo();
    const vendor=info.usbVendorId==null?'not reported':'0x'+info.usbVendorId.toString(16).padStart(4,'0');
    const product=info.usbProductId==null?'not reported':'0x'+info.usbProductId.toString(16).padStart(4,'0');
@@ -197,9 +202,41 @@ $('usbCheck').addEventListener('click',async()=>{
  }catch(err){$('usbStatus').textContent=err.name==='NotFoundError'?'Port selection cancelled.':'USB access failed: '+(err.message||String(err));}
 });
 $('usbClear').addEventListener('click',async()=>{
- if(usbPort){try{await usbPort.forget?.()}catch{}usbPort=null;}
+ if(portTestBusy){$('usbTestStatus').textContent='Wait until the open/close test finishes.';return;}
+ if(usbPort){try{await usbPort.forget?.()}catch{}usbPort=null;}resetTestSelection();
  $('usbStatus').textContent='Local USB port selection cleared. No data was sent.';
  $('machineBadge').textContent='USB NOT CONFIGURED · NO LASER CONTROL';
+ $('usbTestStatus').textContent='Port permission cleared; no data transmitted.';
+});
+
+
+$('usbOpenTest').addEventListener('click',async()=>{
+ if(!usbPort||portTestBusy){$('usbTestStatus').textContent='Select a USB serial port first.';return;}
+ portTestBusy=true;resetTestSelection();let opened=false,openError=null,closeError=null;
+ const info=usbPort.getInfo();
+ const vid=info.usbVendorId,pid=info.usbProductId;
+ if(vid!==0x0403||pid!==0x6001){
+  portTestBusy=false;resetTestSelection();
+  $('usbTestStatus').textContent='Test blocked: selected port is not the previously confirmed FTDI 0403:6001 interface.';
+  return;
+ }
+ const baud=Number($('testBaud').value);
+ $('usbTestStatus').textContent='Attempting a connection-only open on the selected FTDI serial interface. No commands will be sent.';
+ try{
+   // An open request alone cannot prove Ruida protocol compatibility.
+   // Intentionally do not call getReader/getWriter/setSignals or write bytes.
+   await usbPort.open({baudRate:baud,dataBits:8,stopBits:1,parity:'none',flowControl:'none',bufferSize:255});
+   opened=true;
+ }catch(err){openError=err;}
+ finally{
+   if(opened){
+     try{await usbPort.close()}catch(err){closeError=err;}
+   }
+   portTestBusy=false;resetTestSelection();
+   const status=opened?(closeError?'Port opened, but closing reported an error: '+closeError.message:'COM interface opened and closed successfully at '+baud+' baud. No bytes sent or received; KT332N protocol NOT verified.'):'Port opening failed: '+(openError?.message||String(openError));
+   $('usbTestStatus').textContent=status;
+   $('machineBadge').textContent=opened&&!closeError?'SERIAL OPEN/CLOSE PASSED · NO TRANSMISSION':'USB SELECTED · NO LASER CONTROL';
+ }
 });
 
 let presets=[],chosenPreset='',libraryStatus='not loaded';
