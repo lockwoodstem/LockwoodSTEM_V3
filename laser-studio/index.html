@@ -9,23 +9,15 @@
 <h3>Project</h3><label for="project">Project name</label><input id="project" value="My Laser Project" maxlength="70"><label for="student">Student name</label><input id="student" placeholder="First Last" maxlength="70">
 <h3>Material dimensions</h3><div class="pair"><div><label for="width">Width (mm)</label><input id="width" type="number" min="20" max="1000" step="1" value="300"></div><div><label for="height">Height (mm)</label><input id="height" type="number" min="20" max="700" step="1" value="200"></div></div><label for="material">Material</label><select id="material"><option>Birch plywood — instructor approved</option><option>Uncoated plywood — instructor approved</option><option>Cast acrylic — instructor approved</option><option>Cardboard — instructor approved</option><option>Other — instructor approval required</option></select>
 <div class="note">Canvas size must match your real stock. Dimensions are in millimeters. Use the blue layer for cut outlines and black for engraving artwork.</div>
-<h3>Approved material presets</h3>
-<div class="note">Choose the instructor-approved material and thickness before export. No default laser power/speed values are assumed.</div>
-<label for="presetChoose">Laser preset</label><select id="presetChoose"><option value="">Select an approved preset</option></select>
-<div id="presetSummary" class="note" role="status">No approved preset selected.</div>
-<div class="row"><button type="button" id="presetImport">Import Presets</button><button type="button" id="presetExport">Export Presets</button></div><input id="presetFile" type="file" accept=".json,application/json" hidden>
-<details><summary><strong>Instructor preset editor (local only)</strong></summary>
-<div class="warning">This local editor has no authentication. Presets are planning records, not secured machine parameters. Use a trusted configuration file for class distribution.</div>
-<label for="presetLabel">Profile name</label><input id="presetLabel" placeholder="Birch plywood 3 mm">
-<label for="presetMat">Material name</label><input id="presetMat" placeholder="Birch plywood">
-<label for="presetThick">Thickness (mm)</label><input id="presetThick" type="number" min="0.1" max="100" step="0.1">
-<h3>Cut settings</h3><div class="pair"><div><label for="presetCutSpeed">Speed (mm/s)</label><input id="presetCutSpeed" type="number" min="0.1" max="1000" step="0.1"></div><div><label for="presetCutPower">Power (%)</label><input id="presetCutPower" type="number" min="0" max="100" step="0.1"></div></div><label for="presetCutPasses">Passes</label><input id="presetCutPasses" type="number" min="1" max="20" step="1" value="1">
-<h3>Engrave settings</h3><div class="pair"><div><label for="presetEngSpeed">Speed (mm/s)</label><input id="presetEngSpeed" type="number" min="0.1" max="1000" step="0.1"></div><div><label for="presetEngPower">Power (%)</label><input id="presetEngPower" type="number" min="0" max="100" step="0.1"></div></div>
-<label><input type="checkbox" id="presetVerified"> I have tested and approved these settings for this material and thickness.</label>
-<div class="row"><button type="button" id="presetSave">Save Preset</button><button type="button" id="presetDelete">Delete Selected</button></div></details>
+<h3>Published material presets</h3>
+<div class="note">Choose a material and thickness approved for this OMTech 80W. The instructor manages available settings; students cannot change speed or power here.</div>
+<label for="presetChoose">Material / thickness profile</label><select id="presetChoose"><option value="">Loading published presets...</option></select>
+<div id="presetSummary" class="note" role="status" aria-live="polite">Loading published settings…</div>
+<div class="row"><button type="button" id="presetReload">Refresh Presets</button></div>
+<div class="footer">Presets are published in the school's controlled repository. A selection is for job preparation only, not permission to run the laser.</div>
 <h3>Files</h3><div class="row"><button id="import" type="button">Import SVG</button><button id="exportProject" type="button">Export Project</button></div><input id="importSvg" type="file" accept=".svg,image/svg+xml,.json,application/json"><div class="footer">Imported SVG supports simple rectangles, circles, lines and text; unsupported elements are ignored.</div>
 </aside><main class="workspace"><div class="workspace-head"><div><b>Design canvas</b> <span id="dimensions" class="muted"></span></div><div class="swatches"><span><i class="dot cut"></i>Cut</span><span><i class="dot engrave"></i>Engrave</span></div></div><div class="canvas-wrap"><div class="canvas-paper"><svg id="design" role="img" aria-label="Editable laser project canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><defs><pattern id="grid" patternUnits="userSpaceOnUse" width="10" height="10"><path d="M10 0H0V10" fill="none" stroke="#bdd7e4" stroke-width=".22"/></pattern></defs><rect id="gridbg" width="300" height="200" fill="url(#grid)"/><g id="objects"></g></svg></div></div><div id="status" role="status" aria-live="polite">Select a tool. Click the canvas to add a shape; drag selected objects to move them.</div><div class="footer">This build contains a read-only USB compatibility check. No machine motion, framing, cutting, or laser-firing commands are implemented yet. A verified KT332N job encoder and safety-gated transfer are required for real cutting.</div></main>
-<aside aria-label="Selected object properties"><h2>Object properties</h2><div id="empty">Select an object on the canvas or add a new one to edit its dimensions.</div><div id="properties" hidden><label for="layer">Operation</label><select id="layer"><option value="engrave">Engrave</option><option value="cut">Cut</option></select><div class="pair"><div><label for="x">X (mm)</label><input id="x" type="number" step="0.5"></div><div><label for="y">Y (mm)</label><input id="y" type="number" step="0.5"></div></div><div class="pair"><div><label for="ow">Width (mm)</label><input id="ow" type="number" min="1" step="0.5"></div><div><label for="oh">Height (mm)</label><input id="oh" type="number" min="1" step="0.5"></div></div><div id="textEditor" hidden><label for="textValue">Text</label><input id="textValue" maxlength="100"><label for="fontSize">Text height (mm)</label><input id="fontSize" type="number" min="2" max="100" step="1"></div><div class="row" style="margin-top:12px"><button id="duplicate" type="button">Duplicate</button><button id="remove" type="button">Delete</button></div></div><h3>Objects</h3><div id="list"></div><h3>USB controller compatibility</h3><div class="note">KT332N / USB. On a student Windows laptop, use Chrome or Edge on HTTPS. Close LightBurn before checking the port. This diagnostic only requests access; it does not transmit data or run the machine.</div><button id="usbCheck" type="button">Identify USB Controller</button><p id="usbStatus" role="status" class="muted">No controller selected.</p><div class="row"><button id="usbClear" type="button">Clear Selection</button></div><h3>Before submitting</h3><div class="warning">Instructor review required. Confirm dimensions, material, approved source artwork, engraving/cut layers, machine focus, exhaust, air assist, cooling, enclosure and supervision. Never leave a laser running unattended.</div><div class="note">The student uses a named preset; the instructor defines the settings. The local preset editor is not access-controlled. This studio cannot send a cut or fire the laser yet.</div></aside></div>
+<aside aria-label="Selected object properties"><h2>Object properties</h2><div id="empty">Select an object on the canvas or add a new one to edit its dimensions.</div><div id="properties" hidden><label for="layer">Operation</label><select id="layer"><option value="engrave">Engrave</option><option value="cut">Cut</option></select><div class="pair"><div><label for="x">X (mm)</label><input id="x" type="number" step="0.5"></div><div><label for="y">Y (mm)</label><input id="y" type="number" step="0.5"></div></div><div class="pair"><div><label for="ow">Width (mm)</label><input id="ow" type="number" min="1" step="0.5"></div><div><label for="oh">Height (mm)</label><input id="oh" type="number" min="1" step="0.5"></div></div><div id="textEditor" hidden><label for="textValue">Text</label><input id="textValue" maxlength="100"><label for="fontSize">Text height (mm)</label><input id="fontSize" type="number" min="2" max="100" step="1"></div><div class="row" style="margin-top:12px"><button id="duplicate" type="button">Duplicate</button><button id="remove" type="button">Delete</button></div></div><h3>Objects</h3><div id="list"></div><h3>USB controller compatibility</h3><div class="note">KT332N / USB. On a student Windows laptop, use Chrome or Edge on HTTPS. Close LightBurn before checking the port. This diagnostic only requests access; it does not transmit data or run the machine.</div><button id="usbCheck" type="button">Identify USB Controller</button><p id="usbStatus" role="status" class="muted">No controller selected.</p><div class="row"><button id="usbClear" type="button">Clear Selection</button></div><h3>Before submitting</h3><div class="warning">Instructor review required. Confirm dimensions, material, approved source artwork, engraving/cut layers, machine focus, exhaust, air assist, cooling, enclosure and supervision. Never leave a laser running unattended.</div><div class="note">Material profiles are read-only in student mode and published through the instructor-controlled site repository. The browser still cannot command laser cutting or firing.</div></aside></div>
 <script>
 (()=>{
 'use strict';
@@ -60,9 +52,9 @@ $('duplicate').onclick=()=>{let o=active();if(o){let copy={...o,id:nextId++,x:o.
 function filename(){return ($('project').value||'laser-project').replace(/[^a-z0-9_-]+/gi,'_').slice(0,70)}
 function download(name,content,type){const blob=new Blob([content],{type}),u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),15000)}
 function valid(){const {w,h}=bed();if(!items.length){msg('Add at least one object before exporting.');return false}if(items.some(o=>{const b=bounds(o);return !Number.isFinite(b.x+b.y+b.w+b.h)||b.x<0||b.y<0||b.x+b.w>w||b.y+b.h>h})){msg('Export blocked: move or resize all objects to fit inside the material.');return false}return true}
-$('export').onclick=()=>{if(!valid())return;const profile=selectedPreset();if(!profile){msg('Select an approved preset before exporting an SVG for production.');return}const {w,h}=bed();let groups=['engrave','cut'].map(layer=>{const paths=items.filter(o=>o.layer===layer).map(o=>{const s=asSvg({...o,id:o.id});s.removeAttribute('class');s.removeAttribute('data-object-id');return s.outerHTML}).join('\n');return `<g id="${layer}" data-operation="${layer}">\n${paths}\n</g>`}).join('\n');let data=`<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="${w}mm" height="${h}mm" viewBox="0 0 ${w} ${h}">\n<title>${escapeXml($('project').value)}</title>\n<metadata>${escapeXml(JSON.stringify({materialPreset:profile,jobReady:false}))}</metadata>\n${groups}\n</svg>`;download(filename()+'.svg',data,'image/svg+xml');msg('SVG exported. Instructor must inspect the imported design and configure the actual laser job.')};
+$('export').onclick=()=>{if(!valid())return;const profile=libraryStatus==='loaded'?selectedPreset():null;if(!profile){msg('Select an approved preset before exporting an SVG for production.');return}const {w,h}=bed();let groups=['engrave','cut'].map(layer=>{const paths=items.filter(o=>o.layer===layer).map(o=>{const s=asSvg({...o,id:o.id});s.removeAttribute('class');s.removeAttribute('data-object-id');return s.outerHTML}).join('\n');return `<g id="${layer}" data-operation="${layer}">\n${paths}\n</g>`}).join('\n');let data=`<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="${w}mm" height="${h}mm" viewBox="0 0 ${w} ${h}">\n<title>${escapeXml($('project').value)}</title>\n<metadata>${escapeXml(JSON.stringify({presetId:profile.id,presetLabel:profile.label,material:profile.material,thickness:profile.thickness,jobReady:false,settingsNotAuthoritative:true}))}</metadata>\n${groups}\n</svg>`;download(filename()+'.svg',data,'image/svg+xml');msg('SVG exported. Instructor must inspect the imported design and configure the actual laser job.')};
 $('save').onclick=()=>{persist();msg('Project saved locally in this browser. Export Project for a portable backup.')};
-$('exportProject').onclick=()=>{persist();download(filename()+'.laser.json',JSON.stringify({version:1,items,project:$('project').value,student:$('student').value,material:$('material').value,w:bed().w,h:bed().h,nextId,presetId:chosenPreset,presetSnapshot:selectedPreset()},null,2),'application/json')};
+$('exportProject').onclick=()=>{persist();download(filename()+'.laser.json',JSON.stringify({version:1,items,project:$('project').value,student:$('student').value,material:$('material').value,w:bed().w,h:bed().h,nextId,presetId:chosenPreset,presetSnapshot:null},null,2),'application/json')};
 $('new').onclick=()=>{if(!confirm('Clear this project? Export a backup first if needed.'))return;items=[];selected=null;nextId=1;set('project','New Laser Project');render();persist()};
 ['project','student','material','width','height'].forEach(k=>$(k).addEventListener('change',()=>{render();persist()}));
 $('import').onclick=()=>$('importSvg').click();
@@ -93,44 +85,37 @@ $('usbClear').addEventListener('click',async()=>{
  $('machineBadge').textContent='USB NOT CONFIGURED · NO LASER CONTROL';
 });
 
-const presetStore='lockwood-laser-presets-v1';
-let presets=[],chosenPreset='';
-const presetValue=id=>document.getElementById(id).value;
+let presets=[],chosenPreset='',libraryStatus='not loaded';
 function approved(p){
- const positive=n=>Number.isFinite(n)&&n>0;
- return !!p&&typeof p.id==='string'&&p.id.length<=90&&typeof p.label==='string'&&p.label.length>0&&p.label.length<=100&&typeof p.material==='string'&&p.material.length>0&&p.material.length<=100&&positive(p.thickness)&&p.thickness<=100&&p.verified===true&&['cut','engrave'].every(k=>{const x=p[k];return x&&positive(x.speed)&&x.speed<=1000&&Number.isFinite(x.power)&&x.power>=0&&x.power<=100&&Number.isInteger(x.passes)&&x.passes>=1&&x.passes<=20;});
+ const positive=n=>typeof n==='number'&&Number.isFinite(n)&&n>0;
+ return !!p&&typeof p.id==='string'&&p.id.length>0&&p.id.length<=90&&typeof p.label==='string'&&p.label.trim().length>0&&p.label.length<=100&&typeof p.material==='string'&&p.material.length>0&&p.material.length<=100&&positive(p.thickness)&&p.thickness<=100&&p.verified===true&&['cut','engrave'].every(k=>{const x=p[k];return x&&positive(x.speed)&&x.speed<=1000&&typeof x.power==='number'&&Number.isFinite(x.power)&&x.power>=0&&x.power<=100&&Number.isInteger(x.passes)&&x.passes>=1&&x.passes<=20;});
 }
 function selectedPreset(){return presets.find(p=>p.id===chosenPreset)||null}
 function displayPresets(){
  const select=$('presetChoose');select.replaceChildren();select.add(new Option('Select an approved preset',''));
- for(const p of presets)select.add(new Option(p.label+' — '+p.thickness+' mm',p.id));
+ for(const p of presets)select.add(new Option(p.label+' · '+p.thickness+' mm',p.id));
  if(!selectedPreset())chosenPreset='';
  select.value=chosenPreset;
  const p=selectedPreset();
- $('presetSummary').textContent=p?'CUT: '+p.cut.speed+' mm/s · '+p.cut.power+'% · '+p.cut.passes+' pass(es) | ENGRAVE: '+p.engrave.speed+' mm/s · '+p.engrave.power+'% | '+p.material+' · '+p.thickness+' mm':'No approved preset selected. An instructor must supply validated values.';
+ if(p){$('presetSummary').textContent=p.material+' · '+p.thickness+' mm | CUT: '+p.cut.speed+' mm/s · '+p.cut.power+'% · '+p.cut.passes+' pass(es) | ENGRAVE: '+p.engrave.speed+' mm/s · '+p.engrave.power+'%';}
+ else{$('presetSummary').textContent=libraryStatus==='loaded'?'Choose a published profile to prepare a job.':libraryStatus==='empty'?'No instructor-approved profiles have been published yet.':'Unable to load verified published profiles; project export for production is disabled.';}
+ $('export').disabled=!(p&&libraryStatus==='loaded');
 }
-function savePresets(){try{localStorage.setItem(presetStore,JSON.stringify({version:1,presets}))}catch{msg('Cannot save presets to this browser. Export a profile backup.')}}
+async function loadPublishedProfiles(){
+ libraryStatus='loading';$('presetSummary').textContent='Loading published material settings…';$('export').disabled=true;
+ try{
+  const response=await fetch('./profiles.json',{cache:'no-store',credentials:'same-origin'});
+  if(!response.ok)throw Error('HTTP '+response.status);
+  const raw=await response.text();if(raw.length>100000)throw Error('Profile library too large');
+  const data=JSON.parse(raw);
+  if(data.version!==1||data.controller!=='Ruida KT332N'||!Array.isArray(data.profiles)||data.profiles.length>100||!data.profiles.every(approved))throw Error('Invalid published profile library');
+  const keys=data.profiles.map(p=>p.id);if(new Set(keys).size!==keys.length)throw Error('Duplicate profile IDs');
+  presets=data.profiles;libraryStatus=presets.length?'loaded':'empty';
+ }catch(err){presets=[];libraryStatus='error';msg('Could not load approved material profiles: '+err.message);}
+ displayPresets();
+}
 $('presetChoose').addEventListener('change',()=>{chosenPreset=$('presetChoose').value;displayPresets();persist()});
-$('presetSave').addEventListener('click',()=>{
- const numeric=['presetThick','presetCutSpeed','presetCutPower','presetCutPasses','presetEngSpeed','presetEngPower'];
- if(numeric.some(id=>presetValue(id).trim()==='')){msg('Enter every speed, power, pass and thickness value before saving.');return}
- const p={id:'p'+Date.now(),label:presetValue('presetLabel').trim(),material:presetValue('presetMat').trim(),thickness:Number(presetValue('presetThick')),verified:$('presetVerified').checked,cut:{speed:Number(presetValue('presetCutSpeed')),power:Number(presetValue('presetCutPower')),passes:Number(presetValue('presetCutPasses'))},engrave:{speed:Number(presetValue('presetEngSpeed')),power:Number(presetValue('presetEngPower')),passes:1}};
- if(!approved(p)){msg('Preset not saved. Check numeric limits and confirm this setting has been tested and approved.');return}
- presets.push(p);chosenPreset=p.id;savePresets();displayPresets();persist();msg('Approved preset saved locally. Export Presets to distribute it.');
-});
-$('presetDelete').addEventListener('click',()=>{if(!selectedPreset()||!confirm('Delete selected local preset?'))return;presets=presets.filter(p=>p.id!==chosenPreset);chosenPreset='';savePresets();displayPresets();persist()});
-$('presetExport').addEventListener('click',()=>{if(!presets.length){msg('No presets to export.');return}download('laser_presets.json',JSON.stringify({version:1,presets},null,2),'application/json')});
-$('presetImport').addEventListener('click',()=>$('presetFile').click());
-$('presetFile').addEventListener('change',async ev=>{
- const file=ev.target.files&&ev.target.files[0];if(!file)return;
- try{if(file.size>100000)throw Error('Preset file too large');
- const parsed=JSON.parse(await file.text());if(!Array.isArray(parsed.presets)||parsed.presets.length>100||!parsed.presets.every(approved))throw Error('Invalid or unapproved preset data');
- presets=parsed.presets.map(p=>({...p}));chosenPreset='';savePresets();displayPresets();persist();msg('Preset library imported. Verify its origin before using it.');
- }catch(err){msg('Import failed: '+err.message)}ev.target.value='';
-});
-try{const raw=JSON.parse(localStorage.getItem(presetStore)||'null');if(raw&&Array.isArray(raw.presets))presets=raw.presets.filter(approved).slice(0,100)}catch{}
-displayPresets();
-
-try{const data=JSON.parse(localStorage.getItem(stateKey)||'null');if(data&&Array.isArray(data.items)){items=data.items.filter(x=>allowed.includes(x.type)).slice(0,500);nextId=Math.max(1,...items.map(x=>Number(x.id)||0))+1;set('project',data.project||'My Laser Project');set('student',data.student||'');set('material',data.material||'Birch plywood — instructor approved');set('width',data.w||300);set('height',data.h||200);chosenPreset=typeof data.presetId==='string'?data.presetId:'';displayPresets();}}catch{}render();
+$('presetReload').addEventListener('click',loadPublishedProfiles);
+try{const data=JSON.parse(localStorage.getItem(stateKey)||'null');if(data&&Array.isArray(data.items)){items=data.items.filter(x=>allowed.includes(x.type)).slice(0,500);nextId=Math.max(1,...items.map(x=>Number(x.id)||0))+1;set('project',data.project||'My Laser Project');set('student',data.student||'');set('material',data.material||'Birch plywood — instructor approved');set('width',data.w||300);set('height',data.h||200);chosenPreset=typeof data.presetId==='string'?data.presetId:'';displayPresets();}}catch{}render();loadPublishedProfiles();
 })();
 </script></body></html>
