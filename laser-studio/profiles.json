@@ -3,5 +3,44 @@
   "controller": "Ruida KT332N",
   "machine": "OMTech 80W CO2",
   "updated": "2026-11-19",
-  "profiles": []
+  "profiles": [
+    {
+      "id": "demo-birch-3mm-v1",
+      "label": "Birch plywood · 3 mm (TEST ONLY)",
+      "material": "Birch plywood",
+      "thickness": 3,
+      "verified": false,
+      "cut": {
+        "speed": 20,
+        "power": 70,
+        "passes": 1
+      },
+      "engrave": {
+        "speed": 300,
+        "power": 20,
+        "passes": 1
+      },
+      "source": "https://omtech.com/blogs/knowledge/how-to-design-and-make-a-chessboard-with-a-co-laser-engraver",
+      "notes": "Unverified starting-point values from OMTech 3mm Baltic birch article. Not approved on this specific machine."
+    },
+    {
+      "id": "demo-cast-acrylic-3mm-v1",
+      "label": "Cast acrylic · 3 mm (TEST ONLY)",
+      "material": "Cast acrylic",
+      "thickness": 3,
+      "verified": false,
+      "cut": {
+        "speed": 12,
+        "power": 70,
+        "passes": 1
+      },
+      "engrave": {
+        "speed": 500,
+        "power": 20,
+        "passes": 1
+      },
+      "source": "https://omtech.com/blogs/knowledge/material-settings-for-laser-engravers",
+      "notes": "Unverified starting-point values within OMTech's 60–80W 3mm acrylic cutting and CO2 engraving ranges. Not approved on this specific machine."
+    }
+  ]
 }
