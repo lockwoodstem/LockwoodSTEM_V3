@@ -2,6 +2,9 @@
  * NEVER transmit these bytes directly to the controller.
  * Uses reverse-engineered command sequences; machine origin, firmware and
  * actual behavior have not been validated for the KT332N.
+ * Reference LightBurn position fields can use a center anchor: center (25,15), size
+ * (40,20) resolves to bounds (5,5)–(45,25). This compiler expects bounds
+ * expressed as minimum X/Y plus width/height in the job coordinate system.
  * No USB access, motion or laser control methods are present in this module.
  */
 (function(root){
@@ -56,7 +59,9 @@ function compileRectangle({geometry,profile,canvas}){
  assert(b.xmax<=canvas.w&&b.ymax<=canvas.h,'Cut extends outside the selected material.');
  assert(profile&&profile.verified===true&&profile.cut,'Instructor-published cut profile required.');
  const s=number(profile.cut.speed,0.1,1000,'Cut speed');
- const p=number(profile.cut.power,0,100,'Cut power');
+ const p=number(profile.cut.power,0,100,'Cut maximum power');
+ const pMin=profile.cut.minPower===undefined?p:number(profile.cut.minPower,0,100,'Cut minimum power');
+ assert(pMin<=p,'Minimum cut power cannot exceed maximum cut power');
  assert(profile.cut.passes===1,'This experimental compiler supports only one pass.');
  const out=new Builder();
  const box=(command,minx,miny,maxx,maxy)=>{
@@ -74,7 +79,7 @@ function compileRectangle({geometry,profile,canvas}){
  out.h('e7 05 00');
  // One layer. Power1 uses tested profile. Other laser outputs remain zero.
  out.h('c9 04 00').put(...speed(s));
- for(const [cmd,val] of [['c6 31 00',p],['c6 32 00',p],['c6 41 00',0],
+ for(const [cmd,val] of [['c6 31 00',pMin],['c6 32 00',p],['c6 41 00',0],
   ['c6 42 00',0],['c6 35 00',0],['c6 36 00',0],
   ['c6 37 00',0],['c6 38 00',0]])out.h(cmd).p(val);
  out.h('ca 06 00').c([40,123,177]);
@@ -105,7 +110,7 @@ function compileRectangle({geometry,profile,canvas}){
  out.h('c9 02').put(...speed(s));
  out.h('c6 15').n(0);out.h('c6 16').n(0);
  for(const [cmd,val] of [
-  ['c6 01',p],['c6 02',p],['c6 21',0],['c6 22',0],
+  ['c6 01',pMin],['c6 02',p],['c6 21',0],['c6 22',0],
   ['c6 05',0],['c6 06',0],['c6 07',0],['c6 08',0]
  ])out.h(cmd).p(val);
  out.h('ca 03 01 ca 10 00');
@@ -129,7 +134,7 @@ function compileRectangle({geometry,profile,canvas}){
   info:{format:'Ruida RD experimental',validatedOnKT332N:false,transferEnabled:false,
    layers:1,objects:1,segments:4,operation:'cut',cutLengthMm:length,
    boundsMm:{minX:b.xmin,minY:b.ymin,maxX:b.xmax,maxY:b.ymax},
-   speedMmPerSec:s,powerPercent:p,passes:1,byteLength:scrambled.length}
+   speedMmPerSec:s,minPowerPercent:pMin,maxPowerPercent:p,powerPercent:p,passes:1,byteLength:scrambled.length}
  };
 }
 root.LockwoodRuidaRD=Object.freeze({compileRectangle,decode:bytes=>Uint8Array.from(bytes,unMagic),version:1});
