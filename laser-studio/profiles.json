@@ -30,17 +30,17 @@
       "thickness": 3,
       "verified": false,
       "cut": {
-        "speed": 12,
+        "speed": 15,
         "power": 70,
         "passes": 1
       },
       "engrave": {
-        "speed": 500,
-        "power": 20,
+        "speed": 400,
+        "power": 25,
         "passes": 1
       },
-      "source": "https://omtech.com/blogs/knowledge/material-settings-for-laser-engravers",
-      "notes": "Unverified starting-point values within OMTech's 60–80W 3mm acrylic cutting and CO2 engraving ranges. Not approved on this specific machine."
+      "source": "https://omtech.com/blogs/business-ideas/step-by-step-guide-to-laser-cutting-acrylic-trophies",
+      "notes": "Unverified classroom demo; chosen from OMTech's published 3 mm cast acrylic cutting/engraving examples. Not calibrated for this machine."
     }
   ]
 }
