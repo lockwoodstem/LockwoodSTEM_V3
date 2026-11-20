@@ -239,209 +239,113 @@ window.LOCKWOODSTEM_LESSONS = {
       ]
     ],
     "4": [
-      [
-        "4.1",
-        "Unit 4 Challenge Launch: Aerospace Mechanisms, Materials & Electromechanical Systems",
-        "lesson-4-1.html"
-      ],
-      [
-        "4.2",
-        "Aerospace Materials and Material Properties",
-        "lesson-4-2.html"
-      ],
-      [
-        "4.3",
-        "Material Testing Lab",
-        "lesson-4-3.html"
-      ],
-      [
-        "4.4",
-        "Statistics and Measurement Error",
-        "lesson-4-4.html"
-      ],
-      [
-        "4.5",
-        "Mechanisms and Types of Motion",
-        "lesson-4-5.html"
-      ],
-      [
-        "4.6",
-        "Mechanism Exploration: Linkages, Hinges, Cams, Gears, and Pulleys",
-        "lesson-4-6.html"
-      ],
-      [
-        "4.7",
-        "Friction, Force, and Mechanism Performance",
-        "lesson-4-7.html"
-      ],
-      [
-        "4.8",
-        "Motion Graphs and System Behavior",
-        "lesson-4-8.html"
-      ],
-      [
-        "4.9",
-        "Electrical Safety and Simple Circuits",
-        "lesson-4-9.html"
-      ],
-      [
-        "4.10",
-        "Motors and Electromechanical Motion",
-        "lesson-4-10.html"
-      ],
-      [
-        "4.11",
-        "Concept Generation and Decision Matrix",
-        "lesson-4-11.html"
-      ],
-      [
-        "4.12",
-        "System Architecture and Subsystem Planning",
-        "lesson-4-12.html"
-      ],
-      [
-        "4.13",
-        "CAD Planning and Assembly Layout",
-        "lesson-4-13.html"
-      ],
-      [
-        "4.14",
-        "CAD Modeling Workday: Components, Motion, and Fit",
-        "lesson-4-14.html"
-      ],
-      [
-        "4.15",
-        "Prototype Build Day 1: Structure and Mechanism",
-        "lesson-4-15.html"
-      ],
-      [
-        "4.16",
-        "Prototype Build Day 2: Electrical or Electromechanical Integration",
-        "lesson-4-16.html"
-      ],
-      [
-        "4.17",
-        "Testing Protocol Development",
-        "lesson-4-17.html"
-      ],
-      [
-        "4.18",
-        "Prototype Testing and Data Collection",
-        "lesson-4-18.html"
-      ],
-      [
-        "4.19",
-        "Data Analysis, Graphing, and Design Conclusions",
-        "lesson-4-19.html"
-      ],
-      [
-        "4.20",
-        "Iteration and Prototype Revision",
-        "lesson-4-20.html"
-      ],
-      [
-        "4.21",
-        "Final Technical Documentation: Mechanism, Circuit, Data, and Revision",
-        "lesson-4-21.html"
-      ],
-      [
-        "4.22",
-        "Unit 4 Technical Demonstration and Reflection",
-        "lesson-4-22.html"
-      ]
-    ],
-    "5": [
-      [
-        "5.1",
-        "Human-Centered Aerospace Design Capstone Launch",
-        "lesson-5-1.html"
-      ],
-      [
-        "5.2",
-        "Stakeholder Research and User Needs",
-        "lesson-5-2.html"
-      ],
-      [
-        "5.3",
-        "Problem Statement, Criteria, Constraints, and Design Brief",
-        "lesson-5-3.html"
-      ],
-      [
-        "5.4",
-        "Team Norms and Project Management",
-        "lesson-5-4.html"
-      ],
-      [
-        "5.5",
-        "Concept Generation and Human-Centered Ideation",
-        "lesson-5-5.html"
-      ],
-      [
-        "5.6",
-        "Decision Matrix and Final Concept Selection",
-        "lesson-5-6.html"
-      ],
-      [
-        "5.7",
-        "CAD, Fabrication, and Prototype Planning",
-        "lesson-5-7.html"
-      ],
-      [
-        "5.8",
-        "CAD Modeling and Prototype Part Development",
-        "lesson-5-8.html"
-      ],
-      [
-        "5.9",
-        "Prototype Build Day 1: Structure and Core Function",
-        "lesson-5-9.html"
-      ],
-      [
-        "5.10",
-        "Prototype Build Day 2: Integration and Refinement",
-        "lesson-5-10.html"
-      ],
-      [
-        "5.11",
-        "Testing Protocol and User Feedback Plan",
-        "lesson-5-11.html"
-      ],
-      [
-        "5.12",
-        "Prototype Testing and User Feedback",
-        "lesson-5-12.html"
-      ],
-      [
-        "5.13",
-        "Data Analysis and Stakeholder Feedback Review",
-        "lesson-5-13.html"
-      ],
-      [
-        "5.14",
-        "Ethics, Safety, Sustainability, and Life-Cycle Analysis",
-        "lesson-5-14.html"
-      ],
-      [
-        "5.15",
-        "Final Prototype Revision and Refinement",
-        "lesson-5-15.html"
-      ],
-      [
-        "5.16",
-        "Final Engineering Portfolio Workday",
-        "lesson-5-16.html"
-      ],
-      [
-        "5.17",
-        "Final Presentation Preparation and Rehearsal",
-        "lesson-5-17.html"
-      ],
-      [
-        "5.18",
-        "Final Capstone Presentations",
-        "lesson-5-18.html"
-      ]
+          [
+                "4.1",
+                "Engineering Materials",
+                "lesson-4-1.html"
+          ],
+          [
+                "4.2",
+                "Material Properties and Selection",
+                "lesson-4-2.html"
+          ],
+          [
+                "4.3",
+                "Simple Materials Test",
+                "lesson-4-3.html"
+          ],
+          [
+                "4.4",
+                "Analyzing Test Results",
+                "lesson-4-4.html"
+          ],
+          [
+                "4.5",
+                "Types of Motion",
+                "lesson-4-5.html"
+          ],
+          [
+                "4.6",
+                "Exploring Mechanical Systems",
+                "lesson-4-6.html"
+          ],
+          [
+                "4.7",
+                "Building a Simple Mechanism",
+                "lesson-4-7.html"
+          ],
+          [
+                "4.8",
+                "Testing and Improving Mechanisms",
+                "lesson-4-8.html"
+          ],
+          [
+                "4.9",
+                "Simple Circuits and Soldering Safety",
+                "lesson-4-9.html"
+          ],
+          [
+                "4.10",
+                "Introduction to Soldering",
+                "lesson-4-10.html"
+          ],
+          [
+                "4.11",
+                "Building a Motor Circuit",
+                "lesson-4-11.html"
+          ],
+          [
+                "4.12",
+                "DuckWorks Amusement Park Design Brief",
+                "lesson-4-12.html"
+          ],
+          [
+                "4.13",
+                "Mechanism Planning",
+                "lesson-4-13.html"
+          ],
+          [
+                "4.14",
+                "CAD: Base and Supports",
+                "lesson-4-14.html"
+          ],
+          [
+                "4.15",
+                "CAD: Moving Assembly",
+                "lesson-4-15.html"
+          ],
+          [
+                "4.16",
+                "Manufacturing Day",
+                "lesson-4-16.html"
+          ],
+          [
+                "4.17",
+                "Mechanical Assembly",
+                "lesson-4-17.html"
+          ],
+          [
+                "4.18",
+                "Electrical Installation",
+                "lesson-4-18.html"
+          ],
+          [
+                "4.19",
+                "Functional Testing",
+                "lesson-4-19.html"
+          ],
+          [
+                "4.20",
+                "Design Improvement",
+                "lesson-4-20.html"
+          ],
+          [
+                "4.21",
+                "Park Showcase",
+                "lesson-4-21.html"
+          ]
     ]
+
   },
   "poe": {
     "0": [
