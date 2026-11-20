@@ -11031,7 +11031,7 @@
       "type": "Lesson",
       "section": "Courses",
       "description": "Make and evaluate two supervised solder joints on an unpowered practice board.",
-      "searchText": "Introduction to Soldering Make and evaluate two supervised solder joints on an unpowered practice board. IED Unit 4 Lesson 4.10 A solder joint connects conductors when molten solder wets both metal surfaces, meaning it spreads onto them. A fillet is the small shape the solder forms between the pin and pad. A bridge is an unintended connection between adjacent conductors. Appearance can guide inspection, and the instructor may verify electrically where appropriate."
+      "searchText": "Introduction to Soldering Make and evaluate two supervised solder joints on an unpowered practice board. IED Unit 4 Lesson 4.10 A solder joint connects conductors when molten solder wets both metal surfaces, meaning it spreads onto them. A fillet is the small shape the solder forms between the pin and pad. A bridge is an unintended connection between adjacent conductors. Look at how the solder meets each surface. A separate electrical check may still be needed."
     },
     {
       "title": "Building a Simple Mechanism",
@@ -11134,8 +11134,8 @@
       "url": "/courses/ied/units/unit-4/lesson-4-18.html",
       "type": "Lesson",
       "section": "Courses",
-      "description": "Install the motor circuit and document the instructor\u2019s pre-power inspection.",
-      "searchText": "Electrical Installation and Soldering Install the motor circuit and document the instructor\u2019s pre-power inspection. IED Unit 4 Lesson 4.18 The switch and motor share one circuit path. Insulation covers conductors so they cannot touch each other or the frame unintentionally. Strain relief keeps a wire from pulling on a connection. Route wires clear of moving parts and leave the switch easy to reach."
+      "description": "Install your motor circuit and record the result of its safety check before testing.",
+      "searchText": "Electrical Installation and Soldering Install your motor circuit and record the result of its safety check before testing. IED Unit 4 Lesson 4.18 The switch and motor share one circuit path. Insulation covers conductors so they cannot touch each other or the frame unintentionally. Strain relief keeps a wire from pulling on a connection. Route wires clear of moving parts and leave the switch easy to reach."
     },
     {
       "title": "Simple Materials Test",
