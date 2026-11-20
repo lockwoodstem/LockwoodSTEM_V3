@@ -7,8 +7,9 @@
   <meta name="description" content="Use mean deflection to recommend a material for a ride support.">
   <link rel="stylesheet" href="../../../../assets/css/styles.css">
   <link rel="stylesheet" href="../../../../assets/css/lesson-experience.css">
-  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=3">
+  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=5">
   <script defer src="../../../../assets/js/main.js?v=ied-unit4-curriculum"></script>
+  <script defer src="../../../../assets/js/ied-unit4-checkpoint.js?v=1"></script>
 </head>
 <body class="lesson-detail-page ied-unit4-page">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -34,8 +35,10 @@
   <div class="container ied-unit4-lesson">
     <nav class="ied-unit4-jump" aria-label="On this page">
       <a href="#lesson-concept">Concept</a>
+      <a href="#lesson-practice">Practice check</a>
       <a href="#lesson-activity">Activity</a>
       <a href="#lesson-submission">Submission</a>
+      <a href="#lesson-checkpoint">Final check</a>
     </nav>
 
     <section id="lesson-goal" class="card learning-guide" aria-labelledby="lesson-goal-heading">
@@ -51,13 +54,30 @@
 
     <section id="lesson-example" class="card" aria-labelledby="lesson-example-heading">
       <h2 id="lesson-example-heading">Worked Example</h2>
-      <p>Sample A measured 2 and 4 mm: mean 3 mm and range 2 mm. Sample B measured 6 and 8 mm: mean 7 mm and range 2 mm. A bent less in these trials, so it is the better candidate on stiffness for this support.</p>
+      <dl class="ied-unit4-example">
+        <div><dt>Sample A</dt><dd>Trials: 2 and 4 mm · Mean: 3 mm · Range: 2 mm</dd></div>
+        <div><dt>Sample B</dt><dd>Trials: 6 and 8 mm · Mean: 7 mm · Range: 2 mm</dd></div>
+        <div><dt>Decision</dt><dd>Choose A if the support needs to bend less under the same load.</dd></div>
+      </dl>
     </section>
+
+    <form id="lesson-practice" class="card ied-unit4-checkpoint" data-lesson-checkpoint hidden>
+      <h3>Practice check</h3>
+      <p>Make a choice and check your answer before you start the activity.</p>
+      <fieldset>
+        <legend>A sample deflects 4 mm and 8 mm on two trials. What are its mean and range?</legend>
+        <label><input type="radio" name="practice-choice" value="1" required data-correct data-feedback="The mean is (4 + 8) ÷ 2 and the range is 8 − 4."> <span>Mean 6 mm, range 4 mm.</span></label>
+        <label><input type="radio" name="practice-choice" value="2" required data-feedback="The range is the difference between the readings. The mean lies halfway between them."> <span>Mean 4 mm, range 6 mm.</span></label>
+        <label><input type="radio" name="practice-choice" value="3" required data-feedback="12 mm is the sum. Divide it by the number of trials to find the mean."> <span>Mean 12 mm, range 4 mm.</span></label>
+      </fieldset>
+      <button class="btn dark small" type="submit">Check answer</button>
+      <p class="ied-unit4-feedback" data-practice-feedback role="status"></p>
+    </form>
 
     <section id="lesson-activity" class="card" aria-labelledby="lesson-activity-heading">
       <h2 id="lesson-activity-heading">What to Do</h2>
       <p class="ied-unit4-safety"><strong>Safety:</strong> Use the recorded data. Ask before repeating a load test.</p>
-      <ol>
+      <ol class="ied-unit4-steps">
         <li>Use your 4.3 measurements or the class data for two samples.</li>
         <li>Calculate the mean and range for each sample.</li>
         <li>Recommend one material on stiffness and name one limit of the comparison.</li>
@@ -73,12 +93,23 @@
     <section id="lesson-checkpoint" class="card" aria-labelledby="lesson-checkpoint-heading">
       <h2 id="lesson-checkpoint-heading">Check Your Work</h2>
       <p>Do all four answers include units, and is your recommendation based on a matched setup rather than the material name alone?</p>
-      <h3>10-point rubric</h3>
-      <ul>
-        <li><strong>4 points · Completion.</strong> Include all requested parts of today’s submission.</li>
-        <li><strong>4 points · Engineering accuracy.</strong> Use correct concepts and labels. Support your result or decision with the evidence requested.</li>
-        <li><strong>2 points · Clarity.</strong> Make the evidence readable and include the required name or team names.</li>
-      </ul>
+      <details class="ied-unit4-rubric">
+        <summary>10-point rubric</summary>
+        <ul>
+          <li><strong>4 points · Completion.</strong> Include all requested parts of today’s submission.</li>
+          <li><strong>4 points · Engineering accuracy.</strong> Use correct concepts and labels. Support your result or decision with the evidence requested.</li>
+          <li><strong>2 points · Clarity.</strong> Make the evidence readable and include the required name or team names.</li>
+        </ul>
+      </details>
+
+      <div class="ied-unit4-checkpoint" data-lesson-review hidden>
+        <label class="ied-unit4-confirm">
+          <input type="checkbox" data-review-confirm disabled>
+          <span>I checked my submission against the 10-point rubric.</span>
+        </label>
+        <p data-review-status role="status">Finish the practice check to mark your work ready.</p>
+      </div>
+      <noscript><p>To do the practice check on this page, turn on JavaScript. You can still use the rubric above to review your work before submitting in Google Classroom.</p></noscript>
     </section>
 
     <nav class="lesson-bottom-nav" aria-label="Lesson navigation" data-static-lesson-nav>

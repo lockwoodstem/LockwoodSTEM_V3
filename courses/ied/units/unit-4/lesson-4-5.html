@@ -7,8 +7,9 @@
   <meta name="description" content="Classify common motions and mark each part’s path on a simple sketch.">
   <link rel="stylesheet" href="../../../../assets/css/styles.css">
   <link rel="stylesheet" href="../../../../assets/css/lesson-experience.css">
-  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=3">
+  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=5">
   <script defer src="../../../../assets/js/main.js?v=ied-unit4-curriculum"></script>
+  <script defer src="../../../../assets/js/ied-unit4-checkpoint.js?v=1"></script>
 </head>
 <body class="lesson-detail-page ied-unit4-page">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -34,8 +35,10 @@
   <div class="container ied-unit4-lesson">
     <nav class="ied-unit4-jump" aria-label="On this page">
       <a href="#lesson-concept">Concept</a>
+      <a href="#lesson-practice">Practice check</a>
       <a href="#lesson-activity">Activity</a>
       <a href="#lesson-submission">Submission</a>
+      <a href="#lesson-checkpoint">Final check</a>
     </nav>
 
     <section id="lesson-goal" class="card learning-guide" aria-labelledby="lesson-goal-heading">
@@ -51,13 +54,30 @@
 
     <section id="lesson-example" class="card" aria-labelledby="lesson-example-heading">
       <h2 id="lesson-example-heading">Worked Example</h2>
-      <p>A Pirate Ship’s motor shaft rotates continuously. The ship rocks around a fixed pivot, reverses direction at each end of its path, and oscillates. Draw a full curved arrow for the shaft and a two-ended arc at the ship pivot.</p>
+      <dl class="ied-unit4-example">
+        <div><dt>Motor shaft</dt><dd>Turns continuously around its axis. Draw a full curved arrow.</dd></div>
+        <div><dt>Ship</dt><dd>Swings about its pivot and reverses. Draw a two-ended arc.</dd></div>
+        <div><dt>Motion types</dt><dd>The shaft rotates. The ship oscillates.</dd></div>
+      </dl>
     </section>
+
+    <form id="lesson-practice" class="card ied-unit4-checkpoint" data-lesson-checkpoint hidden>
+      <h3>Practice check</h3>
+      <p>Make a choice and check your answer before you start the activity.</p>
+      <fieldset>
+        <legend>A ship swings back and forth around a fixed pivot. What describes the ship’s motion?</legend>
+        <label><input type="radio" name="practice-choice" value="1" required data-feedback="The ship follows an arc around its pivot. Look for a term that describes back-and-forth motion around a pivot."> <span>Reciprocating, because it moves along a straight line.</span></label>
+        <label><input type="radio" name="practice-choice" value="2" required data-correct data-feedback="The ship swings along an arc and reverses before completing a turn."> <span>Oscillating, because it reverses direction around a pivot.</span></label>
+        <label><input type="radio" name="practice-choice" value="3" required data-feedback="The motor shaft can make full turns, but the ship reverses direction before completing one."> <span>Rotary, because it completes full turns around its pivot.</span></label>
+      </fieldset>
+      <button class="btn dark small" type="submit">Check answer</button>
+      <p class="ied-unit4-feedback" data-practice-feedback role="status"></p>
+    </form>
 
     <section id="lesson-activity" class="card" aria-labelledby="lesson-activity-heading">
       <h2 id="lesson-activity-heading">What to Do</h2>
       <p class="ied-unit4-safety"><strong>Safety:</strong> Move classroom models slowly by hand with power disconnected. Keep fingers away from joints.</p>
-      <ol>
+      <ol class="ied-unit4-steps">
         <li>Observe four examples of motion in the demonstrations or hand-operated models.</li>
         <li>Sketch the path of one moving part in each and mark direction with arrows.</li>
         <li>Label each term once and circle the example closest to your chosen or assigned ride’s main motion.</li>
@@ -73,12 +93,23 @@
     <section id="lesson-checkpoint" class="card" aria-labelledby="lesson-checkpoint-heading">
       <h2 id="lesson-checkpoint-heading">Check Your Work</h2>
       <p>Can you tell from the arrows whether a part travels straight, turns continuously, or reverses direction?</p>
-      <h3>10-point rubric</h3>
-      <ul>
-        <li><strong>4 points · Completion.</strong> Include all requested parts of today’s submission.</li>
-        <li><strong>4 points · Engineering accuracy.</strong> Use correct concepts and labels. Support your result or decision with the evidence requested.</li>
-        <li><strong>2 points · Clarity.</strong> Make the evidence readable and include the required name or team names.</li>
-      </ul>
+      <details class="ied-unit4-rubric">
+        <summary>10-point rubric</summary>
+        <ul>
+          <li><strong>4 points · Completion.</strong> Include all requested parts of today’s submission.</li>
+          <li><strong>4 points · Engineering accuracy.</strong> Use correct concepts and labels. Support your result or decision with the evidence requested.</li>
+          <li><strong>2 points · Clarity.</strong> Make the evidence readable and include the required name or team names.</li>
+        </ul>
+      </details>
+
+      <div class="ied-unit4-checkpoint" data-lesson-review hidden>
+        <label class="ied-unit4-confirm">
+          <input type="checkbox" data-review-confirm disabled>
+          <span>I checked my submission against the 10-point rubric.</span>
+        </label>
+        <p data-review-status role="status">Finish the practice check to mark your work ready.</p>
+      </div>
+      <noscript><p>To do the practice check on this page, turn on JavaScript. You can still use the rubric above to review your work before submitting in Google Classroom.</p></noscript>
     </section>
 
     <nav class="lesson-bottom-nav" aria-label="Lesson navigation" data-static-lesson-nav>

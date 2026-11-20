@@ -7,8 +7,9 @@
   <meta name="description" content="Turn your assigned DuckWorks ride requirements into a labeled concept sketch.">
   <link rel="stylesheet" href="../../../../assets/css/styles.css">
   <link rel="stylesheet" href="../../../../assets/css/lesson-experience.css">
-  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=3">
+  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=5">
   <script defer src="../../../../assets/js/main.js?v=ied-unit4-curriculum"></script>
+  <script defer src="../../../../assets/js/ied-unit4-checkpoint.js?v=1"></script>
 </head>
 <body class="lesson-detail-page ied-unit4-page">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -34,8 +35,10 @@
   <div class="container ied-unit4-lesson">
     <nav class="ied-unit4-jump" aria-label="On this page">
       <a href="#lesson-concept">Concept</a>
+      <a href="#lesson-practice">Practice check</a>
       <a href="#lesson-activity">Activity</a>
       <a href="#lesson-submission">Submission</a>
+      <a href="#lesson-checkpoint">Final check</a>
     </nav>
 
     <section id="lesson-goal" class="card learning-guide" aria-labelledby="lesson-goal-heading">
@@ -51,13 +54,30 @@
 
     <section id="lesson-example" class="card" aria-labelledby="lesson-example-heading">
       <h2 id="lesson-example-heading">Worked Example</h2>
-      <p>For a Ferris Wheel, “four suspended cabins” can be checked by counting. Draw where the four cabins hang and how the wheel will turn. An overhead outline labeled 230 × 240 mm fits the 250 × 250 mm base limit.</p>
+      <dl class="ied-unit4-example">
+        <div><dt>Requirement</dt><dd>Four suspended cabins. Show where they hang and how the wheel turns.</dd></div>
+        <div><dt>Constraint</dt><dd>The base may be at most 250 × 250 mm.</dd></div>
+        <div><dt>Concept sketch</dt><dd>A Ferris Wheel with four cabins and a 230 × 240 mm base fits those checks.</dd></div>
+      </dl>
     </section>
+
+    <form id="lesson-practice" class="card ied-unit4-checkpoint" data-lesson-checkpoint hidden>
+      <h3>Practice check</h3>
+      <p>Make a choice and check your answer before you start the activity.</p>
+      <fieldset>
+        <legend>Which proposed base meets the 250 × 250 mm footprint constraint?</legend>
+        <label><input type="radio" name="practice-choice" value="1" required data-feedback="The 260 mm side exceeds the limit even though the other side is shorter."> <span>260 × 220 mm</span></label>
+        <label><input type="radio" name="practice-choice" value="2" required data-feedback="Check each dimension separately. The 255 mm side is too long."> <span>255 × 245 mm</span></label>
+        <label><input type="radio" name="practice-choice" value="3" required data-correct data-feedback="Both dimensions are at most 250 mm."> <span>245 × 250 mm</span></label>
+      </fieldset>
+      <button class="btn dark small" type="submit">Check answer</button>
+      <p class="ied-unit4-feedback" data-practice-feedback role="status"></p>
+    </form>
 
     <section id="lesson-activity" class="card" aria-labelledby="lesson-activity-heading">
       <h2 id="lesson-activity-heading">What to Do</h2>
       <p class="ied-unit4-safety"><strong>Safety:</strong> This is a tabletop model. Get the instructor’s approval of the mechanism and electrical plan before fabrication.</p>
-      <ol>
+      <ol class="ied-unit4-steps">
         <li>In your assigned team of 2–3, read the three requirements for your ride in the DuckWorks challenge.</li>
         <li>Sketch one idea that fits the base and uses the standard kit’s low-voltage motor and switch.</li>
         <li>Label the moving part, motion arrow, supports, motor, switch, power source, and one part your team could design.</li>
@@ -74,12 +94,23 @@
     <section id="lesson-checkpoint" class="card" aria-labelledby="lesson-checkpoint-heading">
       <h2 id="lesson-checkpoint-heading">Check Your Work</h2>
       <p>Does the sketch show a path from the motor to the moving part, and are all three requirements testable?</p>
-      <h3>10-point rubric</h3>
-      <ul>
-        <li><strong>4 points · Completion.</strong> Include all requested parts of today’s submission.</li>
-        <li><strong>4 points · Engineering accuracy.</strong> Use correct concepts and labels. Support your result or decision with the evidence requested.</li>
-        <li><strong>2 points · Clarity.</strong> Make the evidence readable and include the required name or team names.</li>
-      </ul>
+      <details class="ied-unit4-rubric">
+        <summary>10-point rubric</summary>
+        <ul>
+          <li><strong>4 points · Completion.</strong> Include all requested parts of today’s submission.</li>
+          <li><strong>4 points · Engineering accuracy.</strong> Use correct concepts and labels. Support your result or decision with the evidence requested.</li>
+          <li><strong>2 points · Clarity.</strong> Make the evidence readable and include the required name or team names.</li>
+        </ul>
+      </details>
+
+      <div class="ied-unit4-checkpoint" data-lesson-review hidden>
+        <label class="ied-unit4-confirm">
+          <input type="checkbox" data-review-confirm disabled>
+          <span>I checked my submission against the 10-point rubric.</span>
+        </label>
+        <p data-review-status role="status">Finish the practice check to mark your work ready.</p>
+      </div>
+      <noscript><p>To do the practice check on this page, turn on JavaScript. You can still use the rubric above to review your work before submitting in Google Classroom.</p></noscript>
     </section>
 
     <nav class="lesson-bottom-nav" aria-label="Lesson navigation" data-static-lesson-nav>

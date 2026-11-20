@@ -7,8 +7,9 @@
   <meta name="description" content="Choose a material for a model part by matching one property to the part’s job.">
   <link rel="stylesheet" href="../../../../assets/css/styles.css">
   <link rel="stylesheet" href="../../../../assets/css/lesson-experience.css">
-  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=3">
+  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=5">
   <script defer src="../../../../assets/js/main.js?v=ied-unit4-curriculum"></script>
+  <script defer src="../../../../assets/js/ied-unit4-checkpoint.js?v=1"></script>
 </head>
 <body class="lesson-detail-page ied-unit4-page">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -34,8 +35,10 @@
   <div class="container ied-unit4-lesson">
     <nav class="ied-unit4-jump" aria-label="On this page">
       <a href="#lesson-concept">Concept</a>
+      <a href="#lesson-practice">Practice check</a>
       <a href="#lesson-activity">Activity</a>
       <a href="#lesson-submission">Submission</a>
+      <a href="#lesson-checkpoint">Final check</a>
     </nav>
 
     <section id="lesson-goal" class="card learning-guide" aria-labelledby="lesson-goal-heading">
@@ -51,15 +54,32 @@
 
     <section id="lesson-example" class="card" aria-labelledby="lesson-example-heading">
       <h2 id="lesson-example-heading">Worked Example</h2>
-      <p>Two strips are about the same size. When pressed gently in the same way, the plywood strip bends less than the foam-board strip. Choose the plywood for a wheel support because it resisted bending in this comparison. That helps keep the axle in place.</p>
+      <dl class="ied-unit4-example">
+        <div><dt>Compare</dt><dd>Same-sized plywood and foam board, pressed gently the same way.</dd></div>
+        <div><dt>Observe</dt><dd>The plywood bends less.</dd></div>
+        <div><dt>Choose</dt><dd>Use plywood for the support. Less bending helps hold the axle in place.</dd></div>
+      </dl>
     </section>
+
+    <form id="lesson-practice" class="card ied-unit4-checkpoint" data-lesson-checkpoint hidden>
+      <h3>Practice check</h3>
+      <p>Make a choice and check your answer before you start the activity.</p>
+      <fieldset>
+        <legend>Two equal-sized strips are pressed gently in the same way. Strip A bends less. What did you learn?</legend>
+        <label><input type="radio" name="practice-choice" value="1" required data-correct data-feedback="That observation is evidence about stiffness in this setup."> <span>Strip A resists bending better in this setup.</span></label>
+        <label><input type="radio" name="practice-choice" value="2" required data-feedback="The strips were never loaded to failure, so you cannot compare their strength."> <span>Strip A can hold more weight before it breaks.</span></label>
+        <label><input type="radio" name="practice-choice" value="3" required data-feedback="A bending comparison does not measure mass."> <span>Strip A must have less mass.</span></label>
+      </fieldset>
+      <button class="btn dark small" type="submit">Check answer</button>
+      <p class="ied-unit4-feedback" data-practice-feedback role="status"></p>
+    </form>
 
     <section id="lesson-activity" class="card" aria-labelledby="lesson-activity-heading">
       <h2 id="lesson-activity-heading">What to Do</h2>
       <h3>Pick a material for a wheel support</h3>
       <p>The support holds an axle in place while the wheel turns. Use five labeled samples and a notebook or digital document to decide which sample you would use.</p>
       <p class="ied-unit4-safety"><strong>Safety:</strong> Use provided samples only. Check with the instructor before handling pieces with sharp edges or splinters. Keep the samples intact.</p>
-      <ol>
+      <ol class="ied-unit4-steps">
         <li><strong>Observe (10 min).</strong> Match each sample to its label. Look for features such as visible layers or surface texture. If permitted, gently compare how two similar-sized samples bend. Stop before either sample creases or cracks.</li>
         <li><strong>Record (10 min).</strong> Make a two-column table labeled <strong>Sample</strong> and <strong>What I noticed</strong>. Add one specific observation for each of the five samples.</li>
         <li><strong>Decide (10 min).</strong> Pick a sample for the wheel support. Use an observation from your table to explain which property helps keep the axle in place.</li>
@@ -76,12 +96,23 @@
     <section id="lesson-checkpoint" class="card" aria-labelledby="lesson-checkpoint-heading">
       <h2 id="lesson-checkpoint-heading">Check Your Work</h2>
       <p>Does your choice point to a specific observation from your table? A gentle bending comparison gives evidence about how stiff the samples are. It does not show how much load they can take before they fail.</p>
-      <h3>10-point rubric</h3>
-      <ul>
-        <li><strong>4 points · Completion.</strong> Include five named samples with an observation for each, plus your choice sentence.</li>
-        <li><strong>4 points · Engineering accuracy.</strong> Cite a real observation, identify the relevant property, and explain how it helps the support hold the axle in place.</li>
-        <li><strong>2 points · Clarity.</strong> Use readable column labels, include your name, and put everything in one file.</li>
-      </ul>
+      <details class="ied-unit4-rubric">
+        <summary>10-point rubric</summary>
+        <ul>
+          <li><strong>4 points · Completion.</strong> Include five named samples with an observation for each, plus your choice sentence.</li>
+          <li><strong>4 points · Engineering accuracy.</strong> Cite a real observation, identify the relevant property, and explain how it helps the support hold the axle in place.</li>
+          <li><strong>2 points · Clarity.</strong> Use readable column labels, include your name, and put everything in one file.</li>
+        </ul>
+      </details>
+
+      <div class="ied-unit4-checkpoint" data-lesson-review hidden>
+        <label class="ied-unit4-confirm">
+          <input type="checkbox" data-review-confirm disabled>
+          <span>I checked my submission against the 10-point rubric.</span>
+        </label>
+        <p data-review-status role="status">Finish the practice check to mark your work ready.</p>
+      </div>
+      <noscript><p>To do the practice check on this page, turn on JavaScript. You can still use the rubric above to review your work before submitting in Google Classroom.</p></noscript>
     </section>
 
     <nav class="lesson-bottom-nav" aria-label="Lesson navigation" data-static-lesson-nav>

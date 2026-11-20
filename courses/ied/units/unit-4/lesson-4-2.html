@@ -7,8 +7,9 @@
   <meta name="description" content="Compare two materials and defend a choice for a ride part using two criteria.">
   <link rel="stylesheet" href="../../../../assets/css/styles.css">
   <link rel="stylesheet" href="../../../../assets/css/lesson-experience.css">
-  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=3">
+  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=5">
   <script defer src="../../../../assets/js/main.js?v=ied-unit4-curriculum"></script>
+  <script defer src="../../../../assets/js/ied-unit4-checkpoint.js?v=1"></script>
 </head>
 <body class="lesson-detail-page ied-unit4-page">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -34,8 +35,10 @@
   <div class="container ied-unit4-lesson">
     <nav class="ied-unit4-jump" aria-label="On this page">
       <a href="#lesson-concept">Concept</a>
+      <a href="#lesson-practice">Practice check</a>
       <a href="#lesson-activity">Activity</a>
       <a href="#lesson-submission">Submission</a>
+      <a href="#lesson-checkpoint">Final check</a>
     </nav>
 
     <section id="lesson-goal" class="card learning-guide" aria-labelledby="lesson-goal-heading">
@@ -51,15 +54,32 @@
 
     <section id="lesson-example" class="card" aria-labelledby="lesson-example-heading">
       <h2 id="lesson-example-heading">Worked Example</h2>
-      <p>For a carousel upright, Sample A bends 2 mm and has a mass of 18 g. Sample B bends 5 mm and has a mass of 10 g. The samples are the same size and are tested under the same load. If keeping the shaft aligned matters most, pick A. It bends 3 mm less, and the trade-off is 8 g of extra mass.</p>
+      <dl class="ied-unit4-example">
+        <div><dt>Sample A</dt><dd>Bends 2 mm · Mass 18 g</dd></div>
+        <div><dt>Sample B</dt><dd>Bends 5 mm · Mass 10 g</dd></div>
+        <div><dt>Decision</dt><dd>Use A for the upright. It bends 3 mm less under the same load, at a cost of 8 g extra mass. The samples are the same size.</dd></div>
+      </dl>
     </section>
+
+    <form id="lesson-practice" class="card ied-unit4-checkpoint" data-lesson-checkpoint hidden>
+      <h3>Practice check</h3>
+      <p>Make a choice and check your answer before you start the activity.</p>
+      <fieldset>
+        <legend>Sample E bends 2 mm and has a mass of 14 g. Sample F bends 4 mm and has a mass of 8 g. Both are stiff enough for a sign. Which would add less mass to the ride?</legend>
+        <label><input type="radio" name="practice-choice" value="1" required data-feedback="Sample E bends less, but the sign already has enough stiffness. Compare the masses."> <span>Sample E because it bends less.</span></label>
+        <label><input type="radio" name="practice-choice" value="2" required data-correct data-feedback="F meets the priority for the sign. It is 6 g lighter, although it bends more."> <span>Sample F because it has less mass, even though it bends more.</span></label>
+        <label><input type="radio" name="practice-choice" value="3" required data-feedback="F has less mass, but it bends 4 mm instead of 2 mm."> <span>Sample F because it has less mass and bends less.</span></label>
+      </fieldset>
+      <button class="btn dark small" type="submit">Check answer</button>
+      <p class="ied-unit4-feedback" data-practice-feedback role="status"></p>
+    </form>
 
     <section id="lesson-activity" class="card" aria-labelledby="lesson-activity-heading">
       <h2 id="lesson-activity-heading">What to Do</h2>
       <h3>Choose a material for a Swing Ride</h3>
       <p>Pick either the shaft support, which needs to hold the shaft in place, or the decorative seat panel, which carries no rider or load and should add as little mass as possible.</p>
       <p class="ied-unit4-safety"><strong>Safety:</strong> Use the practice data below or a matched set of class measurements. Ask your teacher before handling any samples or applying a load.</p>
-      <ol>
+      <ol class="ied-unit4-steps">
         <li><strong>Set a priority (5 min).</strong> Name your part and decide which matters more for its job: resisting bending or keeping mass low.</li>
         <li><strong>Compare (15 min).</strong> Make a two-row table with columns for <strong>Sample</strong>, <strong>Bend under load (mm)</strong>, and <strong>Mass (g)</strong>. Enter both samples. Mark which one bends less and which one has less mass.</li>
         <li><strong>Decide (10 min).</strong> Choose a sample for your part. Use one number to explain how it meets your priority and another to show what you give up.</li>
@@ -83,12 +103,23 @@
     <section id="lesson-checkpoint" class="card" aria-labelledby="lesson-checkpoint-heading">
       <h2 id="lesson-checkpoint-heading">Check Your Work</h2>
       <p>Can you point to one number that supports your choice and another that shows its drawback? Compare bending only when the samples were the same size and tested under the same conditions.</p>
-      <h3>10-point rubric</h3>
-      <ul>
-        <li><strong>4 points · Completion.</strong> Include your chosen part, two complete sample rows, and both decision sentences.</li>
-        <li><strong>4 points · Engineering accuracy.</strong> Interpret the bending and mass data correctly, use numbers to support your choice, and explain the trade-off.</li>
-        <li><strong>2 points · Clarity.</strong> Label your table with units, include your name, and make the single file easy to read.</li>
-      </ul>
+      <details class="ied-unit4-rubric">
+        <summary>10-point rubric</summary>
+        <ul>
+          <li><strong>4 points · Completion.</strong> Include your chosen part, two complete sample rows, and both decision sentences.</li>
+          <li><strong>4 points · Engineering accuracy.</strong> Interpret the bending and mass data correctly, use numbers to support your choice, and explain the trade-off.</li>
+          <li><strong>2 points · Clarity.</strong> Label your table with units, include your name, and make the single file easy to read.</li>
+        </ul>
+      </details>
+
+      <div class="ied-unit4-checkpoint" data-lesson-review hidden>
+        <label class="ied-unit4-confirm">
+          <input type="checkbox" data-review-confirm disabled>
+          <span>I checked my submission against the 10-point rubric.</span>
+        </label>
+        <p data-review-status role="status">Finish the practice check to mark your work ready.</p>
+      </div>
+      <noscript><p>To do the practice check on this page, turn on JavaScript. You can still use the rubric above to review your work before submitting in Google Classroom.</p></noscript>
     </section>
 
     <nav class="lesson-bottom-nav" aria-label="Lesson navigation" data-static-lesson-nav>

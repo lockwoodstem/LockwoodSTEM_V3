@@ -7,8 +7,9 @@
   <meta name="description" content="Install your motor circuit and record the result of its safety check before testing.">
   <link rel="stylesheet" href="../../../../assets/css/styles.css">
   <link rel="stylesheet" href="../../../../assets/css/lesson-experience.css">
-  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=3">
+  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=5">
   <script defer src="../../../../assets/js/main.js?v=ied-unit4-curriculum"></script>
+  <script defer src="../../../../assets/js/ied-unit4-checkpoint.js?v=1"></script>
 </head>
 <body class="lesson-detail-page ied-unit4-page">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -34,8 +35,10 @@
   <div class="container ied-unit4-lesson">
     <nav class="ied-unit4-jump" aria-label="On this page">
       <a href="#lesson-concept">Concept</a>
+      <a href="#lesson-practice">Practice check</a>
       <a href="#lesson-activity">Activity</a>
       <a href="#lesson-submission">Submission</a>
+      <a href="#lesson-checkpoint">Final check</a>
     </nav>
 
     <section id="lesson-goal" class="card learning-guide" aria-labelledby="lesson-goal-heading">
@@ -51,13 +54,30 @@
 
     <section id="lesson-example" class="card" aria-labelledby="lesson-example-heading">
       <h2 id="lesson-example-heading">Worked Example</h2>
-      <p>On a Swing Ride, a lead runs beside the rotating shaft. With power disconnected, reroute and secure it to a stationary upright, then check clearance through a full hand cycle before the instructor authorizes power.</p>
+      <dl class="ied-unit4-example">
+        <div><dt>Spot the risk</dt><dd>A wire passes next to the rotating shaft.</dd></div>
+        <div><dt>Fix the route</dt><dd>With power disconnected, secure the wire to a stationary upright.</dd></div>
+        <div><dt>Check before power</dt><dd>Check clearance through a hand cycle. Ask your teacher to approve the circuit.</dd></div>
+      </dl>
     </section>
+
+    <form id="lesson-practice" class="card ied-unit4-checkpoint" data-lesson-checkpoint hidden>
+      <h3>Practice check</h3>
+      <p>Make a choice and check your answer before you start the activity.</p>
+      <fieldset>
+        <legend>You find a wire hanging near a rotating shaft. What should you do before the powered test?</legend>
+        <label><input type="radio" name="practice-choice" value="1" required data-feedback="The wire can snag. Fix its route while the source is disconnected."> <span>Run the model briefly to see whether the wire catches.</span></label>
+        <label><input type="radio" name="practice-choice" value="2" required data-feedback="Keep wires on stationary parts and clear of the moving assembly."> <span>Tape the wire to the shaft so it spins with the assembly.</span></label>
+        <label><input type="radio" name="practice-choice" value="3" required data-correct data-feedback="A stationary route keeps the wire clear. Have your teacher approve the layout before applying power."> <span>Disconnect power, secure the wire to the frame, and ask for a safety check.</span></label>
+      </fieldset>
+      <button class="btn dark small" type="submit">Check answer</button>
+      <p class="ied-unit4-feedback" data-practice-feedback role="status"></p>
+    </form>
 
     <section id="lesson-activity" class="card" aria-labelledby="lesson-activity-heading">
       <h2 id="lesson-activity-heading">What to Do</h2>
       <p class="ied-unit4-safety"><strong>Safety:</strong> Under direct instructor supervision, solder only at a checked station with working local fume extraction, eye protection, and a heat-safe stand. Disconnect the source before wiring, never solder battery cells, and energize only after approval.</p>
-      <ol>
+      <ol class="ied-unit4-steps">
         <li>Mount the motor and switch. With power disconnected, route wires away from the moving assembly.</li>
         <li>Make the connections using the approved method. Solder only after the instructor’s station and skills checks.</li>
         <li>Ask for a pre-power inspection. If approved, perform a brief ON/OFF test and disconnect power.</li>
@@ -73,12 +93,23 @@
     <section id="lesson-checkpoint" class="card" aria-labelledby="lesson-checkpoint-heading">
       <h2 id="lesson-checkpoint-heading">Check Your Work</h2>
       <p>Are connections insulated, wires secured away from motion, and the switch reachable without crossing moving parts?</p>
-      <h3>10-point rubric</h3>
-      <ul>
-        <li><strong>4 points · Completion.</strong> Include all requested parts of today’s submission.</li>
-        <li><strong>4 points · Engineering accuracy.</strong> Use correct concepts and labels. Support your result or decision with the evidence requested.</li>
-        <li><strong>2 points · Clarity.</strong> Make the evidence readable and include the required name or team names.</li>
-      </ul>
+      <details class="ied-unit4-rubric">
+        <summary>10-point rubric</summary>
+        <ul>
+          <li><strong>4 points · Completion.</strong> Include all requested parts of today’s submission.</li>
+          <li><strong>4 points · Engineering accuracy.</strong> Use correct concepts and labels. Support your result or decision with the evidence requested.</li>
+          <li><strong>2 points · Clarity.</strong> Make the evidence readable and include the required name or team names.</li>
+        </ul>
+      </details>
+
+      <div class="ied-unit4-checkpoint" data-lesson-review hidden>
+        <label class="ied-unit4-confirm">
+          <input type="checkbox" data-review-confirm disabled>
+          <span>I checked my submission against the 10-point rubric.</span>
+        </label>
+        <p data-review-status role="status">Finish the practice check to mark your work ready.</p>
+      </div>
+      <noscript><p>To do the practice check on this page, turn on JavaScript. You can still use the rubric above to review your work before submitting in Google Classroom.</p></noscript>
     </section>
 
     <nav class="lesson-bottom-nav" aria-label="Lesson navigation" data-static-lesson-nav>

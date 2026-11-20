@@ -7,8 +7,9 @@
   <meta name="description" content="Use three short trials to gather evidence against your three ride requirements.">
   <link rel="stylesheet" href="../../../../assets/css/styles.css">
   <link rel="stylesheet" href="../../../../assets/css/lesson-experience.css">
-  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=3">
+  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=5">
   <script defer src="../../../../assets/js/main.js?v=ied-unit4-curriculum"></script>
+  <script defer src="../../../../assets/js/ied-unit4-checkpoint.js?v=1"></script>
 </head>
 <body class="lesson-detail-page ied-unit4-page">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -34,8 +35,10 @@
   <div class="container ied-unit4-lesson">
     <nav class="ied-unit4-jump" aria-label="On this page">
       <a href="#lesson-concept">Concept</a>
+      <a href="#lesson-practice">Practice check</a>
       <a href="#lesson-activity">Activity</a>
       <a href="#lesson-submission">Submission</a>
+      <a href="#lesson-checkpoint">Final check</a>
     </nav>
 
     <section id="lesson-goal" class="card learning-guide" aria-labelledby="lesson-goal-heading">
@@ -51,13 +54,30 @@
 
     <section id="lesson-example" class="card" aria-labelledby="lesson-example-heading">
       <h2 id="lesson-example-heading">Worked Example</h2>
-      <p>If a Carousel must complete three continuous turns, start at the same reference mark on each trial. A run that stops after two turns fails that criterion. Record “2 turns” so someone else can see why you marked it fail.</p>
+      <dl class="ied-unit4-example">
+        <div><dt>Target</dt><dd>Three continuous turns.</dd></div>
+        <div><dt>Observation</dt><dd>The model stops after two turns from the reference mark.</dd></div>
+        <div><dt>Record</dt><dd>2 turns · Fail. The count shows why the criterion was missed.</dd></div>
+      </dl>
     </section>
+
+    <form id="lesson-practice" class="card ied-unit4-checkpoint" data-lesson-checkpoint hidden>
+      <h3>Practice check</h3>
+      <p>Make a choice and check your answer before you start the activity.</p>
+      <fieldset>
+        <legend>A required three-turn test stops after two turns. What should you record?</legend>
+        <label><input type="radio" name="practice-choice" value="1" required data-correct data-feedback="The observation explains why that trial failed the three-turn criterion."> <span>Two turns, fail.</span></label>
+        <label><input type="radio" name="practice-choice" value="2" required data-feedback="The criterion requires three complete turns. Record what happened."> <span>Three turns, pass, because the platform did rotate.</span></label>
+        <label><input type="radio" name="practice-choice" value="3" required data-feedback="A trial took place. It counts as a tested result even though it failed."> <span>Not tested, because it did not meet the requirement.</span></label>
+      </fieldset>
+      <button class="btn dark small" type="submit">Check answer</button>
+      <p class="ied-unit4-feedback" data-practice-feedback role="status"></p>
+    </form>
 
     <section id="lesson-activity" class="card" aria-labelledby="lesson-activity-heading">
       <h2 id="lesson-activity-heading">What to Do</h2>
       <p class="ied-unit4-safety"><strong>Safety:</strong> Get instructor approval before powering the model. Keep clear of moving parts. Stop for wobble, rubbing, a stall, or hot wiring. Disconnect power before touching or adjusting the model.</p>
-      <ol>
+      <ol class="ied-unit4-steps">
         <li>Turn the three requirements from your ride card into counts or visible checks.</li>
         <li>Once your teacher says it is safe to test, run three brief trials under the same starting conditions. Record all three checks per trial, counting fixed features once and noting that they were unchanged.</li>
         <li>Mark each result pass, fail, or not tested and circle one improvement priority.</li>
@@ -74,12 +94,23 @@
     <section id="lesson-checkpoint" class="card" aria-labelledby="lesson-checkpoint-heading">
       <h2 id="lesson-checkpoint-heading">Check Your Work</h2>
       <p>Can someone tell from your table what happened in each trial and why you chose that priority?</p>
-      <h3>10-point rubric</h3>
-      <ul>
-        <li><strong>4 points · Completion.</strong> Include all requested parts of today’s submission.</li>
-        <li><strong>4 points · Engineering accuracy.</strong> Use correct concepts and labels. Support your result or decision with the evidence requested.</li>
-        <li><strong>2 points · Clarity.</strong> Make the evidence readable and include the required name or team names.</li>
-      </ul>
+      <details class="ied-unit4-rubric">
+        <summary>10-point rubric</summary>
+        <ul>
+          <li><strong>4 points · Completion.</strong> Include all requested parts of today’s submission.</li>
+          <li><strong>4 points · Engineering accuracy.</strong> Use correct concepts and labels. Support your result or decision with the evidence requested.</li>
+          <li><strong>2 points · Clarity.</strong> Make the evidence readable and include the required name or team names.</li>
+        </ul>
+      </details>
+
+      <div class="ied-unit4-checkpoint" data-lesson-review hidden>
+        <label class="ied-unit4-confirm">
+          <input type="checkbox" data-review-confirm disabled>
+          <span>I checked my submission against the 10-point rubric.</span>
+        </label>
+        <p data-review-status role="status">Finish the practice check to mark your work ready.</p>
+      </div>
+      <noscript><p>To do the practice check on this page, turn on JavaScript. You can still use the rubric above to review your work before submitting in Google Classroom.</p></noscript>
     </section>
 
     <nav class="lesson-bottom-nav" aria-label="Lesson navigation" data-static-lesson-nav>

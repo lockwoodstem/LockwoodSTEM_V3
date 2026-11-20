@@ -180,3 +180,113 @@
 .ied-unit4-page .page-hero .btn:is(:hover, :focus) {
   transform: none;
 }
+
+[data-lesson-review] {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.ied-unit4-checkpoint fieldset {
+  min-width: 0;
+  margin-block: .85rem;
+  padding: 0;
+  border: 0;
+}
+
+.ied-unit4-checkpoint legend {
+  margin-bottom: .4rem;
+  font-weight: 750;
+}
+
+.ied-unit4-checkpoint label {
+  display: flex;
+  min-height: 44px;
+  align-items: baseline;
+  gap: .6rem;
+  padding: .45rem .6rem;
+  border-radius: .4rem;
+  cursor: pointer;
+}
+
+.ied-unit4-checkpoint label:has(input:checked),
+.ied-unit4-checkpoint label:focus-within {
+  background: #edf2f7;
+}
+
+.ied-unit4-checkpoint input {
+  flex: none;
+  accent-color: #124b79;
+}
+
+.ied-unit4-lesson .card .ied-unit4-feedback {
+  margin-block: .5rem;
+  font-weight: 700;
+}
+
+.ied-unit4-checkpoint .ied-unit4-confirm {
+  border: 1px solid var(--line);
+}
+
+.ied-unit4-checkpoint .ied-unit4-confirm:has(input:disabled) {
+  color: var(--muted);
+  cursor: default;
+}
+
+.ied-unit4-example {
+  display: grid;
+  gap: .45rem;
+}
+
+.ied-unit4-example > div {
+  display: grid;
+  grid-template-columns: minmax(5rem, 28%) 1fr;
+  gap: .6rem;
+  border-inline-start: .2rem solid var(--gold);
+  border-radius: .35rem;
+  background: #edf2f7;
+  padding: .55rem .65rem;
+}
+
+.ied-unit4-example dt {
+  font-weight: 800;
+}
+
+.ied-unit4-example dd {
+  margin: 0;
+}
+
+.ied-unit4-lesson .card .ied-unit4-steps {
+  display: grid;
+  gap: .6rem;
+  padding-inline-start: 1.9rem;
+}
+
+.ied-unit4-steps li {
+  padding: .55rem .75rem;
+  border-radius: .4rem;
+  background: #edf2f7;
+}
+
+.ied-unit4-steps li::marker {
+  color: #124b79;
+  font-weight: 800;
+}
+
+.ied-unit4-rubric {
+  margin-top: .75rem;
+  padding: .4rem .75rem;
+  border: 1px solid var(--line);
+  border-radius: .4rem;
+}
+
+.ied-unit4-rubric summary {
+  min-height: 44px;
+  padding-block: .55rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+#lesson-practice {
+  scroll-margin-top: 8.5rem;
+}

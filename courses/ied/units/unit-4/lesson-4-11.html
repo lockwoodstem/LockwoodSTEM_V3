@@ -7,8 +7,9 @@
   <meta name="description" content="Build and verify a low-voltage motor circuit controlled by a switch.">
   <link rel="stylesheet" href="../../../../assets/css/styles.css">
   <link rel="stylesheet" href="../../../../assets/css/lesson-experience.css">
-  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=3">
+  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=5">
   <script defer src="../../../../assets/js/main.js?v=ied-unit4-curriculum"></script>
+  <script defer src="../../../../assets/js/ied-unit4-checkpoint.js?v=1"></script>
 </head>
 <body class="lesson-detail-page ied-unit4-page">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -34,8 +35,10 @@
   <div class="container ied-unit4-lesson">
     <nav class="ied-unit4-jump" aria-label="On this page">
       <a href="#lesson-concept">Concept</a>
+      <a href="#lesson-practice">Practice check</a>
       <a href="#lesson-activity">Activity</a>
       <a href="#lesson-submission">Submission</a>
+      <a href="#lesson-checkpoint">Final check</a>
     </nav>
 
     <section id="lesson-goal" class="card learning-guide" aria-labelledby="lesson-goal-heading">
@@ -51,13 +54,30 @@
 
     <section id="lesson-example" class="card" aria-labelledby="lesson-example-heading">
       <h2 id="lesson-example-heading">Worked Example</h2>
-      <p>Follow the path from battery + to the switch, then to the motor, then back to battery −. With the circuit checked and power applied, ON should drive the unloaded shaft. In OFF, the shaft may coast briefly before stopping.</p>
+      <dl class="ied-unit4-example">
+        <div><dt>Circuit path</dt><dd>Battery + → switch → motor → battery −</dd></div>
+        <div><dt>ON</dt><dd>With approval and power applied, the unloaded shaft should turn.</dd></div>
+        <div><dt>OFF</dt><dd>Motor current stops. The shaft may coast briefly.</dd></div>
+      </dl>
     </section>
+
+    <form id="lesson-practice" class="card ied-unit4-checkpoint" data-lesson-checkpoint hidden>
+      <h3>Practice check</h3>
+      <p>Make a choice and check your answer before you start the activity.</p>
+      <fieldset>
+        <legend>With the power source disconnected, where should you place the switch so it interrupts current through the motor?</legend>
+        <label><input type="radio" name="practice-choice" value="1" required data-feedback="A switch across the leads does not break the motor’s main current path."> <span>Across both motor leads on a separate branch.</span></label>
+        <label><input type="radio" name="practice-choice" value="2" required data-correct data-feedback="A switch in series breaks the only path for motor current when it opens."> <span>In the same loop as the motor, between the source and one motor lead.</span></label>
+        <label><input type="radio" name="practice-choice" value="3" required data-feedback="The switch needs to be part of the conducting path to control the motor."> <span>Only on a separate wire that does not connect back to the source.</span></label>
+      </fieldset>
+      <button class="btn dark small" type="submit">Check answer</button>
+      <p class="ied-unit4-feedback" data-practice-feedback role="status"></p>
+    </form>
 
     <section id="lesson-activity" class="card" aria-labelledby="lesson-activity-heading">
       <h2 id="lesson-activity-heading">What to Do</h2>
       <p class="ied-unit4-safety"><strong>Safety:</strong> Use approved low-voltage components only. Keep bare conductors apart, secure the motor, and keep clear of the shaft. Disconnect immediately if leads heat up or the motor stalls.</p>
-      <ol>
+      <ol class="ied-unit4-steps">
         <li>Lay out the approved motor, switch, and matching power source with the source disconnected.</li>
         <li>Connect the switch in series using the wires from your kit. Ask your teacher to inspect the circuit before you connect power.</li>
         <li>After approval, test ON and OFF once, note what happens, and disconnect power.</li>
@@ -73,12 +93,23 @@
     <section id="lesson-checkpoint" class="card" aria-labelledby="lesson-checkpoint-heading">
       <h2 id="lesson-checkpoint-heading">Check Your Work</h2>
       <p>Do your results distinguish what actually happened in ON and OFF from what you predicted?</p>
-      <h3>10-point rubric</h3>
-      <ul>
-        <li><strong>4 points · Completion.</strong> Include all requested parts of today’s submission.</li>
-        <li><strong>4 points · Engineering accuracy.</strong> Use correct concepts and labels. Support your result or decision with the evidence requested.</li>
-        <li><strong>2 points · Clarity.</strong> Make the evidence readable and include the required name or team names.</li>
-      </ul>
+      <details class="ied-unit4-rubric">
+        <summary>10-point rubric</summary>
+        <ul>
+          <li><strong>4 points · Completion.</strong> Include all requested parts of today’s submission.</li>
+          <li><strong>4 points · Engineering accuracy.</strong> Use correct concepts and labels. Support your result or decision with the evidence requested.</li>
+          <li><strong>2 points · Clarity.</strong> Make the evidence readable and include the required name or team names.</li>
+        </ul>
+      </details>
+
+      <div class="ied-unit4-checkpoint" data-lesson-review hidden>
+        <label class="ied-unit4-confirm">
+          <input type="checkbox" data-review-confirm disabled>
+          <span>I checked my submission against the 10-point rubric.</span>
+        </label>
+        <p data-review-status role="status">Finish the practice check to mark your work ready.</p>
+      </div>
+      <noscript><p>To do the practice check on this page, turn on JavaScript. You can still use the rubric above to review your work before submitting in Google Classroom.</p></noscript>
     </section>
 
     <nav class="lesson-bottom-nav" aria-label="Lesson navigation" data-static-lesson-nav>
