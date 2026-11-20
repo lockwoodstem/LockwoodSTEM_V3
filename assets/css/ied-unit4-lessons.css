@@ -1,0 +1,72 @@
+/* Compact lesson layout using the site's hero, cards, and navigation. */
+.ied-unit4-page .page-hero {
+  padding: 0;
+}
+
+.ied-unit4-page .page-hero .hero-grid {
+  display: block;
+  padding: clamp(1.25rem, 4vw, 2.5rem) 0;
+}
+
+.ied-unit4-page .page-hero h1 {
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1.12;
+  letter-spacing: -.035em;
+  margin-bottom: .45rem;
+}
+
+.ied-unit4-lesson {
+  max-width: 54rem;
+}
+
+.ied-unit4-lesson > section,
+.ied-unit4-lesson > nav {
+  margin-block: 1rem;
+  scroll-margin-top: 7rem;
+}
+
+.ied-unit4-lesson > section:not(.card) {
+  padding: 0;
+}
+
+.ied-unit4-lesson h2 {
+  font-size: clamp(1.35rem, 4vw, 1.65rem);
+  margin-bottom: .55rem;
+}
+
+.ied-unit4-lesson .card :is(p, ol, ul) + :is(p, ol, ul, h3) {
+  margin-top: .65rem;
+}
+
+.ied-unit4-lesson .card :is(ol, ul) {
+  padding-inline-start: 1.35rem;
+}
+
+.ied-unit4-lesson .card li + li {
+  margin-top: .35rem;
+}
+
+.ied-unit4-lesson .card a {
+  color: #124b79;
+}
+
+.ied-unit4-lesson .ied-unit4-safety {
+  border-inline-start: .25rem solid var(--gold);
+  padding-inline-start: .6rem;
+  color: var(--text);
+}
+
+.ied-unit4-lesson .grid {
+  margin-top: 1rem;
+}
+
+.ied-unit4-lesson a:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (min-width: 981px) {
+  .ied-unit4-lesson .lesson-bottom-nav-links .btn {
+    min-width: 0;
+  }
+}

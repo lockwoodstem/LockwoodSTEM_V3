@@ -436,9 +436,8 @@
       "lesson": 1,
       "number": "4.1",
       "type": "Lesson",
-      "title": "Unit 4 Challenge Launch: Aerospace Mechanisms, Materials & Electromechanical Systems",
-      "url": "courses/ied/units/unit-4/lesson-4-1.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.1_Unit_4_Challenge_Launch_Aerospace_Mechanisms_Materials_Electromechanical_Systems.pptx"
+      "title": "Engineering Materials",
+      "url": "courses/ied/units/unit-4/lesson-4-1.html"
     },
     {
       "course": "IED",
@@ -446,9 +445,8 @@
       "lesson": 2,
       "number": "4.2",
       "type": "Lesson",
-      "title": "Aerospace Materials and Material Properties",
-      "url": "courses/ied/units/unit-4/lesson-4-2.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.2_Aerospace_Materials_and_Material_Properties.pptx"
+      "title": "Material Properties and Selection",
+      "url": "courses/ied/units/unit-4/lesson-4-2.html"
     },
     {
       "course": "IED",
@@ -456,9 +454,8 @@
       "lesson": 3,
       "number": "4.3",
       "type": "Lesson",
-      "title": "Material Testing Lab",
-      "url": "courses/ied/units/unit-4/lesson-4-3.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.3_Material_Testing_Lab.pptx"
+      "title": "Simple Materials Test",
+      "url": "courses/ied/units/unit-4/lesson-4-3.html"
     },
     {
       "course": "IED",
@@ -466,9 +463,8 @@
       "lesson": 4,
       "number": "4.4",
       "type": "Lesson",
-      "title": "Statistics and Measurement Error",
-      "url": "courses/ied/units/unit-4/lesson-4-4.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.4_Statistics_and_Measurement_Error.pptx"
+      "title": "Analyzing Test Results",
+      "url": "courses/ied/units/unit-4/lesson-4-4.html"
     },
     {
       "course": "IED",
@@ -476,9 +472,8 @@
       "lesson": 5,
       "number": "4.5",
       "type": "Lesson",
-      "title": "Mechanisms and Types of Motion",
-      "url": "courses/ied/units/unit-4/lesson-4-5.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.5_Mechanisms_and_Types_of_Motion.pptx"
+      "title": "Types of Motion",
+      "url": "courses/ied/units/unit-4/lesson-4-5.html"
     },
     {
       "course": "IED",
@@ -486,9 +481,8 @@
       "lesson": 6,
       "number": "4.6",
       "type": "Lesson",
-      "title": "Mechanism Exploration: Linkages, Hinges, Cams, Gears, and Pulleys",
-      "url": "courses/ied/units/unit-4/lesson-4-6.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.6_Mechanism_Exploration_Linkages_Hinges_Cams_Gears_and_Pulleys.pptx"
+      "title": "Exploring Mechanical Systems",
+      "url": "courses/ied/units/unit-4/lesson-4-6.html"
     },
     {
       "course": "IED",
@@ -496,9 +490,8 @@
       "lesson": 7,
       "number": "4.7",
       "type": "Lesson",
-      "title": "Friction, Force, and Mechanism Performance",
-      "url": "courses/ied/units/unit-4/lesson-4-7.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.7_Friction_Force_and_Mechanism_Performance.pptx"
+      "title": "Building a Simple Mechanism",
+      "url": "courses/ied/units/unit-4/lesson-4-7.html"
     },
     {
       "course": "IED",
@@ -506,9 +499,8 @@
       "lesson": 8,
       "number": "4.8",
       "type": "Lesson",
-      "title": "Motion Graphs and System Behavior",
-      "url": "courses/ied/units/unit-4/lesson-4-8.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.8_Motion_Graphs_and_System_Behavior.pptx"
+      "title": "Testing and Improving Mechanisms",
+      "url": "courses/ied/units/unit-4/lesson-4-8.html"
     },
     {
       "course": "IED",
@@ -516,9 +508,8 @@
       "lesson": 9,
       "number": "4.9",
       "type": "Lesson",
-      "title": "Electrical Safety and Simple Circuits",
-      "url": "courses/ied/units/unit-4/lesson-4-9.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.9_Electrical_Safety_and_Simple_Circuits.pptx"
+      "title": "Simple Circuits and Soldering Safety",
+      "url": "courses/ied/units/unit-4/lesson-4-9.html"
     },
     {
       "course": "IED",
@@ -526,9 +517,8 @@
       "lesson": 10,
       "number": "4.10",
       "type": "Lesson",
-      "title": "Motors and Electromechanical Motion",
-      "url": "courses/ied/units/unit-4/lesson-4-10.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.10_Motors_and_Electromechanical_Motion.pptx"
+      "title": "Introduction to Soldering",
+      "url": "courses/ied/units/unit-4/lesson-4-10.html"
     },
     {
       "course": "IED",
@@ -536,9 +526,8 @@
       "lesson": 11,
       "number": "4.11",
       "type": "Lesson",
-      "title": "Concept Generation and Decision Matrix",
-      "url": "courses/ied/units/unit-4/lesson-4-11.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.11_Concept_Generation_and_Decision_Matrix.pptx"
+      "title": "Building a Motor Circuit",
+      "url": "courses/ied/units/unit-4/lesson-4-11.html"
     },
     {
       "course": "IED",
@@ -546,9 +535,8 @@
       "lesson": 12,
       "number": "4.12",
       "type": "Lesson",
-      "title": "System Architecture and Subsystem Planning",
-      "url": "courses/ied/units/unit-4/lesson-4-12.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.12_System_Architecture_and_Subsystem_Planning.pptx"
+      "title": "Amusement Park Design Brief",
+      "url": "courses/ied/units/unit-4/lesson-4-12.html"
     },
     {
       "course": "IED",
@@ -556,9 +544,8 @@
       "lesson": 13,
       "number": "4.13",
       "type": "Lesson",
-      "title": "CAD Planning and Assembly Layout",
-      "url": "courses/ied/units/unit-4/lesson-4-13.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.13_CAD_Planning_and_Assembly_Layout.pptx"
+      "title": "Ride Mechanism Planning",
+      "url": "courses/ied/units/unit-4/lesson-4-13.html"
     },
     {
       "course": "IED",
@@ -566,9 +553,8 @@
       "lesson": 14,
       "number": "4.14",
       "type": "Lesson",
-      "title": "CAD Modeling Workday: Components, Motion, and Fit",
-      "url": "courses/ied/units/unit-4/lesson-4-14.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.14_CAD_Modeling_Workday_Components_Motion_and_Fit.pptx"
+      "title": "CAD: Base and Supports",
+      "url": "courses/ied/units/unit-4/lesson-4-14.html"
     },
     {
       "course": "IED",
@@ -576,9 +562,8 @@
       "lesson": 15,
       "number": "4.15",
       "type": "Lesson",
-      "title": "Prototype Build Day 1: Structure and Mechanism",
-      "url": "courses/ied/units/unit-4/lesson-4-15.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.15_Prototype_Build_Day_1_Structure_and_Mechanism.pptx"
+      "title": "CAD: Moving Assembly",
+      "url": "courses/ied/units/unit-4/lesson-4-15.html"
     },
     {
       "course": "IED",
@@ -586,9 +571,8 @@
       "lesson": 16,
       "number": "4.16",
       "type": "Lesson",
-      "title": "Prototype Build Day 2: Electrical or Electromechanical Integration",
-      "url": "courses/ied/units/unit-4/lesson-4-16.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.16_Prototype_Build_Day_2_Electrical_or_Electromechanical_Integration.pptx"
+      "title": "Manufacturing: Base and Structure",
+      "url": "courses/ied/units/unit-4/lesson-4-16.html"
     },
     {
       "course": "IED",
@@ -596,9 +580,8 @@
       "lesson": 17,
       "number": "4.17",
       "type": "Lesson",
-      "title": "Testing Protocol Development",
-      "url": "courses/ied/units/unit-4/lesson-4-17.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.17_Testing_Protocol_Development.pptx"
+      "title": "Mechanical Assembly and Hand Test",
+      "url": "courses/ied/units/unit-4/lesson-4-17.html"
     },
     {
       "course": "IED",
@@ -606,9 +589,8 @@
       "lesson": 18,
       "number": "4.18",
       "type": "Lesson",
-      "title": "Prototype Testing and Data Collection",
-      "url": "courses/ied/units/unit-4/lesson-4-18.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.18_Prototype_Testing_and_Data_Collection.pptx"
+      "title": "Electrical Installation and Soldering",
+      "url": "courses/ied/units/unit-4/lesson-4-18.html"
     },
     {
       "course": "IED",
@@ -616,9 +598,8 @@
       "lesson": 19,
       "number": "4.19",
       "type": "Lesson",
-      "title": "Data Analysis, Graphing, and Design Conclusions",
-      "url": "courses/ied/units/unit-4/lesson-4-19.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.19_Data_Analysis_Graphing_and_Design_Conclusions.pptx"
+      "title": "Functional Testing",
+      "url": "courses/ied/units/unit-4/lesson-4-19.html"
     },
     {
       "course": "IED",
@@ -626,9 +607,8 @@
       "lesson": 20,
       "number": "4.20",
       "type": "Lesson",
-      "title": "Iteration and Prototype Revision",
-      "url": "courses/ied/units/unit-4/lesson-4-20.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.20_Iteration_and_Prototype_Revision.pptx"
+      "title": "Design Improvement and Retest",
+      "url": "courses/ied/units/unit-4/lesson-4-20.html"
     },
     {
       "course": "IED",
@@ -636,19 +616,8 @@
       "lesson": 21,
       "number": "4.21",
       "type": "Lesson",
-      "title": "Final Technical Documentation: Mechanism, Circuit, Data, and Revision",
-      "url": "courses/ied/units/unit-4/lesson-4-21.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.21_Final_Technical_Documentation_Mechanism_Circuit_Data_and_Revision.pptx"
-    },
-    {
-      "course": "IED",
-      "unit": 4,
-      "lesson": 22,
-      "number": "4.22",
-      "type": "Lesson",
-      "title": "Unit 4 Technical Demonstration and Reflection",
-      "url": "courses/ied/units/unit-4/lesson-4-22.html",
-      "presentation": "downloads/presentations/IED_Unit4_Lesson_4.22_Unit_4_Technical_Demonstration_and_Reflection.pptx"
+      "title": "Amusement Park Showcase",
+      "url": "courses/ied/units/unit-4/lesson-4-21.html"
     },
     {
       "course": "IED",

@@ -239,111 +239,27 @@ window.LOCKWOODSTEM_LESSONS = {
       ]
     ],
     "4": [
-          [
-                "4.1",
-                "Engineering Materials",
-                "lesson-4-1.html"
-          ],
-          [
-                "4.2",
-                "Material Properties and Selection",
-                "lesson-4-2.html"
-          ],
-          [
-                "4.3",
-                "Simple Materials Test",
-                "lesson-4-3.html"
-          ],
-          [
-                "4.4",
-                "Analyzing Test Results",
-                "lesson-4-4.html"
-          ],
-          [
-                "4.5",
-                "Types of Motion",
-                "lesson-4-5.html"
-          ],
-          [
-                "4.6",
-                "Exploring Mechanical Systems",
-                "lesson-4-6.html"
-          ],
-          [
-                "4.7",
-                "Building a Simple Mechanism",
-                "lesson-4-7.html"
-          ],
-          [
-                "4.8",
-                "Testing and Improving Mechanisms",
-                "lesson-4-8.html"
-          ],
-          [
-                "4.9",
-                "Simple Circuits and Soldering Safety",
-                "lesson-4-9.html"
-          ],
-          [
-                "4.10",
-                "Introduction to Soldering",
-                "lesson-4-10.html"
-          ],
-          [
-                "4.11",
-                "Building a Motor Circuit",
-                "lesson-4-11.html"
-          ],
-          [
-                "4.12",
-                "DuckWorks Amusement Park Design Brief",
-                "lesson-4-12.html"
-          ],
-          [
-                "4.13",
-                "Mechanism Planning",
-                "lesson-4-13.html"
-          ],
-          [
-                "4.14",
-                "CAD: Base and Supports",
-                "lesson-4-14.html"
-          ],
-          [
-                "4.15",
-                "CAD: Moving Assembly",
-                "lesson-4-15.html"
-          ],
-          [
-                "4.16",
-                "Manufacturing Day",
-                "lesson-4-16.html"
-          ],
-          [
-                "4.17",
-                "Mechanical Assembly",
-                "lesson-4-17.html"
-          ],
-          [
-                "4.18",
-                "Electrical Installation",
-                "lesson-4-18.html"
-          ],
-          [
-                "4.19",
-                "Functional Testing",
-                "lesson-4-19.html"
-          ],
-          [
-                "4.20",
-                "Design Improvement",
-                "lesson-4-20.html"
-          ],
-          [
-                "4.21",
-                "Park Showcase",
-                "lesson-4-21.html"
-          ]
+      ["4.1", "Engineering Materials", "lesson-4-1.html"],
+      ["4.2", "Material Properties and Selection", "lesson-4-2.html"],
+      ["4.3", "Simple Materials Test", "lesson-4-3.html"],
+      ["4.4", "Analyzing Test Results", "lesson-4-4.html"],
+      ["4.5", "Types of Motion", "lesson-4-5.html"],
+      ["4.6", "Exploring Mechanical Systems", "lesson-4-6.html"],
+      ["4.7", "Building a Simple Mechanism", "lesson-4-7.html"],
+      ["4.8", "Testing and Improving Mechanisms", "lesson-4-8.html"],
+      ["4.9", "Simple Circuits and Soldering Safety", "lesson-4-9.html"],
+      ["4.10", "Introduction to Soldering", "lesson-4-10.html"],
+      ["4.11", "Building a Motor Circuit", "lesson-4-11.html"],
+      ["4.12", "Amusement Park Design Brief", "lesson-4-12.html"],
+      ["4.13", "Ride Mechanism Planning", "lesson-4-13.html"],
+      ["4.14", "CAD: Base and Supports", "lesson-4-14.html"],
+      ["4.15", "CAD: Moving Assembly", "lesson-4-15.html"],
+      ["4.16", "Manufacturing: Base and Structure", "lesson-4-16.html"],
+      ["4.17", "Mechanical Assembly and Hand Test", "lesson-4-17.html"],
+      ["4.18", "Electrical Installation and Soldering", "lesson-4-18.html"],
+      ["4.19", "Functional Testing", "lesson-4-19.html"],
+      ["4.20", "Design Improvement and Retest", "lesson-4-20.html"],
+      ["4.21", "Amusement Park Showcase", "lesson-4-21.html"]
     ]
 
   },

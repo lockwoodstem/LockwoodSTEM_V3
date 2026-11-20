@@ -410,6 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Automatic course lesson navigation v1
 document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('[data-static-lesson-nav]')) return;
   const run = (manifest) => {
   const match = location.pathname.match(/\/courses\/(ied|poe|adm)\/units\/unit-(\d+)\/([^/]+\.html)$/i);
   if (!match) return;
@@ -666,7 +667,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Never add a generic submission box when the author supplied a specific one.
   const specificSubmit=main.querySelector('#submit,.submit-card,[class*="submission"][id]');
   const generic=main.querySelector('.lesson-submission-box');
-  if(specificSubmit && generic) generic.closest('section')?.remove();
+  if(specificSubmit && generic && generic !== specificSubmit) generic.closest('section')?.remove();
 
   // Remove redundant resource cards whose only purpose is navigation; bottom navigation already handles this.
   main.querySelectorAll('.resource-card').forEach(card=>{
