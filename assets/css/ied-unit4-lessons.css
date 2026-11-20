@@ -181,12 +181,6 @@
   transform: none;
 }
 
-[data-lesson-review] {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
-}
-
 .ied-unit4-checkpoint fieldset {
   min-width: 0;
   margin-block: .85rem;
@@ -222,15 +216,6 @@
 .ied-unit4-lesson .card .ied-unit4-feedback {
   margin-block: .5rem;
   font-weight: 700;
-}
-
-.ied-unit4-checkpoint .ied-unit4-confirm {
-  border: 1px solid var(--line);
-}
-
-.ied-unit4-checkpoint .ied-unit4-confirm:has(input:disabled) {
-  color: var(--muted);
-  cursor: default;
 }
 
 .ied-unit4-example {
