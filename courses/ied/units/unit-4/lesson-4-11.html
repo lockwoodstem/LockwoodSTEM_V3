@@ -7,7 +7,7 @@
   <meta name="description" content="Build and verify a low-voltage motor circuit controlled by a switch.">
   <link rel="stylesheet" href="../../../../assets/css/styles.css">
   <link rel="stylesheet" href="../../../../assets/css/lesson-experience.css">
-  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=5">
+  <link rel="stylesheet" href="../../../../assets/css/ied-unit4-lessons.css?v=6">
   <script defer src="../../../../assets/js/main.js?v=ied-unit4-curriculum"></script>
   <script defer src="../../../../assets/js/ied-unit4-checkpoint.js?v=1"></script>
 </head>
@@ -54,11 +54,20 @@
 
     <section id="lesson-example" class="card" aria-labelledby="lesson-example-heading">
       <h2 id="lesson-example-heading">Worked Example</h2>
-      <dl class="ied-unit4-example">
-        <div><dt>Circuit path</dt><dd>Battery + → switch → motor → battery −</dd></div>
-        <div><dt>ON</dt><dd>With approval and power applied, the unloaded shaft should turn.</dd></div>
-        <div><dt>OFF</dt><dd>Motor current stops. The shaft may coast briefly.</dd></div>
-      </dl>
+      <div class="ied-unit4-example-layout">
+        <figure class="ied-unit4-media">
+          <video controls playsinline preload="none" width="720" height="360" poster="../../../../assets/img/ied/unit-4/lesson-4-11.webp" aria-label="Silent worked-example animation" aria-describedby="lesson-media-caption">
+            <source src="../../../../assets/img/ied/unit-4/lesson-4-11.mp4" type="video/mp4">
+            <a href="../../../../assets/img/ied/unit-4/lesson-4-11.mp4">Open the worked-example video</a>
+          </video>
+          <figcaption id="lesson-media-caption">Trace one loop from battery positive through the switch and motor and back to battery negative. Opening the switch breaks that path.</figcaption>
+        </figure>
+        <dl class="ied-unit4-example">
+          <div><dt>Circuit path</dt><dd>Battery + → switch → motor → battery −</dd></div>
+          <div><dt>ON</dt><dd>With approval and power applied, the unloaded shaft should turn.</dd></div>
+          <div><dt>OFF</dt><dd>Motor current stops. The shaft may coast briefly.</dd></div>
+        </dl>
+      </div>
     </section>
 
     <form id="lesson-practice" class="card ied-unit4-checkpoint" data-lesson-checkpoint hidden>

@@ -162,7 +162,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .ied-unit4-lesson:has(> #lesson-concept) > :not(#lesson-concept, #lesson-example) {
+  .ied-unit4-lesson:has(> #lesson-concept) > :not(#lesson-goal, #lesson-concept) {
     grid-column: 1 / -1;
   }
 }
@@ -289,4 +289,43 @@
 
 #lesson-practice {
   scroll-margin-top: 8.5rem;
+}
+
+.ied-unit4-example-layout {
+  display: grid;
+  gap: .85rem;
+}
+
+.ied-unit4-media {
+  min-width: 0;
+  margin: 0;
+}
+
+.ied-unit4-media :is(img, video) {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: .45rem;
+  background: #edf3f9;
+}
+
+.ied-unit4-media figcaption {
+  margin-top: .5rem;
+  color: var(--muted);
+  font-size: .93rem;
+}
+
+@media (min-width: 760px) {
+  .ied-unit4-example-layout {
+    grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 900px) {
+  .ied-unit4-example-layout .ied-unit4-example > div {
+    grid-template-columns: 1fr;
+    gap: .15rem;
+  }
 }
