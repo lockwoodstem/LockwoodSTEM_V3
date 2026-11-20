@@ -1,6 +1,7 @@
 /* Compact lesson layout using the site's hero, cards, and navigation. */
 .ied-unit4-page .page-hero {
   padding: 0;
+  background-color: var(--navy);
 }
 
 .ied-unit4-page .page-hero .hero-grid {
@@ -9,19 +10,24 @@
 }
 
 .ied-unit4-page .page-hero h1 {
+  color: #fff;
   font-size: clamp(2rem, 6vw, 3.25rem);
   line-height: 1.12;
   letter-spacing: -.035em;
   margin-bottom: .45rem;
+  text-wrap: balance;
 }
 
 .ied-unit4-lesson {
   max-width: 54rem;
+  display: grid;
+  gap: 1rem;
+  padding-top: 1rem;
 }
 
 .ied-unit4-lesson > section,
 .ied-unit4-lesson > nav {
-  margin-block: 1rem;
+  margin-block: 0;
   scroll-margin-top: 7rem;
 }
 
@@ -46,10 +52,6 @@
   margin-top: .35rem;
 }
 
-.ied-unit4-lesson .card a {
-  color: #124b79;
-}
-
 .ied-unit4-lesson .ied-unit4-safety {
   border-inline-start: .25rem solid var(--gold);
   padding-inline-start: .6rem;
@@ -68,5 +70,109 @@
 @media (min-width: 981px) {
   .ied-unit4-lesson .lesson-bottom-nav-links .btn {
     min-width: 0;
+  }
+}
+
+.ied-unit4-page main {
+  padding-bottom: clamp(1.75rem, 4vw, 3rem);
+  background: #edf2f7;
+  color: var(--text);
+}
+
+.ied-unit4-page .site-breadcrumbs,
+.ied-unit4-page .page-hero .hero-grid {
+  max-width: 54rem;
+}
+
+.ied-unit4-page .site-breadcrumbs a,
+.ied-unit4-lesson a:not(.btn) {
+  color: #124b79;
+}
+
+.ied-unit4-page .site-breadcrumbs li:not(:last-child)::after {
+  color: var(--muted);
+}
+
+.ied-unit4-page .site-header .global-search-trigger-text {
+  color: var(--navy);
+}
+
+.ied-unit4-lesson .lesson-bottom-nav-card {
+  margin-block: 0;
+}
+
+.ied-unit4-lesson .card {
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.ied-unit4-lesson .card p {
+  color: var(--text);
+}
+
+.ied-unit4-lesson .lesson-submission-box {
+  background: #fff8e3;
+  border-inline-start: .25rem solid var(--gold);
+}
+
+.ied-unit4-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.ied-unit4-jump a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .4rem .8rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  background: #fff;
+  font-weight: 700;
+}
+
+.ied-unit4-phase ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ied-unit4-phase li + li {
+  margin-top: 0;
+  border-top: 1px solid var(--line);
+}
+
+.ied-unit4-phase a {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  align-items: baseline;
+  min-height: 44px;
+  padding: .55rem 0;
+  text-underline-offset: .15em;
+}
+
+.ied-unit4-phase a span {
+  color: var(--text);
+  font-weight: 700;
+}
+
+@media (min-width: 760px) {
+  .ied-unit4-lesson:has(> #lesson-concept) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ied-unit4-lesson:has(> #lesson-concept) > :not(#lesson-concept, #lesson-example) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 980px) {
+  .ied-unit4-page .site-header .global-search-trigger-text {
+    display: inline;
+  }
+
+  .ied-unit4-lesson > section {
+    scroll-margin-top: 8.5rem;
   }
 }
